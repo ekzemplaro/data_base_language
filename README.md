@@ -5,7 +5,7 @@ Language Examples to connect to Databases
 
 	CRUD (Create,Read,Update,Delete) are shown.
 
-The working page is at <http://ekzemplaro.org/data_base.html>
+The working page is at <http://ekzemplaro.org/data_base/>
 
 1) Place the data at http server (Apache2 or Nginx).
 
