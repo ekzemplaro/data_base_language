@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<script src="/js/jquery-2.1.0.min.js"></script>
+<meta content="Program Language Examples to connect to Tokyo Cabinet" name="description">
+<meta content="Tokyo Cabinet,クライアント,接続,言語,サンプル" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<title>Tokyo Cabinet</title>
+</head>
+<body>
+<h1><a href="http://fallabs.com/tokyocabinet/">Tokyo Cabinet</a></h1><p />
+
+<pre>
+ii  libtokyocabinet-dev      1.4.37-6.1      Tokyo Cabinet Database Libraries [development]
+ii  libtokyocabinet-perl     1.34-1build1    Perl Binding of Tokyo Cabinet
+ii  libtokyocabinet-ruby1.8  1.31-2          Transitional package for ruby-tokyocabinet
+ii  libtokyocabinet8         1.4.37-6.1      Tokyo Cabinet Database Libraries [runtime]
+ii  ruby-tokyocabinet        1.31-2          Ruby Binding of Tokyo Cabinet Database
+ii  tokyocabinet-bin         1.4.37-6.1      Tokyo Cabinet Database Utilities
+</pre>
+
+<ol>
+Tokyo Cabinet
+
+tctmgr list casket.tct<p />
+</ol>
+
+<pre>
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install build-essential
+sudo apt-get install zlib1g-dev 
+sudo apt-get install libbz2-dev
+
+wget http://fallabs.com/tokyocabinet/tokyocabinet-1.4.47.tar.gz
+tar xzvf tokyocabinet-1.4.47.tar.gz
+cd tokyocabinet-1.4.47
+export CPPFLAGS="-I/usr/lib/jvm/java-6-openjdk/include/"
+export JAVA_HOME=/usr/lib/jvm/java-6-openjdk
+export PATH=$JAVA_HOME/bin:$PATH
+
+./configure
+make
+sudo make install
+</pre>
+
+
+<blockquote>
+</blockquote>
+
+Python<p />
+<blockquote>
+<pre>
+ii  python-pytc   0.8-2  amd64   Python bindings for the Tokyo Cabinet database
+</pre>
+</blockquote>
+
+Perl<p />
+<blockquote>
+tokyocabinet-perl-1.34.tar.gz<p />
+perl Makefile.PL<br />
+make<br />
+sudo make install<br />
+</blockquote>
+
+Ruby<p />
+<blockquote>
+	tokyocabinet-ruby-1.31.tar.gz<p />
+	ruby extconf.rb<br />
+	make<br />
+	sudo make install<br />
+</blockquote>
+
+Lua<p />
+<ol>
+	tokyocabinet-lua-1.10.tar.gz<p />
+	./configure<br />
+	make<br />
+	make install<br />
+</ol>
+
+node.js<p />
+<blockquote>
+	edvakf-node-tokyocabinet-bcff730.tar.gz<p />
+	node-waf configure build<br />
+</blockquote>
+
+Java<p />
+<blockquote>
+<pre>
+tokyocabinet-java-1.24.tar.gz
+
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+export CPPFLAGS="-I/usr/lib/jvm/java-7-openjdk-amd64/include/"
+export PATH=$JAVA_HOME/bin:$PATH
+
+./configure
+make
+make check
+su
+make install
+</pre>
+</blockquote>
+<div id="result_aa">result_aa</div>
+<hr />
+<div id="outarea_aa">outarea_aa</div>
+<div id="outarea_bb">outarea_bb</div>
+<div id="outarea_cc">outarea_cc</div>
+<div id="outarea_dd">outarea_dd</div>
+<div id="outarea_ee">outarea_ee</div>
+<div id="outarea_ff">outarea_ff</div>
+<div id="outarea_gg">outarea_gg</div>
+<div id="outarea_hh">outarea_hh</div>
+<hr />
+<a href="/data_base/data_base.html">Return</a><p />
+Jan/29/2014 AM 08:15<p />
+</body>
+</html>

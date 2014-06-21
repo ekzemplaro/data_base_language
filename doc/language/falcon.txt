@@ -1,0 +1,22 @@
+<meta content="Program Language Examples in Falcon" name="description">
+<meta content="Ada,クライアント,接続,言語,サンプル" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<title>falcon Mar/14/2014</title>
+</head>
+<body>
+<h2><a href="http://www.falconpl.org/">Falcon</a></h2><p />
+
+<blockquote>
+<pre>
+ii  falconpl         0.9.6.9-git20120606-2    amd64      Falcon P.L. - command line tools
+ii  falconpl-curl    0.9.6.9-git20120606-2    amd64      Curl bindings for Falcon P.L
+ii  falconpl-dbi     0.9.6.9-git20120606-2    amd64      Database Abstraction Layer for Falcon P.L
+</pre>
+</blockquote>
+
+<blockquote>
+<a href="http://www.falconpl.org/project_docs/core/">Library Reference</a><p />
+</blockquote>
+
+<blockquote>
+</blockquote>

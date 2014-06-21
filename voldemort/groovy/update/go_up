@@ -1,0 +1,14 @@
+export USR_SHARE=/usr/share/java
+export CPA=$USR_SHARE/json-lib-2.3.jar
+#
+export CPA=$CPA:$USR_SHARE/commons-logging-1.1.1.jar
+export CPA=$CPA:$USR_SHARE/commons-collections3-3.2.1.jar
+#
+export GROOVY_JAR=/usr/share/java/groovy-all.jar:/usr/share/java/groovy.jar
+export COMMON=/var/www/data_base/common
+export GROOVY_COMMON=$COMMON/groovy_common
+VOLDEMORT=/home/uchida/dbm/voldemort/voldemort-1.3.0
+export CLASSPATH=./:$VOLDEMORT/dist/voldemort-1.3.0.jar:$VOLDEMORT/dist/voldemort-test-1.3.0.jar:$VOLDEMORT/lib/*:$CPA
+export CLASSPATH=$CLASSPATH:$GROOVY_JAR:$GROOVY_COMMON
+#
+java voldemort_update t3055 89123400

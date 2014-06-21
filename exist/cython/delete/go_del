@@ -1,0 +1,6 @@
+#
+export http_proxy=""
+#
+echo "import exist_delete" > tmp_execute.py
+#
+python ./tmp_execute.py t4256

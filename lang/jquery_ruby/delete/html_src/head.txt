@@ -1,0 +1,5 @@
+<title>jQuery ruby_delete Jan/14/2011</title>
+</head>
+<body>
+<h2>jQuery ruby_delete</h2>
+<ol>

@@ -1,0 +1,8 @@
+#
+GROOVY_COMMON=/var/www/data_base/common/groovy_common
+GR_JAR=/usr/share/java/groovy-all.jar:/usr/share/java/groovy.jar
+JXL_JAR=/usr/share/java/jxl.jar
+#
+export CLASSPATH=./:$JXL_JAR:$GR_JAR:$GROOVY_COMMON
+#
+java excel_create /var/tmp/excel/cities.xls

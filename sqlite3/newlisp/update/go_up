@@ -1,0 +1,1 @@
+newlisp -c sqlite3_update.lsp /var/tmp/sqlite3/cities.db t0713 415238000

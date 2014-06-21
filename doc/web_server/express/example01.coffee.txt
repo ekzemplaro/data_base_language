@@ -1,0 +1,23 @@
+#! /usr/bin/coffee
+#
+#	example01.coffee
+#
+#					Mar/16/2012
+#
+# ---------------------------------------------------------------
+express = require 'express'
+app = express.createServer()
+app.get '/',(req,res) ->
+	str_out = 'example01.coffee<p />'
+	str_out += '<h2>こんにちは。</h2>'
+	str_out += '今日は良い天気です。<p />'
+	today = new Date()
+	hour = today.getHours()
+	minute = today.getMinutes()
+	second = today.getSeconds()
+	str_out += hour + ":" + minute + ":" + second
+	res.send str_out
+
+app.listen 3000
+console.log("Server start ***")
+# ---------------------------------------------------------------

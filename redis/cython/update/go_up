@@ -1,0 +1,4 @@
+#
+echo "import redis_update" > tmp_execute.py
+#
+python ./tmp_execute.py t1856 83125400

@@ -1,0 +1,3 @@
+#
+../single_check.sh derby clojure
+../single_check.sh h2 clojure

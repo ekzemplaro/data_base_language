@@ -1,0 +1,4 @@
+#
+echo "import tcbn_update" > tmp_execute.py
+#
+python ./tmp_execute.py /var/tmp/tokyo_cabinet/cities.tcb t0838 23789100

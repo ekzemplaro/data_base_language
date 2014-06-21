@@ -1,0 +1,2 @@
+SRC=/home/uchida/lang/erlang/mochi/mochi-mochiweb-62e460d/src
+cp -p $SRC/mochijson2.erl .

@@ -1,0 +1,2 @@
+#
+ecl -shell text_delete.lisp -eval '(quit)' -- /var/tmp/plain_text/cities.txt t2388

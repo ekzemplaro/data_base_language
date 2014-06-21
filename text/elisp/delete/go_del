@@ -1,0 +1,1 @@
+emacs --script text_delete.el /var/tmp/plain_text/cities.txt t2388

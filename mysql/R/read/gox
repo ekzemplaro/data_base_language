@@ -1,0 +1,1 @@
+Rscript --no-restore --no-save mysql_read.R

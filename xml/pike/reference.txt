@@ -1,0 +1,2 @@
+text_manipulate.pike
+xml_manipulate.pike

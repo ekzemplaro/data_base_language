@@ -1,0 +1,3 @@
+#
+./text_create.io /var/tmp/plain_text/cities.txt
+chmod 666 /var/tmp/plain_text/cities.txt

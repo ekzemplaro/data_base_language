@@ -1,0 +1,6 @@
+#
+../single_check.sh couch bash
+../single_check.sh ftp bash
+#../single_check.sh mongo bash
+#
+#

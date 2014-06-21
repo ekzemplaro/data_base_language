@@ -1,0 +1,5 @@
+#
+export PATH=$PATH:/opt/cmucl20e/bin
+#
+lisp -load mcachedb_update.lisp -eval '(quit)' -- t1523 21475900
+#

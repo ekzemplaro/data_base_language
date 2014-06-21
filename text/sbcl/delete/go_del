@@ -1,0 +1,3 @@
+#
+./text_delete.lisp /var/tmp/plain_text/cities.txt t2382
+#./text_delete.lisp cities.txt 2386

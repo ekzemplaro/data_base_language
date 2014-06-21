@@ -1,0 +1,7 @@
+#
+../single_check.sh text ocaml
+../single_check.sh csv ocaml
+#../single_check.sh xml ocaml
+#../single_check.sh json ocaml
+#../single_check.sh excel ocaml
+#

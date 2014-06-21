@@ -1,0 +1,6 @@
+#
+#
+../single_check.sh xindice cplus
+../single_check.sh exist cplus
+../single_check.sh basex cplus
+#

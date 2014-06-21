@@ -1,0 +1,4 @@
+#
+http_proxy=""
+ftp_proxy=""
+./ftp_create.py

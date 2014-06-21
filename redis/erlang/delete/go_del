@@ -1,0 +1,4 @@
+#
+export http_proxy=""
+#
+./redis_delete.erl t1856

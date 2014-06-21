@@ -1,0 +1,1 @@
+./csv_update.coffee /var/tmp/csv/cities.csv t1275 32458900

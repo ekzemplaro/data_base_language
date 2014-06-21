@@ -1,0 +1,6 @@
+#
+#
+../single_check.sh redis python
+#../single_check.sh tcbn python
+../single_check.sh tyrant python
+#

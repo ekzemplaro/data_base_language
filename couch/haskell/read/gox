@@ -1,0 +1,2 @@
+#
+runghc couch_read.hs

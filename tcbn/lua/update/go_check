@@ -1,0 +1,4 @@
+#
+tcbmgr get /var/tmp/tokyo_cabinet/cities.tcb 836
+tcbmgr get /var/tmp/tokyo_cabinet/cities.tcb 837
+tcbmgr get /var/tmp/tokyo_cabinet/cities.tcb 838

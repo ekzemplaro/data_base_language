@@ -1,0 +1,10 @@
+#
+#
+export COMMON=/var/www/data_base/common
+export JYTHON_COMMON=$COMMON/jython_common
+export JAR=$COMMON/jar
+#
+#
+export CLASSPATH=.:$JYTHON_COMMON:$JAR/sqlite-jdbc-3.7.2.jar
+#
+./sqlite3_delete.py /var/tmp/sqlite3/cities.db t0713

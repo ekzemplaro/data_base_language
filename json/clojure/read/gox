@@ -1,0 +1,4 @@
+export CLOJURE_CONTRIB=/usr/share/java/clojure-contrib.jar
+export CLASSPATH=.:/usr/share/java/clojure.jar:$CLOJURE_CONTRIB
+#
+java clojure.main json_read.clj /var/tmp/json/cities.json

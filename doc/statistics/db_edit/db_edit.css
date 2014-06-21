@@ -1,0 +1,72 @@
+table,td,th
+{
+border:0.5px #00f0f0 solid;
+margin-left: auto;
+margin-right: auto;
+}
+
+div.body
+{
+height: 600px;
+float: left;
+overflow: auto;
+}
+
+div.left
+{
+height: 600px;
+width: 30%;
+float: left;
+overflow: auto;
+}
+
+div.right
+{
+height: 600px;
+width: 70%;
+float: right;
+overflow: auto;
+}
+
+div.nava
+{
+background-color: #fff0f0;
+height: 600px;
+width: 50%;
+float: left;
+overflow: auto;
+}
+
+div.navb
+{
+background-color: #0ff0ff;
+height: 600px;
+width: 50%;
+float: left;
+overflow: auto;
+}
+
+div.crud
+{
+background-color: yellow;
+width: 100%;
+height: 70px;
+text-align: center;
+}
+
+div.contents
+{
+background-color: #f0f0f0;
+width: 100%;
+height: 350px;
+float: right;
+overflow: auto;
+}
+
+
+div.tail
+{
+background-color: #f0f0ff;
+width: 100%;
+}
+

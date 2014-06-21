@@ -1,0 +1,7 @@
+#
+JAVA_CLASSPATH="/usr/share/java/js.jar:/usr/share/java/jline.jar"
+XMLBEANS_JAR=/usr/share/java/xmlbeans.jar
+export CLASSPATH=.:$XMLBEANS_JAR:$JAVA_CLASSPATH
+#
+#
+./xml_read.js /var/tmp/xml_file/cities.xml

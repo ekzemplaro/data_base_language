@@ -1,0 +1,7 @@
+#
+export GROOVY_JAR=/usr/share/java/groovy-all.jar:/usr/share/java/groovy.jar
+export GROOVY_COMMON=/var/www/data_base/common/groovy_common
+export ORACLE_JAR=/mnt/sdb2/usr/lib/oracle/xe/app/oracle/product/10.2.0/client/jdbc/lib/ojdbc14.jar
+export CLASSPATH=./:$ORACLE_JAR:$GROOVY_JAR:$GROOVY_COMMON
+#
+java oracle_create

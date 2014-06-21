@@ -1,0 +1,42 @@
+<html>
+<body>
+odbc_sql2000.asp<p />
+<%  @LANGUAGE="VBSCRIPT" %>
+
+
+<%
+'
+Response.write ("*** start ***<p />")
+'-----------------------------------------
+'	odbc_sql2000.asp
+'
+'			Dec/25/2012
+'-----------------------------------------
+
+
+Response.write "*** 開始 ***<p />"
+
+Set cn = Server.CreateObject("ADODB.Connection")
+Set rs = Server.CreateObject("ADODB.Recordset")
+
+cn.Open "CITY","scott","tiger"
+
+sql = "SELECT name from T0001 where ID=1"
+rs.Open sql, cn
+
+mado = rs.Fields(0)
+rs.Close
+
+Response.write (mado & "<p />")
+
+cn.Close
+
+Set cn = Nothing
+Set rs = Nothing
+
+Response.write "*** 終了 ***<p />"
+
+'-----------------------------
+%>
+</body>
+</html>

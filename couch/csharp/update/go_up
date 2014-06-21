@@ -1,0 +1,2 @@
+export http_proxy=""
+./couch_update.exe t2024 34892500

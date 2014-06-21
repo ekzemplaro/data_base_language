@@ -1,0 +1,7 @@
+#
+COMMON=/var/www/data_base/common
+CSHARP_COMMON=$COMMON/csharp_common
+ln -s $CSHARP_COMMON/table_manipulate.dll .
+#
+ln -s $COMMON/dll/DynamicJson.dll .
+#

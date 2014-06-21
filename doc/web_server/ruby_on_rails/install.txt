@@ -1,0 +1,24 @@
+<blockquote>
+<ol>
+<li>gem のインストール</li>
+tar xvfz rubygems-1.8.17.tgz<p />
+cd rubygems-1.8.17<br />
+# ruby ./setup.rb<p />
+<li>関連パッケージのインストール</li>
+# apt-get install ruby1.9.1-dev<br />
+# apt-get install nodejs<br />
+# apt-get install sqlite3<br />
+# apt-get install libsqlite3-dev<p />
+
+<li>gem を使ってのインストール</li>
+# gem install rubygems-update<br />
+# gem install rails<br />
+# gem install jquery-rails<br />
+# gem install sass-rails<br />
+# gem install sqlite3<br />
+# gem install coffee-rails<br />
+# gem install uglifier<p />
+
+</ol>
+
+</blockquote>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+</script>
+<title>samba Apr/24/2014</title>
+</head>
+<body>
+<h2>samba の設定 in Ubuntu 14.04</h2><p />
+
+
+
+<blockquote>
+<pre>
+ii  samba    2:4.1.6+dfsg-1ubuntu2    amd64  SMB/CIFS file, print, and login server for Unix
+</pre>
+</blockquote>
+
+
+共有フォルダーの設定<p />
+/etc/samba/smb.conf<p />
+<blockquote>
+<pre>
+#======================= Share Definitions =======================
+[samba]
+path = /var/tmp/samba
+writeable = yes
+force create mode = 0666
+force directory mode = 0777
+guest ok = yes
+guest only = yes
+#
+[uchida]
+path = /tmp
+writeable = yes
+force create mode = 0666
+force directory mode = 0777
+guest ok = yes
+guest only = yes
+</pre>
+</blockquote>
+
+再起動<p />
+<blockquote>
+sudo service nmbd stop<br />
+sudo service smbd stop<br />
+sudo service nmbd start<br />
+sudo service smbd start<br />
+</blockquote>
+<hr />
+
+sudo service samba4 start<br />
+sudo service samba4 stop<br />
+<hr />
+<a href="/data_base/data_base.html">Return</a><p />
+Apr/24/2014 AM 08:15<p />
+</body>
+</html>

@@ -1,0 +1,87 @@
+// --------------------------------------------------------------
+/*
+	create/xindice_create.java
+
+				May/17/2011
+
+*/
+// --------------------------------------------------------------
+import org.w3c.dom.Document;
+import org.w3c.dom.DOMImplementation;
+
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+
+// --------------------------------------------------------------
+public class xindice_create {
+// --------------------------------------------------------------
+public static void main(String[] args) throws Exception
+{
+	System.out.println("*** 開始 *** exist_create ***");
+
+	final String uri = "http://@cdbd026:8888/xindice/db";
+
+	String collections = "cities";
+	String name_in = "cities";
+
+	String uri_aa = uri + "/" + collections + "/" + name_in;
+
+	String str_xml_out =create_document_proc ();
+
+
+	try
+	{
+	get_uri.rest_put_proc (uri_aa,str_xml_out,"text/xml");
+	}
+	catch (Exception ee)
+	{
+	ee.printStackTrace ();
+	}
+
+	System.out.println("***** 終了 *****");
+}
+ 
+// --------------------------------------------------------------
+static HashMap <String, HashMap <String,String>>
+data_prepare_proc ()
+{
+	HashMap <String, HashMap<String,String>> dict_aa
+		= new HashMap <String, HashMap<String,String>> ();
+
+	dict_aa = text_manipulate.dict_append_proc
+		(dict_aa,0271,"青森",51276,"2008-2-15");
+
+	dict_aa = text_manipulate.dict_append_proc
+		(dict_aa,0272,"弘前",49142,"2008-4-23");
+
+	dict_aa = text_manipulate.dict_append_proc
+		(dict_aa,0273,"八戸",99153,"2008-5-24");
+
+	dict_aa = text_manipulate.dict_append_proc
+		(dict_aa,0274,"三沢",89124,"2008-9-14");
+
+	dict_aa = text_manipulate.dict_append_proc
+		(dict_aa,0275,"黒石",72131,"2008-8-12");
+
+	dict_aa = text_manipulate.dict_append_proc
+		(dict_aa,0276,"むつ",28529,"2008-7-28");
+
+	dict_aa = text_manipulate.dict_append_proc
+		(dict_aa,0277,"五所川原",39457,"2008-6-19");
+
+	dict_aa = text_manipulate.dict_append_proc
+		(dict_aa,0278,"十和田",47362,"2008-11-15");
+
+	dict_aa = text_manipulate.dict_append_proc
+		(dict_aa,0279,"平川",56872,"2008-10-24");
+
+	return	dict_aa;
+}
+ 
+// --------------------------------------------------------------
+}
+// --------------------------------------------------------------

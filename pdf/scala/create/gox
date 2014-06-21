@@ -1,0 +1,6 @@
+#
+JAR=/var/www/data_base/common/jar
+export CLASSPATH=.:$JAR/iText-5.0.5.jar:$JAR/iTextAsian-5.0.1.jar
+#
+scala pdf_create /var/tmp/pdf/cities.pdf
+#

@@ -1,0 +1,36 @@
+
+<meta content="Program Language Examples in PicoLisp" name="description">
+<meta content="PicoLisp,クライアント,接続,言語,サンプル" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<title>PicoLisp Nov/02/2012</title>
+</head>
+<body>
+<h2><a href="http://www.picolisp.com">PicoLisp</a></h2><p />
+
+<pre>
+ii  picolisp    3.1.0.7-1     amd64        Lisp interpreter and application server framework
+</pre>
+
+<blockquote>
+	<a href="http://software-lab.de/doc/">PicoLisp Reference</a><p />
+	<a href="http://www.prodevtips.com/2008/03/28/pico-lisp/">
+	PicoLisp at first glance</a><p />
+</blockquote>
+
+<blockquote>
+</blockquote>
+
+<blockquote>
+</blockquote>
+
+<blockquote>
+	picolisp/dbg<br /> 
+	: (+ 8 9)<br />
+	-> 17<br />
+	: (bye)<br />
+</blockquote>
+
+<blockquote>
+</blockquote>
+
+

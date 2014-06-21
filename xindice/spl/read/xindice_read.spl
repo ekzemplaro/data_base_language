@@ -1,0 +1,25 @@
+// -----------------------------------------------------------------
+//	xindice_read.spl
+//
+//						Sep/06/2011
+// -----------------------------------------------------------------
+load "curl";
+load "xml";
+
+#file-as-code  /var/www/data_base/common/spl_common/xml_manipulate.spl;
+// -----------------------------------------------------------------
+write ("*** 開始 ***\n");
+
+var result = curl("http://host_dbase:8888/xindice/db/cities/cities");
+
+// debug result.header;
+// debug result.body;
+var str_xml = result.body;
+
+var keys = ["t0271","t0272","t0273","t0274","t0275",
+		"t0276","t0277","t0278","t0279"];
+
+xml_display_proc (str_xml,keys);
+
+write ("*** 終了 ***\n");
+// -----------------------------------------------------------------

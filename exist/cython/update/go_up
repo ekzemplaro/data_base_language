@@ -1,0 +1,7 @@
+#
+#
+export http_proxy=""
+#
+echo "import exist_update" > tmp_execute.py
+#
+python ./tmp_execute.py t4251 5682300

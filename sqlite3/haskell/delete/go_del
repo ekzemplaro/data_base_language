@@ -1,0 +1,2 @@
+#
+runghc sqlite3_delete.hs /var/tmp/sqlite3/cities.db t0718

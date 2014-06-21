@@ -1,0 +1,1 @@
+./json_create.st -a /var/tmp/json/cities.json

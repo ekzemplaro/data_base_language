@@ -1,0 +1,1 @@
+newlisp -c mysql_create.lsp

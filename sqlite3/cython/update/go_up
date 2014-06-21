@@ -1,0 +1,5 @@
+#
+#
+echo "import sqlite3_update" > tmp_execute.py
+#
+python ./tmp_execute.py /var/tmp/sqlite3/cities.db t0714 48912500

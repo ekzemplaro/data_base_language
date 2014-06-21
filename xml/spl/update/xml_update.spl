@@ -1,0 +1,31 @@
+// -------------------------------------------------------------------
+//	xml_update.spl
+//
+//						Feb/06/2012
+// -------------------------------------------------------------------
+load "xml";
+load "encode_xml";
+load "file";
+
+#file-as-code  /var/www/data_base/common/spl_common/xml_manipulate.spl;
+
+// -------------------------------------------------------------------
+write ("*** 開始 ***\n");
+
+var xml_file = argv[0];
+var key_in = argv[1];
+var population_in = argv[2];
+
+write (xml_file ~ "\t");
+write (key_in ~ "\t");
+write (population_in ~ "\n");
+
+var str_xml = file_read (xml_file);
+
+var keys = ["t2261","t2262","t2263","t2264","t2265",
+		"t2266","t2267","t2268","t2269","t2270"];
+
+xml_display_proc (str_xml,keys);
+
+write ("*** 終了 ***\n");
+// -----------------------------------------------------------------

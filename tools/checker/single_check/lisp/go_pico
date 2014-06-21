@@ -1,0 +1,5 @@
+#
+../single_check.sh text pico
+../single_check.sh csv pico
+#../single_check.sh xml pico
+#../single_check.sh json pico

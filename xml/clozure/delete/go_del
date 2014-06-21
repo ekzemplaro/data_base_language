@@ -1,0 +1,2 @@
+ccl64 -l  xml_delete.lisp --eval '(quit)' -- /var/tmp/xml_file/cities.xml t2264
+#

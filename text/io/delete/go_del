@@ -1,0 +1,3 @@
+#
+./text_delete.io /var/tmp/plain_text/cities.txt t2386
+chmod 666 /var/tmp/plain_text/cities.txt

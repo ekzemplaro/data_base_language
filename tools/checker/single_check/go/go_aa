@@ -1,0 +1,7 @@
+#
+../single_check.sh text go
+../single_check.sh csv go
+#../single_check.sh xml go
+../single_check.sh json go
+#../single_check.sh excel go
+#

@@ -1,0 +1,78 @@
+#! /usr/bin/bsh
+//
+//	mcachedb_create.bsh
+//
+//					Oct/02/2012
+//
+// --------------------------------------------------------------
+import com.danga.MemCached.SockIOPool;
+import com.danga.MemCached.MemCachedClient;
+// --------------------------------------------------------------
+source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
+source ("/var/www/data_base/common/bsh_common/mcached_manipulate.bsh");
+// --------------------------------------------------------------
+Map data_prepare_proc ()
+{
+	Map dict_aa = new HashMap ();
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t1521","新潟",53976,"2000-4-15");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t1522","長岡",31496,"2000-5-23");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t1523","新発田",25371,"2000-9-24");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t1524","上越",87624,"2000-3-14");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t1525","糸魚川",72531,"2000-4-12");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t1526","加茂",28529,"2000-7-28");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t1527","三条",39457,"2000-6-19");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t1528","佐渡",65284,"2000-10-15");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t1529","柏崎",74391,"2000-11-24");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t1530","村上",28436,"2000-8-7");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t1531","十日町",82956,"2000-4-12");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t1532","五泉",91543,"2000-2-21");
+
+
+	return	dict_aa;
+}
+
+// --------------------------------------------------------------
+System.out.println ("*** 開始 ***");
+
+Map dict_aa = data_prepare_proc ();
+
+dict_display_proc (dict_aa);
+
+String[] serverlist = { "localhost:21201" };
+SockIOPool pool = SockIOPool.getInstance();
+pool.setServers(serverlist);
+pool.setHashingAlg(SockIOPool.NEW_COMPAT_HASH);
+pool.initialize();
+
+MemCachedClient mc = new MemCachedClient();
+mc.setPrimitiveAsString (true);
+mc.setSanitizeKeys (false);
+
+dict_to_mcached_proc (mc,dict_aa);
+
+System.out.println ("*** 終了 ***");
+// --------------------------------------------------------------

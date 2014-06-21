@@ -1,0 +1,2 @@
+#
+../bin/process_db.sh java java common.txt

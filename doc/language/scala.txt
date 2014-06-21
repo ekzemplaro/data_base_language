@@ -1,0 +1,23 @@
+<title>Scala Jul/31/2013</title>
+</head>
+<body>
+<h2><a href="http://www.scala-lang.org">Scala</a></h2><p />
+
+<blockquote>
+<pre>
+ii  scala     2.9.2+dfsg-1   all     Scala programming language
+</pre>
+</blockquote>
+
+型を調べる。<br />
+<blockquote>
+	println (dict_aa.getClass)<p />
+</blockquote>
+
+Int に変換<br />
+<blockquote>
+	var aa = 12.345<br />
+	var ii = 5<br />
+	ii = aa.toInt<br />
+</blockquote>
+

@@ -1,0 +1,5 @@
+#
+ABCL=/var/www/data_base/common/jar/abcl
+#
+java -jar  $ABCL/abcl.jar --load tyrant_update.lisp --eval '(quit)' \
+		t4763 1925700

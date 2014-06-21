@@ -1,0 +1,2 @@
+#
+runghc text_read.hs /var/tmp/plain_text/cities.txt

@@ -1,0 +1,22 @@
+<%@ Page Language="C#" Debug=True AutoEventWireup="True" CodeFile="asp_sqlite3_adapter.aspx.cs" Inherits="asp_sqlite3_adapter" %>
+
+<html>
+<head runat="server">
+<title>asp_sqlite3_adapter.aspx</title>
+</head>
+<body>
+<ol>
+<h2>City Population</h2>
+</ol>
+    <form id="form1" runat="server">
+    <div>
+        <asp:GridView ID="GridView_A" runat="server">
+        </asp:GridView>
+    </div>
+    </form>
+<p>
+<hr>
+<a href="../../sample.html">Return</a><p>
+Aug/07/2009<br>
+</body>
+</html> 

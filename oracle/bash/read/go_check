@@ -1,0 +1,1 @@
+sqlplus scott/tiger@spn109:1521/xe @/var/www/uchida/data_base/bash_common/sql_files/oracle/oracle_read.sql

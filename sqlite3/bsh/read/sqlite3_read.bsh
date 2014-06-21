@@ -1,0 +1,23 @@
+#! /usr/bin/bsh
+//
+//	sqlite3_read.bsh
+//
+//						Sep/25/2012
+//
+// ---------------------------------------------------------------------
+source ("/var/www/data_base/common/bsh_common/sql_manipulate.bsh");
+// ---------------------------------------------------------------------
+System.out.println ("*** 開始 ***");
+String sqlite3_file = bsh.args[0];
+
+Class.forName ("org.sqlite.JDBC");
+
+String str_connect = "jdbc:sqlite:" + sqlite3_file;
+Connection conn = DriverManager.getConnection (str_connect);
+
+sql_display_proc (conn);
+
+
+conn.close ();
+System.out.println ("*** 終了 ***");
+// ---------------------------------------------------------------------

@@ -1,0 +1,4 @@
+#
+export CLASSPATH=.:/usr/share/java/hsqldb.jar
+#
+./hsqldb_create.bsh

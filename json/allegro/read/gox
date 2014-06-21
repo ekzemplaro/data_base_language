@@ -1,0 +1,2 @@
+#
+/opt/acl90express/alisp -#! json_read.cl /var/tmp/json/cities.json

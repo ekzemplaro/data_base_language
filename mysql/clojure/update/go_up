@@ -1,0 +1,9 @@
+#
+#
+SHARE=/usr/share/java
+export CLOJURE_CONTRIB=$SHARE/clojure-contrib-1.2.0.jar
+#
+export CLASSPATH=.:$SHARE/clojure.jar:$CLOJURE_CONTRIB:$SHARE/mysql-connector-java.jar
+#
+#
+java clojure.main mysql_update.clj  t3324 31456900

@@ -1,0 +1,2 @@
+#scala XML2JSON cities.xml 
+scala xml_to_json_Test

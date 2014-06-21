@@ -1,0 +1,26 @@
+// -----------------------------------------------------------------
+//	csv_delete.spl
+//
+//						Sep/06/2011
+// -----------------------------------------------------------------
+load "file";
+#file-as-code  /var/www/data_base/common/spl_common/text_manipulate.spl;
+// -----------------------------------------------------------------
+write ("*** 開始 ***\n");
+
+var file_text = argv[0];
+var id_in = argv[1];
+
+write (file_text ~ "\n");
+write (id_in ~ "\n");
+
+var dict_aa = csv_read_proc (file_text);
+
+delete dict_aa[id_in];
+
+dict_display_proc (dict_aa);
+
+csv_write_proc (file_text,dict_aa);
+
+write ("*** 終了 ***\n");
+// -----------------------------------------------------------------

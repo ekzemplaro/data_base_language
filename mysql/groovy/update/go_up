@@ -1,0 +1,7 @@
+#
+export MYSQL_JAR=/usr/share/java/mysql-connector-java.jar
+export GROOVY_JAR=/usr/share/java/groovy-all.jar:/usr/share/java/groovy.jar
+export GROOVY_COMMON=/var/www/data_base/common/groovy_common
+export CLASSPATH=.:$GROOVY_COMMON:$MYSQL_JAR:$GROOVY_JAR
+#
+java mysql_update t3322 8145600

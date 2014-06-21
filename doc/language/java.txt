@@ -1,0 +1,37 @@
+<title>Java Sep/12/2013</title>
+</head>
+<body>
+<h2><a href="http://www.oracle.com/technetwork/java/index.html">Java</a></h2><p />
+<blockquote>
+<pre>
+ii  openjdk-7-jdk:amd64   7u25-2.3.10-1ubuntu0.13.04.2    amd64   OpenJDK Development Kit (JDK)
+ii  libcommons-httpclient-java     3.1-10.2  all    A Java(TM) library for creating HTTP clients
+</pre>
+</blockquote>
+
+jar の中身の確認<br />
+<blockquote>
+	To show contents in aaa.jar<p />
+	jar -tf aaa.jar<p />
+</blockquote>
+
+バージョンの確認<br />
+<blockquote>
+	javac -J-version<p />
+	java -version<p />
+</blockquote>
+
+バージョンの切り替え<br />
+<blockquote>
+	sudo update-alternatives --config java<p />
+</blockquote>
+
+コンパイル<br />
+<blockquote>
+javac -encoding UTF-8 source.java
+</blockquote>
+
+実行<br />
+<blockquote>
+java -Dfile.encoding=UTF-8 source
+</blockquote>

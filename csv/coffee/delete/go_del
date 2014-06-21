@@ -1,0 +1,1 @@
+./csv_delete.coffee /var/tmp/csv/cities.csv t1271

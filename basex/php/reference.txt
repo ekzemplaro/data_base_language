@@ -1,0 +1,3 @@
+curl_get.php
+text_manipulate.php
+xml_manipulate.php

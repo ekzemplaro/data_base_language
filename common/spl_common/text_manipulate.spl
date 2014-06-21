@@ -1,0 +1,108 @@
+// -----------------------------------------------------------------
+//	text_manipulate.spl
+//
+//						Sep/06/2011
+// -----------------------------------------------------------------
+function dict_append_proc (dict_aa,key,name_in,population_in,date_mod_in)
+{
+	var unit_aa;
+	unit_aa["name"]=name_in;
+	unit_aa["population"]=population_in;
+	unit_aa["date_mod"]=date_mod_in;
+
+	dict_aa[key] = unit_aa;
+
+	return (dict_aa);
+}
+
+// -----------------------------------------------------------------
+function dict_display_proc (dict_aa)
+{
+	foreach key (dict_aa)
+		{
+		record_display_proc (key,dict_aa);
+		}
+}
+
+// -----------------------------------------------------------------
+function record_display_proc (key,dict_aa)
+{
+	write (key ~ "\t");
+	write (dict_aa[key].name ~ "\t");
+	write (dict_aa[key].population ~ "\t");
+	write (dict_aa[key].date_mod ~ "\n");
+}
+
+// -----------------------------------------------------------------
+function dict_update_proc (dict_aa,id_in,population_in)
+{
+	var today = time_fmt("%Y-%m-%d", time_gm(time ()));
+	var unit_aa = dict_aa[id_in];
+	unit_aa.population = population_in;
+	unit_aa.date_mod = today;
+}
+
+// -----------------------------------------------------------------
+function text_read_proc (file_in)
+{
+var dict_aa;
+var lines = file_read (file_in) =~ /[^\n]*/Ag;
+
+foreach[] line (lines)
+	{
+	var cols = line =~ /[^\t]*/Ag;
+	dict_append_proc (dict_aa,cols[0],cols[1],cols[2],cols[3]);
+	}
+
+	return	(dict_aa);
+}
+
+// -----------------------------------------------------------------
+function text_write_proc (file_out,dict_aa)
+{
+	var delimit = "\t";
+	text_write_exec_proc (file_out,dict_aa,delimit);
+}
+
+// -----------------------------------------------------------------
+function text_write_exec_proc (file_out,dict_aa,delimit)
+{
+	var out_str = "";
+
+	foreach key (dict_aa)
+		{
+		if (1 < (lengthof key))
+			{
+			out_str ~= key ~ delimit;
+			out_str ~= dict_aa[key].name ~ delimit;
+			out_str ~= dict_aa[key].population ~ delimit;
+			out_str ~= dict_aa[key].date_mod ~ "\n";
+			}
+		}
+
+	file_write (file_out,out_str);
+}
+
+// -----------------------------------------------------------------
+function csv_read_proc (file_in)
+{
+var dict_aa;
+var lines = file_read (file_in) =~ /[^\n]*/Ag;
+
+foreach[] line (lines)
+	{
+	var cols = line =~ /[^,]*/Ag;
+	dict_append_proc (dict_aa,cols[0],cols[1],cols[2],cols[3]);
+	}
+
+	return	(dict_aa);
+}
+
+// -----------------------------------------------------------------
+function csv_write_proc (file_out,dict_aa)
+{
+	var delimit = ",";
+	text_write_exec_proc (file_out,dict_aa,delimit);
+}
+
+// -----------------------------------------------------------------

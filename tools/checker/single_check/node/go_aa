@@ -1,0 +1,7 @@
+#
+../single_check.sh text node
+../single_check.sh csv node
+../single_check.sh xml node
+../single_check.sh json node
+#../single_check.sh excel node
+#

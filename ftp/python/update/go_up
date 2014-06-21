@@ -1,0 +1,4 @@
+#
+export http_proxy=""
+export ftp_proxy=""
+./ftp_update.py t0362 37654200

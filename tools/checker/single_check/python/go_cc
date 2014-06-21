@@ -1,0 +1,9 @@
+#
+#
+../single_check.sh sqlite3 python
+../single_check.sh mysql python
+../single_check.sh postgre python
+../single_check.sh firebird python
+#
+../single_check.sh derby python
+#

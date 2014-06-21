@@ -1,0 +1,2 @@
+json_manipulate.lsp
+text_manipulate.lsp

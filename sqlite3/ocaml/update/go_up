@@ -1,0 +1,3 @@
+#
+./sqlite3_update /var/tmp/sqlite3/cities.db t0716 5842100
+

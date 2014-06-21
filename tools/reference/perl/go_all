@@ -1,0 +1,2 @@
+#
+../bin/process_db.sh perl pm common.txt

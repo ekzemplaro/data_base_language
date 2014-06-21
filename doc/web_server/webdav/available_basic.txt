@@ -1,0 +1,19 @@
+Listen 3014
+<VirtualHost *:3014>
+
+    DocumentRoot /mnt/host_aa/work_area_bb
+    <Directory /mnt/host_aa/work_area_bb>
+
+        Options Indexes MultiViews
+        DAV On
+        AllowOverride None
+        Order allow,deny
+        allow from all
+
+	AuthType Basic
+	AuthName "WebDAV Server"
+	AuthUserFile "/etc/apache2/.htpasswd"
+	Require user scott
+    </Directory>
+
+</VirtualHost>

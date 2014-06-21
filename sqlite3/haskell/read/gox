@@ -1,0 +1,3 @@
+#
+db_file=/var/tmp/sqlite3/cities.db
+runghc sqlite3_read.hs $db_file

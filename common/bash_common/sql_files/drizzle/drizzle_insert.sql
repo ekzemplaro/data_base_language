@@ -1,0 +1,10 @@
+use city;
+insert into cities set id='t2651',name='京都',population=27495,date_mod='2001-7-12';
+insert into cities set id='t2652',name='福知山',population=41527,date_mod='2001-4-1';
+insert into cities set id='t2653',name='舞鶴',population=34278,date_mod='2001-6-29';
+insert into cities set id='t2654',name='綾部',population=27915,date_mod='2001-9-18';
+insert into cities set id='t2655',name='宇治',population=74156,date_mod='2001-1-17';
+insert into cities set id='t2656',name='宮津',population=84947,date_mod='2001-7-21';
+insert into cities set id='t2657',name='亀岡',population=93462,date_mod='2001-4-22';
+insert into cities set id='t2658',name='城陽',population=46178,date_mod='2001-5-23';
+insert into cities set id='t2659',name='向日',population=32781,date_mod='2001-11-2';

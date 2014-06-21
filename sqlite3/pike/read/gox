@@ -1,0 +1,1 @@
+./sqlite3_read.pike /var/tmp/sqlite3/cities.db

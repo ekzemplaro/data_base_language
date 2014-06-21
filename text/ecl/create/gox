@@ -1,0 +1,2 @@
+#
+ecl -shell text_create.lisp -eval '(quit)' -- /var/tmp/plain_text/cities.txt

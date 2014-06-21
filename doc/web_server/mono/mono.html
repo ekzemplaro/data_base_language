@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<script src="/js/jquery-2.1.1.min.js"></script>
+<script>
+jQuery (function ()
+{
+	jQuery ("#outarea_aa").text ("*** start ***");
+
+	jQuery ("#outarea_hh").text ("*** end ***");
+});
+</script>
+<title>Mono (Apr/16/2013)</title>
+</head>
+<body>
+
+Mono (Port 8084)<p />
+<blockquote>
+	mono-xsp4<p />
+	mono-gmcs<p />
+</blockquote>
+<blockquote>
+<a href="./debian.webapp.txt">/etc/xsp4/debian.webapp</a><br />
+を編集する。<p />
+
+
+/var/www/data_base/bin に　必要な　dll を置くか、リンクを作成する。<p />
+	<blockquote>
+		Memcached.ClientLibrary.dll<br />
+		Newtonsoft.Json.Net20.dll<br />
+		log4net.dll<br />
+		redis-sharp.dll<br />
+		table_manipulate.dll<br />
+	</blockquote>
+
+</blockquote>
+
+再起動<br />
+<blockquote>
+sudo service mono-xsp4 stop<br />
+sudo service mono-xsp4 start<br />
+</blockquote>
+
+
+<hr />
+<div id="result_aa">result_aa</div>
+<hr />
+<a href="/data_base/">Return</a><p />
+Jun/20/2014 AM 08:25<p />
+</body>
+</html>

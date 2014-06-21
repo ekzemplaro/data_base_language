@@ -1,0 +1,50 @@
+#
+SRC=/var/www/data_base/lang/jquery_python/update
+cd /usr/lib/cgi-bin/data_base/python
+#
+ln -s $SRC/master_python_update.py .
+ln -s $SRC/text_python_update.py .
+ln -s $SRC/csv_python_update.py .
+ln -s $SRC/xml_python_update.py .
+ln -s $SRC/json_python_update.py .
+ln -s $SRC/calc_python_update.py .
+ln -s $SRC/excel_python_update.py .
+ln -s $SRC/xlsx_python_update.py .
+ln -s $SRC/pdf_python_update.py .
+ln -s $SRC/epub_python_update.py .
+#
+ln -s $SRC/sqlite3_python_update.py .
+ln -s $SRC/oracle_python_update.py .
+ln -s $SRC/mssql_python_update.py .
+ln -s $SRC/db2_python_update.py .
+#
+ln -s $SRC/mysql_python_update.py .
+ln -s $SRC/postgre_python_update.py .
+ln -s $SRC/firebird_python_update.py .
+ln -s $SRC/drizzle_python_update.py .
+ln -s $SRC/derby_python_update.py .
+#
+ln -s $SRC/xindice_python_update.py .
+ln -s $SRC/exist_python_update.py .
+ln -s $SRC/basex_python_update.py .
+ln -s $SRC/dbxml_python_update.py .
+#
+ln -s $SRC/gdbm_python_update.py .
+ln -s $SRC/berkeley_python_update.py .
+ln -s $SRC/cdb_python_update.py .
+ln -s $SRC/mcached_python_update.py .
+ln -s $SRC/mcachedb_python_update.py .
+ln -s $SRC/redis_python_update.py .
+ln -s $SRC/tcbn_python_update.py .
+ln -s $SRC/tyrant_python_update.py .
+#
+ln -s $SRC/couch_python_update.py .
+ln -s $SRC/ftp_python_update.py .
+ln -s $SRC/webdav_python_update.py .
+#
+ln -s $SRC/mongo_python_update.py .
+ln -s $SRC/cassandra_python_update.py .
+ln -s $SRC/riak_python_update.py .
+#
+ln -s $SRC/maria_python_update.py .
+#

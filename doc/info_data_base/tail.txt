@@ -1,0 +1,16 @@
+<div class="tail">
+<hr />
+<div id="outarea_aa">outarea_aa</div>
+<div id="outarea_bb">outarea_bb</div>
+<div id="outarea_cc">outarea_cc</div>
+<div id="outarea_dd">outarea_dd</div>
+<div id="outarea_ee">outarea_ee</div>
+<div id="outarea_ff">outarea_ff</div>
+<div id="outarea_gg">outarea_gg</div>
+<div id="outarea_hh">outarea_hh</div>
+<hr />
+<a href="/data_base/data_base.html">Return</a><p />
+Nov/11/2013 AM 08:15<p />
+</div>
+</body>
+</html>

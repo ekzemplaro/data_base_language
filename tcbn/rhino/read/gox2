@@ -1,0 +1,15 @@
+#
+SHARE=/usr/local/lib
+export CPPFLAGS="-I/usr/lib/jvm/java-6-openjdk/include/"
+export JAVA_HOME=/usr/lib/jvm/java-6-openjdk
+export PATH=$JAVA_HOME/bin:$PATH
+JAVA_CLASSPATH=$SHARE/js.jar:$SHARE/jline.jar
+JAVA_COMMON=/var/www/data_base/common/java_common
+JSONIC=$JAVA_COMMON/jar/jsonic-1.1.2.jar
+#
+#
+export CLASSPATH=./:$CLASSPATH:$SHARE/tokyocabinet.jar
+export CLASSPATH=$CLASSPATH:$JAVA_COMMON:$JSONIC:$JAVA_CLASSPATH
+LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$SHARE
+#
+./tcbn_read.js

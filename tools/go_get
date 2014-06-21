@@ -1,0 +1,2 @@
+#
+rsync -avz --delete --exclude-from=ex01.txt /var/www/data_base/ /tmp/data_base

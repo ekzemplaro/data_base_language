@@ -1,0 +1,4 @@
+SCALA_COMMON=/var/www/data_base/common/scala_common
+export CLASSPATH=./:$SCALA_COMMON
+#
+scala csv_read /var/tmp/csv/cities.csv

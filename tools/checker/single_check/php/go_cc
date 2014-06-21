@@ -1,0 +1,8 @@
+#
+#
+../single_check.sh sqlite3 php
+../single_check.sh mysql php
+../single_check.sh postgre php
+../single_check.sh firebird php
+#
+#

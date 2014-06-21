@@ -1,0 +1,6 @@
+SCALA_COMMON=/var/www/data_base/common/scala_common
+HGDB_ROOT=/home/uchida/dbm/hgdb/hypergraphdb-1.1
+export CLASSPATH=./:$HGDB_ROOT/hypergraphdb.jar:$HGDB_ROOT/jars/db.jar:$SCALA_COMMON
+#
+#scala -Djava.library.path=$HGDB_ROOT/native hgdb_read
+scala  hgdb_read

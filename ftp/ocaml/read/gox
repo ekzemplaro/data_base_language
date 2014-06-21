@@ -1,0 +1,4 @@
+#
+export ftp_proxy=""
+./ftp_read
+#

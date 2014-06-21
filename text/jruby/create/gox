@@ -1,0 +1,3 @@
+#
+#./text_create.rb cities.txt
+./text_create.rb /var/tmp/plain_text/cities.txt

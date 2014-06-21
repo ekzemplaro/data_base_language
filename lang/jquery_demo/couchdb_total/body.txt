@@ -1,0 +1,24 @@
+<body>
+<h2>jQuery CouchDB</h2><p />
+<div class="top">
+<button class="filter" id="all">全て</button>
+<button class="filter" id="tohoku">北海道、東北</button>
+<button class="filter" id="kanto">関東</button>
+<button class="filter" id="chyubu">中部</button>
+<button class="filter" id="kansai">関西</button>
+<button class="filter" id="chyugoku">中国、四国</button>
+<button class="filter" id="kyusyu">九州</button>
+<span />
+<select id="mode" name="mode">
+<option selected>閲覧</option>
+<option>編集</option>
+<option>追加</option>
+<option>削除</option>
+<option>初期化</option>
+</select>
+<p />
+</div>
+<div class="nava">nava</div>
+<div class="contents">contents</div>
+
+<div id="result_aa">result_aa</div>

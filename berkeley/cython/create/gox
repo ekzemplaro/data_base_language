@@ -1,0 +1,4 @@
+#
+echo "import berkeley_create" > tmp_execute.py
+#
+python ./tmp_execute.py /var/tmp/berkeley/cities.db

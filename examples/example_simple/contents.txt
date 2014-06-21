@@ -1,0 +1,10 @@
+<body>
+<h2>example_simple (Aug/21/2013)</h2><p />
+<div class="top">
+</div>
+
+<div class="contents">contents</div>
+
+<div id="result_aa">result_aa</div>
+<hr />
+<a href="html_src/example_simple_src.html">example_simple_src.html</a><br/>

@@ -1,0 +1,10 @@
+export http_proxy=""
+#
+curl -X DELETE http://localhost:5984/sound_koho
+curl -X PUT http://localhost:5984/sound_koho
+#
+curl -X PUT http://localhost:5984/sound_koho/fukushima -d@fukushima.json
+curl -X PUT http://localhost:5984/sound_koho/gunma -d@gunma.json
+curl -X PUT http://localhost:5984/sound_koho/ibaraki -d@ibaraki.json
+curl -X PUT http://localhost:5984/sound_koho/saitama -d@saitama.json
+curl -X PUT http://localhost:5984/sound_koho/tochigi -d@tochigi.json

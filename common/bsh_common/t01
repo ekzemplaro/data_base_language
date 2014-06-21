@@ -1,0 +1,42 @@
+// --------------------------------------------------------------
+data_put_proc (MemCachedClient mc,
+	String key,String name_in,int population_in,String date_mod_in)
+{
+
+	Map dict_unit = new HashMap ();
+	dict_unit.put ("name",name_in);
+	dict_unit.put ("population",population_in);
+	dict_unit.put ("date_mod",date_mod_in);
+
+	String str_json = JSON.encode (dict_unit);
+
+	if(mc.set(key, str_json))
+		{
+		System.out.println("set ok");
+		}
+	else
+		{
+		System.out.println("set ng");
+		}
+}
+
+// --------------------------------------------------------------
+dict_to_mcached_proc (MemCachedClient mc,Map dict_aa)
+{
+Set set_aaa = dict_aa.keySet ();
+
+	for (Object key_aa: set_aaa)
+		{
+		String key = (String)key_aa;
+		Map dict_unit = dict_aa.get (key_aa);
+
+		String nnx = dict_unit.get ("name");
+		String ppx = dict_unit.get ("population");
+		int population = Integer.parseInt (ppx);
+		String ddx = dict_unit.get ("date_mod");
+
+		data_put_proc (mc,key,nnx,population,ddx);
+		}
+}
+
+// --------------------------------------------------------------

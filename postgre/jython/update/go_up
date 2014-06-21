@@ -1,0 +1,6 @@
+#
+#
+export CLASSPATH=.:/usr/share/java/postgresql.jar
+#
+#
+./postgre_update.py t3465 4276800

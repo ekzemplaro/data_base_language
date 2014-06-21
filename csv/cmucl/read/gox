@@ -1,0 +1,3 @@
+#
+#
+lisp -load csv_read.lisp -eval '(quit)' -- '/var/tmp/csv/cities.csv'

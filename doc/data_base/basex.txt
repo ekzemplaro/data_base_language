@@ -1,0 +1,47 @@
+<meta content="Program Language Examples to connect to baseX" name="description">
+<meta content="baseX,クライアント,接続" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<title>baseX</title>
+</head>
+<body>
+<h1><a href="http://basex.org">baseX</a></h1>
+
+<blockquote>
+	BaseX772.zip
+</blockquote>
+
+Rest Server<p />
+<blockquote>
+	basex/bin/basexhttp<p />
+</blockquote>
+
+Rest Client<p />
+
+<blockquote>
+curl -X PUT http://admin:admin@localhost:8984/rest/cities -T cities.xml<p />
+
+curl -X GET http://admin:admin@localhost:8984/rest/cities?query=/<p />
+curl -X GET http://admin:admin@localhost:8984/rest/cities?query=//name<p />
+</blockquote>
+
+<hr />
+
+Server<p />
+<blockquote>
+	basex/bin/basexserver<p />
+</blockquote>
+
+Client<p />
+<blockquote>
+	basexclient<p />
+	Username: admin<br />
+	Password: admin<br />
+</blockquote>
+
+<blockquote>
+	create db cities cities.xml<p />
+	xquery //name<p />
+	exit<p />
+</blockquote>
+
+

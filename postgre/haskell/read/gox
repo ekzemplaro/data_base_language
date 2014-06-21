@@ -1,0 +1,2 @@
+#
+runghc postgre_read.hs

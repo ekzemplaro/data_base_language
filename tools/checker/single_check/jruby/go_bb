@@ -1,0 +1,8 @@
+#
+../single_check.sh sqlite3 jruby
+../single_check.sh mssql jruby
+../single_check.sh mysql jruby
+../single_check.sh postgre jruby
+../single_check.sh firebird jruby
+#
+#

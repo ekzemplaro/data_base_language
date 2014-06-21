@@ -1,0 +1,6 @@
+#
+../single_check.sh text java
+../single_check.sh csv java
+../single_check.sh xml java
+../single_check.sh json java
+#

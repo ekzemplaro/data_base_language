@@ -1,0 +1,1 @@
+./sheet_to_db.js ../sheet_aa.json lang_db.json

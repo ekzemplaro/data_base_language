@@ -1,0 +1,1 @@
+/opt/acl90express/alisp -#! text_read.cl /var/tmp/plain_text/cities.txt

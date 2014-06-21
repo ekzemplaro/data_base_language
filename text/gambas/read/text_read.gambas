@@ -1,0 +1,21 @@
+#! /usr/bin/gbs3
+'
+'	text_read.gambas
+'
+'					May/23/2013
+'
+' ------------------------------------------------------------------
+' ------------------------------------------------------------------
+'public sub main()
+	dim file_txt as string
+	dim result as string
+	print "*** 開始 ***"
+'
+	file_txt = "/var/tmp/plain_text/cities.txt"
+'	file_txt = Application.Args[1]
+	print file_txt
+	TRY result = file.Load (file_txt)
+	print result
+	print "*** 終了 ***"
+'end
+' ------------------------------------------------------------------

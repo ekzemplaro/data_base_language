@@ -1,0 +1,42 @@
+#
+SRC=/var/www/data_base/lang/jquery_ruby/create
+cd /usr/lib/cgi-bin/data_base/ruby
+#
+ln -s $SRC/master_ruby_create.rb master_ruby_create.rb
+ln -s $SRC/text_ruby_create.rb text_ruby_create.rb
+ln -s $SRC/csv_ruby_create.rb csv_ruby_create.rb
+ln -s $SRC/xml_ruby_create.rb xml_ruby_create.rb
+ln -s $SRC/json_ruby_create.rb json_ruby_create.rb
+ln -s $SRC/excel_ruby_create.rb excel_ruby_create.rb
+ln -s $SRC/pdf_ruby_create.rb pdf_ruby_create.rb
+#
+ln -s $SRC/sqlite3_ruby_create.rb sqlite3_ruby_create.rb
+ln -s $SRC/oracle_ruby_create.rb oracle_ruby_create.rb
+ln -s $SRC/mssql_ruby_create.rb mssql_ruby_create.rb
+ln -s $SRC/db2_ruby_create.rb db2_ruby_create.rb
+#
+ln -s $SRC/mysql_ruby_create.rb mysql_ruby_create.rb
+ln -s $SRC/postgre_ruby_create.rb postgre_ruby_create.rb
+ln -s $SRC/firebird_ruby_create.rb firebird_ruby_create.rb
+#
+ln -s $SRC/xindice_ruby_create.rb xindice_ruby_create.rb
+ln -s $SRC/exist_ruby_create.rb exist_ruby_create.rb
+ln -s $SRC/dbxml_ruby_create.rb dbxml_ruby_create.rb
+#
+ln -s $SRC/gdbm_ruby_create.rb gdbm_ruby_create.rb
+ln -s $SRC/berkeley_ruby_create.rb berkeley_ruby_create.rb
+ln -s $SRC/cdb_ruby_create.rb cdb_ruby_create.rb
+ln -s $SRC/mcached_ruby_create.rb mcached_ruby_create.rb
+ln -s $SRC/mcachedb_ruby_create.rb mcachedb_ruby_create.rb
+ln -s $SRC/redis_ruby_create.rb redis_ruby_create.rb
+ln -s $SRC/tcbn_ruby_create.rb tcbn_ruby_create.rb
+ln -s $SRC/tyrant_ruby_create.rb tyrant_ruby_create.rb
+#
+ln -s $SRC/couch_ruby_create.rb couch_ruby_create.rb
+ln -s $SRC/ftp_ruby_create.rb ftp_ruby_create.rb
+ln -s $SRC/webdav_ruby_create.rb webdav_ruby_create.rb
+#
+ln -s $SRC/mongo_ruby_create.rb mongo_ruby_create.rb
+ln -s $SRC/cassandra_ruby_create.rb cassandra_ruby_create.rb
+ln -s $SRC/riak_ruby_create.rb riak_ruby_create.rb
+#

@@ -1,0 +1,13 @@
+#
+SHARE=/usr/share/java
+SCALA_COMMON=/var/www/data_base/common/scala_common
+#
+export CPP=$SHARE/commons-httpclient-3.1.jar
+export CPP=$CPP:$SHARE/jboss-common.jar
+export CPP=$CPP:$SHARE/commons-logging-1.1.1.jar
+export CPP=$CPP:$SHARE/commons-logging-adapters-1.1.1.jar
+export CPP=$CPP:$SHARE/commons-logging-api-1.1.1.jar
+export CPP=$CPP:$SHARE/commons-codec-1.3.jar
+export CLASSPATH=./:$CPP:$SCALA_COMMON
+#
+scala riak_update t3254 57289100

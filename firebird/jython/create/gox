@@ -1,0 +1,7 @@
+#
+JAYBIRD_JAR=/var/www/data_base/common/jar/Jaybird/jaybird-full-2.1.6.jar
+export CLASSPATH=.:$JAYBIRD_JAR
+#
+./firebird_create.py
+#
+

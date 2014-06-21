@@ -1,0 +1,1 @@
+./json_read.pike /var/tmp/json/cities.json

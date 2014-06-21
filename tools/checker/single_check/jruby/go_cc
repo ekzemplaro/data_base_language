@@ -1,0 +1,6 @@
+#
+../single_check.sh derby jruby
+../single_check.sh hsqldb jruby
+../single_check.sh h2 jruby
+#
+#

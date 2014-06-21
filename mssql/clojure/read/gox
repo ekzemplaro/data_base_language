@@ -1,0 +1,5 @@
+export CLOJURE_CONTRIB=/usr/share/java/clojure-contrib.jar
+export MSSQL_JAR=/home/uchida/data_base/ms_sqlserver/jdbc/sqljdbc_2.0/jpn/sqljdbc4.jar
+export CLASSPATH=.:/usr/share/java/clojure.jar:$CLOJURE_CONTRIB:$MSSQL_JAR
+#
+java clojure.main mssql_read.clj 

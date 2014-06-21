@@ -1,0 +1,4 @@
+#
+echo "import csv_create" > tmp_execute.py
+#
+python ./tmp_execute.py /var/tmp/csv/cities.csv

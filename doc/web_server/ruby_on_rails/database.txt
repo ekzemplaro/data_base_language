@@ -1,0 +1,19 @@
+<blockquote>
+<pre>
+$ sqlite3 db/development.sqlite3
+SQLite version 3.7.7 2011-06-23 19:49:22
+Enter ".help" for instructions
+Enter SQL statements terminated with a ";"
+sqlite> .table
+publickaichoons    schema_migrations
+sqlite> select * from publickaichoons;
+1|燕の歌||ガブリエレ・ダンヌンチオ|Gabriele D'Annunzio|Italian|1863|1938||2012-03-06 02:35:51.721281|2012-03-06 02:51:12.152312
+2|声曲（もののね）||ガブリエレ・ダンヌンチオ||||||2012-03-06 02:36:13.145596|2012-03-06 02:36:13.145596
+3|真昼（まひる）||ルコント・ドゥ・リイル||||||2012-03-06 02:36:32.858351|2012-03-06 02:36:32.858351
+4|大饑餓||ルコント・ドゥ・リイル|Charles-Marie-René Leconte de Lisle|French|1818|1894||2012-03-06 02:36:59.837397|2012-03-06 02:53:09.477481
+5|象||ルコント・ドゥ・リイル||||||2012-03-06 02:37:38.041816|2012-03-06 02:37:38.041816
+6|珊瑚礁（さんごしよう）||ホセ・マリヤ・デ・エレディヤ||||||2012-03-06 02:38:10.688561|2012-03-06 02:38:10.688561
+sqlite> .exit
+</pre>
+
+</blockquote>

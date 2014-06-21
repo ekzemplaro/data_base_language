@@ -1,0 +1,1 @@
+/data_base/common/ejs_common/text_manipulate.es

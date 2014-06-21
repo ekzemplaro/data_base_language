@@ -1,0 +1,2 @@
+#
+ccl -l mysql_update.lisp --eval '(quit)' -- t3325 528341700

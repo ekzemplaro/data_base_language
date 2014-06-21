@@ -1,0 +1,2 @@
+#
+../bin/process_db.sh falcon fal common.txt

@@ -1,0 +1,8 @@
+<script src="jquery_bash_update.js"></script>
+<title>Bash Update Oct/14/2013</title>
+</head>
+<body>
+<center><h2>Bash Update</h2></center>
+<div class="right">
+<button id="update">更新</button><br />
+</div>

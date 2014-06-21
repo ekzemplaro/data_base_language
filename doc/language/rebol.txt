@@ -1,0 +1,10 @@
+<title>rebol Feb/16/2011</title>
+</head>
+<body>
+<h2><a href="http://www.rebol.com/">rebol</a></h2><p />
+<ol>
+	rebol-core-278-4-2.tar.gz<p />
+
+	sudo ln -s releases/rebol-core/rebol /usr/local/bin/rebol<p />
+</ol>
+

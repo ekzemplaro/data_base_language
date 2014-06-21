@@ -1,0 +1,14 @@
+<title>jruby Nov/28/2013</title>
+</head>
+<body>
+<h2><a href="http://www.jruby.org">jruby</a></h2><p />
+
+<blockquote>
+<pre>
+ii  jruby    1.5.6-5ubuntu1  all   100% pure-Java implementation of Ruby
+</pre>
+</blockquote>
+
+jruby-bin-1.7.12.tar.gz<p />
+# ln -s /home/uchida/lang/jruby/jruby-1.7.12/bin/jruby /usr/bin/jruby<p />
+

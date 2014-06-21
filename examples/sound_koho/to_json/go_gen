@@ -1,0 +1,54 @@
+#
+#./to_json.coffee ../cities/01HOKKAI.CSV.txt hokkaido.json
+#
+#./to_json.coffee ../cities/02AOMORI.CSV.txt aomori.json
+#./to_json.coffee ../cities/03IWATE.CSV.txt iwate.json
+#./to_json.coffee ../cities/04MIYAGI.CSV.txt miyagi.json
+#./to_json.coffee ../cities/05AKITA.CSV.txt akita.json
+#./to_json.coffee ../cities/06YAMAGA.CSV.txt yamagata.json
+#
+#./to_json.coffee ../cities/07FUKUSH.CSV.txt fukushima.json
+#./to_json.coffee ../cities/08IBARAK.CSV.txt ibaraki.json
+#./to_json.coffee ../cities/09TOCHIG.CSV.txt tochigi.json
+#./to_json.coffee ../cities/10GUMMA.CSV.txt gunma.json
+#./to_json.coffee ../cities/11SAITAM.CSV.txt saitama.json
+#
+#./to_json.coffee ../cities/12CHIBA.CSV.txt chiba.json
+#./to_json.coffee ../cities/13TOKYO.CSV.txt tokyo.json
+#./to_json.coffee ../cities/14KANAGA.CSV.txt kanagawa.json
+#
+#./to_json.coffee ../cities/15NIIGAT.CSV.txt niigata.json
+#./to_json.coffee ../cities/16TOYAMA.CSV.txt toyama.json
+#./to_json.coffee ../cities/17ISHIKA.CSV.txt ishikawa.json
+#./to_json.coffee ../cities/18FUKUI.CSV.txt fukui.json
+#./to_json.coffee ../cities/19YAMANA.CSV.txt yamanashi.json
+#./to_json.coffee ../cities/20NAGANO.CSV.txt nagano.json
+#./to_json.coffee ../cities/21GIFU.CSV.txt gifu.json
+#./to_json.coffee ../cities/22SHIZUO.CSV.txt shizuoka.json
+#./to_json.coffee ../cities/23AICHI.CSV.txt aichi.json
+#
+#./to_json.coffee ../cities/24MIE.CSV.txt mie.json
+#./to_json.coffee ../cities/25SHIGA.CSV.txt shiga.json
+./to_json.coffee ../cities/26KYOUTO.CSV.txt kyoto.json
+#./to_json.coffee ../cities/27OSAKA.CSV.txt osaka.json
+#./to_json.coffee ../cities/28HYOGO.CSV.txt hyogo.json
+#./to_json.coffee ../cities/29NARA.CSV.txt nara.json
+#./to_json.coffee ../cities/30WAKAYA.CSV.txt wakayama.json
+#./to_json.coffee ../cities/31TOTTOR.CSV.txt tottori.json
+#./to_json.coffee ../cities/32SHIMAN.CSV.txt shimane.json
+#./to_json.coffee ../cities/33OKAYAM.CSV.txt okayama.json
+#./to_json.coffee ../cities/34HIROSH.CSV.txt hiroshima.json
+#./to_json.coffee ../cities/35YAMAGU.CSV.txt yamaguchi.json
+#./to_json.coffee ../cities/36TOKUSH.CSV.txt tokushima.json
+#./to_json.coffee ../cities/37KAGAWA.CSV.txt kagawa.json
+#./to_json.coffee ../cities/38EHIME.CSV.txt ehime.json
+#./to_json.coffee ../cities/39KOCHI.CSV.txt kochi.json
+#.
+#./to_json.coffee ../cities/40FUKUOK.CSV.txt fukuoka.json
+#./to_json.coffee ../cities/41SAGA.CSV.txt saga.json
+#./to_json.coffee ../cities/42NAGASA.CSV.txt nagasaki.json
+#./to_json.coffee ../cities/43KUMAMO.CSV.txt kumamoto.json
+#./to_json.coffee ../cities/44OITA.CSV.txt oita.json
+#./to_json.coffee ../cities/45MIYAZA.CSV.txt miyazaki.json
+#./to_json.coffee ../cities/46KAGOSH.CSV.txt kagoshima.json
+#./to_json.coffee ../cities/47OKINAW.CSV.txt okinawa.json

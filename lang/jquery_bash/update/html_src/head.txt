@@ -1,0 +1,5 @@
+<title>jQuery bash_update Oct/14/2013</title>
+</head>
+<body>
+<h2>jQuery bash_update</h2>
+<blockquote>

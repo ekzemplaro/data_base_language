@@ -1,0 +1,2 @@
+#
+./csv_update.php /var/tmp/csv/cities.csv t1274 5546340

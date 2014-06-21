@@ -1,0 +1,10 @@
+#
+#../single_check.sh gdbm tcl
+#../single_check.sh berkeley tcl
+../single_check.sh mcached tcl
+../single_check.sh mcachedb tcl
+#
+../single_check.sh redis tcl
+../single_check.sh tcbn tcl
+../single_check.sh tyrant tcl
+#

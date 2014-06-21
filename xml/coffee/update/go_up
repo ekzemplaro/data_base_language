@@ -1,0 +1,2 @@
+export NODE_PATH=/home/uchida/node_modules
+./xml_update.coffee /var/tmp/xml_file/cities.xml t2265 821734500

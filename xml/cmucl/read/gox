@@ -1,0 +1,2 @@
+#
+lisp -load xml_read.lisp -eval '(quit)' -- '/var/tmp/xml_file/cities.xml'

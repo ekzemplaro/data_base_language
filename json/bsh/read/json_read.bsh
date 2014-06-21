@@ -1,0 +1,19 @@
+#! /usr/bin/bsh
+//
+// --------------------------------------------------------------
+import	net.arnx.jsonic.JSON;
+// --------------------------------------------------------------
+source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
+// --------------------------------------------------------------
+System.out.println ("*** 開始 ***");
+fname_in = bsh.args[0];
+System.out.println (fname_in);
+
+String str_in = file_to_str_proc (fname_in);
+
+Map dict_aa = JSON.decode (str_in);
+
+dict_display_proc (dict_aa);
+
+System.out.println ("*** 終了 ***");
+// --------------------------------------------------------------

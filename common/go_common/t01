@@ -1,0 +1,13 @@
+// ----------------------------------------------------------------
+func dict_to_mcached_proc (conn net.Conn,dict_aa map[string](map[string]string)) {
+	for key,value := range dict_aa {
+		fmt.Print (key + "\t")
+		fmt.Println (value["name"])
+		output, _ := json.Marshal (value)
+
+		json_str := string(output)
+		fmt.Println (json_str)
+		mcached_socket_write_proc (conn,key,json_str)
+		}
+
+}

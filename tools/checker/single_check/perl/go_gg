@@ -1,0 +1,9 @@
+#
+export PERL_BADLANG=0
+#
+../single_check.sh couch perl
+../single_check.sh ftp perl
+../single_check.sh webdav perl
+#../single_check.sh mongo perl
+#
+#

@@ -1,0 +1,3 @@
+#
+CSHARP_COMMON=/var/www/data_base/common/csharp_common
+ln -s $CSHARP_COMMON/table_manipulate.dll table_manipulate.dll

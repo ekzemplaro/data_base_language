@@ -1,0 +1,9 @@
+#
+#../single_check.sh text newlisp
+#../single_check.sh csv newlisp
+#../single_check.sh xml newlisp
+#../single_check.sh json newlisp
+#
+../single_check.sh sqlite3 newlisp
+#../single_check.sh mysql newlisp
+../single_check.sh postgre newlisp

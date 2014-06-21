@@ -1,0 +1,7 @@
+#
+COMMON=/var/www/data_base/common
+JAR_CASSANDRA=$COMMON/jar/cassandra
+#
+export CLASSPATH=./:$JAR_CASSANDRA/*
+#
+./cassandra_create.py

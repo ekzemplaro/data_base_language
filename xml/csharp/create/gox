@@ -1,0 +1,3 @@
+#
+#./xml_create.exe cities.xml
+./xml_create.exe /var/tmp/xml_file/cities.xml

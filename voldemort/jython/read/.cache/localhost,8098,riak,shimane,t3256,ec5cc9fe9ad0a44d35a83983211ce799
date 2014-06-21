@@ -1,0 +1,16 @@
+status: 200
+content-length: 0
+content-location: http://localhost:8098/riak/shimane/t3256
+x-riak-vclock: a85hYGBgzGDKBVIcypz/fgaaVdtnMCWa5LEyNF++foovCwA=
+-varied-accept-encoding: gzip, deflate
+vary: Accept-Encoding
+server: MochiWeb/1.1 WebMachine/1.9.2 (someone had painted it blue)
+last-modified: Mon, 08 Apr 2013 23:49:23 GMT
+-content-encoding: gzip
+link: </riak/shimane>; rel="up"
+etag: "6LKDy6AESV2bN7pKmaKiT1"
+date: Fri, 12 Apr 2013 00:02:09 GMT
+content-type: text/plain
+-varied-accept-encoding: gzip, deflate
+
+{"name":"浜田","population":314897500,"date_mod":"2013/04/09 8:49:23"}

@@ -1,0 +1,5 @@
+#
+export JAVA_COMMON=/var/www/data_base/common/java_common	
+export CLASSPATH=.:$JAVA_COMMON
+#
+java csv_update  /var/tmp/csv/cities.csv t1271 6917400

@@ -1,0 +1,33 @@
+scalac -cp /var/www/data_base/common/jar/cassandra/apache-cassandra-0.8.1.jar:/var/www/data_base/common/jar/cassandra/libthrift-0.6.jar:/var/www/data_base/common/jar/cassandra/log4j-1.2.16.jar:/var/www/data_base/common/jar/cassandra/slf4j-api-1.6.1.jar:/var/www/data_base/common/jar/cassandra/slf4j-log4j12-1.6.1.jar cassandra_manipulate.scala
+cassandra_manipulate.scala:40: error: not found: value Cassandra
+	val client = new Cassandra.Client(protocol)
+                         ^
+cassandra_manipulate.scala:48: error: not found: type ColumnPath
+	val nameColumn_nn = new ColumnPath(columnFamily)
+                                ^
+cassandra_manipulate.scala:51: error: not found: type ColumnPath
+	val nameColumn_pp = new ColumnPath(columnFamily)
+                                ^
+cassandra_manipulate.scala:54: error: not found: type ColumnPath
+	val nameColumn_dd = new ColumnPath(columnFamily)
+                                ^
+cassandra_manipulate.scala:77: error: not found: value Cassandra
+def get_single_proc (client:Cassandra.Client,nameColumn_nn:ColumnPath,nameColumn_pp:ColumnPath,nameColumn_dd:ColumnPath,
+                            ^
+cassandra_manipulate.scala:77: error: not found: type ColumnPath
+def get_single_proc (client:Cassandra.Client,nameColumn_nn:ColumnPath,nameColumn_pp:ColumnPath,nameColumn_dd:ColumnPath,
+                                                           ^
+cassandra_manipulate.scala:77: error: not found: type ColumnPath
+def get_single_proc (client:Cassandra.Client,nameColumn_nn:ColumnPath,nameColumn_pp:ColumnPath,nameColumn_dd:ColumnPath,
+                                                                                    ^
+cassandra_manipulate.scala:77: error: not found: type ColumnPath
+def get_single_proc (client:Cassandra.Client,nameColumn_nn:ColumnPath,nameColumn_pp:ColumnPath,nameColumn_dd:ColumnPath,
+                                                                                                             ^
+cassandra_manipulate.scala:65: error: dict_unit.size of type Int does not take parameters
+		if (0 < dict_unit.size ())
+                                  ^
+cassandra_manipulate.scala:84: error: not found: type Column
+	val col_nn = new Column ()
+                         ^
+10 errors found
+make: *** [cassandra_manipulate.class] エラー 1

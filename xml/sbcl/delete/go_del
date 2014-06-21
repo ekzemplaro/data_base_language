@@ -1,0 +1,1 @@
+./xml_delete.lisp /var/tmp/xml_file/cities.xml t2263

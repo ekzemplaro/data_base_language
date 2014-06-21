@@ -1,0 +1,9 @@
+#
+../single_check.sh text io
+../single_check.sh csv io
+#../single_check.sh xml io
+#../single_check.sh json io
+#../single_check.sh excel io
+#
+#../single_check.sh pdf io
+#../single_check.sh epub io

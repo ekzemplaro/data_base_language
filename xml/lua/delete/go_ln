@@ -1,0 +1,9 @@
+#
+LUA_COMMON=/var/www/data_base/common/lua_common
+LIB=$LUA_COMMON/lib
+#
+ln -s $LIB/LuaXML_lib.so LuaXML_lib.so
+ln -s $LIB/LuaXml.lua LuaXml.lua
+ln -s $LUA_COMMON/file_io.lua file_io.lua
+ln -s $LUA_COMMON/text_manipulate.lua text_manipulate.lua
+ln -s $LUA_COMMON/xml_manipulate.lua xml_manipulate.lua

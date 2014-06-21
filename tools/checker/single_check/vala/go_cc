@@ -1,0 +1,6 @@
+#
+../single_check.sh derby java
+../single_check.sh hsqldb java
+../single_check.sh h2 java
+#
+#

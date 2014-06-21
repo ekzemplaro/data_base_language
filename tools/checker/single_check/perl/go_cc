@@ -1,0 +1,9 @@
+#
+export PERL_BADLANG=0
+#
+#
+../single_check.sh sqlite3 perl
+../single_check.sh mysql perl
+../single_check.sh postgre perl
+../single_check.sh firebird perl
+#

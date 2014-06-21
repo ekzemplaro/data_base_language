@@ -1,0 +1,2 @@
+export http_proxy=""
+./couch_update.py t2028 25954200

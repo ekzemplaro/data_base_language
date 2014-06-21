@@ -1,0 +1,1 @@
+!/tail.txt/{print $1}

@@ -1,0 +1,4 @@
+#
+COMMON=/var/www/data_base/common
+DLL=$COMMON/dll
+ln -s $DLL/Newtonsoft.Json.Net20.dll .

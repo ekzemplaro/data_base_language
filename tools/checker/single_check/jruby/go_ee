@@ -1,0 +1,10 @@
+#
+#../single_check.sh gdbm jruby
+#../single_check.sh berkeley jruby
+../single_check.sh mcached jruby
+../single_check.sh mcachedb jruby
+#
+../single_check.sh redis jruby
+#../single_check.sh tcbn jruby
+../single_check.sh tyrant jruby
+#

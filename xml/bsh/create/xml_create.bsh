@@ -1,0 +1,63 @@
+#! /usr/bin/bsh
+//
+//	xml_create.bsh
+//
+//					Oct/02/2012
+//
+// --------------------------------------------------------------
+source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
+source ("/var/www/data_base/common/bsh_common/xml_manipulate.bsh");
+// --------------------------------------------------------------
+Map data_prepare_proc ()
+{
+	Map dict_aa = new HashMap ();
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t2261","静岡",61936,"2000-8-11");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t2262","浜松",32497,"2000-9-23");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t2263","沼津",25376,"2000-2-24");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t2264","三島",87624,"2000-3-14");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t2265","富士",72531,"2000-4-12");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t2266","熱海",28529,"2000-7-28");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t2267","富士宮",39457,"2000-6-19");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t2268","藤枝",65284,"2000-10-15");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t2269","御殿場",74391,"2000-11-24");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t2270","島田",87236,"2000-5-12");
+
+	return	dict_aa;
+}
+
+// --------------------------------------------------------------
+System.out.println ("*** 開始 ***");
+fname_out = bsh.args[0];
+System.out.println (fname_out);
+
+Map dict_aa = data_prepare_proc ();
+
+dict_display_proc (dict_aa);
+
+String str_xml = dict_to_xml_proc (dict_aa);
+
+// System.out.println (str_xml);
+file_write_proc (fname_out,str_xml);
+
+System.out.println ("*** 終了 ***");
+// --------------------------------------------------------------

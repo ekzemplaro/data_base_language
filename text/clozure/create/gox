@@ -1,0 +1,3 @@
+ccl64 -l  text_create.lisp --eval '(quit)' -- /var/tmp/plain_text/cities.txt
+#
+chmod 666 /var/tmp/plain_text/cities.txt

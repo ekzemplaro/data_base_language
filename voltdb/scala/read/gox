@@ -1,0 +1,2 @@
+export CLASSPATH=.:$GROOVY_JAR:/home/uchida/dbm/voltdb/voltdb-2.1.1/voltdb/*
+scala voltdb_read

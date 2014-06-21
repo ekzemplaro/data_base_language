@@ -1,0 +1,58 @@
+<meta content="Program Language Examples in node.js" name="description">
+<meta content="node.js,クライアント,接続,言語,サンプル" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<title>node.js Apr/10/2013</title>
+</head>
+<body>
+<h2><a href="http://nodejs.org">node.js</a></h2><p />
+<blockquote>
+<pre>
+ii  nodejs   0.4.9-1ubuntu3   Node.js event-based server-side javascript engine
+ii  npm      0.2.19-1         package manager for nodejs
+</pre>
+</blockquote>
+
+
+<blockquote>
+	node-v0.6.7.tar.gz<p />
+</blockquote>
+<blockquote>
+sudo apt-get install libssl-dev<p />
+</blockquote>
+<blockquote>
+	tar xvfz node-v0.6.7.tar.gz<p />
+	cd node-v0.6.7<br />
+	./configure<br />
+	make<br />
+	sudo make install<p />
+</blockquote>
+
+<blockquote>
+<pre>
+$ npm config set registry http://registry.npmjs.org/
+uchida@nlf132:~$ npm install ftp
+npm http GET http://registry.npmjs.org/ftp
+npm http 200 http://registry.npmjs.org/ftp
+npm http GET http://registry.npmjs.org/ftp/-/ftp-0.1.2.tgz
+npm http 200 http://registry.npmjs.org/ftp/-/ftp-0.1.2.tgz
+ftp@0.1.2 ./node_modules/ftp
+</pre>
+</blockquote>
+
+<blockquote>
+	npm install xml2js<p />
+	npm install ftp<p />
+	npm install sqlite3<p />
+	npm install redis<p />
+	npm install memcache<p />
+	npm install cradle<p />
+	npm install cascade<p />
+	npm install async<p />
+</blockquote>
+
+<blockquote>
+	<a href="http://blog.nodejitsu.com/6-must-have-nodejs-modules">
+		6 Must Have Node.js Modules</a><p />
+</blockquote>
+
+

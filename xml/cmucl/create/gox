@@ -1,0 +1,4 @@
+#
+export PATH=$PATH:/opt/cmucl/bin
+#
+lisp -load xml_create.lisp -eval '(quit)' -- '/var/tmp/xml_file/cities.xml'

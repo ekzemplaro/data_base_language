@@ -1,0 +1,7 @@
+#
+../single_check.sh text csharp
+../single_check.sh csv csharp
+../single_check.sh xml csharp
+../single_check.sh json csharp
+#../single_check.sh excel csharp
+#

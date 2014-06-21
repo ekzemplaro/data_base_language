@@ -1,0 +1,10 @@
+<script src="/js/jquery.json-2.4.min.js"></script>
+<script src="sound_koho.js"></script>
+<script src="show_nav.js"></script>
+<script src="show_contents.js"></script>
+<script src="couchdb_update.js"></script>
+<script src="contents_table.js"></script>
+<script src="change_monitor.js"></script>
+<link rel="stylesheet" href="sound_koho.css">
+<title>広報の音訳状況 (Dec/18/2012)</title>
+</head>

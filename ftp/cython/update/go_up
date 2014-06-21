@@ -1,0 +1,6 @@
+#
+export ftp_proxy=""
+#
+echo "import ftp_update" > tmp_execute.py
+#
+python ./tmp_execute.py t0365 76584200

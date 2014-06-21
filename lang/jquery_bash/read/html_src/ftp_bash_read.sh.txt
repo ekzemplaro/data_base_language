@@ -1,0 +1,1 @@
+../ftp_bash_read.sh

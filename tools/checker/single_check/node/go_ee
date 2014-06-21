@@ -1,0 +1,10 @@
+#
+#../single_check.sh gdbm node
+#../single_check.sh berkeley node
+../single_check.sh mcached node
+../single_check.sh mcachedb node
+#
+../single_check.sh redis node
+../single_check.sh tcbn node
+#../single_check.sh tyrant node
+#

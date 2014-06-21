@@ -1,0 +1,5 @@
+ls *.tcl > tmp01
+sed 's/tcl/node/' tmp01 >  tmp02
+sed 's/tcl/js/' tmp02 >  tmp03
+pr -m -t tmp01 tmp03 > tmp04
+awk '{print "mv",$1,$2}' tmp04 > tmp05

@@ -1,0 +1,3 @@
+#
+./csv_delete.io /var/tmp/csv/cities.csv t1279
+chmod 666 /var/tmp/csv/cities.csv

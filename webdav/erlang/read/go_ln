@@ -1,0 +1,6 @@
+#
+ERLANG_COMMON=/var/www/data_base/common/erlang_common
+ln -s $ERLANG_COMMON/json_manipulate.beam .
+#
+ln -s $ERLANG_COMMON/lib/mochijson2.beam .
+

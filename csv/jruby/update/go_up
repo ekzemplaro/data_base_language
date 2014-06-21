@@ -1,0 +1,1 @@
+./csv_update.rb /var/tmp/csv/cities.csv t1276 34214500

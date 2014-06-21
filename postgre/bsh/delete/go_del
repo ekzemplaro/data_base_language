@@ -1,0 +1,4 @@
+#
+export CLASSPATH=.:/usr/share/java/postgresql.jar
+#
+./postgre_delete.bsh t3466

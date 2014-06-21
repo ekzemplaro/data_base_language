@@ -1,0 +1,29 @@
+<title>gcl Oct/08/2013</title>
+</head>
+<body>
+<h2><a href="http://www.gnu.org/software/gcl/">gcl</a></h2><p />
+<pre>
+ii  gcl    2.6.7+dfsga-2   amd64     GNU Common Lisp compiler
+</pre>
+<blockquote>
+	<a href="http://clsql.b9.com/">CLSQL</a><p />
+</blockquote>
+<hr />
+<pre>
+$ gcl
+GCL (GNU Common Lisp)  2.6.7 CLtL1    Jan 21 2013 23:12:47
+Source License: LGPL(gcl,gmp), GPL(unexec,bfd,xgcl)
+Binary License:  GPL due to GPL'ed components: (XGCL READLINE UNEXEC)
+Modifications of this banner must retain notice of a compatible license
+Dedicated to the memory of W. Schelter
+
+Use (help) to get some basic information on how to use GCL.
+Temporary directory for compiler files set to /tmp/
+
+>(+ 5 3)
+
+8
+
+>(quit)
+</pre>
+

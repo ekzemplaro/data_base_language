@@ -1,0 +1,5 @@
+#
+MSSQL_JAR=/var/www/data_base/common/jar/mssql/sqljdbc4.jar
+export CLASSPATH=./:$MSSQL_JAR
+#
+./mssql_update.py t1079 8271500

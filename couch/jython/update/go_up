@@ -1,0 +1,3 @@
+export http_proxy=""
+export CLASSPATH=./:/usr/share/java/commons-httpclient.jar
+./couch_update.py t2028 51384200

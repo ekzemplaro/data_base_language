@@ -1,0 +1,21 @@
+	string command = "SELECT * FROM cities";
+
+	SqliteConnection connection = new SqliteConnection (str_connect);
+
+	SqliteDataAdapter da_adapter = new SqliteDataAdapter (command,connection);
+	da_adapter.UpdateCommand = new SqliteCommand
+		("Update cities SET NAME = @NAME,"
+		+ "POPULATION = @POPULATION, DATE_MOD = @DATE_MOD "
+		+ " where  ID = @ID", connection);
+
+	da_adapter.UpdateCommand.Parameters.Add
+			("@NAME", DbType.String, 10, "NAME");
+
+	da_adapter.UpdateCommand.Parameters.Add
+			("@POPULATION", DbType.Int32, 10, "POPULATION");
+
+	da_adapter.UpdateCommand.Parameters.Add
+			("@DATE_MOD", DbType.Date, 10, "DATE_MOD");
+
+	da_adapter.UpdateCommand.Parameters.Add
+			("@ID", DbType.Int32, 10, "ID");

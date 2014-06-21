@@ -1,0 +1,22 @@
+// -----------------------------------------------------------------
+//	sqlite3_delete.spl
+//
+//						Jun/09/2011
+// -----------------------------------------------------------------
+load "sql_sqlite";
+#file-as-code  /var/www/data_base/common/spl_common/sql_manipulate.spl;
+// -----------------------------------------------------------------
+write ("*** 開始 ***\n");
+
+var file_sqlite3 = argv[0];
+var id_in = argv[1];
+
+write (file_sqlite3 ~ "\n");
+write (id_in ~ "\n");
+
+var db = sql_connect("sqlite",file_sqlite3);
+
+sql_delete_proc (db,id_in);
+
+write ("*** 終了 ***\n");
+// -----------------------------------------------------------------

@@ -1,0 +1,33 @@
+#
+SRC=/var/www/data_base/lang/jquery_tcl/read
+cd /usr/lib/cgi-bin/data_base/tcl
+#
+ln -s $SRC/master_tcl_read.tcl master_tcl_read.tcl
+ln -s $SRC/text_tcl_read.tcl text_tcl_read.tcl
+ln -s $SRC/xml_tcl_read.tcl xml_tcl_read.tcl
+ln -s $SRC/json_tcl_read.tcl json_tcl_read.tcl
+ln -s $SRC/sqlite3_tcl_read.tcl sqlite3_tcl_read.tcl
+#
+ln -s $SRC/oracle_tcl_read.tcl oracle_tcl_read.tcl
+ln -s $SRC/mssql_tcl_read.tcl mssql_tcl_read.tcl
+ln -s $SRC/db2_tcl_read.tcl db2_tcl_read.tcl
+#
+ln -s $SRC/mysql_tcl_read.tcl mysql_tcl_read.tcl
+ln -s $SRC/postgre_tcl_read.tcl postgre_tcl_read.tcl
+ln -s $SRC/firebird_tcl_read.tcl firebird_tcl_read.tcl
+#
+ln -s $SRC/xindice_tcl_read.tcl xindice_tcl_read.tcl
+ln -s $SRC/exist_tcl_read.tcl exist_tcl_read.tcl
+ln -s $SRC/dbxml_tcl_read.tcl dbxml_tcl_read.tcl
+#
+ln -s $SRC/gdbm_tcl_read.tcl gdbm_tcl_read.tcl
+ln -s $SRC/berkeley_tcl_read.tcl berkeley_tcl_read.tcl
+ln -s $SRC/mcached_tcl_read.tcl mcached_tcl_read.tcl
+ln -s $SRC/mcachedb_tcl_read.tcl mcachedb_tcl_read.tcl
+ln -s $SRC/redis_tcl_read.tcl redis_tcl_read.tcl
+#
+ln -s $SRC/couch_tcl_read.tcl couch_tcl_read.tcl
+ln -s $SRC/mongo_tcl_read.tcl mongo_tcl_read.tcl
+ln -s $SRC/cassandra_tcl_read.tcl cassandra_tcl_read.tcl
+#
+#

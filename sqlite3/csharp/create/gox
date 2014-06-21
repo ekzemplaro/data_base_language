@@ -1,0 +1,3 @@
+#
+./sqlite3_create.exe /var/tmp/sqlite3/cities.db
+#./sqlite3_create.exe cities.db

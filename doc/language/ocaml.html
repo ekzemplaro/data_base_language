@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Program Language Examples to connect to database" name="description">
+<meta content="database,program,language,connect,example,CRUD,NoSQL" name="keyword">
+<meta content="node.js,rhino" name="keyword">
+<meta content="JSON,redis,CouchDB" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<script src="/js/jquery-2.1.0.min.js"></script>
+<script>
+jQuery (function ()
+{
+	jQuery ("#outarea_aa").text ("*** start ***");
+
+	jQuery ("#outarea_hh").text ("*** end ***");
+});
+
+</script>
+<meta content="Program Language Examples in Ocaml" name="description">
+<meta content="Ocaml,クライアント,接続,言語,サンプル" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<title>Ocaml Jan/19/2012</title>
+</head>
+<body>
+<h2><a href="http://caml.inria.fr/">Objective Caml</a></h2><p />
+
+<blockquote>
+ii  ocaml          3.12.0-7ubuntu ML language implementation with a class-base<p />
+ii  ocaml-findlib  1.2.7+debian-1 management tool for OCaml libraries<p />
+</blockquote>
+
+<a href="http://pleac.sourceforge.net/pleac_ocaml/">PLEAC-Objective CAML</a><p />
+How to display Japanese<br />
+	<ol>
+	<pre>
+	# let printer ppf = Format.fprintf ppf "\"%s\"";;
+	val printer : Format.formatter -> string -> unit = <fun>
+	# #install_printer printer;;
+	# "あああ";;
+	- : string = "あああ"
+	# "こんにちは。";;
+	- : string = "こんにちは。"
+	</pre>
+</ol>
+
+<blockquote>
+	$ ocaml<br />
+        Objective Caml version 3.11.2<br />
+
+	# 33 + 45;;<br />
+	- : int = 78<br />
+	# #quit;;<br />
+</blockquote>
+
+<blockquote>
+ocamlfind list <p />
+</blockquote>
+
+
+<blockquote>
+<a href="http://martin.jambon.free.fr/json-wheel-doc/Json_type.Browse.html">
+	Module Json_type.Browse</a><p />
+</blockquote>
+
+
+<blockquote>
+<pre>
+ii  libcurl-ocaml       0.5.3-2build1   OCaml curl bindings (Runtime Library)
+ii  libcurl-ocaml-dev   0.5.3-2build1   OCaml libcurl bindings (Development package)
+</pre>
+</blockquote>
+
+<blockquote>
+<a href="https://gist.github.com/1432555">
+	OCaml CURL GET, POST, PUT, DELETE examples
+	</a><p />
+</blockquote>
+
+<div id="result_aa">result_aa</div>
+<hr />
+<div id="outarea_aa">outarea_aa</div>
+<div id="outarea_bb">outarea_bb</div>
+<div id="outarea_cc">outarea_cc</div>
+<div id="outarea_dd">outarea_dd</div>
+<div id="outarea_ee">outarea_ee</div>
+<div id="outarea_ff">outarea_ff</div>
+<div id="outarea_gg">outarea_gg</div>
+<div id="outarea_hh">outarea_hh</div>
+<hr />
+<a href="/data_base/data_base.html">Return</a><p />
+Mar/14/2014 AM 08:15<p />
+</body>
+</html>

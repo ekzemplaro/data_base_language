@@ -1,0 +1,3 @@
+#
+ecl -shell mcached_update.lisp -eval '(quit)' -- t1736 23478900
+#

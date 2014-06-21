@@ -1,0 +1,28 @@
+<meta content="Program Language Examples in gambas" name="description">
+<meta content="gambas,クライアント,接続,言語,サンプル" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<title>gambas May/23/2013</title>
+</head>
+<body>
+<h2><a href="http://gambas.sourceforge.net/">gambas</a></h2><p />
+<blockquote>
+<pre>
+ii  gambas3-script  3.1.1-2ubuntu6    amd64      Gambas scripter
+</pre>
+</blockquote>
+
+<blockquote>
+gambas2-2.23.1.tar.bz2<p />
+
+./reconf<br />
+./configure<br />
+make<br />
+sudo make install<br />
+</blockquote>
+
+<blockquote>
+/usr/local/bin/gbs2<p />
+</blockquote>
+
+<blockquote>
+</blockquote>

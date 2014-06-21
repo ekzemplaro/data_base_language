@@ -1,0 +1,5 @@
+#
+VOLTDB=/home/uchida/dbm/voltdb/voltdb-2.1.1
+export CLASSPATH=.:$VOLTDB/lib/*:$VOLTDB/voltdb/*
+#
+./voltdb_read.rb

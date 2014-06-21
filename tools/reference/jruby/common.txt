@@ -1,0 +1,6 @@
+cassandra_manipulate.rb
+couch_manipulate.rb
+excel_manipulate.rb
+jruby_sql_manipulate.rb
+mcached_manipulate.rb
+xlsx_manipulate.rb

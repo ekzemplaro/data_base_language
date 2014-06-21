@@ -1,0 +1,10 @@
+#
+export SQLLIB=/opt/ibm/db2/V9.7
+#
+GROOVY_COMMON=/var/www/data_base/common/groovy_common
+export GROOVY_JAR=/usr/share/java/groovy-all.jar:/usr/share/java/groovy.jar
+CLASSPATH=./:$SQLLIB/java/db2java.zip:$SQLLIB/java/db2jcc.jar:$SQLLIB/function:$SQLLIB/java/db2jcc_license_cu.jar:.
+#
+export CLASSPATH=$CLASSPATH:./:$GROOVY_COMMON:$GROOVY_JAR
+#
+java db2_delete t2875

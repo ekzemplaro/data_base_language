@@ -1,0 +1,1 @@
+ccl64 -l csv_delete.lisp --eval '(quit)' -- /var/tmp/csv/cities.csv t1278

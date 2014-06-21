@@ -1,0 +1,2 @@
+#
+clisp json_delete.lsp /var/tmp/json/cities.json t0922

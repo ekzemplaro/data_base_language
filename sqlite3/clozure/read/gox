@@ -1,0 +1,1 @@
+ccl64 -l sqlite3_read.lisp  --eval '(quit)'

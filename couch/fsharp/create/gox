@@ -1,0 +1,3 @@
+#
+#./couch_create.exe
+mono ./couch_create.exe

@@ -1,0 +1,8 @@
+#
+../single_check.sh sqlite3 vala
+#../single_check.sh mssql vala
+#../single_check.sh mysql vala
+#../single_check.sh postgre vala
+#../single_check.sh firebird vala
+#
+#

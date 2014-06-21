@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<script src="/js/jquery-2.1.0.min.js"></script>
+<meta content="Program Language Examples to connect to Tokyo Tyrant" name="description">
+<meta content="Tokyo Tyrant,クライアント,接続,言語,サンプル" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<title>Tokyo Tyrant</title>
+</head>
+<body>
+<h1><a href="http://fallabs.com/tokyotyrant/">Tokyo Tyrant</a></h1>
+
+<pre>
+ii  libtokyotyrant-dev     1.1.40-4ubuntu1         Tokyo Tyrant development files
+ii  libtokyotyrant3        1.1.40-4ubuntu1         Tokyo Tyrant runtime libraries
+ii  tokyotyrant            1.1.40-4ubuntu1         Tokyo Tyrant: network interface to Tokyo Cabinet
+ii  tokyotyrant-utils      1.1.40-4ubuntu1         Tokyo Tyrant utilities
+</pre>
+
+<blockquote>
+	sudo ttserver -host localhost -port 1978<p />
+</blockquote>
+<blockquote>
+	port 1978<br />
+</blockquote>
+
+<blockquote>
+	tar xvfz tokyotyrant-1.1.41.tar.gz<p />
+	cd tokyotyrant-1.1.41 <br />
+	./configure<br />
+	make<br />
+	sudo make install<br />
+</blockquote>
+
+server<br />
+<blockquote>
+	sudo ttservctl start<br />
+	sudo ttservctl stop<p />
+
+	/var/ttserver/pid<br />
+</blockquote>
+
+Telnet でアクセス<br />
+<blockquote>
+<pre>
+$ telnet localhost 1978
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+get t4769
+VALUE t4769 0 63
+{"name":"うるま","population":51872,"date_mod":"2008-10-24"}
+END
+get t4763
+VALUE t4763 0 59
+{"name":"石垣","population":32153,"date_mod":"2008-5-24"}
+END
+quit
+Connection closed by foreign host.
+</pre>
+</blockquote>
+
+Python<p />
+<blockquote>
+</blockquote>
+
+
+
+Ruby<p />
+<blockquote>
+</blockquote>
+<div id="result_aa">result_aa</div>
+<hr />
+<div id="outarea_aa">outarea_aa</div>
+<div id="outarea_bb">outarea_bb</div>
+<div id="outarea_cc">outarea_cc</div>
+<div id="outarea_dd">outarea_dd</div>
+<div id="outarea_ee">outarea_ee</div>
+<div id="outarea_ff">outarea_ff</div>
+<div id="outarea_gg">outarea_gg</div>
+<div id="outarea_hh">outarea_hh</div>
+<hr />
+<a href="/data_base/data_base.html">Return</a><p />
+Jan/29/2014 AM 08:15<p />
+</body>
+</html>

@@ -1,0 +1,2 @@
+#
+./text_update.erl /var/tmp/plain_text/cities.txt t2385 7128900

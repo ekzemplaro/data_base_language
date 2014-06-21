@@ -1,0 +1,2 @@
+#
+ccl64 -l tyrant_update.lisp --eval '(quit)' -- t4764 9378100

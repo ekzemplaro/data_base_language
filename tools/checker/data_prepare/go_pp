@@ -1,0 +1,4 @@
+./data_prepare.sh json java
+#
+#cd /var/www/data_base/json/java/create
+#make

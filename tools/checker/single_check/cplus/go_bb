@@ -1,0 +1,8 @@
+#
+../single_check.sh sqlite3 cplus
+#../single_check.sh mssql cplus
+../single_check.sh mysql cplus
+../single_check.sh postgre cplus
+#../single_check.sh firebird cplus
+#
+#

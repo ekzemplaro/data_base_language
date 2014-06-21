@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<title>nginx (Oct/11/2013)</title>
+</head>
+<body>
+
+<a href="http://nginx.org/">ngnix</a> (Port 80)<p />
+<blockquote>
+	sudo apt-get install nginx-full<p />
+<pre>
+ii  nginx-common   1.2.6-1ubuntu3   all    small, powerful, scalable web/proxy server - common files
+ii  nginx-full     1.2.6-1ubuntu3   amd64  nginx web/proxy server (standard version)
+</pre>
+</blockquote>
+
+ディフォールトのページ<br />
+<blockquote>
+	/usr/share/nginx/html/index.html<p />
+	/etc/nginx/sites-available/default で定義されている。<br />
+	<blockquote>
+		root /usr/share/nginx/html;<p />
+	</blockquote>
+</blockquote>
+
+<a href="http://library.linode.com/web-servers/nginx/perl-fastcgi/ubuntu-11.04-natty">Perl-FastCGI on Ubuntu</a><p />
+
+PHPを使えるようにする。<p />
+<blockquote>
+<a href="http://hima-j.in/linux/sakura-vps-ubuntu-10-04-nginx-php-fastcgi-web-server/">参考になるページ</a><p />
+</blockquote>
+
+必要なパッケージのインストール<p />
+<blockquote>
+	sudo apt-get install php5-cli php5-cgi php5-gd spawn-fcgi<p />
+</blockquote>
+
+Unix Socket を使います。<br />
+<blockquote>
+<a href="php-fastcgi_unix_socket.txt">/etc/init.d/php-fastcgi</a><p />
+</blockquote>
+
+
+/etc/nginx/fastcgi_params に次の行を加える。<p />
+<blockquote>
+fastcgi_param  PHP_VALUE  "include_path=/var/www/data_base/common/php_common";<p />
+</blockquote>
+
+fastcgi の起動<p />
+<blockquote>
+$ sudo chmod a+x /etc/init.d/php-fastcgi<br />
+$ sudo update-rc.d php-fastcgi defaults<br />
+$ sudo /etc/init.d/php-fastcgi start<br />
+</blockquote>
+エラーが出た時の対応<p />
+<blockquote>
+	spawn-fcgi: bind failed: Address already in use<p />
+
+
+	プロセスをキルする<p />
+	sudo killall php5-cgi<p />
+
+</blockquote>
+<hr />
+<a href="./default.txt">/etc/nginx/sites-available/default</a> を使う方法<p />
+
+<blockquote>
+	root /var/www; に変更する<p />
+	スタートページは、/var/www/index.html になる。<p />
+	次の部分をコメントアウトする。<p />
+Unix Socket を使う場合<br />
+<pre>
+#
+	location ~ \.php$ {
+	fastcgi_split_path_info ^(.+\.php)(/.+)$;
+#
+	fastcgi_pass unix:/tmp/php.socket;<br />
+	fastcgi_index index.php;
+	include fastcgi_params;
+	client_max_body_size 32M;
+	}
+</pre>
+</blockquote>
+<hr />
+/etc/nginx/sites-available/default を使わない方法<p />
+<a href="hoge.com.txt">/etc/nginx/sites-available/hoge.com</a> の作成<p />
+
+リンクの作成<p />
+<blockquote>
+	sudo ln -s /etc/nginx/sites-available/hoge.com /etc/nginx/sites-enabled/
+<br />
+</blockquote>
+
+/etc/nginx/sites-available/default の削除<p />
+
+スタートページの用意<p />
+<blockquote>
+	/var/www/hoge.com/public_html/index.html<p />
+</blockquote>
+
+logs フォルダーの作成<p />
+<blockquote>
+	sudo mkdir /var/www/hoge.com/logs<br />
+	chmod 777 /var/www/hoge.com/logs<p />
+</blockquote>
+
+<hr />
+FastCGI の再起動<p />
+<blockquote>
+	sudo /etc/init.d/php-fastcgi restart<p />
+</blockquote>
+
+
+nginx の再起動<p />
+<blockquote>
+	sudo /etc/init.d/nginx restart<p />
+</blockquote>
+
+設定ファイルのチェック<p />
+<blockquote>
+	sudo nginx -t<p />
+</blockquote>
+
+PHPで、アップロードできるファイルのサイズの上限を 512M にする。<p />
+<blockquote>
+/etc/nginx/sites-available/default<p />
+<pre>
+	location ~ \.php$ {
+	fastcgi_split_path_info ^(.+\.php)(/.+)$;
+#
+	fastcgi_pass unix:/tmp/php.socket;
+
+	fastcgi_index index.php;
+	include fastcgi_params;
+	client_max_body_size 512M;
+	}
+</pre>
+
+/etc/php5/cgi/php.ini<p />
+	<blockquote>
+		post_max_size = 512M<br />
+		upload_max_filesize = 512M<br />
+	</blockquote>
+</blockquote>
+
+<hr />
+Perlを使えるようにする。<p />
+<blockquote>
+<pre>
+ii  fcgiwrap     1.0.3-3  amd64      simple server to run CGI applications over FastCGI
+</pre>
+デフォールトで、<p />
+	/var/run/fcgiwrap.socket が使われる。<p />
+
+/etc/nginx/sites-available/default への設定の追加<p />
+
+<blockquote>
+<pre>
+location ~ \.pl$ {
+        gzip off;
+        include fastcgi_params;
+        fastcgi_pass unix:/var/run/fcgiwrap.socket;
+        fastcgi_index index.pl;
+        fastcgi_param SCRIPT_FILENAME /var/www$fastcgi_script_name;
+    }
+</pre>
+</blockquote>
+
+
+sudo /etc/init.d/fcgiwrap start<p />
+</blockquote>
+<hr />
+Python を使えるようにする。<p />
+/etc/nginx/sites-available/default への設定の追加<p />
+
+<blockquote>
+<pre>
+location ~ \.py$ {
+        gzip off;
+        include fastcgi_params;
+        fastcgi_pass unix:/var/run/fcgiwrap.socket;
+        fastcgi_index index.py;
+        fastcgi_param SCRIPT_FILENAME /var/www$fastcgi_script_name;
+    }
+</pre>
+</blockquote>
+
+リンクの作成<br />
+<blockquote>
+	cd /var/www<br />
+	ln -s /usr/lib/cgi-bin .<br />
+</blockquote>
+
+<hr />
+Ruby を使えるようにする。<p />
+/etc/nginx/sites-available/default への設定の追加<p />
+
+<blockquote>
+<pre>
+location ~ \.rb$ {
+        gzip off;
+        include fastcgi_params;
+        fastcgi_pass unix:/var/run/fcgiwrap.socket;
+        fastcgi_index index.rb;
+        fastcgi_param SCRIPT_FILENAME /var/www$fastcgi_script_name;
+    }
+</pre>
+</blockquote>
+
+<hr />
+Shell を使えるようにする。<p />
+/etc/nginx/sites-available/default への設定の追加<p />
+
+<blockquote>
+<pre>
+location ~ \.sh$ {
+        gzip off;
+        include fastcgi_params;
+        fastcgi_pass unix:/var/run/fcgiwrap.socket;
+        fastcgi_index index.sh;
+        fastcgi_param SCRIPT_FILENAME /var/www$fastcgi_script_name;
+    }
+</pre>
+</blockquote>
+
+<hr />
+Webdav を使う時<br />
+<blockquote>
+	<a href="./default_webdav.txt">/etc/nginx/sites-available/default</a><p />
+</blockquote>
+パラメーターの確認方法<br />
+<blockquote>
+	sudo nginx -t<br />
+	<pre>
+	nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+	nginx: configuration file /etc/nginx/nginx.conf test is successful
+	</pre>
+</blockquote>
+</blockquote>
+<hr />
+フォルダーの内容を表示する。<p />
+
+/etc/nginx/sites-available/default への設定の追加<br />
+<blockquote>
+	root /var/www;<br />
+	index index.html index.htm;<br />
+	autoindex on;<br />
+</blockquote>
+<hr />
+<div id="result_aa">result_aa</div>
+<hr />
+<a href="/data_base/data_base.html">Return</a><p />
+Sep/12/2013 AM 08:15<p />
+</body>
+</html>

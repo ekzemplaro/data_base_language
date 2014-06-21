@@ -1,0 +1,30 @@
+<meta content="Program Language Examples in Lua" name="description">
+<meta content="Lua,クライアント,接続,言語,サンプル" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<title>Lua Apr/23/2014</title>
+</head>
+<body>
+<h2><a href="http://www.lua.org">Lua</a></h2><p />
+
+<blockquote>
+<pre>
+ii  lua5.2     5.2.3-1   amd64    Simple, extensible, embeddable programming language
+</pre>
+</blockquote>
+
+<blockquote>
+	luarocks<p />
+</blockquote>
+
+<blockquote>
+<a href="http://code.google.com/p/luamemcached/downloads/detail?name=liblua5.1-memcached0.deb&can=2&q=">
+luamemcached</a><p />
+</blockquote>
+
+
+
+CouchDB<br />
+<blockquote>
+	luarocks install luchia<p />
+</blockquote>
+

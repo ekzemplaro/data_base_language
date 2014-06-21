@@ -1,0 +1,5 @@
+#
+../single_check.sh text clozure
+../single_check.sh csv clozure
+#../single_check.sh xml clozure
+#../single_check.sh json clozure

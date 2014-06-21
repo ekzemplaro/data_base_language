@@ -1,0 +1,1 @@
+./xml_create.st -a /var/tmp/xml_file/cities.xml

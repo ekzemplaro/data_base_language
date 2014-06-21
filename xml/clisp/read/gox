@@ -1,0 +1,2 @@
+#
+clisp xml_read.lsp /var/tmp/xml_file/cities.xml

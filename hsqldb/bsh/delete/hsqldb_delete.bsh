@@ -1,0 +1,29 @@
+#! /usr/bin/bsh
+//
+//	hsqldb_delete.bsh
+//
+//						Sep/27/2012
+//
+// ---------------------------------------------------------------------
+source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
+source ("/var/www/data_base/common/bsh_common/sql_manipulate.bsh");
+// ---------------------------------------------------------------------
+System.out.println ("*** 開始 ***");
+String	key = bsh.args[0];
+
+System.out.println (key);
+
+Class.forName ("org.hsqldb.jdbcDriver");
+
+String database = "file:/var/tmp/hsqldb/cities;shutdown=true";
+
+Connection conn =
+	DriverManager.getConnection("jdbc:hsqldb:" + database, "SA","");
+
+sql_delete_proc (conn,key);
+
+sql_display_proc (conn);
+
+conn.close ();
+System.out.println ("*** 終了 ***");
+// ---------------------------------------------------------------------

@@ -1,0 +1,17 @@
+<body>
+<h2>example_author (May/07/2014)</h2><p />
+
+<div class="contents">contents</div>
+
+<hr />
+<a href="html_src/">example_author_src.html</a><br/>
+<hr />
+<div id="outarea_aa">outarea_aa</div>
+<div id="outarea_bb">outarea_bb</div>
+<div id="outarea_cc">outarea_cc</div>
+<div id="outarea_dd">outarea_dd</div>
+<div id="outarea_ee">outarea_ee</div>
+<div id="outarea_ff">outarea_ff</div>
+<div id="outarea_gg">outarea_gg</div>
+<div id="outarea_hh">outarea_hh</div>
+<hr />

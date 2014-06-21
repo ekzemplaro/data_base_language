@@ -1,0 +1,15 @@
+#! /usr/bin/php
+<?php
+// ------------------------------------------------------------------
+//	data_base/exist/php/exist_read.php
+//
+//					Feb/05/2010
+//
+// ------------------------------------------------------------------
+$path=$_SERVER["DOCUMENT_ROOT"]."/uchida/data_base/php_common";
+set_include_path (get_include_path() . PATH_SEPARATOR . $path);
+//
+include "file_read.php";
+include "xml_display.php";
+include "xml_row_update.php";
+//

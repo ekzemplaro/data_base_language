@@ -1,0 +1,5 @@
+ORACLE_JAR=/mnt/sdb2/usr/lib/oracle/xe/app/oracle/product/10.2.0/client/jdbc/lib/ojdbc14.jar
+export CLOJURE_CONTRIB=$HOME/lang/clojure/clojure-contrib/clojure-contrib.jar
+export CLASSPATH=.:/usr/share/java/clojure.jar:$CLOJURE_CONTRIB:$ORACLE_JAR
+#
+java clojure.main oracle_create.clj 

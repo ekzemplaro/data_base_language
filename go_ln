@@ -1,0 +1,3 @@
+#
+ln -s /var/www/data_base/lang/examples/rhino/html_gen/dbase_full.html .
+ln -s /var/www/data_base/lang/examples/rhino/html_gen/jquery_dbase.html .

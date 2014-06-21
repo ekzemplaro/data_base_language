@@ -1,0 +1,7 @@
+#
+../single_check.sh couch ruby
+../single_check.sh ftp ruby
+../single_check.sh webdav ruby
+#../single_check.sh mongo ruby
+#
+#

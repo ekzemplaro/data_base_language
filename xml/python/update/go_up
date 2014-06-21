@@ -1,0 +1,2 @@
+#
+./xml_update.py /var/tmp/xml_file/cities.xml t2267 4581700

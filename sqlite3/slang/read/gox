@@ -1,0 +1,4 @@
+#
+export LD_LIBRARY_PATH=/usr/lib/slang/v2/modules
+#
+./sqlite3_read.sl /var/tmp/sqlite3/cities.db

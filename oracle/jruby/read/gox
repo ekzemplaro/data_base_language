@@ -1,0 +1,8 @@
+#
+#
+export JAVA_COMMON=/var/www/uchida/data_base/common/java_common	
+ORACLE_JAR=/mnt/sdb2/usr/lib/oracle/xe/app/oracle/product/10.2.0/client/jdbc/lib/ojdbc14.jar
+export CLASSPATH=.:$JAVA_COMMON:$ORACLE_JAR
+#
+./oracle_read.rb
+#

@@ -1,0 +1,6 @@
+#
+../single_check.sh gdbm python
+../single_check.sh berkeley python
+../single_check.sh mcached python
+../single_check.sh mcachedb python
+#

@@ -1,0 +1,33 @@
+#
+SRC=/var/www/data_base/lang/jquery_node/read
+cd /usr/lib/cgi-bin/data_base/node
+#
+ln -s $SRC/master_node_read.js master_node_read.js
+ln -s $SRC/text_node_read.js text_node_read.js
+ln -s $SRC/xml_node_read.js xml_node_read.js
+ln -s $SRC/json_node_read.js json_node_read.js
+ln -s $SRC/sqlite3_node_read.js sqlite3_node_read.js
+#
+ln -s $SRC/oracle_node_read.js oracle_node_read.js
+ln -s $SRC/mssql_node_read.js mssql_node_read.js
+ln -s $SRC/db2_node_read.js db2_node_read.js
+#
+ln -s $SRC/mysql_node_read.js mysql_node_read.js
+ln -s $SRC/postgre_node_read.js postgre_node_read.js
+ln -s $SRC/firebird_node_read.js firebird_node_read.js
+#
+ln -s $SRC/xindice_node_read.js xindice_node_read.js
+ln -s $SRC/exist_node_read.js exist_node_read.js
+ln -s $SRC/dbxml_node_read.js dbxml_node_read.js
+#
+ln -s $SRC/gdbm_node_read.js gdbm_node_read.js
+ln -s $SRC/berkeley_node_read.js berkeley_node_read.js
+ln -s $SRC/mcached_node_read.js mcached_node_read.js
+ln -s $SRC/mcachedb_node_read.js mcachedb_node_read.js
+ln -s $SRC/redis_node_read.js redis_node_read.js
+#
+ln -s $SRC/couch_node_read.js couch_node_read.js
+ln -s $SRC/mongo_node_read.js mongo_node_read.js
+ln -s $SRC/cassandra_node_read.js cassandra_node_read.js
+#
+#

@@ -1,0 +1,7 @@
+#
+#
+#
+../single_check.sh xindice python
+../single_check.sh exist python
+../single_check.sh basex python
+#

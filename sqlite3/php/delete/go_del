@@ -1,0 +1,1 @@
+./sqlite3_delete.php /var/tmp/sqlite3/cities.db t0713

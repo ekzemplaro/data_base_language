@@ -1,0 +1,1 @@
+../go_html_gen.sh

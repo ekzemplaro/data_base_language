@@ -1,0 +1,5 @@
+<script src="ruby_on_rails.js"></script>
+<link href="ruby_on_rails.css" rel="stylesheet" />
+	<title>Ruby on Rails 3
+	</title>
+</head>

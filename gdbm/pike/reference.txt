@@ -1,0 +1,2 @@
+gdbm_manipulate.pike
+text_manipulate.pike

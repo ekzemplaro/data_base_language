@@ -1,0 +1,1 @@
+lua xml_read.lua  /var/tmp/xml_file/cities.xml

@@ -1,0 +1,6 @@
+
+ii  python-json                                3.4-4
+
+dpkg -L python-json
+
+/usr/share/python-support/python-json/json.py

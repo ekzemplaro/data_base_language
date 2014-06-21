@@ -1,0 +1,5 @@
+export http_proxy=""
+#
+echo "import webdav_update" > tmp_execute.py
+#
+python ./tmp_execute.py t1354 373854200

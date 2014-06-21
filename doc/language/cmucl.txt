@@ -1,0 +1,44 @@
+<meta content="Program Language Examples in cmucl" name="description">
+<meta content="cmucl,クライアント,接続,言語,サンプル" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<title>cmucl Nov/04/2013</title>
+</head>
+<body>
+<h2><a href="http://www.cons.org/cmucl/">CMUCL</a></h2><p />
+
+<blockquote>
+	cmucl-20e-x86-linux.tar.bz2<br />
+	cmucl-20e-x86-linux.extra.tar.bz2<p />
+
+	cd /opt/cmucl20e<br />
+	tar xvfj cmucl-20e-x86-linux.tar.bz2<br />
+	tar xvfj cmucl-20e-x86-linux.extra.tar.bz2<p />
+	export PATH=$PATH:/opt/cmucl20e/bin<p />
+</blockquote>
+
+<blockquote>
+<pre>
+$ lisp
+CMU Common Lisp 20e (20E Unicode), running on nlf132
+With core: /opt/cmucl20e/lib/cmucl/lib/lisp-sse2.core
+Dumped on: Sun, 2013-09-29 00:33:43+09:00 on lorien2
+See <http://www.cmucl.org/> for support information.
+Loaded subsystems:
+    Unicode 1.29 with Unicode version 6.2.0
+    Python 1.1, target Intel x86/sse2
+    CLOS based on Gerd's PCL 2010/03/19 15:19:03
+* (require :asdf)
+Warning:
+   Loading object file /opt/cmucl20e/lib/cmucl/lib/contrib/asdf/asdf.sse2f,
+which is older than the presumed source:
+  /opt/cmucl20e/lib/cmucl/lib/contrib/asdf/asdf.lisp.
+
+; Loading #P"/opt/cmucl20e/lib/cmucl/lib/contrib/asdf/asdf.sse2f".
+("ASDF")
+* (asdf:asdf-version)
+
+"3.0.2"
+* (quit)
+</pre>
+</blockquote>
+

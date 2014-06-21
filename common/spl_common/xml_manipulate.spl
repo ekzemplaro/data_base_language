@@ -1,0 +1,84 @@
+// -------------------------------------------------------------------
+//	xml_manipulate.spl
+//
+//						Sep/06/2011
+// -------------------------------------------------------------------
+function xml_display_proc (str_xml,keys)
+{
+var data = xml_parse (str_xml);
+
+foreach[] p (data["/root"].nodes)
+{
+write ("*** aaa ***\n");
+	var flags_string;
+	var length_string;
+
+	foreach[] key (keys) {
+	foreach[] f (p[key].nodes) {
+		var name   = f["name"];
+		var population   = f["population"];
+		var date_mod   = f["date_mod"];
+		write (key ~ "\t");
+		write (name ~ "\t");
+		write (population ~ "\t");
+		write (date_mod ~ "\n");
+		}
+		}
+
+}
+}
+
+// -------------------------------------------------------------------
+function tag_out_proc (tag,value)
+{
+	var out_str = "\t<";
+	out_str ~= tag;
+	out_str ~= ">";
+
+	out_str ~= value;
+
+	out_str ~= "</";
+	out_str ~= tag;
+	out_str ~= ">\n";
+
+	return	out_str;
+}
+
+// -----------------------------------------------------------------
+function record_gen_proc (id,name,population,date_mod)
+{
+	var out_str = "<";
+
+	out_str ~= id;
+	out_str ~= ">";
+
+	out_str ~= tag_out_proc ("name",name);
+	out_str ~= tag_out_proc ("population",population);
+	out_str ~= tag_out_proc ("date_mod",date_mod);
+
+	out_str ~= "</";
+	out_str ~= id;
+	out_str ~= ">\n";
+
+
+	return	out_str;
+}
+
+// -------------------------------------------------------------------
+function dict_to_xml_proc (dict_aa)
+{
+	var out_str = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n";
+	out_str ~= "<root>\n";
+
+	foreach key (dict_aa)
+		{
+		out_str ~= record_gen_proc (key,dict_aa[key].name,
+			dict_aa[key].population,dict_aa[key].date_mod);
+		}
+
+	out_str ~= "</root>\n";
+
+	return out_str;
+}
+
+// -------------------------------------------------------------------

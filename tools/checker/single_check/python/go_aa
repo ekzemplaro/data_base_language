@@ -1,0 +1,6 @@
+#
+../single_check.sh text python
+../single_check.sh csv python
+../single_check.sh xml python
+../single_check.sh json python
+#

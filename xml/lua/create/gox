@@ -1,0 +1,3 @@
+#
+lua xml_create.lua /var/tmp/xml_file/cities.xml
+#lua xml_create.lua cities.xml

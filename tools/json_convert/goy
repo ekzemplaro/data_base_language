@@ -1,0 +1,3 @@
+cp origin/aomori.json .
+#
+./json_convert.js aomori.json

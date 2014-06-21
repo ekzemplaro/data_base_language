@@ -1,0 +1,3 @@
+sql_manipulate.pm
+sqlite3_manipulate.pm
+text_manipulate.pm

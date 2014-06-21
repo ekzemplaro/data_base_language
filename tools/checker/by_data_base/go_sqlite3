@@ -1,0 +1,14 @@
+#
+../single_check/single_check.sh sqlite3 bash
+../single_check/single_check.sh sqlite3 php
+../single_check/single_check.sh sqlite3 python
+../single_check/single_check.sh sqlite3 perl
+../single_check/single_check.sh sqlite3 ruby
+#
+../single_check/single_check.sh sqlite3 jruby
+#
+../single_check/single_check.sh sqlite3 rhino
+#
+../single_check/single_check.sh sqlite3 java
+../single_check/single_check.sh sqlite3 boo
+../single_check/single_check.sh sqlite3 csharp

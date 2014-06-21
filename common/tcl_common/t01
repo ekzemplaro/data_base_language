@@ -1,0 +1,15 @@
+# ---------------------------------------------------------------
+proc json_record_create_proc {unit_aa} {
+	set name [dict get $unit_aa name]
+	set population [dict get $unit_aa population]
+	set date_mod [dict get $unit_aa date_mod]
+#
+	set name_aa [join [list "\{\"name\":\"" $name "\","] {}]
+	set population_aa [join [list "\"population\":" $population ","] {}]
+	set date_mod_aa [join [list "\"date_mod\":\"" $date_mod "\"\}"] {}]
+	set str_out [join [list $name_aa $population_aa $date_mod_aa] {}]
+#
+#	puts $str_out
+	return	$str_out
+}
+# ---------------------------------------------------------------

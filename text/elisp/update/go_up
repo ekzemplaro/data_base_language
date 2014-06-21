@@ -1,0 +1,1 @@
+emacs --script text_update.el /var/tmp/plain_text/cities.txt t2382 613452100

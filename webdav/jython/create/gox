@@ -1,0 +1,4 @@
+export http_proxy=""
+export CLASSPATH=.:/usr/share/java/commons-httpclient.jar
+#
+./webdav_create.py

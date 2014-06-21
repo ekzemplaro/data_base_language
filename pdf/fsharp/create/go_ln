@@ -1,0 +1,12 @@
+#
+COMMON=/var/www/data_base/common
+FSHARP_COMMON=$COMMON/fsharp_common
+CSHARP_COMMON=$COMMON/csharp_common
+DLL=$COMMON/dll
+#
+ln -s $FSHARP_COMMON/FSharp.Core.dll FSharp.Core.dll
+ln -s $FSHARP_COMMON/FSharp.Core.optdata FSharp.Core.optdata
+ln -s $FSHARP_COMMON/FSharp.Core.sigdata FSharp.Core.sigdata
+#
+ln -s $DLL/itextsharp.dll itextsharp.dll
+ln -s $DLL/iTextAsian.dll iTextAsian.dll

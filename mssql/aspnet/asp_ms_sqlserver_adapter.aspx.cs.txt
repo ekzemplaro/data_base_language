@@ -1,0 +1,33 @@
+/* ---------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------- */
+using	System;
+using	System.Data.SqlClient;
+using	System.Data;
+
+/* ---------------------------------------------------------------------- */
+public partial class asp_ms_sqlserver_adapter  : System.Web.UI.Page
+{
+
+/* ---------------------------------------------------------------------- */
+protected void Page_Load (Object sender, System.EventArgs e)
+{
+        string command;
+        string str_connect;
+
+        str_connect  = @"data source=cdbd025\SQLEXPRESS;initial catalog=city;user id=sa;password=hello9;persist security info=True;packet size=4096";
+
+	command = "SELECT ID,NAME,POPULATION,DATE_MOD FROM cities";
+
+	SqlDataAdapter da_adapter
+			= new SqlDataAdapter (command,str_connect);
+
+	DataTable dtable = new DataTable();
+
+	da_adapter.Fill (dtable);
+
+	GridView_A.DataSource = dtable.DefaultView;
+	GridView_A.DataBind();
+}
+/* ---------------------------------------------------------------------- */
+}
+/* ---------------------------------------------------------------------- */

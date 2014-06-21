@@ -1,0 +1,1 @@
+mono ./json_read.exe /var/tmp/json/cities.json

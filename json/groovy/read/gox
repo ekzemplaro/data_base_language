@@ -1,0 +1,8 @@
+#
+export GROOVY_COMMON=/var/www/data_base/common/groovy_common
+export USR_SHARE=/usr/share/java
+#
+export CPB=$USR_SHARE/groovy-all.jar:$USR_SHARE/groovy.jar
+export CLASSPATH=.:$CPB:$GROOVY_COMMON
+#
+java json_read /var/tmp/json/cities.json

@@ -1,0 +1,53 @@
+<meta content="Program Language Examples to connect to Neo4j" name="description">
+<meta content="Neo4j,クライアント,接続,言語,サンプル" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<title>Neo4j</title>
+</head>
+<body>
+<h1><a href="http://neo4j.org">Neo4j</a></h1>
+Server<p />
+<blockquote>
+	neo4j-community-1.9.M05-unix.tar.gz<p />
+	tar xvfz neo4j-community-1.9.M05-unix.tar.gz<br />
+	cd neo4j-community-1.9.M05<br />
+	bin/neo4j start<p />
+	bin/neo4j stop<p />
+</blockquote>
+Client<p />
+<blockquote>
+	curl -H Accept:application/json http://localhost:7474/db/data/<br />
+</blockquote>
+<blockquote>
+	<a href="http://localhost:7474/webadmin/#/data/">webadmin</a><br />
+</blockquote>
+
+<blockquote>
+	<pre>
+	$ java -jar lib/neo4j-udc-1.9.M05.jar
+	NOTE: Remote Neo4j graph database service 'shell' at port 1337
+	Welcome to the Neo4j Shell! Enter 'help' for a list of commands
+
+	neo4j-sh (0)$
+	</pre>
+</blockquote>
+
+
+Python<p />
+<blockquote>
+	versae-neo4j-rest-client-1.5.0-5-gef308ad.tar.gz<p />	
+
+	# easy_install neo4jrestclient<p />
+</blockquote>
+
+node.js<p />
+<blockquote>
+	npm install neo4j<br />
+</blockquote>
+
+Java<p />
+<blockquote>
+</blockquote>
+
+C#<p />
+<blockquote>
+</blockquote>

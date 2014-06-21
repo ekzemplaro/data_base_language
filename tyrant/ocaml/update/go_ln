@@ -1,0 +1,5 @@
+OCAML_COMMON=/var/www/data_base/common/ocaml_common
+ln -s $OCAML_COMMON/lib/memcache.ml memcache.ml
+#
+ln -s $OCAML_COMMON/text_manipulate.ml text_manipulate.ml
+ln -s $OCAML_COMMON/mcached_manipulate.ml mcached_manipulate.ml

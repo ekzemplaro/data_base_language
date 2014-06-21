@@ -1,0 +1,60 @@
+#! /usr/bin/bsh
+//
+//	sqlite3_create.bsh
+//
+//						Sep/25/2012
+//
+// ---------------------------------------------------------------------
+source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
+source ("/var/www/data_base/common/bsh_common/sql_manipulate.bsh");
+// ---------------------------------------------------------------------
+Map data_prepare_proc ()
+{
+	Map dict_aa = new HashMap ();
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t0711","郡山",68591,"2000-6-5");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t0712","会津若松",84976,"2000-8-23");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t0713","白河",25313,"2000-9-14");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t0714","福島",87624,"2000-9-14");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t0715","喜多方",72531,"2000-8-12");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t0716","二本松",28529,"2000-7-28");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t0717","いわき",39457,"2000-6-19");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t0718","相馬",65284,"2000-10-15");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t0719","須賀川",74391,"2000-11-24");
+
+	return	dict_aa;
+}
+
+// ---------------------------------------------------------------------
+System.out.println ("*** 開始 ***");
+String sqlite3_file = bsh.args[0];
+
+Map dict_aa = data_prepare_proc ();
+
+Class.forName ("org.sqlite.JDBC");
+
+String str_connect = "jdbc:sqlite:" + sqlite3_file;
+Connection conn = DriverManager.getConnection (str_connect);
+
+sql_dict_to_db_proc (conn,dict_aa);
+
+conn.close ();
+System.out.println ("*** 終了 ***");
+// ---------------------------------------------------------------------

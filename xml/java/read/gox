@@ -1,0 +1,4 @@
+export CLASSPATH=.:/var/www/data_base/common/java_common
+#
+java xml_read /var/tmp/xml_file/cities.xml
+#

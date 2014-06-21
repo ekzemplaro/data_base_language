@@ -1,0 +1,9 @@
+#
+COMMON=/var/www/data_base/common
+SCALA_COMMON=$COMMON/scala_common
+JAR=$COMMON/jar
+#
+export MSSQL_JAR=$JAR/mssql/sqljdbc4.jar
+export CPX=.:$SCALA_COMMON:$MSSQL_JAR
+#
+scala -classpath $CPX mssql_read

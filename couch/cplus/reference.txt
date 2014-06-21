@@ -1,0 +1,3 @@
+curl_manipulate.cpp
+json_manipulate.cpp
+text_manipulate.cpp

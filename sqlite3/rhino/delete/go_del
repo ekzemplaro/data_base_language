@@ -1,0 +1,6 @@
+#
+JAVA_CLASSPATH="/usr/share/java/js.jar:/usr/share/java/jline.jar"
+SQLITE3_JAR="/var/www/data_base/common/jar/sqlite-jdbc-3.7.2.jar"
+export CLASSPATH=.:$SQLITE3_JAR:$JAVA_CLASSPATH
+#
+./sqlite3_delete.js /var/tmp/sqlite3/cities.db t0716

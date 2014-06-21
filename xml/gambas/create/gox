@@ -1,0 +1,2 @@
+#
+./xml_create.gambas /var/tmp/xml_file/cities.xml

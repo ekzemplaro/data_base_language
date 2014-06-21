@@ -1,0 +1,6 @@
+#
+../single_check.sh derby jython
+../single_check.sh hsqldb jython
+../single_check.sh h2 jython
+#
+#

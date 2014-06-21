@@ -1,0 +1,6 @@
+#
+export ORACLE_JAR=/mnt/sdb2/usr/lib/oracle/xe/app/oracle/product/10.2.0/client/jdbc/lib/ojdbc14.jar
+export JAVA_COMMON="/var/www/data_base/common/java_common"
+export CLASSPATH=.:$JAVA_COMMON:$ORACLE_JAR
+#
+scala oracle_delete t0134

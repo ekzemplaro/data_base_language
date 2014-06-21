@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Program Language Examples to connect to database" name="description">
+<meta content="database,program,language,connect,example,CRUD,NoSQL" name="keyword">
+<meta content="node.js,rhino" name="keyword">
+<meta content="JSON,redis,CouchDB" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<script src="/js/jquery-2.1.0.min.js"></script>
+<script>
+jQuery (function ()
+{
+	jQuery ("#outarea_aa").text ("*** start ***");
+
+	jQuery ("#outarea_hh").text ("*** end ***");
+});
+
+</script>
+<title>clisp Sep/17/2013</title>
+</head>
+<body>
+<h2><a href="http://www.gnu.org/software/clisp/">clisp</a></h2><p />
+<blockqoute>
+	<a href="http://clsql.b9.com/">CLSQL</a><p />
+</blockquote>
+
+<pre>
+ii  clisp  1:2.49-8.1ubuntu1  amd64   GNU CLISP, a Common Lisp implementation
+</pre>
+
+<blockqoute>
+	(load '#:/usr/share/common-lisp/source/cl-asdf/asdf)<br />
+	(push #P"/usr/share/common-lisp/system/" asdf:*central-registry*)<br />
+	(asdf:oos 'asdf:load-op :clsql)<br />
+	(ext:saveinitmem "dump.mem")<br />
+	(clsql:connect '("host_dbase" "city" "scott" "tiger" 3306) :database-type :mysql)<br />
+</blockqoute>
+
+<p />
+<blockqoute>
+(load "/usr/share/common-lisp/source/cl-asdf/asdf")<br />
+(require :asdf)<br />
+(asdf:asdf-version)<br />
+</blockqoute>
+<p />
+
+gdbm<br />
+<blockquote>
+(list (null (require "gdbm")))<br />
+(GDBM:GDBM-VERSION)<br />
+</blockquote>
+
+/usr/lib/clisp-2.49/<p />
+
+<a href="http://www.cliki.net/common-lisp-controller">
+common-lisp-controller</a><p />
+
+<a href="http://www.gigamonkeys.com/book/">
+Practical Common Lisp</a><p />
+<div id="result_aa">result_aa</div>
+<hr />
+<div id="outarea_aa">outarea_aa</div>
+<div id="outarea_bb">outarea_bb</div>
+<div id="outarea_cc">outarea_cc</div>
+<div id="outarea_dd">outarea_dd</div>
+<div id="outarea_ee">outarea_ee</div>
+<div id="outarea_ff">outarea_ff</div>
+<div id="outarea_gg">outarea_gg</div>
+<div id="outarea_hh">outarea_hh</div>
+<hr />
+<a href="/data_base/data_base.html">Return</a><p />
+Mar/14/2014 AM 08:15<p />
+</body>
+</html>

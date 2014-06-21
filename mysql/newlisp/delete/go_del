@@ -1,0 +1,1 @@
+newlisp -c mysql_delete.lsp t3324

@@ -1,0 +1,3 @@
+#
+./json_update /var/tmp/json/cities.json t0926 83251400
+#

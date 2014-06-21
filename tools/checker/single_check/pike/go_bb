@@ -1,0 +1,8 @@
+#
+#../single_check.sh sqlite3 pike
+#../single_check.sh mssql pike
+../single_check.sh mysql pike
+../single_check.sh postgre pike
+#../single_check.sh firebird pike
+#
+#

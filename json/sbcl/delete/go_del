@@ -1,0 +1,2 @@
+#
+./json_delete.lisp /var/tmp/json/cities.json t0923

@@ -1,0 +1,7 @@
+#
+../single_check.sh couch groovy
+../single_check.sh ftp groovy
+../single_check.sh webdav groovy
+#../single_check.sh mongo groovy
+#
+#

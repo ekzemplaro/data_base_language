@@ -1,0 +1,4 @@
+#
+SQLDIR=/var/www/data_base/bash_common/sql_files/db2
+#
+db2 -tsf  $SQLDIR/drop01.sql 

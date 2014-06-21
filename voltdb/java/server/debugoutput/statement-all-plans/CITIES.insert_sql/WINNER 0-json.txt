@@ -1,0 +1,99 @@
+SQL: INSERT INTO CITIES VALUES (?, ?, ?, ?);
+COST: 0.0
+PLAN:
+{
+    "EXECUTE_LIST": [
+        20,
+        19
+    ],
+    "PARAMETERS": [],
+    "PLAN_NODES": [
+        {
+            "CHILDREN_IDS": [20],
+            "ID": 19,
+            "INLINE_NODES": [],
+            "MULTI_PARTITION": false,
+            "OUTPUT_SCHEMA": [{
+                "COLUMN_ALIAS": "modified_tuples",
+                "COLUMN_NAME": "modified_tuples",
+                "EXPRESSION": {
+                    "COLUMN_ALIAS": "modified_tuples",
+                    "COLUMN_IDX": 0,
+                    "COLUMN_NAME": "modified_tuples",
+                    "TABLE_NAME": "VOLT_TEMP_TABLE",
+                    "TYPE": "VALUE_TUPLE",
+                    "VALUE_SIZE": 8,
+                    "VALUE_TYPE": "BIGINT"
+                },
+                "SIZE": 8,
+                "TABLE_NAME": "VOLT_TEMP_TABLE",
+                "TYPE": "BIGINT"
+            }],
+            "PARENT_IDS": [],
+            "PLAN_NODE_TYPE": "INSERT",
+            "TARGET_TABLE_NAME": "CITIES"
+        },
+        {
+            "BATCHED": false,
+            "CHILDREN_IDS": [],
+            "ID": 20,
+            "INLINE_NODES": [],
+            "OUTPUT_SCHEMA": [
+                {
+                    "COLUMN_ALIAS": "ID",
+                    "COLUMN_NAME": "ID",
+                    "EXPRESSION": {
+                        "PARAM_IDX": 0,
+                        "TYPE": "VALUE_PARAMETER",
+                        "VALUE_SIZE": 15,
+                        "VALUE_TYPE": "STRING"
+                    },
+                    "SIZE": 15,
+                    "TABLE_NAME": "VOLT_TEMP_TABLE",
+                    "TYPE": "STRING"
+                },
+                {
+                    "COLUMN_ALIAS": "NAME",
+                    "COLUMN_NAME": "NAME",
+                    "EXPRESSION": {
+                        "PARAM_IDX": 1,
+                        "TYPE": "VALUE_PARAMETER",
+                        "VALUE_SIZE": 15,
+                        "VALUE_TYPE": "STRING"
+                    },
+                    "SIZE": 15,
+                    "TABLE_NAME": "VOLT_TEMP_TABLE",
+                    "TYPE": "STRING"
+                },
+                {
+                    "COLUMN_ALIAS": "POPULATION",
+                    "COLUMN_NAME": "POPULATION",
+                    "EXPRESSION": {
+                        "PARAM_IDX": 2,
+                        "TYPE": "VALUE_PARAMETER",
+                        "VALUE_SIZE": 15,
+                        "VALUE_TYPE": "STRING"
+                    },
+                    "SIZE": 15,
+                    "TABLE_NAME": "VOLT_TEMP_TABLE",
+                    "TYPE": "STRING"
+                },
+                {
+                    "COLUMN_ALIAS": "DATE_MOD",
+                    "COLUMN_NAME": "DATE_MOD",
+                    "EXPRESSION": {
+                        "PARAM_IDX": 3,
+                        "TYPE": "VALUE_PARAMETER",
+                        "VALUE_SIZE": 15,
+                        "VALUE_TYPE": "STRING"
+                    },
+                    "SIZE": 15,
+                    "TABLE_NAME": "VOLT_TEMP_TABLE",
+                    "TYPE": "STRING"
+                }
+            ],
+            "PARENT_IDS": [19],
+            "PLAN_NODE_TYPE": "MATERIALIZE"
+        }
+    ]
+}

@@ -1,0 +1,5 @@
+<title>jQuery bash_create Oct/14/2013</title>
+</head>
+<body>
+<h2>jQuery bash_create</h2>
+<blockquote>

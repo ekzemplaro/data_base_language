@@ -1,0 +1,6 @@
+#
+#
+echo "import json_read" > tmp_execute.py
+#
+python ./tmp_execute.py /var/tmp/json/cities.json
+#

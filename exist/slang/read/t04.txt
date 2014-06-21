@@ -1,0 +1,42 @@
+<root>
+    <t4254>
+        <name>大村</name>
+        <population>83672</population>
+        <date_mod>2003-9-9</date_mod>
+    </t4254>
+    <t4255>
+        <name>諫早</name>
+        <population>42391</population>
+        <date_mod>2003-8-4</date_mod>
+    </t4255>
+    <t4256>
+        <name>五島</name>
+        <population>35187</population>
+        <date_mod>2003-1-21</date_mod>
+    </t4256>
+    <t4257>
+        <name>平戸</name>
+        <population>81246</population>
+        <date_mod>2003-7-23</date_mod>
+    </t4257>
+    <t4252>
+        <name>佐世保</name>
+        <population>47235</population>
+        <date_mod>2003-5-10</date_mod>
+    </t4252>
+    <t4253>
+        <name>島原</name>
+        <population>26654</population>
+        <date_mod>2003-6-14</date_mod>
+    </t4253>
+    <t4258>
+        <name>雲仙</name>
+        <population>24784</population>
+        <date_mod>2003-10-26</date_mod>
+    </t4258>
+    <t4259>
+        <name>松浦</name>
+        <population>7568200</population>
+        <date_mod>2011-09-20 09:26:00.546606</date_mod>
+    </t4259>
+</root>

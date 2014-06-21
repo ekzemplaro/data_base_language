@@ -1,0 +1,2 @@
+#
+./csv_delete.pl /var/tmp/csv/cities.csv t1277

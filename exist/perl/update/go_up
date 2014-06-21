@@ -1,0 +1,2 @@
+export http_proxy=""
+./exist_update.pl t4253 52876500

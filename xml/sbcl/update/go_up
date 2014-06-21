@@ -1,0 +1,1 @@
+./xml_update.lisp /var/tmp/xml_file/cities.xml t2265 91542300

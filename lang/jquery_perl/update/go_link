@@ -1,0 +1,43 @@
+#
+SRC=/var/www/data_base/lang/jquery_perl/update
+cd /usr/lib/cgi-bin/data_base/perl
+#
+ln -s $SRC/master_perl_update.pl .
+ln -s $SRC/text_perl_update.pl .
+ln -s $SRC/csv_perl_update.pl .
+ln -s $SRC/xml_perl_update.pl .
+ln -s $SRC/json_perl_update.pl .
+ln -s $SRC/excel_perl_update.pl .
+ln -s $SRC/pdf_perl_update.pl .
+#
+ln -s $SRC/sqlite3_perl_update.pl .
+ln -s $SRC/oracle_perl_update.pl .
+ln -s $SRC/mssql_perl_update.pl .
+ln -s $SRC/db2_perl_update.pl .
+#
+ln -s $SRC/mysql_perl_update.pl .
+ln -s $SRC/postgre_perl_update.pl .
+ln -s $SRC/firebird_perl_update.pl .
+#
+ln -s $SRC/xindice_perl_update.pl .
+ln -s $SRC/exist_perl_update.pl .
+ln -s $SRC/basex_perl_update.pl .
+ln -s $SRC/dbxml_perl_update.pl .
+#
+ln -s $SRC/gdbm_perl_update.pl .
+ln -s $SRC/berkeley_perl_update.pl .
+ln -s $SRC/cdb_perl_update.pl .
+ln -s $SRC/mcached_perl_update.pl .
+ln -s $SRC/mcachedb_perl_update.pl .
+ln -s $SRC/redis_perl_update.pl .
+ln -s $SRC/tcbn_perl_update.pl .
+ln -s $SRC/tyrant_perl_update.pl .
+#
+ln -s $SRC/couch_perl_update.pl .
+ln -s $SRC/ftp_perl_update.pl .
+ln -s $SRC/webdav_perl_update.pl .
+#
+ln -s $SRC/mongo_perl_update.pl .
+ln -s $SRC/riak_perl_update.pl .
+#
+#

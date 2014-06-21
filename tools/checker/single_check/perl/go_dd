@@ -1,0 +1,9 @@
+#
+export PERL_BADLANG=0
+#
+#
+#
+#../single_check.sh xindice perl
+#../single_check.sh exist perl
+#../single_check.sh basex perl
+#

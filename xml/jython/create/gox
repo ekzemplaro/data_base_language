@@ -1,0 +1,4 @@
+#
+./xml_create.py /var/tmp/xml_file/cities.xml
+#./xml_create.py cities.xml
+#

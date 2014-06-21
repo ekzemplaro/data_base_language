@@ -1,0 +1,5 @@
+#
+JAYBIRD=/home/uchida/data_base/firebird/Jaybird
+#
+cp -p $JAYBIRD/jaybird-full-2.1.6.jar .
+#

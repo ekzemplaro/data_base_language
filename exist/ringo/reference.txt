@@ -1,0 +1,2 @@
+/data_base/common/ringo_common/text_manipulate.js
+/data_base/common/ringo_common/xml_manipulate.js

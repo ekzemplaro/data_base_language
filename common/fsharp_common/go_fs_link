@@ -1,0 +1,8 @@
+#
+FSHARP_CORE=/usr/lib/cli/FSharp.Core-4.3
+#
+#
+ln -s $FSHARP_CORE/FSharp.Core.dll .
+ln -s $FSHARP_CORE/FSharp.Core.optdata .
+ln -s $FSHARP_CORE/FSharp.Core.sigdata .
+#

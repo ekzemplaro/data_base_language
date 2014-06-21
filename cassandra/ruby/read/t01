@@ -1,0 +1,12 @@
+db = CassandraCQL::Database.new('127.0.0.1:9160', {:keyspace => 'city'})
+
+
+db.execute("SELECT key,name,population,date_mod FROM cities").fetch { |row|
+	unit_row=row.to_hash
+	puts unit_row["key"]
+	puts unit_row["\x00\x04name\x00"]
+	puts unit_row["\x00\npopulation\x00"]
+	puts unit_row["\x00\bdate_mod\x00"]
+	puts row.to_hash.to_s
+	count += 1}
+

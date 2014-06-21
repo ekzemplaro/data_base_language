@@ -1,0 +1,27 @@
+<title>CSV</title>
+</head>
+<body>
+<h1>CSV</a></h1>
+<ol>
+	'Comma Separated Values'（カンマ区切り）<p />
+	実体はテキストファイルである。<br />
+</ol>
+<pre>
+</pre>
+<ol>
+</ol>
+
+<ol>
+</ol>
+
+Python<p />
+<pre>
+</pre>
+
+Java<p />
+<ol>
+</ol>
+
+C#<p />
+<ol>
+</ol>

@@ -1,0 +1,5 @@
+#
+#
+../single_check.sh xindice node
+../single_check.sh exist node
+#

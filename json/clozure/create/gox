@@ -1,0 +1,3 @@
+ccl64 -l  json_create.lisp --eval '(quit)' -- /var/tmp/json/cities.json
+#
+chmod 666 /var/tmp/json/cities.json

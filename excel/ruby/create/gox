@@ -1,0 +1,3 @@
+#
+./excel_create.rb /var/tmp/excel/cities.xls
+#./excel_create.rb cities.xls

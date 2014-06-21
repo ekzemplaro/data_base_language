@@ -1,0 +1,3 @@
+#
+./xml_create.pike /var/tmp/xml_file/cities.xml
+#./xml_create.pike cities.xml

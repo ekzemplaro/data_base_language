@@ -1,0 +1,8 @@
+#
+../single_check.sh sqlite3 jython
+../single_check.sh mssql jython
+../single_check.sh mysql jython
+../single_check.sh postgre jython
+../single_check.sh firebird jython
+#
+#

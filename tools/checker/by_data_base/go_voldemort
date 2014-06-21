@@ -1,0 +1,16 @@
+#
+../single_check/single_check.sh voldemort bash
+../single_check/single_check.sh voldemort php
+../single_check/single_check.sh voldemort python
+../single_check/single_check.sh voldemort perl
+../single_check/single_check.sh voldemort ruby
+#
+../single_check/single_check.sh voldemort jruby
+#
+../single_check/single_check.sh voldemort rhino
+#
+../single_check/single_check.sh voldemort scala
+../single_check/single_check.sh voldemort groovy
+../single_check/single_check.sh voldemort java
+../single_check/single_check.sh voldemort boo
+../single_check/single_check.sh voldemort csharp

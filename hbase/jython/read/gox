@@ -1,0 +1,7 @@
+#
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/jre
+export PATH=$PATH:/home/uchida/dbm/hbase/hbase-0.96.0-hadoop2/bin
+#
+export CLASSPATH=./:`hbase classpath`
+#
+./hbase_read.py

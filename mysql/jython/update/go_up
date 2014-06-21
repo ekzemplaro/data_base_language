@@ -1,0 +1,3 @@
+#
+export CLASSPATH=.:/usr/share/java/mysql-connector-java.jar
+./mysql_update.py t3325 6782100

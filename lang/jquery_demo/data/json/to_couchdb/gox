@@ -1,0 +1,2 @@
+export http_proxy=""
+curl -X PUT http://cdbd026:5984/city/gifu -d@../gifu.json

@@ -1,0 +1,18 @@
+#
+CLIENTLIB=/home/uchida/dbm/memcached/csharp/memcacheddotnet/trunk/clientlib
+cp -p $CLIENTLIB/lib/2.0/log4net.dll .
+#
+cp -p $CLIENTLIB/src/clientlib/bin/2.0/Release/Memcached.ClientLibrary.dll .
+#
+#
+FIREBIRD=/home/uchida/data_base/firebird/csharp/NETProvider-2.6.5
+cp -p $FIREBIRD/FirebirdSql.Data.FirebirdClient.dll .
+#
+MONGODBDRIVER=/home/uchida/dbm/mongodb/csharp/mongodb-csharp
+cp -p $MONGODBDRIVER/MongoDB.dll .
+#
+VOLTDB=/home/uchida/dbm/voltdb/csharp/ReleaseBuild
+cp -p $VOLTDB/VoltDB.Data.Client.dll .
+#
+DYNAMICJSON=/home/uchida/c_sharp/json/DynamicJson_1.2.0.0
+cp -p $DYNAMICJSON/DynamicJson.dll .

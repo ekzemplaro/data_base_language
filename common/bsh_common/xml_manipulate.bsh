@@ -1,0 +1,151 @@
+//
+//	xml_manipulate.bsh
+//
+//					Oct/02/2012
+//
+// --------------------------------------------------------------
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.w3c.dom.Element;
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.w3c.dom.DOMImplementation;
+
+import org.xml.sax.InputSource;
+// --------------------------------------------------------------
+String get_value_proc (Element root,String tag_name)
+{
+	NodeList list_aa = root.getElementsByTagName (tag_name);
+	Element element = (Element)list_aa.item(0);
+	String rvalue = element.getFirstChild().getNodeValue();
+
+	return	rvalue;
+}
+
+// --------------------------------------------------------------
+Document string_to_doc_proc (String str)
+{
+	Document doc = null;
+
+	DocumentBuilderFactory factory
+			= DocumentBuilderFactory.newInstance();
+	DocumentBuilder builder = factory.newDocumentBuilder();
+	StringReader strReader = new StringReader(str);
+	doc = builder.parse(new InputSource(strReader));
+
+	builder = factory.newDocumentBuilder();
+
+	return doc;
+}
+
+// --------------------------------------------------------------
+xml_to_dict_proc (String xml_str)
+{
+	Document doc = string_to_doc_proc (xml_str);
+
+	System.out.println ("*** xml_manipulate.xml_to_dict_proc ***");
+
+//	HashMap <String, HashMap<String,String>> dict_aa
+//		= new HashMap <String, HashMap<String,String>> ();
+
+	Map dict_aa = new HashMap ();
+
+	Element root = doc.getDocumentElement();
+
+	System.out.println ("TagName : " + root.getTagName());
+	NodeList list = root.getElementsByTagName ("name");
+
+	for (int it=0; it < list.getLength() ; it++)
+		{
+       		Element element = (Element)list.item(it);
+		Node parent = element.getParentNode ();
+		String key = parent.getNodeName ();
+
+       		Element element_pp = (Element)parent;
+		String name = get_value_proc (element_pp,"name");
+		String str_pop = get_value_proc (element_pp,"population");
+		String date_mod = get_value_proc (element_pp,"date_mod");
+
+		dict_aa = dict_append_proc
+			(dict_aa,key,name,Integer.parseInt (str_pop),date_mod);
+		}
+
+	return	dict_aa;
+}
+
+// --------------------------------------------------------------
+String document2String(Document doc)
+{
+	String string = null;
+	StringWriter writer = new StringWriter();
+	StreamResult result = new StreamResult(writer);
+	TransformerFactory factory = TransformerFactory.newInstance();
+
+	Transformer former;
+
+		former = factory.newTransformer();
+		former.transform(new DOMSource(doc.getDocumentElement()),
+			result);
+	string = result.getWriter().toString();
+
+	return string;
+}
+// --------------------------------------------------------------
+add_row_proc
+	(Document document,
+	String key,String name,int population,String date_mod)
+{
+	Element root=document.getDocumentElement();
+	Element cities=document.createElement(key);
+
+	Element name_aa=document.createElement("name");
+	name_aa.appendChild(document.createTextNode(name));
+	Element population_aa=document.createElement("population");
+	population_aa.appendChild(document.createTextNode(Integer.toString (population)));
+	Element date_mod_aa=document.createElement("date_mod");
+	date_mod_aa.appendChild(document.createTextNode(date_mod));
+
+	cities.appendChild(name_aa);
+	cities.appendChild(population_aa);
+	cities.appendChild(date_mod_aa);
+
+	root.appendChild (cities);
+}
+
+// --------------------------------------------------------------
+String	dict_to_xml_proc (Map dict_aa)
+{
+	DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+	DocumentBuilder builder = factory.newDocumentBuilder();
+	DOMImplementation domImpl=builder.getDOMImplementation();
+	Document doc = domImpl.createDocument("","root",null);
+
+	Set set_aaa = dict_aa.keySet ();
+
+	Map dict_unit = new HashMap ();
+
+for (Object key_aa: set_aaa)
+		{
+		dict_unit = dict_aa.get (key_aa);
+
+		String name = dict_unit.get ("name");
+		String population = dict_unit.get ("population");
+		String date_mod = dict_unit.get ("date_mod");
+
+add_row_proc (doc,(String)key_aa,name,Integer.parseInt (population),date_mod);
+		}
+
+String xml_str = document2String (doc);
+
+	return	xml_str;
+}
+
+
+// --------------------------------------------------------------

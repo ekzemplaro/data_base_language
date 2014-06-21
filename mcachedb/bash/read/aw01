@@ -1,0 +1,6 @@
+{if (NF == 4)
+	{
+	printf $2
+	}
+else {print $0}
+}

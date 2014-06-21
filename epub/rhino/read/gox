@@ -1,0 +1,5 @@
+JAVA_CLASSPATH="/usr/share/java/js.jar:/usr/share/java/jline.jar"
+JAR=/var/www/data_base/common/jar
+export CLASSPATH=.:$JAVA_CLASSPATH:$JAR/epubgen-0.5.0.jar:$JAR/tika-app-1.0.jar
+#
+./epub_read.js cities.epub

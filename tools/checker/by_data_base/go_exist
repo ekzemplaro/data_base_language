@@ -1,0 +1,14 @@
+#
+../single_check/single_check.sh exist bash
+../single_check/single_check.sh exist php
+../single_check/single_check.sh exist python
+../single_check/single_check.sh exist perl
+../single_check/single_check.sh exist ruby
+#
+../single_check/single_check.sh exist jruby
+#
+../single_check/single_check.sh exist rhino
+#
+../single_check/single_check.sh exist java
+../single_check/single_check.sh exist boo
+../single_check/single_check.sh exist csharp

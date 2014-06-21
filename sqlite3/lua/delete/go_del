@@ -1,0 +1,1 @@
+lua sqlite3_delete.lua /var/tmp/sqlite3/cities.db t0713

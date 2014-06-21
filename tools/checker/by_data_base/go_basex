@@ -1,0 +1,9 @@
+#
+../single_check/single_check.sh basex bash
+../single_check/single_check.sh basex php
+../single_check/single_check.sh basex python
+../single_check/single_check.sh basex perl
+../single_check/single_check.sh basex ruby
+#
+../single_check/single_check.sh basex jruby
+#

@@ -1,0 +1,11 @@
+<script src="db_sum.js"></script>
+<link href="../statistics.css" rel="stylesheet">
+<title>Console ordered by Data Base Mar/14/2014</title>
+</head>
+<body>
+<h2>Console ordered by Data Base</h2>
+<blockquote>
+	There're 63 languages.<br /> 
+	Each data base has Create, Read, Update and Delete.<br />
+	So Total Number is 4 * 63 = 252.<p />
+</blockquote>

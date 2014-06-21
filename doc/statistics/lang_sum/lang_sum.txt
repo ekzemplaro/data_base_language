@@ -1,0 +1,11 @@
+<script src="lang_sum.js"></script>
+<link href="../statistics.css" rel="stylesheet">
+<title>Console ordered by Language Mar/14/2014</title>
+</head>
+<body>
+<h2>Console ordered by Language</h2>
+<blockquote>
+	There're 44 data bases.<br /> 
+	Each data base has Create, Read, Update and Delete.<br />
+	So Total Number is 4 * 44 = 176.<p />
+</blockquote>

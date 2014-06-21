@@ -1,0 +1,4 @@
+#
+SCALA_COMMON=/var/www/data_base/common/scala_common
+export CLASSPATH=./:/usr/share/java/jxl.jar:$SCALA_COMMON
+scala excel_read /var/tmp/excel/cities.xls

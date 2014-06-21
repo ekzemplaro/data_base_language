@@ -1,0 +1,2 @@
+#
+../bin/process_db.sh abcl lisp common.txt

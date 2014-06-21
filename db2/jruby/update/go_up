@@ -1,0 +1,8 @@
+#
+. /home/scott/sqllib/db2profile
+#
+export SQLLIB=/opt/ibm/db2/V9.7
+#
+CLASSPATH=./:$SQLLIB/java/db2java.zip:$SQLLIB/java/db2jcc.jar:$SQLLIB/function:$SQLLIB/java/db2jcc_license_cu.jar:.
+#
+./db2_update.rb t2875 94523900

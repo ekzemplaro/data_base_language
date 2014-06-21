@@ -1,0 +1,39 @@
+#
+SRC=/var/www/data_base/lang/jquery_lua/read
+LUA_COMMON=/var/www/data_base/lua_common
+cd /usr/lib/cgi-bin/data_base/lua
+#
+ln -s $SRC/master_lua_read.lua master_lua_read.lua
+ln -s $SRC/text_lua_read.lua text_lua_read.lua
+ln -s $SRC/xml_lua_read.lua xml_lua_read.lua
+ln -s $SRC/json_lua_read.lua json_lua_read.lua
+ln -s $SRC/sqlite3_lua_read.lua sqlite3_lua_read.lua
+#
+ln -s $SRC/oracle_lua_read.lua oracle_lua_read.lua
+ln -s $SRC/mssql_lua_read.lua mssql_lua_read.lua
+ln -s $SRC/db2_lua_read.lua db2_lua_read.lua
+#
+ln -s $SRC/mysql_lua_read.lua mysql_lua_read.lua
+ln -s $SRC/postgre_lua_read.lua postgre_lua_read.lua
+ln -s $SRC/firebird_lua_read.lua firebird_lua_read.lua
+#
+ln -s $SRC/xindice_lua_read.lua xindice_lua_read.lua
+ln -s $SRC/exist_lua_read.lua exist_lua_read.lua
+ln -s $SRC/dbxml_lua_read.lua dbxml_lua_read.lua
+#
+ln -s $SRC/gdbm_lua_read.lua gdbm_lua_read.lua
+ln -s $SRC/berkeley_lua_read.lua berkeley_lua_read.lua
+ln -s $SRC/mcached_lua_read.lua mcached_lua_read.lua
+ln -s $SRC/mcachedb_lua_read.lua mcachedb_lua_read.lua
+ln -s $SRC/redis_lua_read.lua redis_lua_read.lua
+#
+ln -s $SRC/couch_lua_read.lua couch_lua_read.lua
+ln -s $SRC/mongo_lua_read.lua mongo_lua_read.lua
+ln -s $SRC/cassandra_lua_read.lua cassandra_lua_read.lua
+#
+#
+ln -s $LUA_COMMON/text_manipulate.lua text_manipulate.lua
+ln -s $LUA_COMMON/json_manipulate.lua json_manipulate.lua
+ln -s $LUA_COMMON/xml_manipulate.lua xml_manipulate.lua
+ln -s $LUA_COMMON/lib/LuaXml.lua LuaXml.lua
+ln -s $LUA_COMMON/lib/LuaXML_lib.so LuaXML_lib.so

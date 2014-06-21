@@ -1,0 +1,2 @@
+#
+../bin/process_db.sh python py common.txt

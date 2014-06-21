@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<script src="/js/jquery-2.1.0.min.js"></script>
+<meta content="Program Language Examples to connect to MongoDB" name="description">
+<meta content="MongoDB,クライアント,接続" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+
+<title>mongoDB</title>
+</head>
+<body>
+<h1><a href="http://www.mongodb.org">mongoDB</a></h1>
+<blockquote>
+<pre>
+ii  mongodb   1:2.4.6-0ubuntu5    amd64    object/document-oriented database (metapackage)
+</pre>
+</blockquote>
+<blockquote>
+<a href="http://www.mongodb.org/display/DOCS/Drivers">Drivers</a><br />
+</blockquote>
+<a href="http://localhost:28017/">Console</a><p />
+<blockquote>
+	How to start server <p />
+	<blockquote>
+	cd mongodb-linux-x86_64-2.0.6<br />
+	bin/mongod --dbpath /var/tmp/mongodb<br />
+	</blockquote>
+</blockquote>
+<blockquote>
+	/etc/mongodb.conf<p />
+	port = 27017<p />
+
+	sudo service mongodb start<p />
+	sudo service mongodb stop<p />
+
+	/var/log/mongodb/mongodb.log<p />
+</blockquote>
+
+
+<blockquote>
+</blockquote>
+
+PHP<p />
+<blockquote>
+	sudo apt-get install php-pear php5-dev<br />
+	sudo 	pecl install mongo<br />
+</blockquote>
+
+<blockquote>
+	<a href="https://github.com/mongodb/mongo-php-driver/">mongo-php-driver
+</a><p />
+	mongodb-mongo-php-driver-1.1.4-3-gdb58b36.tar.gz<p />
+
+	$ phpize<br />
+	$ ./configure<br />
+	$ make<br />
+	$ sudo make install<p />
+
+	Then add<br />
+   	extension=mongo.so<br />
+	to /etc/php5/cli/php.ini<br />
+	& /etc/php5/apache2/php.ini<br />
+</blockquote>
+
+Python<p />
+<blockquote>
+<a href="http://api.mongodb.org/python/1.5.1%2B/index.html">PyMongo 1.5.1</a><p />
+
+<pre>
+ii  python-pymongo   2.2-4   amd64    Python interface to the MongoDB document-oriented database
+</pre>
+</blockquote>
+
+Perl<p />
+<ol>
+	sudo cpan MongoDB<br />
+</ol>
+<blockquote>
+	libmodule-install-perl<br />
+	libclass-meta-perl<br />
+	libany-moose-perl<br />
+	libfile-slurp-perl<br />
+	libboolean-perl<br />
+</blockquote>
+
+Ruby<p />
+<blockquote>
+	# gem install mongo<br />
+	# gem install bson_ext<br />
+</blockquote>
+
+Java<p />
+<blockquote>
+<a href="https://github.com/mongodb/mongo-java-driver">
+mongo-java-driver</a><br />
+mongo-2.8.0.jar<p />
+</blockquote>
+
+C#<p />
+<blockquote>
+<a href="https://github.com/samus/mongodb-csharp">mongodb-csharp</a><p />
+</blockquote>
+<div id="result_aa">result_aa</div>
+<hr />
+<div id="outarea_aa">outarea_aa</div>
+<div id="outarea_bb">outarea_bb</div>
+<div id="outarea_cc">outarea_cc</div>
+<div id="outarea_dd">outarea_dd</div>
+<div id="outarea_ee">outarea_ee</div>
+<div id="outarea_ff">outarea_ff</div>
+<div id="outarea_gg">outarea_gg</div>
+<div id="outarea_hh">outarea_hh</div>
+<hr />
+<a href="/data_base/data_base.html">Return</a><p />
+Jan/29/2014 AM 08:15<p />
+</body>
+</html>

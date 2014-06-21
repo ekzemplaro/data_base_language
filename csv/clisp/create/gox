@@ -1,0 +1,1 @@
+clisp csv_create.lsp /var/tmp/csv/cities.csv

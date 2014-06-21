@@ -1,0 +1,1 @@
+Rscript --no-restore --no-save text_read.R --args /var/tmp/plain_text/cities.txt

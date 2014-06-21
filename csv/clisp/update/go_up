@@ -1,0 +1,1 @@
+clisp csv_update.lsp /var/tmp/csv/cities.csv t1272 81225600

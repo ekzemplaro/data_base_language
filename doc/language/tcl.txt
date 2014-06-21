@@ -1,0 +1,20 @@
+<meta content="Program Language Examples in tcl" name="description">
+<meta content="tcl,クライアント,接続,言語,サンプル" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<title>Tcl Dec/26/2011</title>
+</head>
+<body>
+<h2><a href="http://www.tcl.tk">Tcl</a></h2><p />
+
+<blockquote>
+	<a href="http://tclxml.sourceforge.net/tclxml.html">TclXML</a><p />
+</blockquote>
+
+<blockquote>
+	<a href="http://personal.telefonica.terra.es/web/getleft/tclcurl/index.html">
+	TclCurl</a><p />
+
+	<pre>
+	ii  tclcurl        7.19.6-2       Tcl bindings to libcurl
+	</pre>
+</blockquote>

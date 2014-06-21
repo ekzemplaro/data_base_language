@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<job>
+<command>
+	<line>dir</line>
+</command>
+<command>
+	<line>ls</line>
+</command>
+<command>
+	<line>pwd</line>
+</command>
+<command>
+	<line>date</line>
+</command>
+<command>
+	<line>cd</line>
+</command>
+</job>

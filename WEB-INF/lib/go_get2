@@ -1,0 +1,16 @@
+#
+export DBXML_LIB=/home/uchida/xml_database/dbXML/dbXML-2.0/java/lib
+#
+cp $DBXML_LIB/dbxml.jar .
+cp $DBXML_LIB/xmlrpc-client-1.0.jar .
+#
+cp /usr/share/java/commons-httpclient.jar .
+cp /usr/share/java/commons-logging.jar .
+cp /usr/share/java/commons-logging-adapters.jar .
+cp /usr/share/java/commons-logging-api.jar .
+cp /usr/share/java/commons-codec.jar .
+#
+cp /usr/share/java/mysql-connector-java.jar .
+cp /usr/share/java/postgresql.jar .
+#
+cp -p /usr/share/java/hsqldb.jar .

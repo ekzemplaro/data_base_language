@@ -1,0 +1,10 @@
+#
+../single_check.sh gdbm pike
+#../single_check.sh berkeley pike
+../single_check.sh mcached pike
+../single_check.sh mcachedb pike
+#
+../single_check.sh redis pike
+#../single_check.sh tcbn pike
+../single_check.sh tyrant pike
+#

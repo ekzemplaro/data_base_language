@@ -1,0 +1,5 @@
+#
+#
+echo "import gdbm_update" > tmp_execute.py
+#
+python ./tmp_execute.py t2157 1435900

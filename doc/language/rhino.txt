@@ -1,0 +1,27 @@
+<title>Rhino May/09/2013</title>
+</head>
+<body>
+<h2><a href="http://www.mozilla.org/rhino/">Rhino</a></h2><p />
+sudo apt-get install rhino<p />
+<blockquote>
+<pre>
+ii  librhino-java    1.7R3-5build1   all    Libraries for rhino Java Script Engine
+ii  rhino            1.7R3-5build1   all    JavaScript engine written in Java
+</pre>
+</blockquote>
+
+
+<blockquote>
+<pre>
+$ rhino
+Rhino 1.7 release 2 2010 11 17
+js> aa = 12;
+12
+js> bb = 31;
+31
+js> print (aa + bb);
+43
+js>
+</pre>
+</blockquote>
+

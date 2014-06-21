@@ -1,0 +1,2 @@
+export NODE_PATH=/home/uchida/node_modules
+./redis_delete.coffee t1858

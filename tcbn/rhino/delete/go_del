@@ -1,0 +1,12 @@
+#
+#
+JAVA_COMMON=/var/www/data_base/common/java_common
+SONIC=$JAVA_COMMON/jar/jsonic-1.1.2.jar
+#
+#
+TCBN=/usr/local/lib
+export CLASSPATH=$CLASSPATH:$TCBN/tokyocabinet.jar
+export CLASSPATH=$CLASSPATH:$JAVA_COMMON:$SONIC
+LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$TCBN
+#
+java tcbn_delete 838

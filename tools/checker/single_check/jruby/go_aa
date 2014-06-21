@@ -1,0 +1,7 @@
+#
+../single_check.sh text jruby
+../single_check.sh csv jruby
+../single_check.sh xml jruby
+../single_check.sh json jruby
+#../single_check.sh excel jruby
+#

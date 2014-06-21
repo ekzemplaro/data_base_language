@@ -1,0 +1,27 @@
+<title>Calc</title>
+</head>
+<body>
+<h1>Calc</h1>
+<ol>
+</ol>
+
+Bash<p />
+<ol>
+	odt2txt<p />
+</ol>
+
+<ol>
+</ol>
+
+Python<p />
+<ol>
+	python-ooolib<p />
+</ol>
+
+Java<p />
+<ol>
+</ol>
+
+C#<p />
+<ol>
+</ol>

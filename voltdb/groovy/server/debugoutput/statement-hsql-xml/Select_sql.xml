@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE statement [
+  <!ELEMENT statement (select|update|insert|delete)>
+  <!ELEMENT select (scan_columns,columns,parameters,tablescans,querycondition?,havingcondition?,ordercolumns?)>
+  <!ATTLIST select
+    limit CDATA #IMPLIED
+    limit_paramid CDATA #IMPLIED
+    offset CDATA #IMPLIED
+    offset_paramid CDATA #IMPLIED
+    distinct CDATA #IMPLIED
+    grouped CDATA #IMPLIED
+    aggregated CDATA #IMPLIED>
+  <!ELEMENT values (columnref*|(value|columnref|bool|asterisk|operation|function)*)>
+  <!ELEMENT scan_columns (columnref*|column*|(value|columnref|bool|asterisk|operation|function)*)>
+  <!ELEMENT columns (columnref*|column*|(value|columnref|bool|asterisk|operation|function)*)>
+  <!ELEMENT parameters (parameter*)>
+  <!ELEMENT parameter ANY>
+  <!ATTLIST parameter
+    index CDATA #REQUIRED
+    id CDATA #REQUIRED
+    type CDATA #REQUIRED>
+  <!ELEMENT tablescans (tablescan*)>
+  <!ELEMENT tablescan (searchkey?,startexp?,endexp?,postexp?)>
+  <!ATTLIST tablescan
+    type CDATA #REQUIRED
+    table CDATA #REQUIRED
+    index CDATA #IMPLIED
+    alias CDATA #IMPLIED>
+  <!ELEMENT searchkey ((value|columnref|bool|asterisk|operation|function)*)>
+  <!ELEMENT startexp ((value|columnref|bool|asterisk|operation|function)*)>
+  <!ELEMENT endexp ((value|columnref|bool|asterisk|operation|function)*)>
+  <!ELEMENT postexp ((value|columnref|bool|asterisk|operation|function)*)>
+  <!ELEMENT querycondition ((value|columnref|bool|asterisk|operation|function)*)>
+  <!ELEMENT havingcondition ((value|columnref|bool|asterisk|operation|function)*)>
+  <!ELEMENT value ANY>
+  <!ATTLIST value
+    id CDATA #REQUIRED
+    type CDATA #REQUIRED
+    value CDATA #IMPLIED
+    isparam CDATA #IMPLIED>
+  <!ELEMENT columnref ANY>
+  <!ATTLIST columnref
+    id CDATA #REQUIRED
+    table CDATA #REQUIRED
+    column CDATA #REQUIRED
+    alias CDATA #IMPLIED
+    dir CDATA #IMPLIED>
+  <!ELEMENT bool ANY>
+  <!ATTLIST bool
+    id CDATA #REQUIRED
+    value CDATA #REQUIRED>
+  <!ELEMENT asterisk ANY>
+  <!ELEMENT groupcolumns ((value|columnref|bool|asterisk|operation|function)*)>
+  <!ELEMENT ordercolumns ((value|columnref|bool|asterisk|operation|function)*)>
+  <!ELEMENT operation ((value|columnref|bool|asterisk|operation|function)*)>
+  <!ATTLIST operation
+    id CDATA #REQUIRED
+    type CDATA #REQUIRED
+    alias CDATA #IMPLIED
+    distinct CDATA #IMPLIED
+    desc CDATA #IMPLIED>
+  <!ELEMENT function ((value|columnref|bool|asterisk|operation|function)*)>
+  <!ATTLIST function
+    id CDATA #IMPLIED
+    name CDATA #REQUIRED
+    type CDATA #REQUIRED>
+  <!ELEMENT update (columns,parameters,tablescan,condition?)>
+  <!ATTLIST update
+    table CDATA #REQUIRED>
+  <!ELEMENT condition ((value|columnref|bool|asterisk|operation|function)*)>
+  <!ELEMENT column ((value|columnref|bool|asterisk|operation|function)*)>
+  <!ATTLIST column
+    name CDATA #REQUIRED
+    table CDATA #REQUIRED>
+  <!ELEMENT insert (columns,parameters,tablescan?,condition?)>
+  <!ATTLIST insert
+    table CDATA #REQUIRED>
+  <!ELEMENT delete (parameters,tablescan?,condition?)>
+  <!ATTLIST delete
+    table CDATA #REQUIRED>
+]>
+<statement>
+    <select>
+        <scan_columns>
+            <columnref id="322185831" table="CITIES" column="ID" alias="ID" />
+            <columnref id="1170987530" table="CITIES" column="NAME" alias="NAME" />
+            <columnref id="1247275602" table="CITIES" column="POPULATION" alias="POPULATION" />
+            <columnref id="1373164447" table="CITIES" column="DATE_MOD" alias="DATE_MOD" />
+        </scan_columns>
+        <columns>
+            <columnref id="322185831" table="CITIES" column="ID" alias="ID" />
+            <columnref id="1170987530" table="CITIES" column="NAME" alias="NAME" />
+            <columnref id="1247275602" table="CITIES" column="POPULATION" alias="POPULATION" />
+            <columnref id="1373164447" table="CITIES" column="DATE_MOD" alias="DATE_MOD" />
+        </columns>
+        <parameters>
+            <parameter index='0' id='1915590067' type='VARCHAR' />
+        </parameters>
+        <tablescans>
+            <tablescan type="index" table="CITIES" index="SYS_IDX_SYS_PK_10018_10019">
+                <postexp>
+                    <operation id="-782489751" type="and">
+                        <operation id="-99987104" type="and">
+                            <operation id="389615911" type="equal">
+                                <columnref id="247420245" table="CITIES" column="ID" alias="ID" />
+                                <value id="1915590067" type="VARCHAR" isparam="true" />
+                            </operation>
+                            <operation id="389615911" type="equal">
+                                <columnref id="247420245" table="CITIES" column="ID" alias="ID" />
+                                <value id="1915590067" type="VARCHAR" isparam="true" />
+                            </operation>
+                        </operation>
+                        <operation id="389615911" type="equal">
+                            <columnref id="247420245" table="CITIES" column="ID" alias="ID" />
+                            <value id="1915590067" type="VARCHAR" isparam="true" />
+                        </operation>
+                    </operation>
+                </postexp>
+            </tablescan>
+        </tablescans>
+        <querycondition>
+            <operation id="389615911" type="equal">
+                <columnref id="247420245" table="CITIES" column="ID" alias="ID" />
+                <value id="1915590067" type="VARCHAR" isparam="true" />
+            </operation>
+        </querycondition>
+    </select>
+</statement>
+

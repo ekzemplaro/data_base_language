@@ -1,0 +1,6 @@
+gdbm_manipulate.pike
+mcached_manipulate.pike
+redis_manipulate.pike
+sql_manipulate.pike
+text_manipulate.pike
+xml_manipulate.pike

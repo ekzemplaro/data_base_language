@@ -1,0 +1,4 @@
+#
+#
+export http_proxy=""
+./exist_update.py t4259 7568200

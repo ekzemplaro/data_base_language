@@ -1,0 +1,3 @@
+#
+./text_update.io /var/tmp/plain_text/cities.txt t2382 83254200
+chmod 666 /var/tmp/plain_text/cities.txt

@@ -1,0 +1,3 @@
+#
+./text_create.js /var/tmp/plain_text/cities.txt
+#./text_create.js cities.txt

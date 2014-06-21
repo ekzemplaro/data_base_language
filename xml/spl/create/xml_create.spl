@@ -1,0 +1,43 @@
+// -----------------------------------------------------------------
+//	xml_create.spl
+//
+//						Sep/06/2011
+// -----------------------------------------------------------------
+load "file";
+#file-as-code  /var/www/data_base/common/spl_common/text_manipulate.spl;
+#file-as-code  /var/www/data_base/common/spl_common/xml_manipulate.spl;
+
+// -----------------------------------------------------------------
+function data_prepare_proc ()
+{
+	var dict_aa;
+
+	dict_append_proc (dict_aa,"t2261","静岡","95287","1962-7-25");
+	dict_append_proc (dict_aa,"t2262","浜松","23914","1962-2-10");
+	dict_append_proc (dict_aa,"t2263","沼津","84751","1962-8-21");
+	dict_append_proc (dict_aa,"t2264","三島","32739","1962-1-28");
+	dict_append_proc (dict_aa,"t2265","富士","94582","1962-9-14");
+	dict_append_proc (dict_aa,"t2266","熱海","52475","1962-3-17");
+	dict_append_proc (dict_aa,"t2267","富士宮","29482","1962-4-15");
+	dict_append_proc (dict_aa,"t2268","藤枝","73459","1962-10-14");
+	dict_append_proc (dict_aa,"t2269","御殿場","36376","1962-8-24");
+	dict_append_proc (dict_aa,"t2279","島田","28475","1962-7-9");
+
+	return	(dict_aa);
+}
+
+// -----------------------------------------------------------------
+write ("*** 開始 ***\n");
+
+var file_out = argv[0];
+
+write (file_out ~ "\n");
+
+
+var dict_aa = data_prepare_proc ();
+var out_str =  dict_to_xml_proc (dict_aa);
+
+file_write (file_out,out_str);
+
+
+write ("*** 終了 ***\n");

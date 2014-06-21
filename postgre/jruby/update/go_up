@@ -1,0 +1,6 @@
+#
+#
+export CLASSPATH=.:/usr/share/java/postgresql.jar
+#
+./postgre_update.rb t3461 71256800
+#

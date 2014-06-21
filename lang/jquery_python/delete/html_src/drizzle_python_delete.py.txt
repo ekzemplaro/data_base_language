@@ -1,0 +1,1 @@
+../drizzle_python_delete.py

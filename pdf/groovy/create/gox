@@ -1,0 +1,10 @@
+#
+export COMMON=/var/www/data_base/common
+export GROOVY_COMMON=$COMMON/groovy_common
+export JAR=$COMMON/jar
+#
+GROOVY_JAR=/usr/share/java/groovy-all.jar:/usr/share/java/groovy.jar
+export CLASSPATH=.:$GROOVY_JAR:$GROOVY_COMMON:$JAR/iText-5.0.5.jar:$JAR/iTextAsian-5.0.1.jar
+#
+java pdf_create /var/tmp/pdf/cities.pdf
+#

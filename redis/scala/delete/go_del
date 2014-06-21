@@ -1,0 +1,9 @@
+#
+export COMMON=/var/www/data_base/common
+export SCALA_COMMON=$COMMON/scala_common
+export JAR=$COMMON/jar
+#
+export REDIS_JAR=$JAR/jedis-2.1.0.jar
+export CLASSPATH=.:$REDIS_JAR:$SCALA_COMMON
+#
+scala redis_delete t1858

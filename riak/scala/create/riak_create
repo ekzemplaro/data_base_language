@@ -1,0 +1,58 @@
+// -----------------------------------------------------------------
+//	riak_create.scala
+//
+//					Jun/10/2013
+//
+// -----------------------------------------------------------------
+import scala.util.parsing.json.JSONObject
+import scala.collection.mutable
+// -----------------------------------------------------------------
+object riak_create
+{
+def main (args: Array[String])
+{
+	println	("*** 開始 ***")
+
+	val uri_collection = "http://cddn007:5984/city"
+	val uri_target = uri_collection + "/cities"
+
+	val dict_aa = data_prepare_proc ()
+
+	val str_json = get_uri.get_uri_proc (uri_target)
+
+	var dict_org = json_manipulate.json_to_dict_proc (str_json)
+
+	println ("_id = " + dict_org.get ("_id").get)
+	println ("_rev = " + dict_org.get ("_rev").get)
+
+	dict_aa("_id") = dict_org.get ("_id").get
+	dict_aa("_rev") = dict_org.get ("_rev").get
+
+	text_manipulate.dict_display_proc (dict_aa)
+ 
+	val json_str = json_manipulate.dict_to_json_proc (dict_aa)
+
+//	println (json_str)
+	get_uri.rest_put_proc (uri_target,json_str,"text/json")
+
+	println	("*** 終了 ***")
+
+}
+// -----------------------------------------------------------------
+def data_prepare_proc ():(mutable.Map[String,Object]) = {
+
+	var dict_aa = mutable.Map[String,Object] ()
+
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t3251","松江",45673,"1998-4-21")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t3252","出雲",67329,"1998-8-28")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t3253","大田",86173,"1998-7-12")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t3254","雲南",73542,"1998-6-23")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t3255","江津",41795,"1998-5-17")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t3256","浜田",69274,"1998-1-24")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t3257","益田",32562,"1998-3-21")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t3258","安来",85328,"1998-9-8")
+	dict_aa
+}
+// -----------------------------------------------------------------
+}
+// -----------------------------------------------------------------

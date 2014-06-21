@@ -1,0 +1,7 @@
+#
+export http_proxy=""
+#
+curl -X DELETE http://localhost:5984/data_base/common_folders
+curl -X PUT http://localhost:5984/data_base/common_folders
+curl -X PUT http://localhost:5984/data_base/common_folders -d@common.json
+#

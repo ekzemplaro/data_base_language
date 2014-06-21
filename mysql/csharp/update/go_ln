@@ -1,0 +1,4 @@
+#
+COMMON=/var/www/data_base/common
+ln -s $COMMON/dll/MySql.Data.dll .
+ln -s $COMMON/csharp_common/table_manipulate.dll .

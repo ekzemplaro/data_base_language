@@ -1,0 +1,3 @@
+#
+./text_delete.exe /var/tmp/plain_text/cities.txt t2387
+#./text_delete.exe cities.txt t2387

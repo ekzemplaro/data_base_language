@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<title>
+Environment for Ubuntu (Dec/13/2013)
+</title>
+</head>
+</head>
+<body>
+<hr />
+インストール直後のフォルダー名を、日本語から、英語にする。<p />
+<blockquote>
+LANGUAGE=en xdg-user-dirs-update --force<p />
+</blockquote>
+<hr />
+プロキシーの設定:<p />
+/etc/apt/apt.conf.d/00proxy
+<blockquote>
+Acquire::http::proxy "http://scott:tiger@proxy01:80/";<br />
+Acquire::ftp::proxy "ftp://scott:tiger@proxy01:80/";<br />
+Acquire::https::proxy "https://scott:tiger@proxy01:80/";<br />
+</blockquote>
+<hr />
+Ubuntu のパッケージのソフトをインストールする。<p />
+
+<a href="./go_gen.sh.txt">./go_gen.sh</a>を実行する。<p />
+<blockquote>
+	<a href="./pick_package.py.txt">pick_package.py</a>
+</blockquote>
+bash ./go_install を実行する。<p />
+<hr />
+不具合の修正<p />
+<ol>
+Rhino の　不具合<p />
+	rhino1_7R2.zip をダウンロードして、解凍する。<p />
+	<ol>
+	そこに含まれる、<br />
+	871260 2009-03-22 14:32 rhino1_7R2/js.jar<br />	
+	を、/usr/share/java/js.jar と置き換える。<br />
+	</ol>
+	<p />
+Can be fixed by replacing /usr/share/java/js.jar<br />
+</ol>
+<hr />
+
+subversionの設定:<p />
+<blockquote>
+.subversion/servers<p />
+
+http-proxy-host = proxy01<br />
+http-proxy-port = 80<br />
+http-proxy-username = scott<br />
+http-proxy-password = tiger<br />
+</blockquote>
+
+<hr />
+<a href="http://jp.franz.com/index.html">アレグロ Common Lisp</a> のインストール<p />
+<ol>
+<a href="http://www.franz.com/downloads.lhtml">acl82express-linux-x86.bz2</a><p />
+cd /opt<br />
+tar xvfj acl82express-linux-x86.bz2<p />
+</ol>
+
+<hr />
+Samba の設定<p />
+<pre>
+ii  samba     2:3.6.6-3ubuntu5      amd64   SMB/CIFS file, print, and login server for Unix
+</pre>
+/etc/samba/smb.conf<p />
+
+<blockquote>
+<pre>
+[samba]
+path = /var/samba
+writeable = yes
+force create mode = 0666
+force directory mode = 0777
+guest ok = yes
+guest only = yes
+;
+</pre>
+</blockquote>
+
+サーバーの停止と起動<br />
+<blockquote>
+sudo stop nmbd<br />
+sudo stop smbd<p />
+sudo start nmbd<br />
+sudo start smbd<br />
+</blockquote>
+
+Windows の コマンド プロンプトでの確認<br />
+<blockquote>
+	net view \\server<br />
+</blockquote>
+<hr />
+<a href="/data_base/data_base.html">Return</a><p />
+Dec/13/2013 AM 08:15<p />
+</body>
+</html>

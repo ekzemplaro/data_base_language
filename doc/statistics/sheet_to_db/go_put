@@ -1,0 +1,3 @@
+./go_del.sh lang_db
+#
+curl -X PUT http://cdbd026:5984/data_base/lang_db -d@lang_db.json

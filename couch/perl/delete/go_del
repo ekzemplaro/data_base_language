@@ -1,0 +1,2 @@
+export http_proxy=""
+./couch_delete.pl t2026

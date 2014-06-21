@@ -1,0 +1,2 @@
+#
+../bin/process_db.sh haxe hx common.txt

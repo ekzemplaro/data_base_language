@@ -1,0 +1,7 @@
+#
+rm -f /var/tmp/sqlite3/cities.db
+#
+./sqlite3_create /var/tmp/sqlite3/cities.db
+#
+chmod 777 /var/tmp/sqlite3/cities.db
+

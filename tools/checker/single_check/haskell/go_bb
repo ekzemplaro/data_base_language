@@ -1,0 +1,8 @@
+#
+../single_check.sh sqlite3 haskell
+#../single_check.sh mssql haskell
+#../single_check.sh mysql haskell
+../single_check.sh postgre haskell
+#../single_check.sh firebird haskell
+#
+#

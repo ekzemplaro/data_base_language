@@ -1,0 +1,25 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+import kinterbasdb
+
+con = kinterbasdb.connect(
+    dsn="localhost:/var/firebird/post.fdb",
+    user="SYSDBA",
+    password="masterkey",
+    charset="UNICODE_FSS")
+    
+# カーソル作成
+cur = con.cursor()
+# SQL実行
+cur.execute("SELECT ZIP_CODE,ADDRESS FROM POST WHERE ZIP_CODE = '1000000'")
+
+# 結果取得
+row = cur.fetchone()
+while row != None:
+    print row[0].strip(), row[1].strip()
+    row = cur.fetchone()
+    
+# カーソルを閉じる
+cur.close()
+# データベースの接続終了
+con.close()

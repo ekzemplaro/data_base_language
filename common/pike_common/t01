@@ -1,0 +1,23 @@
+// ----------------------------------------------------------------
+void redis_update_proc (object con,string key,string population_in)
+{
+	string json_str = redis_get_record_proc (con,key);
+
+	write (json_str + "\n");
+
+	if (json_str != "")
+		{
+		mapping(string:string) unit_aa
+			= Standards.JSON.decode (json_str);
+
+		unit_aa["population"] = population_in;
+
+		unit_aa["date_mod"] = get_current_date_proc ();
+
+		json_str = Standards.JSON.encode(unit_aa);
+
+		set_redis_record_proc (con,key,json_str);
+		}
+}
+
+// ----------------------------------------------------------------

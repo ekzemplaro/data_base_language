@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE statement [
+  <!ELEMENT statement (select|update|insert|delete)>
+  <!ELEMENT select (scan_columns,columns,parameters,tablescans,querycondition?,havingcondition?,ordercolumns?)>
+  <!ATTLIST select
+    limit CDATA #IMPLIED
+    limit_paramid CDATA #IMPLIED
+    offset CDATA #IMPLIED
+    offset_paramid CDATA #IMPLIED
+    distinct CDATA #IMPLIED
+    grouped CDATA #IMPLIED
+    aggregated CDATA #IMPLIED>
+  <!ELEMENT values (columnref*|(value|columnref|bool|asterisk|operation|function)*)>
+  <!ELEMENT scan_columns (columnref*|column*|(value|columnref|bool|asterisk|operation|function)*)>
+  <!ELEMENT columns (columnref*|column*|(value|columnref|bool|asterisk|operation|function)*)>
+  <!ELEMENT parameters (parameter*)>
+  <!ELEMENT parameter ANY>
+  <!ATTLIST parameter
+    index CDATA #REQUIRED
+    id CDATA #REQUIRED
+    type CDATA #REQUIRED>
+  <!ELEMENT tablescans (tablescan*)>
+  <!ELEMENT tablescan (searchkey?,startexp?,endexp?,postexp?)>
+  <!ATTLIST tablescan
+    type CDATA #REQUIRED
+    table CDATA #REQUIRED
+    index CDATA #IMPLIED
+    alias CDATA #IMPLIED>
+  <!ELEMENT searchkey ((value|columnref|bool|asterisk|operation|function)*)>
+  <!ELEMENT startexp ((value|columnref|bool|asterisk|operation|function)*)>
+  <!ELEMENT endexp ((value|columnref|bool|asterisk|operation|function)*)>
+  <!ELEMENT postexp ((value|columnref|bool|asterisk|operation|function)*)>
+  <!ELEMENT querycondition ((value|columnref|bool|asterisk|operation|function)*)>
+  <!ELEMENT havingcondition ((value|columnref|bool|asterisk|operation|function)*)>
+  <!ELEMENT value ANY>
+  <!ATTLIST value
+    id CDATA #REQUIRED
+    type CDATA #REQUIRED
+    value CDATA #IMPLIED
+    isparam CDATA #IMPLIED>
+  <!ELEMENT columnref ANY>
+  <!ATTLIST columnref
+    id CDATA #REQUIRED
+    table CDATA #REQUIRED
+    column CDATA #REQUIRED
+    alias CDATA #IMPLIED
+    dir CDATA #IMPLIED>
+  <!ELEMENT bool ANY>
+  <!ATTLIST bool
+    id CDATA #REQUIRED
+    value CDATA #REQUIRED>
+  <!ELEMENT asterisk ANY>
+  <!ELEMENT groupcolumns ((value|columnref|bool|asterisk|operation|function)*)>
+  <!ELEMENT ordercolumns ((value|columnref|bool|asterisk|operation|function)*)>
+  <!ELEMENT operation ((value|columnref|bool|asterisk|operation|function)*)>
+  <!ATTLIST operation
+    id CDATA #REQUIRED
+    type CDATA #REQUIRED
+    alias CDATA #IMPLIED
+    distinct CDATA #IMPLIED
+    desc CDATA #IMPLIED>
+  <!ELEMENT function ((value|columnref|bool|asterisk|operation|function)*)>
+  <!ATTLIST function
+    id CDATA #IMPLIED
+    name CDATA #REQUIRED
+    type CDATA #REQUIRED>
+  <!ELEMENT update (columns,parameters,tablescan,condition?)>
+  <!ATTLIST update
+    table CDATA #REQUIRED>
+  <!ELEMENT condition ((value|columnref|bool|asterisk|operation|function)*)>
+  <!ELEMENT column ((value|columnref|bool|asterisk|operation|function)*)>
+  <!ATTLIST column
+    name CDATA #REQUIRED
+    table CDATA #REQUIRED>
+  <!ELEMENT insert (columns,parameters,tablescan?,condition?)>
+  <!ATTLIST insert
+    table CDATA #REQUIRED>
+  <!ELEMENT delete (parameters,tablescan?,condition?)>
+  <!ATTLIST delete
+    table CDATA #REQUIRED>
+]>
+<statement>
+    <insert table="CITIES">
+        <columns>
+            <column table="CITIES" name="ID">
+                <value id="1543085802" type="VARCHAR" isparam="true" />
+            </column>
+            <column table="CITIES" name="NAME">
+                <value id="1630553042" type="VARCHAR" isparam="true" />
+            </column>
+            <column table="CITIES" name="POPULATION">
+                <value id="666157527" type="VARCHAR" isparam="true" />
+            </column>
+            <column table="CITIES" name="DATE_MOD">
+                <value id="1277304478" type="VARCHAR" isparam="true" />
+            </column>
+        </columns>
+        <parameters>
+            <parameter index='0' id='1543085802' type='VARCHAR' />
+            <parameter index='1' id='1630553042' type='VARCHAR' />
+            <parameter index='2' id='666157527' type='VARCHAR' />
+            <parameter index='3' id='1277304478' type='VARCHAR' />
+        </parameters>
+    </insert>
+</statement>
+

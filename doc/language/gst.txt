@@ -1,0 +1,14 @@
+<title>gst Jul/02/2012</title>
+</head>
+<body>
+<h2><a href="http://smalltalk.gnu.org/">Gnu Smalltalk</a></h2><p />
+<blockquote>
+	sudo dpkg -i libgst7_3.2.4-1ubuntu2_amd64.deb gnu-smalltalk_3.2.4-1ubuntu2_amd64.deb<p />
+</blockquote>
+
+<blockquote>
+<pre>
+ii  gnu-smalltalk            3.2.4-2      GNU Smalltalk interpreter and image
+ii  gnu-smalltalk-common     3.2.4-2      GNU Smalltalk class library sources and extras
+</pre>
+</blockquote>

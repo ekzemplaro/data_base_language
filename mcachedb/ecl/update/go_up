@@ -1,0 +1,3 @@
+#
+ecl -shell mcachedb_update.lisp -eval '(quit)' -- t1523 21475900
+#

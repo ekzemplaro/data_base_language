@@ -1,0 +1,3 @@
+export CLASSPATH=.:/usr/share/java/clojure.jar
+#
+java clojure.main redis_delete.clj t1851

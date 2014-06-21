@@ -1,0 +1,1 @@
+ccl64 -l csv_update.lisp --eval '(quit)' -- /var/tmp/csv/cities.csv t1271 87512300

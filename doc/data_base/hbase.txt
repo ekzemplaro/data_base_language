@@ -1,0 +1,95 @@
+<meta content="Program Language Examples to connect to Hbase" name="description">
+<meta content="Hbase,クライアント,接続,言語,サンプル" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<title>HBase</title>
+</head>
+<body>
+<h1><a href="http://hbase.apache.org/">HBase</a></h1>
+<blockquote>
+	hbase-0.96.0-hadoop2-bin.tar.gz<p />
+</blockquote>
+
+<blockquote>
+<a href="http://www.ne.jp/asahi/hishidama/home/tech/apache/hbase/">
+Japanese</a><p />
+</blockquote>
+
+Server<p />
+conf/hbase-site.xml<p />
+<blockquote>
+
+&lt;configuration&gt;<br />
+&lt;property&gt;<br />
+	&lt;name&gt;hbase.rootdir&lt;/name&gt;<br />
+	&lt;value&gt;file:///var/tmp/hbase&lt;/value&gt;<br />
+&lt;/property&gt;<br />
+&lt;/configuration&gt;<br />
+
+
+</blockquote>
+<blockquote>
+	bin/start-hbase.sh<br />
+	bin/stop-hbase.sh<br />
+</blockquote>
+
+
+<blockquote>
+HBase expects the loopback IP address to be 127.0.0.1. Ubuntu and some other distributions, for example, will default to 127.0.1.1 and this will cause problems for you.<p />
+
+/etc/hosts should look something like this:<br />
+
+<blockquote>
+	127.0.0.1 localhost<br />
+	127.0.0.1 ubuntu.ubuntu-domain ubuntu<br />
+</blockquote>
+
+
+</blockquote>
+
+<a href="http://wiki.apache.org/hadoop/Hbase/Stargate">Stargate</a>
+<blockquote>
+	bin/hbase-daemon.sh start rest -p 28080<br />
+	bin/hbase-daemon.sh stop rest<br />
+</blockquote>
+
+Client
+<blockquote>
+curl -X Get http://localhost:28080/version<p />
+curl -H "Accept: text/xml" http://localhost:28080/version<p />
+curl -H "Accept: application/json" http://localhost:28080/version<p />
+
+curl -X PUT http://localhost:28080/sample_aa/<br />
+curl -X PUT http://localhost:28080/sample_bb/<br />
+
+</blockquote>
+Python<p />
+<blockquote>
+</blockquote>
+
+Java<p />
+<blockquote>
+/home/uchida/dbm/hbase/hbase-0.90.5/conf/log4j.properties<p />
+</blockquote>
+
+C#<p />
+<blockquote>
+</blockquote>
+
+<hr />
+<pre>
+$ export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/jre/
+$ bin/hbase shell
+2013-11-27 15:23:16,179 WARN  [main] conf.Configuration: hadoop.native.lib is deprecated. Instead, use io.native.lib.available
+HBase Shell; enter 'help<RETURN>' for list of supported commands.
+Type "exit<RETURN>" to leave the HBase Shell
+Version 0.96.0-hadoop2, r1531434, Fri Oct 11 15:28:08 PDT 2013
+
+hbase(main):001:0> version
+0.96.0-hadoop2, r1531434, Fri Oct 11 15:28:08 PDT 2013
+
+hbase(main):002:0> status
+2013-11-27 15:24:06,564 WARN  [main] util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+1 servers, 0 dead, 2.0000 average load
+
+hbase(main):003:0> exit
+<pre />

@@ -1,0 +1,4 @@
+JAVA_CLASSPATH="/usr/share/java/js.jar:/usr/share/java/jline.jar"
+export CLASSPATH=.:$JAVA_CLASSPATH
+#
+./json_read.js /var/tmp/json/cities.json

@@ -1,0 +1,3 @@
+#
+./xml_create.tcl /var/tmp/xml_file/cities.xml
+#./xml_create.tcl cities.xml

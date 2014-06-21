@@ -1,0 +1,5 @@
+#
+#find $1 -name $2 -print > /tmp/tmp0023
+find -name $1 > /tmp/tmp0023
+awk -v aa=$2 '{print "grep -H",aa,$1}' /tmp/tmp0023 > /tmp/go_tmp0045
+bash /tmp/go_tmp0045 

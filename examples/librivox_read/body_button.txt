@@ -1,0 +1,24 @@
+<div id="select_years">
+Year : &nbsp;
+<select id="year" name="year">
+<option value="2012" selected>2012</option>
+<option value="2011">2011</option>
+<option value="2010">2010</option>
+</select>
+</div>
+<button id="Jan">Jan</button>
+<button id="Feb">Feb</button>
+<button id="Mar">Mar</button>
+<button id="Apr">Apr</button>
+<button id="May">May</button>
+<button id="Jun">Jun</button>
+<button id="Jul">Jul</button>
+<button id="Aug">Aug</button>
+<button id="Sep">Sep</button>
+<button id="Oct">Oct</button>
+<button id="Nov">Nov</button>
+<button id="Dec">Dec</button>
+&nbsp;
+<span id="month_selected">_____</span>
+<p />
+<hr />

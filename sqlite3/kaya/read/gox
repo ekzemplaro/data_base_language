@@ -1,0 +1,2 @@
+#
+./sqlite3_read /var/tmp/sqlite3/cities.db

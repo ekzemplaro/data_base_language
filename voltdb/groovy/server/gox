@@ -1,0 +1,3 @@
+export CLASSPATH=.:/home/uchida/dbm/voltdb/voltdb-1.3.4/voltdb/*
+#
+java -Djava.library.path=/home/uchida/dbm/voltdb/voltdb-1.3.4/voltdb/ org.voltdb.VoltDB catalog helloworld.jar deployment deployment.xml

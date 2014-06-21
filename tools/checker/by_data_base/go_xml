@@ -1,0 +1,14 @@
+#
+../single_check/single_check.sh xml bash
+../single_check/single_check.sh xml php
+../single_check/single_check.sh xml python
+../single_check/single_check.sh xml perl
+../single_check/single_check.sh xml ruby
+#
+../single_check/single_check.sh xml jruby
+#
+../single_check/single_check.sh xml rhino
+#
+../single_check/single_check.sh xml java
+../single_check/single_check.sh xml boo
+../single_check/single_check.sh xml csharp

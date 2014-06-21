@@ -1,0 +1,1 @@
+emacs --script csv_read.el /var/tmp/csv/cities.csv

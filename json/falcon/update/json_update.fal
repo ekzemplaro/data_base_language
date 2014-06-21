@@ -1,0 +1,31 @@
+#! /usr/bin/falcon
+//
+//	json_update.fal
+//
+//					Feb/19/2014
+// -------------------------------------------------------------------
+import from json
+load "/var/www/data_base/common/falcon_common/text_manipulate.fal"
+// -------------------------------------------------------------------
+printl ("*** 開始 ***")
+
+json_file=args[0]
+key_in=args[1]
+population_in=args[2]
+printl (json_file)
+printl (key_in)
+printl (population_in)
+stream = InputStream (json_file)
+dict_aa = json.JSONdecode (stream)
+stream.close()
+//
+dict_aa = dict_update_proc (dict_aa,key_in,population_in)
+//
+json_str = json.JSONencode (dict_aa)
+stream = OutputStream (json_file)
+stream.setEncoding ("utf-8")
+stream.writeText (json_str)
+stream.close()
+//
+printl ("*** 終了 ***")
+// -------------------------------------------------------------------

@@ -1,0 +1,4 @@
+#
+./xml_create.io /var/tmp/xml_file/cities.xml
+#
+chmod 666 /var/tmp/xml_file/cities.xml

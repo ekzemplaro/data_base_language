@@ -1,0 +1,9 @@
+export http_proxy=""
+#
+SHARE=/usr/share/java
+COMMON=/var/www/data_base/common
+export SCALA_COMMON=$COMMON/scala_common
+export JAR=$COMMON/jar
+export CPX=.:$SCALA_COMMON:$SHARE/commons-httpclient-3.1.jar
+#
+scala -classpath $CPX neo4j_read

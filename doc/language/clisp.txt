@@ -1,0 +1,41 @@
+<title>clisp Sep/17/2013</title>
+</head>
+<body>
+<h2><a href="http://www.gnu.org/software/clisp/">clisp</a></h2><p />
+<blockqoute>
+	<a href="http://clsql.b9.com/">CLSQL</a><p />
+</blockquote>
+
+<pre>
+ii  clisp  1:2.49-8.1ubuntu1  amd64   GNU CLISP, a Common Lisp implementation
+</pre>
+
+<blockqoute>
+	(load '#:/usr/share/common-lisp/source/cl-asdf/asdf)<br />
+	(push #P"/usr/share/common-lisp/system/" asdf:*central-registry*)<br />
+	(asdf:oos 'asdf:load-op :clsql)<br />
+	(ext:saveinitmem "dump.mem")<br />
+	(clsql:connect '("host_dbase" "city" "scott" "tiger" 3306) :database-type :mysql)<br />
+</blockqoute>
+
+<p />
+<blockqoute>
+(load "/usr/share/common-lisp/source/cl-asdf/asdf")<br />
+(require :asdf)<br />
+(asdf:asdf-version)<br />
+</blockqoute>
+<p />
+
+gdbm<br />
+<blockquote>
+(list (null (require "gdbm")))<br />
+(GDBM:GDBM-VERSION)<br />
+</blockquote>
+
+/usr/lib/clisp-2.49/<p />
+
+<a href="http://www.cliki.net/common-lisp-controller">
+common-lisp-controller</a><p />
+
+<a href="http://www.gigamonkeys.com/book/">
+Practical Common Lisp</a><p />

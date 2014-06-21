@@ -1,0 +1,9 @@
+There are 8 records. Here they are:
+{"_id"=>ObjectID('4bab0e7f8b541a1fe9000000'), "population"=>1634, "date_mod"=>"2009-6-25", "id"=>1054, "name"=>"\344\274\212\345\213\242\345\264\216"}
+{"_id"=>ObjectID('4bab0e7f8b541a1fe9000001'), "population"=>5234, "date_mod"=>"2009-4-15", "id"=>1052, "name"=>"\351\253\230\345\264\216"}
+{"_id"=>ObjectID('4bab0e7f8b541a1fe9000002'), "population"=>9234, "date_mod"=>"2009-7-15", "id"=>1055, "name"=>"\346\262\274\347\224\260"}
+{"_id"=>ObjectID('4bab0e7f8b541a1fe9000003'), "population"=>1231, "date_mod"=>"2009-5-15", "id"=>1053, "name"=>"\346\241\220\347\224\237"}
+{"_id"=>ObjectID('4bab0e7f8b541a1fe9000004'), "population"=>8182, "date_mod"=>"2009-9-22", "id"=>1058, "name"=>"\345\244\252\347\224\260"}
+{"_id"=>ObjectID('4bab0e7f8b541a1fe9000005'), "population"=>9254, "date_mod"=>"2009-9-30", "id"=>1057, "name"=>"\351\244\250\346\236\227"}
+{"_id"=>ObjectID('4bab0e7f8b541a1fe9000006'), "population"=>8234, "date_mod"=>"2009-9-8", "id"=>1056, "name"=>"\346\270\213\345\267\235"}
+{"_id"=>ObjectID('4bab0e7f8b541a1fe9000007'), "population"=>12334, "date_mod"=>"2009-3-15", "id"=>1051, "name"=>"\345\211\215\346\251\213"}

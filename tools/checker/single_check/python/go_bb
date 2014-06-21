@@ -1,0 +1,6 @@
+#
+../single_check.sh calc python
+../single_check.sh excel python
+../single_check.sh pdf python
+../single_check.sh epub python
+#

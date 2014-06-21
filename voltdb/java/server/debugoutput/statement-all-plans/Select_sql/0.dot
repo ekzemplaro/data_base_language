@@ -1,0 +1,9 @@
+digraph name {
+3 [label="3: SEQSCAN" ];
+3 -> 7;
+7 [label="7: PROJECTION" fontcolor="white" style="filled" fillcolor="red"];
+8 [label="8: SEND" fontcolor="white" style="filled" fillcolor="black"];
+8 -> 3;
+
+}
+

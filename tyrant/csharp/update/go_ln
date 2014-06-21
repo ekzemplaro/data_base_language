@@ -1,0 +1,14 @@
+#
+COMMON=/var/www/data_base/common
+FSHARP_COMMON=$COMMON/fsharp_common
+CSHARP_COMMON=$COMMON/csharp_common
+DLL=$COMMON/dll
+#
+#
+ln -s $DLL/Memcached.ClientLibrary.dll Memcached.ClientLibrary.dll
+ln -s $DLL/log4net.dll log4net.dll
+ln -s $DLL/Newtonsoft.Json.Net20.dll Newtonsoft.Json.Net20.dll
+#
+ln -s $CSHARP_COMMON/table_manipulate.dll table_manipulate.dll
+#
+ln -s /usr/lib/mono/gac/ICSharpCode.SharpZipLib/4.84.0.0__1b03e6acf1164f73/ICSharpCode.SharpZipLib.dll  ICSharpCode.SharpZipLib.dll

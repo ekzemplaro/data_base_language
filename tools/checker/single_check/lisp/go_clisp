@@ -1,0 +1,5 @@
+#
+../single_check.sh text clisp
+../single_check.sh csv clisp
+#../single_check.sh xml clisp
+#../single_check.sh json clisp

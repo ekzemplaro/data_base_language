@@ -1,0 +1,3 @@
+#
+#./text_read.scm cities.txt
+./text_read.scm /var/tmp/plain_text/cities.txt

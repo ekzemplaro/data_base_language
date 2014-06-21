@@ -1,0 +1,32 @@
+// -----------------------------------------------------------------
+//	sqlite3_create.spl
+//
+//						Sep/06/2011
+// -----------------------------------------------------------------
+load "sql_sqlite";
+#file-as-code  /var/www/data_base/common/spl_common/sql_manipulate.spl;
+// -----------------------------------------------------------------
+write ("*** 開始 ***\n");
+
+var file_sqlite3 = argv[0];
+write (file_sqlite3 ~ "\n");
+
+var db = sql_connect("sqlite",file_sqlite3);
+
+drop_table_proc (db);
+create_table_proc (db);
+
+sql_insert_proc (db, "t0711","郡山", 54197,"1962-5-17");
+sql_insert_proc (db, "t0712","会津若松", 32876,"1962-9-24");
+sql_insert_proc (db, "t0713","白河", 87621,"1962-3-9");
+sql_insert_proc (db, "t0714","福島", 62389,"1962-6-12");
+sql_insert_proc (db, "t0715","喜多方", 53428,"1962-1-27");
+sql_insert_proc (db, "t0716","二本松", 34716,"1962-3-15");
+sql_insert_proc (db, "t0717","いわき", 87453,"1962-8-3");
+sql_insert_proc (db, "t0718","相馬", 91256,"1962-10-30");
+sql_insert_proc (db, "t0719","須賀川", 39827,"1962-9-8");
+
+sql_display_proc (db);
+
+write ("*** 終了 ***\n");
+// -----------------------------------------------------------------

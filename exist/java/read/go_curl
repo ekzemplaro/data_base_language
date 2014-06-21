@@ -1,0 +1,1 @@
+curl -X GET http://172.20.180.155:8086/exist/rest/db/cities/cities.xml --user admin:hello9

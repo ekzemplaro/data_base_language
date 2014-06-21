@@ -1,0 +1,10 @@
+#
+#
+export ORACLE_HOME=/mnt/sdb2/usr/lib/oracle/xe/app/oracle/product/10.2.0/client
+export PATH=$ORACLE_HOME/bin:$PATH
+export LD_LIBRARY_PATH=$ORACLE_HOME/lib:$LD_LIBRARY_PATH
+export NLS_LANG=japanese_japan.UTF8
+export ORACLE_SID=XE
+#
+#
+./oracle_update.exe t0137 45832000

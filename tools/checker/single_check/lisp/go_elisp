@@ -1,0 +1,5 @@
+#
+../single_check.sh text elisp
+../single_check.sh csv elisp
+#../single_check.sh xml elisp
+#../single_check.sh json elisp

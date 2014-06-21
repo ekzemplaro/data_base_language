@@ -1,0 +1,1 @@
+ccl64 -l  mcachedb_read.lisp --eval '(quit)'

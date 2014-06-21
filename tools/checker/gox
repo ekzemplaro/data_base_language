@@ -1,0 +1,5 @@
+#
+data_prepare/data_prepare.sh xml ruby
+#
+hantei/hantei.py /tmp/tmp01 /tmp/tmp02 /tmp/tmp03 /tmp/tmp04
+#

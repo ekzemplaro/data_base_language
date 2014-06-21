@@ -1,0 +1,85 @@
+<meta content="Program Language Examples to connect to Drizzle" name="description">
+<meta content="Drizzle,クライアント,接続,言語,サンプル" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<title>MariaDB</title>
+</head>
+<body>
+<h1><a href="http://www.mariadb.org">MariaDB</a></h1>
+<blockquote>
+<pre>
+ii  mariadb-server   5.5.34+maria-1~saucy   all    MariaDB database server (metapackage depending on the latest version)
+</pre>
+</blockquote>
+
+<blockquote>
+<pre>
+$ mysql -u root -p 
+Enter password: 
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 35
+Server version: 5.5.34-MariaDB-1~saucy-log mariadb.org binary distribution
+
+Copyright (c) 2000, 2013, Oracle, Monty Program Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> create user 'scott'@'localhost' identified by 'tiger';
+Query OK, 0 rows affected (0.00 sec)
+
+MariaDB [(none)]> create schema city;
+Query OK, 1 row affected (0.00 sec)
+
+MariaDB [(none)]> grant all on city.* to scott identified by 'tiger';
+Query OK, 0 rows affected (0.00 sec)
+
+MariaDB [(none)]> flush privileges;
+Query OK, 0 rows affected (0.00 sec)
+
+MariaDB [(none)]> exit
+Bye
+</pre>
+</blockquote>
+
+日本語の表示<br />
+<blockquote>
+/etc/mysql/conf.d/mariadb.cnf<p />
+	<blockquote>
+	[client]<br />
+	default-character-set = utf8<br />
+	[mysqld]<br />
+	character-set-server  = utf8<br />
+	collation-server      = utf8_general_ci<br />
+	character_set_server   = utf8<br />
+	collation_server       = utf8_general_ci<br />
+	</blockquote>
+</blockquote>
+
+再起動<p />
+<blockquote>
+<pre>
+$ sudo service mysql stop
+ * Stopping MariaDB database server mysqld                               [ OK ] 
+uchida@nlf132:~$ sudo service mysql start
+ * Starting MariaDB database server mysqld                               [ OK ] 
+ * Checking for corrupt, not cleanly closed and upgrade needing tables.
+</pre>
+</blockquote>
+
+
+
+Python<p />
+<blockquote>
+</blockquote>
+
+Ruby<p />
+<blockquote>
+</blockquote>
+
+
+Java<p />
+<blockquote>
+</blockquote>
+
+
+<blockquote>
+</blockquote>

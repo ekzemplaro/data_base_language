@@ -1,0 +1,2 @@
+#
+runghc text_update.hs /var/tmp/plain_text/cities.txt t2384 51378500

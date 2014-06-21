@@ -1,0 +1,11 @@
+#
+#
+SCALA_COMMON=/var/www/data_base/common/scala_common
+#
+#
+TCBN=/usr/local/lib
+export CLASSPATH=./:$CLASSPATH:$TCBN/tokyocabinet.jar
+export CLASSPATH=$CLASSPATH:$SCALA_COMMON
+LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$TCBN
+#
+scala tcbn_delete t0832

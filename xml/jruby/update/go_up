@@ -1,0 +1,1 @@
+./xml_update.rb /var/tmp/xml_file/cities.xml t2267 3528100

@@ -1,0 +1,8 @@
+#
+COMMON=/var/www/data_base/common
+CSHARP_COMMON=$COMMON/csharp_common
+DLL=$COMMON/dll
+#
+ln -s $DLL/Newtonsoft.Json.Net20.dll Newtonsoft.Json.Net20.dll
+ln -s $CSHARP_COMMON/lib/redis-sharp.dll redis-sharp.dll
+ln -s $CSHARP_COMMON/table_manipulate.dll table_manipulate.dll

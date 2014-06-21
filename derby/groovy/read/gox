@@ -1,0 +1,13 @@
+#
+COMMON=/var/www/data_base/common
+DERBY_HOME=/usr/share/javadb
+#
+#
+DERBY_JAR=$DERBY_HOME/lib/derbyclient.jar
+#
+export GROOVY_JAR=/usr/share/java/groovy-all.jar:/usr/share/java/groovy.jar
+export JAVA_COMMON=$COMMON/java_common
+export GROOVY_COMMON=$COMMON/groovy_common
+export CLASSPATH=.:$JAVA_COMMON:$GROOVY_COMMON:$DERBY_JAR:$GROOVY_JAR
+#
+java derby_read

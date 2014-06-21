@@ -1,0 +1,2 @@
+#
+ecl -shell csv_read.lisp -eval '(quit)' -- /var/tmp/csv/cities.csv

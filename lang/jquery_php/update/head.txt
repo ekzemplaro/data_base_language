@@ -1,0 +1,9 @@
+<script src="/data_base/js/table_manipulate.js"></script>
+<script src="jquery_php_update.js"></script>
+<title>jQuery PHP Update Dec/12/2013</title>
+</head>
+<body>
+<center><h2>PHP Update</h2></center>
+<div class="right">
+<button id="update">更新</button><br />
+</div>

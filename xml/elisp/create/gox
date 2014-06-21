@@ -1,0 +1,3 @@
+#
+emacs --script xml_create.el /var/tmp/xml_file/cities.xml
+#emacs --script xml_create.el cities.xml

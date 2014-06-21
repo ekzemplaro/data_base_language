@@ -1,0 +1,7 @@
+def	mongo_display_proc (coll_in)
+	coll_in.find().each { |row|
+		print row["id"],
+		"\t", row["name"],
+		"\t",row["population"],
+		"\t",row["date_mod"],"\n"}
+end

@@ -1,0 +1,1 @@
+./csv_update.lisp /var/tmp/csv/cities.csv t1273 72456000

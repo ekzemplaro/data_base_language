@@ -1,0 +1,8 @@
+#
+#../single_check.sh mcached fsharp
+#../single_check.sh mcachedb fsharp
+#
+../single_check.sh redis fsharp
+#../single_check.sh tcbn fsharp
+../single_check.sh tyrant fsharp
+#

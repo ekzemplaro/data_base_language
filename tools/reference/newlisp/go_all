@@ -1,0 +1,2 @@
+#
+../bin/process_db.sh newlisp lsp common.txt

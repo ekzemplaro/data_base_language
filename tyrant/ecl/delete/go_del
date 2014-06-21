@@ -1,0 +1,2 @@
+#
+ecl -shell tyrant_delete.lisp -eval '(quit)' -- t4761

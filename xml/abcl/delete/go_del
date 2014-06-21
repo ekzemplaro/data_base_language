@@ -1,0 +1,4 @@
+#
+ABCL=/var/www/data_base/common/jar/abcl
+#
+java -jar  $ABCL/abcl.jar --load xml_delete.lisp --eval '(quit)' /var/tmp/xml_file/cities.xml t2265

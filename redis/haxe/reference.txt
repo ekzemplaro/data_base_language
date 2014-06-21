@@ -1,0 +1,3 @@
+Mcached_manipulate.hx
+Redis_manipulate.hx
+Text_manipulate.hx

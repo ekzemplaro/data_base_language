@@ -1,0 +1,9 @@
+COMMON=/var/www/data_base/common
+JAVA_COMMON=$COMMON/java_common
+JAR=$COMMON/jar
+#
+export CLASSPATH=./:$JAR/tika-app-1.0.jar
+export CLASSPATH=$CLASSPATH:$JAR/iText-5.0.5.jar
+export CLASSPATH=$CLASSPATH:$JAR/iTextAsian-5.0.1.jar:$JAVA_COMMON
+#
+java pdf_update cities.pdf t2533 43589700

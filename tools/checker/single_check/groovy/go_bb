@@ -1,0 +1,8 @@
+#
+../single_check.sh sqlite3 groovy
+../single_check.sh mssql groovy
+../single_check.sh mysql groovy
+../single_check.sh postgre groovy
+../single_check.sh firebird groovy
+#
+#

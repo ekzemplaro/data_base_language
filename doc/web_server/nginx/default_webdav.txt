@@ -1,0 +1,68 @@
+#
+#
+server {
+	listen 80;
+	listen [::]:80 default_server ipv6only=on;
+
+	root /var/www;
+	index index.html index.htm;
+
+	# Make site accessible from http://localhost/
+	server_name localhost;
+
+	location / {
+		# First attempt to serve request as file, then
+		# as directory, then fall back to displaying a 404.
+		try_files $uri $uri/ /index.html;
+		# Uncomment to enable naxsi on this location
+		# include /etc/nginx/naxsi.rules
+	}
+
+	location /doc/ {
+		alias /usr/share/doc/;
+		autoindex on;
+		allow 127.0.0.1;
+		allow ::1;
+		deny all;
+	}
+
+#
+	location ~ \.php$ {
+		fastcgi_split_path_info ^(.+\.php)(/.+)$;
+		fastcgi_pass unix:/tmp/php.socket;
+		fastcgi_index index.php;
+		include fastcgi_params;
+		client_max_body_size 512M;
+	}
+
+	location ~ \.py$ {
+		gzip off;
+		include fastcgi_params;
+		fastcgi_pass unix:/var/run/fcgiwrap.socket;
+		fastcgi_index index.py;
+		fastcgi_param SCRIPT_FILENAME /var/www$fastcgi_script_name;
+	}
+}
+
+
+server {
+	listen 3004;
+	server_name localhost;
+	root        /var/tmp/work_area_aa;
+	charset     utf-8;
+	access_log  /var/log/nginx/dav.access.log;
+	error_log   /var/log/nginx/dav.error.log;
+ 
+	autoindex on;
+ 
+	location / {
+ 
+		dav_methods PUT DELETE MKCOL COPY MOVE;
+		dav_ext_methods PROPFIND OPTIONS;
+ 
+		dav_access user:rw group:rw all:r;
+ 
+		client_body_temp_path  /var/tmp/nginx/webdav;
+		create_full_put_path on;
+	}
+}

@@ -1,0 +1,4 @@
+export CLOJURE_CONTRIB=$HOME/lang/clojure/clojure-contrib/clojure-contrib.jar
+export CLASSPATH=.:/usr/share/java/clojure.jar:$CLOJURE_CONTRIB:/usr/share/java/postgresql.jar
+#
+java clojure.main try_aa.clj

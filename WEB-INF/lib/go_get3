@@ -1,0 +1,9 @@
+#
+JAVA_COMMON=/var/www/data_base/common/java_common
+JAR=$JAVA_COMMON/jar
+#
+cp -p $JAR/sqlite-jdbc-3.7.2.jar .
+#
+cp -p /mnt/sdb2/usr/lib/oracle/xe/app/oracle/product/10.2.0/client/jdbc/lib/ojdbc14.jar .
+#
+cp -p /home/uchida/data_base/firebird/Jaybird/jaybird-full-2.1.6.jar .

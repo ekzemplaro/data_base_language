@@ -1,0 +1,27 @@
+// -----------------------------------------------------------------
+//	csv_update.spl
+//
+//						Sep/06/2011
+// -----------------------------------------------------------------
+load "file";
+load "time";
+#file-as-code  /var/www/data_base/common/spl_common/text_manipulate.spl;
+// -----------------------------------------------------------------
+write ("*** 開始 ***\n");
+
+var file_text = argv[0];
+var id_in = argv[1];
+var population_in = argv[2];
+
+write (file_text ~ "\n");
+write (id_in ~ "\t");
+write (population_in ~ "\n");
+
+var dict_aa = csv_read_proc (file_text);
+
+dict_update_proc (dict_aa,id_in,population_in);
+
+csv_write_proc (file_text,dict_aa);
+
+write ("*** 終了 ***\n");
+// -----------------------------------------------------------------

@@ -1,0 +1,6 @@
+#
+export COMMON=/var/www/data_base/common
+export JAR=$COMMON/jar
+export CLASSPATH=.:$JAR"/sqlite-jdbc-3.7.2.jar"
+#
+./sqlite3_read.bsh /var/tmp/sqlite3/cities.db

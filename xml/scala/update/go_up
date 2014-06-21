@@ -1,0 +1,4 @@
+SCALA_COMMON=/var/www/data_base/common/scala_common
+export CLASSPATH=./:$SCALA_COMMON
+#
+scala xml_update /var/tmp/xml_file/cities.xml t2261 91745600

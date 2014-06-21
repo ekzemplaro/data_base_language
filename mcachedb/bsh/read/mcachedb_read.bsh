@@ -1,0 +1,33 @@
+#! /usr/bin/bsh
+//
+//	mcachedb_read.bsh
+//
+//					Oct/02/2012
+//
+// --------------------------------------------------------------
+import com.danga.MemCached.SockIOPool;
+import com.danga.MemCached.MemCachedClient;
+// --------------------------------------------------------------
+source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
+source ("/var/www/data_base/common/bsh_common/mcached_manipulate.bsh");
+// --------------------------------------------------------------
+System.out.println ("*** 開始 ***");
+
+String[] serverlist = { "localhost:21201" };
+Integer[] weights = { 3};
+SockIOPool pool = SockIOPool.getInstance();
+pool.setServers (serverlist);
+pool.setWeights (weights);
+pool.initialize ();
+
+MemCachedClient mc = new MemCachedClient();
+
+String [] keys = {"t1521","t1522","t1523","t1524","t1525","t1526",
+		"t1527","t1528","t1529","t1530","t1531","t1532"};
+
+Map dict_aa = mcached_to_dict_proc (mc,keys);
+
+dict_display_proc (dict_aa);
+
+System.out.println ("*** 終了 ***");
+// --------------------------------------------------------------

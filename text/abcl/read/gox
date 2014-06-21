@@ -1,0 +1,4 @@
+ABCL=/var/www/data_base/common/jar/abcl
+#
+java -jar  $ABCL/abcl.jar --load text_read.lisp --eval '(quit)' \
+		/var/tmp/plain_text/cities.txt

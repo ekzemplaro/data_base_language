@@ -1,0 +1,7 @@
+#
+#
+JAVA_CLASSPATH="/usr/share/java/js.jar:/usr/share/java/jline.jar"
+DERBY_JAR=/home/uchida/data_base/derby/db-derby-10.8.2.2-bin/lib/derbyclient.jar
+export CLASSPATH=.:$DERBY_JAR:$JAVA_CLASSPATH
+#
+./derby_create.js

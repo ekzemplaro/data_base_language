@@ -1,0 +1,4 @@
+ls *update.aspx.cs > tmp01
+pr -m -t tmp01 tmp01 > tmp02
+sed 's/update/delete/' tmp02 > tmp03
+awk '{print "mv",$2,$1}' tmp03 > tmp04

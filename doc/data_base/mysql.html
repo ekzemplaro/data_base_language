@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<script src="/js/jquery-2.1.0.min.js"></script>
+<title>MySQL</title>
+</head>
+<body>
+<h1><a href="http://www.mysql.com">MySQL</a></h1>
+<blockquote>
+<pre>
+ii  mysql-server-5.5   5.5.24-0ubuntu0.12.04.1    MySQL database server binaries and system database setup
+</pre>
+</blockquote>
+
+文字化け対策<p />
+/etc/mysql/my.cnf を編集する。<br />
+<blockquote>
+[mysqld]<p />
+character-set-server = utf8<br />
+skip-character-set-client-handshake<br />
+</blockquote>
+
+リモートからアクセスできるようにする。<p />
+<blockquote>
+/etc/mysql/my.cnf<p />
+#bind-address            = 127.0.0.1<p />
+
+sudo stop mysql<br />
+sudo start mysql<br />
+</blockquote>
+
+<pre>
+
+mysql -h localhost -uroot -ptiger
+
+create schema city;
+grant all on city.* to scott identified by 'tiger';
+flush privileges;
+
+</pre>
+
+<blockquote>
+mysql -h localhost -uroot -ptiger<p />
+mysql> use mysql;<br />
+mysql>  select host, User, Password from user;<br />
+mysql> drop user 'scott'@'localhost';<br />
+mysql> create user 'scott'@'localhost' identified by 'tiger';<br />
+</blockquote>
+
+文字コードの確認<p />
+<blockquote>
+<pre>
+mysql> show variables like 'char%';
++--------------------------+----------------------------+
+| Variable_name            | Value                      |
++--------------------------+----------------------------+
+| character_set_client     | utf8                       |
+| character_set_connection | utf8                       |
+| character_set_database   | utf8                       |
+| character_set_filesystem | binary                     |
+| character_set_results    | utf8                       |
+| character_set_server     | utf8                       |
+| character_set_system     | utf8                       |
+| character_sets_dir       | /usr/share/mysql/charsets/ |
++--------------------------+----------------------------+
+8 rows in set (0.00 sec)
+</pre>
+</blockquote>
+
+PHP<p />
+<blockquote>
+php5-mysql<p />
+</blockquote>
+
+Python<p />
+<blockquote>
+python-mysqldb<p />
+</blockquote>
+
+Ruby<p />
+<blockquote>
+libdbd-mysql-ruby<p />
+</blockquote>
+
+Gauche<p />
+<ol>
+libmysqlclient-dev<p />
+sudo gauche-package install Gauche-dbd-mysql-0.2.2.tgz<p />
+</ol>
+
+Tcl<p />
+<blockquote>
+	mysqltcl<p />
+</blockquote>
+
+Java<p />
+<pre>
+com.mysql.jdbc.CommunicationsException: Communications link failure
+
+/etc/tomcat6/policy.d
+
+	policytool
+</pre>
+<blockquote>
+	libmysql-java<p />
+</blockquote>
+<hr />
+ルートパスワードをリセット<p />
+<blockquote>
+	mysqld を止める。<p />
+	--skip-grant-tables オプションを指定して mysqld を再起動。<p />
+	mysqladmin password コマンドで新しいパスワードを設定。<p />
+	shell> mysqladmin -u root password 'mynewpassword'<p />
+	mysqld を再起動。<p />
+</blockquote>
+
+<blockquote>
+ユーザーの確認<p />
+> select Host, User, Password from mysql.user;<p />
+</blockquote>
+
+<blockquote>
+データーベースの確認<p />
+> show databases;
+</blockquote>
+
+<div id="result_aa">result_aa</div>
+<hr />
+<div id="outarea_aa">outarea_aa</div>
+<div id="outarea_bb">outarea_bb</div>
+<div id="outarea_cc">outarea_cc</div>
+<div id="outarea_dd">outarea_dd</div>
+<div id="outarea_ee">outarea_ee</div>
+<div id="outarea_ff">outarea_ff</div>
+<div id="outarea_gg">outarea_gg</div>
+<div id="outarea_hh">outarea_hh</div>
+<hr />
+<a href="/data_base/data_base.html">Return</a><p />
+Jan/29/2014 AM 08:15<p />
+</body>
+</html>

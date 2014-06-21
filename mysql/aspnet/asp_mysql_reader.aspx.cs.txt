@@ -1,0 +1,61 @@
+/* ---------------------------------------------------------------- */
+/*
+	c_sharp/aspnet/asp_mysql_reader.aspx.cs
+
+					Aug/17/2009
+
+*/
+/* ---------------------------------------------------------------- */
+using	System;
+using	System.Data;
+using	MySql.Data.MySqlClient;
+
+/* ---------------------------------------------------------------- */
+public partial class asp_mysql_reader  : System.Web.UI.Page
+{
+
+/* ---------------------------------------------------------------- */
+protected void Page_Load (Object sender, System.EventArgs e)
+{
+
+	string server="cdbd026";
+
+	string str_connect = "Server=" + server + 
+	";User Id=uchida;Password=hello9;Database=city;";
+
+	MySqlConnection conn = new MySqlConnection (str_connect);
+
+	conn.Open();
+
+	MySqlCommand command = new MySqlCommand("select * from cities", conn);
+
+	MySqlDataReader dread = command.ExecuteReader();
+
+
+	DataTable dtable = new DataTable();
+	dtable.Columns.Add(new DataColumn("ID", typeof (System.String)));
+	dtable.Columns.Add(new DataColumn("NAME", typeof (String)));
+	dtable.Columns.Add(new DataColumn("POPULATION", typeof (String)));
+	dtable.Columns.Add(new DataColumn("DATE_MOD", typeof (String)));
+
+	while (dread.Read())
+		{
+		DataRow dr = dtable.NewRow();
+		dr[0] = dread["ID"];
+		dr[1] = dread["NAME"];
+		dr[2] = dread["POPULATION"];
+		dr[3] = dread["DATE_MOD"];
+		dtable.Rows.Add(dr);
+		}
+
+	GridView_A.DataSource = dtable.DefaultView;
+	GridView_A.DataBind();
+
+	dread.Close();
+	command.Dispose();
+	conn.Close();
+	conn.Dispose();
+}
+/* ---------------------------------------------------------------- */
+}
+/* ---------------------------------------------------------------- */

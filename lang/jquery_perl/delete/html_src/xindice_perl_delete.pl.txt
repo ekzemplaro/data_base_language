@@ -1,0 +1,1 @@
+../xindice_perl_delete.pl

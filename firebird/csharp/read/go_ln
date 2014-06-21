@@ -1,0 +1,3 @@
+DLL=/var/www/data_base/common/dll
+#
+ln -s $DLL/FirebirdSql.Data.FirebirdClient.dll FirebirdSql.Data.FirebirdClient.dll

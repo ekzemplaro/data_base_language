@@ -1,0 +1,7 @@
+GROOVY_JAR=/usr/share/java/groovy-all.jar:/usr/share/java/groovy.jar
+COMMON=/var/www/data_base/common
+JAR=$COMMON/jar
+MONGO_JAR=$JAR/mongo-2.8.0.jar
+export CLASSPATH=./:$MONGO_JAR:$GROOVY_JAR
+#
+java mongo_create

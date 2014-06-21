@@ -1,0 +1,5 @@
+#
+VOLDEMORT=/home/uchida/dbm/voldemort/voldemort-1.3.0
+export CLASSPATH=./:$VOLDEMORT/dist/voldemort-1.3.0.jar:$VOLDEMORT/dist/voldemort-test-1.3.0.jar:$VOLDEMORT/lib/*
+#
+./voldemort_update.py t3055 716954200

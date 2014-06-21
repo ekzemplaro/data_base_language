@@ -1,0 +1,1 @@
+Rscript text_create.R --args /var/tmp/plain_text/cities.txt

@@ -1,0 +1,40 @@
+<meta content="Program Language Examples in ecl" name="description">
+<meta content="ecl,クライアント,接続,言語,サンプル" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<title>ecl Sep/26/2013</title>
+</head>
+<body>
+<h2><a href="http://ecls.sourceforge.net/">Embeddable Common-Lisp</a></h2><p />
+
+<blockquote>
+ecl-13.5.1.tgz<p />
+</blockquote>
+
+<blockquote>
+tar xvfz ecl-13.5.1.tgz<br />
+./configure<br />
+make<br />
+sudo make install<br />
+</blockquote>
+<blockquote>
+<pre>
+$ ecl
+ECL (Embeddable Common-Lisp) 13.5.1 (git:UNKNOWN)
+Copyright (C) 1984 Taiichi Yuasa and Masami Hagiya
+Copyright (C) 1993 Giuseppe Attardi
+Copyright (C) 2000 Juan J. Garcia-Ripoll
+ECL is free software, and you are welcome to redistribute it
+under certain conditions; see file 'Copyright' for details.
+Type :h for Help.  
+Top level in: #<process TOP-LEVEL>.
+> (require :asdf)
+
+;;; Loading #P"/usr/local/lib/ecl-13.5.1/asdf.fas"
+("ASDF" "CMP")
+> (asdf:asdf-version)
+
+"2.33.10"
+> (quit)
+</pre>
+</blockquote>
+

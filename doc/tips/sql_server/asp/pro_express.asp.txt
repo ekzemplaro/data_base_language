@@ -1,0 +1,43 @@
+<html>
+<body>
+pro_express.asp<p />
+<%  @LANGUAGE="VBSCRIPT" %>
+
+<%
+<'------------------------------------------
+'	pro_express.asp
+'
+'			Dec/25/2012
+'-------------------------------------------
+
+
+Response.write "*** 開始 ***<p />"
+
+Set cn = Server.CreateObject("ADODB.Connection")
+Set rs = Server.CreateObject("ADODB.Recordset")
+
+cn.Open "Provider=SQLNCLI11;Server=nlf132¥SQLEXPRESS;Database=city;Uid=sa;Pwd=tiger"
+
+rs.Open "SELECT * FROM cities", cn
+
+'
+Response.write "<pre>"
+Do While Not rs.EOF
+	str_out = rs("id") & chr(9) & rs("Name") & chr(9) & rs ("population")
+	str_out = str_out & chr(9) & rs ("date_mod") & "<br />"
+	Response.write str_out
+	rs.MoveNext
+Loop
+Response.write "</pre>"
+
+rs.Close
+cn.Close
+
+Set cn = Nothing
+Set rs = Nothing
+
+Response.write "*** 終了 ***<p />"
+'------------------------------------------
+%>
+</body>
+</html>

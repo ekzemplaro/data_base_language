@@ -1,0 +1,11 @@
+#
+COMMON=/var/www/data_base/common
+GROOVY_COMMON=$COMMON/groovy_common
+JAR=$COMMON/jar
+#
+export MSSQL_JAR=$JAR/mssql/sqljdbc4.jar
+
+export GROOVY_JAR=/usr/share/java/groovy-all.jar:/usr/share/java/groovy.jar
+export CLASSPATH=.:$GROOVY_COMMON:$MSSQL_JAR:$GROOVY_JAR
+#
+java mssql_delete t1073

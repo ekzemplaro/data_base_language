@@ -1,0 +1,45 @@
+<title>cdb</title>
+</head>
+<body>
+<h1><a href="http://cr.yp.to/cdb.html">cdb</a></h1>
+<blockquote>
+<pre>
+ii  freecdb   0.75build3       creating and reading constant databases
+</pre>
+</blockquote>
+<blockquote>
+/usr/bin/cdbdump<br />
+/usr/bin/cdbget<br />
+/usr/bin/cdbmake<br />
+/usr/bin/cdbstats<br />
+</blockquote>
+
+<blockquote>
+</blockquote>
+
+Python<p />
+<blockquote>
+python-cdb-master.zip<br />
+</blockquote>
+
+Perl<p />
+<blockquote>
+	#cpan CDB_File<br />
+</blockquote>
+
+Ruby<p />
+<blockquote>
+libcdb-dev<p />
+# gem install libcdb-ruby<br />
+</blockquote>
+
+Java<p />
+<a href="http://www.strangegizmo.com/products/sg-cdb/">sg-cdb-1.0.4.zip</a><br />
+<blockquote>
+cd java<p />
+javac cdb/dump.java<br />
+java cdb/dump /var/tmp/cdb/cities.cdb<p />
+
+javac cdb/get.java<br />
+java cdb/get /var/tmp/cdb/cities.cdb t2762<p />
+</blockquote>

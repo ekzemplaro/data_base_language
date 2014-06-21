@@ -1,0 +1,78 @@
+<title>Berkeley DB</title>
+</head>
+<body>
+<h1><a href="http://www.oracle.com/database/berkeley-db/index.html">
+Berkeley DB</a></h1>
+<ol>
+	Berkeley DB 4.7.25: (May 15, 2008)<p />
+	<ol>
+	PHP<br />
+		<ol>
+		Berkeley DB (Btree, version 9, native byte-order)<p />
+		</ol>
+
+	python<br />
+		<ol>
+		Berkeley DB (Hash, version 9, native byte-order)<p />
+		</ol>
+
+	ruby<br />
+		<ol>
+		Berkeley DB (Btree, version 9, native byte-order)<p />
+		</ol>
+	</ol>
+</ol>
+<pre>
+</pre>
+
+<blockquote>
+</blockquote>
+
+<blockquote>
+</blockquote>
+
+
+
+Python<p />
+<blockquote>
+</blockquote>
+
+Ruby<p />
+<blockquote>
+<pre>
+ii  ruby-bdb   0.6.5-7build1   amd64    Interface to Berkeley DB for Ruby 1.8
+</pre>
+</blockquote>
+
+Tcl<p />
+<blockquote>
+<pre>
+ii  libdb5.1-tcl:amd64    5.1.29-5ubuntu8   amd64     Berkeley v5.1 Database Libraries for Tcl [module]
+</pre>
+<a href="http://genome.jouy.inra.fr/doc/docs/api_tcl/tcl_index.html">
+Tcl Interface</a><p />
+tclsh<p />
+% load /usr/lib/i386-linux-gnu/libdb_tcl-4.8.so<br />
+% berkdb version -string<br />
+
+<p />
+<a href="http://pybsddb.sourceforge.net/ref/tcl/intro.html">Tcl API</a><p />
+
+tclsh<p />
+% load /usr/lib/libdb_tcl-5.1.so<br />
+% package require Db_tcl<br />
+5.1<br />
+% berkdb version -string<br />
+Berkeley DB 5.1.19: (August 27, 2010)<br />
+</blockquote>
+
+C++<p />
+<blockquote>
+<a href="http://mannequeen.net/portal/mirror/DEFAULT-Sample-/takusato.net/article/bdb_oboegaki.html">Berkeley DB 覚書き</a><p />
+</blockquote>
+
+Java<p />
+<pre>
+</pre>
+
+

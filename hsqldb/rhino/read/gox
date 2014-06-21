@@ -1,0 +1,7 @@
+#
+#
+JAVA_CLASSPATH="/usr/share/java/js.jar:/usr/share/java/jline.jar"
+HSQLDB_JAR=/usr/share/java/hsqldb.jar
+export CLASSPATH=.:$HSQLDB_JAR:$JAVA_CLASSPATH
+#
+./hsqldb_read.js

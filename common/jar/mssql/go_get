@@ -1,0 +1,5 @@
+#
+MSSQL_JPN=/home/uchida/data_base/ms_sqlserver/jdbc/sqljdbc_2.0/jpn
+#
+cp -p $MSSQL_JPN/sqljdbc4.jar .
+#

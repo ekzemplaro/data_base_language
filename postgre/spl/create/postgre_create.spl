@@ -1,0 +1,31 @@
+// -----------------------------------------------------------------
+//	postgre_create.spl
+//
+//						Jul/05/2012
+// -----------------------------------------------------------------
+load "sql_postgres";
+#file-as-code  /var/www/data_base/common/spl_common/sql_manipulate.spl;
+// -----------------------------------------------------------------
+write ("*** 開始 ***\n");
+
+var db = sql_connect("postgres","host=localhost user=scott password=tiger dbname=city");
+
+
+
+drop_table_proc (db);
+create_table_proc (db);
+
+sql_insert_proc (db, "t3461","広島", 59736,"1962-3-17");
+sql_insert_proc (db, "t3462","福山", 32859,"1962-2-24");
+sql_insert_proc (db, "t3463","東広島", 87621,"1962-3-9");
+sql_insert_proc (db, "t3464","呉", 62389,"1962-6-12");
+sql_insert_proc (db, "t3465","尾道", 53428,"1962-1-27");
+sql_insert_proc (db, "t3466","竹原", 34216,"1962-3-15");
+sql_insert_proc (db, "t3467","三次", 87453,"1962-8-3");
+sql_insert_proc (db, "t3468","大竹", 93256,"1962-10-30");
+sql_insert_proc (db, "t3469","府中", 39823,"1962-9-8");
+
+sql_display_proc (db);
+
+write ("*** 終了 ***\n");
+// -----------------------------------------------------------------

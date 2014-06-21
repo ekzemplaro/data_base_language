@@ -1,0 +1,45 @@
+<title>F# Aug/21/2013</title>
+</head>
+<body>
+<h2><a href="http://msdn.microsoft.com/en-us/vstudio/hh388569.aspx">F#</a></h2><p />
+<a href="http://fsharp.org/use/linux/">Use F# on Linux</a><p />
+/etc/apt/sources.list<br />
+<blockquote>
+deb http://http.us.debian.org/debian/ unstable main contrib non-free
+deb-src http://http.us.debian.org/debian/ unstable main contrib non-free
+</blockquote>
+
+<blockquote>
+sudo apt-get update
+sudo apt-get install mono-devel
+sudo apt-get install fsharp
+sudo apt-get install fsharp-console
+sudo cp -p /usr/lib/cli/FSharp.*-4.3/* /usr/lib/mono/4.0/
+</blockquote>
+
+<blockquote>
+
+	<pre>
+	ii  fsharp    3.0.26-1    all     functional-first programming language - compiler for the CLI
+ii  fsharp-console    3.0.26-1    all     functional-first programming language - interactive compiler
+	</pre>
+</blockquote>
+
+<blockquote>
+<pre>
+In order to add FSharp.Core.dll to the Mono GAC the DLL needs to be
+re-signed with the mono.snk key. The mono.snk key is available from
+the 'Mono Sources'.
+
+  http://www.mono-project.com/
+  http://anonsvn.mono-project.com/source/trunk/mcs/class/mono.snk
+
+To proceed with a Mono GAC install, obtain mono.snk, put it in the
+current directory and re-run this script.
+
+An alternative to installing the DLLs in the Mono GAC is to add the
+FSharp bin directory to the MONO_PATH variable. For more information
+on 'How Mono Finds Assemblies' see http://www.mono-project.com/Gacutil
+</pre>
+</blockquote>
+

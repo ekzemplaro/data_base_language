@@ -1,0 +1,16 @@
+cassandra_manipulate.scala
+excel_manipulate.scala
+file_io.scala
+ftp_manipulate.scala
+get_uri.scala
+hbase_manipulate.scala
+json_manipulate.scala
+mcached_manipulate.scala
+mongo_manipulate.scala
+redis_manipulate.scala
+sql_manipulate.scala
+tcbn_manipulate.scala
+text_manipulate.scala
+voldemort_manipulate.scala
+xlsx_manipulate.scala
+xml_manipulate.scala

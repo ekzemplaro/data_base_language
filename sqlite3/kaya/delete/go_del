@@ -1,0 +1,2 @@
+#
+./sqlite3_delete /var/tmp/sqlite3/cities.db t0712

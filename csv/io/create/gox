@@ -1,0 +1,3 @@
+#
+./csv_create.io /var/tmp/csv/cities.csv
+chmod 666 /var/tmp/csv/cities.csv

@@ -1,0 +1,15 @@
+Listen 3004
+<VirtualHost *:3004>
+
+    DocumentRoot /mnt/host_aa/work_area_aa
+    <Directory /mnt/host_aa/work_area_aa>
+
+        Options Indexes MultiViews
+        DAV On
+        AllowOverride None
+        Order allow,deny
+        allow from all
+
+    </Directory>
+
+</VirtualHost>

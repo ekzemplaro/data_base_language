@@ -1,0 +1,16 @@
+#
+../single_check/single_check.sh hgdb bash
+../single_check/single_check.sh hgdb php
+../single_check/single_check.sh hgdb python
+../single_check/single_check.sh hgdb perl
+../single_check/single_check.sh hgdb ruby
+#
+../single_check/single_check.sh hgdb jruby
+#
+../single_check/single_check.sh hgdb rhino
+#
+../single_check/single_check.sh hgdb scala
+../single_check/single_check.sh hgdb groovy
+../single_check/single_check.sh hgdb java
+../single_check/single_check.sh hgdb boo
+../single_check/single_check.sh hgdb csharp

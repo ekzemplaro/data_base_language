@@ -1,0 +1,2 @@
+#
+ecl -shell json_read.lisp -eval '(quit)' -- /var/tmp/json/cities.json

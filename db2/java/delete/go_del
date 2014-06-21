@@ -1,0 +1,5 @@
+#
+JAVA_COMMON=/var/www/data_base/common/java_common
+export CLASSPATH=$CLASSPATH:./:../read:$JAVA_COMMON
+#
+java db2_delete t2877

@@ -1,0 +1,25 @@
+// -----------------------------------------------------------------
+//	exist_read.spl
+//
+//						Sep/06/2011
+// -----------------------------------------------------------------
+load "curl";
+load "xml";
+
+#file-as-code  /var/www/data_base/common/spl_common/xml_manipulate.spl;
+// -----------------------------------------------------------------
+write ("*** 開始 ***\n");
+
+var result = curl("http://localhost:8086/exist/rest/db/cities/cities.xml");
+
+// debug result.header;
+//debug result.body;
+var str_xml = result.body;
+
+var keys = ["t4251","t4252","t4253","t4254","t4255",
+		"t4256","t4257","t4258","t4259"];
+
+xml_display_proc (str_xml,keys);
+
+write ("*** 終了 ***\n");
+// -----------------------------------------------------------------

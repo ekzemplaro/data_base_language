@@ -1,0 +1,12 @@
+<script src="info_data_base.js"></script>
+<script src="show_data_base_button.js"></script>
+<script src="../by_language/dbase_translate.js"></script>
+<link href="info_data_base.css" rel="stylesheet" />
+<title>Information about Data Base (Nov/11/2013)</title>
+</head>
+<body>
+
+
+<div class="nava">
+nava
+</div>

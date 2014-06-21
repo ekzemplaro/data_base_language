@@ -1,0 +1,19 @@
+#
+#
+export GROOVY_JAR=/usr/share/java/groovy-all.jar:/usr/share/java/groovy.jar
+export JAVA_COMMON=/var/www/data_base/common/java_common
+export GROOVY_COMMON=/var/www/data_base/common/groovy_common
+#
+SHARE=/usr/share/java
+#
+export CPX=.:$SHARE/commons-httpclient-3.1.jar
+# export CPX=$CPX:$SHARE/jboss-common.jar
+export CPX=$CPX:$SHARE/commons-logging-1.1.1.jar
+export CPX=$CPX:$SHARE/commons-logging-adapters-1.1.1.jar
+export CPX=$CPX:$SHARE/commons-logging-api-1.1.1.jar
+export CPX=$CPX:$SHARE/commons-codec-1.3.jar
+#
+export CPX=$CPX:$JAVA_COMMON/jsonic-1.1.2.jar
+#
+export CLASSPATH=.:$CPX:$JAVA_COMMON:$GROOVY_COMMON:$HTTP_CLIENT:$GROOVY_JAR
+java exist_read

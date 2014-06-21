@@ -1,0 +1,1 @@
+./csv_read.bsh /var/tmp/csv/cities.csv

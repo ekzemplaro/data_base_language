@@ -1,0 +1,5 @@
+#
+export JAVA_COMMON=/var/www/data_base/common/java_common	
+export CLASSPATH=.:$JAVA_COMMON
+#
+java csv_create /var/tmp/csv/cities.csv

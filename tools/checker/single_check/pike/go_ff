@@ -1,0 +1,6 @@
+#
+../single_check.sh couch coffee
+../single_check.sh ftp coffee
+../single_check.sh mongo coffee
+#
+#

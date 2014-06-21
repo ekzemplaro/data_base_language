@@ -1,0 +1,30 @@
+<meta content="Program Language Examples in io" name="description">
+<meta content="io.js,クライアント,接続,言語,サンプル" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<title>io May/13/2013</title>
+</head>
+<body>
+<h2><a href="http://www.iolanguage.com">io</a></h2><p />
+<blockquote>
+/usr/local/lib/io/addons<p />
+</blockquote>
+
+stevedekorte-io-2011.09.12-67-gd938e59.tar.gz<p />
+<blockquote>
+mkdir build && cd build<br />
+cmake ..<br />
+sudo make install<p />
+sudo ldconfig<p />
+</blockquote>
+
+iobin-linux-x64-deb-current.zip<p />
+<blockquote>
+sudo dpkg -i IoLanguage-2012.11.10-Linux-x64.deb<p />
+sudo ldconfig<p />
+</blockquote>
+
+<blockquote>
+<a href="http://io-fans.jottit.com/">io-fans</a><p />
+<a href="http://xole.net/docs/IoReference_ja.html">Io リファレンス マニュアル</a><p />
+
+</blockquote>

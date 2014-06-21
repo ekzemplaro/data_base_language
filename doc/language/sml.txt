@@ -1,0 +1,11 @@
+<title>sml Oct/20/2011</title>
+</head>
+<body>
+<h2><a href="http://smlnj.org">Standard ML of New Jersey</a></h2><p />
+<blockquote>
+Oneiric (11.10) に、smlnj パッケージが入っていない。<p />
+</blockquote>
+
+<blockquote>
+</blockquote>
+

@@ -1,0 +1,22 @@
+server {
+    listen  80;
+    server_name hoge.com;
+    access_log  /var/www/hoge.com/logs/access.log;
+    error_log   /var/www/hoge.com/logs/error.log;
+ 
+    location / {
+        root /var/www/hoge.com/public_html;
+        index index.html index.htm index.php;
+    }
+ 
+    location ~ \.php$ {
+        include /etc/nginx/fastcgi_params;
+        fastcgi_pass    127.0.0.1:9000;
+        fastcgi_index   index.php;
+        fastcgi_param   SCRIPT_FILENAME /var/www/hoge.com/public_html$fastcgi_script_name;
+    }
+ 
+    location ~ /\.ht {
+        deny  all;
+    }
+}

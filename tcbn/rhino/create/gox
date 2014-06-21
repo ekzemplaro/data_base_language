@@ -1,0 +1,13 @@
+#
+JAVA_COMMON=/var/www/data_base/common/java_common
+export CPPFLAGS="-I/usr/lib/jvm/java-6-openjdk/include/"
+export JAVA_HOME=/usr/lib/jvm/java-6-openjdk
+export PATH=$JAVA_HOME/bin:$PATH
+#
+#
+TCBN=/usr/local/lib
+export CLASSPATH=$CLASSPATH:$TCBN/tokyocabinet.jar
+export CLASSPATH=$CLASSPATH:$JAVA_COMMON:$JAVA_COMMON/jar/jsonic-1.1.2.jar
+LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$TCBN
+#
+java tcbn_create

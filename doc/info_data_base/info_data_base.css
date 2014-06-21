@@ -1,0 +1,41 @@
+table,td,th
+{
+border:0.5px #00f0f0 solid;
+margin-left: auto;
+margin-right: auto;
+}
+
+div.nava
+{
+background-color: #fff0f0;
+width: 25%;
+height: 800px;
+float: left;
+overflow: auto;
+}
+
+
+div.selection
+{
+background-color: #fff0f0;
+text-align: center;
+width: 70%;
+float: right;
+}
+
+
+div.contents
+{
+background-color: #f0f0f0;
+width: 75%;
+float: right;
+}
+
+
+div.tail
+{
+background-color: #f0f0ff;
+width: 75%;
+float: right;
+}
+

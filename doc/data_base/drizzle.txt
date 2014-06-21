@@ -1,0 +1,47 @@
+<meta content="Program Language Examples to connect to Drizzle" name="description">
+<meta content="Drizzle,クライアント,接続,言語,サンプル" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<title>Drizzle</title>
+</head>
+<body>
+<h1><a href="http://www.drizzle.org">Drizzle</a></h1>
+<blockquote>
+<pre>
+ii  drizzle               1:7.1.36-stable-1ubuntu1    amd64      Server binaries for Drizzle Database
+ii  drizzle-client        1:7.1.36-stable-1ubuntu1    amd64      Client binaries for Drizzle Database
+ii  drizzle-plugin-js     1:7.1.36-stable-1ubuntu1    amd64      Javascript plugin for Drizzle
+ii  libdrizzledmessage0   1:7.1.36-stable-1ubuntu1    amd64      Library containing serialized messages used with Drizzle
+</pre>
+</blockquote>
+
+<blockquote>
+/etc/init/drizzle.conf<p />
+</blockquote>
+
+スキーマの作成<br />
+<blockquote>
+drizzle> create schema city;
+</blockquote>
+
+
+
+Python<p />
+<blockquote>
+</blockquote>
+
+Ruby<p />
+<blockquote>
+</blockquote>
+
+
+Java<p />
+<blockquote>
+	bzr branch lp:drizzle-jdbc<br />
+	cd drizzle-jdbc/<br />
+	mvn compile<br />
+	mvn -Dmaven.test.skip=true package<br />
+</blockquote>
+
+
+<blockquote>
+</blockquote>

@@ -1,0 +1,16 @@
+<meta content="Program Language Examples in ejscript" name="description">
+<meta content="ejscript,クライアント,接続,言語,サンプル" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<title>ejscript Dec/27/2013</title>
+</head>
+<body>
+<h2><a href="http://ejscript.org">EJScript</a></h2><p />
+<blockquote>
+	ejs-2.0.0-B1-ubuntu-LINUX-x86_64.deb.tgz<p />
+</blockquote>
+
+ejs-2.3.2-0-src.tgz<p />
+<blockquote>
+./configure: 11: ./configure: bit: not found<p />
+</blockquote>
+

@@ -1,0 +1,5 @@
+#
+../single_check.sh text cmucl
+../single_check.sh csv cmucl
+#../single_check.sh xml cmucl
+#../single_check.sh json cmucl

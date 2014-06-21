@@ -1,0 +1,8 @@
+#
+COMMON=/var/www/data_base/common
+GROOVY_COMMON=$COMMON/groovy_common
+export GROOVY_JAR=/usr/share/java/groovy-all.jar:/usr/share/java/groovy.jar
+export CLASSPATH=./:$GROOVY_COMMON:$GROOVY_JAR
+#
+java tyrant_update t4767 49325100
+#

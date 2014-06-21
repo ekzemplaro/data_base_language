@@ -1,0 +1,11 @@
+
+<blockquote>
+タイムラインの取り方<p />
+<blockquote>
+wget http://user:password@hostname/statusnet/index.php/api/statuses/public_timeline.xml
+</blockquote>
+
+<blockquote>
+</blockquote>
+
+</blockquote>

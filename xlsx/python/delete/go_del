@@ -1,0 +1,2 @@
+#
+./xlsx_delete.py /var/tmp/xlsx/cities.xlsx t2978

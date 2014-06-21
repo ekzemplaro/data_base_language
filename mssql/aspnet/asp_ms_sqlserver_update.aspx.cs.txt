@@ -1,0 +1,130 @@
+/* -------------------------------------------------------------------- */
+/*
+	city/c_sharp/aspnet/update/asp_ms_sqlserver_update.aspx.cs
+
+						Aug/17/2009
+*/
+/* -------------------------------------------------------------------- */
+using System;
+using System.Data;
+using System.Data.SqlClient;
+
+using System.Configuration;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+
+/* -------------------------------------------------------------------- */
+public partial class asp_ms_sqlserver_update : System.Web.UI.Page 
+{
+	string str_connect  = 
+	@"data source=cdbd025\SQLEXPRESS;initial catalog=city;" +
+	"user id=sa;password=hello9;" +
+	"persist security info=True;packet size=4096";
+	
+/* -------------------------------------------------------------------- */
+public DataTable Data
+{
+	get { return (DataTable)Session["DATA"]; }
+	set { Session["DATA"] = value; }
+}
+    
+/* -------------------------------------------------------------------- */
+protected void Page_Load(object sender, EventArgs e)
+{
+	if (!IsPostBack)
+	{
+	Data = CreateSampleData ();
+	}
+}
+
+/* -------------------------------------------------------------------- */
+private DataTable CreateSampleData ()
+{
+	string command = "SELECT ID,NAME,POPULATION,DATE_MOD FROM cities";
+
+	SqlConnection connection = new SqlConnection (str_connect);
+
+	SqlDataAdapter da_adapter
+			= new SqlDataAdapter (command,str_connect);
+
+	DataTable dtable = new DataTable();
+
+	connection.Open ();
+	da_adapter.Fill (dtable);
+
+	da_adapter.Dispose ();
+	connection.Close ();
+	connection.Dispose ();
+
+	GridView_A.DataSource = dtable.DefaultView;
+	GridView_A.DataBind();
+
+	return	dtable;
+}
+
+/* -------------------------------------------------------------------- */
+private void GetInputData ()
+{
+	DataTable dtable = Data;
+	foreach (GridViewRow row in GridView_A.Rows)
+	{
+	string input = Request.Params[row.FindControl("txtInput").UniqueID];
+	string data_old = dtable.Rows[row.DataItemIndex]["POPULATION"].ToString ();
+	dtable.Rows[row.DataItemIndex]["POPULATION"] = input;
+
+	if (!data_old.Equals (input))
+		{
+		DateTime dateNow = DateTime.Now;
+
+		dtable.Rows[row.DataItemIndex]["DATE_MOD"] = dateNow.ToString ();
+		}
+	}
+
+	string command = "SELECT * FROM cities";
+
+	SqlConnection connection = new SqlConnection (str_connect);
+/*
+	SqlCommand sqlCAT = connection.CreateCommand ();
+	sqlCAT.CommandText = command;
+*/
+	SqlDataAdapter da_adapter
+			= new SqlDataAdapter (command,str_connect);
+/*
+	SqlDataAdapter da_adapter = new SqlDataAdapter ();
+	da_adapter.SelectCommand = sqlCAT;
+*/
+
+	SqlCommandBuilder builder = new SqlCommandBuilder (da_adapter);
+
+	da_adapter.UpdateCommand = builder.GetUpdateCommand ();
+
+	connection.Open ();
+	da_adapter.Update (dtable);
+
+	da_adapter.Dispose ();
+	connection.Close ();
+	connection.Dispose ();
+
+	GridView_A.DataSource = dtable.DefaultView;
+	GridView_A.DataBind ();
+}
+
+/* -------------------------------------------------------------------- */
+protected void btn_Click_aa (object sender, System.EventArgs e)
+{
+	GetInputData();
+}
+
+/* -------------------------------------------------------------------- */
+protected void btn_Click_bb (object sender, System.EventArgs e)
+{
+	Data = CreateSampleData ();
+}
+
+/* -------------------------------------------------------------------- */
+}
+/* -------------------------------------------------------------------- */

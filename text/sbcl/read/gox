@@ -1,0 +1,1 @@
+./text_read.lisp /var/tmp/plain_text/cities.txt

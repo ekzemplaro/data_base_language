@@ -1,0 +1,8 @@
+export GROOVY_JAR=/usr/share/java/groovy-all.jar:/usr/share/java/groovy.jar
+COMMON=/var/www/data_base/common
+GROOVY_COMMON=$COMMON/groovy_common
+JAR=$COMMON/jar
+export CLASSPATH=.:$GROOVY_JAR:$GROOVY_COMMON:$JAR/epubgen-0.5.0.jar
+#
+java epub_create /var/tmp/epub/cities.epub
+#java epub_create cities.epub

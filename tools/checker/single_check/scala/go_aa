@@ -1,0 +1,8 @@
+#
+../single_check.sh text scala
+../single_check.sh csv scala
+../single_check.sh xml scala
+../single_check.sh json scala
+../single_check.sh excel scala
+../single_check.sh epub scala
+#

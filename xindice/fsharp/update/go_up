@@ -1,0 +1,2 @@
+export http_proxy=""
+./xindice_update.exe t0272 4532400

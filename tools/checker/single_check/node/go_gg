@@ -1,0 +1,7 @@
+#
+../single_check.sh couch node
+../single_check.sh ftp node
+../single_check.sh webdav node
+#../single_check.sh mongo node
+#
+#

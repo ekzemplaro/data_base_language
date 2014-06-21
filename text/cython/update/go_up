@@ -1,0 +1,4 @@
+#
+echo "import text_update" > tmp_execute.py
+#
+python ./tmp_execute.py /var/tmp/plain_text/cities.txt t2387 7682500

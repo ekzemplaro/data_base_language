@@ -1,0 +1,20 @@
+#! /usr/bin/falcon
+//
+//	json_read.fal
+//
+//					Feb/20/2014
+// -------------------------------------------------------------------
+import from json
+load "/var/www/data_base/common/falcon_common/text_manipulate.fal"
+// -------------------------------------------------------------------
+printl ("*** 開始 ***")
+
+json_file=args[0]
+stream = InputStream (json_file)
+dict_aa = json.JSONdecode (stream)
+//
+dict_display_proc (dict_aa)
+stream.close()
+//
+printl ("*** 終了 ***")
+// -------------------------------------------------------------------

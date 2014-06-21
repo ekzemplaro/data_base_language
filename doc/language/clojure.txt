@@ -1,0 +1,54 @@
+<meta content="Program Language Examples in Clojure" name="description">
+<meta content="Clojure,クライアント,接続,言語,サンプル" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<title>Clojure Nov/01/2013</title>
+</head>
+<body>
+<h2><a href="http://clojure.org">Clojure</a></h2><p />
+<blockquote>
+<pre>
+ii  clojure1.4    1.4.0+dfsg-2ubuntu2    all    Lisp dialect for the JVM
+ii  leiningen     1.7.1-2                all    simple build system for Clojure
+</pre>
+</blockquote>
+
+<blockquote>
+<pre>
+$ clojure
+Clojure 1.4.0
+user=> (+ 5 4)
+9
+user=> (. System exit 0)
+</pre>
+</blockquote>
+
+
+<blockquote>
+<pre>
+$ lein repl
+nREPL server started on port 59877 on host 127.0.0.1
+REPL-y 0.2.1
+Clojure 1.5.1
+    Docs: (doc function-name-here)
+          (find-doc "part-of-name-here")
+  Source: (source function-name-here)
+ Javadoc: (javadoc java-object-or-class-here)
+    Exit: Control+D or (exit) or (quit)
+ Results: Stored in vars *1, *2, *3, an exception in *e
+
+user=> (use 'cheshire.core)
+nil
+user=> (generate-string '(1 2 3 4))
+"[1,2,3,4]"
+user=> (generate-string '{:foo "bar"})
+"{\"foo\":\"bar\"}"
+user=> (parse-string "{\"foo\":\"bar\"}")
+{"foo" "bar"}
+user=> (quit)
+Bye for now!
+</pre>
+</blockquote>
+
+<blockquote>
+	<a href="http://en.wikibooks.org/wiki/Clojure_Programming/Examples/Cookbook">Clojure Programming/Examples/Cookbook</a><p />
+</blockquote>

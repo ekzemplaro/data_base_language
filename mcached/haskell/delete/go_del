@@ -1,0 +1,2 @@
+#
+runghc mcached_delete.hs t1734

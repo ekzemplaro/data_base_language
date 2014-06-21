@@ -1,0 +1,6 @@
+#
+#
+../single_check.sh redis ruby
+../single_check.sh tcbn ruby
+../single_check.sh tyrant ruby
+#

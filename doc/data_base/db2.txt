@@ -1,0 +1,105 @@
+<title>DB2</title>
+</head>
+<body>
+<h1><a href="http://www-06.ibm.com/software/jp/data/db2/">DB2</a></h1>
+
+<blockquote>
+	libaio1<br />
+	ksh<br /> 
+	libstdc++6-4.4-dev<br />
+	libstdc++6-4.4-pic<br />
+</blockquote>
+
+<blockquote>
+	tar xvfz db2exc_970_LNX_x86.tar.gz<p />
+	sudo expc/db2setup<p />
+
+	tar xvfz db2exc_nlpack_970_LNX_x86.tar.gz<p />
+	sudo nlpack/db2setup<p />
+</blockquote>
+
+開始方法<p />
+<blockquote>
+	export PATH=$PATH:/opt/ibm/db2/V9.7/bin:/opt/ibm/db2/V9.7/adm:/opt/ibm/db2/V9.7/misc<p />
+	db2start<p />
+</blockquote>
+
+<hr />
+
+ db2level<p />
+<ol>
+<pre>
+DB21085I  Instance "scott" uses "32" bits and DB2 code release "SQL09070" with 
+level identifier "08010107".
+Informational tokens are "DB2 v9.7.0.0", "s090521", "LINUXIA3297", and Fix Pack 
+"0".
+Product is installed at "/opt/ibm/db2/V9.7".
+
+</pre>
+</ol>
+ db2level<p />
+<ol>
+<pre>
+
+DB21085I  インスタンス "scott" は、"32" ビットおよび DB2
+コード・リリース "SQL09070" をレベル ID "08010107"
+で使用します。
+情報トークンは、"DB2
+v9.7.0.0"、"s090521"、"LINUXIA3297"、およびフィックスパック "0"
+です。
+製品は "/opt/ibm/db2/V9.7" にインストールされています。
+</pre>
+</ol>
+
+<blockquote>
+.  /home/scott/sqllib/db2profile<p />
+db2level<p />
+db2<p />
+
+db2 => grant all on cities to public<p />
+</blockquote>
+
+Python<p />
+<pre>
+
+	
+	PyDB2_1.1.1-1.tar.gz
+
+	cd PyDB2_1.1.1
+
+	setup.py を編集
+
+		DB2_ROOT = "/home/uchida/sqllib"
+		
+	sudo python setup.py install
+
+>>> import DB2
+>>> conn = DB2.connect(dsn='SAMPLE' , uid='sim' , pwd='xxxx')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/usr/local/lib/python2.6/dist-packages/DB2.py", line 276, in __init__
+    self._db = _db2.connect(*args, **kwargs)
+_db2.DatabaseError: ('08001', -30082, '[IBM][CLI Driver] SQL30082N  Security processing failed with reason "42" ("ROOT CAPABILITY REQUIRED").  SQLSTATE=08001\n')
+>>> 
+
+Traceback (most recent call last):
+  File "./db2_read.py", line 9, in <module>
+    import DB2
+  File "/usr/local/lib/python2.6/dist-packages/DB2.py", line 12, in <module>
+    import _db2
+ImportError: libdb2.so.1: cannot open shared object file: No such file or directory
+
+
+</pre>
+
+<pre>
+#wget http://peak.telecommunity.com/dist/ez_setup.py
+#python ez_setup.py
+#easy_install ibm_db
+
+</pre>
+
+Java<p />
+<ol>
+	java.lang.ClassNotFoundException: OM.ibm.db2.jdbc.app.DB2Driver
+</ol>

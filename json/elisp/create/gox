@@ -1,0 +1,2 @@
+#
+emacs --script json_create.el /var/tmp/json/cities.json

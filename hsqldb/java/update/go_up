@@ -1,0 +1,4 @@
+#
+JAVA_COMMON=/var/www/data_base/common/java_common
+export CPX=.:$JAVA_COMMON:/usr/share/java/hsqldb.jar:/usr/share/java/hsqldbutil.jar
+java -cp $CPX hsqldb_update t4676 237625100

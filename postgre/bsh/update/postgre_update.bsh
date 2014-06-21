@@ -1,0 +1,27 @@
+#! /usr/bin/bsh
+//
+//	postgre_update.bsh
+//
+//						Oct/01/2012
+//
+// ---------------------------------------------------------------------
+source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
+source ("/var/www/data_base/common/bsh_common/sql_manipulate.bsh");
+// ---------------------------------------------------------------------
+System.out.println ("*** 開始 ***");
+String	key = bsh.args[0];
+int	population = Integer.parseInt (bsh.args[1]);
+
+System.out.println (key);
+System.out.println (population);
+
+Connection conn = DriverManager.getConnection
+		("jdbc:postgresql://localhost/city","scott","tiger");
+
+sql_update_proc (conn,key,population);
+
+sql_display_proc (conn);
+
+conn.close ();
+System.out.println ("*** 終了 ***");
+// ---------------------------------------------------------------------

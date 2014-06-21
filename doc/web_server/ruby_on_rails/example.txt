@@ -1,0 +1,41 @@
+<blockquote>
+<pre>
+rails new public_poem
+
+cd public_poem
+
+
+rails generate scaffold Publicpoem \
+	title_jpn:string \
+	title_org:string \
+	author_jpn:string \
+	author_org:string \
+	language:string \
+	year_birth:integer \
+	year_death:integer \
+	year_publish:integer
+
+rake db:migrate
+</pre>
+
+編集<br />
+<blockquote>
+	<pre>
+	vi config/routes.rb
+
+       		root  :to => "Publicpoems#index"
+	#
+	rm -f public/index.html
+	</pre>
+</blockquote>
+
+サーバーの起動<br />
+<blockquote>
+	$ rails s -p 3002<p />
+</blockquote>
+
+クライアント<br />
+<blockquote>
+	http://localhost:3002/<p />
+</blockquote>
+</blockquote>

@@ -1,0 +1,5 @@
+#
+#
+echo "import gdbm_delete" > tmp_execute.py
+#
+python ./tmp_execute.py t2152

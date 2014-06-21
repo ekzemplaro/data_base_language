@@ -1,0 +1,7 @@
+#
+curl http://localhost:7474/db/data/node/19/properties
+curl http://localhost:7474/db/data/node/30/properties
+curl http://localhost:7474/db/data/node/31/properties
+curl http://localhost:7474/db/data/node/32/properties
+curl http://localhost:7474/db/data/node/33/properties
+#

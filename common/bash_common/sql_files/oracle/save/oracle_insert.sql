@@ -1,0 +1,19 @@
+insert into cities values
+	(131,'函館',518700,to_date ('2001/6/19 10:20:15','YYYY/MM/DD HH24:MI:SS'));
+insert into cities values
+	(132,'札幌',458010,to_date ('2001/9/24 11:20:15','YYYY/MM/DD HH24:MI:SS'));
+insert into cities values
+	(133,'帯広',318780,to_date ('2001/8/11 14:20:15','YYYY/MM/DD HH24:MI:SS'));
+insert into cities values
+	(134,'釧路',24879,to_date ('2001/3/21 15:20:15','YYYY/MM/DD HH24:MI:SS'));
+insert into cities values
+	(135,'旭川',81876,to_date ('2001/5/3 12:20:14','YYYY/MM/DD HH24:MI:SS'));
+insert into cities values
+	(136,'北見',71875,to_date ('2001/8/25 17:20:15','YYYY/MM/DD HH24:MI:SS'));
+insert into cities values
+	(137,'室蘭',61870,to_date ('2001/9/14 18:20:11','YYYY/MM/DD HH24:MI:SS'));
+insert into cities values
+	(138,'根室',42870,to_date ('2001/7/9 13:10:10','YYYY/MM/DD HH24:MI:SS'));
+insert into cities values
+	(139,'稚内',35870,to_date ('2001/8/21 15:20:10','YYYY/MM/DD HH24:MI:SS'));
+quit;

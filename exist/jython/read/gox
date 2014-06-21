@@ -1,0 +1,2 @@
+#export PYTHONPATH=../../python_common
+./exist_read.py

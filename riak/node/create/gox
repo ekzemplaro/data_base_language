@@ -1,0 +1,5 @@
+#
+#
+#
+export NODE_PATH=/home/uchida/node_modules
+./riak_create.js 

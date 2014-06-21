@@ -1,0 +1,33 @@
+#! /usr/bin/bsh
+//
+//	tyrant_read.bsh
+//
+//					Oct/02/2012
+//
+// --------------------------------------------------------------
+import com.danga.MemCached.SockIOPool;
+import com.danga.MemCached.MemCachedClient;
+// --------------------------------------------------------------
+source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
+source ("/var/www/data_base/common/bsh_common/mcached_manipulate.bsh");
+// --------------------------------------------------------------
+System.out.println ("*** 開始 ***");
+
+String[] serverlist = { "localhost:1978" };
+Integer[] weights = { 3};
+SockIOPool pool = SockIOPool.getInstance();
+pool.setServers (serverlist);
+pool.setWeights (weights);
+pool.initialize ();
+
+MemCachedClient mc = new MemCachedClient();
+
+String [] keys = {"t4761","t4762","t4763","t4764","t4765",
+		"t4766","t4767","t4768","t4769"};
+
+Map dict_aa = mcached_to_dict_proc (mc,keys);
+
+dict_display_proc (dict_aa);
+
+System.out.println ("*** 終了 ***");
+// --------------------------------------------------------------

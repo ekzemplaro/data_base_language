@@ -1,0 +1,4 @@
+#
+ln -s /mnt/sdb2/usr/lib/oracle/xe/app/oracle/product/10.2.0/client/lib/libclntsh.so libclntsh.so
+#
+ln -s /var/www/data_base/common/csharp_common/table_manipulate.dll table_manipulate.dll

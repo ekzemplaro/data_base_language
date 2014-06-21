@@ -1,0 +1,7 @@
+#
+../single_check.sh couch ringo
+#../single_check.sh ftp ringo
+../single_check.sh webdav ringo
+#../single_check.sh mongo ringo
+#
+#

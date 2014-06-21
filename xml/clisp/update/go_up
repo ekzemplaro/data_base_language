@@ -1,0 +1,2 @@
+#
+./xml_update.lsp /var/tmp/xml_file/cities.xml t2267 41923500

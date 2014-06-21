@@ -1,0 +1,6 @@
+#
+curl -X DELETE http://cdbd026:5984/data_base/common
+curl -X PUT http://cdbd026:5984/data_base/common
+#
+#
+curl -X PUT http://cdbd026:5984/data_base/common -d@common.json

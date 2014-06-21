@@ -1,0 +1,2 @@
+#
+/opt/acl90express/alisp -#! json_update.cl /var/tmp/json/cities.json t0922 32984500

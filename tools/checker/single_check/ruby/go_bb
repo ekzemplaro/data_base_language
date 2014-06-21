@@ -1,0 +1,6 @@
+#
+#../single_check.sh calc ruby
+../single_check.sh excel ruby
+../single_check.sh pdf ruby
+../single_check.sh epub ruby
+#

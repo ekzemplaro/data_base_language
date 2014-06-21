@@ -1,0 +1,65 @@
+<body>
+
+
+Apache (Port 80)<p />
+<blockquote>
+	apache2<p />
+
+	php5-cli<br />
+	php5-curl<br />
+	php5-sqlite<br />
+	libapache2-mod-php5<br />
+
+	python-json<p />
+
+	libxml-perl<br />
+	libxml-dom-perl<br />
+	libdbd-sqlite3-perl<br />
+	ruby1.9<br />
+	libdbd-sqlite3-ruby1.9.1<br />
+</blockquote>
+<blockquote>
+/var/www 以下に、html ファイルを置く。<p />
+	<blockquote>
+	/var/www/data_base<br />
+	</blockquote>
+
+<p />
+/usr/lib/cgi-bin 以下に、プログラムのリンクを置く。<p />
+	<blockquote>
+	/usr/lib/cgi-bin/data_base/bash<br />
+	/usr/lib/cgi-bin/data_base/python<br />
+	/usr/lib/cgi-bin/data_base/perl<br />
+	/usr/lib/cgi-bin/data_base/ruby<br />
+	</blockquote>
+<a href="sites-available_default.txt">
+	/etc/apache2/sites-available/default</a>
+	を編集(FollowSymLinks を追加)<p />
+	<blockquote>
+	&lt;Directory "/usr/lib/cgi-bin"&gt;<br />
+		AllowOverride None<br />
+		Options +ExecCGI -MultiViews +FollowSymLinks<br />
+		Order allow,deny<br />
+		Allow from all<br />
+	&lt;/Directory&gt;
+	</blockquote>
+
+再起動<br />
+<blockquote>
+	/etc/init.d/apache2 restart<p />
+</blockquote>
+</blockquote>
+
+<hr />
+php でアップロードできるファイルサイズの大きさを変更する。<p />
+<blockquote>
+/etc/php5/apache2/php.ini<p />
+	<blockquote>
+	post_max_size = 32M<br />
+	upload_max_filesize = 32M<br />
+	</blockquote>
+</blockquote>
+
+
+
+<hr />

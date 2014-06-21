@@ -1,0 +1,3 @@
+curl_lib.cpp
+text_manipulate.cpp
+xml_manipulate.cpp

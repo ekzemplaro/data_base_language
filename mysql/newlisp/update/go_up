@@ -1,0 +1,1 @@
+newlisp -c mysql_update.lsp t3322 84130000

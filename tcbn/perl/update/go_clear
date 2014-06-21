@@ -1,0 +1,7 @@
+#
+DFILE=/var/tmp/tokyo_cabinet/cities.tcb
+tcbmgr list $DFILE
+#
+tcbmgr out $DFILE bar
+tcbmgr out $DFILE baz
+tcbmgr out $DFILE quux

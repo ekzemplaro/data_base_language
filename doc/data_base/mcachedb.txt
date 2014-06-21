@@ -1,0 +1,29 @@
+<title>MemcacheDB</title>
+</head>
+<body>
+<h1><a href="http://memcachedb.org/">MemcacheDB</a></h1>
+<a href="http://code.google.com/p/memcached/wiki/Clients">Clients</a><p />
+<blockquote>
+sudo /usr/share/memcachedb/start-memcachedb<p />
+telnet 127.0.0.1 21201<p />
+</blockquote>
+
+<pre>
+ii  memcachedb    1.2.0-9   amd64    Persistent storage engine using the memcache protocol
+</pre>
+<blockquote>
+</blockquote>
+
+Python<p />
+<pre>
+</pre>
+
+
+
+Ruby<p />
+<pre>
+/usr/lib/ruby/1.8/memcache.rb:214:in `load': incompatible marshal file format (can't be read) (MemCache::MemCacheError)
+	format version 4.8 required; 123.10 given
+	from /usr/lib/ruby/1.8/memcache.rb:214:in `[]'
+	from ./fetch01.rb:11
+</pre>

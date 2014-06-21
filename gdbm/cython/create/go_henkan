@@ -1,0 +1,10 @@
+sed -f sed_henkan Makefile > tmp091
+cp tmp091 Makefile
+#
+sed -f sed_henkan setup.py > tmp091
+cp tmp091 setup.py
+#
+sed -f sed_henkan goa > tmp091
+cp tmp091 goa
+#
+rm -f tmp091

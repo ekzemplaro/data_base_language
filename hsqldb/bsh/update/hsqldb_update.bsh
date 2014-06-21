@@ -1,0 +1,31 @@
+#! /usr/bin/bsh
+//
+//	hsqldb_update.bsh
+//
+//						Sep/27/2012
+//
+// ---------------------------------------------------------------------
+source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
+source ("/var/www/data_base/common/bsh_common/sql_manipulate.bsh");
+// ---------------------------------------------------------------------
+System.out.println ("*** 開始 ***");
+String	key = bsh.args[0];
+int	population = Integer.parseInt (bsh.args[1]);
+
+System.out.println (key);
+System.out.println (population);
+
+Class.forName ("org.hsqldb.jdbcDriver");
+
+String database = "file:/var/tmp/hsqldb/cities;shutdown=true";
+
+Connection conn =
+	DriverManager.getConnection("jdbc:hsqldb:" + database, "SA","");
+
+sql_update_proc (conn,key,population);
+
+sql_display_proc (conn);
+
+conn.close ();
+System.out.println ("*** 終了 ***");
+// ---------------------------------------------------------------------

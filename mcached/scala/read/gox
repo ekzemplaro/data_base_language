@@ -1,0 +1,6 @@
+export COMMON=/var/www/data_base/common
+export SCALA_COMMON=$COMMON/scala_common
+export JAR=$COMMON/jar
+#
+export CLASSPATH=.:$SCALA_COMMON
+scala mcached_read

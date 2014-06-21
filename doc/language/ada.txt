@@ -1,0 +1,20 @@
+<meta content="Program Language Examples in Ada" name="description">
+<meta content="Ada,クライアント,接続,言語,サンプル" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<title>Ada Jul/02/2012</title>
+</head>
+<body>
+<h2><a href="http://www.gnu.org/s/gnat/">GNAT (GNU Ada)</a></h2><p />
+
+
+<pre>
+ii  gnat            4.6ubuntu1               GNU Ada compiler
+ii  gnat-4.6        4.6.3-1ubuntu4           GNU Ada compiler
+ii  gnat-4.6-base   4.6.3-1ubuntu4           GNU Ada compiler (common files)
+</pre>
+
+<blockquote>
+</blockquote>
+
+<blockquote>
+</blockquote>

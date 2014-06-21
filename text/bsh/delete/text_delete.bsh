@@ -1,0 +1,26 @@
+#! /usr/bin/bsh
+//
+//	text_delete.bsh
+//
+//					Sep/25/2012
+//
+// --------------------------------------------------------------
+source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
+// --------------------------------------------------------------
+System.out.println ("*** 開始 ***");
+fname_edit = bsh.args[0];
+String	key = bsh.args[1];
+
+System.out.println (fname_edit);
+System.out.println (key);
+//
+Map dict_aa = text_to_dict_proc (fname_edit);
+//
+dict_aa = dict_delete_proc (dict_aa,key);
+
+dict_display_proc (dict_aa);
+
+dict_to_text_proc (fname_edit,dict_aa);
+
+System.out.println ("*** 終了 ***");
+// --------------------------------------------------------------

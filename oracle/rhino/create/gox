@@ -1,0 +1,7 @@
+#
+#
+JAVA_CLASSPATH="/usr/share/java/js.jar:/usr/share/java/jline.jar"
+ORACLE_JAR=/mnt/sdb2/usr/lib/oracle/xe/app/oracle/product/10.2.0/client/jdbc/lib/ojdbc14.jar
+export CLASSPATH=.:$ORACLE_JAR:$JAVA_CLASSPATH
+#
+./oracle_create.js

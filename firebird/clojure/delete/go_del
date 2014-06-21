@@ -1,0 +1,5 @@
+export CLOJURE_CONTRIB=/usr/share/java/clojure-contrib.jar
+JAYBIRD_JAR=/var/www/data_base/common/jar/Jaybird/jaybird-full-2.1.6.jar
+export CLASSPATH=.:/usr/share/java/clojure.jar:$CLOJURE_CONTRIB:$JAYBIRD_JAR
+#
+java clojure.main firebird_delete.clj t3821

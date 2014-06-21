@@ -1,0 +1,2 @@
+#
+clisp json_update.lsp /var/tmp/json/cities.json t0925 42367800

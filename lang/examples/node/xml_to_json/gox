@@ -1,0 +1,5 @@
+#
+export NODE_PATH=/home/uchida/node_modules
+./xml_to_json.js id_6770.xml id_6770.json
+#xml_to_json.js id_6653.xml
+#xml_to_json.js id_6716.xml

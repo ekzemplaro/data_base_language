@@ -1,0 +1,4 @@
+<hr />
+<button id="create">初期化</button><br />
+<hr />
+<a href="html_src/jquery_ruby_create_src.html">jquery_ruby_create_src.html</a><p />

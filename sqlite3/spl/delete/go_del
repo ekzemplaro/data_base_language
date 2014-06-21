@@ -1,0 +1,1 @@
+splrun -e sqlite3_delete.spl /var/tmp/sqlite3/cities.db t0714

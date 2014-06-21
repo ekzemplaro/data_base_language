@@ -1,0 +1,4 @@
+#
+export PATH=$PATH:/home/uchida/dbm/cassandra/apache-cassandra-2.0.2/bin
+#
+./cassandra_read.sh

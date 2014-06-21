@@ -1,0 +1,5 @@
+#
+export ftp_proxy=""
+echo "import ftp_create" > tmp_execute.py
+#
+python ./tmp_execute.py

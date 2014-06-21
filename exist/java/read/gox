@@ -1,0 +1,21 @@
+export EXIST_HOME=/home/uchida/eXist
+export L_CORE=$EXIST_HOME/lib/core
+SHARE=/usr/share/java
+#
+#
+export CPP=.:$EXIST_HOME/exist.jar
+export CPP=$CPP:$L_CORE/xmlrpc-client-3.1.2.jar
+export CPP=$CPP:$L_CORE/xmlrpc-common-3.1.2.jar
+export CPP=$CPP:$L_CORE/ws-commons-util-1.0.2.jar
+#
+export CPP=$CPP:$SHARE/commons-httpclient-3.1.jar
+export CPP=$CPP:$SHARE/jboss-common.jar
+export CPP=$CPP:$SHARE/commons-logging-1.1.1.jar
+export CPP=$CPP:$SHARE/commons-logging-adapters-1.1.1.jar
+export CPP=$CPP:$SHARE/commons-logging-api-1.1.1.jar
+export CPP=$CPP:$SHARE/commons-codec-1.3.jar
+#
+export CPP=$CPP:/var/www/data_base/common/java_common
+#
+#
+java -cp $CPP exist_read

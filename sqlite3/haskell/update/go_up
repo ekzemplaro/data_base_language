@@ -1,0 +1,2 @@
+#
+runghc sqlite3_update.hs /var/tmp/sqlite3/cities.db t0717 45398100

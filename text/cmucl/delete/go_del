@@ -1,0 +1,4 @@
+#
+lisp -load text_delete.lisp -eval '(quit)' -- '/var/tmp/plain_text/cities.txt' t2382
+#
+chmod 777 /var/tmp/plain_text/cities.txt

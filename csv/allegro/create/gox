@@ -1,0 +1,1 @@
+/opt/acl90express/alisp -#! csv_create.cl /var/tmp/csv/cities.csv

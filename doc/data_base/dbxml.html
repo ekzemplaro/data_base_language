@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<script src="/js/jquery-2.1.0.min.js"></script>
+<meta content="Program Language Examples to connect to Berkeley DB XML" name="description">
+<meta content="Berkeley DB XML,クライアント,接続,言語,サンプル" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<title>Berkeley dbXML Jul/06/2012</title>
+</head>
+<body>
+<h1><a href="http://www.oracle.com/technetwork/database/berkeleydb/overview/xquery-160889.html">Berkeley DB XML</a></h1>
+
+<blockquote>
+	dbxml-2.5.16.tar.gz<p />
+	./buildall.sh --enable-java<p /> 
+	<blcockquote>
+	../include/xqilla/framework/XPath2MemoryManager.hpp:90:11: エラー: ‘ptrdiff_t’ does not name a type<p />
+
+	<pre>
+	The problem is is solved by adding
+	#include &lt;cstddef&gt;
+	right after
+	#include &lt;assert.h&gt;
+	in XPath2MemoryManager.hpp
+	</pre>
+	</blcockquote>
+
+	ln -s dbxml-2.5.16/install/bin/dbxml /usr/local/bin/dbxml<p />
+
+</blockquote>
+
+Interactive<p />
+<blockquote>
+<pre>
+$ ledit dbxml
+
+dbxml> createContainer sample.xmldb
+Creating node storage container
+
+dbxml> addDocument doc1 '<?xml version="1.0"?><foo>bar</foo>'
+Document added, name = doc1
+
+dbxml> addDocument doc1 '<?xml version="1.0"?><foo>Good Morning</foo>'
+stdin:3: putDocument failed, Error: Document exists: doc1
+
+dbxml> addDocument doc2 '<?xml version="1.0"?><foo>Good Morning</foo>'
+Document added, name = doc2
+
+dbxml> query 'collection("sample.xmldb")/foo'
+2 objects returned for eager expression 'collection("sampleb.xmldb")/foo'
+
+
+dbxml> print
+<foo>bar</foo>
+<foo>Good Morning</foo>
+
+dbxml> quit
+</pre>
+</blockquote>
+
+PHP<p />
+<blockquote>
+	cd dbxml-2.5.16/dbxml/src/php<br />
+	phpize<br />
+	./configure --with-dbxml=/path/to/dbxml/install<br />
+	make<br />
+</blockquote>
+
+Python<p />
+<blockquote>
+	ii  python-bsddb3	4.8.3-3ubuntu1	Python interface for Berkeley DB
+<p />
+	cd dbxml-2.5.16/dbxml/src/python<br />
+	sudo python setup.py install<p />
+
+</blockquote>
+
+Perl<p />
+<blockquote>
+	cd dbxml-2.5.16/dbxml/src/perl<br />
+	perl Makefile.PL<br />
+	make<br />
+</blockquote>
+
+
+C++<p />
+
+<blockquote>
+	<pre>
+c++ -o helloWorld helloWorld.cpp  \
+	-I$(DBXML)/dbxml/include \
+	-I$(DBXML)/dbxml/include/dbxml \
+	-I$(DBXML)/db-4.8.26/build_unix \
+	-L$(DBXML)/install/lib \
+	-ldbxml
+	</pre>
+</blockquote>
+
+Java<p />
+
+<blockquote>
+	dbxml-2.5.16/install/lib/db.jar<br />
+	dbxml-2.5.16/install/lib/dbxml.jar<br />
+</blockquote>
+<div id="result_aa">result_aa</div>
+<hr />
+<div id="outarea_aa">outarea_aa</div>
+<div id="outarea_bb">outarea_bb</div>
+<div id="outarea_cc">outarea_cc</div>
+<div id="outarea_dd">outarea_dd</div>
+<div id="outarea_ee">outarea_ee</div>
+<div id="outarea_ff">outarea_ff</div>
+<div id="outarea_gg">outarea_gg</div>
+<div id="outarea_hh">outarea_hh</div>
+<hr />
+<a href="/data_base/data_base.html">Return</a><p />
+Jan/29/2014 AM 08:15<p />
+</body>
+</html>

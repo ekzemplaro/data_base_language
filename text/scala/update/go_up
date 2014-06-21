@@ -1,0 +1,4 @@
+SCALA_COMMON=/var/www/data_base/common/scala_common
+export CLASSPATH=./:$SCALA_COMMON
+#
+scala text_update /var/tmp/plain_text/cities.txt t2382 7683400

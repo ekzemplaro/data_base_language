@@ -1,0 +1,12 @@
+<apps>
+  <web-application>
+    <name>data_base</name>
+    <vpath>/data_base</vpath>
+    <path>/var/www/data_base</path>
+  </web-application>
+  <web-application>
+    <name>js</name>
+    <vpath>/js</vpath>
+    <path>/var/www/js</path>
+  </web-application>
+</apps>

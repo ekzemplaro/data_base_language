@@ -1,0 +1,4 @@
+#
+#
+runghc sqlite3_create.hs /var/tmp/sqlite3/cities.db
+#

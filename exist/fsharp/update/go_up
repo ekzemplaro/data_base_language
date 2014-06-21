@@ -1,0 +1,2 @@
+export http_proxy=""
+./exist_update.exe t4257 3498200

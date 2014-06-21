@@ -1,0 +1,7 @@
+export http_proxy=""
+#
+#curl -X DELETE http://localhost:5984/data_base
+#curl -X PUT http://localhost:5984/data_base
+#curl -X PUT http://localhost:5984/data_base/sheet_bb -d@sheet_bb.json
+curl -X PUT http://localhost:5984/data_base/sheet_dd -d@sheet_dd.json
+#

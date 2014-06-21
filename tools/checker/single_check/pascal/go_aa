@@ -1,0 +1,9 @@
+#
+../single_check.sh text pascal
+../single_check.sh csv pascal
+../single_check.sh xml pascal
+../single_check.sh json pascal
+../single_check.sh excel pascal
+#
+../single_check.sh pdf pascal
+../single_check.sh epub pascal

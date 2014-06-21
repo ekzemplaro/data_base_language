@@ -1,0 +1,4 @@
+#
+echo "import cassandra_update" > tmp_execute.py
+#
+python ./tmp_execute.py t0536 42158900

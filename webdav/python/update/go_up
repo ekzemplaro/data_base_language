@@ -1,0 +1,2 @@
+export http_proxy=""
+./webdav_update.py t1356 59754200

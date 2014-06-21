@@ -1,0 +1,1 @@
+runghc redis_read.hs 

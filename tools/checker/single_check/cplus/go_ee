@@ -1,0 +1,10 @@
+#
+#../single_check.sh gdbm cplus
+#../single_check.sh berkeley cplus
+../single_check.sh mcached cplus
+../single_check.sh mcachedb cplus
+#
+../single_check.sh redis cplus
+#../single_check.sh tcbn cplus
+../single_check.sh tyrant cplus
+#

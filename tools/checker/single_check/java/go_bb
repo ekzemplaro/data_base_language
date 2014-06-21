@@ -1,0 +1,5 @@
+#
+../single_check.sh excel java
+#
+../single_check.sh pdf java
+../single_check.sh epub java

@@ -1,0 +1,75 @@
+// -----------------------------------------------------------------
+//	sql_manipulate.spl
+//
+//						Sep/06/2011
+// -----------------------------------------------------------------
+function drop_table_proc (db)
+{
+	sql(db, "drop table cities");
+}
+
+// -----------------------------------------------------------------
+function create_table_proc (db)
+{
+	var command = "create TABLE cities (id varchar(10) NOT NULL PRIMARY KEY,name text,population int,date_mod text)";
+
+	sql (db,command);
+}
+
+// -----------------------------------------------------------------
+function sql_insert_proc (db,id_in,name_in,population_in,date_mod_in)
+{
+	var command = "insert into cities (id, name, population, date_mod) values ('";
+
+	command ~= id_in;
+	command ~= "','";
+	command ~= name_in;
+	command ~= "',";
+	command ~= population_in;
+	command ~= ",'";
+	command ~= date_mod_in;
+	command ~= "')";
+
+	write (command ~ "\n");
+	sql(db, command);
+}
+
+// -----------------------------------------------------------------
+function sql_display_proc (db)
+{
+	var rr = sql(db, "select * from cities");
+
+	foreach it (rr)
+		{
+		write (shift rr[it]);
+		write ("\t");
+		write (shift rr[it]);
+		write ("\t");
+		write (shift rr[it]);
+		write ("\t");
+		write (pop rr[it]);
+		write ("\n");
+		}
+}
+
+// -----------------------------------------------------------------
+function sql_update_proc (db,id_in,population_in)
+{
+	var today = time_fmt("%Y-%m-%d", time_gm(time ()));
+
+	var sql_command = "update cities set population = " ~ population_in
+		~ " , date_mod='" ~ today ~ "'"
+			~ " where id = " ~ "'" ~ id_in ~ "'";
+
+	sql (db, sql_command);
+}
+
+// -----------------------------------------------------------------
+function sql_delete_proc (db,id_in)
+{
+	var sql_command = "delete from cities where id = '" ~ id_in ~ "'";
+
+	sql (db,sql_command);
+}
+
+// -----------------------------------------------------------------

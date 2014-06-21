@@ -1,0 +1,7 @@
+#! /bin/bash
+#
+#CURL_COMMAND="curl -H Accept:application/json -X POST"
+#
+#$CURL_COMMAND -d@f4051.json http://localhost:7474/db/data/node
+#
+curl -H Accept:application/json -X POST -d@f4051.json http://localhost:7474/db/data/node

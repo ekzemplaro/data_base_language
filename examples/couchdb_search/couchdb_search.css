@@ -1,0 +1,36 @@
+table,td,th
+{
+border:0.5px #00f0f0 solid;
+margin-left: auto;
+margin-right: auto;
+}
+
+div.top
+{
+background-color: #f3f0f0;
+margin-left: auto;
+margin-right: auto;
+}
+
+
+div.contents
+{
+background-color: #f0f7f0;
+width: 80%;
+float: right;
+overflow: auto;
+}
+
+
+div.tail
+{
+background-color: #f0f0ff;
+width: 70%;
+float: right;
+}
+
+iframe
+{
+width: 800px;
+height: 400px;
+}

@@ -1,0 +1,5 @@
+#
+#
+echo "import csv_update" > tmp_execute.py
+#
+python ./tmp_execute.py /var/tmp/csv/cities.csv t1273 684500

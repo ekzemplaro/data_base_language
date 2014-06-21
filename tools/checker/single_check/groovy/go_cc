@@ -1,0 +1,6 @@
+#
+../single_check.sh derby groovy
+../single_check.sh hsqldb groovy
+../single_check.sh h2 groovy
+#
+#

@@ -1,0 +1,3 @@
+#
+#su scott -c ./db2_read.sh
+./db2_read.sh

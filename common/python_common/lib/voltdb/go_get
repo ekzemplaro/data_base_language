@@ -1,0 +1,1 @@
+cp -p /home/uchida/dbm/voltdb/voltdb-client-python-1.3.4/voltdbclient.py .

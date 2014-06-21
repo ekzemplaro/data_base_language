@@ -1,0 +1,3 @@
+#
+./xml_to_json.exe cities.xml cities.json
+./xml_to_json.exe yamagata.xml yamagata.json

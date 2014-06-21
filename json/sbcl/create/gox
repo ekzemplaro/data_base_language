@@ -1,0 +1,3 @@
+#
+./json_create.lisp /var/tmp/json/cities.json
+#./json_create.lisp cities.json

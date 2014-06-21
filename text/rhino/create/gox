@@ -1,0 +1,5 @@
+#
+JAVA_CLASSPATH="/usr/share/java/js.jar:/usr/share/java/jline.jar"
+export CLASSPATH=.:$JAVA_CLASSPATH
+#
+./text_create.js /var/tmp/plain_text/cities.txt

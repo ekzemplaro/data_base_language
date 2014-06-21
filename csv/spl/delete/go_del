@@ -1,0 +1,1 @@
+splrun -e csv_delete.spl /var/tmp/csv/cities.csv t1278

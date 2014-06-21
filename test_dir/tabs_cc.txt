@@ -1,0 +1,37 @@
+
+<link rel="stylesheet" type="text/css" href="/css/jquery-ui-1.8.9.custom.css"></>
+<script type="text/javascript" src="/js/jquery-ui-1.8.9.custom.min.js"></script>
+<title>tabs Feb/07/2011</title>
+</head>
+<body>
+<center>
+<h2>tabs</h2>
+</center>
+
+<script>
+	jQuery(function() {
+		jQuery( "#tabs" ).tabs();
+	});
+	</script>
+
+
+
+<div class="demo">
+
+<div id="tabs">
+	<ul>
+	<li><a href="sqlite3_create_sql.html"><span>Create</span></a></li>
+        <li><a href="sqlite3_insert_sql.html"><span>Insert</span></a></li>
+        <li><a href="sqlite3_read_sql.html"><span>Read</span></a></li>
+
+	</ul>
+	</div>
+</div>
+
+</div><!-- End demo -->
+
+
+
+<div style="display: none;" class="demo-description">
+<p>Click tabs to swap between content that is broken into logical sections.</p>
+</div><!-- End demo-description -->

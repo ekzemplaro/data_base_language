@@ -1,0 +1,2 @@
+export http_proxy=""
+./couch_update.pl t2029 894561300

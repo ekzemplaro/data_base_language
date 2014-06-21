@@ -1,0 +1,7 @@
+#
+../single_check.sh text groovy
+../single_check.sh csv groovy
+../single_check.sh xml groovy
+../single_check.sh json groovy
+../single_check.sh excel groovy
+#

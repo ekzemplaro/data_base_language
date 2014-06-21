@@ -1,0 +1,5 @@
+s/\/var\/www\/data_base\/common\///
+s/\/var\/www\/data_base\///
+s/\/html_src\//\t/
+s/_common//
+s/\.txt//

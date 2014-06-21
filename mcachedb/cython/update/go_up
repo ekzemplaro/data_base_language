@@ -1,0 +1,4 @@
+#
+echo "import mcachedb_update" > tmp_execute.py
+#
+python ./tmp_execute.py t1527 3879200

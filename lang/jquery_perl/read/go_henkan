@@ -1,0 +1,4 @@
+ls *.aspx > t01
+sed 's/csharp/perl/' t01 | sed 's/aspx/pl/' >  t02
+pr -m -t t01 t02 > t03
+awk '{print "mv",$1,$2}' t03 > t04

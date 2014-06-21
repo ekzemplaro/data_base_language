@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Program Language Examples to connect to database" name="description">
+<meta content="database,program,language,connect,example,CRUD,NoSQL" name="keyword">
+<meta content="node.js,rhino" name="keyword">
+<meta content="JSON,redis,CouchDB" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<script src="/js/jquery-2.1.0.min.js"></script>
+<script>
+jQuery (function ()
+{
+	jQuery ("#outarea_aa").text ("*** start ***");
+
+	jQuery ("#outarea_hh").text ("*** end ***");
+});
+
+</script>
+<meta content="Program Language Examples in Clojure" name="description">
+<meta content="Clojure,クライアント,接続,言語,サンプル" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<title>Clojure Nov/01/2013</title>
+</head>
+<body>
+<h2><a href="http://clojure.org">Clojure</a></h2><p />
+<blockquote>
+<pre>
+ii  clojure1.4    1.4.0+dfsg-2ubuntu2    all    Lisp dialect for the JVM
+ii  leiningen     1.7.1-2                all    simple build system for Clojure
+</pre>
+</blockquote>
+
+<blockquote>
+<pre>
+$ clojure
+Clojure 1.4.0
+user=> (+ 5 4)
+9
+user=> (. System exit 0)
+</pre>
+</blockquote>
+
+
+<blockquote>
+<pre>
+$ lein repl
+nREPL server started on port 59877 on host 127.0.0.1
+REPL-y 0.2.1
+Clojure 1.5.1
+    Docs: (doc function-name-here)
+          (find-doc "part-of-name-here")
+  Source: (source function-name-here)
+ Javadoc: (javadoc java-object-or-class-here)
+    Exit: Control+D or (exit) or (quit)
+ Results: Stored in vars *1, *2, *3, an exception in *e
+
+user=> (use 'cheshire.core)
+nil
+user=> (generate-string '(1 2 3 4))
+"[1,2,3,4]"
+user=> (generate-string '{:foo "bar"})
+"{\"foo\":\"bar\"}"
+user=> (parse-string "{\"foo\":\"bar\"}")
+{"foo" "bar"}
+user=> (quit)
+Bye for now!
+</pre>
+</blockquote>
+
+<blockquote>
+	<a href="http://en.wikibooks.org/wiki/Clojure_Programming/Examples/Cookbook">Clojure Programming/Examples/Cookbook</a><p />
+</blockquote>
+<div id="result_aa">result_aa</div>
+<hr />
+<div id="outarea_aa">outarea_aa</div>
+<div id="outarea_bb">outarea_bb</div>
+<div id="outarea_cc">outarea_cc</div>
+<div id="outarea_dd">outarea_dd</div>
+<div id="outarea_ee">outarea_ee</div>
+<div id="outarea_ff">outarea_ff</div>
+<div id="outarea_gg">outarea_gg</div>
+<div id="outarea_hh">outarea_hh</div>
+<hr />
+<a href="/data_base/data_base.html">Return</a><p />
+Mar/14/2014 AM 08:15<p />
+</body>
+</html>

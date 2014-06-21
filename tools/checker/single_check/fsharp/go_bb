@@ -1,0 +1,8 @@
+#
+../single_check.sh sqlite3 fsharp
+../single_check.sh mssql fsharp
+../single_check.sh mysql fsharp
+../single_check.sh postgre fsharp
+../single_check.sh firebird fsharp
+#
+#

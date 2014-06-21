@@ -1,0 +1,2 @@
+#
+./gdbm_delete.pike /var/tmp/gdbm/cities.pag t2156

@@ -1,0 +1,2 @@
+#
+../bin/process_db.sh clojure clj common.txt

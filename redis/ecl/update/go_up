@@ -1,0 +1,3 @@
+#
+ecl -shell redis_update.lisp -eval '(quit)' -- t1854 439178900
+#

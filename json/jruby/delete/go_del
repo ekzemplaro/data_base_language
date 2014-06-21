@@ -1,0 +1,1 @@
+./json_delete.rb /var/tmp/json/cities.json t0930

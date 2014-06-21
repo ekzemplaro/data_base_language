@@ -1,0 +1,5 @@
+#
+#
+echo "import berkeley_update" > tmp_execute.py
+#
+python ./tmp_execute.py t2456 75836900

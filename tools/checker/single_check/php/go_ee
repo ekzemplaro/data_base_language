@@ -1,0 +1,6 @@
+#
+#../single_check.sh gdbm php
+../single_check.sh berkeley php
+../single_check.sh mcached php
+../single_check.sh mcachedb php
+#

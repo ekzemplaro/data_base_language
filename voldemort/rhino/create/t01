@@ -1,0 +1,127 @@
+// --------------------------------------------------------------
+//
+//	voldemort_create.java
+//
+//					Jul/27/2011
+//
+// --------------------------------------------------------------
+import voldemort.client.ClientConfig;
+import voldemort.client.SocketStoreClientFactory;
+import voldemort.client.StoreClient;
+import voldemort.client.StoreClientFactory;
+import voldemort.versioning.Versioned;
+
+import	net.arnx.jsonic.JSON;
+
+import	java.util.HashMap;
+// import	java.net.URLEncoder;
+// --------------------------------------------------------------
+public class voldemort_create {
+
+// --------------------------------------------------------------
+public static void main(String[] args)
+{
+	System.out.println ("*** 開始 ***");
+
+	String storeName    = "cities";
+
+        // In real life this stuff would get wired in
+	String bootstrapUrl = "tcp://localhost:6666";
+	StoreClientFactory factory = new SocketStoreClientFactory
+		(new ClientConfig().setBootstrapUrls(bootstrapUrl));
+
+	StoreClient<String, String> client = factory.getStoreClient (storeName);
+
+	String keys[] = {"t3051","t3052","t3053",
+			"t3054","t3055","t3056",
+			"t3057","t3058","t3059"};
+
+	for (String key: keys)
+		{
+		Versioned<String> version = client.get (key);
+
+		if (version != null)
+		{
+//		System.out.println (key + "\t" + version.getVersion ());
+		String str_json = version.getValue ();
+//		System.out.println (key + "\t" + str_json);
+		record_parse_proc (key,str_json);
+		}
+		}
+
+	System.out.println ("***** 終了 *****");
+
+}
+
+// --------------------------------------------------------------
+static void record_parse_proc (String key, String str_json)
+{
+	HashMap <String,String>  map_data = new HashMap <String,String> ();
+
+	try
+	{
+	map_data = (HashMap <String,String>)JSON.decode (str_json);
+//	map_data = (HashMap <String, Object>)JSON.decode (str_json);
+
+/*
+	String name = map_data.get ("name").toString ();
+	String population = map_data.get ("population").toString ();
+	String date_mod = map_data.get ("date_mod").toString ();
+*/
+	String name = map_data.get ("name");
+	String population = map_data.get ("population");
+	String date_mod = map_data.get ("date_mod");
+
+
+	System.out.print (key + "\t");
+	System.out.print (name + "\t");
+//	System.out.print (URLEncoder.decode (name,"UTF-8") + "\t");
+	System.out.print (population + "\t");
+	System.out.println (date_mod);
+	}
+	catch (Exception ee)
+	{
+	ee.printStackTrace ();
+	}
+
+}
+
+// --------------------------------------------------------------
+static HashMap <String, HashMap <String,String>>
+data_prepare_proc ()
+{
+	HashMap <String, HashMap<String,String>> dict_aa
+		= new HashMap <String, HashMap<String,String>> ();
+
+	dict_aa = text_manipulate.dict_append_proc
+		(dict_aa,"t3051","和歌山",51276,"2008-2-15");
+
+	dict_aa = text_manipulate.dict_append_proc
+		(dict_aa,"t3052","海南",43842,"2008-4-23");
+
+	dict_aa = text_manipulate.dict_append_proc
+		(dict_aa,"t3053","橋本",98253,"2008-5-24");
+
+	dict_aa = text_manipulate.dict_append_proc
+		(dict_aa,"t3054","有田",87624,"2008-9-14");
+
+	dict_aa = text_manipulate.dict_append_proc
+		(dict_aa,"t3055","御坊",72531,"2008-8-12");
+
+	dict_aa = text_manipulate.dict_append_proc
+		(dict_aa,"t3056","田辺",28529,"2008-7-28");
+
+	dict_aa = text_manipulate.dict_append_proc
+		(dict_aa,"t3057","新宮",39457,"2008-6-19");
+
+	dict_aa = text_manipulate.dict_append_proc
+		(dict_aa,"t3058","紀の川",47362,"2008-11-15");
+
+	dict_aa = text_manipulate.dict_append_proc
+		(dict_aa,"t3059","岩出",56872,"2008-10-24");
+
+	return	dict_aa;
+}
+// --------------------------------------------------------------
+}
+// --------------------------------------------------------------

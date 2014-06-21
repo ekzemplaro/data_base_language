@@ -1,0 +1,3 @@
+#
+./json_create.exe /var/tmp/json/cities.json
+#./json_create.exe cities.json

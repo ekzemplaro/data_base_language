@@ -1,0 +1,2 @@
+#
+../bin/process_db.sh elisp el common.txt

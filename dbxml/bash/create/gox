@@ -1,0 +1,9 @@
+#
+FILE_DBXML=/var/tmp/dbxml/cities.dbxml
+rm -f $FILE_DBXML
+#
+export DB_HOME=/var/tmp/dbxml
+#
+./dbxml_create.sh
+#
+chmod 666 $FILE_DBXML

@@ -1,0 +1,6 @@
+#
+#
+echo "import json_update" > tmp_execute.py
+#
+python ./tmp_execute.py /var/tmp/json/cities.json t0925 3274500
+#

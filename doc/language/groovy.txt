@@ -1,0 +1,16 @@
+<title>Groovy Aug/20/2013</title>
+</head>
+<body>
+<h2><a href="http://groovy.codehaus.org">Groovy</a></h2><p />
+<blockquote>
+<pre>
+ii  groovy      2.0.0~beta2+isreally1.8.6-0ubuntu1   all    Agile dynamic language for the Java Virtual Machine
+</pre>
+</blockquote>
+
+
+groovy-binary-2.1.6.zip<p />
+export PATH=$PATH:/home/uchida/lang/groovy/groovy-2.1.6/bin<p />
+$ groovy --version<br />
+Groovy Version: 2.1.6 JVM: 1.7.0_25 Vendor: Oracle Corporation OS: Linux<br />
+

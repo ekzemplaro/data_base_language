@@ -1,0 +1,1 @@
+./xml_create.coffee /var/tmp/xml_file/cities.xml

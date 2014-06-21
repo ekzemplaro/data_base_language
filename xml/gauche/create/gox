@@ -1,0 +1,3 @@
+#
+./xml_create.scm /var/tmp/xml_file/cities.xml
+#./xml_create.scm cities.xml

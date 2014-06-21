@@ -1,0 +1,14 @@
+(defn update-blog
+  "This method updates a blog entry"
+  [id attribute-map]
+  (clojure.contrib.sql/update-values
+   :blogs
+   ["id=?" id]
+   attribute-map))
+
+Let's update the first blog entry.
+
+(with-connection db 
+  (clojure.contrib.sql/transaction
+    (update-blog 1 {:title "Awesome Title"})))
+

@@ -1,0 +1,17 @@
+cassandra_manipulate.groovy
+cdb_manipulate.groovy
+epub_manipulate.groovy
+excel_manipulate.groovy
+ftp_manipulate.groovy
+hbase_manipulate.groovy
+hgdb_manipulate.groovy
+mcached_manipulate.groovy
+mongo_manipulate.groovy
+net_manipulate.groovy
+sql_manipulate.groovy
+tcbn_manipulate.groovy
+text_manipulate.groovy
+tika_manipulate.groovy
+voldemort_manipulate.groovy
+xlsx_manipulate.groovy
+xml_manipulate.groovy

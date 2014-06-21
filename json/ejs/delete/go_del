@@ -1,0 +1,2 @@
+#
+./json_delete.es /var/tmp/json/cities.json t0922

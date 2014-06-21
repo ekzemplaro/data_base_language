@@ -1,0 +1,255 @@
+{
+    "EXECUTE_LIST": [
+        2,
+        1
+    ],
+    "PARAMETERS": [],
+    "PLAN_NODES": [
+        {
+            "CHILDREN_IDS": [2],
+            "ID": 1,
+            "INLINE_NODES": [],
+            "OUTPUT_SCHEMA": [{
+                "COLUMN_ALIAS": "modified_tuples",
+                "COLUMN_NAME": "modified_tuples",
+                "EXPRESSION": {
+                    "COLUMN_ALIAS": "modified_tuples",
+                    "COLUMN_IDX": 0,
+                    "COLUMN_NAME": "modified_tuples",
+                    "TABLE_NAME": "VOLT_TEMP_TABLE",
+                    "TYPE": "VALUE_TUPLE",
+                    "VALUE_SIZE": 8,
+                    "VALUE_TYPE": "BIGINT"
+                },
+                "SIZE": 8,
+                "TABLE_NAME": "VOLT_TEMP_TABLE",
+                "TYPE": "BIGINT"
+            }],
+            "PARENT_IDS": [],
+            "PLAN_NODE_TYPE": "UPDATE",
+            "TARGET_TABLE_NAME": "CITIES",
+            "UPDATES_INDEXES": true
+        },
+        {
+            "CHILDREN_IDS": [],
+            "END_EXPRESSION": {
+                "LEFT": {
+                    "COLUMN_ALIAS": "ID",
+                    "COLUMN_IDX": 0,
+                    "COLUMN_NAME": "ID",
+                    "TABLE_NAME": "CITIES",
+                    "TYPE": "VALUE_TUPLE",
+                    "VALUE_SIZE": 15,
+                    "VALUE_TYPE": "STRING"
+                },
+                "RIGHT": {
+                    "PARAM_IDX": 4,
+                    "TYPE": "VALUE_PARAMETER",
+                    "VALUE_SIZE": 1048576,
+                    "VALUE_TYPE": "STRING"
+                },
+                "TYPE": "COMPARE_EQUAL",
+                "VALUE_SIZE": 8,
+                "VALUE_TYPE": "BIGINT"
+            },
+            "ID": 2,
+            "INLINE_NODES": [{
+                "CHILDREN_IDS": [],
+                "ID": 0,
+                "INLINE_NODES": [],
+                "OUTPUT_SCHEMA": [
+                    {
+                        "COLUMN_ALIAS": "tuple_address",
+                        "COLUMN_NAME": "tuple_address",
+                        "EXPRESSION": {
+                            "TYPE": "VALUE_TUPLE_ADDRESS",
+                            "VALUE_SIZE": 8,
+                            "VALUE_TYPE": "BIGINT"
+                        },
+                        "SIZE": 8,
+                        "TABLE_NAME": "VOLT_TEMP_TABLE",
+                        "TYPE": "BIGINT"
+                    },
+                    {
+                        "COLUMN_ALIAS": "ID",
+                        "COLUMN_NAME": "ID",
+                        "EXPRESSION": {
+                            "PARAM_IDX": 0,
+                            "TYPE": "VALUE_PARAMETER",
+                            "VALUE_SIZE": 15,
+                            "VALUE_TYPE": "STRING"
+                        },
+                        "SIZE": 15,
+                        "TABLE_NAME": "VOLT_TEMP_TABLE",
+                        "TYPE": "STRING"
+                    },
+                    {
+                        "COLUMN_ALIAS": "NAME",
+                        "COLUMN_NAME": "NAME",
+                        "EXPRESSION": {
+                            "PARAM_IDX": 1,
+                            "TYPE": "VALUE_PARAMETER",
+                            "VALUE_SIZE": 15,
+                            "VALUE_TYPE": "STRING"
+                        },
+                        "SIZE": 15,
+                        "TABLE_NAME": "VOLT_TEMP_TABLE",
+                        "TYPE": "STRING"
+                    },
+                    {
+                        "COLUMN_ALIAS": "POPULATION",
+                        "COLUMN_NAME": "POPULATION",
+                        "EXPRESSION": {
+                            "PARAM_IDX": 2,
+                            "TYPE": "VALUE_PARAMETER",
+                            "VALUE_SIZE": 15,
+                            "VALUE_TYPE": "STRING"
+                        },
+                        "SIZE": 15,
+                        "TABLE_NAME": "VOLT_TEMP_TABLE",
+                        "TYPE": "STRING"
+                    },
+                    {
+                        "COLUMN_ALIAS": "DATE_MOD",
+                        "COLUMN_NAME": "DATE_MOD",
+                        "EXPRESSION": {
+                            "PARAM_IDX": 3,
+                            "TYPE": "VALUE_PARAMETER",
+                            "VALUE_SIZE": 15,
+                            "VALUE_TYPE": "STRING"
+                        },
+                        "SIZE": 15,
+                        "TABLE_NAME": "VOLT_TEMP_TABLE",
+                        "TYPE": "STRING"
+                    }
+                ],
+                "PARENT_IDS": [],
+                "PLAN_NODE_TYPE": "PROJECTION"
+            }],
+            "KEY_ITERATE": false,
+            "LOOKUP_TYPE": "EQ",
+            "OUTPUT_SCHEMA": [
+                {
+                    "COLUMN_ALIAS": "tuple_address",
+                    "COLUMN_NAME": "tuple_address",
+                    "EXPRESSION": {
+                        "TYPE": "VALUE_TUPLE_ADDRESS",
+                        "VALUE_SIZE": 8,
+                        "VALUE_TYPE": "BIGINT"
+                    },
+                    "SIZE": 8,
+                    "TABLE_NAME": "VOLT_TEMP_TABLE",
+                    "TYPE": "BIGINT"
+                },
+                {
+                    "COLUMN_ALIAS": "ID",
+                    "COLUMN_NAME": "ID",
+                    "EXPRESSION": {
+                        "PARAM_IDX": 0,
+                        "TYPE": "VALUE_PARAMETER",
+                        "VALUE_SIZE": 15,
+                        "VALUE_TYPE": "STRING"
+                    },
+                    "SIZE": 15,
+                    "TABLE_NAME": "VOLT_TEMP_TABLE",
+                    "TYPE": "STRING"
+                },
+                {
+                    "COLUMN_ALIAS": "NAME",
+                    "COLUMN_NAME": "NAME",
+                    "EXPRESSION": {
+                        "PARAM_IDX": 1,
+                        "TYPE": "VALUE_PARAMETER",
+                        "VALUE_SIZE": 15,
+                        "VALUE_TYPE": "STRING"
+                    },
+                    "SIZE": 15,
+                    "TABLE_NAME": "VOLT_TEMP_TABLE",
+                    "TYPE": "STRING"
+                },
+                {
+                    "COLUMN_ALIAS": "POPULATION",
+                    "COLUMN_NAME": "POPULATION",
+                    "EXPRESSION": {
+                        "PARAM_IDX": 2,
+                        "TYPE": "VALUE_PARAMETER",
+                        "VALUE_SIZE": 15,
+                        "VALUE_TYPE": "STRING"
+                    },
+                    "SIZE": 15,
+                    "TABLE_NAME": "VOLT_TEMP_TABLE",
+                    "TYPE": "STRING"
+                },
+                {
+                    "COLUMN_ALIAS": "DATE_MOD",
+                    "COLUMN_NAME": "DATE_MOD",
+                    "EXPRESSION": {
+                        "PARAM_IDX": 3,
+                        "TYPE": "VALUE_PARAMETER",
+                        "VALUE_SIZE": 15,
+                        "VALUE_TYPE": "STRING"
+                    },
+                    "SIZE": 15,
+                    "TABLE_NAME": "VOLT_TEMP_TABLE",
+                    "TYPE": "STRING"
+                }
+            ],
+            "PARENT_IDS": [1],
+            "PLAN_NODE_TYPE": "INDEXSCAN",
+            "PREDICATE": {
+                "LEFT": {
+                    "LEFT": {
+                        "COLUMN_ALIAS": "ID",
+                        "COLUMN_IDX": 0,
+                        "COLUMN_NAME": "ID",
+                        "TABLE_NAME": "CITIES",
+                        "TYPE": "VALUE_TUPLE",
+                        "VALUE_SIZE": 15,
+                        "VALUE_TYPE": "STRING"
+                    },
+                    "RIGHT": {
+                        "PARAM_IDX": 4,
+                        "TYPE": "VALUE_PARAMETER",
+                        "VALUE_SIZE": 1048576,
+                        "VALUE_TYPE": "STRING"
+                    },
+                    "TYPE": "COMPARE_EQUAL",
+                    "VALUE_SIZE": 8,
+                    "VALUE_TYPE": "BIGINT"
+                },
+                "RIGHT": {
+                    "LEFT": {
+                        "COLUMN_ALIAS": "ID",
+                        "COLUMN_IDX": 0,
+                        "COLUMN_NAME": "ID",
+                        "TABLE_NAME": "CITIES",
+                        "TYPE": "VALUE_TUPLE",
+                        "VALUE_SIZE": 15,
+                        "VALUE_TYPE": "STRING"
+                    },
+                    "RIGHT": {
+                        "PARAM_IDX": 4,
+                        "TYPE": "VALUE_PARAMETER",
+                        "VALUE_SIZE": 1048576,
+                        "VALUE_TYPE": "STRING"
+                    },
+                    "TYPE": "COMPARE_EQUAL",
+                    "VALUE_SIZE": 8,
+                    "VALUE_TYPE": "BIGINT"
+                },
+                "TYPE": "CONJUNCTION_AND",
+                "VALUE_SIZE": 0,
+                "VALUE_TYPE": "BIGINT"
+            },
+            "SEARCHKEY_EXPRESSIONS": [{
+                "PARAM_IDX": 4,
+                "TYPE": "VALUE_PARAMETER",
+                "VALUE_SIZE": 1048576,
+                "VALUE_TYPE": "STRING"
+            }],
+            "SORT_DIRECTION": "INVALID",
+            "TARGET_INDEX_NAME": "SYS_IDX_SYS_PK_10018_10019",
+            "TARGET_TABLE_NAME": "CITIES"
+        }
+    ]
+}

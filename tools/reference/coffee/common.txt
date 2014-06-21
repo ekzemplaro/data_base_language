@@ -1,0 +1,5 @@
+http_manipulate.coffee
+json_manipulate.coffee
+text_manipulate.coffee
+xlsx_manipulate.coffee
+xml_manipulate.coffee

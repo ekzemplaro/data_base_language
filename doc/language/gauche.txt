@@ -1,0 +1,48 @@
+<meta content="Program Language Examples in gauche" name="description">
+<meta content="gauche,クライアント,接続,言語,サンプル" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<title>Gauche Dec/26/2013</title>
+</head>
+<body>
+<h2><a href="http://practical-scheme.net/gauche/">Gauche</a></h2><p />
+<blockquote>
+<pre>
+ii  gauche           0.9.3.3-8  amd64      Scheme script engine
+ii  gauche-gdbm      0.9.3.3-8  amd64      gdbm binding for Gauche
+ii  libgauche-0.9-0  0.9.3.3-8  amd64      Gauche runtime shared library
+</pre>
+</blockquote>
+
+<blockquote>
+	<a href="http://karetta.jp/book-cover/gauche-hacks/">
+	Gauche プログラミング(立読み版)</a><p />
+</blockquote>
+
+
+<blockquote>
+	sudo gauche-package install Gauche-text-json-0.2.tgz<p />
+</blockquote>
+
+
+<blockquote>
+$ gosh -V<br />
+Gauche scheme shell, version 0.9.3.3 [utf-8,pthreads], x86_64-unknown-linux-gnu<p />
+</blockquote>
+<hr />
+$ gosh<br />
+gosh> (+ 8 3)<br />
+11<br />
+gosh> (exit)<br />
+
+<hr />
+<pre>
+$ gosh
+gosh> (use rfc.json)
+#<undef>
+gosh> (define obj '(("foo" . 1) ("bar" . #(2 3))))
+obj
+gosh> (construct-json-string obj)
+"{\"foo\":1,\"bar\":[2,3]}"
+gosh> (exit)
+$
+</pre>

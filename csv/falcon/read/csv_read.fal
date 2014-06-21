@@ -1,0 +1,21 @@
+#! /usr/bin/falcon
+//
+//	csv_read.fal
+//
+//					Feb/20/2014
+//
+// -------------------------------------------------------------------
+load "/var/www/data_base/common/falcon_common/text_manipulate.fal"
+// -------------------------------------------------------------------
+printl( "*** 開始 ***" )
+
+file_csv=args[0]
+printl (file_csv)
+//
+dict_aa = csv_read_proc (file_csv)
+//
+dict_display_proc (dict_aa)
+//
+printl( "*** 終了 ***" )
+//
+// -------------------------------------------------------------------

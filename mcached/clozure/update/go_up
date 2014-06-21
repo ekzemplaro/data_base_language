@@ -1,0 +1,3 @@
+#
+ccl64 -l mcached_update.lisp --eval '(quit)' -- t1732 21475900
+#

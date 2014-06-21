@@ -1,0 +1,7 @@
+#
+export PERL_BADLANG=0
+#
+#
+../single_check.sh excel perl
+../single_check.sh pdf perl
+#

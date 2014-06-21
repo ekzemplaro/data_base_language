@@ -1,0 +1,7 @@
+#
+../single_check.sh text cplus
+../single_check.sh csv cplus
+../single_check.sh xml cplus
+../single_check.sh json cplus
+#../single_check.sh excel cplus
+#

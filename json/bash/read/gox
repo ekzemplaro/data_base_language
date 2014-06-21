@@ -1,0 +1,2 @@
+#
+./json_read.sh /var/tmp/json/cities.json

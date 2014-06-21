@@ -1,0 +1,29 @@
+#! /usr/bin/falcon
+//
+//	sqlite3_update.fal
+//
+//					Feb/19/2014
+//
+// -------------------------------------------------------------------
+import from dbi
+// -------------------------------------------------------------------
+printl ("*** 開始 ***")
+sqlite3_file=args[0]
+key_in=args[1]
+population_in=args[2]
+printl (sqlite3_file)
+printl (key_in)
+printl (population_in)
+now = CurrentTime()
+today=toString (now.year) + "-" +  toString (now.month) + "-" + toString (now.day)
+printl (today)
+//
+command = "update cities set population = " + population_in \
+	+ ", date_mod = '" + today \
+	+ "' where ID = '" + key_in + "'"
+printl (command)
+dbh = dbi.connect ("sqlite3:db=" + sqlite3_file)
+dbr = dbh.query (command)
+//
+printl ("*** 終了 ***")
+// -------------------------------------------------------------------

@@ -1,0 +1,10 @@
+<script src="/js/jquery.json-2.4.min.js"></script>
+<script src="/data_base/js/table_delete.js"></script>
+<script src="jquery_ruby_delete.js"></script>
+<title>Ruby Delete Feb/25/2013</title>
+</head>
+<body>
+<center><h2>Ruby Delete</h2></center>
+<div class="right">
+<button id="delete">削除</button><br />
+</div>

@@ -1,0 +1,33 @@
+'----------------------------------------------------------------------
+'	pro_sql2000.vbs
+'
+'					Dec/25/2012
+'----------------------------------------------------------------------
+Private cn ,rs
+
+Wscript.echo "*** 開始 ***"
+
+Set cn = CreateObject("ADODB.Connection")
+Set rs = CreateObject("ADODB.Recordset")
+
+cn.Open "Provider=SQLNCLI10;Server=host_mssql;Database=city;Uid=scott;Pwd=tiger"
+
+sql = "SELECT name from T0001 where ID=1"
+rs.Open sql, cn
+
+mado = rs.Fields(0)
+rs.Close
+
+Wscript.echo (mado)
+
+
+Wscript.echo "*** ppp ***"
+
+
+cn.Close
+
+Set cn = Nothing
+Set rs = Nothing
+
+Wscript.echo "*** 終了 ***"
+'----------------------------------------------------------------------

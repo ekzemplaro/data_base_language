@@ -1,0 +1,3 @@
+#
+ecl -shell mcachedb_read.lisp -eval '(quit)'
+#

@@ -1,0 +1,18 @@
+$ sudo ufw status
+状態: アクティブ
+
+To                         Action      From
+--                         ------      ----
+22                         ALLOW       Anywhere
+80/tcp                     ALLOW       Anywhere
+21/tcp                     ALLOW       Anywhere
+443                        ALLOW       Anywhere
+8022                       ALLOW       Anywhere
+8080                       ALLOW       Anywhere
+8081                       ALLOW       Anywhere
+8082                       ALLOW       Anywhere
+5984                       ALLOW       Anywhere
+3306                       ALLOW       Anywhere
+8888                       ALLOW       Anywhere
+8086                       ALLOW       Anywhere
+6379                       ALLOW       Anywhere

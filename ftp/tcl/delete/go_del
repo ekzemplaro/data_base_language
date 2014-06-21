@@ -1,0 +1,2 @@
+export ftp_proxy=""
+./ftp_delete.tcl t0367

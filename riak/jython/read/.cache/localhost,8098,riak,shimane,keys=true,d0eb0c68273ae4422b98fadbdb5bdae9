@@ -1,0 +1,17 @@
+status: 200
+content-length: 490
+content-location: http://localhost:8098/riak/shimane?keys=true
+vary: Accept-Encoding
+server: MochiWeb/1.1 WebMachine/1.9.2 (someone had painted it blue)
+-content-encoding: gzip
+link: </riak/shimane/t3251>; riaktag="contained", </riak/shimane/t3252>;
+ riaktag="contained", </riak/shimane/t3257>;
+ riaktag="contained", </riak/shimane/t3256>;
+ riaktag="contained", </riak/shimane/t3255>;
+ riaktag="contained", </riak/shimane/t3253>;
+ riaktag="contained", </riak/shimane/t3258>; riaktag="contained"
+date: Fri, 12 Apr 2013 00:02:09 GMT
+content-type: application/json
+-varied-accept-encoding: gzip, deflate
+
+{"props":{"name":"shimane","allow_mult":false,"basic_quorum":false,"big_vclock":50,"chash_keyfun":{"mod":"riak_core_util","fun":"chash_std_keyfun"},"dw":"quorum","last_write_wins":false,"linkfun":{"mod":"riak_kv_wm_link_walker","fun":"mapreduce_linkfun"},"n_val":3,"notfound_ok":true,"old_vclock":86400,"postcommit":[],"pr":0,"precommit":[],"pw":0,"r":"quorum","rw":"quorum","small_vclock":50,"w":"quorum","young_vclock":20},"keys":["t3258","t3253","t3255","t3256","t3257","t3252","t3251"]}

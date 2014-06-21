@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<script src="/js/jquery-2.1.0.min.js"></script>
+<meta content="Program Language Examples to connect to Derby" name="description">
+<meta content="Derby,クライアント,接続,言語,サンプル" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<title>Derby</title>
+</head>
+<body>
+<h1><a href="http://db.apache.org/derby/">Derby</a></h1>
+<blockquote>
+<pre>
+ii  sun-javadb-client      10.3.2.1-0ubuntu2       Java DB client
+ii  sun-javadb-common      10.3.2.1-0ubuntu2       Java DB common files
+ii  sun-javadb-core        10.3.2.1-0ubuntu2       Java DB core
+</pre>
+</blockquote>
+サーバーの起動<br />
+<blockquote>
+export DERBY_HOME=/usr/share/javadb<br />
+export PATH="$DERBY_HOME/bin:$PATH"<br />
+export LANG=C<br />
+startNetworkServer<br />
+</blockquote>
+
+クライアント<br />
+<blockquote>
+export DERBY_HOME=/usr/share/javadb<br />
+export PATH="$DERBY_HOME/bin:$PATH"<br />
+ij<br />
+</blockquote>
+
+スタンドアローン<br />
+<ol>
+CONNECT 'jdbc:derby:/var/tmp/derby/firstdb;create=true';<p />
+CREATE TABLE FIRSTTABLE (ID INT PRIMARY KEY,NAME VARCHAR(12));<p />
+INSERT INTO FIRSTTABLE VALUES<br />
+	(10,'TEN'),(20,'TWENTY'),(30,'THIRTY'),(40,'FORTY');<p />
+SELECT * FROM FIRSTTABLE;<p />
+exit;<p />
+</ol>
+<ol>
+CONNECT 'jdbc:derby:/var/tmp/derby/firstdb;';<p />
+SELECT * FROM FIRSTTABLE;<p />
+drop table FIRSTTABLE;<p />
+</ol>
+<ol>
+	String user     = "APP";<br />
+	String password = "user1";<br />
+	String database = "/var/tmp/derby/cities";<br />
+</ol>
+
+ネットワーク<br />
+<ol>
+connect 'jdbc:derby://localhost:1527/city_aaa';<p />
+user APP<br />
+password user1<br />
+</ol>
+
+Python<p />
+<pre>
+
+</pre>
+
+Java<p />
+<ol>
+	java.security.AccessControlException:<br />
+access denied (java.net.SocketPermission 127.0.0.1:1527 connect,resolve)<br />
+
+</ol>
+<div id="result_aa">result_aa</div>
+<hr />
+<div id="outarea_aa">outarea_aa</div>
+<div id="outarea_bb">outarea_bb</div>
+<div id="outarea_cc">outarea_cc</div>
+<div id="outarea_dd">outarea_dd</div>
+<div id="outarea_ee">outarea_ee</div>
+<div id="outarea_ff">outarea_ff</div>
+<div id="outarea_gg">outarea_gg</div>
+<div id="outarea_hh">outarea_hh</div>
+<hr />
+<a href="/data_base/data_base.html">Return</a><p />
+Jan/29/2014 AM 08:15<p />
+</body>
+</html>

@@ -1,0 +1,6 @@
+#
+../single_check.sh derby bash
+../single_check.sh hsqldb bash
+../single_check.sh h2 bash
+#
+#

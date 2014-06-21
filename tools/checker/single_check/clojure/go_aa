@@ -1,0 +1,3 @@
+#
+../single_check.sh text clojure
+../single_check.sh csv clojure

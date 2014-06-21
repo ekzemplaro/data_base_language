@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Program Language Examples to connect to database" name="description">
+<meta content="database,program,language,connect,example,CRUD,NoSQL" name="keyword">
+<meta content="node.js,rhino" name="keyword">
+<meta content="JSON,redis,CouchDB" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<script src="/js/jquery-2.1.0.min.js"></script>
+<script>
+jQuery (function ()
+{
+	jQuery ("#outarea_aa").text ("*** start ***");
+
+	jQuery ("#outarea_hh").text ("*** end ***");
+});
+
+</script>
+<meta content="Program Language Examples in swipl" name="description">
+<meta content="swipl,クライアント,接続,言語,サンプル" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<title>swipl Jan/21/2014</title>
+</head>
+<body>
+<h2><a href="http://www.swi-prolog.org">SWI-Prolog</a></h2><p />
+<pre>
+ii  swi-prolog     6.2.6-7   amd64    ISO/Edinburgh-style Prolog interpreter
+</pre>
+
+<blockquote>
+	<a href="http://kaz.cyteen.nagoya-bunri.ac.jp/advprog2/prolog.html">Prolog 入門</a><p />
+	<a href="http://bach.istc.kobe-u.ac.jp/prolog">神戸大学 Prolog ホームページ</a><p />
+</blockquote>
+<hr />
+<pre>
+$ swipl
+Welcome to SWI-Prolog (Multi-threaded, 64 bits, Version 6.2.6)
+Copyright (c) 1990-2012 University of Amsterdam, VU Amsterdam
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software,
+and you are welcome to redistribute it under certain conditions.
+Please visit http://www.swi-prolog.org for details.
+
+For help, use ?- help(Topic). or ?- apropos(Word).
+
+?- use_module(library(http/json_convert)).
+%   library(record) compiled into record 0.01 sec, 68 clauses
+%   library(memfile) compiled into memory_file 0.02 sec, 1,245 clauses
+%   library(option) compiled into swi_option 0.00 sec, 32 clauses
+%  json compiled into json 0.03 sec, 1,564 clauses
+% library(http/json_convert) compiled into json_convert 0.03 sec, 1,672 clauses
+true.
+
+?- halt.
+</pre>
+
+<ht />
+use_module(library(http/http_json)).<br />
+use_module(library(http/json)).<br />
+use_module(library(http/json_convert)).<br />
+
+<div id="result_aa">result_aa</div>
+<hr />
+<div id="outarea_aa">outarea_aa</div>
+<div id="outarea_bb">outarea_bb</div>
+<div id="outarea_cc">outarea_cc</div>
+<div id="outarea_dd">outarea_dd</div>
+<div id="outarea_ee">outarea_ee</div>
+<div id="outarea_ff">outarea_ff</div>
+<div id="outarea_gg">outarea_gg</div>
+<div id="outarea_hh">outarea_hh</div>
+<hr />
+<a href="/data_base/data_base.html">Return</a><p />
+Mar/14/2014 AM 08:15<p />
+</body>
+</html>

@@ -1,0 +1,9 @@
+digraph name {
+5 [label="5: INDEXSCAN" ];
+5 -> 9;
+9 [label="9: PROJECTION" fontcolor="white" style="filled" fillcolor="red"];
+10 [label="10: SEND" fontcolor="white" style="filled" fillcolor="black"];
+10 -> 5;
+
+}
+

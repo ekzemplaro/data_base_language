@@ -1,0 +1,1 @@
+./csv_create.bsh /var/tmp/csv/cities.csv

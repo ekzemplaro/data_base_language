@@ -1,0 +1,123 @@
+/* -------------------------------------------------------------------- */
+/*
+	update/asp_mysql_update.aspx.cs
+
+					Aug/17/2009
+*/
+/* -------------------------------------------------------------------- */
+using System;
+using System.Data;
+using MySql.Data.MySqlClient;
+
+using System.Configuration;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+
+/* -------------------------------------------------------------------- */
+public partial class asp_mysql_update : System.Web.UI.Page 
+{
+
+	static	string server="cdbd026";
+	static	string str_db="city";
+
+	static	string str_connect = "Server=" + server + 
+	";User Id=uchida;Password=hello9;" +
+		"Database=" + str_db + ";";
+
+
+/* -------------------------------------------------------------------- */
+public DataTable Data
+{
+	get { return (DataTable)Session["DATA"]; }
+	set { Session["DATA"] = value; }
+}
+    
+/* -------------------------------------------------------------------- */
+protected void Page_Load(object sender, EventArgs e)
+{
+	if (!IsPostBack)
+	{
+	Data = CreateSampleData();
+	}
+}
+
+/* -------------------------------------------------------------------- */
+private DataTable CreateSampleData()
+{
+	string str_com = "select * from cities";
+
+	MySqlDataAdapter da_adapter = new MySqlDataAdapter
+			(str_com,str_connect);
+
+	MySqlConnection connection = new MySqlConnection (str_connect);
+
+	DataTable dtable = new DataTable();
+
+	connection.Open ();
+
+	da_adapter.Fill (dtable);
+
+	connection.Close ();
+
+	GridView_A.DataSource = dtable.DefaultView;
+	GridView_A.DataBind();
+
+	return	dtable;
+}
+
+/* -------------------------------------------------------------------- */
+private void GetInputData()
+{
+	DataTable dtable = Data;
+	foreach (GridViewRow row in GridView_A.Rows)
+	{
+	string input = Request.Params[row.FindControl("txtInput").UniqueID];
+	string data_old = dtable.Rows[row.DataItemIndex]["POPULATION"].ToString ();
+	dtable.Rows[row.DataItemIndex]["POPULATION"] = input;
+
+	if (!data_old.Equals (input))
+		{
+		DateTime dateNow = DateTime.Now;
+
+		dtable.Rows[row.DataItemIndex]["DATE_MOD"] = dateNow.ToString ();
+		}
+	}
+
+	MySqlConnection connection = new MySqlConnection (str_connect);
+    
+	string str_com = "SELECT * FROM cities";
+
+	MySqlDataAdapter da_adapter = new MySqlDataAdapter
+			(str_com,str_connect);
+
+	DataRow row_aa = dtable.Rows[0];
+
+	MySqlCommandBuilder builder = new MySqlCommandBuilder (da_adapter);
+
+	connection.Open ();
+	da_adapter.Update (dtable);
+	connection.Close ();
+
+	GridView_A.DataSource = dtable.DefaultView;
+	GridView_A.DataBind();
+}
+
+/* -------------------------------------------------------------------- */
+protected void btn_Click_aa (object sender, System.EventArgs e)
+{
+	GetInputData();
+}
+
+/* -------------------------------------------------------------------- */
+protected void btn_Click_bb (object sender, System.EventArgs e)
+{
+	Data = CreateSampleData();
+}
+
+/* -------------------------------------------------------------------- */
+}
+/* -------------------------------------------------------------------- */

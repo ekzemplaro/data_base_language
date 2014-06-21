@@ -1,0 +1,4 @@
+couch_manipulate.java
+get_uri.java
+json_manipulate.java
+text_manipulate.java

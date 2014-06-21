@@ -1,0 +1,3 @@
+#
+./xml_create.lsp /var/tmp/xml_file/cities.xml
+#./xml_create.lsp cities.xml

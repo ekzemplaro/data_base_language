@@ -1,0 +1,52 @@
+<title>guile Jan/14/2014</title>
+</head>
+<body>
+<h2><a href="http://www.gnu.org/software/guile/guile.html">guile</a></h2><p />
+<pre>
+ii  guile-2.0         2.0.7-0ubuntu2  amd64    GNU extension language and Scheme interpreter
+ii  guile-2.0-libs    2.0.7-0ubuntu2  amd64    Core Guile libraries
+</pre>
+<blockquote>
+<pre>
+$ guile --version
+guile (GNU Guile) 2.0.7
+Copyright (C) 2012 Free Software Foundation, Inc.
+
+License LGPLv3+: GNU LGPL 3 or later <http://gnu.org/licenses/lgpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+</pre>
+</blockquote>
+<blockquote>
+	guile<p />
+	(help)<br />
+	(quit)<p />
+</blockquote>
+<blockquote>
+	ホームディレクトリー に、.guile というファイルを作成して、以下の
+	ように書いておく。<p />
+	(use-modules (ice-9 readline))<br />
+	(activate-readline)<br />
+</blockquote>
+
+<blockquote>
+	<a href="http://www.shido.info/lisp/idx_scm.html">
+	もうひとつの Scheme 入門</a><p />
+	<a href="http://www.unixuser.org/~euske/doc/scm-sd7/index.html">
+	Scheme プログラミング人門</a><p />
+	<a href="http://home.gna.org/guile-dbi/guile-dbi.html">
+	Guile DBI Manual</a><p />
+</blockquote>
+
+<blockquote>
+</blockquote>
+
+<blockquote>
+</blockquote>
+
+<hr />
+コマンドライン入力をやりやすくする方法<p />
+<blockquote>
+scheme@(guile-user)> (use-modules (ice-9 readline))<br />
+scheme@(guile-user)> (activate-readline)<br />
+</blockquote>

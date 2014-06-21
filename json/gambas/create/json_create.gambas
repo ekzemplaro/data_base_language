@@ -1,0 +1,51 @@
+#! /usr/bin/gbs2
+'
+'	json_create.gambas
+'
+'					Mar/30/2012
+'
+' ------------------------------------------------------------------
+sub	row_gen_proc (key as string,name as string,population as integer,date_mod as string) as string
+	dim str_out as string
+	str_out = "\"" & key & "\": {\"name\": \"" & name & "\","
+	str_out &= "\"population\": \"" & population & "\","
+	str_out &= "\"date_mod\": \"" & date_mod & "\"},\n"
+	return str_out
+end
+' ------------------------------------------------------------------
+sub	data_prepare_proc () as string
+	dim str_out as string
+	str_out = "{\n"
+	str_out &= row_gen_proc ("t0921","宇都宮",56872,"1969-1-8")
+	str_out &= row_gen_proc ("t0922","小山",17984,"1969-10-12")
+	str_out &= row_gen_proc ("t0923","佐野",28425,"1969-3-28")
+	str_out &= row_gen_proc ("t0924","足利",27519,"1969-2-21")
+	str_out &= row_gen_proc ("t0925","日光",86971,"1969-1-5")
+	str_out &= row_gen_proc ("t0926","下野",75943,"1969-5-22")
+	str_out &= row_gen_proc ("t0927","さくら",46785,"1969-7-17")
+	str_out &= row_gen_proc ("t0928","矢板",54614,"1969-3-04")
+	str_out &= row_gen_proc ("t0929","真岡",74823,"1969-5-9")
+	str_out &= row_gen_proc ("t0930","栃木",82471,"1969-7-12")
+	str_out &= row_gen_proc ("t0931","大田原",24715,"1969-9-20")
+	str_out &= row_gen_proc ("t0932","鹿沼",71375,"1969-3-8")
+	str_out &= row_gen_proc ("t0933","那須塩原",75782,"1969-5-15")
+	str_out &= row_gen_proc ("t0934","那須烏山",48218,"1969-4-22")
+
+	return str_out
+end
+' ------------------------------------------------------------------
+Public Sub Main()
+DIM path as string
+DIM str_out as string
+DIM str_out_bb as string
+print "*** 開始 ***"
+'
+path = Application.Args[1]
+print path
+str_out = data_prepare_proc ()
+print len (str_out)
+str_out_bb = mid$(str_out,1,-2) & "}"
+TRY File.Save (path,str_out_bb)
+print "*** 終了 ***"
+End
+' ------------------------------------------------------------------

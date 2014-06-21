@@ -1,0 +1,59 @@
+#! /usr/bin/gbs2
+'
+'	xml_create.gambas
+'
+'					Mar/30/2012
+'
+' ------------------------------------------------------------------
+sub	tag_gen_proc (tag as string,value as string) as string
+	dim str_out as string
+
+	str_out = "<" & tag & ">"
+	str_out &= value
+	str_out &= "</" & tag & ">" & "\n"
+
+	return str_out
+end
+' ------------------------------------------------------------------
+sub	row_gen_proc (key as string,name as string,population as integer,date_mod as string) as string
+	dim str_out as string
+	str_out = "<" & key & ">"
+	str_out &= tag_gen_proc ("name",name)
+	str_out &= tag_gen_proc ("population",population)
+	str_out &= tag_gen_proc ("date_mod",date_mod)
+
+	str_out &= "</" & key & ">\n"
+	return str_out
+end
+' ------------------------------------------------------------------
+sub	data_prepare_proc () as string
+	dim str_out as string
+	str_out = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
+	str_out &= "<root>\n"
+	str_out &= row_gen_proc ("t2261","静岡",34561,"1969-5-8")
+	str_out &= row_gen_proc ("t2262","浜松",17982,"1969-7-12")
+	str_out &= row_gen_proc ("t2263","沼津",26427,"1969-3-28")
+	str_out &= row_gen_proc ("t2264","三島",28519,"1969-2-21")
+	str_out &= row_gen_proc ("t2265","富士",84371,"1969-1-5")
+	str_out &= row_gen_proc ("t2266","熱海",72948,"1969-5-22")
+	str_out &= row_gen_proc ("t2267","富士宮",46785,"1969-7-17")
+	str_out &= row_gen_proc ("t2268","藤枝",54614,"1969-3-04")
+	str_out &= row_gen_proc ("t2269","御殿場",74823,"1969-5-9")
+	str_out &= row_gen_proc ("t2270","島田",82351,"1969-7-12")
+	str_out &= "</root>"
+
+	return str_out
+end
+' ------------------------------------------------------------------
+Public Sub Main()
+DIM path as string
+DIM str_out as string
+print "*** 開始 ***"
+'
+path = Application.Args[1]
+print path
+str_out = data_prepare_proc ()
+TRY File.Save (path,str_out)
+print "*** 終了 ***"
+End
+' ------------------------------------------------------------------

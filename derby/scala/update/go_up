@@ -1,0 +1,7 @@
+#
+export DERBY_HOME=/home/uchida/data_base/derby/db-derby-10.8.2.2-bin
+export SCALA_COMMON="/var/www/data_base/common/scala_common"
+export CPX=.:$SCALA_COMMON
+export CPX=$CPX:$DERBY_HOME/lib/derbyclient.jar
+#
+scala -classpath $CPX derby_update t3557 658472100

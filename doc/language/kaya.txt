@@ -1,0 +1,15 @@
+<title>kaya Oct/04/2011</title>
+</head>
+<body>
+<h2><a href="http://kayalang.org">kaya</a></h2><p />
+<blockquote>
+ii  kaya     0.4.4-4<br />
+A statically typed, imperative programming language<br />
+</blockquote>
+
+<blockquote>
+sudo apt-get install happy<br />
+sudo apt-get install libgc-dev<p />
+sudo apt-get install kaya<br />
+</blockquote>
+

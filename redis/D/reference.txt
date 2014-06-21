@@ -1,0 +1,4 @@
+json_manipulate.d
+mcached_manipulate.d
+redis_manipulate.d
+text_manipulate.d

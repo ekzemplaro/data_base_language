@@ -1,0 +1,2 @@
+export http_proxy=""
+splrun xindice_read.spl 

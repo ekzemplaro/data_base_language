@@ -1,0 +1,3 @@
+#
+../single_check.sh sqlite3 gauche
+#../single_check.sh mssql gauche

@@ -1,0 +1,28 @@
+#! /usr/bin/bsh
+//
+//	text_update.bsh
+//
+//					Sep/25/2012
+//
+// --------------------------------------------------------------
+source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
+// --------------------------------------------------------------
+System.out.println ("*** 開始 ***");
+fname_update = bsh.args[0];
+String	key = bsh.args[1];
+int	population = Integer.parseInt (bsh.args[2]);
+
+System.out.println (fname_update);
+System.out.println (key);
+System.out.println (population);
+//
+Map dict_aa = text_to_dict_proc (fname_update);
+//
+dict_aa = dict_update_proc (dict_aa,key,population);
+
+dict_display_proc (dict_aa);
+
+dict_to_text_proc (fname_update,dict_aa);
+
+System.out.println ("*** 終了 ***");
+// --------------------------------------------------------------

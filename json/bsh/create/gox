@@ -1,0 +1,6 @@
+export COMMON=/var/www/data_base/common
+export JAR=$COMMON/jar
+#
+export CLASSPATH=.:$JAR/jsonic-1.1.2.jar
+#
+./json_create.bsh /var/tmp/json/cities.json

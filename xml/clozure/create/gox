@@ -1,0 +1,3 @@
+ccl64 -l  xml_create.lisp --eval '(quit)' -- /var/tmp/xml_file/cities.xml
+#
+chmod 666 /var/tmp/xml_file/cities.xml

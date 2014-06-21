@@ -1,0 +1,4 @@
+COMMON=/var/www/data_base/common
+export CLASSPATH=$CLASSPATH:.:$COMMON/jar/json_simple/json_simple-1.1.jar
+#
+./mcached_update.py t1735 8125400

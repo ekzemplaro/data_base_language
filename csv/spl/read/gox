@@ -1,0 +1,1 @@
+splrun -e csv_read.spl /var/tmp/csv/cities.csv

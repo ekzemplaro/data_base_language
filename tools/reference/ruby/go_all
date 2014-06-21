@@ -1,0 +1,2 @@
+#
+../bin/process_db.sh ruby rb common.txt

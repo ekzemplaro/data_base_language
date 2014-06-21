@@ -1,0 +1,16 @@
+status: 200
+content-length: 0
+content-location: http://localhost:8098/riak/shimane/t3255
+x-riak-vclock: a85hYGBgzGDKBVIcypz/fgaaVZtnMCW65LEyBF68foovCwA=
+-varied-accept-encoding: gzip, deflate
+vary: Accept-Encoding
+server: MochiWeb/1.1 WebMachine/1.9.2 (someone had painted it blue)
+last-modified: Mon, 08 Apr 2013 23:40:01 GMT
+-content-encoding: gzip
+link: </riak/shimane>; rel="up"
+etag: "2kpmh9RvcCmByDsPyHmlN3"
+date: Fri, 12 Apr 2013 00:02:09 GMT
+content-type: application/x-www-form-urlencoded
+-varied-accept-encoding: gzip, deflate
+
+{"name":"\u6c5f\u6d25","population":37500,"date_mod":"2002-12-14"}

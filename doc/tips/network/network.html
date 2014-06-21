@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+</script>
+<title>network Apr/03/2014</title>
+</head>
+<body>
+<h2>network の設定 in Ubuntu 12.04 & 12.10</h2><p />
+
+
+
+静的なアドレスの時の、DNS サーバーの設定<p />
+/etc/resolvconf/resolv.conf.d/head を編集。<p />
+<blockquote>
+nameserver 172.20.40.203<br />
+nameserver 172.20.40.204<br />
+nameserver 172.20.40.205<br />
+</blockquote>
+
+変更内容を反映<p />
+<blockquote>
+sudo resolvconf -u<p />
+</blockquote>
+
+DHCP サーバーからのアドレスの取得<p />
+<blockquote>
+sudo dhclient<p />
+</blockquote>
+
+<hr />
+<a href="/data_base/data_base.html">Return</a><p />
+Apr/03/2014 AM 08:15<p />
+</body>
+</html>

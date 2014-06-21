@@ -1,0 +1,7 @@
+#
+#
+JAVA_CLASSPATH="/usr/share/java/js.jar:/usr/share/java/jline.jar"
+MYSQL_JAR=/usr/share/java/mysql-connector-java.jar
+export CLASSPATH=.:$MYSQL_JAR:$JAVA_CLASSPATH
+#
+./mysql_create.js

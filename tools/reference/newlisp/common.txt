@@ -1,0 +1,4 @@
+json_manipulate.lsp
+mcached_manipulate.lsp
+redis_manipulate.lsp
+text_manipulate.lsp

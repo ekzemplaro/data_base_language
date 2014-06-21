@@ -1,0 +1,34 @@
+#
+SRC=/var/www/data_base/lang/jquery_bash/read
+cd /usr/lib/cgi-bin/data_base/bash
+#
+ln -s $SRC/basex_bash_read.sh .
+ln -s $SRC/berkeley_bash_read.sh .
+ln -s $SRC/cassandra_bash_read.sh .
+ln -s $SRC/couch_bash_read.sh .
+ln -s $SRC/db2_bash_read.sh .
+ln -s $SRC/dbxml_bash_read.sh .
+ln -s $SRC/derby_bash_read.sh .
+ln -s $SRC/drizzle_bash_read.sh .
+ln -s $SRC/exist_bash_read.sh .
+ln -s $SRC/firebird_bash_read.sh .
+ln -s $SRC/ftp_bash_read.sh .
+ln -s $SRC/gdbm_bash_read.sh .
+ln -s $SRC/json_bash_read.sh .
+ln -s $SRC/master_bash_read.sh .
+ln -s $SRC/mcached_bash_read.sh .
+ln -s $SRC/mcachedb_bash_read.sh .
+ln -s $SRC/mongo_bash_read.sh .
+ln -s $SRC/mssql_bash_read.sh .
+ln -s $SRC/mysql_bash_read.sh .
+ln -s $SRC/oracle_bash_read.sh .
+ln -s $SRC/postgre_bash_read.sh .
+ln -s $SRC/redis_bash_read.sh .
+ln -s $SRC/sqlite3_bash_read.sh .
+ln -s $SRC/tcbn_bash_read.sh .
+ln -s $SRC/text_bash_read.sh .
+ln -s $SRC/tyrant_bash_read.sh .
+ln -s $SRC/webdav_bash_read.sh .
+ln -s $SRC/xindice_bash_read.sh .
+ln -s $SRC/xml_bash_read.sh .
+#

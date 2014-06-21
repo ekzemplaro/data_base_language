@@ -1,0 +1,5 @@
+#
+ABCL=/var/www/data_base/common/jar/abcl
+#
+java -jar  $ABCL/abcl.jar --load redis_update.lisp --eval '(quit)' t1855 92345600
+#

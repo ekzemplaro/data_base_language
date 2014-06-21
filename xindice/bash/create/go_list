@@ -1,0 +1,9 @@
+#!/bin/bash
+#
+XINDICE=/home/uchida/xml_database/xindice/xml-xindice-1.2m1/bin/xindice
+#
+$XINDICE lc -c xmldb:xindice://cdbd026:8888/db
+$XINDICE lc -c xmldb:xindice://cdbd026:8888/db/cities
+#$XINDICE rd -c xmldb:xindice://cdbd026:8888/db/cities -n cities -f cities.xml
+#
+#$XINDICE ac -c xmldb:xindice://cdbd026:8888/db/cities -n cities

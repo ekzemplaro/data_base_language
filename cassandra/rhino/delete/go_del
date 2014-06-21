@@ -1,0 +1,9 @@
+#
+JAVA_CLASSPATH="/usr/share/java/js.jar:/usr/share/java/jline.jar"
+COMMON=/var/www/data_base/common
+RHINO_COMMON=$COMMON/rhino_common
+JAR_CASSANDRA=$COMMON/jar/cassandra
+#
+export CLASSPATH=./:$JAVA_CLASSPATH:$RHINO_COMMON:$JAR_CASSANDRA/*
+#
+./cassandra_delete.js t0534

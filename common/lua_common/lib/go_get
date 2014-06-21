@@ -1,0 +1,3 @@
+SRC=/home/uchida/lang/lua/LuaXML_101012
+cp -p $SRC/LuaXml.lua .
+cp -p $SRC/LuaXML_lib.so .

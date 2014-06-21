@@ -1,0 +1,4 @@
+#
+echo "import redis_create" > tmp_execute.py
+#
+python ./tmp_execute.py

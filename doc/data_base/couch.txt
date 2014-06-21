@@ -1,0 +1,142 @@
+<title>CouchDB</title>
+</head>
+<body>
+<h1><a href="http://couchdb.apache.org/">CouchDB</a></h1>
+Configuration<br />
+<blockquote>
+/etc/couchdb/default.ini<br />
+bind_address = 0.0.0.0<br />
+allow_jsonp = true<p />
+/etc/couchdb/local.ini<p />
+bind_address = 0.0.0.0<p />
+</blockquote>
+How to restart server<br />
+<blockquote>
+sudo service couchdb stop<br />
+sudo service couchdb start<br />
+</blockquote>
+
+Client<br />
+<blockquote>
+curl -X GET http://localhost:5984/<br />
+curl -X PUT http://localhost:5984/baseball<br />
+curl -X PUT http://localhost:5984/basketball<br />
+curl -X GET http://localhost:5984/_all_dbs<p />
+curl -X GET http://localhost:5984/baseball/_all_docs<br />
+curl -X GET http://localhost:5984/baseball/_all_docs?include_docs=true<br />
+curl -X DELETE http://localhost:5984/baseball<br />
+</blockquote>
+
+<pre>
+$ sudo couchdb
+Apache CouchDB 1.0.1 (LogLevel=info) is starting.
+Apache CouchDB has started. Time to relax.
+[info] [<0.33.0>] Apache CouchDB has started on http://0.0.0.0:5984/
+[info] [<0.104.0>] 127.0.0.1 - - 'GET' / 200
+[info] [<0.173.0>] 127.0.1.1 - - 'GET' / 200
+[info] [<0.182.0>] 172.20.249.5 - - 'GET' / 200
+[info] [<0.182.0>] 172.20.249.5 - - 'GET' / 200
+[info] [<0.250.0>] 172.20.179.177 - - 'GET' / 200
+</pre>
+<blockquote>
+</blockquote>
+
+Bash<p />
+<blockquote>
+curl -X  DELETE http://localhost:5984/my-db<br />
+curl -X  PUT http://localhost:5984/my-db<br />
+curl -X  PUT http://localhost:5984/my-db/cities -d@cities.json<br />
+</blockquote>
+
+PHP<p />
+<blockquote>
+	php5-curl<p />
+</blockquote>
+
+Python<p />
+<blockquote>
+</blockquote>
+
+
+Perl<p />
+<blockquote>
+	libwww-curl-perl<p />
+</blockquote>
+
+Ruby<p />
+<blockquote>
+<pre>
+ii  ruby-rest-client       1.6.7-4    all     simple REST client for Ruby
+</pre>
+</blockquote>
+
+Ocaml<p />
+<blockquote>
+	libcurl-ocaml-dev<p />
+</blockquote>
+
+
+Lua<p />
+<blockquote>
+	liblua5.1-socket2<p />
+</blockquote>
+
+
+Tcl<p />
+<blockquote>
+	tclcurl<p />
+</blockquote>
+
+C++<p />
+<blockquote>
+	libcurl4-openssl-dev<p />
+</blockquote>
+
+node.js<p />
+<blockquote>
+	felixge-node-couchdb-713605b.tar.gz<p />
+</blockquote>
+
+Java<p />
+<blockquote>
+	libcommons-httpclient-java<p />
+</blockquote>
+
+couchapp<p />
+<blockquote>
+	<a href="http://www.couchapp.org/page/getting-started">CouchApp.org: Getting Started</a><p />
+</blockquote>
+
+<hr />
+<pre>
+$ curl --noproxy localhost http://localhost:5984
+{"couchdb":"Welcome","uuid":"4c3f5c7752103d0653aeb1afb91f8621","version":"1.5.0","vendor":{"version":"14.04","name":"Ubuntu"}}
+</pre>
+<hr />
+View の作成方法<br />
+<blockquote>
+View の例 (ex06.json)<br />
+<pre>
+{ 
+   "language"  : "javascript",
+   "views"     : {
+      "ex06"    : { 
+         "map" : "function(doc){ 
+               emit(doc.artist, doc.title);
+         }" 
+      }
+  }
+}
+</pre>
+</blockquote>
+
+View の登録<br />
+<blockquote>
+curl -X PUT http://localhost:5984/quotes/_design/ex06 -d@ex06.json<br />
+</blockquote>
+View の実行<br />
+<blockquote>
+curl -X GET http://localhost:5984/albums/_design/ex06/_view/ex06<p />
+key で検索<br />
+curl -X GET http://localhost:5984/albums/_design/ex06/_view/ex06?key=\"Chopin\"<p />
+</blockquote>

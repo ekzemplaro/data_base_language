@@ -1,0 +1,2 @@
+export http_proxy=""
+./riak_update.py t3251 971654200

@@ -1,0 +1,2 @@
+#
+./gdbm_read.pike /var/tmp/gdbm/cities.pag

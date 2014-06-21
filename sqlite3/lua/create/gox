@@ -1,0 +1,1 @@
+lua sqlite3_create.lua /var/tmp/sqlite3/cities.db

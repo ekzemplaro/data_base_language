@@ -1,0 +1,8 @@
+#
+#
+SHARE=/usr/share/java
+export CLOJURE_CONTRIB=$SHARE/clojure-contrib-1.2.0.jar
+#
+export CLASSPATH=.:$SHARE/clojure.jar:$CLOJURE_CONTRIB:$SHARE/postgresql.jar
+#
+java clojure.main postgre_read.clj 

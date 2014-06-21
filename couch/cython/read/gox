@@ -1,0 +1,5 @@
+export http_proxy=""
+#
+echo "import couch_read" > tmp_execute.py
+#
+python ./tmp_execute.py

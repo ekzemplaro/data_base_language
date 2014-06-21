@@ -1,0 +1,3 @@
+#
+#
+./json_read.py /var/tmp/json/cities.json

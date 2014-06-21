@@ -1,0 +1,3 @@
+#
+./json_create.tcl /var/tmp/json/cities.json
+#./json_create.tcl cities.json

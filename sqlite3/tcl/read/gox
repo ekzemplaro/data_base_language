@@ -1,0 +1,1 @@
+./sqlite3_read.tcl /var/tmp/sqlite3/cities.db

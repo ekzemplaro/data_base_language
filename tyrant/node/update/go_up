@@ -1,0 +1,2 @@
+export NODE_PATH=/home/uchida/node_modules
+./tyrant_update.js t4765 85912300

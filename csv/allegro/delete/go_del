@@ -1,0 +1,1 @@
+/opt/acl90express/alisp -#! csv_delete.cl /var/tmp/csv/cities.csv t1273

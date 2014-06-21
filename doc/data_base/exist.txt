@@ -1,0 +1,44 @@
+<title>eXist</title>
+</head>
+<body>
+<h1><a href="http://exist.sourceforge.net/">eXist</a></h1>
+インストール方法<br />
+<blockquote>
+	java -jar eXist-db-setup-2.0-rev18252.jar<br />
+</blockquote>
+
+サーバーのスタート<br />
+<blockquote>
+	eXist-db/bin/startup.sh<p />
+
+	ポートの変更<br />
+	<blockquote>
+	eXist-db/tools/jetty/etc/jetty.xml<br />
+	&lt;SystemProperty name="jetty.port" default="8086"/&gt;
+	</blockquote>
+</blockquote>
+
+クライアント<br />
+<blockquote>
+	eXist-db/bin/client.sh<br />
+</blockquote>
+<blockquote>
+curl -T nagasaki.xml http://localhost:8086/exist/rest/db/cities/nagasaki.xml --user admin:tiger<p />
+curl -X PUT http://localhost:8086/exist/rest/db/cities/nagasaki.xml -d@nagasaki.xml --user admin:tiger<p />
+</blockquote>
+PHP<p />
+<blockquote>
+	php5-curl<p />
+</blockquote>
+
+<ol>
+</ol>
+
+Python<p />
+<blockquote>
+	python-pycurl<p />
+</blockquote>
+
+Java<p />
+<pre>
+</pre>

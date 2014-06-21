@@ -1,0 +1,5 @@
+<hr />
+/var/lib/tomcat7/webapps<p />
+<hr />
+<hr />
+<a href="http://host_jquery/data_base/lang/jquery_java/read/html_src/">jquery_java_read_src.html</a><p />

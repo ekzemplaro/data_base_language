@@ -1,0 +1,6 @@
+#
+#
+#
+echo "import tcbn_create" > tmp_execute.py
+#
+python ./tmp_execute.py /var/tmp/tokyo_cabinet/cities.tcb

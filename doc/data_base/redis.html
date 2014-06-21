@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<script src="/js/jquery-2.1.0.min.js"></script>
+<title>Redis</title>
+</head>
+<body>
+<h1><a href="http://redis.io">Redis</a></h1>
+
+<pre>
+ii  redis-server   2:2.6.7-1   amd64   Persistent key-value database with network interface
+</pre>
+<blockquote>
+	/etc/redis/redis.conf<p />
+
+		<blockquote>
+		#bind 127.0.0.1<p />
+		</blockquote>
+</blockquote>
+
+Telnet で接続<br />
+<blockquote>
+$ telnet host_dbase 6379<br />
+keys *<br />
+get t1851<br />
+del t1852<br />
+quit<br />
+</blockquote>
+Bash<p />
+<blockquote>
+	redis-cli -h localhost -p 6379 set t1851 'data01 Hello'<br />
+	redis-cli -h localhost -p 6379 set t1852 'data02 Morning'<p />
+	redis-cli -h localhost -p 6379 get t1851<br />
+	redis-cli -h localhost -p 6379 get t1852<p />
+</blockquote>
+
+PHP<p />
+<a href="https://github.com/nicolasff/phpredis">phpredis-master.zip</a><p />
+
+<blockquote>
+<blockquote>
+	phpize<br />
+	./configure<br />
+	make<br />
+	sudo make install<p />
+</blockquote>
+
+/etc/php5/conf.d/redis.ini<p />
+
+; configuration for php Redis module<br />
+extension=redis.so<br />
+</blockquote>
+
+Python<p />
+<blockquote>
+<pre>
+ii  python-redis   2.4.13-2  all   Persistent key-value database with network interface (Python library)
+</pre>
+</blockquote>
+
+Perl<p />
+libredis-perl<p />
+<a href="http://annocpan.org/dist/Redis">AnnoCPAN</a><p />
+</blockquote>
+
+Ruby<p />
+<blockquote>
+	# gem install redis<br />
+	# gem install system_timer<br />
+</blockquote>
+
+Haskell<p />
+<blockquote>
+	<a href="http://bitbucket.org/videlalvaro/redis-haskell/wiki/Home">
+	Redis Haskell</a><p />
+	redis-haskell-tip.tar.bz2<p />
+</blockquote>
+
+
+Lua<p />
+<blockquote>
+sudo dpkg -i liblua5.1-memcached0.deb<p />
+</blockquote>
+
+sbcl<p />
+<blockquote>
+<pre>
+ii  cl-usocket   0.5.5-1   all   Common Lisp socket library
+</pre>
+</blockquote>
+
+go<p />
+<blockquote>
+alphazero-Go-Redis-59175aa.tar.gz<p />
+</blockquote>
+
+Node.js<p />
+<blockquote>
+	isaacs-npm-v0.2.4-1-0-g924b5bb.tar.gz<br />
+	cd isaacs-npm-fe20d6d<br />
+	sudo make dev<p />
+
+	<a href="http://github.com/mranney/node_redis">node_redis</a><p />
+	npm install redis<p />
+</blockquote>
+
+Java<p />
+<blockquote>
+jedis-2.1.0.jar<p />
+<a href="https://github.com/xetorthio/jedis">jedis</a><p />
+</blockquote>
+
+
+C#<p />
+<blockquote>
+migueldeicaza-redis-sharp-1b4e929.tar.gz<p />
+redis-sharp.cs<p />
+</blockquote>
+
+<hr />
+<pre>
+$ telnet localhost 6379
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+*3
+$3
+set
+$4
+key0
+$3
+123
++OK
+*3
+$3
+set
+$4
+key1
+$3
+987
++OK
+get key0
+$3
+123
+get key1
+$3
+987
+quit
++OK
+Connection closed by foreign host.
+$ 
+
+</pre>
+<hr />
+
+<div id="result_aa">result_aa</div>
+<hr />
+<div id="outarea_aa">outarea_aa</div>
+<div id="outarea_bb">outarea_bb</div>
+<div id="outarea_cc">outarea_cc</div>
+<div id="outarea_dd">outarea_dd</div>
+<div id="outarea_ee">outarea_ee</div>
+<div id="outarea_ff">outarea_ff</div>
+<div id="outarea_gg">outarea_gg</div>
+<div id="outarea_hh">outarea_hh</div>
+<hr />
+<a href="/data_base/data_base.html">Return</a><p />
+Jan/29/2014 AM 08:15<p />
+</body>
+</html>

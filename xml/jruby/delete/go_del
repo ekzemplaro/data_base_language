@@ -1,0 +1,1 @@
+./xml_delete.rb /var/tmp/xml_file/cities.xml t2261

@@ -1,0 +1,78 @@
+// -----------------------------------------------------------------
+//	json_create.spl
+//
+//						Aug/22/2011
+// -----------------------------------------------------------------
+
+load "file";
+// -----------------------------------------------------------------
+function tag_out_proc (tag,value)
+{
+	var out_str = "\"";
+	out_str ~= tag;
+	out_str ~= "\": \"";
+
+	out_str ~= value;
+
+	out_str ~= "\"";
+
+	return	out_str;
+}
+
+// -----------------------------------------------------------------
+function record_gen_proc (id,name,population,date_mod,delimit)
+{
+	var out_str = "\"";
+
+	out_str ~= id;
+	out_str ~= "\": {";
+	out_str ~= tag_out_proc ("name",name);
+	out_str ~= ",";
+	out_str ~= tag_out_proc ("population",population);
+	out_str ~= ",";
+	out_str ~= tag_out_proc ("date_mod",date_mod);
+	out_str ~= "}";
+
+	out_str ~= delimit;
+	out_str ~= "\n";
+
+	return	out_str;
+}
+
+// -----------------------------------------------------------------
+function data_prepare_proc ()
+{
+	var out_str = record_gen_proc ("t0921","宇都宮","35952","1962-7-25",",");
+	out_str ~= record_gen_proc ("t0922","小山","23948","1962-9-10",",");
+	out_str ~= record_gen_proc ("t0923","佐野","81427","1962-2-21",",");
+	out_str ~= record_gen_proc ("t0924","足利","32738","1962-3-28",",");
+	out_str ~= record_gen_proc ("t0925","日光","94671","1962-8-14",",");
+	out_str ~= record_gen_proc ("t0926","下野","52453","1962-10-17",",");
+	out_str ~= record_gen_proc ("t0927","さくら","29582","1962-4-15",",");
+	out_str ~= record_gen_proc ("t0928","矢板","73192","1962-9-14",",");
+	out_str ~= record_gen_proc ("t0929","真岡","36791","1962-8-24",",");
+	out_str ~= record_gen_proc ("t0930","栃木","28416","1962-7-9",",");
+	out_str ~= record_gen_proc ("t0931","大田原","41792","1962-8-12",",");
+	out_str ~= record_gen_proc ("t0932","鹿沼","75728","1962-6-18",",");
+	out_str ~= record_gen_proc ("t0933","那須塩原","35984","1962-4-25",",");
+	out_str ~= record_gen_proc ("t0934","那須烏山","51362","1962-7-9","}");
+
+	return out_str;
+}
+
+
+// -----------------------------------------------------------------
+write ("*** 開始 ***\n");
+
+var file_out = argv[0];
+
+write (file_out ~ "\n");
+
+var out_str = "{";
+
+out_str ~= data_prepare_proc ();
+
+file_write (file_out,out_str);
+
+
+write ("*** 終了 ***\n");

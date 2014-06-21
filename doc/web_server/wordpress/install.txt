@@ -1,0 +1,46 @@
+<blockquote>
+	sudo apt-get install mysql-server<p />
+	sudo apt-get install phpmyadmin<p />
+
+	<blockquote>
+		例えば、/home/scott で、<br />
+		tar xvfz wordpress-3.9.1.tar.gz<p />
+		cd /var/www<br />
+		ln -s /home/scott/wordpress wordpress<br />
+	</blockquote>
+</blockquote>
+
+MySQL の設定<p />
+
+	<blockquote>
+	クライアントで、http://localhost/phpmyadmin/ にアクセスして下さい。<p />
+	例えば、ユーザ　wordpress<br />
+		パスワード　tiger<br />
+		でユーザーを作成して下さい。<p />
+	データベース wordpress を作成して下さい。<p />
+	</blockquote>
+
+	<blockquote>
+	MySQL の設定の確認方法
+	<blockquote>
+		mysql -hlocalhost -uwordpress -ptiger<p />
+		<a href="./mysql.txt">実行結果</a><p />
+	</blockquote>
+	</blockquote>
+
+クライアントで、http://localhost/wordpress/ にアクセスして下さい。<p />
+	<ol>
+	<li>wp-config.php ファイルが存在しないようです。スタートするにはこのファイルが必要です。</li>
+		<blockquote>
+		cp wp-config-sample.php wp-config.php<p />
+		</blockquote>
+
+	<li>データベース接続確立エラー</li>
+		<blockquote>
+		wp-config.php を編集します。<p />
+		define(‘DB_NAME’, ‘wordpress’);<br />
+		define(‘DB_USER’, ‘wordpress’);<br />
+		define('DB_PASSWORD', 'tiger');<br />
+		</blockquote>
+	</ol>
+</blockquote>

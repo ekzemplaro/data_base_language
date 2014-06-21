@@ -1,0 +1,5 @@
+export http_proxy=""
+#
+echo "import couch_delete" > tmp_execute.py
+#
+python ./tmp_execute.py t2023

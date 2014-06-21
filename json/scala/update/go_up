@@ -1,0 +1,4 @@
+export SCALA_COMMON="/var/www/data_base/common/scala_common"
+export CPX=.:$SCALA_COMMON
+#
+scala -classpath $CPX json_update /var/tmp/json/cities.json t0923 4521300

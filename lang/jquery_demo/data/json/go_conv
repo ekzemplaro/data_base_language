@@ -1,0 +1,31 @@
+JSON_CONVERT=/var/www/data_base/tools/json_convert
+#
+#
+$JSON_CONVERT/json_convert.js aichi.json
+$JSON_CONVERT/json_convert.js aomori.json
+$JSON_CONVERT/json_convert.js chiba.json
+$JSON_CONVERT/json_convert.js ehime.json
+$JSON_CONVERT/json_convert.js fukui.json
+$JSON_CONVERT/json_convert.js fukushima.json
+$JSON_CONVERT/json_convert.js gifu.json
+$JSON_CONVERT/json_convert.js gunma.json
+$JSON_CONVERT/json_convert.js hiroshima.json
+$JSON_CONVERT/json_convert.js hokkaido.json
+$JSON_CONVERT/json_convert.js hyogo.json
+$JSON_CONVERT/json_convert.js ibaraki.json
+$JSON_CONVERT/json_convert.js ishikawa.json
+$JSON_CONVERT/json_convert.js iwate.json
+$JSON_CONVERT/json_convert.js kagoshima.json
+$JSON_CONVERT/json_convert.js kanagawa.json
+$JSON_CONVERT/json_convert.js mie.json
+$JSON_CONVERT/json_convert.js miyagi.json
+$JSON_CONVERT/json_convert.js miyazaki.json
+$JSON_CONVERT/json_convert.js nagano.json
+$JSON_CONVERT/json_convert.js nagasaki.json
+$JSON_CONVERT/json_convert.js niigata.json
+$JSON_CONVERT/json_convert.js okayama.json
+$JSON_CONVERT/json_convert.js saitama.json
+$JSON_CONVERT/json_convert.js shizuoka.json
+$JSON_CONVERT/json_convert.js tochigi.json
+$JSON_CONVERT/json_convert.js yamagata.json
+$JSON_CONVERT/json_convert.js yamaguchi.json

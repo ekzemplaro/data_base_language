@@ -1,0 +1,2 @@
+#
+./xml_read.scm /var/tmp/xml_file/cities.xml

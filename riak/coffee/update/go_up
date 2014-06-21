@@ -1,0 +1,4 @@
+#
+export NODE_PATH=/home/uchida/node_modules
+#
+./riak_update.coffee t3252 72953600

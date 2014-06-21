@@ -1,0 +1,1 @@
+ecl -shell tyrant_create.lisp -eval '(quit)'

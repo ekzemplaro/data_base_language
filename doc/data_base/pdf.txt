@@ -1,0 +1,52 @@
+<title>pdf</title>
+</head>
+<body>
+<h1>pdf</a></h1>
+<blockquote>
+</blockquote>
+<pre>
+</pre>
+<blockquote>
+</blockquote>
+
+PHP<p />
+<blockquote>
+	<pre>
+	ii  php-fpdf   3:1.7.dfsg-1     PHP class to generate PDF files
+	</pre>
+</blockquote>
+
+Perl<p />
+<blockquote>
+	<pre>
+	ii  libpdf-api2-perl    2.019-1    module for creating or modifying PDF documents in Perl
+	</pre>
+</blockquote>
+
+Python<p />
+<blockquote>
+	python-reportlab<p />
+</blockquote>
+
+Ruby<p />
+<blockquote>
+	#gem install PDF<p />
+</blockquote>
+
+node.js<p />
+<blockquote>
+	<a href="http://pdfkit.org/">PDFKit</a><p />
+	npm install pdfkit<p />
+</blockquote>
+
+Java<p />
+<blockquote>
+	iText-5.0.5.jar<br />
+	iTextAsian-5.0.1.jar<br />
+</blockquote>
+
+C#<p />
+<blockquote>
+	itextsharp.dll<br />
+	iTextAsian.dll<br />
+</blockquote>

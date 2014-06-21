@@ -1,0 +1,11 @@
+export http_proxy=""
+#
+SHARE=/usr/share/java
+JAVA_CLASSPATH=$SHARE/js.jar:$SHARE/jline.jar
+#
+#
+export CPP=$SHARE/commons-httpclient-3.1.jar
+#
+export CLASSPATH=.:$JAVA_CLASSPATH:$CPP
+#
+./couch_read.js

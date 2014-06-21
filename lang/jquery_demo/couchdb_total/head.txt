@@ -1,0 +1,11 @@
+<script src="/js/jquery.json-2.4.min.js"></script>
+<script src="couchdb_total.js"></script>
+<script src="show_contents.js"></script>
+<script src="couchdb_update.js"></script>
+<script src="couchdb_delete.js"></script>
+<script src="couchdb_initialize.js"></script>
+<script src="contents_table.js"></script>
+<script src="change_monitor.js"></script>
+<link rel="stylesheet" href="jquery_couchdb.css">
+<title>jQuery CouchDB (Nov/11/2013)</title>
+</head>

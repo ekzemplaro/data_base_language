@@ -1,0 +1,25 @@
+<title>C# Apr/16/2014</title>
+</head>
+<body>
+<h2><a href="http://en.csharp-online.net">C#</a></h2><p />
+
+apt-get install mono-complete<p />
+<blockquote>
+<pre>
+ii  mono-mcs   3.2.8+dfsg-4ubuntu1   all   Mono C# 2.0 / 3.0 / 4.0 / 5.0  compiler for CLI 2.0 / 4.0 / 4.5
+</pre>
+</blockquote>
+
+Windows7 で csc.exe を使う方法<br />
+<blockquote>
+環境設定<br />
+"C:\Program Files\Microsoft Visual Studio 12.0\Common7\Tools\vsvars32.bat"<p />
+コンパイル<br />
+csc hello.cs<br />
+</blockquote>
+
+Arch Linux<p />
+<blockquote>
+cannot execute binary file: Exec format error<p />
+# systemctl restart systemd-binfmt<p />
+</blockquote>

@@ -1,0 +1,4 @@
+#
+../single_check.sh mysql gauche
+../single_check.sh postgre gauche
+../single_check.sh firebird gauche

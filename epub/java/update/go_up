@@ -1,0 +1,7 @@
+COMMON=/var/www/data_base/common
+JAVA_COMMON=$COMMON/java_common
+JAR=$COMMON/jar
+#
+export CLASSPATH=./:$JAR/tika-app-1.0.jar:$JAR/epubgen-0.5.0.jar:$JAVA_COMMON
+#
+java epub_update cities.epub t1938 45329800

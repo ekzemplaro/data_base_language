@@ -1,0 +1,1 @@
+/opt/acl90express/alisp -#! xml_read.cl /var/tmp/xml_file/cities.xml

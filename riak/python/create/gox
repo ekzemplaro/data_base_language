@@ -1,0 +1,2 @@
+export http_proxy=""
+./riak_create.py

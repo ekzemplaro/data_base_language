@@ -1,0 +1,9 @@
+export PATH=$PATH:/home/uchida/dbm/hbase/hbase-0.94.11/bin
+#
+export GROOVY_COMMON=/var/www/data_base/common/groovy_common
+#
+export GROOVY_JAR=/usr/share/java/groovy-all.jar:/usr/share/java/groovy.jar
+#
+export CLASSPATH=./:$GROOVY_JAR:$GROOVY_COMMON:`hbase classpath`
+#
+java hbase_delete t1673

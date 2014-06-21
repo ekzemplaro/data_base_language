@@ -1,0 +1,8 @@
+#
+export http_proxy=""
+#
+#
+export NODE_PATH=/home/uchida/node_modules
+#
+./couch_create.js 
+#

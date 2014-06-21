@@ -1,0 +1,1 @@
+ecl -shell mcached_create.lisp -eval '(quit)'

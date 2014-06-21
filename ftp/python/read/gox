@@ -1,0 +1,4 @@
+#
+export http_proxy=""
+export ftp_proxy=""
+./ftp_read.py

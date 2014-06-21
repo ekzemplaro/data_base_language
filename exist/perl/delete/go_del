@@ -1,0 +1,2 @@
+export http_proxy=""
+./exist_delete.pl t4251

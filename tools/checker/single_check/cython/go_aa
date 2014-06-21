@@ -1,0 +1,7 @@
+#
+../single_check.sh text cython
+../single_check.sh csv cython
+../single_check.sh xml cython
+../single_check.sh json cython
+#../single_check.sh excel cython
+#

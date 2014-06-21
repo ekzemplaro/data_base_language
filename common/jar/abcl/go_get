@@ -1,0 +1,5 @@
+#
+ABCL=/home/uchida/lang/abcl/abcl-bin-1.2.1
+#
+cp -p $ABCL/abcl.jar .
+cp -p $ABCL/abcl-contrib.jar .

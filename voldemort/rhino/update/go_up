@@ -1,0 +1,7 @@
+export COMMON=/var/www/data_base/common
+export JAVA_COMMON=$COMMON/java_common
+export JAR=$COMMON/jar
+VOLDEMORT=/home/uchida/dbm/voldemort/voldemort-0.90
+export CLASSPATH=./:$VOLDEMORT/dist/voldemort-0.90.jar:$VOLDEMORT/dist/voldemort-test-0.90.jar:$VOLDEMORT/lib/*:$JAR/jsonic-1.1.2.jar:$JAVA_COMMON
+#
+java voldemort_update t3054 23894500

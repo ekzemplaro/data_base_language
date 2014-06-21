@@ -1,0 +1,69 @@
+<title>xml_file</title>
+</head>
+<body>
+<h1>xml_file</h1>
+<ol>
+</ol>
+<ol>
+</ol>
+
+Bash<p />
+<ol>
+xalan<p />
+</ol>
+
+
+Python<p />
+<ol>
+</ol>
+
+Perl<p />
+<ol>
+	libxml-dom-perl<p />
+	libxml-simple-perl<p />
+</ol>
+
+Lua<p />
+<ol>
+	<a href="http://viremo.eludi.net/LuaXML/">LuaXML</a><p />
+	LuaXML_101012.zip<p />
+	gcc -shared LuaXML_lib.c -I/usr/include/lua5.1<br />
+	-o LuaXML_lib.so -fPIC<p />
+</ol>
+
+Tcl<p />
+<blockquote>
+	tclxml<p />
+</blockquote>
+
+vala<p />
+<blockquote>
+libxml2-dev<br />
+</blockquote>
+
+Rhino<p />
+<ol>
+	Bug in Ubuntu 10.04<p />
+	Can be fixed by replacing /usr/share/java/js.jar <p />
+	<a href="http://ftp.mozilla.org/pub/mozilla.org/js/">rhino1_7R2.zip</a><p />
+</ol>
+Jan/11/2010<br />
+<ol>
+<pre>
+This bug was fixed in the package rhino - 1.7R2-4ubuntu2
+
+---------------
+rhino (1.7R2-4ubuntu2) natty; urgency=low
+
+  * Re-enable E4X support (LP: #304702):
+    - debian/control: Added Build-Depends on libxmlbeans-java
+    - debian/ant.properties: Remove no-e4x flag
+ -- James Page <email address hidden> Mon, 15 Nov 2010 08:51:04 +0000
+
+</pre>
+
+</ol>
+
+Java<p />
+<blockquote>
+</blockquote>

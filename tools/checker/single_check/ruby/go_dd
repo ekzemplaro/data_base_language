@@ -1,0 +1,5 @@
+#
+#../single_check.sh xindice ruby
+#../single_check.sh exist ruby
+../single_check.sh basex ruby
+#

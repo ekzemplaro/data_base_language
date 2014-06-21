@@ -1,0 +1,5 @@
+#
+#
+find -name \*.html > /tmp/tmp0024
+awk -v aa='jquery-1.6' '{print "grep -H",aa,$1}' /tmp/tmp0024 > /tmp/go_tmp0045
+bash /tmp/go_tmp0045 

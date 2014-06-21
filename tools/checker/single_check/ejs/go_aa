@@ -1,0 +1,7 @@
+#
+../single_check.sh text ejs
+../single_check.sh csv ejs
+../single_check.sh xml ejs
+../single_check.sh json ejs
+#../single_check.sh excel ejs
+#

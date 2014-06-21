@@ -1,0 +1,8 @@
+COMMON=/var/www/uchida/data_base/common/csharp_common
+csc dummy.cs couch_csharp_read.aspx.cs \
+	xindice_csharp_read.aspx.cs \
+	sqlite3_csharp_read.aspx.cs \
+		/r:$COMMON/table_manipulate.dll \
+		/r:Mono.Data.Sqlite \
+	 /r:System.Web \
+	 /r:System.Data

@@ -1,0 +1,28 @@
+<title>clozure Sep/17/2013</title>
+</head>
+<body>
+<h2><a href="http://ccl.clozure.com/">Clozure Common Lisp</a></h2><p />
+<blockquote>
+wget ftp://ftp.clozure.com/pub/release/1.9/ccl-1.9-linuxx86.tar.gz<p />
+</blockquote>
+
+<blockquote>
+	sudo ln -s /opt/ccl-1.9/scripts/ccl64 /usr/local/bin/ccl64<p />
+
+	ccl64 を編集<p />
+	<blockquote>
+		CCL_DEFAULT_DIRECTORY=/opt/ccl-1.9<p />
+	</blockquote>
+</blockquote>
+
+<pre>
+$ ccl64
+Welcome to Clozure Common Lisp Version 1.9-r15757   (LinuxX8664)!
+? (require :asdf)
+:ASDF
+("ASDF")
+? (asdf:asdf-version)
+"2.32"
+? (quit)
+</pre>
+

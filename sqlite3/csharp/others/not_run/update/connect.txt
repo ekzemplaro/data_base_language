@@ -1,0 +1,19 @@
+	System.PlatformID platID = System.Environment.OSVersion.Platform;
+
+	string	file_sqlite3 = "";
+	
+	if (platID.ToString ().Equals ("Unix"))
+		{
+		file_sqlite3 = "/var/tmp/sqlite3/sample03.db";
+		}
+	else
+		{
+		file_sqlite3 = @"c:\var\tmp\sqlite3\sample03.db";
+		}
+
+	SqliteConnection sqlite_conn = new SqliteConnection
+		(@"Data Source = " + file_sqlite3
+			+ ";UTF8Encoding=True;Version=3");
+  
+	string str_query =
+		"select ID,Name,Population,date_mod from cities";

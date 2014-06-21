@@ -1,0 +1,20 @@
+clean:
+	cd haxe; make clean;
+	cd gst; make clean;
+	cd swipl; make clean;
+	cd kaya; make clean;
+	cd pascal; make clean;
+	cd boo; make clean;
+	cd gfortran; make clean;
+	cd cobol; make clean;
+	cd ada; make clean;
+	cd ocaml; make clean;
+	cd scala; make clean;
+	cd groovy; make clean;
+	cd go; make clean;
+	cd cplus; make clean;
+	cd vala; make clean;
+	cd D; make clean;
+	cd cython; make clean;
+	cd csharp; make clean;
+	cd falcon; make clean;

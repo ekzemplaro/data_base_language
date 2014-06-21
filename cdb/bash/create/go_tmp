@@ -1,0 +1,18 @@
+echo -n "+5,58:t2761->"
+cat t2761
+echo -n "+5,59:t2762->"
+cat t2762
+echo -n "+5,58:t2763->"
+cat t2763
+echo -n "+5,59:t2764->"
+cat t2764
+echo -n "+5,58:t2765->"
+cat t2765
+echo -n "+5,60:t2766->"
+cat t2766
+echo -n "+5,63:t2767->"
+cat t2767
+echo -n "+5,60:t2768->"
+cat t2768
+echo -n "+5,60:t2769->"
+cat t2769

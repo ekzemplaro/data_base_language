@@ -1,0 +1,4 @@
+#
+JAVA_COMMON=/var/www/data_base/common/java_common
+export CLASSPATH=./:/usr/share/java/jxl.jar:$JAVA_COMMON
+java excel_create /var/tmp/excel/cities.xls

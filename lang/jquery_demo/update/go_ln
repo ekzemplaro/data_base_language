@@ -1,0 +1,3 @@
+#
+ln -s ../../../js/table_manipulate.js .
+#

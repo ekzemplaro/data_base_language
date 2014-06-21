@@ -1,0 +1,4 @@
+JAVA_CLASSPATH="/usr/share/java/js.jar:/usr/share/java/jline.jar"
+export CLASSPATH=.:$JAVA_CLASSPATH
+#
+rhino json_update.js /var/tmp/json/cities.json t0927 7245600

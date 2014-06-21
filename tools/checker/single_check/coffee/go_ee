@@ -1,0 +1,10 @@
+#
+#../single_check.sh gdbm coffee
+#../single_check.sh berkeley coffee
+../single_check.sh mcached coffee
+../single_check.sh mcachedb coffee
+#
+../single_check.sh redis coffee
+../single_check.sh tcbn coffee
+#../single_check.sh tyrant coffee
+#

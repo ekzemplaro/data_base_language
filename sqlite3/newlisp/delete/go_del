@@ -1,0 +1,1 @@
+newlisp -c sqlite3_delete.lsp /var/tmp/sqlite3/cities.db t0715

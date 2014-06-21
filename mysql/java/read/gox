@@ -1,0 +1,4 @@
+#
+export JAVA_COMMON=/var/www/data_base/common/java_common
+export CLASSPATH=.:$JAVA_COMMON:/usr/share/java/mysql-connector-java.jar
+java mysql_read

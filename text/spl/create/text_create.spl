@@ -1,0 +1,40 @@
+// -----------------------------------------------------------------
+//	text_create.spl
+//
+//						Sep/06/2011
+// -----------------------------------------------------------------
+load "file";
+
+#file-as-code  /var/www/data_base/common/spl_common/text_manipulate.spl;
+// -----------------------------------------------------------------
+function data_prepare_proc ()
+{
+var dict_aa;
+
+dict_append_proc (dict_aa,'t2381','名古屋',82345,'1962-2-3');
+dict_append_proc (dict_aa,'t2382','豊橋',34576,'1962-6-12');
+dict_append_proc (dict_aa,'t2383','岡崎',92351,'1962-8-24');
+dict_append_proc (dict_aa,'t2384','一宮',38143,'1962-5-18');
+dict_append_proc (dict_aa,'t2385','蒲郡',51762,'1962-1-16');
+dict_append_proc (dict_aa,'t2386','常滑',62821,'1962-4-15');
+dict_append_proc (dict_aa,'t2387','大府',29456,'1962-10-12');
+dict_append_proc (dict_aa,'t2388','瀬戸',34198,'1962-8-24');
+dict_append_proc (dict_aa,'t2389','犬山',82345,'1962-9-3');
+
+	return (dict_aa);
+}
+
+// -----------------------------------------------------------------
+write ("*** 開始 ***\n");
+
+var file_out = argv[0];
+
+write (file_out ~ "\n");
+
+var dict_aa = data_prepare_proc ();
+
+text_write_proc (file_out,dict_aa);
+
+
+write ("*** 終了 ***\n");
+// -----------------------------------------------------------------

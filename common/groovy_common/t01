@@ -1,0 +1,8 @@
+static mongo_delete_proc (coll,key_in)
+{
+	println coll.getCount()
+
+	BasicDBObject query = new BasicDBObject()
+	query.put ("key",key_in)
+	coll.remove (query)
+}

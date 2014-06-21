@@ -1,0 +1,6 @@
+<hr />
+<button id="create">初期化</button><br />
+<hr />
+/var/www/data_base<p />
+<hr />
+<a href="html_src/jquery_csharp_create_src.html">jquery_csharp_create_src.html</a><p />

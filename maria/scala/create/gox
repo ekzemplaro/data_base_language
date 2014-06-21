@@ -1,0 +1,6 @@
+#
+export MYSQL_JAR=/usr/share/java/mysql-connector-java.jar
+export SCALA_COMMON="/var/www/data_base/common/scala_common"
+export CPX=.:$SCALA_COMMON:$MYSQL_JAR
+#
+scala -classpath $CPX maria_create

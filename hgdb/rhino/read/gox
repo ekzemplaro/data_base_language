@@ -1,0 +1,8 @@
+JAVA_CLASSPATH="/usr/share/java/js.jar:/usr/share/java/jline.jar"
+HGDB_ROOT=/home/uchida/dbm/hgdb/hypergraphdb-1.1
+export CLASSPATH=./:$HGDB_ROOT/hypergraphdb.jar:$HGDB_ROOT/jars/db.jar:$JAVA_CLASSPATH
+#
+#java -Djava.library.path=$HGDB_ROOT/native 
+#./hgdb_read.js -Djava.library.path=$HGDB_ROOT/native
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HGDB_ROOT/native
+./hgdb_read.js

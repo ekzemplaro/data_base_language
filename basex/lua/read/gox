@@ -1,0 +1,2 @@
+export http_proxy=""
+./basex_read.lua

@@ -1,0 +1,1 @@
+emacs --script text_read.el /var/tmp/plain_text/cities.txt

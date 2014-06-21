@@ -1,0 +1,14 @@
+JAVA_COMMON=/var/www/data_base/common/java_common
+#
+ln -s $JAVA_COMMON/dbxml_fetch.class dbxml_fetch.class
+ln -s $JAVA_COMMON/exist_fetch.class exist_fetch.class
+ln -s $JAVA_COMMON/exist_store.class exist_store.class
+ln -s $JAVA_COMMON/get_uri.class get_uri.class
+ln -s $JAVA_COMMON/json_util.class json_util.class
+ln -s $JAVA_COMMON/rdb_common.class rdb_common.class
+ln -s $JAVA_COMMON/sql_to_json.class sql_to_json.class
+ln -s $JAVA_COMMON/tcbn_manipulate.class tcbn_manipulate.class
+ln -s $JAVA_COMMON/xindice_fetch.class xindice_fetch.class
+ln -s $JAVA_COMMON/xml_str.class xml_str.class
+ln -s $JAVA_COMMON/xml_to_json.class xml_to_json.class
+#

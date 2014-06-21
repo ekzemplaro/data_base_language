@@ -1,0 +1,25 @@
+// -----------------------------------------------------------------
+//	basex_read.spl
+//
+//						Mar/02/2012
+// -----------------------------------------------------------------
+load "curl";
+load "xml";
+
+#file-as-code  /var/www/data_base/common/spl_common/xml_manipulate.spl;
+// -----------------------------------------------------------------
+write ("*** 開始 ***\n");
+
+var result = curl("http://admin:admin@localhost:8984/rest/cities?query=/");
+
+// debug result.header;
+// debug result.body;
+var str_xml = result.body;
+
+var keys = ["t4161","t4162","t4163","t4164","t4165",
+		"t4166","t4167","t4168","t4169"];
+
+xml_display_proc (str_xml,keys);
+
+write ("*** 終了 ***\n");
+// -----------------------------------------------------------------

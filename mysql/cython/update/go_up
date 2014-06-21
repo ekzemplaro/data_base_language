@@ -1,0 +1,5 @@
+#
+#
+echo "import mysql_update" > tmp_execute.py
+#
+python ./tmp_execute.py t3326 91645700

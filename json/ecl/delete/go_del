@@ -1,0 +1,2 @@
+#
+ecl -shell json_delete.lisp -eval '(quit)' -- /var/tmp/json/cities.json t0928

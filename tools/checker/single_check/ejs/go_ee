@@ -1,0 +1,10 @@
+#
+#../single_check.sh gdbm rhino
+#../single_check.sh berkeley rhino
+../single_check.sh mcached rhino
+../single_check.sh mcachedb rhino
+#
+#../single_check.sh redis rhino
+#../single_check.sh tcbn rhino
+#../single_check.sh tyrant rhino
+#

@@ -1,0 +1,1 @@
+../mongo_bash_read.sh

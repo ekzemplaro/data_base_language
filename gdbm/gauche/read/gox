@@ -1,0 +1,2 @@
+#
+./gdbm_read.scm /var/tmp/gdbm/cities.dir

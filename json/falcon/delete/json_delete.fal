@@ -1,0 +1,28 @@
+#! /usr/bin/falcon
+//
+//	json_delete.fal
+//
+//					Feb/19/2014
+// -------------------------------------------------------------------
+import from json
+// -------------------------------------------------------------------
+printl ("*** 開始 ***")
+
+json_file=args[0]
+key_in=args[1]
+printl (json_file)
+printl (key_in)
+stream = InputStream (json_file)
+dict_aa = json.JSONdecode (stream)
+stream.close()
+//
+dict_aa.remove (key_in)
+//
+json_str = json.JSONencode (dict_aa)
+stream = OutputStream (json_file)
+stream.setEncoding ("utf-8")
+stream.writeText (json_str)
+stream.close()
+//
+printl ("*** 終了 ***")
+// -------------------------------------------------------------------

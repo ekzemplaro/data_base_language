@@ -1,0 +1,61 @@
+#! /usr/bin/bsh
+//
+//	hsqldb_create.bsh
+//
+//						Sep/27/2012
+//
+// ---------------------------------------------------------------------
+source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
+source ("/var/www/data_base/common/bsh_common/sql_manipulate.bsh");
+// ---------------------------------------------------------------------
+Map data_prepare_proc ()
+{
+	Map dict_aa = new HashMap ();
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t4671","鹿児島",13746,"2000-12-5");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t4672","指宿",52674,"2000-6-23");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t4673","志布志",31894,"2000-9-24");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t4674","川内",81624,"2000-9-14");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t4675","鹿屋",72539,"2000-10-12");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t4676","枕崎",28529,"2000-7-28");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t4677","出水",39457,"2000-6-19");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t4678","阿久根",65284,"2000-10-15");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t4679","霧島",74391,"2000-11-24");
+
+	return	dict_aa;
+}
+
+// ---------------------------------------------------------------------
+System.out.println ("*** 開始 ***");
+
+Map dict_aa = data_prepare_proc ();
+
+Class.forName ("org.hsqldb.jdbcDriver");
+
+String database = "file:/var/tmp/hsqldb/cities;shutdown=true";
+
+Connection conn =
+	DriverManager.getConnection("jdbc:hsqldb:" + database, "SA","");
+
+sql_dict_to_db_proc (conn,dict_aa);
+
+conn.close ();
+System.out.println ("*** 終了 ***");
+// ---------------------------------------------------------------------

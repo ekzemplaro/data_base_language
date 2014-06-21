@@ -1,0 +1,8 @@
+#
+../single_check.sh gdbm ruby
+../single_check.sh berkeley ruby
+../single_check.sh cdb ruby
+../single_check.sh mcached ruby
+../single_check.sh mcachedb ruby
+#
+#

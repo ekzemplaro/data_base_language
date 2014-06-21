@@ -1,0 +1,3 @@
+#
+../single_check.sh sqlite3 clojure
+#../single_check.sh mssql clojure

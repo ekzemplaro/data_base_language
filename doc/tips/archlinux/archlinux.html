@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+</script>
+<title>ArchLinux Jun/18/2014</title>
+</head>
+<body>
+<h2>ArchLinux のインストール</h2><p />
+<blockquote>
+	# fdisk /dev/sda<p />
+	# mkfs -t ext4 /dev/sda1<p />
+	# mkfs -t ext4 /dev/sda3<br />
+	# mkswap /dev/sda3<br />
+	# swapon /dev/sda3<p />
+	# vi /etc/pacman.d/mirrorlist<p />
+	# mount /dev/sda1 /mnt<p />
+	# export http_proxy="http://host_proxy:80"<p />
+	# pacstrap /mnt base base-devel<p />
+	# genfstab -U -p /mnt >> /mnt/etc/fstab<p />
+	# arch-chroot /mnt<p />
+</blockquote>
+
+<h2>ArchLinux の設定</h2><p />
+追加のインストール<p />
+<blockquote>
+# pacman -S openssh<br />
+# pacman -S net-tools<br />
+# pacman -S traceroute<br />
+
+</blockquote>
+
+最新に保つ方法<p />
+<blockquote>
+# pacman -Syu<br />
+</blockquote>
+
+sshd の設定<p />
+<blockquote>
+	手動で起動<br />
+	# systemctl start sshd<p />
+
+	ブート時に自動で起動<br />
+	# systemctl enable sshd<p />
+</blockquote>
+
+固定アドレスの設定<p />
+<blockquote>
+# cp /etc/netctl/examples/ethernet-static /etc/netctl/profile<p />
+/etc/netctl/profile の編集<br />
+<blockquote>
+<pre>
+Description='A basic static ethernet connection'
+Interface=enp2s0
+Connection=ethernet
+IP=static
+Address=('172.20.208.216/21')
+Gateway='172.20.208.224'
+DNS=('172.20.248.233')
+<pre />
+</blockquote>
+結果の反映<br />
+	<blockquote>
+	# netctl start profile<p />
+	</blockquote>
+dhcpd を止める<br />
+	<blockquote>
+	# systemctl disable dhcpcd.service<p />
+	</blockquote>
+起動時に固定アドレスを設定<br />
+	<blockquote>
+	# netctl enable profile<p />
+	</blockquote>
+</blockquote>
+
+nginx の設定<p />
+<blockquote>
+インストール<br />
+	<blockquote>
+	# pacman -S nginx<br />
+	# pacman -S php-fpm<br />
+	</blockquote>
+</blockquote>
+<blockquote>
+nginx の起動<br />
+	<blockquote>
+	# systemctl start nginx<p />
+	/usr/share/nginx/html/index.html が表示される。<br />
+	</blockquote>
+
+	<a href="./php.ini.txt">/etc/php/php.ini</a> の設定<p />
+	<blockquote>
+	open_basedir = /var/www/:/var/tmp/:/home/:/tmp/:/usr/share/pear/:/usr/share/webapps/<br />
+	</blockquote>
+
+	<a href="./nginx.conf.txt">/etc/nginx/nginx.conf</a> の設定<p />
+	<blockquote>
+		fastcgi_pass unix:/run/php-fpm/php-fpm.sock;<br />
+	</blockquote>
+	<a href="./php-fpm.conf.txt">/etc/php/php-fpm.conf</a> の設定<p />
+	<blockquote>
+		listen = /run/php-fpm/php-fpm.sock<br />
+	</blockquote>
+
+	再起動<p />
+	<blockquote>
+	# systemctl restart php-fpm<br />
+	# systemctl restart nginx<br />
+	</blockquote>
+</blockquote>
+
+ftp サーバーの設定<p />
+<blockquote>
+	インストール<br />
+		<blockquote>
+		# pacman -S vsftpd<p />
+		</blockquote>
+	起動<br />
+		<blockquote>
+		# systemctl start vsftpd.service<p />
+		</blockquote>
+	ブート時に自動で起動<br />
+		<blockquote>
+		# systemctl enable vsftpd.service<p />
+		</blockquote>
+	設定<br />
+		<blockquote>
+		/etc/vsftpd.conf<p />
+		</blockquote>
+	</blockquote>
+
+nfs サーバーの設定<p />
+<blockquote>
+	インストール<p />
+	<blockquote>
+	# pacman -S nfs-utils<p />
+	</blockquote>
+/etc/exports の設定<br />
+	<blockquote>
+<pre>
+	# /etc/exports: NFS file systems being exported.  See exports(5).
+/tmp    nlf132(async,rw,no_subtree_check) cddn007(async,rw,no_subtree_check)
+/home/uchida    nlf132(async,rw,no_subtree_check) cddn007(async,rw,no_subtree_check)
+/var/www   nlf132(async,rw,no_subtree_check) cddn007(async,rw,no_subtree_check)
+</pre>
+#
+	</blockquote>
+nfs の起動<br />
+	<blockquote>
+	# /etc/init.d/nfs start<br />
+	</blockquote>
+自動的に起動させる。<br />
+	<blockquote>
+	# rc-update add nfs default<br />
+	</blockquote>
+</blockquote>
+
+	<blockquote>
+# systemctl status nfsd.service<br />
+	</blockquote>
+
+
+samba サーバーの設定<p />
+<blockquote>
+	インストール<p />
+	<blockquote>
+	# pacman -S samba<p />
+	# pacman -S smbclient<p />
+	</blockquote>
+	/etc/samba/smb.conf の設定<br />
+	<blockquote>
+	<pre>
+	[tmp]
+	   comment = Temporary file space
+	   path = /tmp
+	   read only = no
+	   public = yes
+	</pre>
+	</blockquote>
+	ユーザーの設定<br />
+	<blockquote>
+		# pdbedit -a -u user<p />
+	</blockquote>
+	起動<br />
+		<blockquote>
+		# systemctl start nmbd<p />
+		# systemctl start smbd<p />
+		</blockquote>
+
+</blockquote>
+
+
+
+couch サーバーの設定<p />
+<blockquote>
+	インストール<br />
+		<blockquote>
+		# pacman -S erlang couchdb<p />
+		</blockquote>
+	起動<br />
+		<blockquote>
+		# systemctl start couchdb<p />
+		</blockquote>
+
+	設定<br />
+	<blockquote>
+	/etc/couchdb/default.ini<br />
+		<blockquote>
+		bind_address = 0.0.0.0<br />
+		allow_jsonp = true<br />
+		</blockquote>
+	/etc/couchdb/local.ini<br />
+		<blockquote>
+		bind_address = 0.0.0.0<br />
+		</blockquote>
+	</blockquote>
+</blockquote>
+
+sudo の設定< p />
+	<blockquote>
+	# visudo<p />
+	<blockquote>
+		%wheel ALL=(ALL) ALL<br />
+		%wheel ALL=(ALL) NOPASSWD: ALL<br />
+		%sudo   ALL=(ALL) ALL<br />
+	</blockquote>
+	</blockquote>
+Java のインストール<p />
+	<blockquote>
+	# pacman -S jre7-openjdk jdk7-openjdk<br />
+	</blockquote>
+
+
+<hr />
+既にインストールしたパッケージの情報を得る<p />
+	<blockquote>
+	$ pacman -Qi パッケージ名<br />
+	</blockquote>
+<hr />
+<a href="/data_base/">Return</a><p />
+Jun/18/2014 AM 08:15<p />
+</body>
+</html>

@@ -1,0 +1,4 @@
+#
+#
+./json_create.py /var/tmp/json/cities.json
+#

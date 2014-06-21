@@ -1,0 +1,10 @@
+#
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/jre
+export PATH=$PATH:/home/uchida/dbm/hbase/hbase-0.96.0-hadoop2/bin
+#
+#
+JAVA_COMMON=/var/www/data_base/common/java_common
+#
+export CLASSPATH=./:$JAVA_COMMON:`hbase classpath`
+#
+java hbase_update t1674 51892600

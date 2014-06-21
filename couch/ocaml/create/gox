@@ -1,0 +1,11 @@
+#
+export http_proxy=""
+curl http://host_dbase:5984/_all_dbs
+#
+#curl -X DELETE  http://172.20.129.189:5984/city
+#curl -X PUT  http://172.20.129.189:5984/city
+#
+#
+export http_proxy=""
+./couch_create
+#

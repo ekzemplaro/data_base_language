@@ -1,0 +1,47 @@
+<meta content="Program Language Examples to connect to ftp" name="description">
+<meta content="ftp,クライアント,接続,言語,サンプル" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<title>ftp</title>
+</head>
+<body>
+<h1>ftp</h1>
+<blockquote>
+<pre>
+ii  vsftpd    3.0.2-1ubuntu2   amd64    lightweight, efficient FTP server written for security
+</pre>
+</blockquote>
+
+<blockquote>
+/etc/vsftpd.conf<p />
+<blockquote>
+	local_enable=YES<p />
+	write_enable=YES<p />
+</blockquote>
+再起動<p />
+	<blockquote>
+	sudo service vsftpd stop<br />
+	sudo service vsftpd start<br />
+	</blockquote>
+
+</blockquote>
+
+<hr />
+How to mount<br />
+<blockquote>
+export http_proxy=""<br />
+export ftp_proxy=""<br />
+curlftpfs -o uid=1000,gid=1000,user=scott:tiger ftp://host_dbase /mnt/ftp<br />
+</blockquote>
+<hr />
+
+Python<p />
+<pre>
+</pre>
+
+Java<p />
+<blockquote>
+</blockquote>
+
+C#<p />
+<blockquote>
+</blockquote>

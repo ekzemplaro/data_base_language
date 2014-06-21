@@ -1,0 +1,4 @@
+#
+#
+./sqlite3_create.php /var/tmp/sqlite3/cities.db
+#./sqlite3_create.php cities.db

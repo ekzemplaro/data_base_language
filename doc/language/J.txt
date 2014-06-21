@@ -1,0 +1,22 @@
+<meta content="Program Language Examples in J" name="description">
+<meta content="J,クライアント,接続,言語,サンプル" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<title>J Mar/02/2012</title>
+</head>
+<body>
+<h2><a href="http://www.jsoftware.com">J</a></h2><p />
+
+
+How to install<p />
+<blockquote>
+	sudo ./j701a_linux64.sh  -install /opt/j<p />
+	sudo mv /opt/j/j64-701 /opt/j/j64_701<p />
+</blockquote>
+
+<blockquote>
+	<a href="http://www.jsoftware.com/help/user/hashbang.htm">
+		Unix J #! script</a><p />
+</blockquote>
+
+<blockquote>
+</blockquote>

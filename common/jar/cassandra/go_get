@@ -1,0 +1,7 @@
+#
+CASSANDRA=/home/uchida/dbm/cassandra/apache-cassandra-2.0.2
+JDBC=/home/uchida/dbm/cassandra/java/jdbc
+#
+cp -p $CASSANDRA/lib/*.jar .
+#
+cp -p $JDBC/cassandra-jdbc-1.2.5.jar .

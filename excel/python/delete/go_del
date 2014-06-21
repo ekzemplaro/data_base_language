@@ -1,0 +1,2 @@
+#
+./excel_delete.py /var/tmp/excel/cities.xls t2977

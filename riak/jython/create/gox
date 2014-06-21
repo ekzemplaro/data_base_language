@@ -1,0 +1,3 @@
+export http_proxy=""
+export CLASSPATH=./:/usr/share/java/commons-httpclient-3.1.jar
+./riak_create.py

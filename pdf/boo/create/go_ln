@@ -1,0 +1,5 @@
+#
+DLL=/var/www/data_base/common/dll
+#
+ln -s $DLL/itextsharp.dll itextsharp.dll
+ln -s $DLL/iTextAsian.dll iTextAsian.dll

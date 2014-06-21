@@ -1,0 +1,7 @@
+#
+export http_proxy=""
+#
+#
+echo "import basex_read" > tmp_execute.py
+#
+python ./tmp_execute.py

@@ -1,0 +1,9 @@
+insert into cities values ('t3461','広島',72814,'2001-9-14');
+insert into cities values ('t3462','福山',41738,'2001-7-21');
+insert into cities values ('t3463','東広島',92513,'2001-6-12');
+insert into cities values ('t3464','呉',93167,'2001-9-29');
+insert into cities values ('t3465','尾道',95419,'2001-3-18');
+insert into cities values ('t3466','竹原',82314,'2001-2-21');
+insert into cities values ('t3467','三次',76152,'2001-8-16');
+insert into cities values ('t3468','大竹',37541,'2001-7-7');
+insert into cities values ('t3469','府中',46518,'2001-10-9');

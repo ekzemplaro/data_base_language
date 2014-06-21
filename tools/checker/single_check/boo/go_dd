@@ -1,0 +1,8 @@
+#
+../single_check.sh mcached boo
+../single_check.sh mcachedb boo
+#
+../single_check.sh redis boo
+#../single_check.sh tcbn boo
+../single_check.sh tyrant boo
+#

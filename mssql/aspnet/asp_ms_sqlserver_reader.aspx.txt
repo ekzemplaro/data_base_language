@@ -1,0 +1,22 @@
+<%@ Page Language="C#" AutoEventWireup="True" CodeFile="asp_ms_sqlserver_reader.aspx.cs" Inherits="asp_ms_sqlserver_reader" %>
+
+<html>
+<head runat="server">
+<title>asp_ms_sqlserver_reader.aspx</title>
+</head>
+
+<body>
+<ol>
+<h2>City Population (MS SQLServer)</h2>
+</ol>
+    <form id="form1" runat="server">
+    <div>
+        <asp:GridView ID="GridView_A" runat="server">
+        </asp:GridView>
+    </div>
+    </form>
+<p>
+<hr>
+<a href="../../sample.html">Return</a><p>
+</body>
+</html> 

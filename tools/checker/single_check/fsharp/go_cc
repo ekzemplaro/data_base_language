@@ -1,0 +1,5 @@
+#
+#
+../single_check.sh xindice fsharp
+../single_check.sh exist fsharp
+#

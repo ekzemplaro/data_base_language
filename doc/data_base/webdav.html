@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<script src="/js/jquery-2.1.0.min.js"></script>
+<meta content="Program Language Examples to connect to WebDAV" name="description">
+<meta content="WebDAV,クライアント,接続,言語,サンプル" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<title>WebDAV</title>
+</head>
+<body>
+<h1>WebDAV</h1>
+
+<blockquote>
+	sudo a2enmod dav<br />
+	sudo a2enmod dav_fs<br />
+</blockquote>
+
+/etc/apache2/sites-available/hoge<p />
+
+<blockquote>
+	Listen 3004<br />
+	&lt;VirtualHost *:3004&gt;<br />
+	<blockquote>
+        DocumentRoot /home/scott/work_area<br />
+        &lt;Directory /home/scott/work_area&gt;<br />
+	<blockquote>
+                Options Indexes MultiViews<br />
+		DAV On<br />
+                AllowOverride None<br />
+                Order allow,deny<br />
+                allow from all<br />
+	</blockquote>
+
+        &lt;/Directory&gt;<br />
+	</blockquote>
+	&lt;/VirtualHost&gt;<br />
+
+</blockquote>
+
+
+sudo service apache2 restart<p />
+
+Linux からのマウント、アンマウント<br />
+<blockquote>
+	sudo mount -t davfs http://host_aa:3004 /mnt/host_aa/webdav<p />
+	sudo umount /mnt/host_aa/webdav/<p />
+</blockquote>
+
+Windows からのマウント、アンマウント<br />
+<blockquote>
+	net use s: http://host_aa:3004<p />
+	net use s: /delete<p />
+</blockquote>
+
+Python<p />
+<blockquote>
+</blockquote>
+
+Java<p />
+<blockquote>
+</blockquote>
+
+C#<p />
+<blockquote>
+</blockquote>
+
+<hr />
+Windows の領域をWebDAV で、読み書きできるようにする方法<p />
+<blockquote>
+	<ol>
+	<li>fsmount というグループを作成する。</li>
+		<blockquote>
+		sudo groupadd fsmount<p />
+		</blockquote>
+	<li>fsmount というグループで読み書きできるようにマウントする。</li>
+		<blockquote>
+		sudo mount -t cifs -o "codepage=cp932,iocharset=utf8,<br />
+		username=user_aa,passwd=user_aa,workgroup=AAA,<br />
+		uid=nobody,gid=fsmount,file_mode=0775,dir_mode=0775"<br />
+		 //host_windows/place /mnt/place
+			<p />
+		</blockquote>
+	<li>apache2 を、fsmount というグループで実行する。</li>
+		/etc/apache2/httpd.conf<p />
+		Group fsmount<p />
+		sudo service apache2 stop<br />
+		sudo service apache2 start<br />
+	</ol>
+</blockquote>
+
+iPad で使えるWebDAV クライアント<p />
+<blockquote>
+	WebDAV Nav (認証なしで使える）<p />
+	OverTheAir (認証なしで使えない）<p />
+	GoodReader (認証なしで使える）<p />
+</blockquote>
+<div id="result_aa">result_aa</div>
+<hr />
+<div id="outarea_aa">outarea_aa</div>
+<div id="outarea_bb">outarea_bb</div>
+<div id="outarea_cc">outarea_cc</div>
+<div id="outarea_dd">outarea_dd</div>
+<div id="outarea_ee">outarea_ee</div>
+<div id="outarea_ff">outarea_ff</div>
+<div id="outarea_gg">outarea_gg</div>
+<div id="outarea_hh">outarea_hh</div>
+<hr />
+<a href="/data_base/data_base.html">Return</a><p />
+Jan/29/2014 AM 08:15<p />
+</body>
+</html>

@@ -1,0 +1,1 @@
+dbi=DBI.connect("dbi:Pg:city:cdbd026","uchida","hello9")

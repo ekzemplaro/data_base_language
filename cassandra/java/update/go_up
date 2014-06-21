@@ -1,0 +1,8 @@
+#
+COMMON=/var/www/data_base/common
+JAVA_COMMON=$COMMON/java_common
+JAR_CASSANDRA=$COMMON/jar/cassandra
+#
+export CPX=./:$JAVA_COMMON:$JAR_CASSANDRA/*
+#
+java -cp $CPX cassandra_update t0536 398456100

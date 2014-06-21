@@ -1,0 +1,2 @@
+#
+./xml_delete.lsp /var/tmp/xml_file/cities.xml t2263

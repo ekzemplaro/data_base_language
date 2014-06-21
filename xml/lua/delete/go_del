@@ -1,0 +1,1 @@
+lua5.1 xml_delete.lua  /var/tmp/xml_file/cities.xml t2263

@@ -1,0 +1,54 @@
+#! /usr/bin/gbs3
+'
+'	text_delete.gambas
+'
+'					May/23/2013
+'
+' ------------------------------------------------------------------
+sub	row_gen_proc (key as string,name as string,population as integer,date_mod as string) as string
+	dim str_out as string
+	str_out = key & "\t" & name & "\t"
+	str_out &= population & "\t" & date_mod & "\n"
+	return str_out
+end
+' ------------------------------------------------------------------
+public sub main ()
+	dim file_txt as string
+	dim id_in as string
+	dim result as string
+	dim lines as string[]
+	dim ll as string
+	dim items as string[]
+	dim str_out as string
+	dim date_mod as string
+	print "*** 開始 ***"
+	date_mod = Year (Now) & "-" & Month (Now) & "-" & Day (Now)
+	print date_mod
+'
+	file_txt = Application.Args[1]
+	id_in = Application.Args[2]
+	print file_txt
+	print id_in
+'
+	TRY result = file.Load (file_txt)
+	lines = split (result,"\r\n")
+	str_out = ""
+	for each ll in lines
+		if 0 < len (ll) then
+			items = split (ll,"\t")
+			if items[0] = id_in then
+				print items[0] & "\n";
+			else
+				str_out &= ll & "\n"
+			end if
+'		print ll & "\n";
+		endif
+	next
+'
+	print str_out
+'
+	TRY File.Save (file_txt,str_out)
+'
+	print "*** 終了 ***"
+end
+' ------------------------------------------------------------------

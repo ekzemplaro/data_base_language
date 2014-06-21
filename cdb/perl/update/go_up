@@ -1,0 +1,2 @@
+#
+./cdb_update.pl /var/tmp/cdb/cities.cdb t2762 54389700

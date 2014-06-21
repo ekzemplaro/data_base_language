@@ -1,0 +1,2 @@
+export JAVA_HOME=/usr/lib/jvm/java-6-openjdk/jre
+./xindice_update.sh t0277 43287900

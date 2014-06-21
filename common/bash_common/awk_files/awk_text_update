@@ -1,0 +1,10 @@
+{
+if ($1 != id_in)
+	{
+	print $0
+	}
+else
+	{
+	print $1"\t"$2"\t"population_in"\t"today
+	}
+}

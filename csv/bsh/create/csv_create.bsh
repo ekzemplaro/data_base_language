@@ -1,0 +1,56 @@
+#! /usr/bin/bsh
+//
+//	csv_create.bsh
+//
+//					Sep/25/2012
+//
+// --------------------------------------------------------------
+source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
+// --------------------------------------------------------------
+Map data_prepare_proc ()
+{
+	Map dict_aa = new HashMap ();
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t1271","千葉",28591,"2000-5-17");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t1272","勝浦",73862,"2000-9-21");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t1273","市原",25394,"2000-6-4");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t1274","流山",87624,"2000-9-14");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t1275","八千代",72531,"2000-8-12");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t1276","我孫子",28529,"2000-7-28");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t1277","鴨川",39457,"2000-6-19");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t1278","銚子",65284,"2000-1-25");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t1279","市川",39147,"2000-10-14");
+
+	return	dict_aa;
+}
+
+// --------------------------------------------------------------
+System.out.println ("*** 開始 ***");
+fname_out = bsh.args[0];
+System.out.println (fname_out);
+
+Map dict_aa = data_prepare_proc ();
+
+dict_display_proc (dict_aa);
+
+dict_to_csv_proc (fname_out,dict_aa);
+
+System.out.println ("*** 終了 ***");
+// --------------------------------------------------------------

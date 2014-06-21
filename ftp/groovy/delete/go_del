@@ -1,0 +1,12 @@
+#
+export USR_SHARE=/usr/share/java
+GROOVY_JAR=$USR_SHARE/groovy-all.jar:$USR_SHARE/groovy.jar
+#
+export COMMON=/var/www/data_base/common
+export GROOVY_COMMON=$COMMON/groovy_common
+export JAR=$COMMON/jar
+#
+CPX=$JAR/commons-net-3.0.1.jar:$GROOVY_COMMON:$GROOVY_JAR
+CPX=./:$CPX
+#
+java -cp $CPX ftp_delete t0366

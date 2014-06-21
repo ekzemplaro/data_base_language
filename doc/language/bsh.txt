@@ -1,0 +1,20 @@
+<meta content="Program Language Examples in Ada" name="description">
+<meta content="Ada,クライアント,接続,言語,サンプル" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<title>bsh Sep/25/2012</title>
+</head>
+<body>
+<h2><a href="http://www.beanshell.org/">BeanShell</a></h2><p />
+
+<blockquote>
+<pre>
+ii  bsh     2.0b4-12build1     Java scripting environment (BeanShell) Version 2
+ii  bsh-gcj 2.0b4-12build1     Java scripting environment (BeanShell) Version 2 (native code)
+</pre>
+</blockquote>
+
+<blockquote>
+</blockquote>
+
+<blockquote>
+</blockquote>

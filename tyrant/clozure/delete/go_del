@@ -1,0 +1,1 @@
+ccl64 -l  tyrant_delete.lisp --eval '(quit)' -- t4766

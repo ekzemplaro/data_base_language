@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<script src="/js/jquery-1.7.2.min.js"></script>
+<script>
+jQuery (function ()
+{
+	jQuery ("#outarea_aa").text ("*** start ***");
+
+	jQuery ("#outarea_hh").text ("*** end ***");
+});
+</script>
+<title>Jaxer (Mar/07/2012)</title>
+</head>
+<body>
+
+Jaxer (Port 8081)<p />
+<blockquote>
+	jaxer.org は、廃止になりました。<p />
+</blockquote>
+<blockquote>
+Jaxer_package_withApache.tar.gz<p />
+32bit と 64bit でファイルが異なります。<p />
+</blockquote>
+<ol>
+<pre>
+Detailed Linux Installation Instructions
+
+   1. If the /opt top level directory does not exist, create it: mkdir /opt
+   2. Move the download to /opt directory: mv Jaxer_package_withApache.zip /opt/Jaxer_package_withApache.zip
+   3. Change to the /opt directory: cd /opt
+   4. Unzip the download: unzip Jaxer_package_withApache.zip
+   5. Open up access privileges: chmod -R a+x AptanaJaxer
+   6. Edit the Apache configuration file: vi /opt/AptanaJaxer/Apache22/conf/httpd.conf
+   7. Change ServerName: ServerName www.yourdomain.com:8081
+   8. At the end of the file append the username under which Apache should run: User username
+
+Configuring Jaxer for Outside Access
+
+By default, this installation only allows connections from 127.0.0.1 and
+ localhost so to grant wider access you must edit the Jaxer configuration file:
+ vi /opt/AptanaJaxer/jaxer/framework/config.js.
+
+    * Find the line near the bottom containing REWRITE_RELATIVE_URL and uncomment it.
+    * Change the URL to http://localhost:8081 and save the file. The port
+ to use in that URL should match the port Apache is using, but may be omitted
+ entirely if Apache uses port 80.
+    * If Jaxer is already running, you need to stop and start Jaxer
+ to activate these changes.
+
+<pre />
+</ol>
+
+<blockquote>
+	cp Jaxer_package_withApache.tar.gz /opt<br />
+	cp Jaxer_update.tar.gz<br />
+	cd /opt<br />
+	tar xvfz Jaxer_package_withApache.tar.gz<br />
+	cd AptanaJaxer<br />
+	tar xvfz ../Jaxer_update.tar.gz<br />
+</blockquote>
+
+<ol>
+<a href="./httpd_aptana.conf.txt">
+/opt/AptanaJaxer/Apache22/conf/httpd.conf</a><p />
+	<ol>
+	ServerName localhost:8081<p />
+	User scott<p />
+	</ol>
+</ol>
+<ol>
+起動<br />
+/opt/AptanaJaxer/scripts/start.sh<p />
+
+ソース<br />
+/opt/AptanaJaxer/public<p />
+
+sudo mkdir /opt/AptanaJaxer/public<p />
+sudo cd /opt/AptanaJaxer/public<p />
+sudo ln -s /var/www/js js<br />
+sudo ln -s /var/www/data_base data_base<p />
+アクセス<br />
+<ol>
+&lt;http://localhost:8081&gt;<p />
+
+/opt/AptanaJaxer/public/index.html が表示される。<p />
+</ol>
+</ol>
+
+
+
+<hr />
+<div id="result_aa">result_aa</div>
+<hr />
+<div id="outarea_aa">outarea_aa</div>
+<div id="outarea_bb">outarea_bb</div>
+<div id="outarea_cc">outarea_cc</div>
+<div id="outarea_dd">outarea_dd</div>
+<div id="outarea_ee">outarea_ee</div>
+<div id="outarea_ff">outarea_ff</div>
+<div id="outarea_gg">outarea_gg</div>
+<div id="outarea_hh">outarea_hh</div>
+<hr />
+<a href="../web_server.html">Return</a><p />
+Mar/07/2012 AM 08:15<p />
+</body>
+</html>

@@ -1,0 +1,10 @@
+#
+#../single_check.sh gdbm scala
+#../single_check.sh berkeley scala
+../single_check.sh mcached scala
+../single_check.sh mcachedb scala
+#
+../single_check.sh redis scala
+../single_check.sh tcbn scala
+#../single_check.sh tyrant scala
+#

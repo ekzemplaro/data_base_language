@@ -1,0 +1,4 @@
+CPX=.:/var/www/data_base/common/java_common
+#
+java -cp $CPX xml_delete /var/tmp/xml_file/cities.xml t2262
+#

@@ -1,0 +1,6 @@
+#
+../single_check.sh derby rhino
+../single_check.sh hsqldb rhino
+../single_check.sh h2 rhino
+#
+#

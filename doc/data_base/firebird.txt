@@ -1,0 +1,78 @@
+<meta content="Program Language Examples to connect to Firebird" name="description">
+<meta content="Firebird,クライアント,接続" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<title>Firebird</title>
+</head>
+<body>
+<h1><a href="http://www.firebirdsql.org/">Firebird</a></h1>
+
+インストール直後の設定<br />
+<blockquote>
+sudo dpkg-reconfigure firebird2.5-super<p />
+<blockquote>
+	password は、tiger にする。<p />
+</blockquote>
+/etc/firebird/2.5/SYSDBA.password<p />
+</blockquote>
+
+データベースの作成<p />
+<blockquote>
+$ isql-fb<p />
+SQL> create database '/var/tmp/firebird/cities.fdb' page_size 8192 user 'sysdba' password 'tiger';<p />
+SQL> show database;<p />
+SQL> quit;<p />
+</blockquote>
+
+データベースの確認<p />
+<blockquote>
+$ isql-fb<p />
+SQL> connect "/var/tmp/firebird/cities.fdb" user 'sysdba' password 'tiger';
+<p />
+SQL> show database;<p />
+SQL> quit;<p />
+</blockquote>
+
+PHP<p />
+<blockquote>
+	php5-interbase<p />
+</blockquote>
+
+Python<p />
+<blockquote>
+	<pre>
+ii  python-kinterbasdb   3.3.0-3   amd64    Python DB API 2.0 extension for Firebird and Interbase
+	</pre>
+バージョンの確認<p />
+	<blockquote>
+		python -c "import kinterbasdb as k; print k.__version__"
+	</blockquote>
+</blockquote>
+	
+
+Perl<p />
+<blockquote>
+libdbd-firebird-perl<br />
+</blockquote>
+
+
+Ruby<p />
+<blockquote>
+	sudo apt-get install firebird2.5-dev<p />
+	# gem install fb<p />
+</blockquote>
+
+Java<p />
+<blockquote>
+</blockquote>
+
+C#<p />
+<blockquote>
+<a href="http://www.firebirdsql.org/index.php?op=files&id=netprovider">
+ADO.Net Data Provider</a><p />
+
+
+NETProvider-2.6.5-MONO_LINUX.7z<p />
+
+$ 7z e NETProvider-2.6.5-MONO_LINUX.7z<p />
+
+</blockquote>

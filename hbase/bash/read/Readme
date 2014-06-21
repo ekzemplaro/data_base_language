@@ -1,0 +1,13 @@
+
+
+hbase(main):004:0> get 'cities', 't1677'
+
+
+bin/hbase rest start -p 8000
+
+bin/hbase-daemon.sh start rest -p 8000
+bin/hbase-daemon.sh stop rest
+
+curl -H "Accept: text/xml" http://localhost:8000/version
+
+curl -H "Accept: application/json" http://localhost:8000/version

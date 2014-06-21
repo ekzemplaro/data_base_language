@@ -1,0 +1,44 @@
+*** 開始 ***
+t4251	長崎	24836	1954-8-12
+t4252	佐世保	79632	1954-2-15
+t4253	島原	69741	1954-10-2
+t4254	大村	38764	1954-6-22
+t4255	諫早	49871	1954-8-14
+t4256	五島	65292	1954-9-12
+t4257	平戸	31251	1954-3-21
+t4258	雲仙	52486	1954-7-26
+t4259	松浦	26257	1954-10-2
+*** 終了 ***
+STATUS: 400
+HEADERS: {"date":"Mon, 19 Sep 2011 03:16:43 GMT","server":"Jetty/5.1.12 (Linux/2.6.38-11-generic amd64 java/1.6.0_22","connection":"close","content-type":"text/html","content-length":"1359"}
+BODY: <html>
+<head>
+<title>Error 400 Parsing exception: fatal error at (-1,-1) : Premature end of file.</title>
+</head>
+<body>
+<h2>HTTP ERROR: 400</h2><pre>Parsing exception: fatal error at (-1,-1) : Premature end of file.</pre>
+<p>RequestURI=/exist/rest/db//cities/cities.xml</p>
+<p><i><small><a href="http://jetty.mortbay.org">Powered by Jetty://</a></small></i></p>
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                
+</body>
+</html>
+

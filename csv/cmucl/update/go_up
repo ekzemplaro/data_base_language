@@ -1,0 +1,4 @@
+#
+lisp -load csv_update.lisp -eval '(quit)' -- '/var/tmp/csv/cities.csv' t1273 59232100
+#
+chmod 777 /var/tmp/csv/cities.csv

@@ -1,0 +1,34 @@
+'----------------------------------------------------------------------
+'	pro_nlf132.vbs
+'
+'					Dec/25/2012
+'----------------------------------------------------------------------
+Private cn ,rs
+
+Wscript.echo "*** 開始 ***"
+
+Set cn = CreateObject("ADODB.Connection")
+Set rs = CreateObject("ADODB.Recordset")
+
+cn.Open "Provider=SQLNCLI11;Server=localhost¥SQLEXPRESS;Database=city;Uid=sa;Pwd=tiger"
+
+rs.Open "SELECT * FROM cities", cn
+
+'
+Do While Not rs.EOF
+	str_out = rs("id") & chr(9) & rs("Name") & chr(9) & rs ("population")
+	str_out = str_out & chr(9) & rs ("date_mod")
+	Wscript.echo str_out
+	rs.MoveNext
+Loop
+
+Wscript.echo "*** ppp ***"
+
+rs.Close
+cn.Close
+
+Set cn = Nothing
+Set rs = Nothing
+
+Wscript.echo "*** 終了 ***"
+'----------------------------------------------------------------------

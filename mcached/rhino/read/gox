@@ -1,0 +1,11 @@
+JAVA_CLASSPATH="/usr/share/java/js.jar:/usr/share/java/jline.jar"
+export COMMON=/var/www/data_base/common
+export JAVA_COMMON=$COMMON/java_common
+export JAR=$COMMON/jar
+export MEMCACHED=$JAR/memcached
+CPX=$MEMCACHED/java_memcached-release_2.6.1.jar:$MEMCACHED/slf4j-api-1.6.1.jar
+CPX=$CPX:$MEMCACHED/slf4j-simple-1.6.1.jar:$MEMCACHED/commons-pool-1.5.6.jar
+export CLASSPATH=./:$CPX:$JAVA_COMMON:$JAVA_CLASSPATH
+#
+./mcached_read.js
+#

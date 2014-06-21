@@ -1,0 +1,12 @@
+export http_proxy=""
+#
+#curl -X DELETE http://localhost:5984/sound_koho
+#curl -X PUT http://localhost:5984/sound_koho
+#
+TARGET="http://localhost:5984/sound_koho"
+for pref in mie shiga kyoto osaka hyogo nara wakayama \
+		tottori shimane okayama hiroshima yamaguchi \
+		tokushima kagawa ehime kochi
+	do
+	curl -X PUT $TARGET"/"$pref -d@$pref".json"
+	done

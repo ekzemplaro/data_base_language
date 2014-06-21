@@ -1,0 +1,4 @@
+#
+./json_create.io /var/tmp/json/cities.json
+#
+chmod 666 /var/tmp/json/cities.json

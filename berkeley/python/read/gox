@@ -1,0 +1,2 @@
+#
+./berkeley_read.py /var/tmp/berkeley/cities.db

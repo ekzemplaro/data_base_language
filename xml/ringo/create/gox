@@ -1,0 +1,3 @@
+#
+./xml_create.js /var/tmp/xml_file/cities.xml
+#./xml_create.js cities.xml

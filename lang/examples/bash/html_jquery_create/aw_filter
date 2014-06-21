@@ -1,0 +1,1 @@
+{print "grep",$1,"tmp002"}

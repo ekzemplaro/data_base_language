@@ -1,0 +1,7 @@
+#
+../single_check.sh text erlang
+../single_check.sh csv erlang
+#../single_check.sh xml erlang
+#../single_check.sh json erlang
+#../single_check.sh excel erlang
+#

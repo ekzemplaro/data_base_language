@@ -1,0 +1,4 @@
+#
+export http_proxy=""
+./xindice_read
+#

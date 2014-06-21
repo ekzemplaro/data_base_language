@@ -1,0 +1,20 @@
+<body>
+
+インストール方法<p />
+<div id="install"></div>
+
+バージョン<p />
+<div id="versions"></div>
+
+
+サンプル<p />
+<div id="example"></div>
+
+データベースの確認<p />
+<div id="database"></div>
+
+Passengerのインストール<p />
+<div id="passenger"></div>
+
+
+<hr />

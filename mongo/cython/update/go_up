@@ -1,0 +1,4 @@
+#
+echo "import mongo_update" > tmp_execute.py
+#
+python ./tmp_execute.py t1165 46728900

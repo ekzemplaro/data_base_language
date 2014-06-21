@@ -1,0 +1,23 @@
+<title>Xindice</title>
+</head>
+<body>
+<h1><a href="http://xml.apache.org/xindice/">Xindice</a></h1>
+サーバーの開始<br />
+<ol>
+xml-xindice-1.2m1/xindiced start<p />
+</ol>
+<pre>
+</pre>
+<ol>
+</ol>
+
+<ol>
+</ol>
+
+Python<p />
+<pre>
+</pre>
+
+Java<p />
+<pre>
+</pre>

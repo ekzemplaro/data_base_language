@@ -1,0 +1,12 @@
+#
+#
+COMMON=/var/www/data_base/common
+GROOVY_COMMON=$COMMON/groovy_common
+JAR=$COMMON/jar
+#
+FIREBIRD_JAR=$JAR/Jaybird/jaybird-full-2.1.6.jar
+#
+GROOVY_JAR=/usr/share/java/groovy-all.jar:/usr/share/java/groovy.jar
+export CLASSPATH=.:$GROOVY_COMMON:$FIREBIRD_JAR:$GROOVY_JAR
+#
+java firebird_update t3827 81234000

@@ -1,0 +1,2 @@
+/data_base/common/narwhal_common/text_manipulate.js
+/data_base/common/narwhal_common/xml_manipulate.js

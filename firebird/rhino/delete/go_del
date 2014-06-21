@@ -1,0 +1,6 @@
+#
+JAVA_CLASSPATH="/usr/share/java/js.jar:/usr/share/java/jline.jar"
+JAYBIRD_JAR=/var/www/data_base/common/jar/Jaybird/jaybird-full-2.1.6.jar
+export CLASSPATH=.:$JAYBIRD_JAR:$JAVA_CLASSPATH
+#
+./firebird_delete.js t3825

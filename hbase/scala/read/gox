@@ -1,0 +1,7 @@
+#
+export PATH=$PATH:/home/uchida/dbm/hbase/hbase-0.96.0-hadoop2/bin
+export SCALA_COMMON=/var/www/data_base/common/scala_common
+#
+export CLASSPATH=./:$CPA:$SCALA_COMMON:`hbase classpath`
+#
+scala hbase_read

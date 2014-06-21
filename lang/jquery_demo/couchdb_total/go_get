@@ -1,0 +1,2 @@
+export http_proxy=""
+curl -X GET http://localhost:5984/city/_all_docs

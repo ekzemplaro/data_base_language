@@ -1,0 +1,10 @@
+<title>elisp Dec/04/2013</title>
+</head>
+<body>
+<h2><a href="http://www.emacswiki.org/cgi-bin/wiki/EmacsLisp">EmacsLisp</a></h2><p />
+<blockquote>
+<pre>
+ii  emacs23    23.4+1-4ubuntu2    amd64   The GNU Emacs editor (with GTK+ user interface)
+</pre>
+</blockquote>
+

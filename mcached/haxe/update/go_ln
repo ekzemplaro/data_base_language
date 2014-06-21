@@ -1,0 +1,4 @@
+#
+HAXE_COMMON=/var/www/data_base/common/haxe_common
+#
+ln -s $HAXE_COMMON/Mcached_manipulate.hx .

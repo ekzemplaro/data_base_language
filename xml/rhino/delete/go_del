@@ -1,0 +1,2 @@
+#
+rhino xml_delete.js /var/tmp/xml_file/cities.xml t2261

@@ -1,0 +1,6 @@
+<blockquote>
+user の作成<p />
+<blockquote>
+php ./registeruser.php -n scott -w tiger<p />
+</blockquote>
+</blockquote>

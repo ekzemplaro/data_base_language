@@ -1,0 +1,10 @@
+#
+COMMON=/var/www/data_base/common
+SCALA_COMMON=$COMMON/scala_common
+JAR_CASSANDRA=$COMMON/jar/cassandra
+#
+#
+export CLASSPATH=./:$SCALA_COMMON:$JAR_CASSANDRA/*
+#
+scala cassandra_delete t0531
+#

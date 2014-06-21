@@ -1,0 +1,6 @@
+export http_proxy=""
+#
+SHARE=/usr/share/java
+export CLASSPATH=.:$SHARE/commons-httpclient.jar
+#
+./webdav_update.py t1356 58164200

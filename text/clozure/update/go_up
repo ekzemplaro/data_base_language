@@ -1,0 +1,1 @@
+ccl64 -l  text_update.lisp --eval '(quit)' -- /var/tmp/plain_text/cities.txt t2384 34872300

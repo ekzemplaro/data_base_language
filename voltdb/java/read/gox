@@ -1,0 +1,2 @@
+export CLASSPATH=.:/home/uchida/dbm/voltdb/voltdb-2.1.1/voltdb/*
+java voltdb_read

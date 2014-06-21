@@ -1,0 +1,8 @@
+#
+../single_check.sh sqlite3 lua
+#../single_check.sh mssql lua
+../single_check.sh mysql lua
+../single_check.sh postgre lua
+#../single_check.sh firebird lua
+#
+#

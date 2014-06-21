@@ -1,0 +1,3 @@
+#
+#./sqlite3_create.rb cities.db
+./sqlite3_create.rb /var/tmp/sqlite3/cities.db

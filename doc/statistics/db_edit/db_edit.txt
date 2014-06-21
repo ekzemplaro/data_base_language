@@ -1,0 +1,38 @@
+<script src="/js/jquery.json-2.4.min.js"></script>
+<script src="db_edit.js"></script>
+<script src="file_save.js"></script>
+<script src="show_lang.js"></script>
+<script src="show_data_base.js"></script>
+<script src="../../js_common/sharp_convert.js"></script>
+<link rel="stylesheet" href="db_edit.css">
+<title>db_edit Oct/18/2013
+</title>
+</head>
+<body>
+
+<div calss="body">
+	<div class="left">
+		<div class="nava">language</div>
+		<div class="navb">data base</div>
+	</div>
+	<div class="right">
+		<div class="crud">
+		<table>
+		<tr>
+		<td><span id="lang">&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+		<td><span id="dbase">&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+		</tr>
+		</table>
+	<p />
+	<select id="mode" name="mode">
+	<option selected>閲覧</option>
+	<option>編集</option>
+	<option>All OK</option>
+	<option>4 OK</option>
+	</select>
+
+		</div>
+
+<div class="contents"></div>
+<div class="tail">
+<hr />

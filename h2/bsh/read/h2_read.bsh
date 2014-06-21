@@ -1,0 +1,21 @@
+#! /usr/bin/bsh
+//
+//	h2_read.bsh
+//
+//						Sep/26/2012
+//
+// ---------------------------------------------------------------------
+source ("/var/www/data_base/common/bsh_common/sql_manipulate.bsh");
+// ---------------------------------------------------------------------
+System.out.println ("*** 開始 ***");
+
+String database = "file:/var/tmp/h2/cities";
+
+Connection conn = DriverManager.getConnection("jdbc:h2:" + database, "SA","");
+
+sql_display_proc (conn);
+
+conn.close ();
+
+System.out.println ("*** 終了 ***");
+// ---------------------------------------------------------------------

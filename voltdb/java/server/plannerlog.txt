@@ -1,0 +1,885 @@
+
+getting started at: Wed Jul 06 15:14:29 JST 2011
+catalog loaded
+hsql loaded
+recieved sql stmt: select * from cities
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: delete from cities where id = '3951'
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: select * from cities
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: delete from cities where id=3952
+recieved sql stmt: delete from cities where id = '3952'
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: delete from cities where id = '3953'
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: select * from cities
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: delete from cities where id like '395%'
+recieved sql stmt: delete from cities where id = '3959'
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: delete from cities where id = '3958'
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: select * from cities
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: delete from cities where id = '3957'
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: delete from cities where id = '3956'
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: delete from cities where id = '3955'
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: delete from cities where id = '3955'
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: delete from cities where id = '3954'
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: delete from cities where id = '3953'
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: delete from cities where id = '3952'
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: delete from cities where id = '3952'
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: select * from cities
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: select * from cities
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: select * from cities
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: select * from cities
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: select * from cities
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: select * from cities
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: select * from cities
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: update cities set population='4321500' where id='t3951'
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: select * from cities
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: delete from cities where id='t3951'
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: select * from cities
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: drop table cities
+Error creating planner: Unsupported method in Statement base class.
+recieved sql stmt: select * from cities
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: select * from cities
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: select * from cities
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: select * from cities
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: delete from cities where id='t3954'
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: select * from cities
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: select * from cities
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: delete from cities where id='t3954'
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: select * from cities
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: delete from cities where id='t3957'
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: select * from cities
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: select * from cities
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: update cities population=45237100 where id='t3958'
+recieved sql stmt: select * from cities
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: update cities set population=45237100 where id='t3958'
+recieved sql stmt: update cities set population=45237100 where id='t3958'
+recieved sql stmt: update cities
+recieved sql stmt: update cities set population='45237100' where id='t3958'
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: select * from cities
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: update cities set population='45237100' where id='t3958'
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: select * from cities
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: update cities set population='100' where id='t3958'
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: select * from cities
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: update cities set population='45237100' where id='t3958'
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: select * from cities
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: select * from cities
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: update cities set population='45237100' date_mod='2011-07-06' where id='t3958'
+recieved sql stmt: update cities set population='45237100' set date_mod='2011-07-06' where id='t3958'
+recieved sql stmt: update cities set date_mod='2011-07-06' where id='t3958'
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: select * from cities
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: select * from cities
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+
+getting started at: Wed Jul 06 15:56:23 JST 2011
+catalog loaded
+hsql loaded
+recieved sql stmt: update cities set date_mod='2011-07-06' where id='t3958'
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: select * from cities
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: select * from cities
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: select * from cities
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: select * from cities
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: select * from cities
+finished planning stmt
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+
+getting started at: Mon Jan 30 11:51:15 JST 2012
+catalog loaded
+hsql loaded
+
+getting started at: Mon Jan 30 13:03:31 JST 2012
+catalog loaded
+hsql loaded
+
+getting started at: Mon Jan 30 13:10:35 JST 2012
+catalog loaded
+hsql loaded
+recieved sql stmt: M#select * from cities
+Got 2 parts
+finished planning stmt:
+SQL: select * from cities
+COST: 5000000.0
+PLAN:
+
+RETURN RESULTS TO STORED PROCEDURE
+ RECEIVE FROM ALL PARTITIONS
+  SEND PARTITION RESULTS TO COORDINATOR
+   SEQUENTIAL SCAN of "CITIES"
+
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: M##/home/uchida/dbm/voltdb/voltdb-2.1.1/bin/sqlcmd << EOF
+Got 3 parts
+got a malformed input to the sql planner (bad hash splitting)
+
+getting started at: Mon Jan 30 13:15:52 JST 2012
+catalog loaded
+hsql loaded
+recieved sql stmt: M#select * from cities
+Got 2 parts
+finished planning stmt:
+SQL: select * from cities
+COST: 5000000.0
+PLAN:
+
+RETURN RESULTS TO STORED PROCEDURE
+ RECEIVE FROM ALL PARTITIONS
+  SEND PARTITION RESULTS TO COORDINATOR
+   SEQUENTIAL SCAN of "CITIES"
+
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: M##/home/uchida/dbm/voltdb/voltdb-2.1.1/bin/sqlcmd << EOF
+Got 3 parts
+got a malformed input to the sql planner (bad hash splitting)
+
+getting started at: Mon Jan 30 13:23:22 JST 2012
+catalog loaded
+hsql loaded
+recieved sql stmt: M#select * from cities
+Got 2 parts
+finished planning stmt:
+SQL: select * from cities
+COST: 5000000.0
+PLAN:
+
+RETURN RESULTS TO STORED PROCEDURE
+ RECEIVE FROM ALL PARTITIONS
+  SEND PARTITION RESULTS TO COORDINATOR
+   SEQUENTIAL SCAN of "CITIES"
+
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: M#update cities set date_mod='2012-01-30' where id='t3958'
+Got 2 parts
+finished planning stmt:
+SQL: update cities set date_mod='2012-01-30' where id='t3958'
+COST: 18.0
+PLAN:
+
+RETURN RESULTS TO STORED PROCEDURE
+ AGGREGATION ops: sum
+  RECEIVE FROM ALL PARTITIONS
+   SEND PARTITION RESULTS TO COORDINATOR
+    UPDATE
+     INDEX SCAN of "CITIES" using "SYS_IDX_SYS_PK_10018_10019" (unique-scan covering)
+
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: M#select * from cities
+Got 2 parts
+finished planning stmt:
+SQL: select * from cities
+COST: 5000000.0
+PLAN:
+
+RETURN RESULTS TO STORED PROCEDURE
+ RECEIVE FROM ALL PARTITIONS
+  SEND PARTITION RESULTS TO COORDINATOR
+   SEQUENTIAL SCAN of "CITIES"
+
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: M#select * from cities
+Got 2 parts
+finished planning stmt:
+SQL: select * from cities
+COST: 5000000.0
+PLAN:
+
+RETURN RESULTS TO STORED PROCEDURE
+ RECEIVE FROM ALL PARTITIONS
+  SEND PARTITION RESULTS TO COORDINATOR
+   SEQUENTIAL SCAN of "CITIES"
+
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: M#update cities set date_mod='2012-01-30' where id='t3958'
+Got 2 parts
+finished planning stmt:
+SQL: update cities set date_mod='2012-01-30' where id='t3958'
+COST: 18.0
+PLAN:
+
+RETURN RESULTS TO STORED PROCEDURE
+ AGGREGATION ops: sum
+  RECEIVE FROM ALL PARTITIONS
+   SEND PARTITION RESULTS TO COORDINATOR
+    UPDATE
+     INDEX SCAN of "CITIES" using "SYS_IDX_SYS_PK_10018_10019" (unique-scan covering)
+
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: M#select * from cities
+Got 2 parts
+finished planning stmt:
+SQL: select * from cities
+COST: 5000000.0
+PLAN:
+
+RETURN RESULTS TO STORED PROCEDURE
+ RECEIVE FROM ALL PARTITIONS
+  SEND PARTITION RESULTS TO COORDINATOR
+   SEQUENTIAL SCAN of "CITIES"
+
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: M#update cities set date_mod='2012-01-30' where id='t3958'
+Got 2 parts
+finished planning stmt:
+SQL: update cities set date_mod='2012-01-30' where id='t3958'
+COST: 18.0
+PLAN:
+
+RETURN RESULTS TO STORED PROCEDURE
+ AGGREGATION ops: sum
+  RECEIVE FROM ALL PARTITIONS
+   SEND PARTITION RESULTS TO COORDINATOR
+    UPDATE
+     INDEX SCAN of "CITIES" using "SYS_IDX_SYS_PK_10018_10019" (unique-scan covering)
+
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: M#select * from cities
+Got 2 parts
+finished planning stmt:
+SQL: select * from cities
+COST: 5000000.0
+PLAN:
+
+RETURN RESULTS TO STORED PROCEDURE
+ RECEIVE FROM ALL PARTITIONS
+  SEND PARTITION RESULTS TO COORDINATOR
+   SEQUENTIAL SCAN of "CITIES"
+
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: M#select * from cities
+Got 2 parts
+finished planning stmt:
+SQL: select * from cities
+COST: 5000000.0
+PLAN:
+
+RETURN RESULTS TO STORED PROCEDURE
+ RECEIVE FROM ALL PARTITIONS
+  SEND PARTITION RESULTS TO COORDINATOR
+   SEQUENTIAL SCAN of "CITIES"
+
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: M#select * from cities
+Got 2 parts
+finished planning stmt:
+SQL: select * from cities
+COST: 5000000.0
+PLAN:
+
+RETURN RESULTS TO STORED PROCEDURE
+ RECEIVE FROM ALL PARTITIONS
+  SEND PARTITION RESULTS TO COORDINATOR
+   SEQUENTIAL SCAN of "CITIES"
+
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: M#update cities set date_mod='2012-01-30' where id='t3958'
+Got 2 parts
+finished planning stmt:
+SQL: update cities set date_mod='2012-01-30' where id='t3958'
+COST: 18.0
+PLAN:
+
+RETURN RESULTS TO STORED PROCEDURE
+ AGGREGATION ops: sum
+  RECEIVE FROM ALL PARTITIONS
+   SEND PARTITION RESULTS TO COORDINATOR
+    UPDATE
+     INDEX SCAN of "CITIES" using "SYS_IDX_SYS_PK_10018_10019" (unique-scan covering)
+
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: M#select * from cities
+Got 2 parts
+finished planning stmt:
+SQL: select * from cities
+COST: 5000000.0
+PLAN:
+
+RETURN RESULTS TO STORED PROCEDURE
+ RECEIVE FROM ALL PARTITIONS
+  SEND PARTITION RESULTS TO COORDINATOR
+   SEQUENTIAL SCAN of "CITIES"
+
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: M#update cities set date_mod='2012-01-30' where id='t3958'
+Got 2 parts
+finished planning stmt:
+SQL: update cities set date_mod='2012-01-30' where id='t3958'
+COST: 18.0
+PLAN:
+
+RETURN RESULTS TO STORED PROCEDURE
+ AGGREGATION ops: sum
+  RECEIVE FROM ALL PARTITIONS
+   SEND PARTITION RESULTS TO COORDINATOR
+    UPDATE
+     INDEX SCAN of "CITIES" using "SYS_IDX_SYS_PK_10018_10019" (unique-scan covering)
+
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: M#select * from cities
+Got 2 parts
+finished planning stmt:
+SQL: select * from cities
+COST: 5000000.0
+PLAN:
+
+RETURN RESULTS TO STORED PROCEDURE
+ RECEIVE FROM ALL PARTITIONS
+  SEND PARTITION RESULTS TO COORDINATOR
+   SEQUENTIAL SCAN of "CITIES"
+
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: M#delete from cities where id='t3954'
+Got 2 parts
+finished planning stmt:
+SQL: delete from cities where id='t3954'
+COST: 18.0
+PLAN:
+
+RETURN RESULTS TO STORED PROCEDURE
+ AGGREGATION ops: sum
+  RECEIVE FROM ALL PARTITIONS
+   SEND PARTITION RESULTS TO COORDINATOR
+    DELETE
+     INDEX SCAN of "CITIES" using "SYS_IDX_SYS_PK_10018_10019" (unique-scan covering)
+
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: M#select * from cities
+Got 2 parts
+finished planning stmt:
+SQL: select * from cities
+COST: 5000000.0
+PLAN:
+
+RETURN RESULTS TO STORED PROCEDURE
+ RECEIVE FROM ALL PARTITIONS
+  SEND PARTITION RESULTS TO COORDINATOR
+   SEQUENTIAL SCAN of "CITIES"
+
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: M#select * from cities
+Got 2 parts
+finished planning stmt:
+SQL: select * from cities
+COST: 5000000.0
+PLAN:
+
+RETURN RESULTS TO STORED PROCEDURE
+ RECEIVE FROM ALL PARTITIONS
+  SEND PARTITION RESULTS TO COORDINATOR
+   SEQUENTIAL SCAN of "CITIES"
+
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: M#update cities set population='52374100' where id='t3958'
+Got 2 parts
+finished planning stmt:
+SQL: update cities set population='52374100' where id='t3958'
+COST: 18.0
+PLAN:
+
+RETURN RESULTS TO STORED PROCEDURE
+ AGGREGATION ops: sum
+  RECEIVE FROM ALL PARTITIONS
+   SEND PARTITION RESULTS TO COORDINATOR
+    UPDATE
+     INDEX SCAN of "CITIES" using "SYS_IDX_SYS_PK_10018_10019" (unique-scan covering)
+
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: M#select * from cities
+Got 2 parts
+finished planning stmt:
+SQL: select * from cities
+COST: 5000000.0
+PLAN:
+
+RETURN RESULTS TO STORED PROCEDURE
+ RECEIVE FROM ALL PARTITIONS
+  SEND PARTITION RESULTS TO COORDINATOR
+   SEQUENTIAL SCAN of "CITIES"
+
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: M#select * from cities
+Got 2 parts
+finished planning stmt:
+SQL: select * from cities
+COST: 5000000.0
+PLAN:
+
+RETURN RESULTS TO STORED PROCEDURE
+ RECEIVE FROM ALL PARTITIONS
+  SEND PARTITION RESULTS TO COORDINATOR
+   SEQUENTIAL SCAN of "CITIES"
+
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: M#update cities set population='52374100' date_mod='2012-01-30' where id='t3958'
+Got 2 parts
+recieved sql stmt: M#select * from cities
+Got 2 parts
+finished planning stmt:
+SQL: select * from cities
+COST: 5000000.0
+PLAN:
+
+RETURN RESULTS TO STORED PROCEDURE
+ RECEIVE FROM ALL PARTITIONS
+  SEND PARTITION RESULTS TO COORDINATOR
+   SEQUENTIAL SCAN of "CITIES"
+
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: M#update cities set population='4356700' date_mod='2012-01-30' where id='t3951'
+Got 2 parts
+recieved sql stmt: M#select * from cities
+Got 2 parts
+finished planning stmt:
+SQL: select * from cities
+COST: 5000000.0
+PLAN:
+
+RETURN RESULTS TO STORED PROCEDURE
+ RECEIVE FROM ALL PARTITIONS
+  SEND PARTITION RESULTS TO COORDINATOR
+   SEQUENTIAL SCAN of "CITIES"
+
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: M#update cities set date_mod='2012-01-30' where id='t3958'
+Got 2 parts
+finished planning stmt:
+SQL: update cities set date_mod='2012-01-30' where id='t3958'
+COST: 18.0
+PLAN:
+
+RETURN RESULTS TO STORED PROCEDURE
+ AGGREGATION ops: sum
+  RECEIVE FROM ALL PARTITIONS
+   SEND PARTITION RESULTS TO COORDINATOR
+    UPDATE
+     INDEX SCAN of "CITIES" using "SYS_IDX_SYS_PK_10018_10019" (unique-scan covering)
+
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: M#select * from cities
+Got 2 parts
+finished planning stmt:
+SQL: select * from cities
+COST: 5000000.0
+PLAN:
+
+RETURN RESULTS TO STORED PROCEDURE
+ RECEIVE FROM ALL PARTITIONS
+  SEND PARTITION RESULTS TO COORDINATOR
+   SEQUENTIAL SCAN of "CITIES"
+
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: M#update cities set date_mod='2012-01-30' where id='t3951'
+Got 2 parts
+finished planning stmt:
+SQL: update cities set date_mod='2012-01-30' where id='t3951'
+COST: 18.0
+PLAN:
+
+RETURN RESULTS TO STORED PROCEDURE
+ AGGREGATION ops: sum
+  RECEIVE FROM ALL PARTITIONS
+   SEND PARTITION RESULTS TO COORDINATOR
+    UPDATE
+     INDEX SCAN of "CITIES" using "SYS_IDX_SYS_PK_10018_10019" (unique-scan covering)
+
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: M#select * from cities
+Got 2 parts
+finished planning stmt:
+SQL: select * from cities
+COST: 5000000.0
+PLAN:
+
+RETURN RESULTS TO STORED PROCEDURE
+ RECEIVE FROM ALL PARTITIONS
+  SEND PARTITION RESULTS TO COORDINATOR
+   SEQUENTIAL SCAN of "CITIES"
+
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: M#select * from cities
+Got 2 parts
+finished planning stmt:
+SQL: select * from cities
+COST: 5000000.0
+PLAN:
+
+RETURN RESULTS TO STORED PROCEDURE
+ RECEIVE FROM ALL PARTITIONS
+  SEND PARTITION RESULTS TO COORDINATOR
+   SEQUENTIAL SCAN of "CITIES"
+
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: M#update cities set date_mod='2012-01-30' where id='t3951'
+Got 2 parts
+finished planning stmt:
+SQL: update cities set date_mod='2012-01-30' where id='t3951'
+COST: 18.0
+PLAN:
+
+RETURN RESULTS TO STORED PROCEDURE
+ AGGREGATION ops: sum
+  RECEIVE FROM ALL PARTITIONS
+   SEND PARTITION RESULTS TO COORDINATOR
+    UPDATE
+     INDEX SCAN of "CITIES" using "SYS_IDX_SYS_PK_10018_10019" (unique-scan covering)
+
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: M#select * from cities
+Got 2 parts
+finished planning stmt:
+SQL: select * from cities
+COST: 5000000.0
+PLAN:
+
+RETURN RESULTS TO STORED PROCEDURE
+ RECEIVE FROM ALL PARTITIONS
+  SEND PARTITION RESULTS TO COORDINATOR
+   SEQUENTIAL SCAN of "CITIES"
+
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: M#select * from cities
+Got 2 parts
+finished planning stmt:
+SQL: select * from cities
+COST: 5000000.0
+PLAN:
+
+RETURN RESULTS TO STORED PROCEDURE
+ RECEIVE FROM ALL PARTITIONS
+  SEND PARTITION RESULTS TO COORDINATOR
+   SEQUENTIAL SCAN of "CITIES"
+
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+
+getting started at: Mon Jan 30 13:45:52 JST 2012
+catalog loaded
+hsql loaded
+recieved sql stmt: M#select * from cities
+Got 2 parts
+finished planning stmt:
+SQL: select * from cities
+COST: 5000000.0
+PLAN:
+
+RETURN RESULTS TO STORED PROCEDURE
+ RECEIVE FROM ALL PARTITIONS
+  SEND PARTITION RESULTS TO COORDINATOR
+   SEQUENTIAL SCAN of "CITIES"
+
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+recieved sql stmt: M#select * from cities
+Got 2 parts
+finished planning stmt:
+SQL: select * from cities
+COST: 5000000.0
+PLAN:
+
+RETURN RESULTS TO STORED PROCEDURE
+ RECEIVE FROM ALL PARTITIONS
+  SEND PARTITION RESULTS TO COORDINATOR
+   SEQUENTIAL SCAN of "CITIES"
+
+PLAN-ONE GENERATED
+PLAN-ALL GENERATED
+finished loop
+
+getting started at: Mon Jan 30 15:00:33 JST 2012
+catalog loaded
+hsql loaded
+
+getting started at: Tue Jan 31 11:10:03 JST 2012
+catalog loaded
+hsql loaded

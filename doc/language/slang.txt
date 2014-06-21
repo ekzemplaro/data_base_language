@@ -1,0 +1,34 @@
+<title>S-Lang Jul/02/2012</title>
+</head>
+<body>
+<h2><a href="http://www.jedsoft.org/slang/">S-Lang</a></h2><p />
+<blockquote>
+	sudo apt-get install slsh<p />
+	sudo apt-get install slang-sqlite<p />
+	sudo apt-get install slang-curl<p />
+	sudo apt-get install slang-gdbm<p />
+</blockquote>
+
+<blockquote>
+<pre>
+ii  slsh                 2.2.4-3ubuntu1         Interpreter for S-Lang language
+ii  libnewt0.52          0.52.11-2ubuntu10      Not Erik's Windowing Toolkit - text mode windowing with slang
+ii  libslang2            2.2.4-3ubuntu1         S-Lang programming library - runtime version
+ii  libslang2:i386       2.2.4-3ubuntu1         S-Lang programming library - runtime version
+ii  libslang2-modules    2.2.4-3ubuntu1         Shared modules for S-Lang language
+</pre>
+</blockquote>
+
+<blockquote>
+	<pre>
+	$ slsh
+	slsh version 0.8.6-0; S-Lang version: 2.2.4
+	Copyright (C) 2005-2011 John E. Davis <jed@jedsoft.org>
+	This is free software with ABSOLUTELY NO WARRANTY.
+
+	slsh> 3 + 5;
+	8
+	slsh>quit
+	</pre>
+</blockquote>
+

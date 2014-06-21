@@ -1,0 +1,8 @@
+<script type="text/javascript" src="./jquery_jaxer_read.js"></script>
+<script type="text/javascript" src="./show_json_string.js"></script>
+<script type="text/javascript" src="./json_load_server.js" runat="server-proxy"></script>
+<script type="text/javascript" src="./xml_load_server.js" runat="server-proxy"></script>
+<title>Jaxer Read Feb/23/2011</title>
+</head>
+<body>
+<center><h2>Jaxer Read</h2></center>

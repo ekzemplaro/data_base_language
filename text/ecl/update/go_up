@@ -1,0 +1,2 @@
+#
+ecl -shell text_update.lisp -eval '(quit)' -- /var/tmp/plain_text/cities.txt t2381 4356700

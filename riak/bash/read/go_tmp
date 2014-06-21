@@ -1,0 +1,8 @@
+curl http://localhost:8098/riak/shimane/"t3254"
+curl http://localhost:8098/riak/shimane/"t3257"
+curl http://localhost:8098/riak/shimane/"t3258"
+curl http://localhost:8098/riak/shimane/"t3252"
+curl http://localhost:8098/riak/shimane/"t3256"
+curl http://localhost:8098/riak/shimane/"t3255"
+curl http://localhost:8098/riak/shimane/"t3253"
+curl http://localhost:8098/riak/shimane/"t3251"

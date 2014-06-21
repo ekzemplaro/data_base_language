@@ -1,0 +1,8 @@
+#
+../single_check.sh couch python
+../single_check.sh ftp python
+../single_check.sh webdav python
+#../single_check.sh mongo python
+#
+../single_check.sh cassandra python
+#

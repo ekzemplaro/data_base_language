@@ -1,0 +1,9 @@
+#
+../single_check.sh sqlite3 ruby
+../single_check.sh mysql ruby
+../single_check.sh postgre ruby
+../single_check.sh firebird ruby
+#
+#../single_check.sh xindice ruby
+#../single_check.sh exist ruby
+#

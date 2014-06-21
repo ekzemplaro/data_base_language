@@ -1,0 +1,19 @@
+<body>
+<a href="http://status.net/">StatusNet</a>は、
+オープンソースのTwitter ライクなサーバーです。<p />
+<blockquote>
+apache2 でも、nginx でも使えます。<p />
+</blockquote>
+
+インストール方法<p />
+<div id="install"></div>
+
+設定<p />
+<div id="settings"></div>
+
+API<p />
+<div id="api"></div>
+
+バックアップ<p />
+<div id="backup"></div>
+

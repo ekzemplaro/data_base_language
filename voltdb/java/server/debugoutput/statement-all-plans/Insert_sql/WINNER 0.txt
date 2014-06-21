@@ -1,0 +1,3 @@
+INSERT into "CITIES"
+ MATERIALIZE TUPLE from parameters and/or literals
+

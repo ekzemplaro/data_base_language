@@ -1,0 +1,2 @@
+#
+./json_read.scm /var/tmp/json/cities.json

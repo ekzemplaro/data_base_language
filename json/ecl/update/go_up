@@ -1,0 +1,2 @@
+#
+ecl -shell json_update.lisp -eval '(quit)' -- /var/tmp/json/cities.json t0921 45981200

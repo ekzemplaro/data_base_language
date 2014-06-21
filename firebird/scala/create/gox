@@ -1,0 +1,9 @@
+#
+export COMMON=/var/www/data_base/common
+export SCALA_COMMON=$COMMON/scala_common
+export JAR=$COMMON/jar
+#
+export FIREBIRD_JAR=$JAR/Jaybird/jaybird-full-2.1.6.jar
+export CPX=.:$SCALA_COMMON:$FIREBIRD_JAR
+#
+scala -classpath $CPX firebird_create

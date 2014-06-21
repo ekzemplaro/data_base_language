@@ -1,0 +1,3 @@
+#
+clisp json_create.lsp /var/tmp/json/cities.json
+#clisp json_create.lsp cities.json

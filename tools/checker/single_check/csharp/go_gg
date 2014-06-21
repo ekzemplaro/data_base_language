@@ -1,0 +1,7 @@
+#
+../single_check.sh couch csharp
+../single_check.sh ftp csharp
+../single_check.sh webdav csharp
+#../single_check.sh mongo csharp
+#
+#

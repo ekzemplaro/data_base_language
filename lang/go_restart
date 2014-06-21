@@ -1,0 +1,9 @@
+#
+sudo service php-fastcgi stop
+sudo service fcgiwrap stop
+sudo service nginx stop
+#
+sudo service php-fastcgi start
+sudo service fcgiwrap start
+sudo service nginx start
+#

@@ -1,0 +1,4 @@
+#
+./sqlite3_create.py /var/tmp/sqlite3/cities.db
+#./sqlite3_create.py cities.db
+#

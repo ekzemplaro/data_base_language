@@ -1,0 +1,17 @@
+BEGIN{before=""
+before_line=""}
+{
+aa=$1
+if (aa != "[default@Cities]")
+	{
+	print before_line
+	} 
+else if ((before != "[default@Cities]") && (before != ""))
+	{
+	print before_line
+	}
+
+before=aa
+before_line=$0
+}
+END {print $0}

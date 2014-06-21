@@ -1,0 +1,19 @@
+<title>ruby Oct/21/2011</title>
+</head>
+<body>
+<h2><a href="http://www.ruby-lang.org">ruby</a></h2><p />
+<blockquote>
+	1.8.7.352-2<p />
+</blockquote>
+
+<blockquote>
+	librestclient-ruby<p />
+<pre>
+ii  librestclient-ruby                               1.6.1-1                                    simple REST client for Ruby
+ii  librestclient-ruby1.8                            1.6.1-1                                    simple REST client for Ruby
+</pre>
+</blockquote>
+
+<blockquote>
+</blockquote>
+

@@ -1,0 +1,8 @@
+<script src="jquery_ruby_create.js"></script>
+<title>Ruby Create Jun/11/2012</title>
+</head>
+<body>
+<center><h2>Ruby Create</h2></center>
+<div class="right">
+<button id="create">初期化</button><br />
+</div>

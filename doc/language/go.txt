@@ -1,0 +1,24 @@
+<title>Go Jan/08/2013</title>
+</head>
+<body>
+<h2><a href="http://golang.org">Go</a></h2><p />
+
+<pre>
+ii  golang          2:1.0.2-2   all        Go programming language compiler - metapackage
+ii  golang-doc      2:1.0.2-2   all        Go programming language compiler - documentation
+ii  golang-go       2:1.0.2-2   amd64      Go programming language compiler
+ii  golang-src      2:1.0.2-2   amd64      Go programming language compiler - source files
+</pre>
+
+$ go version<br />
+go version go1.0.2<p />
+
+
+<blockquote>
+	関連ソフトのインストール<p />
+<blockquote>
+goinstall couch-go.googlecode.com/hg<p />
+
+mikejs-gomongo-3b6d6a4.tar.gz<p />
+</blockquote>
+</blockquote>

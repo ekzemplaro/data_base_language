@@ -1,0 +1,12 @@
+#
+. /home/scott/sqllib/db2profile
+#
+JAVA_CLASSPATH="/usr/share/java/js.jar:/usr/share/java/jline.jar"
+export SQLLIB=/opt/ibm/db2/V9.7
+#
+JAVA_COMMON=/var/www/data_base/common/java_common
+CLASSPATH=./:$SQLLIB/java/db2java.zip:$SQLLIB/java/db2jcc.jar:$SQLLIB/function:$SQLLIB/java/db2jcc_license_cu.jar:.
+#
+export CLASSPATH=$CLASSPATH:./:$JAVA_COMMON:$JAVA_CLASSPATH
+#
+./db2_delete.rb t2874

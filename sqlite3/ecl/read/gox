@@ -1,0 +1,1 @@
+ecl -shell sqlite3_read.lisp

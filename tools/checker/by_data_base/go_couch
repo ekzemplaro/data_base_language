@@ -1,0 +1,14 @@
+#
+#../single_check/single_check.sh couch bash
+../single_check/single_check.sh couch php
+../single_check/single_check.sh couch python
+../single_check/single_check.sh couch perl
+../single_check/single_check.sh couch ruby
+#
+../single_check/single_check.sh couch jruby
+#
+../single_check/single_check.sh couch rhino
+#
+../single_check/single_check.sh couch java
+../single_check/single_check.sh couch boo
+../single_check/single_check.sh couch csharp

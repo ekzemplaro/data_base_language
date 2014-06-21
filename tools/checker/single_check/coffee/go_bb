@@ -1,0 +1,8 @@
+#
+../single_check.sh sqlite3 coffee
+../single_check.sh mssql coffee
+../single_check.sh mysql coffee
+../single_check.sh postgre coffee
+../single_check.sh firebird coffee
+#
+#

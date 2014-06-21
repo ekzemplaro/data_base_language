@@ -1,0 +1,3 @@
+#
+ccl64 -l redis_update.lisp --eval '(quit)' -- t1856 91378900
+#

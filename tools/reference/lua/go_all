@@ -1,0 +1,2 @@
+#
+../bin/process_db.sh lua lua common.txt

@@ -1,0 +1,11 @@
+export COMMON=/var/www/data_base/common
+export GROOVY_COMMON=$COMMON/groovy_common
+export JAR=$COMMON/jar
+SG_CDB=/home/uchida/dbm/cdb/sg-cdb-1.0.4
+GROOVY_JAR=/usr/share/java/groovy-all.jar:/usr/share/java/groovy.jar
+#
+export CLASSPATH=./:$GROOVY_COMMON:$SG_CDB/sg-cdb-1.0.4.jar:$GROOVY_JAR
+#
+java cdb_create /var/tmp/cdb/cities.cdb
+#
+

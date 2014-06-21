@@ -1,0 +1,2 @@
+#
+curl -X GET --noproxy host_dbase -v http://localhost:8098/riak/shimane/t3252

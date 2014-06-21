@@ -1,0 +1,8 @@
+#
+SRC=/var/www/data_base/lang/jquery_haskell/read
+cd /usr/lib/cgi-bin/data_base/haskell
+#
+ln -s $SRC/couch_haskell_read couch_haskell_read
+ln -s $SRC/json_haskell_read json_haskell_read
+ln -s $SRC/master_haskell_read master_haskell_read
+ln -s $SRC/text_haskell_read text_haskell_read

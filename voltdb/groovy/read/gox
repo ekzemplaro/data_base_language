@@ -1,0 +1,3 @@
+GROOVY_JAR=/usr/share/java/groovy-all.jar:/usr/share/java/groovy.jar
+export CLASSPATH=.:$GROOVY_JAR:/home/uchida/dbm/voltdb/voltdb-2.1.1/voltdb/*
+java voltdb_read

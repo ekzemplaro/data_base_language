@@ -1,0 +1,10 @@
+#
+#../single_check.sh gdbm ocaml
+#../single_check.sh berkeley ocaml
+../single_check.sh mcached ocaml
+../single_check.sh mcachedb ocaml
+#
+#../single_check.sh redis ocaml
+#../single_check.sh tcbn ocaml
+#../single_check.sh tyrant ocaml
+#

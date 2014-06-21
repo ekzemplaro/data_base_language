@@ -1,0 +1,8 @@
+#
+../single_check.sh sqlite3 cython
+../single_check.sh mssql cython
+../single_check.sh mysql cython
+../single_check.sh postgre cython
+../single_check.sh firebird cython
+#
+#

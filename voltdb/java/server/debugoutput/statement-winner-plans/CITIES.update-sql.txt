@@ -1,0 +1,7 @@
+SQL: UPDATE CITIES SET ID = ?, NAME = ?, POPULATION = ?, DATE_MOD = ? WHERE (ID = ?);
+COST: 6.0
+PLAN:
+
+UPDATE
+ INDEX SCAN of "CITIES" using "SYS_IDX_SYS_PK_10018_10019" (unique-scan covering)
+

@@ -1,0 +1,3 @@
+#
+#
+lisp -load text_read.lisp -eval '(quit)' -- '/var/tmp/plain_text/cities.txt'

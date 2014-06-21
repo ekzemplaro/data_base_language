@@ -1,0 +1,7 @@
+#
+SHARE=/usr/share/java
+export CLOJURE_CONTRIB=$SHARE/clojure-contrib-1.2.0.jar
+#
+export CLASSPATH=.:$SHARE/clojure.jar:$CLOJURE_CONTRIB:$SHARE/hsqldb.jar
+#
+java clojure.main hsqldb_update.clj t4679 925423000 

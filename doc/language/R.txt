@@ -1,0 +1,38 @@
+<meta content="Program Language Examples in R" name="description">
+<meta content="R,クライアント,接続,言語,サンプル" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<title>R Feb/21/2014</title>
+</head>
+<body>
+<h2><a href="http://www.r-project.org">R</a></h2><p />
+
+
+<blockquote>
+<pre>
+ii  r-base      3.0.1-3ubuntu1   all     GNU R statistical computation and graphics system
+ii  r-base-core 3.0.1-3ubuntu1   amd64   GNU R core of statistical computation and graphics system
+ii  r-base-dev  3.0.1-3ubuntu1   all     GNU R installation of auxiliary GNU R packages
+ii  r-base-html 3.0.1-3ubuntu1   all     GNU R html docs for statistical computing system functions
+</pre>
+</blockquote>
+
+<blockquote>
+<pre>
+ii  r-cran-rmysql  0.9-3-2       amd64   GNU R package providing a DBI-compliant interface to MySQL
+</pre>
+
+
+</pre>
+	<blockquote>
+	> library(RMySQL)<br />
+	要求されたパッケージ DBI をロード中です<br />
+	> m <- dbDriver("MySQL")<br />
+	> dbconnector <- dbConnect(m, dbname="city",user="scott",password="tiger",host="host_mysql")<br />
+	> query.result <- dbSendQuery(dbconnector, "select * from (cities)")<br />
+	> test.table <- fetch(query.result)<br />
+	> dbDisconnect(dbconnector)<br />
+	</blockquote>
+</blockquote>
+
+<blockquote>
+</blockquote>

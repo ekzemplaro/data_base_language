@@ -1,0 +1,7 @@
+#
+../single_check.sh couch jruby
+../single_check.sh ftp jruby
+../single_check.sh webdav jruby
+#../single_check.sh mongo jruby
+#
+#

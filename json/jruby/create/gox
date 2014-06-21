@@ -1,0 +1,3 @@
+#
+#./json_create.rb cities.json
+./json_create.rb /var/tmp/json/cities.json

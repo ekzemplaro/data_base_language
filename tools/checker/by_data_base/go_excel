@@ -1,0 +1,14 @@
+#
+../single_check/single_check.sh excel bash
+../single_check/single_check.sh excel php
+../single_check/single_check.sh excel python
+../single_check/single_check.sh excel perl
+../single_check/single_check.sh excel ruby
+#
+../single_check/single_check.sh excel jruby
+#
+../single_check/single_check.sh excel rhino
+#
+../single_check/single_check.sh excel java
+../single_check/single_check.sh excel boo
+../single_check/single_check.sh excel csharp

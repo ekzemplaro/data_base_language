@@ -1,0 +1,8 @@
+#
+../single_check.sh sqlite3 node
+../single_check.sh mssql node
+../single_check.sh mysql node
+../single_check.sh postgre node
+../single_check.sh firebird node
+#
+#

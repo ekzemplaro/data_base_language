@@ -1,0 +1,2 @@
+#
+ecl -shell xml_update.lisp -eval '(quit)' -- /var/tmp/xml_file/cities.xml t2269 34982100

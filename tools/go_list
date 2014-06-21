@@ -1,0 +1,1 @@
+du -all data_base | awk '{if (750 < $1)print $0}'

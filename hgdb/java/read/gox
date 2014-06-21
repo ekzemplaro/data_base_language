@@ -1,0 +1,7 @@
+HGDB_ROOT=/home/uchida/dbm/hgdb/hypergraphdb-1.1
+JAVA_COMMON=/var/www/data_base/common/java_common
+HGDB_JAR=$HGDB_ROOT/hypergraphdb.jar:$HGDB_ROOT/jars/db.jar:$HGDB_ROOT/jxta.jar
+HGDB_JAR=$HGDB_JAR:$HGDB_ROOT/jars/smack.jar:$HGDB_ROOT/jars/smackx.jar
+#
+export CLASSPATH=./:$HGDB_JAR:$JAVA_COMMON
+java -Djava.library.path=$HGDB_ROOT/native/x86_64 hgdb_read /var/tmp/hgdb/cities_db

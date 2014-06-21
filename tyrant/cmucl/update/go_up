@@ -1,0 +1,4 @@
+#
+export PATH=$PATH:/opt/cmucl20e/bin
+#
+lisp -load tyrant_update.lisp -eval '(quit)' -- t4767 9358100

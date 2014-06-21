@@ -1,0 +1,2 @@
+export NODE_PATH=/home/uchida/node_modules
+./sqlite3_update.coffee /var/tmp/sqlite3/cities.db t0711 82345600

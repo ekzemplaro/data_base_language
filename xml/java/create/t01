@@ -1,0 +1,92 @@
+// --------------------------------------------------------------
+/*
+	xml_file/java/create/xml_create.java
+
+				May/16/2011
+
+*/
+// --------------------------------------------------------------
+import	java.util.HashMap;
+
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.DOMImplementation;
+
+// --------------------------------------------------------------
+public class xml_create {
+// --------------------------------------------------------------
+public static void main(String[] args) throws Exception
+{
+	System.out.println ("*** 開始 ***");
+
+	String xml_file = args[0];
+
+	DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+	DocumentBuilder builder = factory.newDocumentBuilder();
+	DOMImplementation domImpl=builder.getDOMImplementation();
+	Document document = domImpl.createDocument("","root",null);
+
+xml_str.add_row_proc (document,"t2261","静岡",75035,"2008-3-14");
+xml_str.add_row_proc (document,"t2262","浜松",22548,"2008-6-27");
+xml_str.add_row_proc (document,"t2263","沼津",12759,"2008-2-8");
+xml_str.add_row_proc (document,"t2264","三島",53156,"2008-5-9");
+xml_str.add_row_proc (document,"t2265","富士",41394,"2008-9-22");
+xml_str.add_row_proc (document,"t2266","熱海",61782,"2008-11-11");
+xml_str.add_row_proc (document,"t2267","富士宮",41803,"2008-10-15");
+xml_str.add_row_proc (document,"t2268","藤枝",41927,"2008-6-17");
+xml_str.add_row_proc (document,"t2269","御殿場",41796,"2008-8-19");
+xml_str.add_row_proc (document,"t2270","島田",74145,"2008-7-2");
+
+
+	xml_str.outputDocumentToFile (document,xml_file);
+
+
+	System.out.println ("*** 終了 ***");
+}
+ 
+// --------------------------------------------------------------
+static HashMap <String, HashMap <String,String>>
+data_prepare_proc ()
+{
+	HashMap <String, HashMap<String,String>> dict_aa
+		= new HashMap <String, HashMap<String,String>> ();
+
+	dict_aa = text_manipulate.dict_append_proc
+		(dict_aa,"t2261","静岡",51276,"2008-2-15");
+
+	dict_aa = text_manipulate.dict_append_proc
+		(dict_aa,"t2262","浜松",49142,"2008-4-23");
+
+	dict_aa = text_manipulate.dict_append_proc
+		(dict_aa,"t2263","沼津",99153,"2008-5-24");
+
+	dict_aa = text_manipulate.dict_append_proc
+		(dict_aa,"t2264","三島",89124,"2008-9-14");
+
+	dict_aa = text_manipulate.dict_append_proc
+		(dict_aa,"t2265","富士",72131,"2008-8-12");
+
+	dict_aa = text_manipulate.dict_append_proc
+		(dict_aa,"t2266","熱海",28529,"2008-7-28");
+
+	dict_aa = text_manipulate.dict_append_proc
+		(dict_aa,"t2267","富士宮",39457,"2008-6-19");
+
+	dict_aa = text_manipulate.dict_append_proc
+		(dict_aa,"t2268","藤枝",47362,"2008-11-15");
+
+	dict_aa = text_manipulate.dict_append_proc
+		(dict_aa,"t2269","御殿場",56872,"2008-10-24");
+
+	return	dict_aa;
+}
+
+// --------------------------------------------------------------
+}
+// --------------------------------------------------------------

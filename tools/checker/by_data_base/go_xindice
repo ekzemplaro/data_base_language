@@ -1,0 +1,9 @@
+#
+../single_check/single_check.sh xindice bash
+../single_check/single_check.sh xindice php
+../single_check/single_check.sh xindice python
+../single_check/single_check.sh xindice perl
+../single_check/single_check.sh xindice ruby
+#
+../single_check/single_check.sh xindice jruby
+#

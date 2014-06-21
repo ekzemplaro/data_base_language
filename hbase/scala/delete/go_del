@@ -1,0 +1,6 @@
+export PATH=$PATH:/home/uchida/dbm/hbase/hbase-0.94.11/bin
+export SCALA_COMMON=/var/www/data_base/common/scala_common
+#
+export CLASSPATH=./:$CPA:$SCALA_COMMON:`hbase classpath`
+#
+scala hbase_delete t1679

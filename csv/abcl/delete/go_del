@@ -1,0 +1,3 @@
+ABCL=/var/www/data_base/common/jar/abcl
+#
+java -jar  $ABCL/abcl.jar --load csv_delete.lisp /var/tmp/csv/cities.csv t1277

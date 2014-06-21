@@ -1,0 +1,5 @@
+#
+curl -X DELETE http://172.20.128.169:5984/city
+curl -X PUT http://172.20.128.169:5984/city
+#
+curl -X PUT http://172.20.128.169:5984/city/cities -d@cities_nagano.json

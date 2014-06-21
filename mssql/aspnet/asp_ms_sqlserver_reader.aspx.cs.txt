@@ -1,0 +1,56 @@
+/* ----------------------------------------------------------------- */
+/* ----------------------------------------------------------------- */
+using	System;
+using	System.Data.SqlClient;
+using	System.Data;
+
+/* ----------------------------------------------------------------- */
+public partial class asp_ms_sqlserver_reader  : System.Web.UI.Page
+{
+
+protected void Page_Load (Object sender, System.EventArgs e)
+{
+        SqlConnection dbcon;
+        SqlCommand dbcmd;
+        SqlDataReader dataRead;
+
+        DataTable dt;
+        DataRow dr;
+
+        string sqlStr;
+        string sqlUrl;
+
+        sqlUrl = @"data source=cdbd025\SQLEXPRESS;initial catalog=city;user id=sa;password=hello9;persist security info=True;packet size=4096";
+	dbcon = new SqlConnection (sqlUrl);
+	dbcon.Open ();
+	sqlStr = "SELECT ID,NAME,POPULATION,DATE_MOD FROM cities";
+	dbcmd = new SqlCommand(sqlStr, dbcon);
+	dataRead = dbcmd.ExecuteReader();
+		dt = new DataTable();
+
+		dt.Columns.Add(new DataColumn("ID", typeof (System.String)));
+		dt.Columns.Add(new DataColumn("NAME", typeof (String)));
+		dt.Columns.Add(new DataColumn("POPULATION", typeof (String)));
+		dt.Columns.Add(new DataColumn("DATE_MOD", typeof (String)));
+
+            while (dataRead.Read())
+		{
+		dr = dt.NewRow();
+		dr[0] = dataRead["ID"];
+		dr[1] = dataRead["NAME"];
+		dr[2] = dataRead["POPULATION"];
+		dr[3] = dataRead["DATE_MOD"];
+		dt.Rows.Add(dr);
+		}
+
+		GridView_A.DataSource = dt.DefaultView;
+		GridView_A.DataBind();
+
+            dataRead.Close();
+            dbcmd.Dispose();
+            dbcon.Close();
+            dbcon.Dispose();
+}
+/* ----------------------------------------------------------------- */
+}
+/* ----------------------------------------------------------------- */

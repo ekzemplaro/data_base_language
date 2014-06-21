@@ -1,0 +1,42 @@
+#
+SRC=/var/www/data_base/lang/jquery_ruby/delete
+cd /usr/lib/cgi-bin/data_base/ruby
+#
+ln -s $SRC/master_ruby_delete.rb master_ruby_delete.rb
+ln -s $SRC/text_ruby_delete.rb text_ruby_delete.rb
+ln -s $SRC/csv_ruby_delete.rb csv_ruby_delete.rb
+ln -s $SRC/xml_ruby_delete.rb xml_ruby_delete.rb
+ln -s $SRC/json_ruby_delete.rb json_ruby_delete.rb
+ln -s $SRC/excel_ruby_delete.rb excel_ruby_delete.rb
+ln -s $SRC/pdf_ruby_delete.rb pdf_ruby_delete.rb
+#
+ln -s $SRC/sqlite3_ruby_delete.rb sqlite3_ruby_delete.rb
+ln -s $SRC/oracle_ruby_delete.rb oracle_ruby_delete.rb
+ln -s $SRC/mssql_ruby_delete.rb mssql_ruby_delete.rb
+ln -s $SRC/db2_ruby_delete.rb db2_ruby_delete.rb
+#
+ln -s $SRC/mysql_ruby_delete.rb mysql_ruby_delete.rb
+ln -s $SRC/postgre_ruby_delete.rb postgre_ruby_delete.rb
+ln -s $SRC/firebird_ruby_delete.rb firebird_ruby_delete.rb
+#
+ln -s $SRC/xindice_ruby_delete.rb xindice_ruby_delete.rb
+ln -s $SRC/exist_ruby_delete.rb exist_ruby_delete.rb
+ln -s $SRC/dbxml_ruby_delete.rb dbxml_ruby_delete.rb
+#
+ln -s $SRC/gdbm_ruby_delete.rb gdbm_ruby_delete.rb
+ln -s $SRC/berkeley_ruby_delete.rb berkeley_ruby_delete.rb
+ln -s $SRC/cdb_ruby_delete.rb cdb_ruby_delete.rb
+ln -s $SRC/mcached_ruby_delete.rb mcached_ruby_delete.rb
+ln -s $SRC/mcachedb_ruby_delete.rb mcachedb_ruby_delete.rb
+ln -s $SRC/redis_ruby_delete.rb redis_ruby_delete.rb
+ln -s $SRC/tcbn_ruby_delete.rb tcbn_ruby_delete.rb
+ln -s $SRC/tyrant_ruby_delete.rb tyrant_ruby_delete.rb
+#
+ln -s $SRC/couch_ruby_delete.rb couch_ruby_delete.rb
+ln -s $SRC/ftp_ruby_delete.rb ftp_ruby_delete.rb
+ln -s $SRC/webdav_ruby_delete.rb webdav_ruby_delete.rb
+#
+ln -s $SRC/mongo_ruby_delete.rb mongo_ruby_delete.rb
+ln -s $SRC/cassandra_ruby_delete.rb cassandra_ruby_delete.rb
+ln -s $SRC/riak_ruby_delete.rb riak_ruby_delete.rb
+#

@@ -1,0 +1,7 @@
+#
+../single_check.sh text lua
+../single_check.sh csv lua
+../single_check.sh xml lua
+../single_check.sh json lua
+#../single_check.sh excel lua
+#

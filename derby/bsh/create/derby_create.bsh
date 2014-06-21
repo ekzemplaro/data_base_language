@@ -1,0 +1,58 @@
+#! /usr/bin/bsh
+//
+//	derby_create.bsh
+//
+//						Oct/01/2012
+//
+// ---------------------------------------------------------------------
+source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
+source ("/var/www/data_base/common/bsh_common/sql_manipulate.bsh");
+// ---------------------------------------------------------------------
+Map data_prepare_proc ()
+{
+	Map dict_aa = new HashMap ();
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t3551","山口",37426,"2000-8-5");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t3552","下関",52671,"2000-9-23");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t3553","萩",31892,"2000-10-14");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t3554","徳山",81624,"2000-9-14");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t3555","岩国",72539,"2000-2-12");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t3556","光",28529,"2000-7-28");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t3557","宇部",39457,"2000-6-19");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t3558","長門",65284,"2000-10-15");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t3559","防府",74391,"2000-11-24");
+
+	return	dict_aa;
+}
+
+// ---------------------------------------------------------------------
+System.out.println ("*** 開始 ***");
+
+Map dict_aa = data_prepare_proc ();
+
+String str_connect= "jdbc:derby://localhost:1527/city_aaa;create=true";
+
+Connection conn = DriverManager.getConnection (str_connect);
+
+sql_dict_to_db_proc (conn,dict_aa);
+
+conn.close ();
+System.out.println ("*** 終了 ***");
+// ---------------------------------------------------------------------

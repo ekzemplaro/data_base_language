@@ -1,0 +1,17 @@
+BEGIN {
+	printf("<?xml version=\"1.0\"?>\n");
+	printf("<root>\n");
+}
+{
+	if (0 < NF)
+		{
+		print "<"$1">"
+		print "<name>"$2"</name>"
+		print "<population>"$3"</population>"
+		print "<date_mod>"$4"</date_mod>"
+		print "</"$1">"
+		}
+}
+END	{
+	printf("</root>\n");
+}

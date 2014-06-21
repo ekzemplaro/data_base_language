@@ -1,0 +1,17 @@
+mv db2_java_update.java db2_php_update.php
+mv derby_java_update.java derby_php_update.php
+mv exist_java_update.java exist_php_update.php
+mv firebird_java_update.java firebird_php_update.php
+mv h2_java_update.java h2_php_update.php
+mv hsqldb_java_update.java hsqldb_php_update.php
+mv json_java_update.java json_php_update.php
+mv master_update.java master_update.java
+mv mssql_java_update.java mssql_php_update.php
+mv mysql_java_update.java mysql_php_update.php
+mv oracle_java_update.java oracle_php_update.php
+mv post_process.java post_process.java
+mv postgre_java_update.java postgre_php_update.php
+mv sqlite3_java_update.java sqlite3_php_update.php
+mv text_java_update.java text_php_update.php
+mv xindice_java_update.java xindice_php_update.php
+mv xml_java_update.java xml_php_update.php

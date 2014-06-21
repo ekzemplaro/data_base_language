@@ -1,0 +1,1 @@
+neko Sqlite3_create.n /var/tmp/sqlite3/cities.db

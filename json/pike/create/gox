@@ -1,0 +1,2 @@
+#
+./json_create.pike /var/tmp/json/cities.json

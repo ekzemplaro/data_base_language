@@ -1,0 +1,7 @@
+#
+../single_check.sh text tcl
+../single_check.sh csv tcl
+#../single_check.sh xml tcl
+../single_check.sh json tcl
+#../single_check.sh excel tcl
+#

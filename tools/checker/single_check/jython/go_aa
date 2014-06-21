@@ -1,0 +1,7 @@
+#
+../single_check.sh text jython
+../single_check.sh csv jython
+../single_check.sh xml jython
+../single_check.sh json jython
+#../single_check.sh excel jython
+#

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+<t0278>
+	<name>十和田</name>
+	<population>24784</population>
+	<date_mod>2003-10-26</date_mod>
+</t0278>
+<t0279>
+	<name>平川</name>
+	<population>75823</population>
+	<date_mod>2003-12-15</date_mod>
+</t0279>
+<t0272>
+	<name>弘前</name>
+	<population>47235</population>
+	<date_mod>2003-5-10</date_mod>
+</t0272>
+<t0273>
+	<name>八戸</name>
+	<population>26654</population>
+	<date_mod>2003-6-14</date_mod>
+</t0273>
+<t0271>
+	<name>青森</name>
+	<population>59171</population>
+	<date_mod>2003-4-30</date_mod>
+</t0271>
+<t0276>
+	<name>むつ</name>
+	<population>35187</population>
+	<date_mod>2003-1-21</date_mod>
+</t0276>
+<t0274>
+	<name>三沢</name>
+	<population>83672</population>
+	<date_mod>2003-9-9</date_mod>
+</t0274>
+<t0275>
+	<name>黒石</name>
+	<population>42391</population>
+	<date_mod>2003-8-4</date_mod>
+</t0275>
+</root>

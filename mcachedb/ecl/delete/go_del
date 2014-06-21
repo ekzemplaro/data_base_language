@@ -1,0 +1,2 @@
+#
+ecl -shell mcachedb_delete.lisp -eval '(quit)' -- t1527

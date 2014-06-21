@@ -1,0 +1,7 @@
+#
+#
+JAVA_CLASSPATH="/usr/share/java/js.jar:/usr/share/java/jline.jar"
+POSTGRE_JAR=/usr/share/java/postgresql.jar
+export CLASSPATH=.:$POSTGRE_JAR:$JAVA_CLASSPATH
+#
+./postgre_read.js

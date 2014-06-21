@@ -1,0 +1,1 @@
+clisp csv_delete.lsp /var/tmp/csv/cities.csv t1275

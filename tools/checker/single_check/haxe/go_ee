@@ -1,0 +1,10 @@
+#
+../single_check.sh gdbm cython
+../single_check.sh berkeley cython
+../single_check.sh mcached cython
+../single_check.sh mcachedb cython
+#
+../single_check.sh redis cython
+#../single_check.sh tcbn cython
+#../single_check.sh tyrant cython
+#

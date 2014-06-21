@@ -1,0 +1,4 @@
+#
+../single_check.sh mysql clojure
+../single_check.sh postgre clojure
+../single_check.sh firebird clojure

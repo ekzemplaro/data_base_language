@@ -1,0 +1,6 @@
+#
+export POSTGRE_JAR=/usr/share/java/postgresql.jar
+export SCALA_COMMON="/var/www/data_base/common/scala_common"
+export CPX=.:$SCALA_COMMON:$POSTGRE_JAR
+#
+scala -classpath $CPX postgre_delete t3468

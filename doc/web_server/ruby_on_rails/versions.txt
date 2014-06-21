@@ -1,0 +1,18 @@
+<blockquote>
+$ ruby -v<br />
+ruby 1.9.2p290 (2011-07-09 revision 32553) [x86_64-linux]<p />
+
+$ gem -v<br />
+1.8.17<p />
+
+$ rails -v<br />
+Rails 3.2.2<p />
+
+
+$ node -v<br />
+v0.6.12<p />
+
+$ coffee -v<br />
+CoffeeScript version 1.2.0<p />
+
+</blockquote>

@@ -1,0 +1,11 @@
+#! /bin/bash
+#
+#
+for file_json in f4051.json f4052.json f4053.json \
+		f4054.json f4055.json f4056.json \
+		f4057.json f4058.json f4059.json
+do
+curl -H Accept:application/json \
+	-X POST -d@$file_json http://localhost:7474/db/data/node
+done
+#

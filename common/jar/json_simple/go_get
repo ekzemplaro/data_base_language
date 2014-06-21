@@ -1,0 +1,3 @@
+#
+JSON_SIMPLE=/home/uchida/java/json_simple/json_simple-1.1-all
+cp -p $JSON_SIMPLE/lib/json_simple-1.1.jar .

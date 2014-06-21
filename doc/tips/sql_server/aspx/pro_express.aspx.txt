@@ -1,0 +1,77 @@
+﻿<html>
+<!--
+	pro_express.aspx
+
+				Dec/28/2012
+
+-->
+<head>
+<%@ Page Language="C#" EnableViewState="false" %>
+<% @Import Namespace="System.Data" %>
+<% @Import Namespace="System.Data.SqlClient" %>
+<script runat="server">
+    void Page_Load(object sender, EventArgs e) {
+      ex01_proc ();
+    }
+
+// ----------------------------------------------------------------
+
+void ex01_proc ()
+{
+	String out_str;
+
+	Response.Write ("*** 開始 ***<br />");
+
+	string str_connect =
+		@"server=localhost\SQLEXPRESS;"
+		+ "uid=sa;" + "pwd=tiger;" + "database=city;";
+ 
+	string command = "select ID,Name,Population,date_mod from cities";
+
+SqlDataAdapter da_adapter
+			= new SqlDataAdapter (command,str_connect);
+
+	DataTable dtable = new DataTable ();
+
+	da_adapter.Fill (dtable);
+
+	display_proc (dtable);
+
+	Response.Write ("*** 終了 ***<br />");
+}
+
+// ----------------------------------------------------------------
+void display_proc (DataTable dtable)
+{
+	string out_str;
+
+	Response.Write ("*** display_proc *** start ***<br />");
+
+	out_str = "<table>";
+
+	for (int it=0; it< dtable.Rows.Count; it++)
+		{
+		DataRow dr = dtable.Rows[it];
+
+		out_str += "<tr>";
+
+		out_str += "<td>" + dr["ID"].ToString() + "</td>";
+		out_str += "<td>" + dr["NAME"].ToString() + "</td>";
+		out_str += "<td>" + dr["POPULATION"].ToString() + "</td>";
+		out_str += "<td>" + dr["DATE_MOD"].ToString() + "</td>";
+	
+		out_str += "</tr>";	
+		}
+
+	Response.Write (out_str);
+
+	Response.Write ("*** display_proc *** end ***<br />");
+}
+</script>
+
+</head>
+
+<body>
+Dec/28/2012<p />
+</body>
+</html>

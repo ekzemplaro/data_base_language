@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<script src="/js/jquery-2.1.0.min.js"></script>
+<meta content="Program Language Examples to connect to MS SQLServer" name="description">
+<meta content="MS SQLServer,クライアント,接続,言語,サンプル" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<title>MS SQLServer</title>
+</head>
+<body>
+<h1>MS SQLServer</h1>
+
+再起動を要求して、インストールが出来ない時<p />
+<blockquote>
+regedit を、使う。<p />
+HKEY_LOCAL_MACHINE¥SYSTEM¥CurrentControlSet¥Control¥Session Manager<br />
+の<br />
+PendingFileRenameOperations<br />
+を削除する。<br />
+</blockquote>
+
+sqlcmd がエラーメッセージを出す時の対応<p />
+<blockquote>
+SQL Native Client が正しくインストールされていません。<p />
+<blockquote>
+システム環境変数 PATH を修正して、適切な、sqlcmd が起動するようにする。<p />
+</blockquote>
+</blockquote>
+
+
+インストールの確認方法<p />
+<blockquote>
+コマンドプロンプトにて、<p />
+sqlcmd -Slocalhost\SQLEXPRESS<br />
+>use master<br />
+>go<br />
+>exit<br />
+</blockquote>
+
+
+ユーザーの確認方法<p />
+<blockquote>
+sqlcmd -Slocalhost\SQLEXPRESS<br />
+>use master<br />
+>select name from syslogins<br />
+>go<br />
+>exit<br />
+</blockquote>
+
+
+バージョンの確認方法<p />
+<blockquote>
+sqlcmd -S host_mssql\SQLEXPRESS -U sa -P scott_tiger<br />
+>select @@version<br />
+>go<br />
+>exit<br />
+</blockquote>
+
+
+
+リモートからアクセスできるようにサーバーを設定<p />
+<blockquote>
+netstat -a で、1433 を、Listening していることを確認<p />
+ファイアウォールを無効にする<p />
+
+SQLEXPRESS の TCP/IP を有効にする。<p />
+</blockquote>
+
+Linux からのアクセス<p />
+<pre>
+ii  freetds-bin   0.91-3   amd64    FreeTDS command-line utilities
+ii  sqsh          2.1.7-2  amd64    commandline SQL client for MS SQL and Sybase servers
+</pre>
+
+<blockquote>
+/etc/freetds/freetds.conf
+<pre>
+[global]
+tds version = 8.0
+client charset = UTF-8
+</pre>
+</blockquote>
+<blockquote>
+	sqsh -S host_mssql -U sa -P tiger
+</blockquote>
+
+PHP<p />
+<blockquote>
+	<pre>
+	ii  php5-sybase  5.4.9-4ubuntu2.3   amd64    Sybase / MS SQL Server module for php5
+	</pre>
+</blockquote>
+
+Python<p />
+<blockquote>
+	python-pymssql<p />
+</blockquote>
+
+Java<p />
+<pre>
+
+java.security.AccessControlException:
+ access denied (java.net.SocketPermission cdbd025 resolve)
+
+</pre>
+<hr>
+データのバックアップ<br />
+	<blockquote>
+	backup database city to disk='c:\tmp\city.bak'<br />
+	go<br />
+	</blockquote>
+データのリストア<br />
+	<blockquote>
+	restore database city from disk='c:\tmp\city.bak'<br />
+	go<br />
+	</blockquote>
+
+データベースの取得<br />
+	<blockquote>
+	select name from sys.databases<br />
+	go<br />
+	</blockquote>
+
+<hr />
+コラム名の取得<br />
+	<blockquote>
+	use city<br />
+	select name from syscolumns where id=object_id('cities')<br />
+	go<br />
+	</blockquote>
+
+<hr />
+次のエラーが出たときの対応<p />
+<blockquote>
+Unicode data in a Unicode-only collation or ntext data cannot be sent to clients
+</blockquote>
+using DB-Library (such as ISQL) or ODBC version 3.7 or earlier.<p />
+
+/etc/freetds/freetds.conf を修正する。<p />
+<blockquote>
+[global]<br />
+;tds version = 4.2<br />
+tds version = 8.0<br />
+client charset = UTF-8<br />
+</blockquote>
+<div id="result_aa">result_aa</div>
+<hr />
+<div id="outarea_aa">outarea_aa</div>
+<div id="outarea_bb">outarea_bb</div>
+<div id="outarea_cc">outarea_cc</div>
+<div id="outarea_dd">outarea_dd</div>
+<div id="outarea_ee">outarea_ee</div>
+<div id="outarea_ff">outarea_ff</div>
+<div id="outarea_gg">outarea_gg</div>
+<div id="outarea_hh">outarea_hh</div>
+<hr />
+<a href="/data_base/data_base.html">Return</a><p />
+Jan/29/2014 AM 08:15<p />
+</body>
+</html>

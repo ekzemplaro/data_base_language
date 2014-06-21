@@ -1,0 +1,1 @@
+emacs --script csv_update.el /var/tmp/csv/cities.csv t1273 345952100

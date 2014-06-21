@@ -1,0 +1,11 @@
+#
+#
+TCBN=/usr/local/lib
+SHARE=/usr/share/java
+JAVA_CLASSPATH=$SHARE/js.jar:$SHARE/jline.jar
+JAVA_COMMON=/var/www/data_base/common/java_common
+export CLASSPATH=./:$SHARE:$JAVA_CLASSPATH:$JAVA_COMMON
+export CLASSPATH=$CLASSPATH:$TCBN/tokyocabinet.jar
+LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$TCBN
+#
+./tcbn_read.js

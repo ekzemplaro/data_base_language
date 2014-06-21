@@ -1,0 +1,29 @@
+#! /usr/bin/falcon
+//
+//	csv_update.fal
+//
+//					Feb/20/2014
+//
+// -------------------------------------------------------------------
+load "/var/www/data_base/common/falcon_common/text_manipulate.fal"
+// -------------------------------------------------------------------
+printl( "*** 開始 ***" )
+
+file_text=args[0]
+key_in=args[1]
+population_in=args[2]
+printl (file_text)
+printl (key_in)
+printl (population_in)
+//
+dict_aa = csv_read_proc (file_text)
+//
+dict_aa = dict_update_proc (dict_aa,key_in,population_in)
+//
+dict_display_proc (dict_aa)
+//
+csv_write_proc (file_text,dict_aa)
+//
+printl( "*** 終了 ***" )
+//
+// -------------------------------------------------------------------

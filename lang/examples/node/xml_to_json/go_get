@@ -1,0 +1,8 @@
+#
+for id in 6770 6716 6653
+do
+	fname_aa="search_xml.php?extended=1&id="$id
+#	wget "http://librivox.org/newcatalog/"$fname_aa
+	mv $fname_aa "id_"$id".xml"
+done
+

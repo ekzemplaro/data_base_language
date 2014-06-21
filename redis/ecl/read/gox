@@ -1,0 +1,3 @@
+#
+ecl -shell redis_read.lisp -eval '(quit)'
+#

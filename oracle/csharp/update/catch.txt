@@ -1,0 +1,9 @@
+	try
+		{
+		}
+	catch	(Exception exp)
+		{
+		Console.Error.WriteLine
+		("*** error *** " + exp);
+		Environment.Exit (1);
+		}

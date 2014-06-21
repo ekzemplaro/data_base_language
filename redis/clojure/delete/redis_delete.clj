@@ -1,0 +1,32 @@
+; -----------------------------------------------------------------
+;
+;	redis_delete.clj
+;
+;					Jan/28/2014
+;
+; -----------------------------------------------------------------
+(ns mcached_delete
+	(:import (java.net Socket)
+           (java.io PrintWriter)
+)
+)
+ 
+; -----------------------------------------------------------------
+(defn send-data [host port msg]
+	(with-open [sock (Socket. host port)
+		printer (PrintWriter. (.getOutputStream sock))]
+	(.println printer msg)))
+; -----------------------------------------------------------------
+
+(println "*** 開始 ***") 
+(let [key_in (first *command-line-args*)
+	hostname "host_dbase"
+	port 6379
+	]
+(println key_in)
+(def command (clojure.string/join "" ["del " key_in "\r\n"]))
+(println command)
+(send-data hostname port command)
+)
+(println "*** 終了 ***")
+; -----------------------------------------------------------------

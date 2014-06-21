@@ -1,0 +1,5 @@
+#
+../single_check.sh text allegro
+../single_check.sh csv allegro
+#../single_check.sh xml allegro
+../single_check.sh json allegro

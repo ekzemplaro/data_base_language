@@ -1,0 +1,3 @@
+net_manipulate.groovy
+text_manipulate.groovy
+xml_manipulate.groovy

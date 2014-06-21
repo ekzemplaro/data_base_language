@@ -1,0 +1,1 @@
+../mssql_ruby_delete.rb

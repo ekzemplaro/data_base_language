@@ -1,0 +1,2 @@
+export ftp_proxy=""
+./ftp_update.tcl t0365 45234800

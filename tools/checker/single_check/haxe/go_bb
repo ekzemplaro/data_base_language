@@ -1,0 +1,8 @@
+#
+../single_check.sh sqlite3 haxe
+../single_check.sh mssql haxe
+../single_check.sh mysql haxe
+../single_check.sh postgre haxe
+../single_check.sh firebird haxe
+#
+#

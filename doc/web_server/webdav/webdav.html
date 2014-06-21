@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<title>WebDAV Mar/15/2013</title>
+</head>
+<body>
+<h2>
+WebDAV の設定方法
+</h2>
+次のモジュールが必要<br />
+<pre>
+ii  libapache2-mod-wsgi     3.4-0ubuntu1   amd64        Python WSGI adapter module for Apache
+</pre>
+パスワードの作成<p />
+<blockquote>
+	# htpasswd -c /etc/apache2/.htpasswd scott<p />
+</blockquote>
+
+/etc/apache2/sites-available に作成するファイルの例<p />
+<blockquote>
+
+<a href="available_noauth.txt">認証なし</a><p />
+	<blockquote>
+	ポート　3004 を使用<p />
+	</blockquote>
+
+<a href="available_basic.txt">Basic 認証</a><p />
+	<blockquote>
+	ポート　3014 を使用<p />
+	</blockquote>
+</blockquote>
+
+apache2 は、fsmount というグループで実行する。<p />
+
+<blockquote>
+	fsmount グループは、公開エリアに書き込み権限があること。<p />
+	<a href="httpd.conf.txt">/etc/apache2/httpd.conf</a><p />
+</blockquote>
+
+起動<br />
+<blockquote>
+sudo a2enmod dav<br />
+sudo a2enmod dav_fs<br />
+sudo service apache2 restart<br />
+</blockquote>
+
+動作の確認< br />
+<blockquote>
+iPad の GoodReader で、ファイルのアップロードが出来ることを確認。<br />
+</blockquote>
+
+<hr />
+<div id="result_aa">result_aa</div>
+<hr />
+<div id="outarea_aa">outarea_aa</div>
+<div id="outarea_bb">outarea_bb</div>
+<div id="outarea_cc">outarea_cc</div>
+<div id="outarea_dd">outarea_dd</div>
+<div id="outarea_ee">outarea_ee</div>
+<div id="outarea_ff">outarea_ff</div>
+<div id="outarea_gg">outarea_gg</div>
+<div id="outarea_hh">outarea_hh</div>
+<hr />
+<a href="../web_server.html">Return</a><p />
+Mar/15/2013 AM 08:15<p />
+</body>
+</html>

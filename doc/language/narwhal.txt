@@ -1,0 +1,24 @@
+<title>Narwhal Oct/18/2011</title>
+</head>
+<body>
+<h2><a href="https://github.com/tlrobinson/narwhal">Narwhal</a></h2><p />
+<blockquote>
+	tlrobinson-narwhal-d0cad69.tar.gz<p />
+
+	ln -s tlrobinson-narwhal-d0cad69/bin/narwhal /usr/local/bin/narwhal<p />
+
+</blockquote>
+
+<blockquote>
+<pre>
+$ narwhal
+Rhino 1.7 release 3 PRERELEASE 2009 12 12
+js> aa = 12;
+12
+js> bb = 23;
+23
+js> print (aa + bb);
+35
+js>
+</pre>
+</blockquote>

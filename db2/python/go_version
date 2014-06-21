@@ -1,0 +1,4 @@
+#
+python --version
+#
+python -c "import kinterbasdb as k; print k.__version__"

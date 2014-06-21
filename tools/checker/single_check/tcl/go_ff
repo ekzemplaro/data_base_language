@@ -1,0 +1,6 @@
+#
+../single_check.sh couch tcl
+../single_check.sh ftp tcl
+../single_check.sh mongo tcl
+#
+#

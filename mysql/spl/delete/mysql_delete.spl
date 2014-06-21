@@ -1,0 +1,23 @@
+// -----------------------------------------------------------------
+//	mysql_delete.spl
+//
+//						Sep/06/2011
+// -----------------------------------------------------------------
+load "sql_mysql";
+#file-as-code  /var/www/data_base/common/spl_common/sql_manipulate.spl;
+
+// -----------------------------------------------------------------
+write ("*** 開始 ***\n");
+
+var id_in = argv[0];
+
+write (id_in ~ "\n");
+
+var db = sql_connect("mysql", "host=host_mysql,user=scott,pass=tiger,db=city");
+
+sql(db, "SET NAMES utf8");
+
+sql_delete_proc (db,id_in);
+
+write ("*** 終了 ***\n");
+// -----------------------------------------------------------------

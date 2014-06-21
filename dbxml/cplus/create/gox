@@ -1,0 +1,4 @@
+#
+export LD_LIBRARY_PATH=/home/uchida/xml_database/berkeley/dbxml-2.5.16/install/lib
+#
+./dbxml_create

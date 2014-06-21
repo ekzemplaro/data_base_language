@@ -1,0 +1,5 @@
+#
+#
+../single_check.sh xindice ringo
+../single_check.sh exist ringo
+#

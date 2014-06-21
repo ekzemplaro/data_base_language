@@ -1,0 +1,20 @@
+#! /usr/bin/bsh
+//
+//	mysql_read.bsh
+//
+//						Sep/26/2012
+//
+// ---------------------------------------------------------------------
+source ("/var/www/data_base/common/bsh_common/sql_manipulate.bsh");
+// ---------------------------------------------------------------------
+System.out.println ("*** 開始 ***");
+
+String url="jdbc:mysql://host_mysql/city";
+Connection conn = DriverManager.getConnection (url,"scott","tiger");
+
+sql_display_proc (conn);
+
+
+conn.close ();
+System.out.println ("*** 終了 ***");
+// ---------------------------------------------------------------------

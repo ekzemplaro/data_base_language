@@ -1,0 +1,3 @@
+#
+#./xml_create.rb cities.xml
+./xml_create.rb /var/tmp/xml_file/cities.xml

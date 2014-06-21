@@ -1,0 +1,9 @@
+#
+../single_check.sh text gambas
+../single_check.sh csv gambas
+../single_check.sh xml gambas
+../single_check.sh json gambas
+../single_check.sh excel gambas
+#
+../single_check.sh pdf gambas
+../single_check.sh epub gambas

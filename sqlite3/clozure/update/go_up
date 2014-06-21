@@ -1,0 +1,3 @@
+#
+#ccl64 -l sqlite3_update.lisp  --eval '(quit)' -- t0712 381459700
+ccl -l sqlite3_update.lisp  --eval '(quit)' -- t0712 381459700

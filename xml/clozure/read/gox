@@ -1,0 +1,2 @@
+ccl64 -l  xml_read.lisp --eval '(quit)' -- /var/tmp/xml_file/cities.xml
+#

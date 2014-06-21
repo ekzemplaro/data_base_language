@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+    http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+    version="2.4">
+
+<resource-ref>
+	<description>city</description>
+	<res-ref-name>jdbc/city</res-ref-name>
+	<res-type>javax.sql.DataSource</res-type>
+	<res-auth>Container</res-auth>
+</resource-ref>
+
+<servlet>
+        <servlet-name>master_java_read</servlet-name>
+        <servlet-class>master_java_read</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>master_java_read</servlet-name>
+        <url-pattern>/master_java_read</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>text_java_read</servlet-name>
+        <servlet-class>text_java_read</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>text_java_read</servlet-name>
+        <url-pattern>/text_java_read</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>text_java_update</servlet-name>
+        <servlet-class>text_java_update</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>text_java_update</servlet-name>
+        <url-pattern>/text_java_update</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>csv_java_read</servlet-name>
+        <servlet-class>csv_java_read</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>csv_java_read</servlet-name>
+        <url-pattern>/csv_java_read</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>csv_java_update</servlet-name>
+        <servlet-class>csv_java_update</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>csv_java_update</servlet-name>
+        <url-pattern>/csv_java_update</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>xml_java_read</servlet-name>
+        <servlet-class>xml_java_read</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>xml_java_read</servlet-name>
+        <url-pattern>/xml_java_read</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>xml_java_update</servlet-name>
+        <servlet-class>xml_java_update</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>xml_java_update</servlet-name>
+        <url-pattern>/xml_java_update</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>json_java_read</servlet-name>
+        <servlet-class>json_java_read</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>json_java_read</servlet-name>
+        <url-pattern>/json_java_read</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>json_java_update</servlet-name>
+        <servlet-class>json_java_update</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>json_java_update</servlet-name>
+        <url-pattern>/json_java_update</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>sqlite3_java_read</servlet-name>
+        <servlet-class>sqlite3_java_read</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>sqlite3_java_read</servlet-name>
+        <url-pattern>/sqlite3_java_read</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>sqlite3_java_update</servlet-name>
+        <servlet-class>sqlite3_java_update</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>sqlite3_java_update</servlet-name>
+        <url-pattern>/sqlite3_java_update</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>mysql_java_read</servlet-name>
+        <servlet-class>mysql_java_read</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>mysql_java_read</servlet-name>
+        <url-pattern>/mysql_java_read</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>mysql_java_update</servlet-name>
+        <servlet-class>mysql_java_update</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>mysql_java_update</servlet-name>
+        <url-pattern>/mysql_java_update</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>postgre_java_read</servlet-name>
+        <servlet-class>postgre_java_read</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>postgre_java_read</servlet-name>
+        <url-pattern>/postgre_java_read</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>postgre_java_update</servlet-name>
+        <servlet-class>postgre_java_update</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>postgre_java_update</servlet-name>
+        <url-pattern>/postgre_java_update</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>firebird_java_read</servlet-name>
+        <servlet-class>firebird_java_read</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>firebird_java_read</servlet-name>
+        <url-pattern>/firebird_java_read</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>firebird_java_update</servlet-name>
+        <servlet-class>firebird_java_update</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>firebird_java_update</servlet-name>
+        <url-pattern>/firebird_java_update</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>oracle_java_read</servlet-name>
+        <servlet-class>oracle_java_read</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>oracle_java_read</servlet-name>
+        <url-pattern>/oracle_java_read</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>oracle_java_update</servlet-name>
+        <servlet-class>oracle_java_update</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>oracle_java_update</servlet-name>
+        <url-pattern>/oracle_java_update</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>mssql_java_read</servlet-name>
+        <servlet-class>mssql_java_read</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>mssql_java_read</servlet-name>
+        <url-pattern>/mssql_java_read</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>mssql_java_update</servlet-name>
+        <servlet-class>mssql_java_update</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>mssql_java_update</servlet-name>
+        <url-pattern>/mssql_java_update</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>db2_java_read</servlet-name>
+        <servlet-class>db2_java_read</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>db2_java_read</servlet-name>
+        <url-pattern>/db2_java_read</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>db2_java_update</servlet-name>
+        <servlet-class>db2_java_update</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>db2_java_update</servlet-name>
+        <url-pattern>/db2_java_update</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>derby_java_read</servlet-name>
+        <servlet-class>derby_java_read</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>derby_java_read</servlet-name>
+        <url-pattern>/derby_java_read</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>derby_java_update</servlet-name>
+        <servlet-class>derby_java_update</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>derby_java_update</servlet-name>
+        <url-pattern>/derby_java_update</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>hsqldb_java_read</servlet-name>
+        <servlet-class>hsqldb_java_read</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>hsqldb_java_read</servlet-name>
+        <url-pattern>/hsqldb_java_read</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>hsqldb_java_update</servlet-name>
+        <servlet-class>hsqldb_java_update</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>hsqldb_java_update</servlet-name>
+        <url-pattern>/hsqldb_java_update</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>h2_java_read</servlet-name>
+        <servlet-class>h2_java_read</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>h2_java_read</servlet-name>
+        <url-pattern>/h2_java_read</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>h2_java_update</servlet-name>
+        <servlet-class>h2_java_update</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>h2_java_update</servlet-name>
+        <url-pattern>/h2_java_update</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>exist_java_read</servlet-name>
+        <servlet-class>exist_java_read</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>exist_java_read</servlet-name>
+        <url-pattern>/exist_java_read</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>exist_java_update</servlet-name>
+        <servlet-class>exist_java_update</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>exist_java_update</servlet-name>
+        <url-pattern>/exist_java_update</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>xindice_java_read</servlet-name>
+        <servlet-class>xindice_java_read</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>xindice_java_read</servlet-name>
+        <url-pattern>/xindice_java_read</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>xindice_java_update</servlet-name>
+        <servlet-class>xindice_java_update</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>xindice_java_update</servlet-name>
+        <url-pattern>/xindice_java_update</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>dbxml_java_read</servlet-name>
+        <servlet-class>dbxml_java_read</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>dbxml_java_read</servlet-name>
+        <url-pattern>/dbxml_java_read</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>mcached_java_read</servlet-name>
+        <servlet-class>mcached_java_read</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>mcached_java_read</servlet-name>
+        <url-pattern>/mcached_java_read</url-pattern>
+</servlet-mapping>
+<servlet>
+        <servlet-name>mcached_java_update</servlet-name>
+        <servlet-class>mcached_java_update</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>mcached_java_update</servlet-name>
+        <url-pattern>/mcached_java_update</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+        <servlet-name>mcachedb_java_read</servlet-name>
+        <servlet-class>mcachedb_java_read</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>mcachedb_java_read</servlet-name>
+        <url-pattern>/mcachedb_java_read</url-pattern>
+</servlet-mapping>
+<servlet>
+        <servlet-name>mcachedb_java_update</servlet-name>
+        <servlet-class>mcachedb_java_update</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>mcachedb_java_update</servlet-name>
+        <url-pattern>/mcachedb_java_update</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>redis_java_read</servlet-name>
+        <servlet-class>redis_java_read</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>redis_java_read</servlet-name>
+        <url-pattern>/redis_java_read</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>redis_java_update</servlet-name>
+        <servlet-class>redis_java_update</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>redis_java_update</servlet-name>
+        <url-pattern>/redis_java_update</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>tcbn_java_read</servlet-name>
+        <servlet-class>tcbn_java_read</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>tcbn_java_read</servlet-name>
+        <url-pattern>/tcbn_java_read</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>couch_java_read</servlet-name>
+        <servlet-class>couch_java_read</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>couch_java_read</servlet-name>
+        <url-pattern>/couch_java_read</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>couch_java_update</servlet-name>
+        <servlet-class>couch_java_update</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>couch_java_update</servlet-name>
+        <url-pattern>/couch_java_update</url-pattern>
+</servlet-mapping>
+
+
+
+<servlet>
+        <servlet-name>ftp_java_read</servlet-name>
+        <servlet-class>ftp_java_read</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>ftp_java_read</servlet-name>
+        <url-pattern>/ftp_java_read</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>ftp_java_update</servlet-name>
+        <servlet-class>ftp_java_update</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>ftp_java_update</servlet-name>
+        <url-pattern>/ftp_java_update</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+        <servlet-name>webdav_java_read</servlet-name>
+        <servlet-class>webdav_java_read</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>webdav_java_read</servlet-name>
+        <url-pattern>/webdav_java_read</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>webdav_java_update</servlet-name>
+        <servlet-class>webdav_java_update</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>webdav_java_update</servlet-name>
+        <url-pattern>/webdav_java_update</url-pattern>
+</servlet-mapping>
+
+
+
+
+<servlet>
+        <servlet-name>mongo_java_read</servlet-name>
+        <servlet-class>mongo_java_read</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>mongo_java_read</servlet-name>
+        <url-pattern>/mongo_java_read</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>cassandra_java_read</servlet-name>
+        <servlet-class>cassandra_java_read</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>cassandra_java_read</servlet-name>
+        <url-pattern>/cassandra_java_read</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>cassandra_java_update</servlet-name>
+        <servlet-class>cassandra_java_update</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>cassandra_java_update</servlet-name>
+        <url-pattern>/cassandra_java_update</url-pattern>
+</servlet-mapping>
+
+</web-app>

@@ -1,0 +1,3 @@
+#
+runghc json_create.hs /var/tmp/json/cities.json
+#runghc json_create.hs cities.json

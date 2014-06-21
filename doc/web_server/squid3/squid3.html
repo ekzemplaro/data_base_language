@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<script src="/js/jquery-1.7.2.min.js"></script>
+<script>
+jQuery (function ()
+{
+	jQuery ("#outarea_aa").text ("*** start ***");
+
+	jQuery ("#outarea_hh").text ("*** end ***");
+});
+</script>
+<title>squid3 Jun/12/2012</title>
+</head>
+<body>
+
+<a href="http://www.squid-cache.org/">squid-cache.org</a><p />
+<blockquote>
+	sudo apt-get install squid3<p />
+	ii  squid3    3.1.14-1<br />
+	Full featured Web Proxy cache (HTTP proxy)<p />
+</blockquote>
+
+
+/etc/squid3/squid.conf<p />
+<blockquote>
+	http_port 3128 defaultsite=172.20.208.186<p />
+	cache_peer 172.20.208.186 parent 80 0 no-query originserver<p />
+	http_access allow all<p />
+</blockquote>
+
+<hr />
+リバースプロキシーとしての使い方<br />
+	<blockquote>
+	外部からのアクセスを、内部の（例えば仮想の）サーバーにアクセス
+	を仕分けします。<p />
+	</blockquote>
+インターネット上の公開DNSにおいて、<p />
+
+	<blockquote>
+www.abc.com 172.16.1.2<br />
+www.ijk.com 172.16.1.2<br />
+www.opq.com 172.16.1.2<br />
+	</blockquote>
+
+というように、リクエストが単一のマシン（リバースプロキシ）に
+集まるようにします。<p />
+
+そして、リバースプロキシでは自身でDNSを起動するか/etc/hostsを
+参照するように設定し、これらにおいて<p />
+
+	<blockquote>
+www.abc.com 192,168.1.3<br />
+www.ijk.com 192.168.1.4<br />
+www.opq.com 192.168.1.5<br />
+	</blockquote>
+
+というようにする事で、実際のWebサーバのアドレスがリバースプロキシ上で
+解決できるようにしてください。<p />
+<hr />
+<div id="result_aa">result_aa</div>
+<hr />
+<div id="outarea_aa">outarea_aa</div>
+<div id="outarea_bb">outarea_bb</div>
+<div id="outarea_cc">outarea_cc</div>
+<div id="outarea_dd">outarea_dd</div>
+<div id="outarea_ee">outarea_ee</div>
+<div id="outarea_ff">outarea_ff</div>
+<div id="outarea_gg">outarea_gg</div>
+<div id="outarea_hh">outarea_hh</div>
+<hr />
+<a href="../web_server.html">Return</a><p />
+Jun/12/2012 AM 08:15<p />
+</body>
+</html>

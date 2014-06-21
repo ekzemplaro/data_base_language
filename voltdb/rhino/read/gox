@@ -1,0 +1,6 @@
+#
+JAVA_CLASSPATH="/usr/share/java/js.jar:/usr/share/java/jline.jar"
+VOLTDB=/home/uchida/dbm/voltdb/voltdb-2.1.1
+VOLTDB_JAR=$VOLTDB/lib/*:$VOLTDB/voltdb/*
+export CLASSPATH=.:$JAVA_CLASSPATH:$VOLTDB_JAR
+./voltdb_read.js

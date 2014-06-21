@@ -1,0 +1,22 @@
+<meta content="Program Language Examples in abcl" name="description">
+<meta content="abcl,クライアント,接続,言語,サンプル" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<title>abcl Nov/04/2013</title>
+</head>
+<body>
+<h2><a href="http://common-lisp.net/project/armedbear/">Armed Bear Common Lisp</a></h2><p />
+
+<blockquote>
+abcl-bin-1.2.1.tar.gz<p />
+</blockquote>
+
+<blockquote>
+<pre>
+CL-USER(1): (require :asdf)
+("ASDF")
+CL-USER(2): (asdf:asdf-version)
+"3.0.1"
+CL-USER(3): (quit)
+</pre>
+</blockquote>
+

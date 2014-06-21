@@ -1,0 +1,7 @@
+#
+../single_check.sh text haskell
+../single_check.sh csv haskell
+../single_check.sh xml haskell
+#../single_check.sh json haskell
+#../single_check.sh excel haskell
+#

@@ -1,0 +1,25 @@
+#
+SRC=/var/www/data_base/lang/jquery_haskell/read
+cd /usr/lib/cgi-bin/data_base/haskell
+#
+ln -s $SRC/berkeley_haskell_read berkeley_haskell_read
+ln -s $SRC/couch_haskell_read couch_haskell_read
+ln -s $SRC/db2_haskell_read db2_haskell_read
+ln -s $SRC/dbxml_haskell_read dbxml_haskell_read
+ln -s $SRC/exist_haskell_read exist_haskell_read
+ln -s $SRC/firebird_haskell_read firebird_haskell_read
+ln -s $SRC/gdbm_haskell_read gdbm_haskell_read
+ln -s $SRC/json_haskell_read json_haskell_read
+ln -s $SRC/master_haskell_read master_haskell_read
+ln -s $SRC/mcached_haskell_read mcached_haskell_read
+ln -s $SRC/mcachedb_haskell_read mcachedb_haskell_read
+ln -s $SRC/mongo_haskell_read mongo_haskell_read
+ln -s $SRC/mssql_haskell_read mssql_haskell_read
+ln -s $SRC/mysql_haskell_read mysql_haskell_read
+ln -s $SRC/oracle_haskell_read oracle_haskell_read
+ln -s $SRC/postgre_haskell_read postgre_haskell_read
+ln -s $SRC/sqlite3_haskell_read sqlite3_haskell_read
+ln -s $SRC/text_haskell_read text_haskell_read
+ln -s $SRC/xindice_haskell_read xindice_haskell_read
+ln -s $SRC/xml_haskell_read xml_haskell_read
+#

@@ -1,0 +1,7 @@
+digraph name {
+20 [label="20: MATERIALIZE" ];
+19 [label="19: INSERT" ];
+19 -> 20;
+
+}
+

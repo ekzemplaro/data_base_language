@@ -1,0 +1,31 @@
+<meta content="Program Language Examples in CoffeeScript" name="description">
+<meta content="CoffeeScript,クライアント,接続,言語,サンプル" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<title>CoffeeScript Dec/19/2011</title>
+</head>
+<body>
+<h2><a href="http://jashkenas.github.com/coffee-script/">CoffeeScript</a></h2><p />
+
+<blockquote>
+ii  coffeescript      1.1.1-3<br />
+interpreter and compiler for the CoffeeScript language<br />
+
+</blockquote>
+
+<blockquote>
+	<a href="http://coffeescriptcookbook.com/">CoffeeScript Cookbook</a><p />
+</blockquote>
+
+How to install<br />
+<blockquote>
+	jashkenas-coffee-script-1.2.0-0-g9abe614.tar.gz<p />
+
+	sudo bin/cake install<p />
+</blockquote>
+
+How to check version<br />
+<blockquote>
+	$ coffee --version<br />
+	CoffeeScript version 1.2.0<br />
+</blockquote>
+

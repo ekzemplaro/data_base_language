@@ -1,0 +1,8 @@
+#
+../single_check.sh sqlite3 rhino
+../single_check.sh mssql rhino
+../single_check.sh mysql rhino
+../single_check.sh postgre rhino
+../single_check.sh firebird rhino
+#
+#

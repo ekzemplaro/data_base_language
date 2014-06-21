@@ -1,0 +1,5 @@
+#
+../single_check.sh text rep
+../single_check.sh csv rep
+#../single_check.sh xml rep
+#../single_check.sh json rep

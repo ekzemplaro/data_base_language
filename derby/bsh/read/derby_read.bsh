@@ -1,0 +1,21 @@
+#! /usr/bin/bsh
+//
+//	derby_read.bsh
+//
+//						Oct/01/2012
+//
+// ---------------------------------------------------------------------
+source ("/var/www/data_base/common/bsh_common/sql_manipulate.bsh");
+// ---------------------------------------------------------------------
+System.out.println ("*** 開始 ***");
+
+String str_connect= "jdbc:derby://localhost:1527/city_aaa;create=true";
+
+Connection conn = DriverManager.getConnection (str_connect);
+
+sql_display_proc (conn);
+
+
+conn.close ();
+System.out.println ("*** 終了 ***");
+// ---------------------------------------------------------------------

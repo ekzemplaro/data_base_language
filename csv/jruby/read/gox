@@ -1,0 +1,1 @@
+./csv_read.rb /var/tmp/csv/cities.csv

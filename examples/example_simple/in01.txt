@@ -1,0 +1,6 @@
+This is an example.
+<blockquote>
+example_simple.html
+example_simple.js
+in01.txt
+</blockquote>

@@ -1,0 +1,4 @@
+export http_proxy=""
+#
+curl -X GET http://localhost:5984/data_base/sheet_bb > sheet_bb.json
+#

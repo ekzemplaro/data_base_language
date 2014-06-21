@@ -1,0 +1,77 @@
+﻿<html>
+<!--
+	pro_sql2000.aspx
+
+				Dec/28/2012
+
+-->
+<head>
+<%@ Page Language="C#" Debug="true" %>
+<% @Import Namespace="System.Data" %>
+<% @Import Namespace="System.Data.SqlClient" %>
+<script runat="server">
+    void Page_Load(object sender, EventArgs e) {
+      ex01_proc ();
+    }
+
+// ----------------------------------------------------------------
+
+void ex01_proc ()
+{
+	String out_str;
+
+	Response.Write ("*** 開始 ***<br />");
+
+	string str_connect =
+		@"server=host_mssql;"
+		+ "uid=scott;" + "pwd=tiger;" + "database=CITY;";
+ 
+	string str_sql = "SELECT name from T0001 where ID=1";
+
+	SqlConnection conn;
+	SqlCommand cmd;
+
+	conn = new SqlConnection (str_connect);
+	conn.Open ();
+	cmd = new SqlCommand (str_sql, conn);
+
+	command_exec (ref cmd);
+	conn.Close ();
+
+	Response.Write ("*** 終了 ***<br />");
+}
+
+// ----------------------------------------------------------------
+void command_exec (ref SqlCommand cmd)
+{
+	Response.Write ("*** command_exec *** start ***<br />");
+
+	SqlDataReader dr_sql;
+	dr_sql = cmd.ExecuteReader();
+
+	while (dr_sql.Read ())
+	{
+	StringBuilder str_ss = new StringBuilder ();
+
+	for (int it = 0; it < dr_sql.FieldCount; it++)
+		{
+		str_ss.Append (dr_sql.GetValue(it).ToString ());
+		str_ss.Append ("<br />");
+		}
+
+	Response.Write (str_ss);
+	}
+
+	dr_sql.Close();
+
+	Response.Write ("*** command_exec *** end ***<br />");
+}
+
+</script>
+
+</head>
+
+<body>
+Dec/28/2012<p />
+</body>
+</html>

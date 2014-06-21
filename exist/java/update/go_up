@@ -1,0 +1,17 @@
+#
+#
+SHARE=/usr/share/java
+#
+export JAVA_COMMON=/var/www/data_base/common/java_common
+#
+export CPP=$CPP:$SHARE/commons-httpclient-3.1.jar
+export CPP=$CPP:$SHARE/jboss-common.jar
+export CPP=$CPP:$SHARE/commons-logging-1.1.1.jar
+export CPP=$CPP:$SHARE/commons-logging-adapters-1.1.1.jar
+export CPP=$CPP:$SHARE/commons-logging-api-1.1.1.jar
+export CPP=$CPP:$SHARE/commons-codec-1.3.jar
+#
+export CPP=$CPP:$JAVA_COMMON
+#
+#
+java -cp $CPP exist_update t4255 98713200

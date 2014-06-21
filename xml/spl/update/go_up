@@ -1,0 +1,1 @@
+splrun -e xml_update.spl /var/tmp/xml_file/cities.xml t2264 81235700

@@ -1,0 +1,136 @@
+<ol>
+<h2>Plain Text</h2>
+</ol>
+<table border="1">
+
+<tr>
+<td>Bash</td>
+<td><a href="plain_text/bash/create/text_create.sh.txt">text_create.sh</a></td>
+<td><a href="plain_text/bash/read/text_read.sh.txt">text_read.sh</a></td>
+<td><a href="plain_text/bash/update/text_update.sh.txt">text_update.sh</a></td>
+</tr>
+
+<tr>
+<td>PHP</td>
+<td><a href="plain_text/php/create/text_create.php.txt">text_create.php</a></td>
+<td><a href="plain_text/php/read/text_read.php.txt">text_read.php</a></td>
+<td><a href="plain_text/php/update/text_update.php.txt">text_update.php</a></td>
+</tr>
+
+<tr>
+<td>Python</td>
+<td><a href="plain_text/python/create/text_create.py.txt">text_create.py</a></td>
+<td><a href="plain_text/python/read/text_read.py.txt">text_read.py</a></td>
+<td><a href="plain_text/python/update/text_update.py.txt">text_update.py</a></td>
+</tr>
+
+
+<tr>
+<td>Jython</td>
+<td><a href="plain_text/jython/create/text_create.py.txt">text_create.py</a></td>
+<td><a href="plain_text/jython/read/text_read.py.txt">text_read.py</a></td>
+<td><a href="plain_text/jython/update/text_update.py.txt">text_update.py</a></td>
+</tr>
+
+
+<tr>
+<td>Perl</td>
+<td><a href="plain_text/perl/create/text_create.pl.txt">text_create.pl</a></td>
+<td><a href="plain_text/perl/read/text_read.pl.txt">text_read.pl</a></td>
+<td><a href="plain_text/perl/update/text_update.pl.txt">text_update.pl</a></td>
+</tr>
+
+<tr>
+<td>Ruby</td>
+<td><a href="plain_text/ruby/create/text_create.rb.txt">text_create.rb</a></td>
+<td><a href="plain_text/ruby/read/text_read.rb.txt">text_read.rb</a></td>
+<td><a href="plain_text/ruby/update/text_update.rb.txt">text_update.rb</a></td>
+</tr>
+
+<tr>
+<td>JRuby</td>
+<td><a href="plain_text/jruby/create/text_create.rb.txt">text_create.rb</a></td>
+<td><a href="plain_text/jruby/read/text_read.rb.txt">text_read.rb</a></td>
+<td><a href="plain_text/jruby/update/text_update.rb.txt">text_update.rb</a></td>
+</tr>
+
+<tr>
+<td>Haskell</td>
+<td><a href="plain_text/haskell/create/text_create.hs.txt">text_create.hs</a></td>
+<td><a href="plain_text/haskell/read/text_read.hs.txt">text_read.hs</a></td>
+<td><a href="plain_text/haskell/update/text_update.hs.txt">text_update.hs</a></td>
+</tr>
+
+<tr>
+<td>Clojure</td>
+<td><a href="plain_text/clojure/create/text_create.clj.txt">text_create.clj</a></td>
+<td><a href="plain_text/clojure/read/text_read.clj.txt">text_read.clj</a></td>
+<td><a href="plain_text/clojure/update/text_update.clj.txt">text_update.clj</a></td>
+</tr>
+
+
+<tr>
+<tr>
+<td>Scala</td>
+<td><a href="plain_text/scala/create/text_create.scala.txt">text_create.scala</a></td>
+<td><a href="plain_text/scala/read/text_read.scala.txt">text_read.scala</a></td>
+<td><a href="plain_text/scala/update/text_update.scala.txt">text_update.scala</a></td>
+<td><a href="plain_text/scala/delete/text_delete.scala.txt">text_delete.scala</a></td>
+</tr>
+
+
+<tr>
+<td>Ocaml</td>
+<td><a href="plain_text/ocaml/create/text_create.ml.txt">text_create.ml</a></td>
+<td><a href="plain_text/ocaml/read/text_read.ml.txt">text_read.ml</a></td>
+<td><a href="plain_text/ocaml/update/text_update.ml.txt">text_update.ml</a></td>
+</tr>
+
+<tr>
+<td>Erlang</td>
+<td><a href="plain_text/erlang/create/text_create.erl.txt">text_create.erl</a></td>
+<td><a href="plain_text/erlang/read/text_read.erl.txt">text_read.erl</a></td>
+<td><a href="plain_text/erlang/update/text_update.erl.txt">text_update.erl</a></td>
+</tr>
+
+
+<tr>
+<td>F#</td>
+<td><a href="plain_text/fsharp/create/text_create.fs.txt">text_create.fs</a></td>
+<td><a href="plain_text/fsharp/read/text_read.fs.txt">text_read.fs</a></td>
+<td><a href="plain_text/fsharp/update/text_update.fs.txt">text_update.fs</a></td>
+<td><a href="plain_text/fsharp/delete/text_delete.fs.txt">text_delete.fs</a></td>
+</tr>
+
+
+<tr>
+<td>Groovy</td>
+<td><a href="plain_text/groovy/create/text_create.groovy.txt">text_create.groovy</a></td>
+<td><a href="plain_text/groovy/read/text_read.groovy.txt">text_read.groovy</a></td>
+<td><a href="plain_text/groovy/update/text_update.groovy.txt">text_update.groovy</a></td>
+<td><a href="plain_text/groovy/delete/text_delete.groovy.txt">text_delete.groovy</a></td>
+</tr>
+
+
+<tr>
+<td>Rhino</td>
+<td><a href="plain_text/rhino/create/text_create.js.txt">text_create.js</a></td>
+<td><a href="plain_text/rhino/read/text_read.js.txt">text_read.js</a></td>
+<td><a href="plain_text/rhino/update/text_update.js.txt">text_update.js</a></td>
+</tr>
+
+<tr>
+<td>Java</td>
+<td><a href="plain_text/java/create/text_create.java.txt">text_create.java</a></td>
+<td><a href="plain_text/java/read/text_read.java.txt">text_read.java</a></td>
+<td><a href="plain_text/java/update/text_update.java.txt">text_update.java</a></td>
+</tr>
+
+<tr>
+<td>C#</td>
+<td><a href="plain_text/csharp/create/text_create.cs.txt">text_create.cs</a>
+</td>
+<td><a href="plain_text/csharp/read/text_read.cs.txt">text_read.cs</a></td>
+<td><a href="plain_text/csharp/update/text_update.cs.txt">text_update.cs</a></td>
+</tr>
+</table>

@@ -1,0 +1,9 @@
+#
+GROOVY_JAR=/usr/share/java/groovy-all.jar:/usr/share/java/groovy.jar
+COMMON=/var/www/data_base/common
+GROOVY_COMMON=$COMMON/groovy_common
+JAR_CASSANDRA=$COMMON/jar/cassandra
+#
+#
+export CLASSPATH=./:$GROOVY_COMMON:$JAR_CASSANDRA/*:$GROOVY_JAR
+java cassandra_read

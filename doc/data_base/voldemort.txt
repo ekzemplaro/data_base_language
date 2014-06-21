@@ -1,0 +1,57 @@
+<meta content="Program Language Examples to connect to Voldemort" name="description">
+<meta content="Voldemort,クライアント,接続,言語,サンプル" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<title>Voldemort</title>
+</head>
+<body>
+<h1><a href="http://project-voldemort.com/">Voldemort</a></h1>
+<blockquote>
+	voldemort-1.3.0.tar.gz<p />
+</blockquote>
+server<p />
+<blockquote>
+voldemort-1.3.0/bin/voldemort-server.sh
+voldemort-1.3.0/config/single_node_cluster > /tmp/voldemort.log<p /> 
+
+</blockquote>
+
+<blockquote>
+voldemort-1.3.0/config/single_node_cluster/config/stores.xml<p />
+</blockquote>
+
+<blockquote>
+bin/voldemort-admin-tool.sh --get-metadata --url tcp://localhost:6666<p />
+</blockquote>
+
+How to add store<p />
+<blockquote>
+cp config/single_node_cluster/config/store.xml /tmp/cities.xml<p />
+modify cities.xml<p />
+bin/voldemort-admin-tool.sh --add-stores /tmp/cities.xml --url tcp://localhost:6666<p />
+</blockquote>
+
+
+Python<p />
+<blockquote>
+	voldemort-1.3.0/clients/python<p />
+	protobuf-2.4.1.tar.bz2<p />
+</blockquote>
+
+Ruby<p />
+<blockquote>
+	voldemort-1.3.0/clients/ruby<p />
+</blockquote>
+
+C++<p />
+<blockquote>
+	voldemort-1.3.0/clients/cpp<p />
+</blockquote>
+
+Java<p />
+<blockquote>
+</blockquote>
+
+
+C#<p />
+<blockquote>
+</blockquote>

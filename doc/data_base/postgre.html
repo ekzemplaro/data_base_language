@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<script src="/js/jquery-2.1.0.min.js"></script>
+<meta content="Program Language Examples to connect to PostgreSQL" name="description">
+<meta content="PostgreSQL,クライアント,接続,言語,サンプル" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<title>PostgreSQL</title>
+</head>
+<body>
+<h1><a href="http://www.postgresql.org">PostgreSQL</a></h1>
+
+<blockquote>
+<pre>
+ii  postgresql-9.1       9.1.2-0ubuntu0.11.10.2              object-relational SQL database, version 9.1 server
+ii  postgresql-client    9.1+122ubuntu1                      front-end programs for PostgreSQL (supported version)
+ii  postgresql-client-9.1    9.1.2-0ubuntu0.11.10.2          front-end programs for PostgreSQL 9.1
+ii  postgresql-client-common   122ubuntu1                    manager for multiple PostgreSQL client versions
+ii  postgresql-common          122ubuntu1                    PostgreSQL database-cluster manager
+</pre>
+</blockquote>
+
+<blockquote>
+# passwd postgres<br />
+$ su postgres<br />
+$ createuser scott -P<br />
+$ createdb city<br />
+$ psql<br />
+	<blockquote>
+	postgres=# select * from pg_user;<br />
+	</blockquote>
+</blockquote>
+
+<blockquote>
+	dropuser scott<br />
+	createuser scott<p />
+</blockquote>
+
+
+
+外部からのアクセスを許可する。<br />
+
+<blockquote>
+/etc/postgresql/9.1/main/postgresql.conf<br />
+
+<blockquote>
+<pre>
+listen_addresses = '*'
+</pre>
+</blockquote>
+</blockquote>
+
+<blockquote>
+/etc/postgresql/9.1/main/pg_hba.conf<br />
+
+<blockquote>
+<pre>
+# "local" is for Unix domain socket connections only
+local   all             all                                     trust
+# IPv4 local connections:
+host    all             all             127.0.0.1/32            trust
+host    all             all             0.0.0.0/0               trust
+</pre>
+</blockquote>
+</blockquote>
+
+
+
+データベースクラスタの作成<br />
+<ol>
+/usr/lib/postgresql/8.4/bin/initdb -E UTF-8 -D /usr/local/pgsql/data<br />
+</ol>
+
+以下を使用してデータベースサーバを起動することができます。<br />
+
+<ol>
+/usr/lib/postgresql/8.4/bin/postgres -D /usr/local/pgsql/data<br />
+または<br />
+/usr/lib/postgresql/8.4/bin/pg_ctl -D /usr/local/pgsql/data -l logfile start<br />
+</ol>
+
+<hr />
+
+<ol>
+	su postgres<p />
+	
+	createdb city<p />
+	psql -l city<p />
+	psql -f postgre_create.sql -U scott city<p />
+	psql -f postgre_insert.sql -U scott city<p />
+	psql -f postgre_read.sql -U scott city<p />
+</ol>
+
+<hr />
+データベースの作成<br />
+<blockquote>
+createdb book -U scott<br />
+dropdb book -U scott<br />
+psql book -U scott<br />
+</blockquote>
+<hr />
+
+PHP<p />
+<blockquote>
+	php5-pgsql<p />
+</blockquote>
+
+Python<p />
+<blockquote>
+	python-pygresql<p />
+</blockquote>
+
+Perl<p />
+<blockquote>
+	libdbd-pg-perl<p />
+</blockquote>
+
+Ruby<p />
+<blockquote>
+	libdbd-pg-ruby<p />
+</blockquote>
+
+Haskell<p />
+<blockquote>
+<pre>
+ii  libghc-hdbc-postgresql-dev     2.3.2.1-3build1    amd64     PostgreSQL HDBC (Haskell Database Connectivity) Driver for GHC
+</pre>
+</blockquote>
+
+
+Gauche<p />
+<blockquote>
+	Gauche-dbd-pg-0.2.1.tgz<p />
+
+	trunck.tar.gz を持ってきてトライしたのですが、
+	うまくいきませんでした。<p />
+
+</blockquote>
+
+guile<p />
+<blockquote>
+<a href="http://www.nongnu.org/guile-pg/doc/index.html">guile-pg</a><p />
+</blockquote>
+
+Tcl<p />
+<blockquote>
+<a href="http://www2.tcl.tk/10548">PostgreSQL with Tcl</a><p />
+</blockquote>
+
+
+node.js<p />
+<ol>
+	ry-node_postgres-764ad42.tar.gz<p />
+</ol>
+
+Java<p />
+<blockquote>
+	libpg-java<p />
+</blockquote>
+<pre>
+org.postgresql.util.PSQLException:
+	Your security policy has prevented the connection from being attempted.
+	You probably need to grant the connect java.net.SocketPermission
+	to the database server host and port that you wish to connect to.
+
+</pre>
+<ol>
+	/etc/tomcat6/policy.d/04webapps.policy<p />
+
+		ermission java.security.AllPermission;<p />
+</ol>
+
+<ol>
+/usr/share/java/postgresql-jdbc3-8.2.jar
+</ol>
+
+C#<p />
+<blockquote>
+<pre>
+ii  libmono-npgsql4.0-cil     2.10.8.1-5ubuntu2   all   Mono Npgsql library (for CLI 4.0)
+</pre>
+</blockquote>
+<hr />
+$ psql -h nlf132 -U scott city<p />
+$ psql -h localhost -U scott city<p />
+<div id="result_aa">result_aa</div>
+<hr />
+<div id="outarea_aa">outarea_aa</div>
+<div id="outarea_bb">outarea_bb</div>
+<div id="outarea_cc">outarea_cc</div>
+<div id="outarea_dd">outarea_dd</div>
+<div id="outarea_ee">outarea_ee</div>
+<div id="outarea_ff">outarea_ff</div>
+<div id="outarea_gg">outarea_gg</div>
+<div id="outarea_hh">outarea_hh</div>
+<hr />
+<a href="/data_base/data_base.html">Return</a><p />
+Jan/29/2014 AM 08:15<p />
+</body>
+</html>

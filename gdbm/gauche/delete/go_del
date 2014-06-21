@@ -1,0 +1,2 @@
+#
+./gdbm_delete.scm /var/tmp/gdbm/cities.dir t2151

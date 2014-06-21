@@ -1,0 +1,26 @@
+#! /usr/bin/node
+//
+//	example01.js
+//
+//					Mar/16/2012
+//
+// ---------------------------------------------------------------
+var express = require("express");
+var app = express.createServer();
+
+app.get ('/',function (req,res)
+	{
+	var str_out = 'example01.js<p />';
+	str_out += '<h2>こんにちは。</h2>';
+	str_out += '今日は良い天気です。<p />';
+	var today = new Date();
+	var hour = today.getHours();
+	var minute = today.getMinutes();
+	var second = today.getSeconds();
+	str_out += hour + ":" + minute + ":" + second;
+	res.send (str_out);
+	});
+
+app.listen(3000);
+console.log("Server start ***");
+// ---------------------------------------------------------------

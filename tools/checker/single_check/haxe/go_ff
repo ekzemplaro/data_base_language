@@ -1,0 +1,7 @@
+#
+../single_check.sh couch cython
+../single_check.sh ftp cython
+../single_check.sh webdav cython
+#../single_check.sh mongo cython
+#
+#

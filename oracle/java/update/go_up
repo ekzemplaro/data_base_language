@@ -1,0 +1,6 @@
+#
+JAVA_COMMON=/var/www/data_base/common/java_common
+ORACLE_JAR=/mnt/sdb2/usr/lib/oracle/xe/app/oracle/product/10.2.0/client/jdbc/lib/ojdbc14.jar
+CPX=./:$JAVA_COMMON:$ORACLE_JAR
+#
+java -cp $CPX oracle_update t0137 31245600

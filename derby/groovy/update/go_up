@@ -1,0 +1,12 @@
+#
+COMMON=/var/www/data_base/common
+#
+export DERBY_JAR=/home/uchida/data_base/derby/db-derby-10.8.2.2-bin/lib/derbyclient.jar
+#
+export GROOVY_JAR=/usr/share/java/groovy-all.jar:/usr/share/java/groovy.jar
+export JAVA_COMMON=$COMMON/java_common
+export GROOVY_COMMON=$COMMON/groovy_common
+export CLASSPATH=.:$JAVA_COMMON:$GROOVY_COMMON:$DERBY_JAR:$GROOVY_JAR
+#
+#
+java derby_update t3552 27456900

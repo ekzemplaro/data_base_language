@@ -1,0 +1,1 @@
+/opt/acl90express/alisp -#! xml_update.cl /var/tmp/xml_file/cities.xml t2262 53298100

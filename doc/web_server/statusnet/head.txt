@@ -1,0 +1,5 @@
+<script src="statusnet.js"></script>
+<link href="statusnet.css" rel="stylesheet" />
+	<title>statusnet
+	</title>
+</head>

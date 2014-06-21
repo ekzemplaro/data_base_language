@@ -1,0 +1,7 @@
+#
+../single_check.sh text pike
+../single_check.sh csv pike
+#../single_check.sh xml pike
+../single_check.sh json pike
+#../single_check.sh excel pike
+#

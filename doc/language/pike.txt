@@ -1,0 +1,28 @@
+<title>pike Feb/07/2011</title>
+</head>
+<body>
+<h2><a href="http://pike.ida.liu.se/">pike</a></h2><p />
+
+
+<blockquote>
+	<a href="http://fredrik.hubbe.net/pike/">Pike dox</a><p />
+	<a href="http://fredrik.hubbe.net/pike/tutorial/tutorial_split.html">
+		Tutorial</a><p />
+</blockquote>
+
+<blockquote>
+<pre>
+ii  pike7.8       7.8.352-dfsg-3       Recommended metapackage for Pike 7.8
+ii  pike7.8-core  7.8.352-dfsg-3       Powerful interpreted programming language
+ii  pike7.8-dev   7.8.352-dfsg-3       Development files for Pike 7.8
+ii  pike7.8-gdbm  7.8.352-dfsg-3       Gdbm module for Pike
+ii  pike7.8-image 7.8.352-dfsg-3       Image module for Pike
+ii  pike7.8-mysql 7.8.352-dfsg-3       MySQL module for Pike
+ii  pike7.8-pcre  7.8.352-dfsg-3       PCRE module for Pike
+ii  pike7.8-pg    7.8.352-dfsg-3       PostgreSQL module for Pike
+ii  pike7.8-sqlite	7.8.352-dfsg-3	SQLite module for Pike
+</pre>
+</blockquote>
+
+<blockquote>
+</blockquote>

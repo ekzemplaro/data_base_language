@@ -1,0 +1,4 @@
+#
+lisp -load text_update.lisp -eval '(quit)' -- '/var/tmp/plain_text/cities.txt' t2386 84532100
+#
+chmod 777 /var/tmp/plain_text/cities.txt

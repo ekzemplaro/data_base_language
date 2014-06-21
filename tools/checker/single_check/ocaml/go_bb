@@ -1,0 +1,8 @@
+#
+../single_check.sh sqlite3 ocaml
+#../single_check.sh mssql ocaml
+../single_check.sh mysql ocaml
+#../single_check.sh postgre ocaml
+#../single_check.sh firebird ocaml
+#
+#

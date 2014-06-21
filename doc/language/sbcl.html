@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Program Language Examples to connect to database" name="description">
+<meta content="database,program,language,connect,example,CRUD,NoSQL" name="keyword">
+<meta content="node.js,rhino" name="keyword">
+<meta content="JSON,redis,CouchDB" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<script src="/js/jquery-2.1.0.min.js"></script>
+<script>
+jQuery (function ()
+{
+	jQuery ("#outarea_aa").text ("*** start ***");
+
+	jQuery ("#outarea_hh").text ("*** end ***");
+});
+
+</script>
+<title>sbcl Sep/27/2013</title>
+</head>
+<body>
+<h2><a href="http://www.sbcl.org">Steel Bank Common Lisp</a></h2><p />
+<pre>
+ii  sbcl   2:1.1.1.0-2   amd64   Common Lisp compiler and development system
+</pre>
+<blockquote>
+	<pre>
+	$ sbcl
+	This is SBCL 1.1.1.0.debian, an implementation of ANSI Common Lisp.
+	More information about SBCL is available at <http://www.sbcl.org/>.
+
+	SBCL is free software, provided as is, with absolutely no warranty.
+	It is mostly in the public domain; some portions are provided under
+	BSD-style licenses.  See the CREDITS and COPYING files in the
+	distribution for more information.
+	* (+ 3 6)
+
+	9
+	* (quit)
+	</pre>
+</blockquote>
+
+<blockquote>
+<pre>
+$ sbcl
+This is SBCL 1.1.1.0.debian, an implementation of ANSI Common Lisp.
+More information about SBCL is available at <http://www.sbcl.org/>.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more information.
+* (require :asdf)
+
+("ASDF")
+* (asdf:asdf-version)
+
+"2.23"
+*
+</pre>
+</blockquote>
+
+<blockquote>
+	<a href="http://www.quicklisp.org/">Quicklisp</a><p />
+
+	sbcl --load quicklisp.lisp<p />
+
+	(quicklisp-quickstart:install)
+	(ql:quickload "cl-mysql")
+	(cl-mysql:connect :host "localhost" :database "city" :user "scott"
+				:password "tiger")
+	(cl-mysql:query "select * from cities")
+</blockquote>
+
+<blockquote>
+ASDF<p />
+<blockquote>
+	(require :clsql-mysql)<p />
+	(clsql:connect '("localhost" "city" "scott" "tiger" 3306) :database-type :mysql)<p />
+	(clsql:status)
+	(clsql:execute-command "SET NAMES utf8")
+	(clsql:query "select * from cities")
+</blockquote>
+<blockquote>
+	(require :ftp)<p />
+	(require :s-xml)<p />
+	(require :clsql)<p />
+	(require :cffi)<p />
+	(require :uffi)<p />
+</blockquote>
+<hr />
+<blockquote>
+(require :asdf)<br />
+(require :asdf-install)<br />
+(pushnew "/usr/share/common-lisp/source/clsql/clsql.asd/" asdf:*central-registry* :test #'equal)<br />
+(pushnew "/usr/share/common-lisp/source/clsql-sqlite3/" asdf:*central-registry* :test #'equal)<br />
+(pushnew "/usr/share/common-lisp/source/clsql-uffi/" asdf:*central-registry* :test #'equal)<br />
+(asdf:load-system :clsql)<br />
+(asdf:load-system :clsql-uffi)<br />
+(asdf:load-system :clsql-sqlite3)<br />
+(require :clsql-sqlite3)<br />
+</blockquote>
+</blockquote>
+<hr />
+<pre>
+$ sbcl
+* (setf unit_pp (make-hash-table))
+* (type-of unit_pp)
+
+HASH-TABLE
+* (setf (gethash 'name unit_pp) "栃木")
+* (setf (gethash 'population unit_pp) 24915)
+* (setf (gethash 'date_mod unit_pp)  "1985-3-12")
+* (print (gethash 'name unit_pp))
+* (print (gethash 'population unit_pp))
+* (print (gethash 'date_mod unit_pp))
+</pre>
+<div id="result_aa">result_aa</div>
+<hr />
+<div id="outarea_aa">outarea_aa</div>
+<div id="outarea_bb">outarea_bb</div>
+<div id="outarea_cc">outarea_cc</div>
+<div id="outarea_dd">outarea_dd</div>
+<div id="outarea_ee">outarea_ee</div>
+<div id="outarea_ff">outarea_ff</div>
+<div id="outarea_gg">outarea_gg</div>
+<div id="outarea_hh">outarea_hh</div>
+<hr />
+<a href="/data_base/data_base.html">Return</a><p />
+Mar/14/2014 AM 08:15<p />
+</body>
+</html>

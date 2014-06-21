@@ -1,0 +1,46 @@
+#! /usr/bin/falcon
+//
+//	json_create.fal
+//
+//					Feb/20/2014
+//
+// -------------------------------------------------------------------
+import from json
+load "/var/www/data_base/common/falcon_common/text_manipulate.fal"
+// -------------------------------------------------------------------
+function data_prepare_proc ()
+	dict_aa = [ => ]
+//
+	dict_aa = dict_append_proc (dict_aa,"t0921","宇都宮",32475,"2010-4-10")
+	dict_aa = dict_append_proc (dict_aa,"t0922","小山",76521,"2010-8-7")
+	dict_aa = dict_append_proc (dict_aa,"t0923","佐野",69247,"2010-5-21")
+	dict_aa = dict_append_proc (dict_aa,"t0924","足利",48512,"2010-9-14")
+	dict_aa = dict_append_proc (dict_aa,"t0925","日光",78921,"2010-2-12")
+	dict_aa = dict_append_proc (dict_aa,"t0926","下野",19365,"2010-8-25")
+	dict_aa = dict_append_proc (dict_aa,"t0927","さくら",51746,"2010-1-9")
+	dict_aa = dict_append_proc (dict_aa,"t0928","矢板",94517,"2010-10-10")
+	dict_aa = dict_append_proc (dict_aa,"t0929","真岡",38675,"2010-5-22")
+	dict_aa = dict_append_proc (dict_aa,"t0930","栃木",63149,"2010-9-15")
+	dict_aa = dict_append_proc (dict_aa,"t0931","大田原",16825,"2010-2-8")
+	dict_aa = dict_append_proc (dict_aa,"t0932","鹿沼",56149,"2010-8-9")
+	dict_aa = dict_append_proc (dict_aa,"t0933","那須塩原",34927,"2010-10-21")
+	dict_aa = dict_append_proc (dict_aa,"t0934","那須烏山",81452,"2010-12-24")
+	return	dict_aa
+end
+// -------------------------------------------------------------------
+printl ("*** 開始 ***")
+file_json=args[0]
+printl (file_json)
+//
+dict_aa = data_prepare_proc ()
+dict_display_proc (dict_aa)
+//
+json_str = json.JSONencode (dict_aa)
+stream = OutputStream (file_json)
+stream.setEncoding ("utf-8")
+stream.writeText (json_str)
+stream.close()
+//
+printl ("*** 終了 ***")
+//
+// -------------------------------------------------------------------

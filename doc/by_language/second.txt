@@ -1,0 +1,28 @@
+<body>
+
+<div calss="body">
+<div class="left">
+<div class="nava">
+nava
+</div>
+<div class="navb">
+data base<p />
+</div>
+</div>
+<div class="right">
+<div class="selection">
+crud<p />
+</div>
+<div class="crud">
+<table>
+<tr>
+<td>Create</td>
+<td>Read</td>
+<td>Update</td>
+<td>Delete</td>
+</tr>
+</table>
+</div>
+<div class="contents"></div>
+<div class="makefile"></div>
+<div class="execute"></div>

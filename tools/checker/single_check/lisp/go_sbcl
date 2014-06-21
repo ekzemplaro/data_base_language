@@ -1,0 +1,5 @@
+#
+../single_check.sh text sbcl
+../single_check.sh csv sbcl
+#../single_check.sh xml sbcl
+#../single_check.sh json sbcl

@@ -1,0 +1,7 @@
+#
+../single_check.sh text php
+../single_check.sh csv php
+../single_check.sh xml php
+../single_check.sh json php
+../single_check.sh excel php
+#

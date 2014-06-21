@@ -1,0 +1,7 @@
+#
+#
+export http_proxy=""
+#
+echo "import exist_create" > tmp_execute.py
+#
+python ./tmp_execute.py

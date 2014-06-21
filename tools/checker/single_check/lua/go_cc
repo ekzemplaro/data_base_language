@@ -1,0 +1,6 @@
+#
+../single_check.sh derby scala
+../single_check.sh hsqldb scala
+../single_check.sh h2 scala
+#
+#

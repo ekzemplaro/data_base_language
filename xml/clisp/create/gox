@@ -1,0 +1,3 @@
+#
+clisp xml_create.lsp /var/tmp/xml_file/cities.xml
+#clisp xml_create.lsp cities.xml

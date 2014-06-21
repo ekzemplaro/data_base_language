@@ -1,0 +1,15 @@
+export USR_SHARE=/usr/share/java
+export CPA=$USR_SHARE/json-lib-2.3.jar
+#
+export CPA=$CPA:$USR_SHARE/commons-logging-1.1.1.jar
+export CPA=$CPA:$USR_SHARE/commons-collections3-3.2.1.jar
+#
+#
+export COMMON=/var/www/data_base/common
+export SCALA_COMMON=$COMMON/scala_common
+JAR=$COMMON/jar
+VOLDEMORT=/home/uchida/dbm/voldemort/voldemort-1.3.0
+export CLASSPATH=./:$VOLDEMORT/dist/voldemort-1.3.0.jar:$VOLDEMORT/lib/*:$CPA
+export CLASSPATH=$CLASSPATH:$SCALA_COMMON
+#
+scala voldemort_create

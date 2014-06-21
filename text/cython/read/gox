@@ -1,0 +1,4 @@
+#
+echo "import text_read" > tmp_execute.py
+#
+python ./tmp_execute.py /var/tmp/plain_text/cities.txt

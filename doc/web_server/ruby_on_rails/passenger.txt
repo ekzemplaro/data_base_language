@@ -1,0 +1,4 @@
+<blockquote>
+sudo gem install passenger<br />
+sudo passenger-install-apache2-module<br />
+</blockquote>

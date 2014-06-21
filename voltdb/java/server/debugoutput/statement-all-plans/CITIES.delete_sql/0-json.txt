@@ -1,0 +1,120 @@
+SQL: DELETE FROM CITIES WHERE (ID = ?);
+COST: 2000000.0
+PLAN:
+{
+    "EXECUTE_LIST": [
+        21,
+        23
+    ],
+    "PARAMETERS": [],
+    "PLAN_NODES": [
+        {
+            "CHILDREN_IDS": [21],
+            "ID": 23,
+            "INLINE_NODES": [],
+            "OUTPUT_SCHEMA": [{
+                "COLUMN_ALIAS": "modified_tuples",
+                "COLUMN_NAME": "modified_tuples",
+                "EXPRESSION": {
+                    "COLUMN_ALIAS": "modified_tuples",
+                    "COLUMN_IDX": 0,
+                    "COLUMN_NAME": "modified_tuples",
+                    "TABLE_NAME": "VOLT_TEMP_TABLE",
+                    "TYPE": "VALUE_TUPLE",
+                    "VALUE_SIZE": 8,
+                    "VALUE_TYPE": "BIGINT"
+                },
+                "SIZE": 8,
+                "TABLE_NAME": "VOLT_TEMP_TABLE",
+                "TYPE": "BIGINT"
+            }],
+            "PARENT_IDS": [],
+            "PLAN_NODE_TYPE": "DELETE",
+            "TARGET_TABLE_NAME": "CITIES",
+            "TRUNCATE": false
+        },
+        {
+            "CHILDREN_IDS": [],
+            "ID": 21,
+            "INLINE_NODES": [{
+                "CHILDREN_IDS": [],
+                "ID": 24,
+                "INLINE_NODES": [],
+                "OUTPUT_SCHEMA": [{
+                    "COLUMN_ALIAS": "tuple_address",
+                    "COLUMN_NAME": "tuple_address",
+                    "EXPRESSION": {
+                        "TYPE": "VALUE_TUPLE_ADDRESS",
+                        "VALUE_SIZE": 8,
+                        "VALUE_TYPE": "BIGINT"
+                    },
+                    "SIZE": 8,
+                    "TABLE_NAME": "VOLT_TEMP_TABLE",
+                    "TYPE": "BIGINT"
+                }],
+                "PARENT_IDS": [],
+                "PLAN_NODE_TYPE": "PROJECTION"
+            }],
+            "OUTPUT_SCHEMA": [{
+                "COLUMN_ALIAS": "tuple_address",
+                "COLUMN_NAME": "tuple_address",
+                "EXPRESSION": {
+                    "TYPE": "VALUE_TUPLE_ADDRESS",
+                    "VALUE_SIZE": 8,
+                    "VALUE_TYPE": "BIGINT"
+                },
+                "SIZE": 8,
+                "TABLE_NAME": "VOLT_TEMP_TABLE",
+                "TYPE": "BIGINT"
+            }],
+            "PARENT_IDS": [23],
+            "PLAN_NODE_TYPE": "SEQSCAN",
+            "PREDICATE": {
+                "LEFT": {
+                    "LEFT": {
+                        "COLUMN_ALIAS": "ID",
+                        "COLUMN_IDX": 0,
+                        "COLUMN_NAME": "ID",
+                        "TABLE_NAME": "CITIES",
+                        "TYPE": "VALUE_TUPLE",
+                        "VALUE_SIZE": 15,
+                        "VALUE_TYPE": "STRING"
+                    },
+                    "RIGHT": {
+                        "PARAM_IDX": 0,
+                        "TYPE": "VALUE_PARAMETER",
+                        "VALUE_SIZE": 1048576,
+                        "VALUE_TYPE": "STRING"
+                    },
+                    "TYPE": "COMPARE_EQUAL",
+                    "VALUE_SIZE": 8,
+                    "VALUE_TYPE": "BIGINT"
+                },
+                "RIGHT": {
+                    "LEFT": {
+                        "COLUMN_ALIAS": "ID",
+                        "COLUMN_IDX": 0,
+                        "COLUMN_NAME": "ID",
+                        "TABLE_NAME": "CITIES",
+                        "TYPE": "VALUE_TUPLE",
+                        "VALUE_SIZE": 15,
+                        "VALUE_TYPE": "STRING"
+                    },
+                    "RIGHT": {
+                        "PARAM_IDX": 0,
+                        "TYPE": "VALUE_PARAMETER",
+                        "VALUE_SIZE": 1048576,
+                        "VALUE_TYPE": "STRING"
+                    },
+                    "TYPE": "COMPARE_EQUAL",
+                    "VALUE_SIZE": 8,
+                    "VALUE_TYPE": "BIGINT"
+                },
+                "TYPE": "CONJUNCTION_AND",
+                "VALUE_SIZE": 0,
+                "VALUE_TYPE": "BIGINT"
+            },
+            "TARGET_TABLE_NAME": "CITIES"
+        }
+    ]
+}

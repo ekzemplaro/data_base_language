@@ -1,0 +1,4 @@
+couch_manipulate.cs
+get_uri.cs
+json_manipulate.cs
+text_manipulate.cs

@@ -1,0 +1,8 @@
+<script src="/data_base/js/table_manipulate.js"></script>
+<script src="jquery_java_update.js"></script>
+<title>jQuery Java Update Nov/11/2013</title>
+</head>
+<body><center><h2>Java Update</h2></center>
+<div class="right">
+<button id="update">更新</button><br />
+</div>

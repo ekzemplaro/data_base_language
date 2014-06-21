@@ -1,0 +1,18 @@
+#
+../single_check/single_check.sh mongo bash
+../single_check/single_check.sh mongo php
+../single_check/single_check.sh mongo python
+../single_check/single_check.sh mongo jython
+../single_check/single_check.sh mongo perl
+../single_check/single_check.sh mongo ruby
+#
+../single_check/single_check.sh mongo jruby
+#
+../single_check/single_check.sh mongo cython
+../single_check/single_check.sh mongo rhino
+#
+../single_check/single_check.sh mongo scala
+../single_check/single_check.sh mongo groovy
+../single_check/single_check.sh mongo java
+../single_check/single_check.sh mongo boo
+../single_check/single_check.sh mongo csharp

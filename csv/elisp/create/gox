@@ -1,0 +1,2 @@
+#
+emacs --script csv_create.el /var/tmp/csv/cities.csv

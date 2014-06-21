@@ -1,0 +1,5 @@
+curl_manipulate.ml
+json_manipulate.ml
+mcached_manipulate.ml
+text_manipulate.ml
+xml_manipulate.ml

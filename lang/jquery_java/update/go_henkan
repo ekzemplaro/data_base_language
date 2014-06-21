@@ -1,0 +1,13 @@
+mv db2_java_read.java db2_java_update.java
+mv derby_java_read.java derby_java_update.java
+mv exist_java_read.java exist_java_update.java
+mv firebird_java_read.java firebird_java_update.java
+mv h2_java_read.java h2_java_update.java
+mv hsqldb_java_read.java hsqldb_java_update.java
+mv json_java_read.java json_java_update.java
+mv master_read.java master_update.java
+mv mssql_java_read.java mssql_java_update.java
+mv oracle_java_read.java oracle_java_update.java
+mv sqlite3_java_read.java sqlite3_java_update.java
+mv text_java_read.java text_java_update.java
+mv xindice_java_read.java xindice_java_update.java

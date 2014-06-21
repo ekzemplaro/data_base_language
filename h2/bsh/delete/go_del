@@ -1,0 +1,6 @@
+#
+export COMMON=/var/www/data_base/common
+export JAR=$COMMON/jar
+export CLASSPATH=.:$JAR/h2-1.3.169.jar
+#
+./h2_delete.bsh t4563

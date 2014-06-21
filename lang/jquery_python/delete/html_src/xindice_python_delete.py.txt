@@ -1,0 +1,1 @@
+../xindice_python_delete.py

@@ -1,0 +1,8 @@
+export GROOVY_JAR=/usr/share/java/groovy-all.jar:/usr/share/java/groovy.jar
+COMMON=/var/www/data_base/common
+GROOVY_COMMON=$COMMON/groovy_common
+JAR=$COMMON/jar
+export CLASSPATH=.:$GROOVY_COMMON:$GROOVY_JAR
+#
+java mcachedb_update t1523 124859300
+#

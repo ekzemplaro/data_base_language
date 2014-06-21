@@ -1,0 +1,3 @@
+#
+./json_read /var/tmp/json/cities.json
+#

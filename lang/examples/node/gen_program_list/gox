@@ -1,0 +1,2 @@
+#
+./gen_program_list.js sheet_bb.json > program_list.txt

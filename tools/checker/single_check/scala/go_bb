@@ -1,0 +1,8 @@
+#
+../single_check.sh sqlite3 scala
+../single_check.sh mssql scala
+../single_check.sh mysql scala
+../single_check.sh postgre scala
+../single_check.sh firebird scala
+#
+#

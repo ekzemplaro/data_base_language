@@ -1,0 +1,23 @@
+<%@ Page Language="C#" Debug=true AutoEventWireup="True"
+ CodeFile="asp_mysql_reader.aspx.cs" Inherits="asp_mysql_reader" %>
+
+<html>
+<head runat="server">
+<title>asp_mysql_reader.aspx</title>
+</head>
+<body>
+<ol>
+<h2>City Population</h2>
+</ol>
+    <form id="form1" runat="server">
+    <div>
+        <asp:GridView ID="GridView_A" runat="server">
+        </asp:GridView>
+    </div>
+    </form>
+<p>
+<hr>
+<a href="../../sample.html">Return</a><p>
+Aug/17/2009<br>
+</body>
+</html> 

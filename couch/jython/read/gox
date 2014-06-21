@@ -1,0 +1,4 @@
+export http_proxy=""
+export CLASSPATH=./:/usr/share/java/commons-httpclient.jar
+#
+./couch_read.py

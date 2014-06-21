@@ -1,0 +1,12 @@
+
+<blockquote>
+送信側<p />
+<blockquote>
+</blockquote>
+
+受信側<p />
+<blockquote>
+</blockquote>
+注意<p />
+
+</blockquote>

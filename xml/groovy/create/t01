@@ -1,0 +1,83 @@
+// -------------------------------------------------------------------
+//	xml_create.groovy
+//
+//					Jul/20/2011
+//
+// -------------------------------------------------------------------
+class xml_create
+{
+
+// -------------------------------------------------------------------
+static void main (args)
+{
+	println ("*** 開始 ***")
+
+	def file_out = args[0]
+
+	def dict_aa = data_prepare_proc ()
+
+	def out_str = dict_to_xml_proc (dict_aa)
+
+	def fp = new File (file_out)
+	fp.write (out_str)
+
+	println ("*** 終了 ***")
+}
+
+// -------------------------------------------------------------------
+static dict_to_xml_proc (dict_aa)
+{
+	println ("*** dict_to_xml_proc ***")
+	def xml_str = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n"
+	xml_str += "<root>\n"
+	dict_aa.keySet().each { key ->
+		println key + "\t" + dict_aa[key]['name'] + "\t" + dict_aa[key]['population'] + "\t" + dict_aa[key]['date_mod']
+
+		xml_str += row_data_gen (key,dict_aa[key]['name'],
+			dict_aa[key]['population'],dict_aa[key]['date_mod'])
+		 }
+
+	xml_str += "</root>"
+
+	return	xml_str
+}
+
+// -------------------------------------------------------------------
+static String row_data_gen (String id,String name,
+	int population,String date_mod)
+{
+	println name
+
+	def str_out = "<" + id + ">\n" +
+	"<name>" + name + "</name>\n" +
+	"<population>" + population + "</population>\n" +
+	"<date_mod>" + date_mod + "</date_mod>\n" +
+	"</" + id + ">\n"
+
+	return	str_out
+}
+// -------------------------------------------------------------------
+static data_prepare_proc ()
+{
+	println "*** data_prepare_proc ***"
+
+	def ff = new text_manipulate ()
+
+	def dict_aa = new HashMap()
+	dict_aa = ff.dict_append_proc (dict_aa,"t2261","静岡",39478,"1999-7-24")
+	dict_aa = ff.dict_append_proc (dict_aa,"t2262","浜松",48674,"1999-2-16")
+	dict_aa = ff.dict_append_proc (dict_aa,"t2263","沼津",79232,"1999-7-9")
+	dict_aa = ff.dict_append_proc (dict_aa,"t2264","三島",54756,"1999-5-2")
+	dict_aa = ff.dict_append_proc (dict_aa,"t2265","富士",23105,"1999-9-9")
+	dict_aa = ff.dict_append_proc (dict_aa,"t2266","熱海",18196,"1999-6-30")
+	dict_aa = ff.dict_append_proc (dict_aa,"t2267","富士宮",24578,"1999-4-22")
+	dict_aa = ff.dict_append_proc (dict_aa,"t2268","藤枝",17688,"1999-3-17")
+	dict_aa = ff.dict_append_proc (dict_aa,"t2269","御殿場",43715,"1999-10-2")
+
+	return	dict_aa
+}
+
+// -------------------------------------------------------------------
+}
+
+// -------------------------------------------------------------------

@@ -1,0 +1,6 @@
+#
+#
+../single_check.sh xindice bash
+../single_check.sh exist bash
+../single_check.sh basex bash
+#

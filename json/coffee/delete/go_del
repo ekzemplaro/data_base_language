@@ -1,0 +1,1 @@
+./json_delete.coffee /var/tmp/json/cities.json t0927

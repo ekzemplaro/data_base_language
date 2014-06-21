@@ -1,0 +1,14 @@
+BASE="http://localhost:5984/example03"
+#
+curl -X DELETE --noproxy localhost -X DELETE $BASE
+curl -X PUT --noproxy localhost $BASE
+#
+curl -X PUT --noproxy localhost  $BASE"/a01" -d@a01.json
+curl -X PUT --noproxy localhost  $BASE"/a02" -d@a02.json
+curl -X PUT --noproxy localhost  $BASE"/a03" -d@a03.json
+curl -X PUT --noproxy localhost  $BASE"/a04" -d@a04.json
+curl -X PUT --noproxy localhost  $BASE"/a05" -d@a05.json
+#
+couchapp generate myapp
+cd myapp
+couchapp generate view ex01

@@ -1,0 +1,9 @@
+#
+#../single_check.sh sqlite3 bash
+#../single_check.sh mssql bash
+../single_check.sh mysql bash
+../single_check.sh postgre bash
+../single_check.sh firebird bash
+#
+../single_check.sh drizzle bash
+#

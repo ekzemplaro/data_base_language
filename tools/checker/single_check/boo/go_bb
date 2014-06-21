@@ -1,0 +1,8 @@
+#
+../single_check.sh sqlite3 boo
+../single_check.sh mssql boo
+../single_check.sh mysql boo
+../single_check.sh postgre boo
+../single_check.sh firebird boo
+#
+#

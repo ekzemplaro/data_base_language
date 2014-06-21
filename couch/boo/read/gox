@@ -1,0 +1,4 @@
+#
+export http_proxy=""
+#./couch_read.exe
+mono ./couch_read.exe

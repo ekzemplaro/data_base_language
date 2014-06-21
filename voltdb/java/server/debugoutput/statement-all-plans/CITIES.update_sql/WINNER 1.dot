@@ -1,0 +1,9 @@
+digraph name {
+28 [label="28: INDEXSCAN" ];
+28 -> 32;
+32 [label="32: PROJECTION" fontcolor="white" style="filled" fillcolor="red"];
+31 [label="31: UPDATE" ];
+31 -> 28;
+
+}
+

@@ -1,0 +1,128 @@
+//
+//	sql_manipulate.bsh
+//
+//						Sep/25/2012
+// ---------------------------------------------------------------------
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+// ---------------------------------------------------------------------
+sql_display_proc (conn)
+{
+	Statement stmt = conn.createStatement ();
+
+	ResultSet rset = stmt.executeQuery (
+	"SELECT ID, NAME, POPULATION, DATE_MOD FROM cities order by ID");
+
+	while (rset.next())
+		{
+		String out_str = rset.getString (1) + "\t";
+		out_str += rset.getString(2) + "\t";
+		out_str += rset.getString(3) + "\t";
+		out_str += rset.getString(4);
+
+		System.out.println (out_str);
+		}
+
+	rset.close();
+	stmt.close();
+}
+
+// ---------------------------------------------------------------------
+sql_update_proc (conn,String id_in,int population)
+{
+	Statement stmt = conn.createStatement ();
+
+	String str_sql;
+	int result;
+
+	str_sql = update_sql_gen_proc (id_in,population);
+
+	result = stmt.executeUpdate (str_sql);
+
+	stmt.close ();
+}
+
+// ---------------------------------------------------------------------
+update_sql_gen_proc (String id_in,int population)
+{
+	String	str_ddx = get_current_date_proc ();
+
+	String str_sql = "update cities set POPULATION=" + population
+		+ ",DATE_MOD='" + str_ddx +  "'  where ID= '" + id_in + "'";
+
+	System.out.println ("str_sql = " + str_sql);
+
+	return	str_sql;
+}
+
+// ---------------------------------------------------------------------
+sql_delete_proc (conn,String id_in)
+{
+	Statement stmt = conn.createStatement ();
+
+	String str_sql;
+	int result;
+
+	str_sql = "delete from  cities where ID= '" + id_in + "'";
+
+	result = stmt.executeUpdate (str_sql);
+
+	stmt.close ();
+}
+
+// ---------------------------------------------------------------------
+drop_table_proc (Statement ss)
+{
+	ss.execute ("drop table cities");
+}
+
+// ---------------------------------------------------------------------
+create_table_proc (Statement ss)
+{
+	String sql_command = "create table cities (id varchar(10), name varchar(20),"
+		+ " population int, date_mod date)";
+	ss.execute (sql_command);
+}
+
+// ---------------------------------------------------------------------
+insert_record_proc
+	(Statement ss,String id,String name,int population,String date_mod)
+{
+	String str_ins
+		= "insert into cities (id,name,population,date_mod) values (";
+
+	String str_data = "'" + id + "','" + name + "',"
+		+ Integer.toString (population) + ",'" + date_mod + "')";
+
+	String sql_str = str_ins + str_data;
+
+	ss.execute (sql_str);
+}
+
+// ---------------------------------------------------------------------
+sql_dict_to_db_proc (conn,dict_aa)
+{
+	Statement ss = conn.createStatement ();
+
+	drop_table_proc (ss);
+	create_table_proc (ss);
+
+	Set set_aaa = dict_aa.keySet ();
+
+	for (Object key_aa: set_aaa)
+		{
+		String key = (String)key_aa;
+		dict_unit = dict_aa.get (key_aa);
+		name = dict_unit.get ("name");
+		int population = Integer.parseInt (dict_unit.get ("population"));
+		date_mod = dict_unit.get ("date_mod");
+		insert_record_proc (ss,key,name,population,date_mod);
+		}
+
+
+	ss.close ();
+}
+
+// ---------------------------------------------------------------------

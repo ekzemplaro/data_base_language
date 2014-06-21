@@ -1,0 +1,48 @@
+<title>GNU dbm</title>
+</head>
+<body>
+<h1>GNU dbm</h1>
+<blockquote>
+</blockquote>
+<pre>
+</pre>
+<blockquote>
+</blockquote>
+
+<blockquote>
+</blockquote>
+
+Python<p />
+<blockquote>
+<pre>
+ii  python-gdbm    2.7.4-0ubuntu1   amd64   GNU dbm database support for Python
+</pre>
+</blockquote>
+
+Perl<p />
+<blockquote>
+	GNU dbm 1.x or ndbm database, little endian<p />
+	cities.dir<br />
+	cities.pag<br />
+</blockquote>
+
+Ruby<p />
+<blockquote>
+	GNU dbm 1.x or ndbm database, little endian<p />
+	cities.dir<br />
+	cities.pag<br />
+</blockquote>
+
+gauche<p />
+<blockqoute>
+	<pre>
+	ii  gauche-gdbm    0.9.3.3-8    amd64    gdbm binding for Gauche
+	</pre>
+</blockqoute>
+
+
+Java<p />
+<blockqoute>
+<pre>
+</pre>
+</blockqoute>

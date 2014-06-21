@@ -1,0 +1,73 @@
+/* ------------------------------------------------------------------ */
+/*
+	asp_sqlite3_reader.cs
+
+*/
+/* ------------------------------------------------------------------ */
+using	System;
+using	System.Data;
+using	Mono.Data.Sqlite;
+
+/* ------------------------------------------------------------------ */
+public partial class asp_sqlite3_reader  : System.Web.UI.Page
+{
+
+/* ------------------------------------------------------------------ */
+protected void Page_Load (Object sender, System.EventArgs e)
+{
+	System.PlatformID platID = System.Environment.OSVersion.Platform;
+
+	string	file_sqlite3 = "";
+	
+	if (platID.ToString ().Equals ("Unix"))
+		{
+		file_sqlite3 = "/var/tmp/sqlite3/sample03.db";
+		}
+	else
+		{
+		file_sqlite3 = @"c:\var\tmp\sqlite3\sample03.db";
+		}
+
+	SqliteConnection sqlite_conn = new SqliteConnection
+		(@"Data Source = " + file_sqlite3
+			+ ";UTF8Encoding=True;Version=3");
+  
+	string str_query =
+		"select ID,Name,Population,date_mod from cities";
+
+	SqliteCommand sqlite_cmd = new SqliteCommand (str_query,sqlite_conn);
+
+	Console.WriteLine ("*** BBB ***");
+
+	sqlite_conn.Open();
+  
+	SqliteDataReader dread = sqlite_cmd.ExecuteReader();
+
+        DataTable dtable = new DataTable();
+
+	dtable.Columns.Add(new DataColumn("ID", typeof (System.String)));
+	dtable.Columns.Add(new DataColumn("NAME", typeof (String)));
+	dtable.Columns.Add(new DataColumn("POPULATION", typeof (String)));
+	dtable.Columns.Add(new DataColumn("DATE_MOD", typeof (String)));
+
+	while (dread.Read())
+		{
+		DataRow drow = dtable.NewRow();
+		drow[0] = dread["ID"];
+		drow[1] = dread["NAME"];
+		drow[2] = dread["POPULATION"];
+		drow[3] = dread["DATE_MOD"];
+		dtable.Rows.Add (drow);
+		}
+
+	GridView_A.DataSource = dtable.DefaultView;
+	GridView_A.DataBind();
+
+	dread.Close();
+	sqlite_cmd.Dispose();
+	sqlite_conn.Close();
+	sqlite_conn.Dispose();
+}
+/* ------------------------------------------------------------------ */
+}
+/* ------------------------------------------------------------------ */

@@ -1,0 +1,4 @@
+#
+#
+./xml_create.php /var/tmp/xml_file/cities.xml
+#./xml_create.php cities.xml

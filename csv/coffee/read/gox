@@ -1,0 +1,1 @@
+./csv_read.coffee /var/tmp/csv/cities.csv

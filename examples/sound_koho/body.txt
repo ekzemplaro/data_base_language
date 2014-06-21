@@ -1,0 +1,21 @@
+<body>
+<h2>広報の音訳公開状況</h2><p />
+<div class="top">
+<button class="filter" id="all">全て</button>
+<button class="filter" id="tohoku">北海道、東北</button>
+<button class="filter" id="kanto">関東</button>
+<button class="filter" id="chyubu">中部</button>
+<button class="filter" id="kinki">近畿</button>
+<button class="filter" id="chyugoku">中国、四国</button>
+<button class="filter" id="kyusyu">九州</button>
+<span />
+<select id="mode" name="mode">
+<option selected>閲覧</option>
+<option>編集</option>
+</select>
+<p />
+</div>
+<div class="nava">nava</div>
+<div class="contents">contents</div>
+
+<div id="result_aa">result_aa</div>

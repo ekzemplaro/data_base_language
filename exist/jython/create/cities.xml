@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<root>
+<cities>
+	<id>4251</id>
+	<name>長崎</name>
+	<population>60100</population>
+	<date_mod>2003-4-17</date_mod>
+</cities>
+<cities>
+	<id>4252</id>
+	<name>佐世保</name>
+	<population>31705</population>
+	<date_mod>2003-5-24</date_mod>
+</cities>
+<cities>
+	<id>4253</id>
+	<name>島原</name>
+	<population>21007</population>
+	<date_mod>2003-8-21</date_mod>
+</cities>
+<cities>
+	<id>4254</id>
+	<name>大村</name>
+	<population>91008</population>
+	<date_mod>2003-9-15</date_mod>
+</cities>
+<cities>
+	<id>4255</id>
+	<name>諫早</name>
+	<population>34206</population>
+	<date_mod>2003-6-19</date_mod>
+</cities>
+<cities>
+	<id>4256</id>
+	<name>五島</name>
+	<population>61029</population>
+	<date_mod>2003-6-14</date_mod>
+</cities>
+<cities>
+	<id>4257</id>
+	<name>平戸</name>
+	<population>21057</population>
+	<date_mod>2003-3-11</date_mod>
+</cities>
+<cities>
+	<id>4258</id>
+	<name>雲仙</name>
+	<population>41079</population>
+	<date_mod>2003-9-12</date_mod>
+</cities>
+<cities>
+	<id>4259</id>
+	<name>松浦</name>
+	<population>31089</population>
+	<date_mod>2003-8-23</date_mod>
+</cities>
+</root>

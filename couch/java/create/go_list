@@ -1,0 +1,1 @@
+curl -X GET http://cdbd026:5984/city/_all_docs

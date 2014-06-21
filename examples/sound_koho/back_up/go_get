@@ -1,0 +1,10 @@
+export http_proxy=""
+#
+
+TARGET="http://localhost:5984/sound_koho"
+for pref in aomori iwate miyagi akita yamagata fukushima \
+	gunma ibaraki saitama tochigi chiba tokyo kanagawa
+	do
+	curl -X GET $TARGET"/"$pref  > $pref".json"
+	done
+#

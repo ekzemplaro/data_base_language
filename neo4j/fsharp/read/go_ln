@@ -1,0 +1,13 @@
+#
+COMMON=/var/www/data_base/common
+CSHARP_COMMON=$COMMON/csharp_common
+FSHARP_COMMON=$COMMON/fsharp_common
+DLL=$COMMON/dll
+#
+ln -s $DLL/Newtonsoft.Json.Net20.dll Newtonsoft.Json.Net20.dll
+ln -s $CSHARP_COMMON/table_manipulate.dll table_manipulate.dll
+#
+#
+ln -s $FSHARP_COMMON/FSharp.Core.dll FSharp.Core.dll
+ln -s $FSHARP_COMMON/FSharp.Core.optdata FSharp.Core.optdata
+ln -s $FSHARP_COMMON/FSharp.Core.sigdata FSharp.Core.sigdata

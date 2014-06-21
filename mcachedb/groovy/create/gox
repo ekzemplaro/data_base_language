@@ -1,0 +1,6 @@
+export GROOVY_JAR=/usr/share/java/groovy-all.jar:/usr/share/java/groovy.jar
+export GROOVY_COMMON=/var/www/data_base/common/groovy_common
+export CLASSPATH=./:$GROOVY_COMMON:$GROOVY_JAR
+#
+java mcachedb_create
+#

@@ -1,0 +1,10 @@
+#
+#../single_check.sh gdbm java
+#../single_check.sh berkeley java
+../single_check.sh mcached java
+../single_check.sh mcachedb java
+#
+../single_check.sh redis java
+../single_check.sh tcbn java
+#../single_check.sh tyrant java
+#

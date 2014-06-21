@@ -1,0 +1,5 @@
+#
+../single_check.sh text guile
+../single_check.sh csv guile
+#../single_check.sh xml guile
+#../single_check.sh json guile

@@ -1,0 +1,31 @@
+#! /usr/bin/bsh
+//
+//	xml_delete.bsh
+//
+//					Oct/02/2012
+//
+// --------------------------------------------------------------
+source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
+source ("/var/www/data_base/common/bsh_common/xml_manipulate.bsh");
+// --------------------------------------------------------------
+System.out.println ("*** 開始 ***");
+fname_update = bsh.args[0];
+String	key = bsh.args[1];
+
+System.out.println (fname_update);
+System.out.println (key);
+//
+String str_xml = file_to_str_proc (fname_update);
+
+Map dict_aa = xml_to_dict_proc (str_xml);
+
+dict_aa = dict_delete_proc (dict_aa,key);
+
+dict_display_proc (dict_aa);
+
+str_xml = dict_to_xml_proc (dict_aa);
+
+file_write_proc (fname_update,str_xml);
+
+System.out.println ("*** 終了 ***");
+// --------------------------------------------------------------

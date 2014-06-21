@@ -1,0 +1,1 @@
+java -Djava.library.path=../../voltdb/ org.voltdb.VoltDB catalog helloworld.jar deployment deployment.xml

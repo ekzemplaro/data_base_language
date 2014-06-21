@@ -1,0 +1,3 @@
+#
+curl --noproxy cddn007 -X PUT http://cddn007:5984/librivox
+curl --noproxy cddn007 -X PUT http://cddn007:5984/librivox/Melville -d@Melville.json

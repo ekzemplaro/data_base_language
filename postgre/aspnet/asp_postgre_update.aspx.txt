@@ -1,0 +1,52 @@
+<%@ Page Language="C#" Debug=True AutoEventWireup="true"
+  CodeFile="asp_postgre_update.aspx.cs" Inherits="asp_postgre_update" %>
+
+<html>
+<head id="Head1" runat="server">
+<title>Asp PostgreSQL Update Aug/17/2009</title>
+</head>
+
+<body>
+PostgreSQL<p>
+<form id="form1" runat="server">
+<asp:Button id="btn_aa" Runat=server Text="Submit" OnClick="btn_Click_aa">
+</asp:Button>
+<asp:Button id="btn_bb" Runat=server Text="Cancel" OnClick="btn_Click_bb">
+</asp:Button>
+
+<asp:GridView id="GridView_A" runat="server"
+ AutoGenerateColumns="False">
+<Columns>
+
+
+<asp:BoundField DataField="ID" HeaderText="ID">
+</asp:BoundField>
+
+
+
+<asp:BoundField DataField="NAME" HeaderText="NAME">
+</asp:BoundField>
+
+
+<asp:TemplateField HeaderText="POPULATION">
+<ItemTemplate>
+<asp:TextBox id="txtInput" runat="server" Visible=true
+Text='<%# DataBinder.Eval(Container.DataItem, "POPULATION") %>'>    
+</asp:TextBox>
+
+</ItemTemplate>
+</asp:TemplateField>
+
+
+<asp:BoundField DataField="DATE_MOD" HeaderText="DATE_MOD">
+</asp:BoundField>
+
+</Columns>
+</asp:GridView>
+</form>
+
+<hr>
+Aug/17/2009<p>
+<a href="../../sample.html">Return</a><p>
+</body>
+</html>

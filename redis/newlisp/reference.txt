@@ -1,0 +1,2 @@
+mcached_manipulate.lsp
+redis_manipulate.lsp

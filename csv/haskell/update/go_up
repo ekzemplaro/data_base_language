@@ -1,0 +1,2 @@
+#
+runghc csv_update.hs /var/tmp/csv/cities.csv t1274 37892500

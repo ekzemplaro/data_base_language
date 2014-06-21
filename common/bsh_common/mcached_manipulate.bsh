@@ -1,0 +1,55 @@
+//
+//	mcached_manipulate.bsh
+//
+//					Oct/02/2012
+// --------------------------------------------------------------
+import	net.arnx.jsonic.JSON;
+
+import com.danga.MemCached.SockIOPool;
+import com.danga.MemCached.MemCachedClient;
+// --------------------------------------------------------------
+Map mcached_to_dict_proc (MemCachedClient mc,String [] keys_in)
+{
+	Map dict_aa = new HashMap ();
+
+	for (String key : keys_in)
+		{
+		String str_json  = (String)mc.get(key);
+
+		if (str_json != null)
+			{
+			Map unit_aa = new HashMap ();
+
+		        unit_aa = JSON.decode (str_json);
+
+			dict_aa.put (key,unit_aa);
+			}
+		}
+
+	return	dict_aa;
+}
+
+// --------------------------------------------------------------
+dict_to_mcached_proc (MemCachedClient mc,Map dict_aa)
+{
+	Set set_aaa = dict_aa.keySet ();
+
+	for (Object key_aa: set_aaa)
+		{
+		String key = (String)key_aa;
+		Map dict_unit = dict_aa.get (key_aa);
+
+		String str_json = JSON.encode (dict_unit);
+
+		if(mc.set(key, str_json))
+			{
+			System.out.println("set ok");
+			}
+		else
+			{
+			System.out.println("set ng");
+			}
+		}
+}
+
+// --------------------------------------------------------------

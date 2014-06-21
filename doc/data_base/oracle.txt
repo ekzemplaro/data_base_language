@@ -1,0 +1,68 @@
+<meta content="Program Language Examples to connect to Oracle" name="description">
+<meta content="Oracle,クライアント,接続,言語,サンプル" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<title>Oracle</title>
+</head>
+<body>
+<h1>Oracle</h1>
+<ol>
+</ol>
+
+<ol>
+sqlplus /nolog<p />
+connect sys/passwd as sysdba<p />
+select * from v$version;<p />
+select SYSDATE from dual;<p />
+</ol>
+<ol>
+SQL>shutdown immediate<br />
+SQL>startup<br />
+SQL>select * from dual;<br />
+SQL>select username from dba_users;<br />
+</ol>
+
+<ol>
+ORA-01081: cannot start already-running ORACLE - shut it down first<br />
+<a href="http://ora-01507.ora-code.com/">
+ORA-01507:</a> database not mounted<br />
+
+ORA-00205: error in identifying control file, check alert log for more info<br />
+
+
+
+ORA-12560: TNS:protocol adapter error<br />
+
+</ol>
+<blockquote>
+</blockquote>
+
+Python<p />
+<blockquote>
+cx_Oracle-5.0.4.tar.gz<p />
+export ORACLE_HOME=/mnt/sdb2/usr/lib/oracle/xe/app/oracle/product/10.2.0/server/<br />
+export LD_LIBRARY_PATH=$ORACLE_HOME/lib<br />
+export PATH=$ORACLE_HOME/bin:$PATH<p />
+
+cd cx_Oracle-5.0.4<p />
+python setup.py build<br />
+#python setup.py install<p />
+</blockquote>
+
+Ruby<p />
+<blockquote>
+# gem install ruby-oci8-2.0.4.gem<p />
+</blockquote>
+
+Java<p />
+<pre>
+java.security.AccessControlException:
+ access denied (java.util.PropertyPermission oracle.net.wallet_location read)
+
+</pre>
+
+
+C#<p />
+<blockquote>
+	libmono-oracle4.0-cil<br />
+	/usr/lib/mono/4.0/System.Data.OracleClient.dll<br />
+</blockquote>

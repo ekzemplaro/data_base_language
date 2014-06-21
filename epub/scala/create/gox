@@ -1,0 +1,8 @@
+COMMON=/var/www/data_base/common
+SCALA_COMMON=$COMMON/scala_common
+JAR=$COMMON/jar
+#
+export CLASSPATH=.:$SCALA_COMMON:$JAR/epubgen-0.5.0.jar
+#
+scala epub_create /var/tmp/epub/cities.epub
+#java epub_create cities.epub

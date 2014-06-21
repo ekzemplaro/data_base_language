@@ -1,0 +1,9 @@
+digraph Select-sql-1 {
+2 [label="2: INDEXSCAN" ];
+2 -> 0;
+0 [label="0: PROJECTION" fontcolor="white" style="filled" fillcolor="red"];
+1 [label="1: SEND" fontcolor="white" style="filled" fillcolor="black"];
+1 -> 2;
+
+}
+

@@ -1,0 +1,2 @@
+#
+./sqlite3_update.py /var/tmp/sqlite3/cities.db t0716 34812500

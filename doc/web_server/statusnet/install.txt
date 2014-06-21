@@ -1,0 +1,84 @@
+<blockquote>
+	sudo apt-get install mysql-server<p />
+	sudo apt-get install phpmyadmin<p />
+
+	<blockquote>
+		例えば、/var/www で、<br />
+		tar xvfz statusnet-1.0.1.tar.gz<p />
+		cd /var/www<br />
+		ln -s statusnet-1.0.1 statusnet<br />
+	</blockquote>
+</blockquote>
+
+MySQL の設定<p />
+
+	<blockquote>
+	クライアントで、http://localhost/phpmyadmin/ にアクセスして下さい。<p />
+	データベース statusnet を作成して下さい。<p />
+	ユーザ　statusnet<br />
+		パスワード　statusnet<br />
+		でユーザーを作成して下さい。<p />
+	</blockquote>
+
+	<blockquote>
+	MySQL の設定の確認方法
+	<blockquote>
+		mysql -hlocalhost -ustatusnet -pstatusnet<p />
+		<a href="./mysql_statusnet.txt">実行結果</a><p />
+	</blockquote>
+	</blockquote>
+
+クライアントで、http://localhost/statusnet/ にアクセスして下さい。<p />
+	<blockquote>
+	<pre>
+No configuration file found.
+
+I looked for configuration files in the following places:
+/etc/statusnet/statusnet.php
+/etc/statusnet/laconica.php
+/etc/laconica/laconica.php
+/etc/statusnet/cdbd026.php
+/etc/laconica/cdbd026.php
+/etc/statusnet/cdbd026_statusnet.php
+/etc/laconica/cdbd026_statusnet.php
+/var/www/statusnet-1.0.1/config.php
+
+You may wish to run the installer to fix this.
+Go to the installer.
+	</pre>
+	</blockquote>
+
+クライアントで、http://localhost/statusnet/install.php にアクセスして下さい。<p />
+	<blockquote>
+Install StatusNet<p />
+
+Cannot write config file to: /var/www/statusnet-1.0.1<br />
+On your server, try this command: chmod a+w /var/www/statusnet-1.0.1<p />
+
+Cannot write to avatar directory: /var/www/statusnet-1.0.1/avatar/<br />
+On your server, try this command: chmod a+w /var/www/statusnet-1.0.1/avatar/<p />
+
+Cannot write to background directory: /var/www/statusnet-1.0.1/background/<br />
+On your server, try this command: chmod a+w /var/www/statusnet-1.0.1/background/
+<p />
+
+Cannot write to file directory: /var/www/statusnet-1.0.1/file/<br />
+On your server, try this command: chmod a+w /var/www/statusnet-1.0.1/file/<p />
+	</blockquote>
+
+指示に従ってファイルのパーミッションを変更</li>
+	<blockquote>
+		chmod a+w /var/www/statusnet-1.0.1<br />
+		chmod a+w /var/www/statusnet-1.0.1/avatar/<br />
+		chmod a+w /var/www/statusnet-1.0.1/background/<br />
+		chmod a+w /var/www/statusnet-1.0.1/file/<br />
+	</blockquote>
+サイド、http://localhost/statusnet/install.php にアクセスして下さい。<p />
+	<blockquote>
+	Site settings<br />
+	Database settings<br />
+	Administrator settings<br />
+	Site profile<br />
+	を入力して、SUBMIT ボタンをクリックする。<p />
+
+	</blockquote>

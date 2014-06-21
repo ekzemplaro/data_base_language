@@ -1,0 +1,6 @@
+#
+echo "import xml_create" > tmp_execute.py
+#
+python ./tmp_execute.py /var/tmp/xml_file/cities.xml
+#
+#

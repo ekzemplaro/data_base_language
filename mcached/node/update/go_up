@@ -1,0 +1,2 @@
+export NODE_PATH=/home/uchida/node_modules
+./mcached_update.js t1734 45972300

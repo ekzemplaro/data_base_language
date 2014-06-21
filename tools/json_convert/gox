@@ -1,0 +1,3 @@
+cp origin/aichi.json .
+#
+./json_convert.js aichi.json

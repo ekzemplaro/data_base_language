@@ -1,0 +1,2 @@
+#
+./text_update.pl /var/tmp/plain_text/cities.txt t2387 3258900

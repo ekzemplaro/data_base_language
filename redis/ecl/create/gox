@@ -1,0 +1,1 @@
+ecl -shell redis_create.lisp -eval '(quit)'

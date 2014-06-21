@@ -1,0 +1,14 @@
+<script src="by_language.js"></script>
+<script src="show_lang.js"></script>
+<script src="show_common.js"></script>
+<script src="show_data_base.js"></script>
+<script src="show_crud.js"></script>
+<script src="target_define.js"></script>
+<script src="dbase_process.js"></script>
+<script src="dbase_translate.js"></script>
+<script src="reference.js"></script>
+<script src="../js_common/sharp_convert.js"></script>
+<link href="by_language.css" rel="stylesheet" />
+<title>By Language jQuery Mar/10/2014
+</title>
+</head>

@@ -1,0 +1,8 @@
+#
+../single_check.sh sqlite3 tcl
+#../single_check.sh mssql tcl
+../single_check.sh mysql tcl
+../single_check.sh postgre tcl
+#../single_check.sh firebird tcl
+#
+#

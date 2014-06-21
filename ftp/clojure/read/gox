@@ -1,0 +1,4 @@
+export CLOJURE_CONTRIB=/usr/share/java/clojure-contrib.jar
+export CLASSPATH=.:/usr/share/java/clojure.jar:$CLOJURE_CONTRIB
+#
+java clojure.main ftp_read.clj 

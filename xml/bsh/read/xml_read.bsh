@@ -1,0 +1,22 @@
+#! /usr/bin/bsh
+//
+//	xml_read.bsh
+//
+//					Oct/02/2012
+//
+// --------------------------------------------------------------
+source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
+source ("/var/www/data_base/common/bsh_common/xml_manipulate.bsh");
+// --------------------------------------------------------------
+System.out.println ("*** 開始 ***");
+fname_in = bsh.args[0];
+System.out.println (fname_in);
+//
+String str_xml = file_to_str_proc (fname_in);
+
+Map dict_aa = xml_to_dict_proc (str_xml);
+
+dict_display_proc (dict_aa);
+
+System.out.println ("*** 終了 ***");
+// --------------------------------------------------------------

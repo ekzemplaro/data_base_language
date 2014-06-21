@@ -1,0 +1,4 @@
+#
+./text_read.r file:/var/tmp/plain_text/cities.txt
+#./text_read.r file:///var/tmp/plain_text/cities.txt
+#./text_read.r /var/tmp/plain_text/cities.txt

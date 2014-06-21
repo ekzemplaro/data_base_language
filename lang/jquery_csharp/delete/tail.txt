@@ -1,0 +1,4 @@
+<hr />
+<button id="delete">削除</button><br />
+<hr />
+<a href="html_src/jquery_csharp_delete_src.html">jquery_csharp_delete_src.html</a><p />

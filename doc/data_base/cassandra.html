@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<script src="/js/jquery-2.1.0.min.js"></script>
+<meta content="Program Language Examples to connect to Cassandra" name="description">
+<meta content="Cassandra,クライアント,接続,言語,サンプル" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<title>cassandra Nov/06/2013</title>
+</head>
+<body>
+<h1><a href="http://cassandra.apache.org/">Cassandra</a></h1>
+<hr />
+apache-cassandra-2.0.2-bin.tar.gz<br />
+<hr />
+
+<blockquote>
+sudo mkdir -p /var/log/cassandra<br />
+sudo chown -R `whoami` /var/log/cassandra<br />
+sudo mkdir -p /var/lib/cassandra<br />
+sudo chown -R `whoami` /var/lib/cassandra<br />
+</blockquote>
+デフォールトのポート<br />
+<blockquote>
+<pre>
+	項目名	ポート番号
+①	ThriftでのRPCポート	9160
+②	JMXでの接続ポート	7199
+</pre>
+</blockquote>
+
+ポートの変更<br />
+conf/cassandra-env.sh<p />
+
+JMX_PORT="8192"<p />
+
+Error occurred during initialization of VM<p />
+<blockquote>
+MAX_HEAP_SIZE="1G"<p />
+HEAP_NEWSIZE="800M"<p />
+</blockquote>
+
+
+
+Server<p />
+<blockquote>
+bin/cassandra -f<p />
+	<blockquote>
+xss =  -ea -javaagent:bin/../lib/jamm-0.2.5.jar -XX:+UseThreadPriorities -XX:ThreadPriorityPolicy=42 -Xms128M -Xmx128M -Xmn32M -XX:+HeapDumpOnOutOfMemoryError -Xss128k<br />
+Segmentation fault (コアダンプ)<br />
+	</blockquote>
+</blockquote>
+
+Client <p />
+
+<blockquote>
+	$ bin/cqlsh<br />
+Connected to Test Cluster at localhost:9160.<br />
+[cqlsh 3.1.7 | Cassandra 1.2.9 | CQL spec 3.0.0 | Thrift protocol 19.36.0]<br />
+Use HELP for help.<br />
+cqlsh> show version;<br />
+[cqlsh 3.1.7 | Cassandra 1.2.9 | CQL spec 3.0.0 | Thrift protocol 19.36.0]<br />
+cqlsh> quit<br />
+</blockquote>
+
+
+
+<blockquote>
+<a href="http://wiki.apache.org/cassandra/ClientOptions">
+High level clients</a><p />
+</blockquote>
+
+PHP<p />
+<blockquote>
+	<a href="https://github.com/kallaspriit/Cassandra-PHP-Client-Library/wiki">Cassandra-PHP-Client-Library</a><p />
+</blockquote>
+
+
+Python<p />
+<blockquote>
+<pre>
+ii  python-thrift   0.8.0-0ubuntu2   amd64   Python bindings for Thrift
+</pre>
+
+cql-1.4.0.tar.gz<p />
+python setup.py install<br />
+</blockquote>
+
+Perl<p />
+<blockquote>
+	sudo cpan Net::Cassandra<p />
+	sudo cpan Bit::Vector<p />
+</blockquote>
+
+Ruby<p />
+<blockquote>
+	sudo apt-get install ruby-dev<p />
+	# gem install cassandra-cql<p />
+</blockquote>
+
+node.js<p />
+<blockquote>
+yukim-node-cassandra-cql-449b416.tar.gz<p />
+$ git clone https://github.com/yukim/node-cassandra-cql.git<br />
+$ npm install<br />
+</blockquote>
+
+Java<p />
+<blockquote>
+	apache-cassandra-1.2.9.jar<br />
+	libthrift-0.7.0.jar<br />
+	log4j-1.2.16.jar<br />
+slf4j-api-1.7.2.jar<br />
+	slf4j-log4j12-1.7.2.jar<br />
+</blockquote>
+<div id="result_aa">result_aa</div>
+<hr />
+<div id="outarea_aa">outarea_aa</div>
+<div id="outarea_bb">outarea_bb</div>
+<div id="outarea_cc">outarea_cc</div>
+<div id="outarea_dd">outarea_dd</div>
+<div id="outarea_ee">outarea_ee</div>
+<div id="outarea_ff">outarea_ff</div>
+<div id="outarea_gg">outarea_gg</div>
+<div id="outarea_hh">outarea_hh</div>
+<hr />
+<a href="/data_base/data_base.html">Return</a><p />
+Jan/29/2014 AM 08:15<p />
+</body>
+</html>

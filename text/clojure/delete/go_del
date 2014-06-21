@@ -1,0 +1,3 @@
+export CLASSPATH=.:/usr/share/java/clojure.jar
+#
+java clojure.main text_delete.clj  /var/tmp/plain_text/cities.txt t2384

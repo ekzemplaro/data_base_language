@@ -1,0 +1,14 @@
+#
+COMMON=/var/www/data_base/common
+JS=/var/www/data_base/js
+#
+ls $JS/html_src/*.txt > tmp01
+ls $COMMON/*/html_src/*.txt >> tmp01
+#
+awk -f aw_omit_head tmp01 > tmp02
+awk -f aw_omit_tail tmp02 > tmp04
+sed -f sed_omit tmp04 > tmp06
+cp tmp06 in01.txt
+./to_json.js
+#
+cp common.json ../

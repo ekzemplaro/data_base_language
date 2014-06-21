@@ -1,0 +1,6 @@
+#
+export CLOJURE_CONTRIB=/usr/share/java/clojure-contrib-1.2.0.jar
+export DERBY_HOME=/usr/share/javadb
+export CLASSPATH=.:/usr/share/java/clojure.jar:$CLOJURE_CONTRIB:$DERBY_HOME/lib/derbyclient.jar 
+#
+java clojure.main derby_create.clj 

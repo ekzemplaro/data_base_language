@@ -1,0 +1,8 @@
+SQL_FILES=/var/www/data_base/common/bash_common/sql_files
+#
+cat head_sql.txt  $SQL_FILES/sqlite3/sqlite3_create.sql tail_sql.txt \
+	>  sqlite3_create_sql.html
+cat head_sql.txt  $SQL_FILES/sqlite3/sqlite3_insert.sql tail_sql.txt \
+	>  sqlite3_insert_sql.html
+cat head_sql.txt  $SQL_FILES/sqlite3/sqlite3_read.sql tail_sql.txt \
+	>  sqlite3_read_sql.html

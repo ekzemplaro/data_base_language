@@ -1,0 +1,8 @@
+#
+COMMON=/var/www/data_base/common
+JAR=$COMMON/jar
+export H2_JAR=$JAR/h2-1.3.173.jar
+#
+export CLASSPATH=.:$H2_JAR
+#
+./h2_create.py

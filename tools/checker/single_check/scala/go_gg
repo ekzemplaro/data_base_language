@@ -1,0 +1,7 @@
+#
+../single_check.sh couch scala
+../single_check.sh ftp scala
+../single_check.sh webdav scala
+#../single_check.sh mongo scala
+#
+#

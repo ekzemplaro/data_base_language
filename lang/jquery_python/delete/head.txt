@@ -1,0 +1,10 @@
+<script src="/js/jquery.json-2.4.min.js"></script>
+<script src="/data_base/js/table_delete.js"></script>
+<script src="jquery_python_delete.js"></script>
+<title>jQuery Python Delete Jan/28/2013</title>
+</head>
+<body>
+<center><h2>Python Delete</h2></center>
+<div class="right">
+<button id="delete">削除</button><br />
+</div>

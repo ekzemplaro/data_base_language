@@ -1,0 +1,6 @@
+#
+#
+../single_check.sh xindice cython
+../single_check.sh exist cython
+../single_check.sh basex cython
+#

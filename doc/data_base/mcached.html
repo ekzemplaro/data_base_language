@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<script src="/js/jquery-2.1.0.min.js"></script>
+<meta content="Program Language Examples to connect to Memcached" name="description">
+<meta content="Memcached,クライアント,接続,言語,サンプル" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<title>Memcached</title>
+</head>
+<body>
+<h1><a href="http://memcached.org/">Memcached</a></h1>
+
+
+<pre>
+ii  libmemcached-tools      0.44-1.1build1           Commandline tools for talking to memcached via libmemcached
+ii  libmemcached6           0.44-1.1build1           A C and C++ client library to the memcached server
+ii  memcached               1.4.7-0.1ubuntu1         A high-performance memory object caching system
+
+</pre>
+
+<a href="http://code.google.com/p/memcached/wiki/Clients">Clients</a><p />
+<blockquote>
+	tar xvfz memcached-1.4.5.tar.gz<br />
+	cd memcached-1.4.5<br />
+	./confibure<br />
+	make<br />
+	sudo make install<p />
+
+	to start server<p />
+	<blockquote>
+	memcached -u memcached -d<p />
+	</blockquote>
+</blockquote>
+<blockquote>
+telnet 127.0.0.1 11211<p />
+stats items<p />
+stats cachedump 2 100<p />
+
+set test_1 0 0 3<br />
+a01<p />
+set test_2 0 0 3<br />
+a02<p />
+set test_3 0 0 4<br />
+a031<p />
+set test_4 0 0 5<br />
+a0412<p />
+get test_1<p />
+get test_2<p />
+delete test_3<p />
+quit<p />
+</blockquote>
+
+
+キー一覧の取得<br />
+<blockquote>
+<pre>
+$ telnet localhost 11211
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+stats items
+STAT items:3:number 9
+STAT items:3:age 28
+STAT items:3:evicted 0
+STAT items:3:evicted_nonzero 0
+STAT items:3:evicted_time 0
+STAT items:3:outofmemory 0
+STAT items:3:tailrepairs 0
+STAT items:3:reclaimed 0
+STAT items:3:expired_unfetched 0
+STAT items:3:evicted_unfetched 0
+END
+stats cachedump 3 1000
+ITEM t1739 [66 b; 1340234207 s]
+ITEM t1738 [71 b; 1340234207 s]
+ITEM t1737 [65 b; 1340234207 s]
+ITEM t1736 [65 b; 1340234207 s]
+ITEM t1735 [65 b; 1340234207 s]
+ITEM t1734 [65 b; 1340234207 s]
+ITEM t1733 [65 b; 1340234207 s]
+ITEM t1732 [64 b; 1340234207 s]
+ITEM t1731 [66 b; 1340234207 s]
+END
+quit
+Connection closed by foreign host.
+</pre>
+</blockquote>
+
+
+Bash<p />
+<blockquote>
+	libmemcached-tools<p />
+</blockquote>
+
+PHP<p />
+<blockquote>
+<pre>
+ii  php5-memcache       3.0.6-1       memcache extension module for PHP5
+</pre>
+</blockquote>
+
+Python<p />
+<blockquote>
+<pre>
+ii  python-memcache      1.48-1    all      pure python memcached client
+</pre>
+</blockquote>
+
+Perl<p />
+<blockquote>
+<pre>
+ii  libcache-memcached-managed-perl     0.20-1      API for managing cached information
+ii  libcache-memcached-perl             1.29-1      Perl module for using memcached servers
+</pre>
+</blockquote>
+
+Ruby<p />
+<pre>
+ii  libmemcache-client-ruby1.9.1      1.8.5-2     all          Transitional package for ruby-memcache-client
+</pre>
+
+<pre>
+/usr/lib/ruby/vendor_ruby/memcache.rb:250:in `load': incompatible marshal file format (can't be read) (MemCache::MemCacheError)
+	format version 4.8 required; 123.34 given
+	from /usr/lib/ruby/vendor_ruby/memcache.rb:250:in `block in get'
+	from /usr/lib/ruby/vendor_ruby/memcache.rb:886:in `with_server'
+	from /usr/lib/ruby/vendor_ruby/memcache.rb:246:in `get'
+	from /var/www/data_base/common/ruby_common/mcache_manipulate.rb:14:in `display_record_proc'
+	from ./mcached_read.rb:21:in `block in <main>'
+	from ./mcached_read.rb:20:in `each'
+	from ./mcached_read.rb:20:in `<main>'
+</pre>
+<blockquote>
+	mperham-memcache-client-v1.7.8-0-g053890f.zip <p />
+	cp mperham-memcache-client-053890f/VERSION.yml /usr/lib/ruby/1.8<p />
+
+	/usr/lib/ruby/1.8/VERSION.yml<p />
+</blockquote>
+
+Gauche<p />
+	<blockquote>
+	tar xvfz Gauche-memcache-0.1.0.tgz<br />
+	cd Gauche-memcache-0.1.0<br />
+	./configure<br />
+	sudo make install<br/>
+	</blockquote>
+
+Lua<p />
+<blockquote>
+	sudo dpkg -i liblua5.1-memcached0.deb<p />
+</blockquote>
+
+Java<p />
+<blockquote>
+	<a href="https://github.com/gwhalin/Memcached-Java-Client/downloads">
+	java_memcached-release_2.6.3.zip</a><p />
+</blockquote>
+
+C#<p />
+<blockquote>
+	memcacheddotnet_clientlib-1.1.5.zip<p />
+
+	<pre>
+	ii  libmono-sharpzip4.84-cil     2.10.5-1     Mono SharpZipLib library (for CLI 4.0)
+	</pre>
+</blockquote>
+<div id="result_aa">result_aa</div>
+<hr />
+<div id="outarea_aa">outarea_aa</div>
+<div id="outarea_bb">outarea_bb</div>
+<div id="outarea_cc">outarea_cc</div>
+<div id="outarea_dd">outarea_dd</div>
+<div id="outarea_ee">outarea_ee</div>
+<div id="outarea_ff">outarea_ff</div>
+<div id="outarea_gg">outarea_gg</div>
+<div id="outarea_hh">outarea_hh</div>
+<hr />
+<a href="/data_base/data_base.html">Return</a><p />
+Jan/29/2014 AM 08:15<p />
+</body>
+</html>

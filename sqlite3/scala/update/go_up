@@ -1,0 +1,8 @@
+#
+COMMON=/var/www/data_base/common
+SCALA_COMMON=$COMMON/scala_common
+JAR=$COMMON/jar
+export CPX=.:$SCALA_COMMON:$JAR/sqlite-jdbc-3.7.2.jar
+#
+#
+scala -classpath $CPX sqlite3_update /var/tmp/sqlite3/cities.db t0714 2756000

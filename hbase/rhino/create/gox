@@ -1,0 +1,9 @@
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/jre
+export PATH=$PATH:/home/uchida/dbm/hbase/hbase-0.96.0-hadoop2/bin
+#
+export RHINO_COMMON=/var/www/data_base/common/rhino_common
+#
+JS_JAR=/usr/share/java/js.jar:/usr/share/java/jline.jar
+export CLASSPATH=./::$JS_JAR:$RHINO_COMMON:`hbase classpath`
+#
+./hbase_create.js

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<title>CouchDB (Nov/26/2013)</title>
+</head>
+<body>
+
+Create a database<br />
+<blockquote>
+	curl -X PUT --noproxy localhost http://localhost:5984/ex01
+</blockquote>
+
+Register data<br />
+<blockquote>
+curl -X PUT --noproxy localhost http://localhost:5984/ex01/cat
+	-d@<a href="data/cat.json.txt">cat.json</a><br />
+curl -X PUT --noproxy localhost http://localhost:5984/ex01/biking
+	-d@<a href="data/biking.json.txt">biking.json</a><br />
+curl -X PUT --noproxy localhost http://localhost:5984/ex01/hello
+	-d@<a href="data/hello.json.txt">hello.json</a><br />
+
+</blockquote>
+Register a program<br />
+<blockquote>
+curl -X PUT --noproxy 127.0.0.1 http://127.0.0.1:5984/ex01/_design/ex01
+	--data-binary @<a href="data/ex01.json.txt">ex01.json</a><br />
+</blockquote>
+
+Execute the program<br />
+<blockquote>
+curl --noproxy 127.0.0.1 http://127.0.0.1:5984/ex01/_design/ex01/_view/foo
+<p />
+<blockquote>
+<pre>
+{"total_rows":3,"offset":0,"rows":[
+{"id":"hello","key":"2009/01/15 15:52:20","value":"Hello World"},
+{"id":"biking","key":"2009/01/30 18:04:11","value":"Biking"},
+{"id":"cat","key":"2009/02/17 21:13:39","value":"Bought a Cat"}
+]}
+</pre>
+</blockquote>
+</blockquote>
+
+Register another program<br />
+<blockquote>
+curl -X PUT --noproxy 127.0.0.1 http://127.0.0.1:5984/ex01/_design/ex02
+	--data-binary @<a href="data/ex02.json.txt">ex02.json</a><br />
+</blockquote>
+
+
+Execute the program<br />
+<blockquote>
+curl --noproxy 127.0.0.1 http://127.0.0.1:5984/ex01/_design/ex02/_view/foo
+<p />
+<blockquote>
+<pre>
+{"total_rows":3,"offset":0,"rows":[
+{"id":"biking","key":"Biking","value":"My biggest hobby is mountainbiking. The other day..."},
+{"id":"cat","key":"Bought a Cat","value":"I went to the the pet store earlier and brought home a little kitty..."},
+{"id":"hello","key":"Hello World","value":"Well hello and welcome to my new blog..."}
+]}
+</pre>
+</blockquote>
+</blockquote>
+
+
+<hr />
+couchapp<p />
+<blockquote>
+couchapp generate helloworld<br />
+cd helloworld<br />
+couchapp generate show hello<br />
+cd shows/<br />
+vi <a href="js/hello.js.txt">hello.js</a><br /> 
+cd ..<br />
+export http_proxy=""<br />
+couchapp push testdb<br />
+</blockquote>
+Access<p />
+<blockquote>
+http://127.0.0.1:5984/testdb/_design/helloworld/_show/hello<p />
+</blockquote>
+
+<a href="js/hello3.js.txt">hello3.js</a><br /> 
+<blockquote>
+<pre>
+function(doc, req) {
+	var str_out = "*** Hello World! ***&lt;br /&gt;";
+	str_out += "*** Good Afternoon ***&lt;br /&gt;";
+	str_out += req.query.who + "&lt;br />&gt;;
+	return str_out;
+}
+</pre>
+http://127.0.0.1:5984/testdb/_design/helloworld/_show/hello3?who=Taro<br />
+</blockquote>
+
+<hr />
+_attachments<p />
+_attachments/hello.html<p />
+<blockquote>
+	<blockquote>
+	http://localhost:5984/testdb/_design/helloworld/hello.html<br />
+	</blockquote>
+</blockquote>
+
+<hr />
+views<p />
+<blockquote>
+BASE="http://localhost:5984/example03"<br />
+#<br />
+curl -X DELETE --noproxy localhost $BASE<br />
+curl -X PUT --noproxy localhost $BASE<br />
+#<br />
+curl -X PUT --noproxy localhost  $BASE"/a01" -d@<a href="views/a01.json.txt">a01.json</a><br />
+curl -X PUT --noproxy localhost  $BASE"/a02" -d@<a href="views/a02.json.txt">a02.json</a><br />
+curl -X PUT --noproxy localhost  $BASE"/a03" -d@<a href="views/a03.json.txt">a03.json</a><br />
+curl -X PUT --noproxy localhost  $BASE"/a04" -d@<a href="views/a04.json.txt">a04.json</a><br />
+curl -X PUT --noproxy localhost  $BASE"/a05" -d@<a href="views/a05.json.txt">a05.json</a><br />
+#<br />
+couchapp generate myapp<br />
+cd myapp<br />
+couchapp generate view ex01<br />
+	<blockquote>
+	<a href="views/map.js.txt">map.js</a><br />
+	<a href="views/reduce.js.txt">reduce.js</a><br />
+	</blockquote>
+http://127.0.0.1:5984/example03/_design/myapp/_view/ex01<p />
+	<blockquote>
+	{"rows":[
+{"key":null,"value":13300}
+]}
+	</blockquote>
+
+</blockquote>
+<hr />
+lists<p />
+<blockquote>
+views/ex01/<a href="views/map.js.txt">map.js</a><p />
+lists/<a href="lists/list01.js.txt">list01.js</a><p />
+</blockquote>
+
+http://127.0.0.1:5984/testdb/_design/myapp/_list/list01/ex01<p />
+<hr />
+myapp/views/ex02/<a href="librivox/map.js.txt">map.js</a><br />
+<blockquote>
+http://127.0.0.1:5984/librivox/_design/myapp/_view/ex02?key="Japanese"<br />
+http://127.0.0.1:5984/librivox/_design/myapp/_view/ex02?key="Polish"<br />
+</blockquote>
+<hr />
+<a href="/data_base/data_base.html">Return</a><p />
+Nov/26/2013 AM 08:15<p />
+</body>
+</html>

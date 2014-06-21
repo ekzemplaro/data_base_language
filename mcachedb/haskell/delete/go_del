@@ -1,0 +1,2 @@
+#
+runghc mcachedb_delete.hs t1525

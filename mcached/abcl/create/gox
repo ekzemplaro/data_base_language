@@ -1,0 +1,4 @@
+ABCL=/var/www/data_base/common/jar/abcl
+#
+java -jar  $ABCL/abcl.jar --load mcached_create.lisp --eval '(quit)'
+#

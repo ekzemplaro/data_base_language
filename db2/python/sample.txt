@@ -1,0 +1,13 @@
+$ /home/sim/local/bin/python
+>>> import DB2
+>>> conn = DB2.connect(dsn='SAMPLE' , uid='sim' , pwd='xxxx') 
+
+この時点でLIST APPLICATIONSを見るとpythonプロセスがSAMPLE DBに接続しています。
+あとは、
+
+cursor = conn.cursor()
+cursor.execute('select * from staff')
+data=cursor.fetchall()
+print data
+conn.commit()
+conn.close()

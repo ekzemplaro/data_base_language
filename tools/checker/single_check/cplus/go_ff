@@ -1,0 +1,7 @@
+#
+../single_check.sh couch cplus
+../single_check.sh ftp cplus
+../single_check.sh webdav cplus
+#../single_check.sh mongo cplus
+#
+#

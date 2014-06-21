@@ -1,0 +1,42 @@
+#
+SRC=/var/www/data_base/lang/jquery_ruby/update
+cd /usr/lib/cgi-bin/data_base/ruby
+#
+ln -s $SRC/master_ruby_update.rb master_ruby_update.rb
+ln -s $SRC/text_ruby_update.rb text_ruby_update.rb
+ln -s $SRC/csv_ruby_update.rb csv_ruby_update.rb
+ln -s $SRC/xml_ruby_update.rb xml_ruby_update.rb
+ln -s $SRC/json_ruby_update.rb json_ruby_update.rb
+ln -s $SRC/excel_ruby_update.rb excel_ruby_update.rb
+ln -s $SRC/pdf_ruby_update.rb pdf_ruby_update.rb
+#
+ln -s $SRC/sqlite3_ruby_update.rb sqlite3_ruby_update.rb
+ln -s $SRC/oracle_ruby_update.rb oracle_ruby_update.rb
+ln -s $SRC/mssql_ruby_update.rb mssql_ruby_update.rb
+ln -s $SRC/db2_ruby_update.rb db2_ruby_update.rb
+#
+ln -s $SRC/mysql_ruby_update.rb mysql_ruby_update.rb
+ln -s $SRC/postgre_ruby_update.rb postgre_ruby_update.rb
+ln -s $SRC/firebird_ruby_update.rb firebird_ruby_update.rb
+#
+ln -s $SRC/xindice_ruby_update.rb xindice_ruby_update.rb
+ln -s $SRC/exist_ruby_update.rb exist_ruby_update.rb
+ln -s $SRC/dbxml_ruby_update.rb dbxml_ruby_update.rb
+#
+ln -s $SRC/gdbm_ruby_update.rb gdbm_ruby_update.rb
+ln -s $SRC/berkeley_ruby_update.rb berkeley_ruby_update.rb
+ln -s $SRC/cdb_ruby_update.rb cdb_ruby_update.rb
+ln -s $SRC/mcached_ruby_update.rb mcached_ruby_update.rb
+ln -s $SRC/mcachedb_ruby_update.rb mcachedb_ruby_update.rb
+ln -s $SRC/redis_ruby_update.rb redis_ruby_update.rb
+ln -s $SRC/tcbn_ruby_update.rb tcbn_ruby_update.rb
+ln -s $SRC/tyrant_ruby_update.rb tyrant_ruby_update.rb
+#
+ln -s $SRC/couch_ruby_update.rb couch_ruby_update.rb
+ln -s $SRC/ftp_ruby_update.rb ftp_ruby_update.rb
+ln -s $SRC/webdav_ruby_update.rb webdav_ruby_update.rb
+#
+ln -s $SRC/mongo_ruby_update.rb mongo_ruby_update.rb
+ln -s $SRC/cassandra_ruby_update.rb cassandra_ruby_update.rb
+ln -s $SRC/riak_ruby_update.rb riak_ruby_update.rb
+#

@@ -1,0 +1,6 @@
+#
+../single_check.sh couch java
+../single_check.sh ftp java
+../single_check.sh mongo java
+#
+#

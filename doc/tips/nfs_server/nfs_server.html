@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+</script>
+<title>nfs_server Jun/20/2014</title>
+</head>
+<body>
+<h2>nfs server の設定 in Ubuntu</h2><p />
+
+# sudo apt-get install nfs-kernel-server<p />
+
+
+/etc/exports の設定<p />
+<blockquote>
+<pre>
+/tmp    *(rw,sync,no_subtree_check)
+/home   *(rw,sync,no_subtree_check)
+/home/scott    *(rw,sync,no_subtree_check)
+</pre>
+</blockquote>
+
+再起動<p />
+<blockquote>
+sudo service nfs-kernel-server restart<p />
+</blockquote>
+
+<hr />
+Show the server's exported file systems: <br />
+<blockquote>
+	$ showmount -e host_server<p />
+</blockquote>
+<hr />
+<a href="/data_base/data_base.html">Return</a><p />
+Jun/20/2014 AM 08:15<p />
+</body>
+</html>

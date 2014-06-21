@@ -1,0 +1,10 @@
+insert into cities values ('t0131','函館',51742,'2001-7-29');
+insert into cities values ('t0132','札幌',45301,'2001-11-21');
+insert into cities values ('t0133','帯広',31578,'2001-9-8');
+insert into cities values ('t0134','釧路',24979,'2001-3-12');
+insert into cities values ('t0135','旭川',81176,'2001-5-3');
+insert into cities values ('t0136','北見',78675,'2001-8-25');
+insert into cities values ('t0137','室蘭',65451,'2001-9-19');
+insert into cities values ('t0138','根室',42243,'2001-7-8');
+insert into cities values ('t0139','稚内',35827,'2001-12-21');
+quit;

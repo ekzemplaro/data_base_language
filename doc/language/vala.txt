@@ -1,0 +1,23 @@
+<meta content="Program Language Examples in vala" name="description">
+<meta content="vala,クライアント,接続,言語,サンプル" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<title>Vala (Feb/03/2012)</title>
+</head>
+<body>
+<h2><a href="http://live.gnome.org/Vala">Vala</a></h2><p />
+<blockquote>
+<pre>
+ii  libvala-0.14-0   0.14.0-0ubuntu1    C# like language for the GObject system - library
+ii  valac            0.14.0-0ubuntu1    C# like language for the GObject system
+ii  valac-0.14       0.14.0-0ubuntu1    C# like language for the GObject system
+</pre>
+</blockquote>
+
+<blockquote>
+< a href="http://code.valaide.org/">Vala code</a><p />
+</blockquote>
+
+<blockquote>
+libxml++2.6-dev<p />
+</blockquote>
+

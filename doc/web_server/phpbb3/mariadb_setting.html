@@ -1,0 +1,24 @@
+MariaDB の設定<p />
+
+	<blockquote>
+	例えば、ユーザ　phpbb3<br />
+		パスワード　tiger<br />
+		でユーザーを作成して下さい。<p />
+		$ mysql -u root -ptiger<p />
+		<blockquote>
+		mysql> GRANT ALL ON *.* TO phpbb3@"localhost"IDENTIFIED BY "tiger";<br />
+		mysql> FLUSH PRIVILEGES;<br />
+		</blockquote>
+	データベース phpbb3 を作成して下さい。<p />
+		<blockquote>
+		mysql> create database phpbb3;<br />
+		</blockquote>
+	</blockquote>
+
+	<blockquote>
+	MariaDB の設定の確認方法
+	<blockquote>
+		mysql -hlocalhost -uphpbb3 -ptiger<p />
+		<a href="./mariadb_phpbb3.txt">実行結果</a><p />
+	</blockquote>
+	</blockquote>

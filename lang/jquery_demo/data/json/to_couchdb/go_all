@@ -1,0 +1,7 @@
+ls ../*.json > tmp01
+sed 's/.json//' tmp01 > tmp02
+sed 's/..\///' tmp02 > tmp03
+#
+echo "http_proxy=\"\"" > tmp_go_exec
+#
+awk '{print "curl -X PUT http://localhost:5984/city/"$1,"-d@../"$1".json"}' tmp03 >> tmp_go_exec

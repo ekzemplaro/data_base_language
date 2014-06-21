@@ -1,0 +1,3 @@
+#
+./csv_update.io /var/tmp/csv/cities.csv t1275 26754200
+chmod 666 /var/tmp/csv/cities.csv

@@ -1,0 +1,105 @@
+<meta content="Program Language Examples to access JSON" name="description">
+<meta content="JSON,クライアント,接続,言語,サンプル" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<title>Json</title>
+</head>
+<body>
+<h1>Json</h1>
+
+JSON のチェック<br />
+<blockquote>
+python -m json.tool ex01.json > /dev/null<p />
+</blockquote>
+
+JSON の整形<br />
+<blockquote>
+cat ex01.json | python -mjson.tool<p />
+</blockquote>
+
+コマンドラインツール<br />
+<blockquote>
+<a href="http://stedolan.github.com/jq/">jq</a><p />
+<pre>
+ii  jq    1.2-8  amd64   lightweight and flexible command-line JSON processor
+</pre>
+</blockquote>
+
+PHP<p />
+<blockquote>
+	php5-json<p />
+</blockquote>
+
+Perl<p />
+<blockquote>
+	libjson-perl<p />
+</blockquote>
+
+Python<p />
+<blockquote>
+	python-json<p />
+</blockquote>
+
+Perl<p />
+<blockquote>
+	libjson-perl<p />
+</blockquote>
+
+Ruby<p />
+<blockquote>
+	ruby-json<p />
+</blockquote>
+
+
+JRuby<p />
+<blockquote>
+	<a href="http://json-jruby.rubyforge.org/">JSON-JRuby</a><p />
+	jruby -S gem install json-jruby<p />
+</blockquote>
+
+Ocaml<p />
+<blockquote>
+	libjson-wheel-ocaml-dev<br />
+</blockquote>
+
+Tcl<p />
+<blockquote>
+	tcllib<br />
+</blockquote>
+
+
+Gauche<p />
+<blockquote>
+	Gauche-text-json-0.1.tgz<p />
+</blockquote>
+
+common-lisp<p />
+<blockquote>
+	cl-json_0.5.0.tar.gz<p />
+	/usr/share/common-lisp/source<p />
+</blockquote>
+
+newlisp<p />
+<blockquote>
+	<a href="http://static.artfulcode.net/newlisp/json.lsp">json.lsp</a><p />
+</blockquote>
+
+Lua<p />
+<blockquote>
+	liblua5.1-json<p />
+</blockquote>
+
+C++<p />
+<blockquote>
+	picojson.h<p />
+</blockquote>
+
+Java<p />
+<blockquote>
+</blockquote>
+
+
+C#<p />
+<blockquote>
+	<a href="http://json.codeplex.com/">Json.NET</a><p />
+	Json50r8/Bin/Net40/Newtonsoft.Json.dll<p />
+</blockquote>

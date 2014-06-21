@@ -1,0 +1,2 @@
+#
+./gdbm_update.pike /var/tmp/gdbm/cities.pag t2154 239875600

@@ -1,0 +1,14 @@
+cassandra_manipulate.js
+excel_manipulate.js
+file_io.js
+ftp_manipulate.js
+hbase_manipulate.js
+mcached_manipulate.js
+net_manipulate.js
+old_mcache_manipulate.js
+redis_manipulate.js
+sql_manipulate.js
+text_manipulate.js
+voldemort_manipulate.js
+xlsx_manipulate.js
+xml_manipulate.js

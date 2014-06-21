@@ -1,0 +1,8 @@
+<script src="jquery_php_create.js"></script>
+<title>PHP Create Dec/12/2013</title>
+</head>
+<body>
+<center><h2>PHP Create</h2></center>
+<div class="right">
+<button id="create">初期化</button><br />
+</div>

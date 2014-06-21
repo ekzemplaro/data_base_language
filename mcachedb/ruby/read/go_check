@@ -1,0 +1,3 @@
+#
+memcat --servers=localhost:11211 1731
+memcat --servers=localhost:11211 1732

@@ -1,0 +1,19 @@
+// -----------------------------------------------------------------
+//	sqlite3_read.spl
+//
+//						Sep/06/2011
+// -----------------------------------------------------------------
+load "sql_sqlite";
+#file-as-code  /var/www/data_base/common/spl_common/sql_manipulate.spl;
+// -----------------------------------------------------------------
+write ("*** 開始 ***\n");
+
+var file_sqlite3 = argv[0];
+write (file_sqlite3 ~ "\n");
+
+var db = sql_connect("sqlite",file_sqlite3);
+
+sql_display_proc (db);
+
+write ("*** 終了 ***\n");
+// -----------------------------------------------------------------

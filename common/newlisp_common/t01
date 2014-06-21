@@ -1,0 +1,15 @@
+; ------------------------------------------------------------------
+(define (dict_to_mcached_proc socket)
+	(dolist (vv (dict_aa))
+		(setf key (first vv))
+		(setf rr (first (rest vv)))
+		(setf json_str (unit_string_gen_proc
+			 (last (assoc "name" rr))
+			 (string (last (assoc "population" rr)))
+			 (last (assoc "date_mod" rr))
+			))
+		(mcached_socke_write_proc socket key json_str)
+	)
+)
+
+; ------------------------------------------------------------------

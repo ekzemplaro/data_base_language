@@ -1,0 +1,4 @@
+#
+#
+export http_proxy=""
+./exist_delete.py t4251

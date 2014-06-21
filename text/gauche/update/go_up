@@ -1,0 +1,3 @@
+#
+./text_update.scm /var/tmp/plain_text/cities.txt t2383 67245800
+#

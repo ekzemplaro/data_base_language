@@ -1,0 +1,2 @@
+#
+ecl -shell csv_delete.lisp -eval '(quit)' -- /var/tmp/csv/cities.csv t1272

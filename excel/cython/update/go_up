@@ -1,0 +1,5 @@
+#
+#
+echo "import excel_update" > tmp_execute.py
+#
+python ./tmp_execute.py /var/tmp/excel/cities.xls t2976 3812500

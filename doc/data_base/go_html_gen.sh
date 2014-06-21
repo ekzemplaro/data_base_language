@@ -1,0 +1,46 @@
+DOC=/var/www/data_base/doc
+#
+cat $DOC/head_short.txt basex.txt $DOC/tail_common.txt > basex.html
+cat $DOC/head_short.txt berkeley.txt $DOC/tail_common.txt > berkeley.html
+cat $DOC/head_short.txt calc.txt $DOC/tail_common.txt > calc.html
+cat $DOC/head_short.txt cassandra.txt $DOC/tail_common.txt > cassandra.html
+cat $DOC/head_short.txt cdb.txt $DOC/tail_common.txt > cdb.html
+cat $DOC/head_short.txt couch.txt $DOC/tail_common.txt > couch.html
+cat $DOC/head_short.txt csv.txt $DOC/tail_common.txt > csv.html
+cat $DOC/head_short.txt db2.txt $DOC/tail_common.txt > db2.html
+cat $DOC/head_short.txt dbxml.txt $DOC/tail_common.txt > dbxml.html
+cat $DOC/head_short.txt derby.txt $DOC/tail_common.txt > derby.html
+cat $DOC/head_short.txt drizzle.txt $DOC/tail_common.txt > drizzle.html
+cat $DOC/head_short.txt epub.txt $DOC/tail_common.txt > epub.html
+cat $DOC/head_short.txt excel.txt $DOC/tail_common.txt > excel.html
+cat $DOC/head_short.txt exist.txt $DOC/tail_common.txt > exist.html
+cat $DOC/head_short.txt firebird.txt $DOC/tail_common.txt > firebird.html
+cat $DOC/head_short.txt ftp.txt $DOC/tail_common.txt > ftp.html
+cat $DOC/head_short.txt gdbm.txt $DOC/tail_common.txt > gdbm.html
+cat $DOC/head_short.txt h2.txt $DOC/tail_common.txt > h2.html
+cat $DOC/head_short.txt hbase.txt $DOC/tail_common.txt > hbase.html
+cat $DOC/head_short.txt hgdb.txt $DOC/tail_common.txt > hgdb.html
+cat $DOC/head_short.txt hsqldb.txt $DOC/tail_common.txt > hsqldb.html
+cat $DOC/head_short.txt json.txt $DOC/tail_common.txt > json.html
+cat $DOC/head_short.txt mcached.txt $DOC/tail_common.txt > mcached.html
+cat $DOC/head_short.txt mcachedb.txt $DOC/tail_common.txt > mcachedb.html
+cat $DOC/head_short.txt mongo.txt $DOC/tail_common.txt > mongo.html
+cat $DOC/head_short.txt mssql.txt $DOC/tail_common.txt > mssql.html
+cat $DOC/head_short.txt mysql.txt $DOC/tail_common.txt > mysql.html
+cat $DOC/head_short.txt neo4j.txt $DOC/tail_common.txt > neo4j.html
+cat $DOC/head_short.txt oracle.txt $DOC/tail_common.txt > oracle.html
+cat $DOC/head_short.txt pdf.txt $DOC/tail_common.txt > pdf.html
+cat $DOC/head_short.txt postgre.txt $DOC/tail_common.txt > postgre.html
+cat $DOC/head_short.txt redis.txt $DOC/tail_common.txt > redis.html
+cat $DOC/head_short.txt riak.txt $DOC/tail_common.txt > riak.html
+cat $DOC/head_short.txt sqlite3.txt $DOC/tail_common.txt > sqlite3.html
+cat $DOC/head_short.txt tcbn.txt $DOC/tail_common.txt > tcbn.html
+cat $DOC/head_short.txt text.txt $DOC/tail_common.txt > text.html
+cat $DOC/head_short.txt tyrant.txt $DOC/tail_common.txt > tyrant.html
+cat $DOC/head_short.txt voldemort.txt $DOC/tail_common.txt > voldemort.html
+cat $DOC/head_short.txt voltdb.txt $DOC/tail_common.txt > voltdb.html
+cat $DOC/head_short.txt webdav.txt $DOC/tail_common.txt > webdav.html
+cat $DOC/head_short.txt xindice.txt $DOC/tail_common.txt > xindice.html
+cat $DOC/head_short.txt xml.txt $DOC/tail_common.txt > xml.html
+cat $DOC/head_short.txt xlsx.txt $DOC/tail_common.txt > xlsx.html
+#

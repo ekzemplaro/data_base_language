@@ -1,0 +1,3 @@
+#
+#
+./json_delete.py /var/tmp/json/cities.json t0927

@@ -1,0 +1,2 @@
+#
+./json_create.gambas /var/tmp/json/cities.json

@@ -1,0 +1,3 @@
+#
+./xml_create.lisp /var/tmp/xml_file/cities.xml
+#./xml_create.lisp cities.xml

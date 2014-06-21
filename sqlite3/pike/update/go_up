@@ -1,0 +1,1 @@
+./sqlite3_update.pike /var/tmp/sqlite3/cities.db t0713 92624500

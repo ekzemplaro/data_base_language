@@ -1,0 +1,5 @@
+ls *.py > tmp01
+sed 's/python/lua/' tmp01 >  tmp02
+sed 's/py/lua/' tmp02 >  tmp03
+pr -m -t tmp01 tmp03 > tmp04
+awk '{print "mv",$1,$2}' tmp04 > tmp05

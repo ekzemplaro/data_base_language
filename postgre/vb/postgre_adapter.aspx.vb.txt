@@ -1,0 +1,44 @@
+'------------------------------------------------------------------------
+'
+'	postgre_adapber.aspx.vb
+'
+'						Oct/26/2009
+'
+'------------------------------------------------------------------------
+Imports System.Data
+Imports Npgsql
+
+Partial Class ms_sqlserver_adapter
+    Inherits System.Web.UI.Page
+
+'------------------------------------------------------------------------
+Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
+	Dim da_adapter As NpgsqlDataAdapter
+
+        Dim dtable As DataTable
+
+        Dim sqlStr As String
+        Dim str_connect As String
+
+str_connect = "Server=172.20.247.166;Port=5432;;User Id=uchida;Password=hello9;ENCODING=UNICODE;Database=city;"
+
+	sqlStr = "SELECT ID,NAME,POPULATION,DATE_MOD FROM cities"
+
+	dtable = New DataTable ()
+
+	dtable.Columns.Add (New DataColumn("ID", GetType(String)))
+	dtable.Columns.Add (New DataColumn("NAME", GetType(String)))
+	dtable.Columns.Add (New DataColumn("POPULATION", GetType(String)))
+	dtable.Columns.Add (New DataColumn("DATE_MOD", GetType(String)))
+
+	da_adapter = new NpgsqlDataAdapter (sqlStr,str_connect)
+	da_adapter.Fill (dtable)
+
+	Me.GridView1.DataSource = dtable.DefaultView
+	Me.GridView1.DataBind()
+
+End Sub
+'------------------------------------------------------------------------
+End Class 
+'------------------------------------------------------------------------

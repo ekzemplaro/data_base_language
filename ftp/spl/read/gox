@@ -1,0 +1,2 @@
+export ftp_proxy=""
+splrun ftp_read.spl 

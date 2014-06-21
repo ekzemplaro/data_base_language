@@ -1,0 +1,251 @@
+SQL: SELECT * FROM CITIES WHERE (ID = ?);
+COST: 2000000.0
+PLAN:
+{
+    "EXECUTE_LIST": [
+        11,
+        16
+    ],
+    "PARAMETERS": [],
+    "PLAN_NODES": [
+        {
+            "CHILDREN_IDS": [11],
+            "ID": 16,
+            "INLINE_NODES": [],
+            "OUTPUT_SCHEMA": [
+                {
+                    "COLUMN_ALIAS": "ID",
+                    "COLUMN_NAME": "ID",
+                    "EXPRESSION": {
+                        "COLUMN_ALIAS": "ID",
+                        "COLUMN_IDX": 0,
+                        "COLUMN_NAME": "ID",
+                        "TABLE_NAME": "CITIES",
+                        "TYPE": "VALUE_TUPLE",
+                        "VALUE_SIZE": 15,
+                        "VALUE_TYPE": "STRING"
+                    },
+                    "SIZE": 15,
+                    "TABLE_NAME": "CITIES",
+                    "TYPE": "STRING"
+                },
+                {
+                    "COLUMN_ALIAS": "NAME",
+                    "COLUMN_NAME": "NAME",
+                    "EXPRESSION": {
+                        "COLUMN_ALIAS": "NAME",
+                        "COLUMN_IDX": 1,
+                        "COLUMN_NAME": "NAME",
+                        "TABLE_NAME": "CITIES",
+                        "TYPE": "VALUE_TUPLE",
+                        "VALUE_SIZE": 15,
+                        "VALUE_TYPE": "STRING"
+                    },
+                    "SIZE": 15,
+                    "TABLE_NAME": "CITIES",
+                    "TYPE": "STRING"
+                },
+                {
+                    "COLUMN_ALIAS": "POPULATION",
+                    "COLUMN_NAME": "POPULATION",
+                    "EXPRESSION": {
+                        "COLUMN_ALIAS": "POPULATION",
+                        "COLUMN_IDX": 2,
+                        "COLUMN_NAME": "POPULATION",
+                        "TABLE_NAME": "CITIES",
+                        "TYPE": "VALUE_TUPLE",
+                        "VALUE_SIZE": 15,
+                        "VALUE_TYPE": "STRING"
+                    },
+                    "SIZE": 15,
+                    "TABLE_NAME": "CITIES",
+                    "TYPE": "STRING"
+                },
+                {
+                    "COLUMN_ALIAS": "DATE_MOD",
+                    "COLUMN_NAME": "DATE_MOD",
+                    "EXPRESSION": {
+                        "COLUMN_ALIAS": "DATE_MOD",
+                        "COLUMN_IDX": 3,
+                        "COLUMN_NAME": "DATE_MOD",
+                        "TABLE_NAME": "CITIES",
+                        "TYPE": "VALUE_TUPLE",
+                        "VALUE_SIZE": 15,
+                        "VALUE_TYPE": "STRING"
+                    },
+                    "SIZE": 15,
+                    "TABLE_NAME": "CITIES",
+                    "TYPE": "STRING"
+                }
+            ],
+            "PARENT_IDS": [],
+            "PLAN_NODE_TYPE": "SEND"
+        },
+        {
+            "CHILDREN_IDS": [],
+            "ID": 11,
+            "INLINE_NODES": [{
+                "CHILDREN_IDS": [],
+                "ID": 15,
+                "INLINE_NODES": [],
+                "OUTPUT_SCHEMA": [
+                    {
+                        "COLUMN_ALIAS": "ID",
+                        "COLUMN_NAME": "ID",
+                        "EXPRESSION": {
+                            "COLUMN_ALIAS": "ID",
+                            "COLUMN_IDX": 0,
+                            "COLUMN_NAME": "ID",
+                            "TABLE_NAME": "CITIES",
+                            "TYPE": "VALUE_TUPLE",
+                            "VALUE_SIZE": 15,
+                            "VALUE_TYPE": "STRING"
+                        },
+                        "SIZE": 15,
+                        "TABLE_NAME": "CITIES",
+                        "TYPE": "STRING"
+                    },
+                    {
+                        "COLUMN_ALIAS": "NAME",
+                        "COLUMN_NAME": "NAME",
+                        "EXPRESSION": {
+                            "COLUMN_ALIAS": "NAME",
+                            "COLUMN_IDX": 1,
+                            "COLUMN_NAME": "NAME",
+                            "TABLE_NAME": "CITIES",
+                            "TYPE": "VALUE_TUPLE",
+                            "VALUE_SIZE": 15,
+                            "VALUE_TYPE": "STRING"
+                        },
+                        "SIZE": 15,
+                        "TABLE_NAME": "CITIES",
+                        "TYPE": "STRING"
+                    },
+                    {
+                        "COLUMN_ALIAS": "POPULATION",
+                        "COLUMN_NAME": "POPULATION",
+                        "EXPRESSION": {
+                            "COLUMN_ALIAS": "POPULATION",
+                            "COLUMN_IDX": 2,
+                            "COLUMN_NAME": "POPULATION",
+                            "TABLE_NAME": "CITIES",
+                            "TYPE": "VALUE_TUPLE",
+                            "VALUE_SIZE": 15,
+                            "VALUE_TYPE": "STRING"
+                        },
+                        "SIZE": 15,
+                        "TABLE_NAME": "CITIES",
+                        "TYPE": "STRING"
+                    },
+                    {
+                        "COLUMN_ALIAS": "DATE_MOD",
+                        "COLUMN_NAME": "DATE_MOD",
+                        "EXPRESSION": {
+                            "COLUMN_ALIAS": "DATE_MOD",
+                            "COLUMN_IDX": 3,
+                            "COLUMN_NAME": "DATE_MOD",
+                            "TABLE_NAME": "CITIES",
+                            "TYPE": "VALUE_TUPLE",
+                            "VALUE_SIZE": 15,
+                            "VALUE_TYPE": "STRING"
+                        },
+                        "SIZE": 15,
+                        "TABLE_NAME": "CITIES",
+                        "TYPE": "STRING"
+                    }
+                ],
+                "PARENT_IDS": [],
+                "PLAN_NODE_TYPE": "PROJECTION"
+            }],
+            "OUTPUT_SCHEMA": [
+                {
+                    "COLUMN_ALIAS": "ID",
+                    "COLUMN_NAME": "ID",
+                    "EXPRESSION": {
+                        "COLUMN_ALIAS": "ID",
+                        "COLUMN_IDX": 0,
+                        "COLUMN_NAME": "ID",
+                        "TABLE_NAME": "CITIES",
+                        "TYPE": "VALUE_TUPLE",
+                        "VALUE_SIZE": 15,
+                        "VALUE_TYPE": "STRING"
+                    },
+                    "SIZE": 15,
+                    "TABLE_NAME": "CITIES",
+                    "TYPE": "STRING"
+                },
+                {
+                    "COLUMN_ALIAS": "NAME",
+                    "COLUMN_NAME": "NAME",
+                    "EXPRESSION": {
+                        "COLUMN_ALIAS": "NAME",
+                        "COLUMN_IDX": 1,
+                        "COLUMN_NAME": "NAME",
+                        "TABLE_NAME": "CITIES",
+                        "TYPE": "VALUE_TUPLE",
+                        "VALUE_SIZE": 15,
+                        "VALUE_TYPE": "STRING"
+                    },
+                    "SIZE": 15,
+                    "TABLE_NAME": "CITIES",
+                    "TYPE": "STRING"
+                },
+                {
+                    "COLUMN_ALIAS": "POPULATION",
+                    "COLUMN_NAME": "POPULATION",
+                    "EXPRESSION": {
+                        "COLUMN_ALIAS": "POPULATION",
+                        "COLUMN_IDX": 2,
+                        "COLUMN_NAME": "POPULATION",
+                        "TABLE_NAME": "CITIES",
+                        "TYPE": "VALUE_TUPLE",
+                        "VALUE_SIZE": 15,
+                        "VALUE_TYPE": "STRING"
+                    },
+                    "SIZE": 15,
+                    "TABLE_NAME": "CITIES",
+                    "TYPE": "STRING"
+                },
+                {
+                    "COLUMN_ALIAS": "DATE_MOD",
+                    "COLUMN_NAME": "DATE_MOD",
+                    "EXPRESSION": {
+                        "COLUMN_ALIAS": "DATE_MOD",
+                        "COLUMN_IDX": 3,
+                        "COLUMN_NAME": "DATE_MOD",
+                        "TABLE_NAME": "CITIES",
+                        "TYPE": "VALUE_TUPLE",
+                        "VALUE_SIZE": 15,
+                        "VALUE_TYPE": "STRING"
+                    },
+                    "SIZE": 15,
+                    "TABLE_NAME": "CITIES",
+                    "TYPE": "STRING"
+                }
+            ],
+            "PARENT_IDS": [16],
+            "PLAN_NODE_TYPE": "SEQSCAN",
+            "PREDICATE": {
+                "LEFT": {
+                    "COLUMN_ALIAS": "ID",
+                    "COLUMN_IDX": 0,
+                    "COLUMN_NAME": "ID",
+                    "TABLE_NAME": "CITIES",
+                    "TYPE": "VALUE_TUPLE",
+                    "VALUE_SIZE": 15,
+                    "VALUE_TYPE": "STRING"
+                },
+                "RIGHT": {
+                    "PARAM_IDX": 0,
+                    "TYPE": "VALUE_PARAMETER",
+                    "VALUE_SIZE": 1048576,
+                    "VALUE_TYPE": "STRING"
+                },
+                "TYPE": "COMPARE_EQUAL",
+                "VALUE_SIZE": 8,
+                "VALUE_TYPE": "BIGINT"
+            },
+            "TARGET_TABLE_NAME": "CITIES"
+        }
+    ]
+}

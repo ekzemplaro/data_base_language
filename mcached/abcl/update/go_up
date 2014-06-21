@@ -1,0 +1,6 @@
+#
+ABCL=/var/www/data_base/common/jar/abcl
+#
+java -jar  $ABCL/abcl.jar --load mcached_update.lisp --eval '(quit)' -- t1735 21478500
+#
+#

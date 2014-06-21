@@ -1,0 +1,8 @@
+BEGIN{out=""}
+{key = NR % 4
+out = out $0 "\t"
+if (key == 0)
+	{print out
+	out=""
+	}
+}

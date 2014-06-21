@@ -1,0 +1,2 @@
+#
+./json_create.lsp /var/tmp/json/cities.json

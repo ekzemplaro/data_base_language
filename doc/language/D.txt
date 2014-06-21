@@ -1,0 +1,39 @@
+<meta content="Program Language Examples in D" name="description">
+<meta content="D,クライアント,接続,言語,サンプル" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<title>D (Aug/28/2013)</title>
+</head>
+<body>
+<h2><a href="http://www.digitalmars.com/d/">D</a></h2><p />
+
+<blockquote>
+<pre>
+ii  dmd   2.063.2-0   amd64     Digital Mars D Compiler
+</pre>
+</blockquote>
+
+<blockquote>
+	sudo dpkg -i <a href="http://www.digitalmars.com/d/download.html">
+		dmd_2.063.2-0_amd64.deb</a><p />
+</blockquote>
+
+<blockquote>
+	/etc/dmd.conf<p />
+
+	DFLAGS=-I/usr/include/d/dmd/phobos<br />
+	-I/usr/include/d/dmd/druntime/import<br />
+	-L-L/usr/lib64 -L-L/usr/lib32 -L--no-warn-search-mismatch<br />
+	-L--export-dynamic -L-lphobos2 -L-lrt<p />
+</blockquote>
+
+<blockquote>
+	<a href="http://www.dsource.org/projects/ddbi">D DBI</a><p />
+</blockquote>
+
+<blockquote>
+	<a href="http://dusers.dip.jp/modules/wiki/">D言語友の会</a><p />
+</blockquote>
+
+<blockquote>
+</blockquote>
+

@@ -1,0 +1,43 @@
+<meta content="Program Language Examples to connect to VoltDB" name="description">
+<meta content="VoltDB,クライアント,接続,言語,サンプル" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<title>VoltDB</title>
+</head>
+<body>
+<h1><a href="http://voltdb.com/">VoltDB</a></h1>
+<blockquote>
+LINUX-voltdb-2.1.1.tar.gz<p />
+</blockquote>
+server<p />
+<blockquote>
+VOLTDB=/home/uchida/dbm/voltdb/voltdb-2.1.1<br />
+CLASSPATH="./:$VOLTDB/lib/*:$VOLTDB/voltdb/*"<br />
+export CLASSPATH<p />
+
+java -Djava.library.path=/home/uchida/dbm/voltdb/voltdb-2.1.1/voltdb \<br />
+	org.voltdb.VoltDB \<br />
+	catalog helloworld.jar \ <br />
+	deployment deployment.xml \<br />
+	leader localhost \<br />
+	license /home/uchida/dbm/voltdb/voltdb-2.1.1/voltdb/license.xml<p />
+</blockquote>
+
+<blockquote>
+</blockquote>
+
+<blockquote>
+</blockquote>
+
+
+Python<p />
+<blockquote>
+</blockquote>
+
+
+Java<p />
+<blockquote>
+</blockquote>
+
+C#<p />
+<blockquote>
+</blockquote>

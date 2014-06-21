@@ -1,0 +1,4 @@
+#
+echo "import sqlite3_read" > tmp_execute.py
+#
+python ./tmp_execute.py /var/tmp/sqlite3/cities.db

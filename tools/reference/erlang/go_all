@@ -1,0 +1,2 @@
+#
+../bin/process_db.sh erlang erl common.txt

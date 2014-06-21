@@ -1,0 +1,34 @@
+#! /usr/bin/bsh
+//
+//	firebird_read.bsh
+//
+//						Oct/01/2012
+//
+// ---------------------------------------------------------------------
+source ("/var/www/data_base/common/bsh_common/sql_manipulate.bsh");
+
+import java.sql.DriverManager;
+
+// ---------------------------------------------------------------------
+System.out.println ("*** 開始 ***");
+
+// DriverManager.registerDriver(new org.firebirdsql.jdbc.FBDriver());
+// drv = new org.firebirdsql.jdbc.FBDriver();
+// DriverManager.registerDriver(drv);
+
+	String user     = "sysdba";
+	String password = "tiger";
+	String database = "/var/tmp/firebird/cities.fdb";
+
+	String url = "jdbc:firebirdsql:localhost/3050:" + database;
+//	String url = "jdbc:firebirdsql:localhost:" + database;
+
+	Connection conn = DriverManager.getConnection (url, user, password);
+
+
+sql_display_proc (conn);
+
+
+conn.close ();
+System.out.println ("*** 終了 ***");
+// ---------------------------------------------------------------------

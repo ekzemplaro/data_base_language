@@ -1,0 +1,107 @@
+#! /usr/bin/falcon
+//
+//	line_parser.fal
+//
+//					Feb/20/2014
+//
+// -------------------------------------------------------------------
+function dict_append_proc (dict_aa,key,name,population,date_mod)
+	unit = [ => ]
+	unit["name"] = name
+	unit["population"] = population
+	unit["date_mod"] = date_mod
+	dict_aa[key] = unit
+	return	dict_aa
+end
+//
+// -------------------------------------------------------------------
+function dict_array_append_proc (dict_aa,cols)
+	unit = [ => ]
+	key = cols[0]
+	unit["name"] = cols[1]
+	unit["population"] = cols[2]
+	unit["date_mod"] = cols[3]
+	dict_aa[key] = unit
+	return	dict_aa
+end
+//
+// -------------------------------------------------------------------
+function line_parser (dict_aa,line,delimit)
+	cols = line.split (delimit)
+	dict_aa = dict_array_append_proc (dict_aa,cols)
+	return	dict_aa
+end
+// -------------------------------------------------------------------
+function unit_display_proc (unit)
+	>> unit[0],"\t"
+	>> unit[1]["name"],"\t"
+	>> unit[1]["population"],"\t"
+	> unit[1]["date_mod"]
+end
+// -------------------------------------------------------------------
+function dict_display_proc (dict_aa)
+	for unit in dict_aa: unit_display_proc (unit)
+end
+// -------------------------------------------------------------------
+function unit_write_proc (stream,unit,delimit)
+	str_out = unit[0] + delimit \
+		+ unit[1]["name"] + delimit \
+		+ unit[1]["population"] + delimit \
+		+ unit[1]["date_mod"] + "\n"
+	stream.writeText (str_out)
+end
+// -------------------------------------------------------------------
+function text_write_proc (file_out,dict_aa)
+	stream = OutputStream (file_out)
+	stream.setEncoding ("utf-8")
+	for unit in dict_aa: unit_write_proc (stream,unit,"\t")
+	stream.close()
+end
+// -------------------------------------------------------------------
+function text_read_proc (file_in)
+	dict_aa = [ => ]
+	ss = InputStream (file_in)
+	ss.setEncoding ("utf-8")
+	line = strBuffer(4096)
+	while ss.readLine (line): dict_aa = line_parser (dict_aa,line,"\t")
+	ss.close()
+	return	dict_aa
+end
+// -------------------------------------------------------------------
+function dict_update_proc (dict_aa,key_in,population_in)
+	now = CurrentTime()
+	today=toString (now.year) + "-" +  toString (now.month) + "-" + toString (now.day)
+	printl (today)
+	dict_aa[key_in]["population"] = population_in
+	dict_aa[key_in]["date_mod"] = today
+//
+	return dict_aa
+end
+// -------------------------------------------------------------------
+function csv_write_proc (file_csv,dict_aa)
+	stream = OutputStream (file_csv)
+	stream.setEncoding ("utf-8")
+	for unit in dict_aa: unit_write_proc (stream,unit,",")
+	stream.close()
+end
+// -------------------------------------------------------------------
+function csv_read_proc (file_csv)
+	dict_aa = [ => ]
+	ss = InputStream (file_csv)
+	ss.setEncoding ("utf-8")
+	line = strBuffer(4096)
+	while ss.readLine (line): dict_aa = line_parser (dict_aa,line,",")
+	ss.close()
+	return	dict_aa
+end
+
+// -------------------------------------------------------------------
+export line_parser
+export dict_display_proc
+export dict_append_proc
+export dict_update_proc
+export text_write_proc
+export text_read_proc
+export csv_write_proc
+export csv_read_proc
+// -------------------------------------------------------------------

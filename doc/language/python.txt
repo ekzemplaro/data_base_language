@@ -1,0 +1,27 @@
+<title>python Nov/22/2013</title>
+</head>
+<body>
+<h2><a href="http://www.python.org">python</a></h2><p />
+<blockquote>
+	$ python --version<br />
+	Python 2.7.5+<br />
+</blockquote>
+
+<blockquote>
+UnicodeEncodeErrorが発生した場合は、sitecustomize.pyでデフォルトのエンコーディングを指定する。<p />
+
+/usr/lib/python2.7/sitecustomize.py<br />
+	<blockquote>
+	import sys<br />
+	reload(sys)<br />
+	sys.setdefaultencoding("utf-8")<br />
+
+	</blockquote>
+</blockquote>
+
+Installer<p />
+<blockquote>
+<pre>
+ii  python-pip    1.4.1-2    all     alternative Python package installer
+</pre>
+</blockquote>

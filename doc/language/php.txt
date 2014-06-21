@@ -1,0 +1,43 @@
+<meta content="Program Language Examples in PHP" name="description">
+<meta content="PHP,クライアント,接続,言語,サンプル" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<title>php Oct/18/2013</title>
+</head>
+<body>
+<h2><a href="http://php.net">php</a></h2><p />
+<blockquote>
+php5 5.3.6-13ubuntu3.2<p />
+server-side, HTML-embedded scripting language (metapackage)<br />
+</blockquote>
+<blockquote>
+/etc/php5/conf.d<p />
+</blockquote>
+
+<blockquote>
+[Date]<br />
+/etc/php5/cli/php.ini<p />
+date.timezone = "Asia/Tokyo"<br />
+</blockquote>
+<hr />
+<pre>
+ファイルをアップロードするには、変数「$_FILE」と@move_uploaded_file()関数を
+使用します。
+
+変数「$_FILE」には、アップロードされたファイル情報が連想配列で格納されます。
+
+項目 	説明
+
+$_FILE[ パラメータ名 ][ name ] 	アップロードファイル名
+$_FILE[ パラメータ名 ][ type ] 	MIMEタイプ
+$_FILE[ パラメータ名 ][ size ] 	アップロードされたファイルサイズ
+$_FILE[ パラメータ名 ][ tmp_name ] 	テンポラリファイル名。
+		アップロードされたファイルが一時的に保存されたファイルパス
+$_FILE[ パラメータ名 ][ error ] 	エラーコード。
+		正常にアップロードされたらゼロになります。
+
+　「パラメータ名」は、フォームのHTMLタグ
+&lt;input type="file" name="パラメータ名"&gt;
+で 指定された名称です。
+
+</pre>
+<hr />

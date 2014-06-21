@@ -1,0 +1,6 @@
+#
+export JAVA_COMMON=/var/www/data_base/common/java_common
+export CLASSPATH=.:$JAVA_COMMON
+#
+java xml_create /var/tmp/xml_file/cities.xml
+#

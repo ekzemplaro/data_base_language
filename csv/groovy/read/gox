@@ -1,0 +1,5 @@
+#
+GROOVY_COMMON=/var/www/data_base/common/groovy_common
+export CLASSPATH=.:/usr/share/java/groovy-all.jar:/usr/share/java/groovy.jar:$GROOVY_COMMON
+#
+java csv_read /var/tmp/csv/cities.csv

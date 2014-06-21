@@ -1,0 +1,20 @@
+#! /usr/bin/falcon
+//
+//	sqlite3_read.fal
+//
+//					Feb/18/2014
+//
+// -------------------------------------------------------------------
+import from dbi
+// -------------------------------------------------------------------
+printl ("*** 開始 ***")
+sqlite3_file=args[0]
+dbh = dbi.connect ("sqlite3:db=" + sqlite3_file)
+dbr = dbh.query ("select * from cities")
+row = []
+while dbr.fetch( row )
+	> row[0],"\t",row[1],"\t",row[2],"\t",row[3]
+end
+//
+printl ("*** 終了 ***")
+// -------------------------------------------------------------------

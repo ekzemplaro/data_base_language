@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Program Language Examples to connect to database" name="description">
+<meta content="database,program,language,connect,example,CRUD,NoSQL" name="keyword">
+<meta content="node.js,rhino" name="keyword">
+<meta content="JSON,redis,CouchDB" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<script src="/js/jquery-2.1.0.min.js"></script>
+<script>
+jQuery (function ()
+{
+	jQuery ("#outarea_aa").text ("*** start ***");
+
+	jQuery ("#outarea_hh").text ("*** end ***");
+});
+
+</script>
+<title>F# Aug/21/2013</title>
+</head>
+<body>
+<h2><a href="http://msdn.microsoft.com/en-us/vstudio/hh388569.aspx">F#</a></h2><p />
+<a href="http://fsharp.org/use/linux/">Use F# on Linux</a><p />
+/etc/apt/sources.list<br />
+<blockquote>
+deb http://http.us.debian.org/debian/ unstable main contrib non-free
+deb-src http://http.us.debian.org/debian/ unstable main contrib non-free
+</blockquote>
+
+<blockquote>
+sudo apt-get update
+sudo apt-get install mono-devel
+sudo apt-get install fsharp
+sudo apt-get install fsharp-console
+sudo cp -p /usr/lib/cli/FSharp.*-4.3/* /usr/lib/mono/4.0/
+</blockquote>
+
+<blockquote>
+
+	<pre>
+	ii  fsharp    3.0.26-1    all     functional-first programming language - compiler for the CLI
+ii  fsharp-console    3.0.26-1    all     functional-first programming language - interactive compiler
+	</pre>
+</blockquote>
+
+<blockquote>
+<pre>
+In order to add FSharp.Core.dll to the Mono GAC the DLL needs to be
+re-signed with the mono.snk key. The mono.snk key is available from
+the 'Mono Sources'.
+
+  http://www.mono-project.com/
+  http://anonsvn.mono-project.com/source/trunk/mcs/class/mono.snk
+
+To proceed with a Mono GAC install, obtain mono.snk, put it in the
+current directory and re-run this script.
+
+An alternative to installing the DLLs in the Mono GAC is to add the
+FSharp bin directory to the MONO_PATH variable. For more information
+on 'How Mono Finds Assemblies' see http://www.mono-project.com/Gacutil
+</pre>
+</blockquote>
+
+<div id="result_aa">result_aa</div>
+<hr />
+<div id="outarea_aa">outarea_aa</div>
+<div id="outarea_bb">outarea_bb</div>
+<div id="outarea_cc">outarea_cc</div>
+<div id="outarea_dd">outarea_dd</div>
+<div id="outarea_ee">outarea_ee</div>
+<div id="outarea_ff">outarea_ff</div>
+<div id="outarea_gg">outarea_gg</div>
+<div id="outarea_hh">outarea_hh</div>
+<hr />
+<a href="/data_base/data_base.html">Return</a><p />
+Mar/14/2014 AM 08:15<p />
+</body>
+</html>

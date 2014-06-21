@@ -1,0 +1,14 @@
+<Context docbase="uchida" path="uchida" reloadable="true">
+        <Resource
+                name="jdbc/city"
+                auth="Container"
+                type="javax.sql.DataSource"
+                username="uchida"
+                password="hello9"
+                driverClassName="org.gjt.mm.mysql.Driver"
+                url="jdbc:mysql://localhost/city"
+                maxActive="4"
+                maxWait="5000"
+                maxIdle="2"
+        />
+</Context>

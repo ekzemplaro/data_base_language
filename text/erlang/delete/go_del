@@ -1,0 +1,3 @@
+#
+./text_delete.erl /var/tmp/plain_text/cities.txt t2386
+#./text_delete.erl cities.txt 2381
