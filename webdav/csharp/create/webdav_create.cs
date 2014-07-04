@@ -1,7 +1,7 @@
 // ------------------------------------------------------------------
 //	webdav_create.cs
 //
-//					May/21/2012
+//					Jun/30/2014
 //
 // ------------------------------------------------------------------
 using	System;
@@ -41,13 +41,13 @@ static Dictionary <string,Object> data_prepare_proc ()
 
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1351","八王子",34518,"2009-6-7");
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1352","立川",17954,"2009-5-19");
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1353","武蔵野",26928,"2009-3-28");
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1354","三鷹",25197,"2009-12-21");
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1353","武蔵野",76928,"2009-3-28");
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1354","三鷹",85197,"2009-12-21");
 
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1355","青梅",24976,"2009-11-25");
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1356","府中",28945,"2009-1-26");
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1355","青梅",14976,"2009-11-25");
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1356","府中",68145,"2009-1-26");
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1357","昭島",56184,"2009-1-21");
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1358","調布",54632,"2009-3-7");
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1358","調布",94632,"2009-3-7");
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1359","町田",23951,"2009-2-12");
 
 	return	dict_aa;

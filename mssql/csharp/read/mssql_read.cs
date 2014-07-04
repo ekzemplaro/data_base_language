@@ -28,9 +28,20 @@ static void Main (string[] args)
 
 	DataTable dtable = new DataTable ();
 
+	try
+	{
+
 	da_adapter.Fill (dtable);
 
-	table_manipulate.display_proc (dtable);
+//	table_manipulate.display_proc (dtable);
+	}
+	catch (NotSupportedException ex)
+		{
+		Console.WriteLine ("*** NotSupportedException ***");
+		Console.WriteLine ("*** message ***");
+		Console.WriteLine (ex);
+		Console.WriteLine ("*** message ***");
+		}
 
 	Console.WriteLine ("*** 終了 ***");
 }

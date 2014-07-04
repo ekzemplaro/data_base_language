@@ -1,7 +1,7 @@
 // ------------------------------------------------------------------
 //	tyrant_create.cs
 //
-//					Jun/23/2011
+//					Jul/01/2014
 //
 // ------------------------------------------------------------------
 using System;
@@ -47,11 +47,11 @@ public static void Main(string[] args)
 static void mcached_write_proc (MemcachedClient mc)
 {
 	mcache_manipulate.data_put_proc (mc,"t4761","那覇",21456,"2009-8-15");
-	mcache_manipulate.data_put_proc (mc,"t4762","宜野湾",67681,"2009-3-24");
+	mcache_manipulate.data_put_proc (mc,"t4762","宜野湾",67281,"2009-3-24");
 	mcache_manipulate.data_put_proc (mc,"t4763","石垣",59714,"2009-3-17");
 	mcache_manipulate.data_put_proc (mc,"t4764","浦添",71467,"2009-10-5");
 	mcache_manipulate.data_put_proc (mc,"t4765","名護",34852,"2009-9-14");
-	mcache_manipulate.data_put_proc (mc,"t4766","糸満",85654,"2009-7-17");
+	mcache_manipulate.data_put_proc (mc,"t4766","糸満",85694,"2009-7-17");
 	mcache_manipulate.data_put_proc (mc,"t4767","沖縄",14258,"2009-1-26");
 	mcache_manipulate.data_put_proc (mc,"t4768","豊見城",31284,"2009-5-21");
 	mcache_manipulate.data_put_proc (mc,"t4769","うるま",42897,"2009-7-19");

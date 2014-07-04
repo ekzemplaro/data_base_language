@@ -1,8 +1,10 @@
 // -----------------------------------------------------------------
 //	read/couch_read.scala
 //
-//						Mar/12/2013
+//						Jun/23/2014
 //
+// -----------------------------------------------------------------
+import scala.util.parsing.json.JSON
 // -----------------------------------------------------------------
 object couch_read {
 
@@ -11,15 +13,31 @@ def main( args: Array[String] )
 {
 	println	("*** 開始 ***")
 
-	val url_in="http://cddn007:5984/city/cities"
+	val url_collection = "http://localhost:5984/nagano"
 
-	val str_json = file_io.url_to_str_proc (url_in)
+	val str_json = file_io.url_to_str_proc (url_collection + "/_all_docs")
 
-//	println (str_json)
+	val result : Option[Any] = JSON.parseFull(str_json);
+	val map : Map[String, Option[Any]]
+		= result.get.asInstanceOf[Map[String, Option[Any]]];
+	println (map.get("total_rows").get.toString ());
 
-	var dict_aa = json_manipulate.json_to_dict_proc (str_json)
+val rows:List[Map[String, Option[Any]]]
+	= map.get("rows").get.asInstanceOf[List[Map[String, Option[Any]]]]
 
-	text_manipulate.dict_display_proc (dict_aa)
+	rows.foreach (bbb =>
+		{
+		val key = bbb("key").toString ()
+		val url_target = url_collection + "/" + key;
+		val str_unit = file_io.url_to_str_proc (url_target)
+		val result_aa : Option[Any] = JSON.parseFull(str_unit);
+		val unit_aa : Map[String, Option[Any]]
+			= result_aa.get.asInstanceOf[Map[String, Option[Any]]];
+		print (key + "\t")
+		print (unit_aa("name") + "\t")
+		print (unit_aa("population") + "\t")
+		println (unit_aa("date_mod"))
+		})
 
 	println	("*** 終了 ***")
 }

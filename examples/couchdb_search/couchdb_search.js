@@ -1,19 +1,19 @@
 // -----------------------------------------------------------------------
 //	couchdb_search.js
 //
-//					Nov/26/2013
+//					Jul/01/2014
 // -----------------------------------------------------------------------
 jQuery (function ()
 {
 	jQuery("#outarea_aa").html
-		("*** couchdb_search *** start *** Nov/26/2013 ***");
+		("*** couchdb_search *** start *** Jul/01/2014 ***");
 
 	table_display_proc ('Japanese');
 
 	click_monitor_proc ();
 
 	jQuery("#outarea_hh").html
-		("*** couchdb_search *** end *** Nov/26/2013 ***");
+		("*** couchdb_search *** end *** Jul/01/2014 ***");
 });
 
 // -----------------------------------------------------------------------
@@ -25,6 +25,7 @@ function table_display_proc (language)
 	var url_couchdb = 'http://localhost:5984/librivox/_design/myapp/_view/ex02?key="' + language + '"';
 
 	var url_proxy = "./php_proxy_get.php"  + '?url=' + url_couchdb;
+//	var url_proxy = url_couchdb;
 
 	jQuery.getJSON (url_proxy,function (data_json)
 		{
@@ -33,6 +34,8 @@ function table_display_proc (language)
 			{
 			str_out += "<tr>";
 			var value = data_json.rows[it];
+			var icount = parseInt (it,10) + 1;
+			str_out += '<td>' + String (icount) + '</td>';
 			str_out += '<td>' + value.id + '</td>';
 			str_out += '<td>' + value.value + '</td>';
 			str_out += "</tr>";

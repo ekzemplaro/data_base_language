@@ -3,17 +3,14 @@
 #
 #	update/couch_update.py
 #
-#					Sep/12/2013
+#					Jun/24/2014
 #
 # ----------------------------------------------------------------
 import	sys
-import	httplib
 import string
 import json
+from time import localtime,strftime
 #
-sys.path.append ('/var/www/data_base/common/python_common')
-from text_manipulate import dict_update_proc
-
 sys.path.append ('/var/www/data_base/common/jython_common')
 from jython_get_uri import get_uri_proc
 from jython_get_uri import rest_put_proc
@@ -25,22 +22,25 @@ key = sys.argv[1]
 population_in = string.atoi (sys.argv[2])
 print ("%s\t%d" % (key, population_in))
 #
-host = "cddn007:5984"
-path = "/city/cities"
+host = "localhost:5984"
+path = "/nagano/" + key
 url_json = 'http://' + host + path
 #
 json_str = get_uri_proc (host,path)
 #
+unit_aa = json.loads (json_str)
+if "error" in unit_aa:
+	print ("*** not exist ***")
+else:
+	print ("_rev\t" + unit_aa["_rev"])
+	print ("name\t" + unit_aa["name"])
 #
-dict_aa = json.loads (json_str)
-print ("_rev\t" + dict_aa["_rev"])
-#
-dict_bb=dict_update_proc (dict_aa,key,population_in)
-#
-#
-str_json = json.dumps (dict_bb)
-#
-rest_put_proc (url_json,str_json,"text/json")
+	unit_aa["population"] = population_in
+	today = strftime ("%Y-%m-%d",localtime ())
+	unit_aa["date_mod"] = today
+	str_json_new = json.dumps (unit_aa)
+	print (str_json_new)
+	rest_put_proc (url_json,str_json_new,"text/json")
 #
 print ("*** 終了 ***")
 # ----------------------------------------------------------------

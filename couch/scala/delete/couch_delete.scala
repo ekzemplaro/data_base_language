@@ -1,9 +1,10 @@
 // --------------------------------------------------------------
 //	couch_delete.scala
 //
-//					Mar/12/2013
+//					Jun/23/2014
 // --------------------------------------------------------------
 import	scala.collection.mutable
+import scala.util.parsing.json.JSON
 
 // --------------------------------------------------------------
 object couch_delete
@@ -17,21 +18,30 @@ def main (args: Array[String])
 	var	key_in = args(0)
 	println ("\tkey_in = " + key_in)
 
-	val uri= "http://cddn007:5984/city/cities"
+	val url_collection = "http://localhost:5984/nagano"
 
-	val str_json = get_uri.get_uri_proc (uri)
+	val url_target = url_collection + "/" + key_in
 
-	var dict_aa = json_manipulate.json_to_dict_proc (str_json)
+	val str_json = get_uri.get_uri_proc (url_target)
 
-	if (dict_aa.contains (key_in))
+	val result_aa : Option[Any] = JSON.parseFull (str_json);
+	var unit_aa : Map[String, Option[Any]]
+		= result_aa.get.asInstanceOf[Map[String, Option[Any]]];
+
+	if (unit_aa.contains ("error"))
 		{
-		dict_aa = text_manipulate.dict_delete_proc (dict_aa,key_in)
+		println ("*** not exist ***")
+		}
+	else
+		{
+		println ("*** exist ***")
+		print (unit_aa("name") + "\t")
+		print (unit_aa("population").toString () + "\t")
+		println (unit_aa("date_mod"))
 
-		text_manipulate.dict_display_proc (dict_aa)
-
-		val json_new = json_manipulate.dict_to_json_proc (dict_aa)
-
-		get_uri.rest_put_proc (uri,json_new,"text/json")
+		val rev = unit_aa("_rev").toString ()
+		val url_del = url_target + "?rev=" + rev
+		get_uri.rest_delete_proc (url_del)
 		}
 
 	println ("*** 終了 ***")

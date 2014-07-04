@@ -1,7 +1,7 @@
 // ------------------------------------------------------------------
 //	mcached_create.cs
 //
-//					Jun/23/2011
+//					Jun/01/2014
 //
 // ------------------------------------------------------------------
 using System;
@@ -50,14 +50,14 @@ public static void Main(string[] args)
 static void mcached_write_proc (MemcachedClient mc)
 {
 	mcache_manipulate.data_put_proc (mc,"t1731","金沢",71284,"2009-4-21");
-	mcache_manipulate.data_put_proc (mc,"t1732","輪島",62576,"2009-7-14");
-	mcache_manipulate.data_put_proc (mc,"t1733","小松",59798,"2009-3-17");
+	mcache_manipulate.data_put_proc (mc,"t1732","輪島",62573,"2009-7-14");
+	mcache_manipulate.data_put_proc (mc,"t1733","小松",59718,"2009-3-17");
 	mcache_manipulate.data_put_proc (mc,"t1734","七尾",71469,"2009-10-5");
-	mcache_manipulate.data_put_proc (mc,"t1735","珠洲",32852,"2009-9-14");
-	mcache_manipulate.data_put_proc (mc,"t1736","加賀",85654,"2009-7-17");
+	mcache_manipulate.data_put_proc (mc,"t1735","珠洲",12892,"2009-9-14");
+	mcache_manipulate.data_put_proc (mc,"t1736","加賀",81654,"2009-7-17");
 	mcache_manipulate.data_put_proc (mc,"t1737","羽咋",14258,"2009-1-26");
-	mcache_manipulate.data_put_proc (mc,"t1738","かほく",31251,"2009-5-21");
-	mcache_manipulate.data_put_proc (mc,"t1739","白山",49757,"2009-7-19");
+	mcache_manipulate.data_put_proc (mc,"t1738","かほく",39251,"2009-5-21");
+	mcache_manipulate.data_put_proc (mc,"t1739","白山",49257,"2009-7-19");
 }
 
 // ------------------------------------------------------------------

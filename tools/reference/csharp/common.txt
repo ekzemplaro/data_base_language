@@ -1,3 +1,4 @@
+cgi_manipulate.cs
 couch_manipulate.cs
 fbd_manipulate.cs
 file_io.cs

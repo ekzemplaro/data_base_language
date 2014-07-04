@@ -3,11 +3,10 @@
 #
 #	couch_delete.rb
 #
-#					Jan/18/2012
+#					Jun/24/2014
 #
 require 'rubygems'
 require 'json'
-require 'net/http'
 #
 load '/var/www/data_base/common/ruby_common/couch_module.rb'
 #
@@ -17,19 +16,19 @@ key_in = ARGV[0]
 #
 puts key_in
 #
-server = Couch::Server.new("cddn007","5984")
+server = Couch::Server.new("localhost","5984")
 #
-res = server.get("/city/cities")
-#
-str_json = res.body
-dict_aa=JSON.parse(str_json)
-#
-if (dict_aa.key?(key_in))
-	dict_aa.delete(key_in)
-	json_str_out=JSON(dict_aa)
-	server.put("/city/cities",json_str_out)
+target = "/nagano/" + key_in
+begin
+	res = server.get(target)
+	str_json = res.body
+	puts str_json
+	unit_aa=JSON.parse(str_json)
+	puts unit_aa["name"]
+	server.delete("/nagano/" + key_in + "?rev=" + unit_aa["_rev"])
+rescue
+	puts "*** not exist ***"
 end
-#
 #
 puts	"*** 終了 ***"
 #

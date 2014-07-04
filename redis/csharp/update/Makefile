@@ -3,6 +3,6 @@ redis_update.exe : redis_update.cs
 	dmcs redis_update.cs \
 			-r:$(CSHARP_COMMON)/lib/redis-sharp.dll \
 			-r:table_manipulate.dll \
-			-r:Newtonsoft.Json.Net20.dll
+			-r:Newtonsoft.Json.dll
 clean:
 	rm -f *.exe

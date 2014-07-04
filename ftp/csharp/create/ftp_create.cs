@@ -1,7 +1,7 @@
 // ------------------------------------------------------------------
 //	ftp_create.cs
 //
-//					Oct/17/2011
+//					Jun/30/2014
 //
 // ------------------------------------------------------------------
 using	System;
@@ -38,14 +38,14 @@ static Dictionary <string,Object> data_prepare_proc ()
 
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0361","盛岡",34512,"2009-6-7");
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0362","久慈",17954,"2009-5-19");
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0363","二戸",26928,"2009-3-28");
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0364","宮古",25197,"2009-12-21");
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0363","二戸",27958,"2009-3-28");
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0364","宮古",35197,"2009-12-21");
 
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0365","遠野",24976,"2009-11-25");
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0366","八幡平",28945,"2009-1-26");
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0365","遠野",81976,"2009-11-25");
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0366","八幡平",78945,"2009-1-26");
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0367","大船渡",56184,"2009-1-21");
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0368","一関",54632,"2009-3-7");
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0369","花巻",23951,"2009-2-12");
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0368","一関",51632,"2009-3-7");
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0369","花巻",83951,"2009-2-12");
 
 	return	dict_aa;
 }

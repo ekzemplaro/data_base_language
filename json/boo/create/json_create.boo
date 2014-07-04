@@ -1,46 +1,38 @@
 // ------------------------------------------------------------
 //	json_create.boo
 //
-//					Sep/26/2011
+//					Jul/04/2014
 //
 // ------------------------------------------------------------
 import System
-import System.IO
 
+import Newtonsoft.Json
 // ------------------------------------------------------------
-def out_proc (id,name,population,date_mod):
-	str_out = "\"${id}\": {"
-	str_out += "\"name\": \"${name}\","
-	str_out += "\"population\": ${population},"
-	str_out += "\"date_mod\": \"${date_mod}\"},"
-	return str_out
+def data_prepare_proc ():
+	dict_aa = {}
+	dict_aa = dict_append_proc (dict_aa,'t0921','宇都宮','79436','1968-7-21')
+	dict_aa = dict_append_proc (dict_aa,'t0922','小山','58157','1968-10-27')
+	dict_aa = dict_append_proc (dict_aa,'t0923','佐野','34593','1968-5-16')
+	dict_aa = dict_append_proc (dict_aa,'t0924','足利','52492','1968-9-23')
+	dict_aa = dict_append_proc (dict_aa,'t0925','日光','41851','1968-3-9')
+	dict_aa = dict_append_proc (dict_aa,'t0926','下野','82763','1968-5-19')
+	dict_aa = dict_append_proc (dict_aa,'t0927','さくら','51748','1968-9-12')
+	dict_aa = dict_append_proc (dict_aa,'t0928','矢板','94795','1968-8-18')
+	dict_aa = dict_append_proc (dict_aa,'t0929','真岡','57863','1968-2-11')
+	dict_aa = dict_append_proc (dict_aa,'t0930','栃木','89613','1968-7-14')
+	dict_aa = dict_append_proc (dict_aa,'t0931','大田原','57863','1968-9-25')
+	dict_aa = dict_append_proc (dict_aa,'t0932','鹿沼','69135','1968-2-28')
+	dict_aa = dict_append_proc (dict_aa,'t0933','那須塩原','87624','1968-3-14')
+	dict_aa = dict_append_proc (dict_aa,'t0934','那須烏山','39561','1968-8-7')
+	return	dict_aa
 // ------------------------------------------------------------
 print '*** 開始 ***'
-file_out = argv[0]
+file_json = argv[0]
 
-fp_out = StreamWriter (file_out)
+dict_aa = data_prepare_proc ()
+str_json_out = JsonConvert.SerializeObject (dict_aa)
 
-str_out = "{\n"
-str_out += out_proc ('t0921','宇都宮','24936','1968-8-15')
-str_out += out_proc ('t0922','小山','52617','1968-10-27')
-str_out += out_proc ('t0923','佐野','34593','1968-5-16')
-str_out += out_proc ('t0924','足利','52498','1968-9-23')
-str_out += out_proc ('t0925','日光','41859','1968-3-9')
-str_out += out_proc ('t0926','下野','82653','1968-5-19')
-str_out += out_proc ('t0927','日光宮','51748','1968-9-12')
-str_out += out_proc ('t0928','矢板','94372','1968-8-18')
-str_out += out_proc ('t0929','真岡','57864','1968-7-11')
-str_out += out_proc ('t0930','栃木','64235','1968-9-24')
-str_out += out_proc ('t0931','大田原','23587','1968-5-15')
-str_out += out_proc ('t0932','鹿沼','63981','1968-8-17')
-str_out += out_proc ('t0933','那須塩原','84752','1968-9-19')
-str_out += out_proc ('t0934','那須烏山','31258','1968-10-21')
-
-llx = str_out.Length
-print llx
-str_out = str_out[0:llx -1] + "}\n"
-fp_out.Write (str_out)
-fp_out.Close ()
+file_write_proc (file_json,str_json_out)
 
 print '*** 終了 ***'
 // ------------------------------------------------------------

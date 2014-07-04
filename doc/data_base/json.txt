@@ -102,4 +102,9 @@ C#<p />
 <blockquote>
 	<a href="http://json.codeplex.com/">Json.NET</a><p />
 	Json50r8/Bin/Net40/Newtonsoft.Json.dll<p />
+libnewtonsoft-json-cil-dev<br />
+libnewtonsoft-json5.0-cil<p />
+
+# apt-get install libmono-system-runtime-serialization4.0-cil<br />
+# apt-get install libmono-system-numerics4.0-cil<p />
 </blockquote>

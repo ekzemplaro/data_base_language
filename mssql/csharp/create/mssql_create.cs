@@ -2,7 +2,7 @@
 /*
 	mssql_create.cs
 
-				Oct/01/2013
+				Jul/03/2014
 
 
 */
@@ -24,15 +24,24 @@ static void Main (string[] args)
 		@"server=host_mssql;"
 		+ "uid=sa;" + "pwd=scott_tiger;" + "database=city;";
 
+
+
+	try
+		{
 	mssql_manipulate.table_drop_proc (str_connect);
+//	mssql_manipulate.table_create_proc (str_connect);
+//	DataTable dtable = table_manipulate.table_prepare_proc ();
 
-	mssql_manipulate.table_create_proc (str_connect);
-
-	DataTable dtable = table_manipulate.table_prepare_proc ();
-
-	dtable = data_prepare_proc (str_connect,dtable);
-
-	table_manipulate.display_proc (dtable);
+//	dtable = data_prepare_proc (str_connect,dtable);
+		}
+	catch (NotSupportedException ex)
+		{
+		Console.WriteLine ("*** NotSupportedException ***");
+		Console.WriteLine ("*** message ***");
+		Console.WriteLine (ex);
+		Console.WriteLine ("*** message ***");
+		}
+//	table_manipulate.display_proc (dtable);
 
 	Console.WriteLine ("*** 終了 ***");
 }

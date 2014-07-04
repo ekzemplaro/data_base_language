@@ -16,6 +16,7 @@ use lib '/var/www/data_base/common/perl_common';
 use text_manipulate;
 #
 # ----------------------------------------------------------------------
+binmode(STDOUT, ":utf8");
 my $file_aa= "/var/tmp/plain_text/cities.txt";
 
 my %dict_aa = text_manipulate::text_read_proc  ($file_aa);

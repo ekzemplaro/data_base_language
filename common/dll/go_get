@@ -16,3 +16,8 @@ cp -p $VOLTDB/VoltDB.Data.Client.dll .
 #
 DYNAMICJSON=/home/uchida/c_sharp/json/DynamicJson_1.2.0.0
 cp -p $DYNAMICJSON/DynamicJson.dll .
+#
+#
+NEWTONSOFT=/home/uchida/c_sharp/json/jsonnet/Json50r8/Bin/Net40
+cp -p $NEWTONSOFT/Newtonsoft.Json.dll .
+#

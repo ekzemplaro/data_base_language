@@ -5,8 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-</script>
-<title>Mount Jun/19/2014</title>
+<title>Mount Jul/03/2014</title>
 </head>
 <body>
 <h2>Mount</h2><p />
@@ -38,11 +37,13 @@ $ sudo mount /dev/sda8 /mnt/sda8<p />
 ハードディスクの UUID の調べ方<p />
 <blockquote>
 ls -l /dev/disk/by-uuid<p />
-sudo blkid -p /dev/sda1<p />
+# blkid -p /dev/sda1<p />
+# blkid -s UUID /dev/sda9<p />
+# blkid -s UUID -o value /dev/sda9<p />
 </blockquote>
 
 
 <a href="/data_base/">Return</a><p />
-Jun/19/2014 AM 08:15<p />
+Jul/03/2014 AM 08:15<p />
 </body>
 </html>

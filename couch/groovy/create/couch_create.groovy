@@ -1,7 +1,7 @@
 // ---------------------------------------------------------------------
 //	create/couch_create.groovy
 //
-//					Mar/12/2013
+//					Jun/23/2014
 //
 // ---------------------------------------------------------------------
 import groovy.json.*
@@ -37,44 +37,27 @@ static void main (args)
 {
 	println ("*** 開始 ***")
 
-	def uri_collection= "http://cddn007:5984/city"
-	def uri_work= uri_collection + "/cities"
+	def url_collection = "http://localhost:5984/nagano"
+
+
 	def type_json = "application/json"
 
 	def dict_aa = data_prepare_proc ()
 
-	def json = new JsonBuilder()
-	json (dict_aa)
+	net_manipulate.rest_delete_proc (url_collection)
+	net_manipulate.rest_put_proc (url_collection,"{}",type_json)
 
-	def json_str = json.toString ()
+	dict_aa.keySet().each { key ->
+		def url_target = url_collection + "/" + key
+		def unit_aa = dict_aa[key]
+		def json = new JsonBuilder()
+		json (unit_aa)
+		def str_json_out = json.toString ()
 
-	data_delete_proc (uri_collection,type_json)
-
-	net_manipulate.rest_put_proc (uri_work,json_str,type_json)
+		net_manipulate.rest_put_proc (url_target,str_json_out,type_json)
+		}
 
 	println ("*** 終了 ***")
-}
-
-// ---------------------------------------------------------------------
-static void data_delete_proc (String uri_collection,type_json)
-{
-	String uri_list = uri_collection + "/_all_docs";
-
-	String json_list = net_manipulate.get_uri_proc (uri_list,type_json);
-
-	def slurper = new JsonSlurper()
-	def data_list = slurper.parseText (json_list)
-
-	for (oox in data_list.rows)
-		{
-		if (oox.id == "cities")
-			{
-			def rev = oox.value.rev
-			println ("rev = " + rev)
-			def uri_delete = uri_collection + "/cities?rev=" + rev
-			net_manipulate.rest_delete_proc (uri_delete)
-			}
-		}
 }
 
 // ---------------------------------------------------------------------

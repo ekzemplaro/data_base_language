@@ -2,7 +2,7 @@
 /*
 	mssql/java/create/mssql_create.java
 
-					Jan/11/2013
+					Jul/03/2014
 
 */
 /* --------------------------------------------------------------------- */
@@ -34,7 +34,15 @@ public static void main (String args [])
 
 		Statement ss = conn.createStatement ();
 
-		rdb_common.drop_table_proc (ss);
+		try
+			{
+			rdb_common.drop_table_proc (ss);
+			}
+		catch (Exception ee)
+			{
+			ee.printStackTrace();
+			}
+
 		mssql_create_table_proc (ss);
 		insert_data_proc (ss);
 

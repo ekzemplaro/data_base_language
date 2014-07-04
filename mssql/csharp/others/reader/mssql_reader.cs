@@ -24,9 +24,10 @@ static void Main (string [] args)
 	Console.WriteLine ("*** start ***");
 
 
-	string str_connect = @"server=cdbd025\SQLEXPRESS;"
+//	string str_connect = @"server=host_mssql\SQLEXPRESS;"
+	string str_connect = @"server=host_mssql;"
 			+ "uid=sa;"
-			+ "pwd=hello9;"
+			+ "pwd=scott_tiger;"
 			+ "database=city";
 
 	cnn = new SqlConnection (str_connect);

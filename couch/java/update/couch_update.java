@@ -1,10 +1,11 @@
 // --------------------------------------------------------------
 //	update/couch_update.java
 //
-//					Oct/02/2012
+//					Jun/23/2014
 // --------------------------------------------------------------
 import	java.util.HashMap;
 
+import  net.arnx.jsonic.JSON;
 // --------------------------------------------------------------
 public class couch_update
 {
@@ -14,25 +15,40 @@ public static void main (String[] args) throws Exception
 {
 	System.out.println ("*** 開始 ***");
 
-	String	id = args[0];
+	String	key = args[0];
 	int	population = Integer.parseInt (args[1]);
-	System.out.print ("\tid = " + id);
+	System.out.print ("\tkey = " + key);
 	System.out.println ("\tpopulation = " + population);
 
-	String uri= "http://cddn007:5984/city/cities";
+	final String url_collection = "http://localhost:5984/nagano";
 
-	String str_json = get_uri.get_uri_proc (uri);
+	String url_target = url_collection + "/" + key;
 
-	HashMap <String, HashMap<String,String>> dict_aa
-			= json_manipulate.json_to_dict_proc (str_json);
+	String str_json = get_uri.get_uri_proc (url_target);
 
-	text_manipulate.dict_update_proc (dict_aa,id,population);
+	HashMap <String, Object> unit_aa
+			= (HashMap <String,Object>)JSON.decode (str_json);
 
-	text_manipulate.dict_display_proc (dict_aa);
+	if (unit_aa.containsKey ("error"))
+		{
+		System.out.println ("*** not exist ***");
+		}
+	else
+		{
+	String name = unit_aa.get ("name").toString ();
 
-	str_json = json_manipulate.dict_to_json_proc (dict_aa);
+	System.out.println (name);
 
-	get_uri.rest_put_proc (uri,str_json,"text/json");
+	unit_aa.put ("population",population);
+
+	String today = text_manipulate.get_current_date_proc ();
+	unit_aa.put ("date_mod",today);
+
+	String str_json_new = JSON.encode (unit_aa);
+	System.out.println (str_json_new);
+
+	get_uri.rest_put_proc (url_target,str_json_new,"text/json");
+		}
 
 	System.out.println ("*** 終了 ***");
 }

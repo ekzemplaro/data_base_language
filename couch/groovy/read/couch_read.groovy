@@ -1,7 +1,7 @@
 // ---------------------------------------------------------------------
 //	read/couch_read.groovy
 //
-//					Nov/05/2013
+//					Jun/23/2014
 //
 // ---------------------------------------------------------------------
 import groovy.json.*
@@ -14,17 +14,27 @@ static void main (args)
 {
 	println ("*** 開始 ***")
 
-	def uri= "http://cddn007:5984/city/cities"
+	def url_collection = "http://localhost:5984/nagano"
 
-	def json_str = net_manipulate.get_uri_proc (uri,"application/json")
-
-//	print	json_str
+	def str_json = net_manipulate.get_uri_proc (url_collection + "/_all_docs","application/json")
 
 	def slurper = new JsonSlurper()
-	def dict_aa = slurper.parseText (json_str)
+	def data = slurper.parseText (str_json)
 
-	def ff = new text_manipulate ()
-	ff.dict_display_proc (dict_aa)
+//	data.keySet().each { key -> println key }
+
+	println data["total_rows"]
+//
+	data["rows"].each {unit ->
+		def url_target = url_collection + "/" + unit["key"]
+		def str_unit = net_manipulate.get_uri_proc (url_target,"application/json")
+		def slurper_unit = new JsonSlurper()
+		def unit_aa = slurper_unit.parseText (str_unit)
+		print (unit["key"] + "\t")
+		print (unit_aa.name + "\t")
+		print (unit_aa.population + "\t")
+		println (unit_aa.date_mod)
+		}
 
 	println ("*** 終了 ***")
 }

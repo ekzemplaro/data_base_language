@@ -1,10 +1,11 @@
 // --------------------------------------------------------------
 //	update/couch_update.scala
 //
-//					Mar/12/2013
+//					Jun/23/2014
 // --------------------------------------------------------------
 import	scala.collection.mutable
-
+import scala.util.parsing.json.JSON
+import scala.util.parsing.json.JSONObject
 // --------------------------------------------------------------
 object couch_update
 {
@@ -14,29 +15,46 @@ def main (args: Array[String])
 {
 	println ("*** 開始 ***")
 
-	var	id = args(0)
+	var	key = args(0)
 	var	population = args(1).toInt
-	print ("\tid = " + id)
+	print ("\tkey = " + key)
 	println ("\tpopulation = " + population)
 
-	val uri= "http://cddn007:5984/city/cities"
+	val url_collection = "http://localhost:5984/nagano"
 
-	val str_json = get_uri.get_uri_proc (uri)
+	val url_target = url_collection + "/" + key
 
-//	println	(str_json)
+	val str_json = get_uri.get_uri_proc (url_target)
 
-	var dict_aa = json_manipulate.json_to_dict_proc (str_json)
+	println	(str_json)
 
-	dict_aa = text_manipulate.dict_update_proc (dict_aa,id,population)
+	val result_aa : Option[Any] = JSON.parseFull (str_json);
+	var unit_aa : Map[String, Option[Any]]
+			= result_aa.get.asInstanceOf[Map[String, Option[Any]]];
 
-	text_manipulate.dict_display_proc (dict_aa)
+	if (unit_aa.contains ("error"))
+		{
+		println ("*** not exist ***")
+		}
+	else
+		{
+		println ("*** exist ***")
+	print (unit_aa("name") + "\t")
+		print (unit_aa("population").toString () + "\t")
+		println (unit_aa("date_mod"))
 
-//	println ("_id = " + dict_aa.get ("_id").get)
-//	println ("_rev = " + dict_aa.get ("_rev").get)
-
-	val json_new = json_manipulate.dict_to_json_proc (dict_aa)
-
-	get_uri.rest_put_proc (uri,json_new,"text/json")
+	var unit_bb = mutable.Map[String,String] ()
+	unit_bb("_rev") = unit_aa("_rev").toString ()
+	unit_bb("name") = unit_aa("name").toString ()
+	unit_bb("population") = "%d".format (population)
+	val str_ddx = text_manipulate.get_current_date_proc ()
+	unit_bb("date_mod") = str_ddx
+	val unit_cc = unit_bb.toMap
+	val obj = JSONObject (unit_cc)
+	val json_str_new = obj.toString ()
+	println (json_str_new)
+	get_uri.rest_put_proc (url_target,json_str_new,"text/json")
+		}
 
 	println ("*** 終了 ***")
 }

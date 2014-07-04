@@ -2,6 +2,11 @@
 </head>
 <body>
 <h1><a href="http://couchdb.apache.org/">CouchDB</a></h1>
+<blockquote>
+<pre>
+ii  couchdb   1.5.0-0ubuntu1    all    RESTful document oriented database - system-wide instance
+</pre>
+</blockquote>
 Configuration<br />
 <blockquote>
 /etc/couchdb/default.ini<br />

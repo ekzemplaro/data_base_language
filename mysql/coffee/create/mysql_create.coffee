@@ -2,7 +2,7 @@
 # ---------------------------------------------------------------
 #	mysql_create.coffee
 #
-#					Mar/01/2013
+#					Jul/03/2014
 #
 # ---------------------------------------------------------------
 mysql = require('mysql')
@@ -12,7 +12,7 @@ text_manipulate= require ('/var/www/data_base/common/coffee_common/text_manipula
 data_prepare_proc = () ->
 	dict_aa = new Object
 
-	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t3321','岡山',27163,'1954-9-12')
+	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t3321','岡山',28163,'1954-9-12')
 	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t3322','倉敷',57296,'1954-3-15')
 	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t3323','津山',24187,'1954-10-2')
 	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t3324','玉野',64392,'1954-6-22')
@@ -25,7 +25,7 @@ data_prepare_proc = () ->
 
 	return	dict_aa
 # ---------------------------------------------------------------
-create_table_proc = (dict_aa) ->
+#
 console.log "*** 開始 ***"
 
 dict_aa = data_prepare_proc()

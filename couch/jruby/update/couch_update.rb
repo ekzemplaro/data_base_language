@@ -3,13 +3,11 @@
 #
 #	couch_update.rb
 #
-#					Jan/18/2012
+#					Jun/24/2014
 #
 require 'rubygems'
 require 'json'
-require 'net/http'
 #
-load '/var/www/data_base/common/ruby_common/text_manipulate.rb'
 load '/var/www/data_base/common/ruby_common/couch_module.rb'
 #
 # --------------------------------------------------------------------------
@@ -19,21 +17,22 @@ population_in = ARGV[1].to_i
 #
 puts key_in,population_in
 #
-server = Couch::Server.new("cddn007","5984")
+server = Couch::Server.new("localhost","5984")
 #
-res = server.get("/city/cities")
-#
-str_json = res.body
-dict_aa=JSON.parse(str_json)
-dict_aa=dict_update_proc(dict_aa,key_in,population_in)
-#
-#dict_display_proc(dict_aa)
-#
-json_str_out=JSON(dict_aa)
-#
-#puts json_str_out
-#
-server.put("/city/cities",json_str_out)
+target = "/nagano/" + key_in
+begin
+	res = server.get(target)
+	str_json = res.body
+	unit_aa=JSON.parse(str_json)
+	puts unit_aa["name"]
+	unit_aa['population'] = population_in
+	unit_aa['date_mod'] = Date.today
+	json_new=JSON.generate(unit_aa)
+	puts json_new
+	server.put(target,json_new)
+rescue
+	puts "*** not exist ***"
+end
 #
 puts	"*** 終了 ***"
 #

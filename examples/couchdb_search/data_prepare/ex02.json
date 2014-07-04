@@ -1,0 +1,10 @@
+{ 
+   "language"  : "javascript",
+   "views" : {
+      "ex02" : {
+         "map" : "function(doc){
+               emit(doc.language, doc.title);
+         }"
+      }
+  }
+}

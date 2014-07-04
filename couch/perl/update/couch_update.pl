@@ -2,7 +2,7 @@
 #
 #	couch_update.pl
 #
-#					Jan/23/2012
+#					Jun/23/2014
 # -------------------------------------------------------
 use	strict;
 use	warnings;
@@ -17,23 +17,40 @@ use uri_get;
 # -------------------------------------------------------
 print "*** 開始 ***\n";
 #
-my $id_in = $ARGV[0];
+my $key_in = $ARGV[0];
 my $population_in = $ARGV[1];
-print ("$id_in\t$population_in\n");
+print ("$key_in\t$population_in\n");
 #
-my $uri = 'http://host_dbase:5984/city/cities';
+my $url = 'http://localhost:5984/nagano';
 #
-my $str_json = uri_get::uri_get_proc ($uri);
+my $url_target = $url . "/" . $key_in;
+my $str_json = uri_get::uri_get_proc ($url_target);
 #
-my %dict_aa = %{decode_json ($str_json)};
+my $data = decode_json ($str_json);
 #
-text_manipulate::dict_update_proc ($id_in,$population_in,%dict_aa);
+print $str_json;
+my %datax = %{$data};
 #
-text_manipulate::dict_display_proc (%dict_aa);
+if (exists $datax{"error"})
+	{
+	print "*** not exist ***\n";
+	}
+else
+	{
+	print "*** exists ***\n";
+my $name = $data->{name};
+$data->{population} = $population_in;
+$data->{date_mod} = text_manipulate::get_date_mod_proc ();
 #
-my $json_str_new = encode_json (\%dict_aa);
+print $key_in . "\t";
+print encode ('utf-8',$name) . "\n";
 #
-uri_get::uri_put_proc ($uri,$json_str_new);
+#
+my $json_str_new = encode_json ($data);
+print $json_str_new . "\n";
+#
+uri_get::uri_put_proc ($url_target,$json_str_new);
+	}
 #
 print "*** 終了 ***\n";
 #

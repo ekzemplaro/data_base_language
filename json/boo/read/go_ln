@@ -1,4 +1,7 @@
 #
 COMMON=/var/www/data_base/common
+CSHARP_COMMON=$COMMON/csharp_common
 DLL=$COMMON/dll
-ln -s $DLL/Newtonsoft.Json.Net20.dll .
+ln -s $CSHARP_COMMON/table_manipulate.dll .
+#
+ln -s /usr/lib/cli/Newtonsoft.Json-5.0/Newtonsoft.Json.dll .

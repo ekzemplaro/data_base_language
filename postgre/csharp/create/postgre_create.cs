@@ -19,7 +19,6 @@ static void Main (string[] args)
 {
 	Console.WriteLine ("*** 開始 ***");
 
-
 	string server="localhost";
 	string port="5432";
 	string str_db="city";
@@ -47,19 +46,19 @@ static DataTable data_prepare_proc
 	 (string str_connect,DataTable dtable)
 {
 	dtable = data_row_proc
-		(str_connect,dtable,"t3461",@"広島",25387,"2009-4-25");
+		(str_connect,dtable,"t3461",@"広島",25367,"2009-4-25");
 
 	dtable = data_row_proc
 		(str_connect,dtable,"t3462",@"福山",52146,"2009-7-9");
 
 	dtable = data_row_proc
-		(str_connect,dtable,"t3463",@"東広島",46291,"2009-9-19");
+		(str_connect,dtable,"t3463",@"東広島",29381,"2009-9-19");
 
 	dtable = data_row_proc
 		(str_connect,dtable,"t3464",@"呉",75836,"2009-7-29");
 
 	dtable = data_row_proc
-		(str_connect,dtable,"t3465",@"尾道",46924,"2009-11-2");
+		(str_connect,dtable,"t3465",@"尾道",18924,"2009-11-2");
 
 	dtable = data_row_proc
 		(str_connect,dtable,"t3466",@"竹原",71456,"2009-10-7");
@@ -71,7 +70,7 @@ static DataTable data_prepare_proc
 		(str_connect,dtable,"t3468",@"大竹",75843,"2009-8-16");
 
 	dtable = data_row_proc
-		(str_connect,dtable,"t3469",@"府中",71523,"2009-10-21");
+		(str_connect,dtable,"t3469",@"府中",49523,"2009-10-21");
 
 	return	dtable;
 }

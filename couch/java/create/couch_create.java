@@ -2,12 +2,14 @@
 /*
 	couch/java/create/couch_create.java
 
-					Sep/12/2013
+					Jun/23/2014
 
 */
 // --------------------------------------------------------------
-import java.util.HashMap;
+import	java.util.HashMap;
+import	java.util.Set;
 
+import  net.arnx.jsonic.JSON;
 // --------------------------------------------------------------
 public class couch_create
 {
@@ -22,20 +24,25 @@ public static void main(String[] args) throws Exception
 
 	text_manipulate.dict_display_proc (dict_aa);
 
-	final String uri_collection = "http://cddn007:5984/city";
-	final String uri_target = uri_collection + "/cities";
+	final String url_collection = "http://localhost:5984/nagano";
 
 	System.out.println("*** check bbb ***");
 
-	couch_manipulate.data_delete_proc (uri_collection,"cities");
+	get_uri.rest_delete_proc (url_collection);
+	get_uri.rest_put_proc (url_collection,"{}","text/json");
 
-	System.out.println("*** check ccc ***");
+	Set set_aaa = dict_aa.keySet ();
 
-	String str_json = json_manipulate.dict_to_json_proc (dict_aa);
+	for (Object key_aa: set_aaa)
+		{
+		String key = (String)key_aa;
 
-	System.out.println("*** check ppp ***");
+		HashMap <String,String> unit_aa = dict_aa.get (key);
 
-	get_uri.rest_put_proc (uri_target,str_json,"text/json");
+		String str_json_new = JSON.encode (unit_aa);
+		String url_target = url_collection + "/" + key;
+		get_uri.rest_put_proc (url_target,str_json_new,"text/json");
+		}
 
 	System.out.println("*** 終了 ***");
 }

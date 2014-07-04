@@ -16,7 +16,6 @@ population_in = int.Parse (argv[2])
 print file_json
 print id_in,population_in
 
-
 str_json = file_io.file_to_str_proc (file_json)
 
 dict_aa = json_manipulate.json_to_dict_proc (str_json)

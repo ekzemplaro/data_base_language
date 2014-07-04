@@ -92,6 +92,11 @@ Python<p />
 	python-pymssql<p />
 </blockquote>
 
+node<p />
+<blockquote>
+	$ npm install mssql<p />
+</blockquote>
+
 Java<p />
 <pre>
 

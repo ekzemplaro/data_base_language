@@ -2,7 +2,7 @@
 #
 #	read/couch_read.pl
 #
-#					Nov/01/2013
+#					Jun/23/2014
 # -------------------------------------------------------
 use	strict;
 use	JSON;
@@ -12,22 +12,32 @@ use	Encode;
 #
 use lib '/var/www/data_base/common/perl_common';
 use uri_get;
-use text_manipulate;
+#
 #
 # -------------------------------------------------------
 print	(encode ('utf-8',"*** 開始 ***\n"));
 #
-my $uri = 'http://host_dbase:5984/city/cities';
+my $url = 'http://localhost:5984/nagano';
 #
-my $str_json = uri_get::uri_get_proc ($uri);
+my $str_json = uri_get::uri_get_proc ($url . "/" . "_all_docs");
 #
-#print ($str_json);
+my %hash_aa = %{decode_json ($str_json)};
 #
-my %dict_aa = %{decode_json ($str_json)};
+for (my $it = 0; $it < $hash_aa{"total_rows"}; $it++){
+	my $key = $hash_aa{"rows"}[$it]{"key"};
 #
-print (encode ('utf-8',"*** pppp ***\n"));
+	my $str_json = uri_get::uri_get_proc ($url . "/" . $key);
 #
-text_manipulate::dict_display_proc (%dict_aa);
+	my $data=decode_json ($str_json);
+	my $name = $data->{name};
+	my $population = $data->{population};
+	my $date_mod = $data->{date_mod};
+#
+	print $key . "\t";
+	print encode ('utf-8',$name) . "\t";
+	print $population . "\t";
+	print $date_mod . "\n";
+	}
 #
 print	(encode ('utf-8',"*** 終了 ***\n"));
 #

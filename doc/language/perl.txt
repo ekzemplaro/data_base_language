@@ -1,11 +1,11 @@
-<title>perl Mar/14/2013</title>
+<title>perl Jun/23/2014</title>
 </head>
 <body>
 <h2><a href="http://www.perl.org">perl</a></h2><p />
 
 <blockquote>
 <pre>
-	ii  perl         5.14.2-13ubu amd64        Larry Wall's Practical Extraction<p />
+ii  perl        5.14.2-13ubu amd64      Larry Wall's Practical Extraction
 </pre>
 </blockquote>
 
@@ -13,4 +13,11 @@ WARNING: gnome-keyring:: couldn't connect to:<br />
 というエラーに対しての対策<p />
 <blockquote>
 gnome-keyring-daemon --start --components=pkcs11,gpg,secrets<p />
+</blockquote>
+
+Library<p />
+<blockquote>
+<pre>
+ii  libwww-curl-perl     4.15-1build3    amd64    Perl bindings to libcurl
+</pre>
 </blockquote>

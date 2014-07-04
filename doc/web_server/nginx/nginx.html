@@ -4,7 +4,7 @@
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
-<title>nginx (Oct/11/2013)</title>
+<title>nginx (Jul/04/2014)</title>
 </head>
 <body>
 
@@ -12,8 +12,8 @@
 <blockquote>
 	sudo apt-get install nginx-full<p />
 <pre>
-ii  nginx-common   1.2.6-1ubuntu3   all    small, powerful, scalable web/proxy server - common files
-ii  nginx-full     1.2.6-1ubuntu3   amd64  nginx web/proxy server (standard version)
+ii  nginx-common    1.4.6-1ubuntu3   all     small, powerful, scalable web/proxy server - common files
+ii  nginx-full      1.4.6-1ubuntu3   amd64   nginx web/proxy server (standard version)
 </pre>
 </blockquote>
 
@@ -29,94 +29,47 @@ ii  nginx-full     1.2.6-1ubuntu3   amd64  nginx web/proxy server (standard vers
 <a href="http://library.linode.com/web-servers/nginx/perl-fastcgi/ubuntu-11.04-natty">Perl-FastCGI on Ubuntu</a><p />
 
 PHPを使えるようにする。<p />
+php5-fpm (FastCGI Process Manager) を使う。<p />
+参考になるページ<br />
 <blockquote>
-<a href="http://hima-j.in/linux/sakura-vps-ubuntu-10-04-nginx-php-fastcgi-web-server/">参考になるページ</a><p />
+<a href="http://www.nginxtips.com/nginx-php5-php-fpm-mysql-ubuntu-13-04/">How to install Nginx, PHP5 / PHP-FPM, MySQL on Ubuntu 13.04</a><p />
 </blockquote>
 
 必要なパッケージのインストール<p />
 <blockquote>
-	sudo apt-get install php5-cli php5-cgi php5-gd spawn-fcgi<p />
-</blockquote>
-
-Unix Socket を使います。<br />
-<blockquote>
-<a href="php-fastcgi_unix_socket.txt">/etc/init.d/php-fastcgi</a><p />
+	sudo apt-get install php5-cli php5-fpm php5-json<p />
 </blockquote>
 
 
-/etc/nginx/fastcgi_params に次の行を加える。<p />
-<blockquote>
-fastcgi_param  PHP_VALUE  "include_path=/var/www/data_base/common/php_common";<p />
-</blockquote>
-
-fastcgi の起動<p />
-<blockquote>
-$ sudo chmod a+x /etc/init.d/php-fastcgi<br />
-$ sudo update-rc.d php-fastcgi defaults<br />
-$ sudo /etc/init.d/php-fastcgi start<br />
-</blockquote>
-エラーが出た時の対応<p />
-<blockquote>
-	spawn-fcgi: bind failed: Address already in use<p />
-
-
-	プロセスをキルする<p />
-	sudo killall php5-cgi<p />
-
-</blockquote>
 <hr />
 <a href="./default.txt">/etc/nginx/sites-available/default</a> を使う方法<p />
 
 <blockquote>
 	root /var/www; に変更する<p />
 	スタートページは、/var/www/index.html になる。<p />
-	次の部分をコメントアウトする。<p />
-Unix Socket を使う場合<br />
 <pre>
 #
 	location ~ \.php$ {
 	fastcgi_split_path_info ^(.+\.php)(/.+)$;
 #
-	fastcgi_pass unix:/tmp/php.socket;<br />
+	fastcgi_pass unix:/var/run/php5-fpm.sock;
 	fastcgi_index index.php;
 	include fastcgi_params;
 	client_max_body_size 32M;
+	try_files $uri =403;
 	}
 </pre>
 </blockquote>
 <hr />
-/etc/nginx/sites-available/default を使わない方法<p />
-<a href="hoge.com.txt">/etc/nginx/sites-available/hoge.com</a> の作成<p />
-
-リンクの作成<p />
+php5-fpm の再起動<p />
 <blockquote>
-	sudo ln -s /etc/nginx/sites-available/hoge.com /etc/nginx/sites-enabled/
-<br />
-</blockquote>
-
-/etc/nginx/sites-available/default の削除<p />
-
-スタートページの用意<p />
-<blockquote>
-	/var/www/hoge.com/public_html/index.html<p />
-</blockquote>
-
-logs フォルダーの作成<p />
-<blockquote>
-	sudo mkdir /var/www/hoge.com/logs<br />
-	chmod 777 /var/www/hoge.com/logs<p />
-</blockquote>
-
-<hr />
-FastCGI の再起動<p />
-<blockquote>
-	sudo /etc/init.d/php-fastcgi restart<p />
+	sudo service php5-fpm restart<p />
 </blockquote>
 
 
 nginx の再起動<p />
 <blockquote>
-	sudo /etc/init.d/nginx restart<p />
+	sudo service nginx restart<p />
 </blockquote>
 
 設定ファイルのチェック<p />
@@ -131,7 +84,7 @@ PHPで、アップロードできるファイルのサイズの上限を 512M �
 	location ~ \.php$ {
 	fastcgi_split_path_info ^(.+\.php)(/.+)$;
 #
-	fastcgi_pass unix:/tmp/php.socket;
+	fastcgi_pass unix:/var/run/php5-fpm.sock;
 
 	fastcgi_index index.php;
 	include fastcgi_params;
@@ -170,7 +123,12 @@ location ~ \.pl$ {
 </blockquote>
 
 
-sudo /etc/init.d/fcgiwrap start<p />
+fcgiwrap の再起動<p />
+<blockquote>
+	# service fcgiwrap stop<br />
+	# service fcgiwrap start<br />
+	# service nginx restart<br />
+</blockquote>
 </blockquote>
 <hr />
 Python を使えるようにする。<p />
@@ -250,9 +208,17 @@ Webdav を使う時<br />
 	autoindex on;<br />
 </blockquote>
 <hr />
+ phpMyAdmin を使えるようにする。<br />
+<blockquote>
+# apt-get install phpmyadmin<p />
+cd /var/www<p />
+ln -s /usr/share/phpmyadmin/ .<p />
+</blockquote>
+
+<hr />
 <div id="result_aa">result_aa</div>
 <hr />
-<a href="/data_base/data_base.html">Return</a><p />
-Sep/12/2013 AM 08:15<p />
+<a href="/data_base/">Return</a><p />
+Jul/04/2014 AM 08:15<p />
 </body>
 </html>
