@@ -23,6 +23,22 @@ ii  libdrizzledmessage0   1:7.1.36-stable-1ubuntu1    amd64      Library contain
 drizzle> create schema city;
 </blockquote>
 
+インターアクティブの操作<br />
+<blockquote>
+<pre>
+$ drizzle -u scott
+Welcome to the Drizzle client..  Commands end with ; or \g.
+Your Drizzle connection id is 12
+Connection protocol: mysql
+Server version: 7.2.3 Debian
+
+ヘルプを表示するには「help;」または「\h」、バッファをクリアするには「\c」と入力してください。
+
+drizzle> exit
+さようなら。
+$
+</pre>
+</blockquote>
 
 
 Python<p />

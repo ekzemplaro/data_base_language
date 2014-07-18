@@ -1,0 +1,14 @@
+{ 
+   "language"  : "javascript",
+   "views" : {
+      "ex04" : {
+         "map" : "function(doc){
+                    if (doc.sections){
+               for (var it in doc.sections){
+               emit(doc.sections[it].language, [doc.title,doc.sections[it]]);
+                 }
+              }
+         }"
+      }
+  }
+}

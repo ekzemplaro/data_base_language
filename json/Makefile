@@ -14,3 +14,4 @@ clean:
 	cd csharp; make clean;
 	cd haxe; make clean;
 	cd falcon; make clean;
+	cd typescript; make clean;

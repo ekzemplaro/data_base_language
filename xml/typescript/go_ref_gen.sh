@@ -1,0 +1,1 @@
+/var/www/data_base/tools/reference/node/go_ref_gen.sh

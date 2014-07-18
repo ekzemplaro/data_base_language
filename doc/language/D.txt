@@ -1,20 +1,20 @@
 <meta content="Program Language Examples in D" name="description">
 <meta content="D,クライアント,接続,言語,サンプル" name="keyword">
 <meta content="Uchida Masatomo" name="author">
-<title>D (Aug/28/2013)</title>
+<title>D (Jul/08/2014)</title>
 </head>
 <body>
 <h2><a href="http://www.digitalmars.com/d/">D</a></h2><p />
 
 <blockquote>
 <pre>
-ii  dmd   2.063.2-0   amd64     Digital Mars D Compiler
+ii  dmd   2.065.0-0   amd64     Digital Mars D Compiler
 </pre>
 </blockquote>
 
 <blockquote>
 	sudo dpkg -i <a href="http://www.digitalmars.com/d/download.html">
-		dmd_2.063.2-0_amd64.deb</a><p />
+		dmd_2.065.0-0_amd64.deb</a><p />
 </blockquote>
 
 <blockquote>

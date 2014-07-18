@@ -1,8 +1,8 @@
-#! /usr/bin/tclsh8.5
+#! /usr/bin/tclsh
 #
 #	ftp_delete.tcl
 #
-#					Mar/19/2013
+#					Jul/08/2014
 #
 # ---------------------------------------------------------------
 package require json

@@ -1,0 +1,12 @@
+{ 
+   "language"  : "javascript",
+   "views" : {
+      "ex03" : {
+         "map" : "function(doc){
+                    if (doc.language){
+               emit(doc.language, doc);
+              }
+         }"
+      }
+  }
+}

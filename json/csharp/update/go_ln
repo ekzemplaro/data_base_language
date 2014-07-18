@@ -4,3 +4,6 @@ CSHARP_COMMON=$COMMON/csharp_common
 ln -s $CSHARP_COMMON/table_manipulate.dll .
 #
 ln -s /usr/lib/cli/Newtonsoft.Json-5.0/Newtonsoft.Json.dll .
+#
+#ln -s /usr/lib/monodevelop/bin/Newtonsoft.Json.dll .
+#

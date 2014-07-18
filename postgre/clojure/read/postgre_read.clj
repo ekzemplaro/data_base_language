@@ -2,13 +2,14 @@
 ;
 ;	postgre_read.clj
 ;
-;					Feb/17/2011
+;					Jul/17/2014
 ;
 ; -----------------------------------------------------------------
 (load-file "/var/www/data_base/common/clojure_common/sql_manipulate.clj")
 
 ; -----------------------------------------------------------------
-(use 'clojure.contrib.sql)
+(use 'clojure.java.jdbc)
+;
 (println "*** 開始 ***")
 (let [db-host "localhost"
       db-name "city"]

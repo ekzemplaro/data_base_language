@@ -60,8 +60,19 @@ Python<p />
 </pre>
 
 Java<p />
-<ol>
+<blockquote>
 	java.security.AccessControlException:<br />
 access denied (java.net.SocketPermission 127.0.0.1:1527 connect,resolve)<br />
 
-</ol>
+</blockquote>
+
+<hr />
+/etc/java-7-openjdk/security/java.policy<br />
+<blockquote>
+<pre>
+grant {
+    permission java.net.SocketPermission "localhost:1527", "listen";
+};
+</pre>
+</blockquote>
+ 

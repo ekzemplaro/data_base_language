@@ -2,11 +2,10 @@
 # -*- coding: utf-8 -*-
 #
 #	mysql_read.rb
-#					Jul/09/2011
+#					Jul/15/2014
 #
 # --------------------------------------------------------
 include Java
-import org.gjt.mm.mysql.Driver
 import java.sql.DriverManager
 import java.lang.System
 #

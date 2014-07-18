@@ -1,0 +1,1 @@
+nodejs ./text_update.js /var/tmp/plain_text/cities.txt t2387 86492500

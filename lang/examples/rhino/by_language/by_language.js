@@ -1,7 +1,7 @@
 // --------------------------------------------------------------------
 //	by_language.js
 //
-//					Feb/20/2014
+//					Jul/18/2014
 // --------------------------------------------------------------------
 importPackage (java.io);
 // --------------------------------------------------------------------
@@ -88,6 +88,8 @@ function main_proc ()
 	lang_gen ("haxe","hx");
 	lang_gen ("bsh","bsh");
 	lang_gen ("falcon","fal");
+	lang_gen ("racket","rkt");
+	lang_gen ("typescript","ts");
 
 	print	("</ol>");
 	print	("</div>");
@@ -136,6 +138,7 @@ function lang_gen (lang,suffix)
 
 	db_gen (lang,suffix,"GNU dbm","gdbm");
 	db_gen (lang,suffix,"Berkeley DB","berkeley");
+	db_gen (lang,suffix,"cdb","cdb");
 	db_gen (lang,suffix,"memcached","mcached");
 	db_gen (lang,suffix,"memcachedb","mcachedb");
 	db_gen (lang,suffix,"Redis","redis");

@@ -2,33 +2,32 @@
 ;
 ;	mssql_create.clj
 ;
-;					Jan/17/2013
+;					Jul/17/2014
 ;
 ; -----------------------------------------------------------------
 (import '(java.util Date))
 (import '(java.text SimpleDateFormat))
-(use 'clojure.contrib.sql)
-(use '[clojure.contrib.str-utils :only (str-join)])
+(use 'clojure.java.jdbc)
 ; -----------------------------------------------------------------
 (defn insert_proc []
     (insert-values :cities
-        [:id :name :population :date_mod] ["t1071" "前橋" 48732 "1970-4-22"])
+        [:id :name :population :date_mod] ["t1071" "前橋" 98732 "1970-4-22"])
     (insert-values :cities
-        [:id :name :population :date_mod] ["t1072" "高崎" 91456 "1970-7-19"])
+        [:id :name :population :date_mod] ["t1072" "高崎" 31456 "1970-7-19"])
     (insert-values :cities
-        [:id :name :population :date_mod] ["t1073" "桐生" 65972 "1970-5-15"])
+        [:id :name :population :date_mod] ["t1073" "桐生" 65182 "1970-5-15"])
     (insert-values :cities
-        [:id :name :population :date_mod] ["t1074" "沼田" 42981 "1970-11-21"])
+        [:id :name :population :date_mod] ["t1074" "沼田" 42971 "1970-11-21"])
     (insert-values :cities
-        [:id :name :population :date_mod] ["t1075" "伊勢崎" 86523 "1970-10-7"])
+        [:id :name :population :date_mod] ["t1075" "伊勢崎" 86513 "1970-10-7"])
     (insert-values :cities
         [:id :name :population :date_mod] ["t1076" "水上" 41672 "1970-7-12"])
     (insert-values :cities
-        [:id :name :population :date_mod] ["t1077" "太田" 82541 "1970-2-24"])
+        [:id :name :population :date_mod] ["t1077" "太田" 82547 "1970-2-24"])
     (insert-values :cities
         [:id :name :population :date_mod] ["t1078" "安中" 74298 "1970-5-21"])
     (insert-values :cities
-        [:id :name :population :date_mod] ["t1079" "みどり" 43526 "1970-9-17"])
+        [:id :name :population :date_mod] ["t1079" "みどり" 43596 "1970-9-17"])
     )
 
 ; -----------------------------------------------------------------

@@ -1,7 +1,7 @@
 // --------------------------------------------------------------------
 //	html_gen.js
 //
-//					Feb/20/2014
+//					Jul/18/2014
 // --------------------------------------------------------------------
 importPackage (java.io);
 // --------------------------------------------------------------------
@@ -38,6 +38,7 @@ db_gen ("dbxml","dbxml");
 
 db_gen ("GNU dbm","gdbm");
 db_gen ("Berkeley DB","berkeley");
+db_gen ("cdb","cdb");
 db_gen ("memcached","mcached");
 db_gen ("memcachedb","mcachedb");
 db_gen ("Redis","redis");
@@ -152,6 +153,8 @@ function lang_gen (key_a)
 	crud_gen (key_a,"haxe","hx");
 	crud_gen (key_a,"bsh","bsh");
 	crud_gen (key_a,"falcon","fal");
+	crud_gen (key_a,"racket","rkt");
+	crud_gen (key_a,"typescript","ts");
 }
 
 // --------------------------------------------------------------------

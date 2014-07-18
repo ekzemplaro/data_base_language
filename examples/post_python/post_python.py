@@ -4,21 +4,19 @@
 # ------------------------------------------------------------------
 #	post_python.py
 #
-#						Feb/10/2014
+#						Jul/16/2014
 #
 # ------------------------------------------------------------------
 import	cgi
 import	os
 import	sys
 import	string
-import	random
-import	socket
 import	json
 #
 # ------------------------------------------------------------------
 message = []
 #
-message.append ('*** post_python.py *** start ***')
+message.append ('*** post_python.py *** Jul/16/2014 start ***')
 #
 print "Content-Type: application/json\n\n"
 #
@@ -26,6 +24,7 @@ fname_in = ""
 fname_out = ""
 #
 form = cgi.FieldStorage()
+#
 if form.has_key("data_aa"):
 	message.append ("*** data_aa exist ***")
 	fname_in = form["data_aa"].value

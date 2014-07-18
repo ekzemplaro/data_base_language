@@ -2,7 +2,7 @@
 /*
 	json_read.cs
 
-						Jun/16/2014
+						Jul/04/2014
 */
 // --------------------------------------------------------------------
 using	System;
@@ -20,15 +20,28 @@ static	void	Main (string[] args)
 
 	string file_in = args[0];
 
-	string str_json = file_io.file_to_str_proc (file_in);
-
-	var array_json = DynamicJson.Parse (str_json);
-
-	foreach (KeyValuePair<string, dynamic> item in array_json)
+	try
 		{
-		Console.Write (item.Key + "\t" + item.Value.name);
-		Console.Write ("\t" + item.Value.population);
-		Console.WriteLine ("\t" + item.Value.date_mod);
+		string str_json = file_io.file_to_str_proc (file_in);
+
+		var array_json = DynamicJson.Parse (str_json);
+
+		foreach (KeyValuePair<string, dynamic> item in array_json)
+			{
+			Console.Write (item.Key + "\t" + item.Value.name);
+			Console.Write ("\t" + item.Value.population);
+			Console.WriteLine ("\t" + item.Value.date_mod);
+			}
+		}
+	catch (DirectoryNotFoundException ex)
+		{
+		Console.WriteLine ("*** DirectoryNotFoundException ***");
+//		Console.WriteLine (ex);
+		}
+	catch (FileNotFoundException ex)
+		{
+		Console.WriteLine ("*** FileNotFoundException ***");
+//		Console.WriteLine (ex);
 		}
 	
 	Console.WriteLine ("\n*** json_read *** 終了 ***");

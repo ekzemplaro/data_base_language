@@ -1,0 +1,12 @@
+#
+SHARE=/usr/share/java
+JDBC=$SHARE/java.jdbc.jar
+#
+COMMON=/var/www/data_base/common
+JAR=$COMMON/jar
+#
+DRIZZLE_JAR=$JAR/drizzle-jdbc-1.2.jar
+#
+export CLASSPATH=.:$SHARE/clojure.jar:$JDBC:$DRIZZLE_JAR
+#
+java clojure.main drizzle_delete.clj  t2657

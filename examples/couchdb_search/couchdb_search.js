@@ -1,48 +1,85 @@
 // -----------------------------------------------------------------------
 //	couchdb_search.js
 //
-//					Jul/01/2014
+//					Jul/10/2014
 // -----------------------------------------------------------------------
 jQuery (function ()
 {
 	jQuery("#outarea_aa").html
-		("*** couchdb_search *** start *** Jul/01/2014 ***");
+		("*** couchdb_search *** start *** Jul/10/2014 ***");
 
 	table_display_proc ('Japanese');
 
 	click_monitor_proc ();
 
 	jQuery("#outarea_hh").html
-		("*** couchdb_search *** end *** Jul/01/2014 ***");
+		("*** couchdb_search *** end *** Jul/10/2014 ***");
 });
 
 // -----------------------------------------------------------------------
-// [4]:
+// [6]:
 function table_display_proc (language)
 {
 	jQuery("#result_aa").html ('<h2>' + language + '</h2>');
 
-	var url_couchdb = 'http://localhost:5984/librivox/_design/myapp/_view/ex02?key="' + language + '"';
+	var url_db = 'http://localhost:5984/librivox';
+	var url_proxy = "./php_proxy_get.php"  + '?url=' + url_db;
 
-	var url_proxy = "./php_proxy_get.php"  + '?url=' + url_couchdb;
-//	var url_proxy = url_couchdb;
+	var path_view = '/_design/myapp3/_view/ex03?key="' + language + '"';
 
-	jQuery.getJSON (url_proxy,function (data_json)
+	var url_view = url_proxy + path_view;
+
+	jQuery.getJSON (url_view,function (data_json)
 		{
 		var str_out = "<table>";
+
 		for (var it in data_json.rows)
 			{
-			str_out += "<tr>";
-			var value = data_json.rows[it];
-			var icount = parseInt (it,10) + 1;
-			str_out += '<td>' + String (icount) + '</td>';
-			str_out += '<td>' + value.id + '</td>';
-			str_out += '<td>' + value.value + '</td>';
-			str_out += "</tr>";
+			var id =  data_json.rows[it].id;
+			var value = data_json.rows[it].value;
+			str_out += row_data_gen_proc (it,id,value);
 			}
+
 		str_out += "</table>";
+
 		jQuery(".contents").html (str_out);
 		});
+}
+
+// -----------------------------------------------------------------------
+// [6-6]:
+function row_data_gen_proc (it,id,unit_in)
+{
+	str_out = "<tr>";
+	str_out += '<td>' + it + '</td>';
+	str_out += '<td>' + id + '</td>';
+	str_out += '<td>' + unit_in.title + '</td>';
+
+	str_out += '<td>';
+	if (unit_in.hasOwnProperty('publicdate'))
+			{
+			str_out += unit_in.publicdate;
+			}
+		else
+			{
+			str_out += '<br />';
+			}
+		str_out += '</td>';
+
+		str_out += '<td>';
+		if (unit_in.hasOwnProperty('totaltime'))
+			{
+			str_out += unit_in.totaltime;
+			}
+		else
+			{
+			str_out += '<br />';
+			}
+		str_out += '</td>';
+
+	str_out += "</tr>";
+
+	return	str_out;
 }
 
 // -----------------------------------------------------------------------

@@ -99,7 +99,6 @@ function show_make_proc (target)
 				{
 				var title = "<b>Makefile</b></br>";
 				show_contents_proc (".makefile",title,data_text_make);
-//				show_contents_proc (".makefile",title,target[1]);
 				}
 			});
 		}

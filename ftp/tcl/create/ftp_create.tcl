@@ -1,8 +1,8 @@
-#! /usr/bin/tclsh8.5
+#! /usr/bin/tclsh
 #
 #	ftp_create.tcl
 #
-#					oct/14/2011
+#					Jul/08/2014
 #
 # ---------------------------------------------------------------
 package require json
@@ -16,12 +16,12 @@ proc data_prepare_proc {} {
 	set dict_aa [dict create]
 
 	set dict_aa [dict_append_proc $dict_aa t0361 盛岡 32871 1982-9-13]
-	set dict_aa [dict_append_proc $dict_aa t0362 久慈 28695 1982-2-25]
-	set dict_aa [dict_append_proc $dict_aa t0363 二戸 13254 1982-8-8]
+	set dict_aa [dict_append_proc $dict_aa t0362 久慈 21695 1982-2-25]
+	set dict_aa [dict_append_proc $dict_aa t0363 二戸 18254 1982-8-8]
 	set dict_aa [dict_append_proc $dict_aa t0364 宮古 81746 1982-9-15]
-	set dict_aa [dict_append_proc $dict_aa t0365 遠野 29836 1982-10-17]
-	set dict_aa [dict_append_proc $dict_aa t0366 八幡平 39567 1982-5-21]
-	set dict_aa [dict_append_proc $dict_aa t0367 大船渡 64592 1982-9-8]
+	set dict_aa [dict_append_proc $dict_aa t0365 遠野 27836 1982-10-17]
+	set dict_aa [dict_append_proc $dict_aa t0366 八幡平 32567 1982-5-21]
+	set dict_aa [dict_append_proc $dict_aa t0367 大船渡 64192 1982-9-8]
 	set dict_aa [dict_append_proc $dict_aa t0368 一関 59732 1982-6-14]
 	set dict_aa [dict_append_proc $dict_aa t0369 花巻 18935 1982-4-29]
 

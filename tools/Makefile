@@ -17,6 +17,8 @@ clean:
 	cd data_base/sqlite3; make clean;
 	cd data_base/mysql; make clean;
 	cd data_base/postgre; make clean;
+	cd data_base/firebird; make clean;
+	cd data_base/drizzle; make clean;
 	cd data_base/xindice; make clean;
 	cd data_base/exist; make clean;
 	cd data_base/basex; make clean;

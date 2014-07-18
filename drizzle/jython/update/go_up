@@ -1,0 +1,6 @@
+#
+export COMMON=/var/www/data_base/common
+export JAR=$COMMON/jar
+export CLASSPATH=.:$JAR/drizzle-jdbc-1.2.jar
+#
+./drizzle_update.py t2657 6482100

@@ -2,33 +2,32 @@
 ;
 ;	h2_create.clj
 ;
-;					Jul/03/2011
+;					Jul/17/2014
 ;
 ; -----------------------------------------------------------------
 (import '(java.util Date))
 (import '(java.text SimpleDateFormat))
-(use 'clojure.contrib.sql)
-(use '[clojure.contrib.str-utils :only (str-join)])
+(use 'clojure.java.jdbc)
 ; -----------------------------------------------------------------
 (defn insert_proc []
     (insert-values :cities
-        [:id :name :population :date_mod] ["t4561" "宮崎" 75267 "1970-4-23"])
+        [:id :name :population :date_mod] ["t4561" "宮崎" 71267 "1970-4-23"])
     (insert-values :cities
-        [:id :name :population :date_mod] ["t4562" "日南" 25681 "1970-7-9"])
+        [:id :name :population :date_mod] ["t4562" "日南" 25981 "1970-7-9"])
     (insert-values :cities
-        [:id :name :population :date_mod] ["t4563" "延岡" 75846 "1970-3-15"])
+        [:id :name :population :date_mod] ["t4563" "延岡" 75246 "1970-3-15"])
     (insert-values :cities
-        [:id :name :population :date_mod] ["t4564" "都城" 42391 "1970-11-21"])
+        [:id :name :population :date_mod] ["t4564" "都城" 42891 "1970-11-21"])
     (insert-values :cities
-        [:id :name :population :date_mod] ["t4565" "小林" 36718 "1970-10-7"])
+        [:id :name :population :date_mod] ["t4565" "小林" 36418 "1970-10-7"])
     (insert-values :cities
-        [:id :name :population :date_mod] ["t4566" "日向" 42536 "1970-7-12"])
+        [:id :name :population :date_mod] ["t4566" "日向" 42736 "1970-7-12"])
     (insert-values :cities
-        [:id :name :population :date_mod] ["t4567" "串間" 82675 "1970-2-24"])
+        [:id :name :population :date_mod] ["t4567" "串間" 82175 "1970-2-24"])
     (insert-values :cities
-        [:id :name :population :date_mod] ["t4568" "西都" 91249 "1970-5-21"])
+        [:id :name :population :date_mod] ["t4568" "西都" 81349 "1970-5-21"])
     (insert-values :cities
-        [:id :name :population :date_mod] ["t4569" "えびの" 45781 "1970-9-11"])
+        [:id :name :population :date_mod] ["t4569" "えびの" 42781 "1970-9-11"])
     )
 
 ; -----------------------------------------------------------------

@@ -2,14 +2,13 @@
 ;
 ;	mysql_read.clj
 ;
-;					Feb/17/2011
+;					Jul/17/2014
 ;
 ; -----------------------------------------------------------------
 (load-file "/var/www/data_base/common/clojure_common/sql_manipulate.clj")
 
 ; -----------------------------------------------------------------
-;(use 'clojure.contrib.sql)
-(use 'clojure.jdbc)
+(use 'clojure.java.jdbc)
 (println "*** 開始 ***")
 
 (let [db-host "host_mysql" db-name "city"]

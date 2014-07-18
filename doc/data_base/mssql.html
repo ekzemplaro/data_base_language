@@ -4,7 +4,7 @@
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
-<script src="/js/jquery-2.1.0.min.js"></script>
+<script src="/js/jquery-2.1.1.min.js"></script>
 <meta content="Program Language Examples to connect to MS SQLServer" name="description">
 <meta content="MS SQLServer,クライアント,接続,言語,サンプル" name="keyword">
 <meta content="Uchida Masatomo" name="author">
@@ -16,7 +16,7 @@
 再起動を要求して、インストールが出来ない時<p />
 <blockquote>
 regedit を、使う。<p />
-HKEY_LOCAL_MACHINE¥SYSTEM¥CurrentControlSet¥Control¥Session Manager<br />
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager<br />
 の<br />
 PendingFileRenameOperations<br />
 を削除する。<br />
@@ -84,7 +84,7 @@ client charset = UTF-8
 </pre>
 </blockquote>
 <blockquote>
-	sqsh -S host_mssql -U sa -P tiger
+	sqsh -S host_mssql -U sa -P scott_tiger
 </blockquote>
 
 PHP<p />
@@ -97,6 +97,11 @@ PHP<p />
 Python<p />
 <blockquote>
 	python-pymssql<p />
+</blockquote>
+
+node<p />
+<blockquote>
+	$ npm install mssql<p />
 </blockquote>
 
 Java<p />
@@ -157,7 +162,7 @@ client charset = UTF-8<br />
 <div id="outarea_gg">outarea_gg</div>
 <div id="outarea_hh">outarea_hh</div>
 <hr />
-<a href="/data_base/data_base.html">Return</a><p />
-Jan/29/2014 AM 08:15<p />
+<a href="/data_base/">Return</a><p />
+Jul/16/2014 AM 08:15<p />
 </body>
 </html>

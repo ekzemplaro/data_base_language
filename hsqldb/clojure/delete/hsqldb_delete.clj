@@ -2,24 +2,20 @@
 ;
 ;	hsqldb_delete.clj
 ;
-;					Aug/24/2010
+;					Jul/17/2014
 ;
 ; -----------------------------------------------------------------
 (import '(java.util Date))
 (import '(java.text SimpleDateFormat))
-(use 'clojure.contrib.sql)
-(use '[clojure.contrib.str-utils :only (str-join)])
+(use 'clojure.java.jdbc)
+;
 (println "*** 開始 ***")
 
 (let [db-host "file"
 	db-name "/var/tmp/hsqldb/cities;shutdown=true"
 	id (first *command-line-args*)
-	population (second *command-line-args*)
-	today (. (new SimpleDateFormat "yyyy-MM-dd") format (new Date))
 	]
 (println id)
-(println population)
-(println today)
 
   (def db {:classname "org.hsqldb.jdbcDriver"
            :subprotocol "hsqldb"

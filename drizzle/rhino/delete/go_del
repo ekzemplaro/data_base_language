@@ -1,0 +1,10 @@
+#
+export COMMON=/var/www/data_base/common
+export JAR=$COMMON/jar
+#
+export DRIZZLE_JAR=$JAR/drizzle-jdbc-1.2.jar
+#
+JAVA_CLASSPATH="/usr/share/java/js.jar:/usr/share/java/jline.jar"
+export CLASSPATH=.:$DRIZZLE_JAR:$JAVA_CLASSPATH
+#
+./drizzle_delete.js t2658

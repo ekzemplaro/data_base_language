@@ -1,7 +1,8 @@
 #
-export CLOJURE_CONTRIB=/usr/share/java/clojure-contrib-1.2.0.jar
-export DERBY_HOME=/usr/share/javadb
-export CLASSPATH=.:/usr/share/java/clojure.jar:$CLOJURE_CONTRIB:$DERBY_HOME/lib/derbyclient.jar 
+SHARE=/usr/share/java
+JDBC=$SHARE/java.jdbc.jar
 #
+DERBY_HOME=/usr/share/javadb
+export CLASSPATH=.:$JDBC:$SHARE/clojure.jar:$DERBY_HOME/lib/derbyclient.jar
 #
 java clojure.main derby_update.clj t3554 214765900

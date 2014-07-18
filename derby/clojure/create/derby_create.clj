@@ -2,34 +2,32 @@
 ;
 ;	derby_create.clj
 ;
-;					Sep/13/2013
+;					Jul/17/2014
 ;
 ; -----------------------------------------------------------------
 (import '(java.util Date))
 (import '(java.text SimpleDateFormat))
-(use 'clojure.contrib.sql)
-(use '[clojure.contrib.str-utils :only (str-join)])
-
+(use 'clojure.java.jdbc)
 ; -----------------------------------------------------------------
 (defn insert_proc []
     (insert-values :cities
-        [:id :name :population :date_mod] ["t3551" "山口" 71456 "1971-7-24"])
+        [:id :name :population :date_mod] ["t3551" "山口" 72456 "1970-7-24"])
     (insert-values :cities
-        [:id :name :population :date_mod] ["t3552" "下関" 37823 "1971-5-8"])
+        [:id :name :population :date_mod] ["t3552" "下関" 37821 "1970-5-8"])
     (insert-values :cities
-        [:id :name :population :date_mod] ["t3553" "萩" 85381 "1971-3-15"])
+        [:id :name :population :date_mod] ["t3553" "萩" 85389 "1970-3-15"])
     (insert-values :cities
-        [:id :name :population :date_mod] ["t3554" "徳山" 21567 "1971-11-21"])
+        [:id :name :population :date_mod] ["t3554" "徳山" 21567 "1970-11-21"])
     (insert-values :cities
-        [:id :name :population :date_mod] ["t3555" "岩国" 36842 "1971-10-7"])
+        [:id :name :population :date_mod] ["t3555" "岩国" 36842 "1970-10-7"])
     (insert-values :cities
-       [:id :name :population :date_mod] ["t3556" "光" 42915 "1971-7-12"])
+       [:id :name :population :date_mod] ["t3556" "光" 42915 "1970-7-12"])
     (insert-values :cities
-        [:id :name :population :date_mod] ["t3557" "長門" 82137 "1971-2-21"])
+        [:id :name :population :date_mod] ["t3557" "長門" 82137 "1970-2-21"])
     (insert-values :cities
-        [:id :name :population :date_mod] ["t3558" "防府" 91254 "1971-5-24"])
+        [:id :name :population :date_mod] ["t3558" "防府" 91254 "1970-5-24"])
     (insert-values :cities
-        [:id :name :population :date_mod] ["t3559" "宇部" 52891 "1971-6-18"])
+        [:id :name :population :date_mod] ["t3559" "宇部" 52791 "1970-6-18"])
     )
 
 

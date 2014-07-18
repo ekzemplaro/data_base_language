@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<title>node.js (Jul/09/2014)</title>
+</head>
+<body>
+
+node.js (Port 3000)<p />
+サーバープログラム
+<blockquote>
+<pre>
+#! /usr/bin/nodejs
+
+var fs = require ('fs');
+var http = require ('http');
+var url = require ('url');
+
+var server = http.createServer(
+	function(request, response) {
+response.writeHead(200, {'Content-Type': 'text/html'});
+response.write('Good  Morning!!');
+var who = url.parse (decodeURI(request.url),true).query.who;
+response.write(who);
+response.end();
+}).listen(3000);
+
+console.log('server running port at 3000');
+
+</pre>
+</blockquote>
+
+クライアント<br />
+<blockquote>
+http://localhost:3000/?who=John<p />
+</blockquote>
+
+<blockquote>
+</blockquote>
+
+
+
+
+<hr />
+<a href="../">Return</a><p />
+Jul/09/2014 AM 08:15<p />
+</body>
+</html>

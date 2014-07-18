@@ -1,8 +1,8 @@
-#! /usr/bin/tclsh8.5
+#! /usr/bin/tclsh
 #
 #	webdav_read.tcl
 #
-#					Jan/23/2012
+#					Jul/08/2014
 #
 # ---------------------------------------------------------------
 package require TclCurl

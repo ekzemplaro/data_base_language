@@ -2,13 +2,14 @@
 ;
 ;	mssql_read.clj
 ;
-;					Sep/13/2013
+;					Jul/17/2014
 ;
 ; -----------------------------------------------------------------
 (load-file "/var/www/data_base/common/clojure_common/sql_manipulate.clj")
 
 ; -----------------------------------------------------------------
-(use 'clojure.contrib.sql)
+(use 'clojure.java.jdbc)
+;
 (println "*** 開始 ***")
 (let [db-host "host_mssql;"
       db-name "databaseName=city"]

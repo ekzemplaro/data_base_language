@@ -2,13 +2,12 @@
 ;
 ;	mysql_create.clj
 ;
-;					Jul/03/2011
+;					Jul/17/2014
 ;
 ; -----------------------------------------------------------------
 (import '(java.util Date))
 (import '(java.text SimpleDateFormat))
-(use 'clojure.contrib.sql)
-(use '[clojure.contrib.str-utils :only (str-join)])
+(use 'clojure.java.jdbc)
 ; -----------------------------------------------------------------
 (defn insert_proc []
 	(insert-values :cities
@@ -18,15 +17,15 @@
     (insert-values :cities
         [:id :name :population :date_mod] ["t3323" "津山" 75847 "1970-3-15"])
     (insert-values :cities
-        [:id :name :population :date_mod] ["t3324" "玉野" 42938 "1970-11-21"])
+        [:id :name :population :date_mod] ["t3324" "玉野" 42935 "1970-11-21"])
     (insert-values :cities
-        [:id :name :population :date_mod] ["t3325" "笠岡" 36428 "1970-10-7"])
+        [:id :name :population :date_mod] ["t3325" "笠岡" 36427 "1970-10-7"])
     (insert-values :cities
         [:id :name :population :date_mod] ["t3326" "井原" 42519 "1970-7-12"])
     (insert-values :cities
-        [:id :name :population :date_mod] ["t3327" "総社" 82328 "1970-2-24"])
+        [:id :name :population :date_mod] ["t3327" "総社" 12398 "1970-2-24"])
     (insert-values :cities
-        [:id :name :population :date_mod] ["t3328" "高梁" 91636 "1970-5-21"])
+        [:id :name :population :date_mod] ["t3328" "高梁" 91736 "1970-5-21"])
     (insert-values :cities
         [:id :name :population :date_mod] ["t3329" "新見" 43517 "1970-9-17"])
     )

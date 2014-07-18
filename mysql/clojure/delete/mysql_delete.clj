@@ -1,14 +1,12 @@
 ; -----------------------------------------------------------------
 ;
-;	mysql_update.clj
+;	mysql_delete.clj
 ;
-;					Dec/07/2010
+;					Jul/17/2014
 ;
 ; -----------------------------------------------------------------
-(import '(java.util Date))
-(import '(java.text SimpleDateFormat))
-(use 'clojure.contrib.sql)
-(use '[clojure.contrib.str-utils :only (str-join)])
+(use 'clojure.java.jdbc)
+;
 (println "*** 開始 ***")
 
 (let [db-host "host_mysql"

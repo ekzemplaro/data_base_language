@@ -1,0 +1,10 @@
+#
+export COMMON=/var/www/data_base/common
+export JAR=$COMMON/jar
+#
+export DRIZZLE_JAR=$JAR/drizzle-jdbc-1.2.jar
+#
+export SCALA_COMMON=$COMMON"/scala_common"
+export CPX=.:$SCALA_COMMON:$DRIZZLE_JAR
+#
+scala -classpath $CPX drizzle_delete t2652

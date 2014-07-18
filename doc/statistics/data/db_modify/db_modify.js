@@ -38,7 +38,8 @@ function convert_proc (data_aa)
 
 //	data_aa['dbase']['falcon']['Create']['Code'] = '2010';
 	data_aa['dbase']['racket']['Create']['Code'] = '2011';
-
+	data_aa['dbase']['typescript']['Create']['Code'] = '2012';
+/*
 	data_aa['dbase']['jQuery']['Only']['couch'] = '8';
 	data_aa['dbase']['jQuery']['Only']['ftp'] = '8';
 	data_aa['dbase']['jQuery']['Only']['wbdv'] = '8';
@@ -46,7 +47,7 @@ function convert_proc (data_aa)
 	data_aa['dbase']['jQuery']['Only']['Text'] = '8';
 	data_aa['dbase']['jQuery']['Only']['XML'] = '8';
 	data_aa['dbase']['jQuery']['Only']['json'] = '8';
-
+*/
 	return	data_aa;
 }
 

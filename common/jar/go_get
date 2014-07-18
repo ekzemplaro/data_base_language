@@ -4,9 +4,10 @@ H2=/home/uchida/data_base/h2/h2
 SG_CDB=/home/uchida/dbm/cdb/sg-cdb-1.0.4
 JEDIS=/home/uchida/dbm/redis/java
 COMMONS=/home/uchida/java_program/commons-net-3.0.1
+DRIZZLE_JDBC=/home/uchida/data_base/drizzle/jdbc
 #MEMCACHED=/home/uchida/dbm/memcached/java/java_memcached/java_memcached-release_2.6.1
 #
-cp -p $H2/bin/h2-1.3.173.jar .
+cp -p $H2/bin/h2-1.4.180.jar .
 #cp -p $COMMONS/commons-net-3.0.1.jar .
 #cp -p $MEMCACHED/java_memcached-release_2.5.1.jar .
 #cp -p $MEMCACHED/java_memcached-release_2.6.1.jar .
@@ -15,3 +16,5 @@ cp -p $H2/bin/h2-1.3.173.jar .
 #cp -p /home/uchida/dbm/epub/tika/tika-app-1.0.jar .
 cp -p $SG_CDB/sg-cdb-1.0.4.jar .
 cp -p $JEDIS/jedis-2.1.0.jar .
+#
+cp -p $DRIZZLE_JDBC/drizzle-jdbc-1.2.jar .

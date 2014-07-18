@@ -1,5 +1,4 @@
 clean:
-	cd haxe; make clean;
 	cd gst; make clean;
 	cd swipl; make clean;
 	cd kaya; make clean;
@@ -17,4 +16,6 @@ clean:
 	cd D; make clean;
 	cd cython; make clean;
 	cd csharp; make clean;
+	cd haxe; make clean;
 	cd falcon; make clean;
+	cd typescript; make clean;

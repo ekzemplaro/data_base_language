@@ -1,0 +1,5 @@
+#
+curl http://localhost:5984/librivox_books/_design/myapp4/_view/ex04?key=\"Japanese\"
+#
+#curl http://localhost:5984/librivox_books/_design/myapp4/_view/ex04?key=\"Japanese\"&group=true
+#curl http://localhost:5984/librivox_books/_design/myapp4/_view/ex04?key=\"Japanese\"&limit=5

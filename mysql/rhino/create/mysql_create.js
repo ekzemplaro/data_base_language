@@ -36,12 +36,12 @@ function insert_data_proc (conn)
 {
 	insert_record_proc (conn,"t3321","岡山",41353,"1951-3-1");
 	insert_record_proc (conn,"t3322","倉敷",34241,"1951-6-14");
-	insert_record_proc (conn,"t3323","津山", 58592,"1951-5-27");
+	insert_record_proc (conn,"t3323","津山", 78592,"1951-5-27");
 	insert_record_proc (conn,"t3324","玉野",24687,"1951-9-29");
 	insert_record_proc (conn,"t3325","笠岡",12975,"1951-10-16");
-	insert_record_proc (conn,"t3326","井原",49734,"1951-11-24");
-	insert_record_proc (conn,"t3327","総社",58297,"1951-12-30");
-	insert_record_proc (conn,"t3328","高梁",45184,"1951-11-18");
-	insert_record_proc (conn,"t3329","新見",59647,"1951-9-21");
+	insert_record_proc (conn,"t3326","井原",29734,"1951-11-24");
+	insert_record_proc (conn,"t3327","総社",58217,"1951-12-30");
+	insert_record_proc (conn,"t3328","高梁",45189,"1951-11-18");
+	insert_record_proc (conn,"t3329","新見",59642,"1951-9-21");
 }
 // ------------------------------------------------------------------

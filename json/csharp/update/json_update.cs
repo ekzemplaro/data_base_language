@@ -2,7 +2,7 @@
 /*
 	csharp/update/json_update.cs
 
-					Aug/07/2011
+					Jul/07/2014
 
 */
 // --------------------------------------------------------------------
@@ -25,6 +25,8 @@ static void Main (string[] args)
 	int	population_in = int.Parse (args[2]);
 	Console.WriteLine (id_in + "\t" + population_in);
 
+	try
+		{
 	string str_json = file_io.file_to_str_proc (file_json);
 
 	Dictionary <string,Object> dict_aa
@@ -38,6 +40,12 @@ static void Main (string[] args)
 	string str_json_out = JsonConvert.SerializeObject (dict_aa);
 	
 	file_io.file_write_proc (file_json,str_json_out);
+		}
+	catch (FileNotFoundException ex)
+		{
+		Console.WriteLine ("*** FileNotFoundException ***");
+//		Console.WriteLine (ex);
+		}
 
 	Console.WriteLine ("\n*** json_update *** 終了 ***");
 }

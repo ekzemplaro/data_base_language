@@ -4,7 +4,7 @@
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
-<script src="/js/jquery-2.1.0.min.js"></script>
+<script src="/js/jquery-2.1.1.min.js"></script>
 <meta content="Program Language Examples to connect to MongoDB" name="description">
 <meta content="MongoDB,クライアント,接続" name="keyword">
 <meta content="Uchida Masatomo" name="author">
@@ -15,7 +15,7 @@
 <h1><a href="http://www.mongodb.org">mongoDB</a></h1>
 <blockquote>
 <pre>
-ii  mongodb   1:2.4.6-0ubuntu5    amd64    object/document-oriented database (metapackage)
+ii  mongodb   1:2.4.9-1ubuntu2   amd64   object/document-oriented database (metapackage)
 </pre>
 </blockquote>
 <blockquote>
@@ -103,6 +103,33 @@ C#<p />
 <blockquote>
 <a href="https://github.com/samus/mongodb-csharp">mongodb-csharp</a><p />
 </blockquote>
+
+<hr />
+<blockquote>
+<pre>
+$ mongo
+MongoDB shell version: 2.4.9
+connecting to: test
+> db
+test
+> show dbs
+city_db	0.203125GB
+exampleDb	0.203125GB
+local	0.078125GB
+> use city_db
+switched to db city_db
+> db
+city_db
+> show collections
+saitama
+system.indexes
+> db.saitama.find ()
+{ "_id" : ObjectId("538d2fc65f87ddfac4108581"), "key" : "t1161", "name" : "さいたま", "population" : 58143, "date_mod" : "2001-9-12" }
+{ "_id" : ObjectId("538d2fc65f87ddfac4108582"), "key" : "t1162", "name" : "所沢", "population" : 62987, "date_mod" : "2001-10-9" }
+> exit
+bye
+</pre>
+</blockquote>
 <div id="result_aa">result_aa</div>
 <hr />
 <div id="outarea_aa">outarea_aa</div>
@@ -114,7 +141,7 @@ C#<p />
 <div id="outarea_gg">outarea_gg</div>
 <div id="outarea_hh">outarea_hh</div>
 <hr />
-<a href="/data_base/data_base.html">Return</a><p />
-Jan/29/2014 AM 08:15<p />
+<a href="/data_base/">Return</a><p />
+Jul/16/2014 AM 08:15<p />
 </body>
 </html>

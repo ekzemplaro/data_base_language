@@ -2,14 +2,13 @@
 ;
 ;	sqlite3_read.clj
 ;
-;					Oct/27/2011
+;					Jul/17/2014
 ;
 ; -----------------------------------------------------------------
 (load-file "/var/www/data_base/common/clojure_common/sql_manipulate.clj")
 ; -----------------------------------------------------------------
-(use '[clojure.contrib.sql :only (with-connection)])
-(use '[clojure.contrib.sql :only (with-query-results)])
-
+(use 'clojure.java.jdbc)
+;
 (println "*** 開始 ***")
 
 (let [db-host ""

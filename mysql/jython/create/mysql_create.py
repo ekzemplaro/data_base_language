@@ -28,12 +28,12 @@ def	data_prepare_proc ():
 	dict_aa = dict_append_proc (dict_aa,'t3321','岡山'.decode ('utf-8'),39174,'2004-4-21')
 	dict_aa = dict_append_proc (dict_aa,'t3322','倉敷'.decode ('utf-8'),17265,'2004-5-12')
 	dict_aa = dict_append_proc (dict_aa,'t3323','津山'.decode ('utf-8'),72654,'2004-6-17')
-	dict_aa = dict_append_proc (dict_aa,'t3324','玉野'.decode ('utf-8'),64352,'2004-9-9')
-	dict_aa = dict_append_proc (dict_aa,'t3325','笠岡'.decode ('utf-8'),42651,'2004-8-4')
-	dict_aa = dict_append_proc (dict_aa,'t3326','井原'.decode ('utf-8'),35187,'2004-1-21')
-	dict_aa = dict_append_proc (dict_aa,'t3327','総社'.decode ('utf-8'),81256,'2004-7-23')
-	dict_aa = dict_append_proc (dict_aa,'t3328','高梁'.decode ('utf-8'),24784,'2004-10-26')
-	dict_aa = dict_append_proc (dict_aa,'t3329','新見'.decode ('utf-8'),75823,'2004-12-15')
+	dict_aa = dict_append_proc (dict_aa,'t3324','玉野'.decode ('utf-8'),64392,'2004-9-9')
+	dict_aa = dict_append_proc (dict_aa,'t3325','笠岡'.decode ('utf-8'),42671,'2004-8-4')
+	dict_aa = dict_append_proc (dict_aa,'t3326','井原'.decode ('utf-8'),35147,'2004-1-21')
+	dict_aa = dict_append_proc (dict_aa,'t3327','総社'.decode ('utf-8'),81356,'2004-7-23')
+	dict_aa = dict_append_proc (dict_aa,'t3328','高梁'.decode ('utf-8'),29784,'2004-10-26')
+	dict_aa = dict_append_proc (dict_aa,'t3329','新見'.decode ('utf-8'),75123,'2004-12-15')
 #
 	return	dict_aa
 #

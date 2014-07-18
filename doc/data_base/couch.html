@@ -4,11 +4,16 @@
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
-<script src="/js/jquery-2.1.0.min.js"></script>
+<script src="/js/jquery-2.1.1.min.js"></script>
 <title>CouchDB</title>
 </head>
 <body>
 <h1><a href="http://couchdb.apache.org/">CouchDB</a></h1>
+<blockquote>
+<pre>
+ii  couchdb   1.5.0-0ubuntu1    all    RESTful document oriented database - system-wide instance
+</pre>
+</blockquote>
 Configuration<br />
 <blockquote>
 /etc/couchdb/default.ini<br />
@@ -73,7 +78,7 @@ Perl<p />
 Ruby<p />
 <blockquote>
 <pre>
-ii  librestclient-ruby     1.6.7-1     Transitional package for ruby-rest-client
+ii  ruby-rest-client       1.6.7-4    all     simple REST client for Ruby
 </pre>
 </blockquote>
 
@@ -104,6 +109,11 @@ node.js<p />
 	felixge-node-couchdb-713605b.tar.gz<p />
 </blockquote>
 
+Java<p />
+<blockquote>
+	libcommons-httpclient-java<p />
+</blockquote>
+
 couchapp<p />
 <blockquote>
 	<a href="http://www.couchapp.org/page/getting-started">CouchApp.org: Getting Started</a><p />
@@ -112,8 +122,36 @@ couchapp<p />
 <hr />
 <pre>
 $ curl --noproxy localhost http://localhost:5984
-{"couchdb":"Welcome","uuid":"faeeffae114bbf8ec773c584afde7906","version":"1.4.0","vendor":{"version":"1.4.0","name":"The Apache Software Foundation"}}
+{"couchdb":"Welcome","uuid":"4c3f5c7752103d0653aeb1afb91f8621","version":"1.5.0","vendor":{"version":"14.04","name":"Ubuntu"}}
 </pre>
+<hr />
+View の作成方法<br />
+<blockquote>
+View の例 (ex06.json)<br />
+<pre>
+{ 
+   "language"  : "javascript",
+   "views"     : {
+      "ex06"    : { 
+         "map" : "function(doc){ 
+               emit(doc.artist, doc.title);
+         }" 
+      }
+  }
+}
+</pre>
+</blockquote>
+
+View の登録<br />
+<blockquote>
+curl -X PUT http://localhost:5984/quotes/_design/ex06 -d@ex06.json<br />
+</blockquote>
+View の実行<br />
+<blockquote>
+curl -X GET http://localhost:5984/albums/_design/ex06/_view/ex06<p />
+key で検索<br />
+curl -X GET http://localhost:5984/albums/_design/ex06/_view/ex06?key=\"Chopin\"<p />
+</blockquote>
 <div id="result_aa">result_aa</div>
 <hr />
 <div id="outarea_aa">outarea_aa</div>
@@ -125,7 +163,7 @@ $ curl --noproxy localhost http://localhost:5984
 <div id="outarea_gg">outarea_gg</div>
 <div id="outarea_hh">outarea_hh</div>
 <hr />
-<a href="/data_base/data_base.html">Return</a><p />
-Jan/29/2014 AM 08:15<p />
+<a href="/data_base/">Return</a><p />
+Jul/16/2014 AM 08:15<p />
 </body>
 </html>

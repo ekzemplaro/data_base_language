@@ -1,0 +1,9 @@
+#
+#
+SHARE=/usr/share/java
+JDBC=$SHARE/java.jdbc.jar
+#
+export CLASSPATH=.:$JDBC:$SHARE/clojure.jar:$SHARE/mysql-connector-java.jar
+#
+#
+java clojure.main maria_update.clj  t3326 72356900

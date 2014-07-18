@@ -1,0 +1,1 @@
+nodejs ./json_delete.js /var/tmp/json/cities.json t0925

@@ -1,5 +1,9 @@
-export JAR=/var/www/data_base/common/jar
-export CLOJURE_CONTRIB=/usr/share/java/clojure-contrib.jar
-export CLASSPATH=.:/usr/share/java/clojure.jar:$CLOJURE_CONTRIB:$JAR/sqlite-jdbc-3.7.2.jar
+SHARE=/usr/share/java
+JDBC=$SHARE/java.jdbc.jar
+#
+COMMON=/var/www/data_base/common
+JAR=$COMMON/jar
+#
+export CLASSPATH=.:$JDBC:$SHARE/clojure.jar:$JAR/sqlite-jdbc-3.7.2.jar
 #
 java clojure.main sqlite3_delete.clj  /var/tmp/sqlite3/cities.db t0713

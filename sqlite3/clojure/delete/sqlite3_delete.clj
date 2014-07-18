@@ -2,11 +2,11 @@
 ;
 ;	sqlite3_delete.clj
 ;
-;					Aug/06/2010
+;					Jul/17/2014
 ;
 ; -----------------------------------------------------------------
-(use 'clojure.contrib.sql)
-(use '[clojure.contrib.str-utils :only (str-join)])
+(use 'clojure.java.jdbc)
+;
 (println "*** 開始 ***")
 
 (let [db-host ""

@@ -1,5 +1,11 @@
-export CLOJURE_CONTRIB=/usr/share/java/clojure-contrib.jar
-export MSSQL_JAR=/home/uchida/data_base/ms_sqlserver/jdbc/sqljdbc_2.0/jpn/sqljdbc4.jar
-export CLASSPATH=.:/usr/share/java/clojure.jar:$CLOJURE_CONTRIB:$MSSQL_JAR
+SHARE=/usr/share/java
+JDBC=$SHARE/java.jdbc.jar
+#
+COMMON=/var/www/data_base/common
+JAR=$COMMON/jar
+#
+export MSSQL_JAR=$JAR/mssql/sqljdbc4.jar
+#
+export CLASSPATH=.:$JDBC:$SHARE/clojure.jar:$MSSQL_JAR
 #
 java clojure.main mssql_update.clj t1075 85927100 

@@ -1,0 +1,4 @@
+#
+export NODE_PATH=/home/uchida/node_modules
+#
+node ./xml_read.js /var/tmp/xml_file/cities.xml

@@ -2,33 +2,36 @@
 </head>
 <body>
 <h1>HSQLDB</h1>
-<ol>
-</ol>
 <pre>
+ii  hsqldb-utils        2.2.9+dfsg-4ubuntu1    all     Java SQL database engine (utilities)
+ii  libhsqldb-java      2.2.9+dfsg-4ubuntu1    all     Java SQL database engine
+</pre>
 
-
+<pre>
 java -cp /usr/share/java/hsqldb.jar org.hsqldb.util.DatabaseManagerSwing
 </pre>
-<ol>
+
+<blockquote>
 CREATE TABLE FIRSTTABLE (ID INT PRIMARY KEY,NAME VARCHAR(12));<p />
 INSERT INTO FIRSTTABLE VALUES (10,'TEN');<br />
 INSERT INTO FIRSTTABLE VALUES (20,'TWENTY');<br />
 INSERT INTO FIRSTTABLE VALUES (30,'THIRTY');<br />
 SELECT * FROM FIRSTTABLE;<p />
-</ol>
-<ol>
+</blockquote>
+
+<blockquote>
 drop table FIRSTTABLE;<p />
-</ol>
+</blockquote>
 
 Python<p />
-<pre>
+<blockquote>
+</blockquote>
 
 	
 
-</pre>
 
 Java<p />
-<ol>
+<blockquote>
 hsqldb-utils<p />
 libhsqldb-java<p />
-</ol>
+</blockquote>

@@ -3,10 +3,10 @@
 #
 #	mysql_delete.rb
 #
-#				Jul/09/2011
+#				Jul/16/2014
+# ------------------------------------------------------------
 #
 include Java
-import org.gjt.mm.mysql.Driver
 import java.sql.DriverManager
 import java.lang.System
 #

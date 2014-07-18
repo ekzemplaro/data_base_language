@@ -7,8 +7,8 @@
 <h2><a href="http://clojure.org">Clojure</a></h2><p />
 <blockquote>
 <pre>
-ii  clojure1.4    1.4.0+dfsg-2ubuntu2    all    Lisp dialect for the JVM
-ii  leiningen     1.7.1-2                all    simple build system for Clojure
+ii  clojure1.4             1.4.0+dfsg-3    all       Lisp dialect for the JVM
+ii  libjava-jdbc-clojure   0.2.2-1         all       Clojure interface to sql databases via jdbc
 </pre>
 </blockquote>
 

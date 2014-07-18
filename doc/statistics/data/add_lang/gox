@@ -1,2 +1,2 @@
 #
-./add_lang.js sheet_bb.json racket sheet_cc.json
+./add_lang.js sheet_bb.json typescript sheet_cc.json
