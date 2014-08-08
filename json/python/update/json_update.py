@@ -1,15 +1,12 @@
-#! /usr/bin/python  
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	json_update.py
 #
-#				Feb/14/2011
+#				Jul/25/2014
 #
 # -------------------------------------------------------------------
-#
 import	sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
 import	datetime
 import	json
 import	string
@@ -23,17 +20,17 @@ from text_manipulate import dict_update_proc
 print ("*** 開始 ***")
 #
 file_json = sys.argv[1]
-id_in = sys.argv[2]
-population_in = string.atoi (sys.argv[3])
+key_in = sys.argv[2]
+population_in = int (sys.argv[3])
 #
 print (file_json)
-print ("%s\t%d" % (id_in, population_in))
+print ("%s\t%d" % (key_in, population_in))
 #
 json_str = file_to_str_proc (file_json)
 #
 dict_aa = json.loads (json_str)
 #
-dict_bb = dict_update_proc (dict_aa,id_in,population_in)
+dict_bb = dict_update_proc (dict_aa,key_in,population_in)
 #
 dict_display_proc (dict_bb)
 out_str = json.dumps (dict_bb)

@@ -1,13 +1,14 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 #
 #	json_python_update.py
 #
-#					Jun/10/2011
+#					Jul/25/2014
 #
 import	math
 import	cgi
 import	string
 import	sys
+import	os
 #
 import	json
 #
@@ -25,22 +26,23 @@ json_str = file_to_str_proc (file_json)
 #
 dict_aa = json.loads (json_str)
 #
-print "Content-type: text/html\n\n"
+print ("Content-type: text/html\n\n")
 #
 # ---------------------------------------------------------------
 array_bb = parse_parameter ()
 #
 for it in range (len(array_bb)):
 	id_in = array_bb[it]['id']
-	population_in = string.atoi (array_bb[it]['population'])
-	print "id_in = %s<br />" % id_in
-	print "population_in = %d<br />" % population_in
+	population_in = int (array_bb[it]['population'])
+	print ("id_in = %s<br />" % id_in)
+	print ("population_in = %d<br />" % population_in)
 	dict_update_proc (dict_aa,id_in,population_in)
 #
 out_str = json.dumps (dict_aa)
 file_write_proc (file_json,out_str)
 #
-print "check vvvvvvv<br />"
+os.chmod (file_json,0o666)
 #
-print "OK"
+print ("OK<br />")
 #
+# ---------------------------------------------------------------

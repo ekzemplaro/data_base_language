@@ -1,8 +1,8 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	xml_python_read.py
-#						May/13/2011
+#						Aug/05/2014
 #
 # ------------------------------------------------------------------
 import	sys
@@ -21,6 +21,7 @@ xml_str=file_to_str_proc (xml_file)
 dict_aa=xml_to_dict_proc (xml_str)
 str_aa = json.dumps (dict_aa)
 #
-print "Content-type: text/json\n\n"
-print	str_aa.encode('utf_8')
+print ("Content-type: text/json\n\n")
+print (str_aa)
 #
+# ------------------------------------------------------------------

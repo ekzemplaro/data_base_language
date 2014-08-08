@@ -66,6 +66,13 @@ uchida@nlf132:~$ sudo service mysql start
 </blockquote>
 
 
+PHP (Archlinux)<p />
+<blockquote>
+	/etc/php/php.ini<p />
+	# Uncomment "extension=pdo_mysql.so" and "extension=mysqli.so".<p />
+	# systemctl restart mysqld<p />
+</blockquote>
+
 
 Python<p />
 <blockquote>

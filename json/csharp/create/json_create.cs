@@ -24,17 +24,15 @@ static	void	Main (string [] args)
 
 	string file_out = args[0];
 
-	Console.WriteLine ("\tfile_out = " + file_out + "\n");
+	Console.WriteLine ("file_out = " + file_out + "\n");
 
 	Dictionary <string,Object> dict_aa = data_prepare_proc ();
-
-	text_manipulate.dict_display_proc (dict_aa);
 
 	string str_json = JsonConvert.SerializeObject (dict_aa);
 
 	file_io.file_write_proc (file_out,str_json);
 
-	Console.WriteLine ("\n*** 終了 ***");
+	Console.WriteLine ("*** 終了 ***");
 }
 
 // --------------------------------------------------------------------
@@ -45,8 +43,8 @@ static Dictionary <string,Object> data_prepare_proc ()
 
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0921","宇都宮",31569,"2009-6-7");
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0922","小山",17982,"2009-5-19");
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0923","佐野",46319,"2009-3-28");
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0924","足利",65197,"2009-12-21");
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0923","佐野",46819,"2009-3-28");
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0924","足利",65297,"2009-12-21");
 
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0925","日光",14926,"2009-11-25");
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0926","下野",28145,"2009-1-26");

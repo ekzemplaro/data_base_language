@@ -1,7 +1,7 @@
 // ------------------------------------------------------------
 //	csv_read.boo
 //
-//						Apr/22/2011
+//					Jul/30/2014
 //
 // ------------------------------------------------------------
 import System
@@ -12,11 +12,11 @@ file_in = argv[0]
 
 print file_in
 
-dict_aa = csv_read_proc (file_in)
+dict_aa = text_manipulate.csv_read_proc (file_in)
 
 print dict_aa.Count
 
-dict_display_proc (dict_aa)
+text_manipulate.dict_display_proc (dict_aa)
 
 print '*** 終了 ***'
 // ------------------------------------------------------------

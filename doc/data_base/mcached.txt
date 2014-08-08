@@ -97,9 +97,9 @@ ii  php5-memcache       3.0.6-1       memcache extension module for PHP5
 
 Python<p />
 <blockquote>
-<pre>
-ii  python-memcache      1.48-1    all      pure python memcached client
-</pre>
+$ tar xvfz python3-memcached-1.51.tar.gz<br />
+$ cd python3-memcached-1.51<br />
+# python3 setup.py install<br />
 </blockquote>
 
 Perl<p />

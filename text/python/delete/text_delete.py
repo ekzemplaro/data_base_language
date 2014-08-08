@@ -1,9 +1,9 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	delete/text_delete.py
 #
-#					Oct/26/2011
+#					Jul/25/2014
 import	sys
 #
 # ---------------------------------------------------------------

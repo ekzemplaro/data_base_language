@@ -1,9 +1,8 @@
-#! /usr/bin/python
 # -*- coding: utf-8 -*-
 #
 #	python_common/sql_manipulate.py
 #
-#				May/30/2012
+#				Jul/29/2014
 #
 # --------------------------------------------------------
 import	string
@@ -36,32 +35,39 @@ def	sql_display_proc	(cursor):
 	cursor.execute (sql_str)
 	rows = cursor.fetchall ()
 	for row in rows:
-#		print row[0],to_utf8_proc (row[1]),row[2],row[3]
-		print row[0],row[1],row[2],row[3]
+		print (row[0],row[1],row[2],row[3])
 	print ("*** display end ***")
 #
 # --------------------------------------------------------
 def	sql_update_proc	(cursor_aa,id_in,ipop_in):
 	print ("*** sql_update_proc ***")
-	date_mod = strftime ("%Y-%m-%d",localtime ())
 #
+	sql_str = sql_update_string_gen_proc      (id_in,ipop_in)
+	print ("aaaa***")
+	cursor_aa.execute (sql_str)
+	print ("bbbbbb***")
+# --------------------------------------------------------
+def	sql_update_string_gen_proc	(id_in,ipop_in):
+	date_mod = strftime ("%Y-%m-%d",localtime ())
 	ft_aa=u"update cities set POPULATION = %d, " % ipop_in
 	ft_bb=u"DATE_MOD='%s' " % date_mod
 	ft_cc=u"where ID = '%s'" % id_in
 	sql_str=ft_aa + ft_bb + ft_cc
 	print (sql_str)
-	print ("aaaa***")
-	cursor_aa.execute (sql_str)
-	print ("bbbbbb***")
 #
+	return	sql_str
 # --------------------------------------------------------
-def	sql_delete_proc	(cursor_aa,id_in):
+def	sql_delete_proc	(cursor_aa,key_in):
 	print ("*** sql_delete_proc ***")
 #
-	sql_str=u"delete from cities where ID = '%s'" % id_in
-	print (sql_str)
+	sql_str = sql_delete_string_gen_proc (key_in)
 	cursor_aa.execute (sql_str)
+# --------------------------------------------------------
+def	sql_delete_string_gen_proc	(key_in):
+	sql_str=u"delete from cities where ID = '%s'" % key_in
+	print (sql_str)
 #
+	return	sql_str
 # --------------------------------------------------------
 def	table_insert_proc	(cursor,dict_aa):
 	for key in dict_aa:

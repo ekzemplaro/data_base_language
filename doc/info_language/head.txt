@@ -2,7 +2,7 @@
 <script src="show_lang_button.js"></script>
 <script src="../by_language/target_define.js"></script>
 <link href="info_language.css" rel="stylesheet" />
-<title>Information about Language (Nov/11/2013)</title>
+<title>Information about Language (Jul/21/2014)</title>
 </head>
 <body>
 

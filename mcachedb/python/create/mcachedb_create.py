@@ -1,9 +1,9 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	create/mcachedb_create.py
 #
-#					Jun/08/2011
+#					Jul/29/2014
 #
 import memcache
 #

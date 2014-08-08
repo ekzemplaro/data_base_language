@@ -1,15 +1,15 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	gdbm_create.py
 #
-#					Jan/28/2013
+#					Jul/30/2014
 # -------------------------------------------------------------
 import	os
 import	sys
 import	string
 import	json
-import anydbm
+import	dbm
 #
 sys.path.append ('/var/www/data_base/common/python_common')
 #
@@ -19,16 +19,16 @@ from text_manipulate import dict_append_proc
 def	data_prepare_proc ():
 	dict_aa = {} 
 #
-	dict_aa = dict_append_proc (dict_aa,'t2151',u'岐阜',72368,'2003-5-21')
-	dict_aa = dict_append_proc (dict_aa,'t2152',u'大垣',25769,'2003-8-12')
-	dict_aa = dict_append_proc (dict_aa,'t2153',u'多治見',21658,'2003-6-14')
-	dict_aa = dict_append_proc (dict_aa,'t2154',u'各務原',83674,'2003-3-9')
-	dict_aa = dict_append_proc (dict_aa,'t2155',u'土岐',42391,'2003-8-4')
-	dict_aa = dict_append_proc (dict_aa,'t2156',u'高山',35187,'2003-1-21')
-	dict_aa = dict_append_proc (dict_aa,'t2157',u'美濃加茂',81246,'2003-7-23')
-	dict_aa = dict_append_proc (dict_aa,'t2158',u'恵那',24783,'2003-10-26')
-	dict_aa = dict_append_proc (dict_aa,'t2159',u'関',75829,'2003-12-15')
-	dict_aa = dict_append_proc (dict_aa,'t2160',u'中津川',27451,'2003-2-8')
+	dict_aa = dict_append_proc (dict_aa,'t2151','岐阜',72361,'2003-12-21')
+	dict_aa = dict_append_proc (dict_aa,'t2152','大垣',25764,'2003-9-12')
+	dict_aa = dict_append_proc (dict_aa,'t2153','多治見',21659,'2003-6-14')
+	dict_aa = dict_append_proc (dict_aa,'t2154','各務原',83672,'2003-3-9')
+	dict_aa = dict_append_proc (dict_aa,'t2155','土岐',42395,'2003-8-4')
+	dict_aa = dict_append_proc (dict_aa,'t2156','高山',35187,'2003-1-21')
+	dict_aa = dict_append_proc (dict_aa,'t2157','美濃加茂',81246,'2003-7-23')
+	dict_aa = dict_append_proc (dict_aa,'t2158','恵那',24783,'2003-10-26')
+	dict_aa = dict_append_proc (dict_aa,'t2159','関',75829,'2003-12-15')
+	dict_aa = dict_append_proc (dict_aa,'t2160','中津川',27451,'2003-2-8')
 #
 	return	dict_aa
 #
@@ -41,14 +41,14 @@ db_name = "/var/tmp/gdbm/cities.pag";
 if os.path.exists (db_name):
 	os.remove (db_name)
 #
-dd = anydbm.open (db_name,"c")
+dd = dbm.open (db_name,"c")
 #
 dict_to_dbm_proc (dd,dict_aa)
 #
 dbm_disp_proc (dd)
 #
 dd.close ()
-os.chmod (db_name,0777)
+os.chmod (db_name,0o666)
 #
 print ("*** 終了 ***")
 # -------------------------------------------------------------

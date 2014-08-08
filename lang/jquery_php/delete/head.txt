@@ -1,6 +1,6 @@
 <script src="/data_base/js/table_delete.js"></script>
 <script src="jquery_php_delete.js"></script>
-<title>jQuery PHP Delete Dec/12/2013</title>
+<title>jQuery PHP Delete Aug/01/2014</title>
 </head>
 <center><h2>PHP Delete</h2></center>
 <div class="right">

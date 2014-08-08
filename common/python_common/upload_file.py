@@ -2,27 +2,27 @@
 #
 #	upload_file.py
 #
-#					Jul/16/2014
+#					Aug/07/2014
 #
 # --------------------------------------------------------------------
 import	cgi
-import	cgitb; cgitb.enable()
+import	cgitb
+#; cgitb.enable()
 import	os
 import	sys
 import	json
 # --------------------------------------------------------------------
 def single_upload_file_proc (upload_dir,item):
 	message = []
-	filename = item.filename
-	message.append (filename)
-	path = os.path.join (upload_dir,os.path.basename(filename))
-	chunk = item.file.read (100000)
+	file_in = item.filename
+	message.append (file_in)
+	path = os.path.join (upload_dir,os.path.basename (file_in))
+	chunk = item.file.read ()
 	if chunk:
-		fout = file (path, 'wb')
+		fout = open (path, 'wb')
 		fout.write (chunk)
-#		print filename + "<br />"
 		fout.close()
-		os.chmod (path, 0666)
+		os.chmod (path, 0o666)
 	return message
 # --------------------------------------------------------------------
 def multi_uploaded_file (upload_dir,fileitem):

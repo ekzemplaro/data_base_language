@@ -1,5 +1,5 @@
-<title>jQuery ruby_create Jan/14/2011</title>
+<title>jQuery ruby_create Aug/01/2014</title>
 </head>
 <body>
 <h2>jQuery ruby_create</h2>
-<ol>
+<blockquote>

@@ -1,13 +1,11 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	webdav_read.py
 #
-#					Mar/18/2013
+#					Aug/01/2014
 #
 import sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
 import pycurl
 import json
 #
@@ -23,7 +21,7 @@ url_json = 'http://host_dbase:3004/city/tokyo.json'
 str_json = curl_get_proc (url_json)
 
 
-dict_aa = json.loads (str_json)
+dict_aa = json.loads (str (str_json,'UTF-8'))
 dict_display_proc (dict_aa)
 #
 print ("*** 終了 ***")

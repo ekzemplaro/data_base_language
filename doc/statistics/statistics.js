@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------
 //	statistics.js
 //
-//					Apr/21/2014
+//					Jul/31/2014
 // -----------------------------------------------------------------------
 jQuery (function ()
 {
@@ -25,8 +25,12 @@ function mark_convert_proc (str_in)
 
 	switch (str_in)
 		{
+ 		case "9":
+			str_out = "☆";
+			break;
+
  		case "8":
-			str_out = "◎";
+			str_out = "T";
 			break;
 
  		case "7":

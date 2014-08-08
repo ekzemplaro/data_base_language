@@ -11,6 +11,7 @@ using System.Collections.Generic;
 
 using Memcached.ClientLibrary;
 
+using Newtonsoft.Json;
 // ----------------------------------------------------------------
 public class mcached_csharp_read : System.Web.UI.Page {
 
@@ -26,8 +27,16 @@ void Page_Load(Object sender, EventArgs e)
 
 	MemcachedClient mc = new MemcachedClient();
 
+	List <String> keys = new List <String> ()
+		{"t1731","t1732","t1733","t1734","t1735",
+		"t1736","t1737","t1738","t1739"};
 
-	string json_str = mcache_manipulate.get_json_proc (mc,1731,1739);
+	Dictionary <String,Object>  dict_aa
+		= mcache_manipulate.mcache_to_dict_proc (mc,keys);
+
+	string json_str = JsonConvert.SerializeObject (dict_aa);
+
+//	string json_str = mcache_manipulate.get_json_proc (mc,1731,1739);
 
 	pool.Shutdown();
 

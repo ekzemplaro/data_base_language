@@ -1,4 +1,4 @@
 <hr />
 <button id="create">初期化</button><br />
 <hr />
-<a href="html_src/jquery_python_create_src.html">jquery_python_create_src.html</a><p />
+<a href="html_src/">src</a><p />

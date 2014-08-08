@@ -1,7 +1,7 @@
 // ------------------------------------------------------------------
 //	read/couch_read.cs
 //
-//					Oct/03/2011
+//					Jul/24/2014
 //
 // ------------------------------------------------------------------
 using System;
@@ -20,18 +20,31 @@ static void Main (string[] args)
 {
 	Console.WriteLine ("*** 開始 ***");
 
-	string url = "http://host_dbase:5984/city/cities";
+	string url = "http://localhost:5984/nagano";
 
 	string user = "";
 	string password = "";
 
-	string str_json = get_uri.get_uri_proc (url,user,password);
-//	Console.WriteLine (str_json);
+	string url_all_docs = url + "/_all_docs";
 
-	Dictionary <string,Object> dict_aa
-		 = json_manipulate.json_to_dict_proc (str_json);
+	string str_json = get_uri.get_uri_proc (url_all_docs,user,password);
 
-	text_manipulate.dict_display_proc (dict_aa);
+	Dictionary<String,Object> all_docs
+		= JsonConvert.DeserializeObject <Dictionary<String,Object>> (str_json);
+
+	String bbb_json = all_docs["rows"].ToString ();
+	List <Dictionary<String,Object>> bbb_pp
+	= JsonConvert.DeserializeObject <List <Dictionary<String,Object>>>
+		 (bbb_json);
+
+	for (int it=0; it< bbb_pp.Count; it++)
+		{
+		string key = bbb_pp[it]["key"].ToString ();
+		string url_target = url + "/" + key;
+		string str_unit = get_uri.get_uri_proc
+				(url_target,user,password);
+		kvalue_manipulate.out_record_proc (key,str_unit);
+		}
 
 	Console.WriteLine ("*** 終了 ***");
 }

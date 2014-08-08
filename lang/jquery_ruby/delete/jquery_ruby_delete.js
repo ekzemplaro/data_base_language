@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------
 //	update/jquery_ruby_delete.js
 //
-//					Nov/13/2012
+//					Jul/23/2014
 //
 // -----------------------------------------------------------------------
 jQuery (function ()
@@ -23,9 +23,8 @@ jQuery (function ()
 
 	if (dbase !== "delete")
 		{
-		ruby_dir="/cgi-bin/data_base/ruby/"
-		url_read = ruby_dir + dbase + "_ruby_read.rb";
-		url_delete = ruby_dir + dbase + "_ruby_delete.rb";
+		url_read = "../read/" + dbase + "_ruby_read.rb";
+		url_delete = dbase + "_ruby_delete.rb";
 
 		jQuery("#outarea_dd").text ("url_read = " + url_read);
 		jQuery("#outarea_ee").text ("url_delete = " + url_delete);

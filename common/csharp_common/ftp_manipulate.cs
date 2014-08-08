@@ -1,7 +1,7 @@
 // ------------------------------------------------------------------
 //	ftp_manipulate.cs
 //
-//					Oct/17/2011
+//					Jul/30/2014
 //
 // ------------------------------------------------------------------
 using	System;
@@ -15,8 +15,6 @@ public class ftp_manipulate
 // ------------------------------------------------------------------
 public static string ftp_to_str_proc (string url_in,string user,string passwd)
 {
-//	string url_in = "ftp://cdbd026/city/iwate.json";
-
 	FtpWebRequest request = (FtpWebRequest)WebRequest.Create (url_in);
 	request.Method = WebRequestMethods.Ftp.DownloadFile;
 

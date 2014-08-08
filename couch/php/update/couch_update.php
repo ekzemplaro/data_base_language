@@ -30,6 +30,7 @@ $unit_aa = json_decode ($json_string,true);
 print $unit_aa['name'] . "\n";
 
 $unit_aa['population'] = $population_in;
+date_default_timezone_set('Asia/Tokyo');
 $today = date ("Y-m-d");
 $unit_aa['date_mod'] = $today;
 $js_out = json_encode ($unit_aa);

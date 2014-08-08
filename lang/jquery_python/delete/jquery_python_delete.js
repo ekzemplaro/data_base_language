@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------
 //	jquery_python_delete.js
 //
-//					Nov/13/2012
+//					Aug/07/2014
 //
 // -----------------------------------------------------------------------
 jQuery (function ()
@@ -23,9 +23,8 @@ jQuery (function ()
 
 	if (dbase !== "delete")
 		{
-		python_dir="/cgi-bin/data_base/python/"
-		url_read = python_dir + dbase + "_python_read.py";
-		url_delete = python_dir + dbase + "_python_delete.py";
+		url_read = "../read/" + dbase + "_python_read.py";
+		url_delete = dbase + "_python_delete.py";
 
 		jQuery("#outarea_dd").text ("url_read = " + url_read);
 		jQuery("#outarea_ee").text ("url_delete = " + url_delete);

@@ -1,38 +1,39 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	jquery_upload.py
 #
-#					Jul/16/2014
+#					Aug/06/2014
 #
 # --------------------------------------------------------------------
-import	cgi
-import	cgitb; cgitb.enable()
 import	os
 import	sys
 import	json
+import	cgi
 # --------------------------------------------------------------------
 from upload_file import upload_file_proc
 # --------------------------------------------------------------------
 upload_dir = "./data_work"
 #
-print "Content-Type: application/json"
-print
+print ("Content-Type: application/json")
+print ("")
 #
 message = []
 message.append ("*** start *** aaa ***")
 message.append (upload_dir)
 form = cgi.FieldStorage()
 #
-if form.has_key("file"):
-	fileitem = form["file"]
-	message_aa = upload_file_proc (upload_dir,fileitem)
+if "file" in form:
+	item = form["file"]
+	message_aa = upload_file_proc (upload_dir,item)
 	message.extend (message_aa)
 else:
 	message.append ("*** Select files ***")
 #
 message.append ("*** end ***")
-out_str = json.dumps (message)
+rvalue = {}
+rvalue["message"] = message
+out_str = json.dumps (rvalue)
 #
-print out_str
+print (out_str)
 # --------------------------------------------------------------------

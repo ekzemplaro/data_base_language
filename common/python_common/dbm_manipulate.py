@@ -1,39 +1,34 @@
-#! /usr/bin/python
 # -*- coding: utf-8 -*-
 #
 #	python_common/dbm_manipulate.py
 #
-#					Jun/27/2012
+#					Jul/30/2014
 import	sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
 import	json
 import	string
 #
 from text_manipulate import hash_update_proc
 # -------------------------------------------------------------
 def dbm_disp_proc	(dd):
-	for id in dd.keys ():
-		json_str = dd[id]
-		array_bb = json.loads (json_str)
-		name = array_bb['name'].encode ('utf-8')
-		print id,name,array_bb['population'],array_bb['date_mod']
+	for key in dd.keys ():
+#		json_str = str (dd[key])
+		json_str = dd[key].decode('utf-8')
+#		print (json_str)
+		unit_aa = json.loads (json_str)
+		name = unit_aa['name']
+		print (key.decode('utf-8'),name,unit_aa['population'],unit_aa['date_mod'])
 # -------------------------------------------------------------
 def dbm_update_proc	(dd,key_in,population):
-	print "dbm_update_proc *** aaaa<br />"
-	print key_in,population
-	print "dbm_update_proc *** bbbb<br />"
-	json_str = dd[key_in]
-	print "dbm_update_proc *** ffff<br />"
-	array_bb = json.loads (json_str)
-	print "dbm_update_proc *** kkkk<br />"
+	print ("dbm_update_proc *** aaaa ***")
+	json_str = dd[bytes(key_in,'utf-8')]
+	array_bb = json.loads (json_str.decode('utf-8'))
 	hash_update_proc (array_bb,population)
 	json_new = json.dumps (array_bb)
-	dd[key_in] = json_new
+	dd[bytes(key_in,'utf-8')] = json_new
 # -------------------------------------------------------------
-def dbm_delete_proc	(dd,id):
-	key_id = str (id) 
-	del dd[key_id]
+def dbm_delete_proc	(dd,key):
+	if bytes(key,'utf-8') in dd.keys ():
+		del dd[bytes(key,'utf-8')]
 #
 # -------------------------------------------------------------
 def dbm_to_dict_proc (dd):

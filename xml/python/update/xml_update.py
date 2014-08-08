@@ -1,15 +1,13 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	python/update/xml_update.py
 #
-#						May/13/2011
+#						Jul/25/2014
 #
 import xml.dom.minidom
 import	sys
 import	string
-reload(sys)
-sys.setdefaultencoding('utf-8')
 sys.path.append ('/var/www/data_base/common/python_common')
 #
 from file_io import file_to_str_proc
@@ -22,17 +20,17 @@ from xml_manipulate import dict_to_xml_proc
 print ("*** 開始 ***")
 #
 xml_file = sys.argv[1]
-id_in = sys.argv[2]
-population_in = string.atoi (sys.argv[3])
-print ("%s\t%d" % (id_in, population_in))
+key_in = sys.argv[2]
+population_in = int (sys.argv[3])
+print ("%s\t%d" % (key_in, population_in))
 #
 xml_str=file_to_str_proc (xml_file)
 dict_aa = xml_to_dict_proc (xml_str)
 #
-dict_update_proc (dict_aa,id_in,population_in)
+dict_update_proc (dict_aa,key_in,population_in)
 #
 out_str = dict_to_xml_proc (dict_aa)
-file_write_proc (xml_file,out_str.encode('utf-8'))
+file_write_proc (xml_file,out_str)
 #
 print ("*** 終了 ***")
 # --------------------------------------------------------------------

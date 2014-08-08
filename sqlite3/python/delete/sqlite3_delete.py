@@ -1,9 +1,9 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	update/sqlite_delete.py
 #
-#					Oct/27/2011
+#					Jul/29/2014
 #
 # --------------------------------------------------------
 import	sys

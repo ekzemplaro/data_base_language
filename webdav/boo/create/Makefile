@@ -4,6 +4,6 @@ webdav_create.exe: webdav_create.boo
 	booc webdav_create.boo \
 		$(BOO_COMMON)/text_manipulate.boo \
 		-r:$(CSHARP_COMMON)/table_manipulate.dll \
-			-r:Newtonsoft.Json.Net20.dll
+			-r:Newtonsoft.Json.dll
 clean:
 	rm -f *.exe *.mdb

@@ -2,7 +2,7 @@
 #
 #	couch_perl_update.pl
 #
-#						Feb/25/2013
+#						Jul/23/2014
 # ---------------------------------------------------------------------
 use	strict;
 use	warnings;
@@ -16,12 +16,7 @@ use text_manipulate;
 use uri_get;
 #
 # ---------------------------------------------------------------------
-#my $uri = 'http://host_dbase:5984/city/cities';
-my $uri = 'http://cddn007:5984/city/cities';
-#
-my $str_json = uri_get::uri_get_proc ($uri);
-#
-my %dict_aa = %{decode_json ($str_json)};
+my $url = 'http://localhost:5984/nagano';
 #
 print "Content-type: text/html\n\n";
 #
@@ -34,14 +29,28 @@ foreach (@{$arry_bb[0]})
 	{
 	my $id = $arry_bb[0][$it]->{id};
 	my $population = $arry_bb[0][$it]->{population};
-	print "$id $population<br />";
-	text_manipulate::dict_update_proc ($id,$population,%dict_aa);
+#	print "$id $population<br />";
+#
+	my $url_target = $url . "/" . $id;
+	my $str_json = uri_get::uri_get_proc ($url_target);
+#	print $url_target;
+#	print $str_json;
+#
+	my $data = decode_json ($str_json);
+	$data->{population} = $population;
+	my $date_mod = text_manipulate::get_date_mod_proc ();
+	$data->{date_mod} = $date_mod;
+#
+	my $json_str_new = encode_json ($data);
+#
+#	print $json_str_new;
+#	print $url_target;
+#
+	uri_get::uri_put_proc ($url_target,$json_str_new);
+#
 	$it++;
 	}
 #
-my $json_str_new = encode_json (\%dict_aa);
-#
-uri_get::uri_put_proc ($uri,$json_str_new);
 #
 print "*** couch_perl_update.pl *** end ***<br />";
 #

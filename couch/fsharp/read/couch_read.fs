@@ -2,7 +2,7 @@
 //
 //	couch_read.fs
 //
-//					Mar/13/2013
+//					Jul/30/2014
 //
 // -------------------------------------------------------------------
 open System
@@ -30,7 +30,8 @@ let main (args : string[] ) =
 
   let dict_bb = JsonConvert.DeserializeObject<Dictionary<string,Object>>(str_json)
 
-//  printfn "%s" dict_bb["_id"]
+//  printfn "%s" dict_bb.["_id"]
+//  printfn "%s" dict_bb.Get ("_id")
 //  printfn "%s" dict_bb.("_rev")
 
   let _ = dict_bb.Remove ("_id")

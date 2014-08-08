@@ -1,9 +1,9 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	ftp_python_read.py
 #
-#						May/09/2013
+#						Aug/04/2014
 #
 #
 # ---------------------------------------------------------------------
@@ -22,5 +22,5 @@ str_json = curl_get_proc (url_json)
 #
 #
 #
-print "Content-type: text/json\n\n"
-print	str_json
+print ("Content-type: text/json\n\n")
+print (str (str_json,'UTF-8'))

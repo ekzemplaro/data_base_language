@@ -1,35 +1,32 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	delete/postgre_delete.py
 #
-#				Oct/27/2011
+#				Jul/29/2014
 #
 # --------------------------------------------------------
 import sys
-import pgdb
+import postgresql
 #
 sys.path.append ('/var/www/data_base/common/python_common')
-from sql_manipulate import sql_display_proc,sql_delete_proc
+from sql_manipulate import sql_delete_string_gen_proc
 #
 # --------------------------------------------------------
 print ("*** 開始 ***")
-id_in = sys.argv[1]
-print ("%s" % id_in)
+key_in = sys.argv[1]
+print ("%s" % key_in)
 #
-hostname="localhost"
-conn = pgdb.connect (host=hostname,database="city", \
-			user="scott", password="tiger")
+db = postgresql.open("pq://scott:tiger@localhost/city")
 #
-cursor = conn.cursor ()
+sql_str = sql_delete_string_gen_proc (key_in)
 #
-sql_delete_proc	(cursor,id_in)
-conn.commit ()
+ps = db.prepare(sql_str)
+print (ps ())
 #
-sql_display_proc (cursor)
+ps.close ()
+db.close ()
 #
-cursor.close ()
-conn.close ()
 print ("*** 終了 ***")
 #
 # --------------------------------------------------------

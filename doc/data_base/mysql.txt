@@ -71,6 +71,7 @@ php5-mysql<p />
 Python<p />
 <blockquote>
 python-mysqldb<p />
+python3-mysql.connector<p />
 </blockquote>
 
 Ruby<p />

@@ -20,26 +20,26 @@ jquery_bash_read</a></td>
 <tr>
 <td>PHP</td>
 <td><a href="/data_base/common/php_common/html_src/php_common.html">php_common</a></td>
-<td><a href="/data_base/lang/jquery_php/create/html/jquery_php_create_src.html">
+<td><a href="/data_base/lang/jquery_php/create/html_src/">
 jquery_php_create</a></td>
-<td><a href="/data_base/lang/jquery_php/read/html/jquery_php_read_src.html">
+<td><a href="/data_base/lang/jquery_php/read/html_src/">
 jquery_php_read</a></td>
-<td><a href="/data_base/lang/jquery_php/update/html/jquery_php_update_src.html">
+<td><a href="/data_base/lang/jquery_php/update/html_src/">
 jquery_php_update</a></td>
-<td><a href="/data_base/lang/jquery_php/delete/html/jquery_php_delete_src.html">
+<td><a href="/data_base/lang/jquery_php/delete/html_src/">
 jquery_php_delete</a></td>
 </tr>
 
 <tr>
 <td>Python</td>
 <td><a href="/data_base/common/python_common/html_src/python_common.html">python_common</a></td>
-<td><a href="/data_base/lang/jquery_python/create/html/jquery_python_create_src.html">
+<td><a href="/data_base/lang/jquery_python/create/html_src/">
 jquery_python_create</a></td>
-<td><a href="/data_base/lang/jquery_python/read/html/jquery_python_read_src.html">
+<td><a href="/data_base/lang/jquery_python/read/html_src/">
 jquery_python_read</a></td>
-<td><a href="/data_base/lang/jquery_python/update/html/jquery_python_update_src.html">
+<td><a href="/data_base/lang/jquery_python/update/html_src/">
 jquery_python_update</a></td>
-<td><a href="/data_base/lang/jquery_python/delete/html/jquery_python_delete_src.html">
+<td><a href="/data_base/lang/jquery_python/delete/html_src/">
 jquery_python_delete</a></td>
 </tr>
 
@@ -66,13 +66,13 @@ jquery_perl_delete</a></td>
 <tr>
 <td>Ruby</td>
 <td><a href="/data_base/common/ruby_common/html_src/ruby_common.html">ruby_common</a></td>
-<td><a href="/data_base/lang/jquery_ruby/create/html/jquery_ruby_create_src.html">
+<td><a href="/data_base/lang/jquery_ruby/create/html_src/">
 jquery_ruby_create</a></td>
-<td><a href="/data_base/lang/jquery_ruby/read/html/jquery_ruby_read_src.html">
+<td><a href="/data_base/lang/jquery_ruby/read/html_src/">
 jquery_ruby_read</a></td>
-<td><a href="/data_base/lang/jquery_ruby/update/html/jquery_ruby_update_src.html">
+<td><a href="/data_base/lang/jquery_ruby/update/html_src/">
 jquery_ruby_update</a></td>
-<td><a href="/data_base/lang/jquery_ruby/delete/html/jquery_ruby_delete_src.html">
+<td><a href="/data_base/lang/jquery_ruby/delete/html_src/">
 jquery_ruby_delete</a></td>
 </tr>
 

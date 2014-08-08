@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------
 //	update/jquery_ruby_update.js
 //
-//					Nov/13/2012
+//					Jul/23/2014
 //
 // -----------------------------------------------------------------------
 jQuery (function ()
@@ -26,9 +26,8 @@ jQuery (function ()
 	if (dbase !== "update")
 		{
 		data_send = new Array ();
-		python_dir="/cgi-bin/data_base/ruby/"
-		url_json = python_dir + dbase + "_ruby_read.rb";
-		url_update = python_dir + dbase + "_ruby_update.rb";
+		url_json = "../read/" + dbase + "_ruby_read.rb";
+		url_update = dbase + "_ruby_update.rb";
 
 		jQuery("#outarea_dd").text ("url_json = " + url_json);
 		jQuery("#outarea_ee").text ("url_update = " + url_update);

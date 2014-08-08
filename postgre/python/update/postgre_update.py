@@ -1,38 +1,37 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	update/postgre_update.py
 #
-#				Oct/27/2011
+#				Jul/29/2014
 #
 # --------------------------------------------------------
 import sys
 import string
-import pgdb
+import postgresql
 #
 sys.path.append ('/var/www/data_base/common/python_common')
-from sql_manipulate import sql_display_proc,sql_update_proc
+from sql_manipulate import sql_update_string_gen_proc
 #
 # --------------------------------------------------------
 print ("*** 開始 ***")
-id_in = sys.argv[1]
-population_in = string.atoi (sys.argv[2])
-print ("%s\t%d" % (id_in, population_in))
+key_in = sys.argv[1]
+population_in = int (sys.argv[2])
+print ("%s\t%d" % (key_in, population_in))
 #
 #
-hostname="localhost"
-conn = pgdb.connect (host=hostname,database="city", \
-			user="scott", password="tiger")
+db = postgresql.open("pq://scott:tiger@localhost/city")
+ps = db.prepare("SELECT version()")
+print (ps ())
 #
-cursor = conn.cursor ()
+sql_str=sql_update_string_gen_proc (key_in,population_in)
 #
-sql_update_proc	(cursor,id_in,population_in)
-conn.commit ()
+ps = db.prepare(sql_str)
+print (ps ())
 #
-sql_display_proc (cursor)
+db.close ()
+ps.close ()
 #
-cursor.close ()
-conn.close ()
 print ("*** 終了 ***")
 #
 # --------------------------------------------------------

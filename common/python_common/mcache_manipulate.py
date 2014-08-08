@@ -2,7 +2,7 @@
 #
 #	mcache_manipulate.py
 #
-#					Aug/26/2013
+#					Jul/29/2014
 #
 # ------------------------------------------------------------
 import	sys
@@ -33,20 +33,18 @@ def	mcache_display_proc (mc,key):
 	str_key = str (key)
 	str_json = mc.get(str_key)
 	if (str_json != None):
-#		print str_json
 		array_aa = json.loads (str_json)
-		name = array_aa['name'].encode ('utf-8')
-		print key,name,array_aa['population'],array_aa['date_mod']
+		name = array_aa['name']
+		print (key,name,array_aa['population'],array_aa['date_mod'])
 # ------------------------------------------------------------
 def	mcache_to_dict_proc (mc,keys):
 	dict_aa = {}
 	for key in keys:
 		str_json = mc.get(key)
 		if (str_json != None):
-#			print "*** aaaa ***"
-#			print str_json
+#
 			array_aa = json.loads (str_json)
-			name = array_aa['name'].encode ('utf-8')
+			name = array_aa['name']
 			dict_append_proc (dict_aa,key,name, \
 				array_aa['population'],array_aa['date_mod'])
 #

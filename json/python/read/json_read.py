@@ -1,14 +1,12 @@
-#! /usr/bin/python  
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	json_read.py
 #
-#					Jun/29/2012
+#					Jul/25/2014
 #
 # ------------------------------------------------------------------
 import	sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
 import	json
 #
 sys.path.append ('/var/www/data_base/common/python_common')

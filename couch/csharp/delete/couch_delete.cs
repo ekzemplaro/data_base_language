@@ -1,12 +1,13 @@
 // ------------------------------------------------------------------
 //	couch_delete.cs
 //
-//					Apr/10/2013
+//					Jul/24/2014
 //
 // ------------------------------------------------------------------
 using System;
 using System.IO;
 using System.Text;
+// using System.Net;
 using System.Collections.Generic;
 
 using Newtonsoft.Json;
@@ -22,25 +23,36 @@ static void Main (string[] args)
 
 	Console.WriteLine (key_in);
 
-	string url = "http://host_dbase:5984/city/cities";
+	string url = "http://localhost:5984/nagano";
+	string url_target = url + "/" + key_in;
 
 	string user = "";
 	string password = "";
 
-	string str_json = get_uri.get_uri_proc (url,user,password);
-
-	Dictionary <string,Object> dict_aa
-		= JsonConvert.DeserializeObject
-			<Dictionary <string,Object>> (str_json);
-
-	Object idx = dict_aa["_id"];
-	Object revx = dict_aa["_rev"];
-
-	Console.WriteLine (idx);
-	Console.WriteLine (revx);
-
-	if (dict_aa.ContainsKey (key_in))
+	try
 		{
+	string str_json = get_uri.get_uri_proc (url_target,user,password);
+
+		string revx = rev_get_proc (str_json);
+
+		string url_delete = url_target + @"?rev=" + revx;
+		Console.WriteLine (url_delete);
+		try
+			{
+			get_uri.rest_delete_proc (url_delete,user,password);
+			}
+		catch (System.Net.WebException ee)
+			{
+			Console.WriteLine ("*** error ***");
+			Console.WriteLine (ee);
+			}
+		}
+	catch (System.Net.WebException ee)
+		{
+		Console.WriteLine ("*** error ***");
+		Console.WriteLine (ee);
+		}
+/*
 		dict_aa.Remove (key_in);
 
 		string str_json_out = JsonConvert.SerializeObject (dict_aa);
@@ -49,8 +61,23 @@ static void Main (string[] args)
 
 		get_uri.put_uri_string_proc (url,str_json_out,user,password);
 		}
-
+*/
 	Console.WriteLine ("*** 終了 ***");
+}
+
+// ------------------------------------------------------------------
+static string rev_get_proc (string str_json)
+{
+	Dictionary <string,Object> unit_aa
+		= JsonConvert.DeserializeObject
+			<Dictionary <string,Object>> (str_json);
+	String idx = unit_aa["_id"].ToString ();
+	String revx = unit_aa["_rev"].ToString ();
+
+	Console.WriteLine (idx);
+	Console.WriteLine (revx);
+
+	return	revx;
 }
 
 // ------------------------------------------------------------------

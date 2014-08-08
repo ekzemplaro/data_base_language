@@ -1,14 +1,12 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	delete/couch_delete.py
 #
-#					Jun/19/2014
+#					Aug/01/2014
 # ----------------------------------------------------------------
 import	os
 import sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
 import string
 import pycurl
 import json
@@ -28,9 +26,9 @@ url_key = url_json + '/' + key_in
 #
 str_buf_aa = curl_get_proc (url_key)
 #
-print "len (str_buf) = %d\n" % len (str_buf_aa)
+print ("len (str_buf) = %d\n" % len (str_buf_aa))
 #
-unit_aa = json.loads (str_buf_aa)
+unit_aa = json.loads (str (str_buf_aa,'UTF-8'))
 #
 if ('_rev' in unit_aa):
 	print (unit_aa['_rev'])

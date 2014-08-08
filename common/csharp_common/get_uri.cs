@@ -1,7 +1,7 @@
 // ------------------------------------------------------------------
 //	csharp_common/get_uri.cs
 //
-//					Dec/19/2013
+//					Jul/24/2014
 //
 // ------------------------------------------------------------------
 using System;
@@ -151,16 +151,15 @@ public static void rest_delete_proc (string url,string user,string password)
 	WRequest = (HttpWebRequest)HttpWebRequest.Create (url);
 	WRequest.Credentials = new NetworkCredential (user, password);
 	WRequest.PreAuthenticate = true;
-	WRequest.UserAgent = "Upload Test";
+
 	WRequest.Method = "DELETE";
-	WRequest.AllowWriteStreamBuffering = false;
+
 	WRequest.Timeout = 10000;
 	WRequest.Proxy = null;
 
 	WebResponse response = WRequest.GetResponse( );
 
 	response.Close();
-
 }
 
 // ------------------------------------------------------------------

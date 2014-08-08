@@ -2,34 +2,36 @@
 </head>
 <body>
 <h1>xml_file</h1>
-<ol>
-</ol>
-<ol>
-</ol>
+<blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
 
 Bash<p />
-<ol>
+<blockquote>
 xalan<p />
-</ol>
+</blockquote>
 
 
 Python<p />
-<ol>
-</ol>
+<blockquote>
+</blockquote>
 
 Perl<p />
-<ol>
+<blockquote>
 	libxml-dom-perl<p />
 	libxml-simple-perl<p />
-</ol>
+	# pacman -S perl-xml-libxml<p />
+	# pacman -S perl-xml-simple<p />
+</blockquote>
 
 Lua<p />
-<ol>
+<blockquote>
 	<a href="http://viremo.eludi.net/LuaXML/">LuaXML</a><p />
 	LuaXML_101012.zip<p />
 	gcc -shared LuaXML_lib.c -I/usr/include/lua5.1<br />
 	-o LuaXML_lib.so -fPIC<p />
-</ol>
+</blockquote>
 
 Tcl<p />
 <blockquote>
@@ -40,6 +42,12 @@ vala<p />
 <blockquote>
 libxml2-dev<br />
 </blockquote>
+
+node<p />
+<blockquote>
+npm install xml2js<br />
+</blockquote>
+
 
 Rhino<p />
 <ol>

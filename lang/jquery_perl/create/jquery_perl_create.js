@@ -1,14 +1,13 @@
 // -----------------------------------------------------------------------
 //	create/jquery_perl_create.js
 //
-//					Nov/13/2012
+//					Jul/23/2014
 //
 // -----------------------------------------------------------------------
 jQuery (function ()
 {
 	var url_read;
 	var url_create;
-	var base_cgi = "/cgi-bin/data_base/perl/";
 
 	jQuery("#outarea_aa").text ("*** start *** jquery_perl_create.js ***");
 
@@ -24,12 +23,12 @@ jQuery (function ()
 
 	if (dbase !== "create")
 		{
-		url_read = base_cgi + dbase + "_perl_read.pl";
-		url_create = base_cgi + dbase + "_perl_create.pl";
+		url_read = "../read/" + dbase + "_perl_read.pl";
+		url_create = dbase + "_perl_create.pl";
 
-	jQuery("#outarea_ee").text ("url_read = " + url_read);
+		jQuery("#outarea_ee").text ("url_read = " + url_read);
 
-	show_json (url_read);
+		show_json (url_read);
 		}
 	else
 		{
@@ -37,9 +36,7 @@ jQuery (function ()
 		jQuery("#outarea_ee").text ("eee = " + url_create);
 		initialize_proc (url_create,url_read);
 		}
-
 	});
-
 
 	jQuery("#outarea_hh").text ("*** end *** jquery_perl_create.js ***");
 });

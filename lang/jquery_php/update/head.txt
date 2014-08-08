@@ -1,6 +1,6 @@
 <script src="/data_base/js/table_manipulate.js"></script>
 <script src="jquery_php_update.js"></script>
-<title>jQuery PHP Update Dec/12/2013</title>
+<title>jQuery PHP Update Aug/01/2014</title>
 </head>
 <body>
 <center><h2>PHP Update</h2></center>

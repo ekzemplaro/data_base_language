@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>rsync Jul/04/2014</title>
+<title>rsync Jul/23/2014</title>
 </head>
 <body>
 <h2>rsync</h2><p />
@@ -20,8 +20,13 @@ ssh のポートが 2222 の時<p />
 rsync -avz --delete -e "ssh -p 2222"  uchida@host_remote:tmp/jul04_2014/ /home/uchida/tmp/jul04_2014<p />
 </blockquote>
 
+公開鍵を使う<p />
+<blockquote>
+rsync -avz --delete -e "ssh -i $HOME/.ssh/key_aaa"  uchida@host_remote:tmp/jul04_2014/ /home/uchida/tmp/jul04_2014<p />
+</blockquote>
+
 <hr />
 <a href="/data_base/">Return</a><p />
-Jul/04/2014 AM 08:15<p />
+Jul/23/2014 AM 08:15<p />
 </body>
 </html>

@@ -4,6 +4,6 @@ ftp_create.exe: ftp_create.boo
 	booc ftp_create.boo \
 		$(BOO_COMMON)/text_manipulate.boo \
 		-r:$(CSHARP_COMMON)/table_manipulate.dll \
-			-r:Newtonsoft.Json.Net20.dll
+			-r:Newtonsoft.Json.dll
 clean:
 	rm -f *.exe *.mdb

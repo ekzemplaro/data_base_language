@@ -2,7 +2,7 @@
 #
 #	pdf_manipulate.py
 #
-#						Jun/29/2012
+#						Aug/06/2014
 #
 import	os
 from subprocess import Popen, PIPE
@@ -10,8 +10,8 @@ import	shlex
 import	string
 
 import	sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
+#reload(sys)
+#sys.setdefaultencoding('utf-8')
 #
 from reportlab.pdfbase.cidfonts import UnicodeCIDFont
 from reportlab.pdfbase import pdfmetrics

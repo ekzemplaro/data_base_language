@@ -1,9 +1,9 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	create/redis_create.py
 #
-#					Mar/07/2013
+#					Jul/29/2014
 #
 import sys
 import json

@@ -2,14 +2,14 @@
 #
 #	python_common/curl_get.py
 #
-#					Oct/31/2013
+#					Aug/01/2014
 # ----------------------------------------------------------------
-#
 import os
 import sys
 import string
 import pycurl
-import StringIO
+#
+import io
 #
 import json
 #
@@ -27,7 +27,9 @@ def curl_get_proc (url_json):
 	cc.setopt(cc.PROXY, '')
 	cc.setopt(pycurl.URL, url_json)
 	cc.setopt(pycurl.HTTPHEADER, ["Accept:"])
-	bb = StringIO.StringIO()
+#	bb = StringIO.StringIO()
+#	bb = io.StringIO()
+	bb = io.BytesIO()
 	cc.setopt(pycurl.WRITEFUNCTION, bb.write)
 	cc.setopt(pycurl.FOLLOWLOCATION, 1)
 	cc.setopt(pycurl.MAXREDIRS, 5)
@@ -70,23 +72,19 @@ def file_upload_proc (url,file_src):
 	filesize = os.path.getsize (file_src)
 	cc.setopt (pycurl.INFILESIZE, filesize)
 #
-	print 'Uploading file %s to url %s' % (file_src, url)
+	print ('Uploading file %s to url %s' % (file_src, url))
 	cc.perform ()
 	cc.close ()
 #
 # ----------------------------------------------------------------
-def curl_put_proc (url,out_str):
-	tmp = os.tmpfile()
-#	tmp.write(out_str.encode('utf-8'))
-	tmp.write(out_str)
-	tmp.seek(0)
+def curl_put_proc (url,str_json):
 #
 	cc = pycurl.Curl ()
 	cc.setopt(cc.PROXY, '')
 	cc.setopt (pycurl.URL, url)
-	cc.setopt (pycurl.PUT, 1)
-	cc.setopt (pycurl.INFILE, tmp)
-	cc.setopt (pycurl.INFILESIZE, len(out_str))
+	cc.setopt(pycurl.CUSTOMREQUEST, "PUT")
+	cc.setopt (pycurl.POST, 1)
+	cc.setopt (pycurl.POSTFIELDS, str_json)
 #
 	cc.perform ()
 	cc.close ()

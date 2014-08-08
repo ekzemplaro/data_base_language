@@ -1,10 +1,10 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 # ------------------------------------------------------------------
 #	post_python.py
 #
-#						Jul/16/2014
+#						Aug/06/2014
 #
 # ------------------------------------------------------------------
 import	cgi
@@ -16,21 +16,21 @@ import	json
 # ------------------------------------------------------------------
 message = []
 #
-message.append ('*** post_python.py *** Jul/16/2014 start ***')
+message.append ('*** post_python.py *** Aug/06/2014 start ***')
 #
-print "Content-Type: application/json\n\n"
+print ("Content-Type: application/json\n\n")
 #
 fname_in = ""
 fname_out = ""
 #
 form = cgi.FieldStorage()
 #
-if form.has_key("data_aa"):
+if "data_aa" in form:
 	message.append ("*** data_aa exist ***")
 	fname_in = form["data_aa"].value
 	message.append (fname_in)
 #
-if form.has_key("data_bb"):
+if "data_bb" in form:
 	message.append ("*** data_bb exist ***")
 	fname_out = form["data_bb"].value
 	message.append (fname_out)
@@ -42,6 +42,6 @@ result['message'] = message
 result['fname_in'] = fname_in
 result['fname_out'] = fname_out
 str_json = json.dumps (result)
-print	str_json
-
+print	(str_json)
+#
 # ------------------------------------------------------------------

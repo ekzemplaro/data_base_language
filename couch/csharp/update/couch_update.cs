@@ -1,7 +1,7 @@
 // ------------------------------------------------------------------
 //	couch_update.cs
 //
-//					Aug/02/2011
+//					Jul/24/2014
 //
 // ------------------------------------------------------------------
 using System;
@@ -18,50 +18,38 @@ static void Main (string[] args)
 {
 	Console.WriteLine ("*** 開始 ***");
 
-	string	id_in = args[0];
+	string	key_in = args[0];
 	int	population_in = int.Parse (args[1]);
 
-	Console.WriteLine (id_in + "\t" + population_in);
+	Console.WriteLine (key_in + "\t" + population_in);
 
-	string url = "http://host_dbase:5984/city/cities";
+	string url = "http://localhost:5984/nagano";
+	string url_target = url + "/" + key_in;
 
 	string user = "";
 	string password = "";
 
-	string str_json = get_uri.get_uri_proc (url,user,password);
+	string str_json = get_uri.get_uri_proc (url_target,user,password);
 
+/*
 
-Dictionary <string,Object> dict_bb
+Dictionary <string,Object> unit_aa
 		= JsonConvert.DeserializeObject
 			<Dictionary <string,Object>> (str_json);
 
-	Object idx = dict_bb["_id"];
-	Object revx = dict_bb["_rev"];
+	Object idx = unit_aa["_id"];
+	Object revx = unit_aa["_rev"];
 
 	Console.WriteLine (idx);
 	Console.WriteLine (revx);
+*/
 
-	dict_bb.Remove ("_id");
-	dict_bb.Remove ("_rev");
+	String json_new = kvalue_manipulate.json_update_proc
+			(key_in,population_in,str_json);
 
-	string str_json_bb = JsonConvert.SerializeObject (dict_bb);
+	get_uri.put_uri_string_proc (url_target,json_new,user,password);
 
-	Dictionary <string,Object> dict_aa
-		 = json_manipulate.json_to_dict_proc (str_json_bb);
-
-	dict_aa = text_manipulate.dict_update_proc
-		(dict_aa,id_in,population_in);
-
-	text_manipulate.dict_display_proc (dict_aa);
-
-	dict_aa["_id"] = idx;
-	dict_aa["_rev"] = revx;
-
-	string str_json_out = JsonConvert.SerializeObject (dict_aa);
-
-//	Console.WriteLine (str_json_out);
-
-	get_uri.put_uri_string_proc (url,str_json_out,user,password);
+	Console.WriteLine (json_new);
 
 	Console.WriteLine ("*** 終了 ***");
 }

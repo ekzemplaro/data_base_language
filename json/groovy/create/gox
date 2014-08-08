@@ -1,7 +1,11 @@
 #
 GROOVY_COMMON=/var/www/data_base/common/groovy_common
 #
-export CPC=/usr/share/java/groovy-all.jar:/usr/share/java/groovy.jar
-export CLASSPATH=.:$CPC:$GROOVY_COMMON
+GROOVY_ALL_JAR=/usr/share/java/groovy-all.jar
+if  [ -e /etc/arch-release ]; then
+	GROOVY_ALL_JAR=/usr/share/groovy/embeddable/groovy-all.jar
+fi
+export CLASSPATH=.:$GROOVY_ALL_JAR:$GROOVY_COMMON
+#
 #
 java json_create /var/tmp/json/cities.json

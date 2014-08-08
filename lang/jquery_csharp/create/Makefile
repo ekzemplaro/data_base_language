@@ -34,7 +34,7 @@ dummy.exe : text_csharp_create.aspx.cs \
 			-r:$(CSHARP_COMMON)/lib/redis-sharp.dll \
 			-r:$(CSHARP_COMMON)/table_manipulate.dll \
 			-r:$(DLL)/Memcached.ClientLibrary.dll \
-			-r:$(DLL)/Newtonsoft.Json.Net20.dll \
+			-r:$(DLL)/Newtonsoft.Json.dll \
 			-r:$(DLL)/MySql.Data.dll \
 		-r:System.Data \
 		-r:System.Web \

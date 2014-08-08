@@ -1,32 +1,28 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	postgre_read.py
-#					May/30/2012
+#					Jul/29/2014
 #
 # --------------------------------------------------------
 import sys
-import pgdb
-#
-sys.path.append ('/var/www/data_base/common/python_common')
-from sql_manipulate import sql_to_dict_proc
-from text_manipulate import dict_display_proc
+import postgresql
 #
 print ("*** 開始 ***")
 #
-hostname="localhost"
-conn = pgdb.connect (host=hostname,database="city", \
-			user="scott", password="tiger")
+db = postgresql.open("pq://scott:tiger@localhost/city")
+ps = db.prepare("SELECT version()")
+print (ps ())
 #
-cursor = conn.cursor ()
+ps = db.prepare("SELECT * from cities")
 #
-dict_aa = sql_to_dict_proc (cursor)
+for it in range (len (ps ())):
+	str_out = ps ()[it][0] + "\t" + ps ()[it][1] + "\t" + str (ps ()[it][2])
+	str_out += "\t" + str (ps ()[it][3])
+	print (str_out)
 #
-cursor.close ()
-conn.close ()
-#
-dict_display_proc (dict_aa)
-#
+ps.close ()
+db.close ()
 print ("*** 終了 ***")
 #
 # --------------------------------------------------------

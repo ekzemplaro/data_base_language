@@ -9,8 +9,8 @@
 <div id="outarea_gg">outarea_gg</div>
 <div id="outarea_hh">outarea_hh</div>
 <hr />
-<a href="/data_base/data_base.html">Return</a><p />
-Nov/11/2013 AM 08:15<p />
+<a href="/data_base/">Return</a><p />
+Jul/21/2014 AM 08:15<p />
 </div>
 </body>
 </html>

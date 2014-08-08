@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------
 //	data_base/js/table_delete.js
 //
-//				Jun/11/2011
+//				Aug/07/2014
 //
 // -----------------------------------------------------------------------
 function table_delete (url_in)
@@ -92,7 +92,7 @@ function send_exec_proc_json (url_read,url_delete)
 		arry_delete.push(file);
 		});
 
-	var str_json = jQuery.toJSON(arry_delete);
+	var str_json = JSON.stringify (arry_delete);
 
 	jQuery.post (url_delete,{my_data: str_json},function (data_receive)
 		{

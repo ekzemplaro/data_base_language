@@ -1,11 +1,11 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	berkeley_delete.py
 #
-#					Jun/08/2011
+#					Jul/30/2014
 import	sys
-from bsddb import db
+from bsddb3 import db
 import string
 #
 sys.path.append ('/var/www/data_base/common/python_common')

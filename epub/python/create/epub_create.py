@@ -1,4 +1,4 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	epub_create.py
@@ -32,7 +32,7 @@ def	data_prepare_proc ():
 print	("*** 開始 ***")
 #
 file_epub = sys.argv[1]
-print	file_epub
+print	(file_epub)
 #
 dict_aa = data_prepare_proc ()
 dict_display_proc (dict_aa)

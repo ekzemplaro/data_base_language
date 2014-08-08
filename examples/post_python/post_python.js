@@ -1,13 +1,13 @@
 // -----------------------------------------------------------------------
 //	post_python.js
 //
-//					Feb/10/2014
+//					Aug/06/2014
 //
 // -----------------------------------------------------------------------
 jQuery (function ()
 {
 	jQuery("#outarea_aa").html
-		("*** post_python *** start *** Feb/10/2014 ***");
+		("*** post_python *** start *** Aug/06/2014 ***");
 
 	var data_text = "";
 
@@ -16,12 +16,9 @@ jQuery (function ()
 	var nc_aa = "p01.nc";
 	var nc_bb = "p02.nc";
 
-	jQuery.post (url_python,
-		{
-                data_aa : nc_aa,
-                data_bb : nc_bb,
-                },
-		function (res)
+	var args = {data_aa : nc_aa,data_bb : nc_bb};
+
+	jQuery.post (url_python,args,function (res)
 		{
 		var str_out = "";
 
@@ -30,8 +27,13 @@ jQuery (function ()
 			str_out += res.message[it] + "<br />";
 			}
 
-		jQuery(".contents").html (str_out);
+		jQuery("#message").html (str_out);
 
+		var str_contents = "";
+		str_contents += "fname_in = " + res.fname_in + "<br />";
+		str_contents += "fname_out = " + res.fname_out + "<br />";
+ 
+		jQuery(".contents").html (str_contents);
 		var str_tmp = JSON.stringify (res);
 		jQuery("#outarea_cc").html (str_tmp);
 		});

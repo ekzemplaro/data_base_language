@@ -3,18 +3,16 @@
 ;
 ;	csv_create.lisp
 ;
-;						Jan/08/2014
+;						Aug/01/2014
 ;
 ; -------------------------------------------------------------------
 (load "/var/www/data_base/common/common_lisp/text_manipulate.lisp")
 
 ; -------------------------------------------------------------------
 (defun data_prepare_proc ()
-
-(defvar dict_aa)
-(defparameter dict_aa (make-hash-table))
-;
-(format t "*** check *** cccc ***~%")
+(let (
+	(dict_aa (make-hash-table))
+	)
 ;
 (setf dict_aa (dict_append_proc dict_aa "t1271" '千葉 '76125 '1975-4-15))
 (setf dict_aa (dict_append_proc dict_aa "t1272" '勝浦 '57286 '1975-7-27))
@@ -27,6 +25,7 @@
 (setf dict_aa (dict_append_proc dict_aa "t1279" '市川 '49258 "1975-3-21"))
 
 dict_aa)
+)
 ; -------------------------------------------------------------------
 (format t "*** 開始 ***~%")
 (defvar file_out)

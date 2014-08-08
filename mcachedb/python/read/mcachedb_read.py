@@ -1,9 +1,9 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	mcachedb_read.py
 #
-#					Jun/08/2011
+#					Jul/29/2014
 #
 import	sys
 import json

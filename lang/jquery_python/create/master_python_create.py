@@ -1,9 +1,9 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	master_python_read.py
 #
-#					Jul/05/2010
+#					Jul/25/2014
 import	sys
 import	string
 #

@@ -1,3 +1,2 @@
-mysql_utf8.py
 sql_manipulate.py
 text_manipulate.py

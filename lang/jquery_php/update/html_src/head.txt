@@ -1,5 +1,5 @@
-<title>jQuery php_update Jun/22/2012</title>
+<title>jQuery php_update Aug/01/2014</title>
 </head>
 <body>
 <h2>jQuery php_update</h2>
-<ol>
+<blockquote>

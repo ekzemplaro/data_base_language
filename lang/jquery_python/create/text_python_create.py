@@ -1,13 +1,11 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 # -------------------------------------------------------------------------
 #	text_python_create.py
 #
-#						Feb/07/2014
+#						Aug/05/2014
 # -------------------------------------------------------------------------
 import	sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
 import	json
 import	os
 sys.path.append ('/var/www/data_base/common/python_common')
@@ -39,9 +37,9 @@ dict_aa = data_prepare_proc ()
 #
 os.remove (file_out)
 text_write_proc (file_out,dict_aa);
-os.chmod (file_out,0666)
+os.chmod (file_out,0o666)
 #
-print "Content-type: text/html\n\n"
+print ("Content-type: text/html\n\n")
 #
-print	"*** OK ***<p />"
+print ("*** OK ***<p />")
 # -------------------------------------------------------------------------

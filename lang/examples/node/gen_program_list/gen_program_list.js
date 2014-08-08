@@ -2,7 +2,7 @@
 // ---------------------------------------------------------------
 //	gen_program_list.js
 //
-//					Dec/11/2012
+//					Aug/04/2014
 //
 // ---------------------------------------------------------------
 var fs = require("fs");
@@ -78,12 +78,14 @@ function row_proc (lang,op,row_info)
 				data_base = "mcachedb";
 				break;
 
+			case	"wbdv":
+				data_base = "webdav";
+				break;
+
 			}
 
 		var value = row_info[db];
 
-//		if ((value == "2") || (value == "3")
-//			|| (value == "4") || (value == "5"))
 		if (value != "")
 			{
 			var out_str = data_base + "_" + lang + "_" + operation;

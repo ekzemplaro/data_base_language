@@ -1,14 +1,13 @@
 // -----------------------------------------------------------------------
 //	create/jquery_python_create.js
 //
-//					Nov/13/2012
+//					Jul/23/2014
 //
 // -----------------------------------------------------------------------
 jQuery (function ()
 {
-	var url_read;
-	var url_create;
-	var base_cgi = "/cgi-bin/data_base/python/";
+	var url_read = "";
+	var url_create = "";
 
 	jQuery("#outarea_aa").text ("*** start *** jquery_python_create.js ***");
 
@@ -24,8 +23,8 @@ jQuery (function ()
 
 	if (dbase !== "create")
                 {
-		url_read = base_cgi + dbase + "_python_read.py";
-		url_create = base_cgi + dbase + "_python_create.py";
+		url_read = "../read/" + dbase + "_python_read.py";
+		url_create = dbase + "_python_create.py";
 
 		jQuery("#outarea_dd").text ("url_read = " + url_read);
 		jQuery("#outarea_ee").text ("url_create = " + url_create);

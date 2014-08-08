@@ -1,4 +1,4 @@
-<title>jQuery python_read Dec/10/2012</title>
+<title>jQuery python_read Aug/01/2014</title>
 </head>
 <body>
 <h2>jQuery python_read</h2>

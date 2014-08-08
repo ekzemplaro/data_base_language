@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------
 //	db_edit.js
 //
-//					Apr/21/2014
+//					Jul/31/2014
 // -----------------------------------------------------------------------
 jQuery (function ()
 {
@@ -130,7 +130,7 @@ function all_ok_proc (lang_in,dbase_in,data_json,file_json,nn_limit)
 			{
 			var id = ids_input[it];
 
-			var status_ok = "8";
+			var status_ok = "9";
 			data_json.dbase[lang_in][id][dbase_in] = status_ok;
 			}
 

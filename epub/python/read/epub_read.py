@@ -6,8 +6,8 @@
 #						Jul/07/2012
 #
 import	sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
+#reload(sys)
+#sys.setdefaultencoding('utf-8')
 #
 sys.path.append ('/var/www/data_base/common/python_common')
 from text_manipulate import dict_display_proc

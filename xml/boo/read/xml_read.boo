@@ -1,7 +1,7 @@
 // ------------------------------------------------------------
 //	xml_read.boo
 //
-//						Oct/03/2011
+//					Jul/30/2014
 //
 // ------------------------------------------------------------
 import System
@@ -11,14 +11,11 @@ xml_file = argv[0]
 
 print xml_file
 
-print '*** ppp ***'
-str_xml = file_to_str_proc (xml_file)
-print '*** qqq ***'
+str_xml = file_io.file_to_str_proc (xml_file)
 
-dict_aa = xml_to_dict_proc (str_xml)
-print '*** rrr ***'
+dict_aa = xml_manipulate.xml_to_dict_proc (str_xml)
 
-dict_display_proc (dict_aa)
+text_manipulate.dict_display_proc (dict_aa)
 
 print '*** 終了 ***'
 // ------------------------------------------------------------

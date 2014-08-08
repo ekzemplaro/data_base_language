@@ -2,12 +2,13 @@
 /*
 	php_common/sql_manipulate.php
 
-					Sep/17/2013
+					Aug/04/2014
 
 */
 // --------------------------------------------------------------------
 function sql_update_proc ($dbcon,$id,$population)
 {
+date_default_timezone_set('Asia/Tokyo');
 $today = date ("Y-m-d");
 $sql = "update cities set POPULATION=" . $population;
 $sql .= ", DATE_MOD='" . $today . "'";

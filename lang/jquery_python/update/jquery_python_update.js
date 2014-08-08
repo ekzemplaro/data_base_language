@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------
 //	update/jquery_python_update.js
 //
-//					Nov/13/2012
+//					Aug/07/2014
 //
 // -----------------------------------------------------------------------
 jQuery (function ()
@@ -26,9 +26,9 @@ jQuery (function ()
 	if (dbase !== "update")
 		{
 		data_send = new Array ();
-		python_dir="/cgi-bin/data_base/python/"
-		url_json = python_dir + dbase + "_python_read.py";
-		url_update = python_dir + dbase + "_python_update.py";
+
+		url_json = "../read/" + dbase + "_python_read.py";
+		url_update = dbase + "_python_update.py";
 
 		jQuery("#outarea_dd").text ("url_json = " + url_json);
 		jQuery("#outarea_ee").text ("url_update = " + url_update);
@@ -37,7 +37,7 @@ jQuery (function ()
 		}
 	else
 		{
-		var encoded = jQuery.toJSON (data_send);
+		var encoded = JSON.stringify (data_send);
 		send_exec_proc_json (url_update,encoded);
 		}
 	});

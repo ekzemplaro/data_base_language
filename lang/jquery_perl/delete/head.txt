@@ -1,7 +1,6 @@
-<script src="/js/jquery.json-2.4.min.js"></script>
 <script src="/data_base/js/table_delete.js"></script>
 <script src="jquery_perl_delete.js"></script>
-<title>Perl Delete Feb/25/2013</title>
+<title>Perl Delete Aug/07/2014</title>
 </head>
 <body>
 <center><h2>Perl Delete</h2></center>

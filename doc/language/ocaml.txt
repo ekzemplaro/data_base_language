@@ -1,7 +1,7 @@
 <meta content="Program Language Examples in Ocaml" name="description">
 <meta content="Ocaml,クライアント,接続,言語,サンプル" name="keyword">
 <meta content="Uchida Masatomo" name="author">
-<title>Ocaml Jan/19/2012</title>
+<title>Ocaml Jul/31/2014</title>
 </head>
 <body>
 <h2><a href="http://caml.inria.fr/">Objective Caml</a></h2><p />
@@ -58,3 +58,8 @@ ii  libcurl-ocaml-dev   0.5.3-2build1   OCaml libcurl bindings (Development pack
 	</a><p />
 </blockquote>
 
+Archlinux<br />
+<blockquote>
+# pacman -S ocaml<br />
+# pacman -S ocaml-findlib<br />
+</blockquote>

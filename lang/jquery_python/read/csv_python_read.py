@@ -1,9 +1,9 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	csv_read.py
 #
-#						May/11/2011
+#						Jul/25/2014
 #
 #
 # ---------------------------------------------------------------------
@@ -19,5 +19,6 @@ file_in = "/var/tmp/csv/cities.csv"
 dict_aa = csv_read_proc (file_in)
 str_aa = json.dumps (dict_aa)
 #
-print "Content-type: text/json\n\n"
-print	str_aa
+print ("Content-type: text/json\n\n")
+print (str_aa)
+# ---------------------------------------------------------------------

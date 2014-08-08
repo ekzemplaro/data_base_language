@@ -2,7 +2,7 @@
 /*
 	json_read.cs
 
-						Jul/04/2014
+						Aug/01/2014
 */
 // --------------------------------------------------------------------
 using	System;
@@ -16,7 +16,7 @@ class	json_read
 // --------------------------------------------------------------------
 static	void	Main (string[] args)
 {
-	Console.WriteLine ("*** json_read *** 開始 ***\n");
+	Console.WriteLine ("*** 開始 ***");
 
 	string file_in = args[0];
 
@@ -36,15 +36,15 @@ static	void	Main (string[] args)
 	catch (DirectoryNotFoundException ex)
 		{
 		Console.WriteLine ("*** DirectoryNotFoundException ***");
-//		Console.WriteLine (ex);
+		Console.WriteLine (ex);
 		}
 	catch (FileNotFoundException ex)
 		{
 		Console.WriteLine ("*** FileNotFoundException ***");
-//		Console.WriteLine (ex);
+		Console.WriteLine (ex);
 		}
 	
-	Console.WriteLine ("\n*** json_read *** 終了 ***");
+	Console.WriteLine ("*** 終了 ***");
 }
 
 // --------------------------------------------------------------------

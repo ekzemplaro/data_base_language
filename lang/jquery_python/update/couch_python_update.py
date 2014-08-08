@@ -1,8 +1,9 @@
-#! /usr/bin/python
+#! /usr/bin/python3
+# -*- coding: utf-8 -*-
 #
 #	couch_python_update.py
 #
-#					Jun/19/2014
+#					Aug/04/2014
 #
 # ------------------------------------------------------------------
 import	math
@@ -10,9 +11,8 @@ import	cgi
 import	string
 import	sys
 import	os
-#import xml.dom.minidom
-import pycurl
-import datetime
+import	pycurl
+import	datetime
 #
 import	json
 #
@@ -28,34 +28,34 @@ os.environ["http_proxy"]=''
 #
 # ------------------------------------------------------------------
 #
-print "Content-type: text/html\n\n"
-#
-# ---------------------------------------------------------------
+print ("Content-type: text/html\n\n")
 #
 array_bb = parse_parameter ()
 #
+print ("*** ccc ***<br />")
 for it in range (len(array_bb)):
 	key_in = array_bb[it]['id']
-	population_in = string.atoi (array_bb[it]['population'])
-	print "key_in = %s<br />" % key_in
-	print "population_in = %d<br />" % population_in
+	population_in = int (array_bb[it]['population'])
+	print ("key_in = %s<br />" % key_in)
+	print ("population_in = %d<br />" % population_in)
 	url_key = url_json + '/' + key_in
 	str_buf_aa = curl_get_proc (url_key)
 #
 	print (str_buf_aa)
-	unit_aa = json.loads (str_buf_aa)
-	name = unit_aa['name'].encode ('utf-8')
-	unit_aa['name'] = name
+	unit_aa = json.loads (str (str_buf_aa,'UTF-8'))
 	unit_aa['population'] = population_in
 	unit_aa['date_mod'] = '%s' % datetime.date.today ()
 	out_str = json.dumps (unit_aa)
 	print (url_key)
 	print (out_str)
 #
+	print ("*** ppp ***<br />")
 	try:
+		print ("*** qqq ***<br />")
 		curl_put_proc (url_key,out_str)
 	except:
-		print "Unexpected error:", sys.exc_info()[0]
+		print ("Unexpected error:", sys.exc_info()[0])
 #
-print "OK<br />"
+print ("OK<br />")
 #
+# ---------------------------------------------------------------

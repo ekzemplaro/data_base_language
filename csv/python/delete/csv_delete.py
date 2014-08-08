@@ -1,9 +1,9 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	delete/csv_delete.py
 #
-#					Jul/02/2011
+#					Jul/25/2014
 import	sys
 import	string
 #

@@ -1,7 +1,7 @@
 // ------------------------------------------------------------
 //	xml_delete.boo
 //
-//						Sep/27/2011
+//					Jul/30/2014
 //
 // ------------------------------------------------------------
 import System
@@ -19,8 +19,6 @@ str_xml = file_io.file_to_str_proc (xml_file)
 dict_aa =xml_manipulate.xml_to_dict_proc (str_xml)
 
 dict_aa.Remove (key)
-
-text_manipulate.dict_display_proc (dict_aa)
 
 xml_str = xml_manipulate.dict_to_xml_proc (dict_aa)
 

@@ -2,7 +2,7 @@
 /*
 	csharp/delete/json_delete.cs
 
-				Jul/07/2014
+				Aug/01/2014
 
 
 */
@@ -27,26 +27,24 @@ static void Main (string[] args)
 
 	try
 		{
-	string str_json = file_io.file_to_str_proc (file_json);
+		string str_json = file_io.file_to_str_proc (file_json);
 
-	Dictionary <string,Object> dict_aa
-		 = json_manipulate.json_to_dict_proc (str_json);
+		Dictionary <string,Object> dict_aa
+			 = json_manipulate.json_to_dict_proc (str_json);
 
-	if (dict_aa.ContainsKey (key_in))
-		{
-		dict_aa.Remove (key_in);
+		if (dict_aa.ContainsKey (key_in))
+			{
+			dict_aa.Remove (key_in);
 
-		text_manipulate.dict_display_proc (dict_aa);
-
-		string str_json_out = JsonConvert.SerializeObject (dict_aa);
+			string str_json_out = JsonConvert.SerializeObject (dict_aa);
 	
-		file_io.file_write_proc (file_json,str_json_out);
-		}
+			file_io.file_write_proc (file_json,str_json_out);
+			}
 		}
 	catch (FileNotFoundException ex)
 		{
 		Console.WriteLine ("*** FileNotFoundException ***");
-//		Console.WriteLine (ex);
+		Console.WriteLine (ex);
 		}
 
 	Console.WriteLine ("*** 終了 ***");

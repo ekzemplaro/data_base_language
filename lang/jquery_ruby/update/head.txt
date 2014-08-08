@@ -1,7 +1,6 @@
-<script src="/js/jquery.json-2.4.min.js"></script>
 <script src="/data_base/js/table_manipulate.js"></script>
 <script src="jquery_ruby_update.js"></script>
-<title>Ruby Update Feb/25/2013</title>
+<title>Ruby Update Aug/07/2014</title>
 </head>
 <body>
 <center><h2>Ruby Update</h2></center>

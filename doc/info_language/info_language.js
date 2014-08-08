@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------
 //	info_language.js
 //
-//					Nov/11/2013
+//					Jul/21/2014
 // -----------------------------------------------------------------------
 jQuery (function ()
 {
@@ -15,7 +15,6 @@ jQuery (function ()
 
 		jQuery(".nava").html (out_str);
 
-//		jQuery ("button.lang").click (function ()
 		jQuery ("button.lang").on ('click', function ()
 			{
 			var lang = this.id;

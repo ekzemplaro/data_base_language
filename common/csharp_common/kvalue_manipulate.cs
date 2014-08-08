@@ -2,7 +2,7 @@
 //
 //	kvalue_manipulate.cs
 //
-//						Oct/21/2011
+//						Jul/24/2014
 // -------------------------------------------------------------
 using System;
 using System.Collections.Generic;
@@ -33,18 +33,19 @@ public static String json_update_proc
 		= JsonConvert.DeserializeObject
 			 <Dictionary<String,Object>> (json_str);
 
+/*
 	Console.Write (key + "\t");
 	Console.Write (city["name"] + "\t");
 	Console.Write (city["population"] + "\t");
 	Console.Write (city["date_mod"] + "\n");
-
+*/
 	city["population"] = population_in;
 
 	city["date_mod"] = DateTime.Now.ToString ();
 
 	String json_new = JsonConvert.SerializeObject (city);
 
-	Console.WriteLine (json_new);
+//	Console.WriteLine (json_new);
 
 	return	json_new;
 }

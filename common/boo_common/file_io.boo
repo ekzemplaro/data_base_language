@@ -2,14 +2,17 @@
 /*
 	file_io.boo
 
-				Oct/03/2011
+				Jul/30/2014
 
 
 */
 // --------------------------------------------------------------------
+namespace file_io
+
 import	System
 import	System.IO
 import	System.Text
+
 
 // --------------------------------------------------------------------
 def file_to_str_proc (file_in as string):

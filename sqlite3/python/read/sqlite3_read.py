@@ -1,8 +1,8 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	read/sqlite3_read.py
-#					May/30/2012
+#					Jul/29/2014
 #
 # ------------------------------------------------------------------
 import	sys

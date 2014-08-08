@@ -1,4 +1,4 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	epub_delete.py
@@ -6,8 +6,8 @@
 #						Jul/06/2012
 #
 import	sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
+#reload(sys)
+#sys.setdefaultencoding('utf-8')
 import	string
 #
 sys.path.append ('/var/www/data_base/common/python_common')

@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------
 //	show_crud.js
 //
-//					Apr/23/2014
+//					Jul/31/2014
 // -----------------------------------------------------------------------
 function show_crud_proc (lang,lang_mod,dbase_cur,dbase_aa,data_ref)
 {
@@ -182,6 +182,7 @@ function crud_exist_check_proc_hantei (value_in)
 
 	switch (value_in)
 		{
+		case	"9":
 		case	"8":
 		case	"7":
 		case	"6":

@@ -1,7 +1,7 @@
 <meta content="Program Language Examples in tcl" name="description">
 <meta content="tcl,クライアント,接続,言語,サンプル" name="keyword">
 <meta content="Uchida Masatomo" name="author">
-<title>Tcl Dec/26/2011</title>
+<title>Tcl Jul/31/2014</title>
 </head>
 <body>
 <h2><a href="http://www.tcl.tk">Tcl</a></h2><p />
@@ -17,4 +17,11 @@
 	<pre>
 	ii  tclcurl        7.19.6-2       Tcl bindings to libcurl
 	</pre>
+</blockquote>
+
+
+Archlinux<p />
+<blockquote>
+	# pacman -S tcl<br />
+	# pacman -S tcllib<br />
 </blockquote>

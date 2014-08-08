@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------
 //	jquery_perl_delete.js
 //
-//					Nov/13/2012
+//					Jul/23/2014
 //
 // -----------------------------------------------------------------------
 jQuery (function ()
@@ -23,9 +23,8 @@ jQuery (function ()
 
 	if (dbase !== "delete")
 		{
-		var prefix = "/cgi-bin/data_base/perl/" + dbase;
-		url_read = prefix + "_perl_read.pl";
-		url_delete = prefix +  "_perl_delete.pl";
+		url_read = "../read/" + dbase + "_perl_read.pl";
+		url_delete = dbase +  "_perl_delete.pl";
 
 		jQuery("#outarea_dd").text ("url_read = " + url_read);
 		jQuery("#outarea_ee").text ("url_delete = " + url_delete);
@@ -37,7 +36,6 @@ jQuery (function ()
 		send_exec_proc_json (url_read,url_delete);
 		}
 	});
-
 
 	jQuery("#outarea_hh").text ("*** end *** jquery_perl_delete.js ***");
 });

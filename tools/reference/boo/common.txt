@@ -1,4 +1,5 @@
 file_io.boo
+json_manipulate.boo
 mysql_manipulate.boo
 table_manipulate.boo
 text_manipulate.boo

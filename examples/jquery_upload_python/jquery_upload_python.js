@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------
 //	jquery_upload_python.js
 //
-//					Jul/16/2014
+//					Aug/06/2014
 // -----------------------------------------------------------------------
 jQuery(function ()
 {
@@ -28,10 +28,24 @@ jQuery("#upload").bind ("click",function()
 
 	var url_action = "./jquery_upload.py";
 
-	jQuery.ajax (url_action,postData).done(function( res)
+	jQuery.ajax (url_action,postData).done(function (res)
+//	jQuery.post (url_action,postData,function (res)
 		{
 		jQuery ("#result_aa").html (res);
 		jQuery ("#outarea_dd").html ("*** done ***<br />");
+
+		var data_in = JSON.parse (res);
+
+		var str_message = "<blockquote>";
+		for (var it in data_in['message'])
+			{
+			str_message += data_in['message'][it] + '<br />';
+			}
+
+		str_message += "</blockquote>";
+
+		jQuery ("#message").html (str_message);
+
 		});
 	});
 });

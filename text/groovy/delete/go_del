@@ -1,5 +1,10 @@
 #
 GROOVY_COMMON=/var/www/data_base/common/groovy_common
-export CLASSPATH=.:/usr/share/java/groovy-all.jar:/usr/share/java/groovy.jar:$GROOVY_COMMON
+GROOVY_ALL_JAR=/usr/share/java/groovy-all.jar
+if  [ -e /etc/arch-release ]; then
+GROOVY_ALL_JAR=/usr/share/groovy/embeddable/groovy-all.jar
+fi
+export CLASSPATH=.:$GROOVY_ALL_JAR:$GROOVY_COMMON
+#
 #
 java text_delete /var/tmp/plain_text/cities.txt t2386

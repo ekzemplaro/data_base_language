@@ -1,4 +1,0 @@
-ls *.pl > t01
-sed 's/read/create/' t01 >  t02
-pr -m -t t01 t02 > t03
-awk '{print "mv",$1,$2}' t03 > t04

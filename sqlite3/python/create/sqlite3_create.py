@@ -1,9 +1,9 @@
-#! /usr/bin/python  
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	sqlite3_create.py
 #
-#					Jun/13/2011
+#					Jul/29/2014
 #
 # -------------------------------------------------------------------------
 import	sys
@@ -50,7 +50,7 @@ print	("*** 開始 ***")
 #
 file_out = sys.argv[1];
 #
-print	file_out
+print	(file_out)
 #
 dict_aa = data_prepare_proc ()
 #

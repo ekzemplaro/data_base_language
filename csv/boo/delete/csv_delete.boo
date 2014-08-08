@@ -1,7 +1,7 @@
 // ------------------------------------------------------------
 //	csv_delete.boo
 //
-//						Apr/22/2011
+//						Jul/30/2014
 //
 // ------------------------------------------------------------
 import System
@@ -14,16 +14,14 @@ id_in = argv[1]
 print file_txt
 print id_in
 
-dict_aa = csv_read_proc (file_txt)
+dict_aa = text_manipulate.csv_read_proc (file_txt)
 
 print dict_aa.Count
 
 dict_aa.Remove (id_in)
 print dict_aa.Count
 
-dict_display_proc (dict_aa)
-
-csv_write_proc (file_txt,dict_aa)
+text_manipulate.csv_write_proc (file_txt,dict_aa)
 
 print '*** 終了 ***'
 // ------------------------------------------------------------

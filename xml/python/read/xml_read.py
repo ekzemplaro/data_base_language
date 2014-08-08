@@ -1,13 +1,11 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	python/read/xml_read.py
 #
-#						May/31/2012
+#						Jul/25/2014
 import xml.dom.minidom
 import	sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
 sys.path.append ('/var/www/data_base/common/python_common')
 #
 from file_io import file_to_str_proc

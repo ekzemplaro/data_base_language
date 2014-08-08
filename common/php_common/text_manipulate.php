@@ -3,7 +3,7 @@
 /*
 	php_common/text_manipulate.php
 
-					Aug/20/2012
+					Jul/31/2014
 
 */
 // --------------------------------------------------------------------
@@ -86,6 +86,7 @@ function dict_update_proc ($dict_aa,$id_in,$population_in)
 {
 	if (array_key_exists ($id_in,$dict_aa))
 		{
+		date_default_timezone_set('Asia/Tokyo');
 		$today = date ("Y-m-d");
 
 		$dict_aa[$id_in]['population'] = $population_in;

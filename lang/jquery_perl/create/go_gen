@@ -1,6 +1,0 @@
-ls *.java | awk '{print "mv",$1,$1}' > t02
-#
-sed 's/java/aspx/g' < t02 > t03
-sed 's/aspx/java/' < t03 > t04
-sed 's/aspx/java/' < t04 > t05
-sed 's/aspx/csharp/' < t05 > t06

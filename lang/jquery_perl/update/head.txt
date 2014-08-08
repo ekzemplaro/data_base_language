@@ -1,7 +1,6 @@
-<script src="/js/jquery.json-2.4.min.js"></script>
 <script src="/data_base/js/table_manipulate.js"></script>
 <script src="jquery_perl_update.js"></script>
-<title>Perl Update Dec/13/2013</title>
+<title>Perl Update Aug/07/2014</title>
 </head>
 <body>
 <center><h2>Perl Update</h2></center>

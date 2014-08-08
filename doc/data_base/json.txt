@@ -32,6 +32,8 @@ PHP<p />
 Perl<p />
 <blockquote>
 	libjson-perl<p />
+
+	# pacman -S perl-json<p />
 </blockquote>
 
 Python<p />
@@ -110,6 +112,7 @@ libnewtonsoft-json5.0-cil<p />
 
 arch linux<br />
 	<blockquote>
+	#pacman -S monodevelop<p />
 	/usr/lib/monodevelop/bin/Newtonsoft.Json.dll<p />
 	</blockquote>
 </blockquote>

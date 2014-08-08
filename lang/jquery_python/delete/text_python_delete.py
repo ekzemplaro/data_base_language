@@ -1,8 +1,8 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 #
 #	text_python_delete.py
 #
-#					Jul/20/2011
+#					Jul/25/2014
 #
 # ---------------------------------------------------------------
 import	math
@@ -18,33 +18,29 @@ from text_manipulate import dict_delete_proc
 from cgi_manipulate import parse_parameter
 # ---------------------------------------------------------------
 #
-print "Content-type: text/html\n\n"
+print ("Content-type: text/html\n\n")
 #
-print "*** start *** text_python_delete.py ***<br />"
+print ("*** start *** text_python_delete.py ***<br />")
 #
 file_in = "/var/tmp/plain_text/cities.txt"
 dict_aa=text_read_proc (file_in)
 #
-print "*** bbbb *** text_python_delete.py ***<br />"
+print ("*** bbbb *** text_python_delete.py ***<br />")
 #
 array_bb = parse_parameter ()
 #
-print "*** cccc *** text_python_delete.py ***<br />"
-print "*** len(array_bb) =  %d text_python_delete.py ***<br />" % len(array_bb)
-print "*** dccc *** text_python_delete.py ***<br />"
+print ("*** cccc *** text_python_delete.py ***<br />")
+print ("*** len(array_bb) =  %d text_python_delete.py ***<br />" % len(array_bb))
 #
 for it in range (len(array_bb)):
 	id_in = array_bb[it]
-	print "py id_in = %s<br />" % id_in
+	print ("py id_in = %s<br />" % id_in)
 	dict_aa = dict_delete_proc (dict_aa,id_in)
 #
 text_write_proc (file_in,dict_aa)
 #
-print "check vvvvvvv<br />"
-#
-
-print "*****<br />"
-print "May/11/2011<p />"
-print "OK"
+print ("*****<br />")
+print ("Jul/25/2014<p />")
+print ("OK")
 #
 # ---------------------------------------------------------------

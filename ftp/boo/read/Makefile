@@ -1,7 +1,9 @@
-COMMON=/var/www/data_base/common/csharp_common
+BOO_COMMON=/var/www/data_base/common/boo_common
 ftp_read.exe: ftp_read.boo
 	booc ftp_read.boo \
-		-r:$(COMMON)/table_manipulate.dll \
-			-r:Newtonsoft.Json.Net20.dll
+		$(BOO_COMMON)/text_manipulate.boo \
+		$(BOO_COMMON)/json_manipulate.boo \
+		$(BOO_COMMON)/ftp_manipulate.boo \
+			-r:Newtonsoft.Json.dll
 clean:
 	rm -f *.exe *.mdb

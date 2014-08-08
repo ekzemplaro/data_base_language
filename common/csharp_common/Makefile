@@ -7,7 +7,6 @@ table_manipulate.dll: table_manipulate.cs \
 		postgre_manipulate.cs \
 		fbd_manipulate.cs \
 		mssql_manipulate.cs \
-		couch_manipulate.cs \
 		kvalue_manipulate.cs \
 		mcache_manipulate.cs \
 		redis_manipulate.cs \
@@ -27,7 +26,6 @@ table_manipulate.dll: table_manipulate.cs \
 		postgre_manipulate.cs \
 		fbd_manipulate.cs \
 		mssql_manipulate.cs \
-		couch_manipulate.cs \
 		kvalue_manipulate.cs \
 		mcache_manipulate.cs \
 		redis_manipulate.cs \

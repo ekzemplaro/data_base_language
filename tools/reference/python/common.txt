@@ -23,6 +23,7 @@ sql_manipulate.py
 sql_to_json.py
 text_manipulate.py
 to_utf8.py
+upload_file.py
 voldemort_manipulate.py
 xlsx_manipulate.py
 xml_disp.py

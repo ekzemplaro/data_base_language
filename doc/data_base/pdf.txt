@@ -4,8 +4,10 @@
 <h1>pdf</a></h1>
 <blockquote>
 </blockquote>
+
 <pre>
 </pre>
+
 <blockquote>
 </blockquote>
 
@@ -37,6 +39,8 @@ node.js<p />
 <blockquote>
 	<a href="http://pdfkit.org/">PDFKit</a><p />
 	npm install pdfkit<p />
+	npm install pdfkit-cjk<p />
+	# apt-get install wkhtmltopdf<p />
 </blockquote>
 
 Java<p />

@@ -1,4 +1,4 @@
-<title>jQuery Examples Jul/18/2014</title>
+<title>jQuery Examples Aug/04/2014</title>
 </head>
 
 <body>
@@ -77,13 +77,13 @@ jquery_perl_delete</a></td>
 
 <tr>
 <td>Ruby</td>
-<td><a href="lang/jquery_ruby/create/jquery_ruby_create.html">
+<td><a href="lang/jquery_ruby/create/">
 jquery_ruby_create</a></td>
-<td><a href="lang/jquery_ruby/read/jquery_ruby_read.html">
+<td><a href="lang/jquery_ruby/read/">
 jquery_ruby_read</a></td>
-<td><a href="lang/jquery_ruby/update/jquery_ruby_update.html">
+<td><a href="lang/jquery_ruby/update/">
 jquery_ruby_update</a></td>
-<td><a href="lang/jquery_ruby/delete/jquery_ruby_delete.html">
+<td><a href="lang/jquery_ruby/delete/">
 jquery_ruby_delete</a></td>
 </tr>
 

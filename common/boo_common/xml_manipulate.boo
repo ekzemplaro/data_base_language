@@ -2,17 +2,17 @@
 /*
 	xml_manipulate.boo
 
-					Oct/03/2011
+					Jul/30/2014
 
 */
 // ----------------------------------------------------------------
+namespace xml_manipulate
+
 import	System
 import	System.Text
 import	System.Xml
 
 // ----------------------------------------------------------------
-
-// --------------------------------------------------------------------
 def tag_out_proc (tag,value):
 	st = StringBuilder ()
 
@@ -29,14 +29,14 @@ def tag_out_proc (tag,value):
 	return	st.ToString ()
 
 // --------------------------------------------------------------------
-def dict_to_xml_proc (dict_aa as Hashtable):
+def dict_to_xml_proc (dict_aa as System.Collections.Hashtable):
 	st = StringBuilder ()
 
 	st.Append ("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n")
 	st.Append ("<root>\n")
 
 	for key in dict_aa.Keys:
-		unit_aa as Hashtable = dict_aa[key]
+		unit_aa as System.Collections.Hashtable = dict_aa[key]
 
 		st.Append ("<")
 		st.Append (key)
@@ -80,7 +80,7 @@ def xml_to_dict_proc (str_xml):
 	return	dict_aa
 
 // ----------------------------------------------------------------
-def record_convert_proc (xmlDoc as XmlDocument,key,dict_aa as Hashtable):
+def record_convert_proc (xmlDoc as XmlDocument,key,dict_aa as System.Collections.Hashtable):
 	row_aa = "/root/" + key
 
 	xNode = xmlDoc.SelectSingleNode (row_aa + "/name") 

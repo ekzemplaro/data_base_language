@@ -1,9 +1,9 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	python/delete/xml_delete.py
 #
-#						Aug/10/2011
+#						Jul/25/2014
 #
 import xml.dom.minidom
 import	sys
@@ -20,16 +20,16 @@ from text_manipulate import dict_delete_proc
 print ("*** 開始 ***")
 #
 xml_file = sys.argv[1]
-id_in = sys.argv[2]
-print ("%s" % id_in)
+key_in = sys.argv[2]
+print ("%s" % key_in)
 #
 xml_str=file_to_str_proc (xml_file)
 dict_aa = xml_to_dict_proc (xml_str)
 #
-dict_bb=dict_delete_proc (dict_aa,id_in)
+dict_bb=dict_delete_proc (dict_aa,key_in)
 #
 out_str = dict_to_xml_proc (dict_bb)
-file_write_proc (xml_file,out_str.encode('utf-8'))
+file_write_proc (xml_file,out_str)
 #
 #
 print ("*** 終了 ***")

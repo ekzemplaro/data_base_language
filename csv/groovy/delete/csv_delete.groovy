@@ -1,7 +1,7 @@
 // -------------------------------------------------------------------
 //	csv_delete.groovy
 //
-//					Feb/01/2011
+//					Aug/05/2014
 //
 // -------------------------------------------------------------------
 class csv_delete
@@ -21,8 +21,6 @@ static void main (args)
 	def dict_aa = ff.csv_read_proc (file_in)
 
 	def dict_bb = ff.dict_delete_proc (dict_aa,id_in)
-
-	ff.dict_display_proc (dict_bb)
 
 	ff.csv_write_proc (file_in,dict_bb)
 

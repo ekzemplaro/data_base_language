@@ -1,21 +1,20 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	mysql_create.py
 #
-#					Jun/13/2011
+#					Jul/25/2014
 #
 # --------------------------------------------------------
 import	sys
 import	string
-import	MySQLdb
+import	mysql.connector
 #
 sys.path.append ('/var/www/data_base/common/python_common')
 from text_manipulate import dict_append_proc
 from sql_manipulate import sql_display_proc,sql_update_proc, \
 		table_insert_proc,sql_insert_proc, \
 		create_table_proc,drop_table_proc
-from mysql_utf8 import mysql_utf8_proc
 #
 # --------------------------------------------------------
 def	data_prepare_proc ():
@@ -39,12 +38,11 @@ print ("*** 開始 ***")
 #
 dict_aa = data_prepare_proc ()
 #
-conn = MySQLdb.connect (host="host_mysql",db="city", \
+conn = mysql.connector.connect (host="host_mysql",db="city", \
 			user="scott", passwd="tiger")
 #
 cursor = conn.cursor ()
 #
-mysql_utf8_proc (cursor)
 drop_table_proc (cursor)
 create_table_proc (cursor)
 #

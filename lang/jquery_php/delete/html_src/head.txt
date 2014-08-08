@@ -1,5 +1,5 @@
-<title>jQuery php_delee Jun/20/2012</title>
+<title>jQuery php_delete Aug/01/2014</title>
 </head>
 <body>
 <h2>jQuery php_delete</h2>
-<ol>
+<blockquote>

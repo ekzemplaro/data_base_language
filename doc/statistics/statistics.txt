@@ -1,5 +1,5 @@
 <script src="statistics.js"></script>
 <link rel="stylesheet" href="statistics.css">
-<title>statistics May/16/2014</title>
+<title>statistics Aug/06/2014</title>
 </head>
 <body>

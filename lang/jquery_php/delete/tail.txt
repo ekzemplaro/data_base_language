@@ -2,4 +2,4 @@
 <button id="delete">削除</button><br />
 <hr />
 <hr />
-<a href="html_src/jquery_php_delete_src.html">jquery_php_delete_src.html</a><p />
+<a href="html_src/">src</a><p />

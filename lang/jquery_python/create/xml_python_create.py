@@ -1,11 +1,12 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 # -------------------------------------------------------------------------
 #	xml_python_create.py
 #
-#						Aug/10/2011
+#						Jul/25/2014
 # -------------------------------------------------------------------------
 import	sys
+import	os
 import	json
 sys.path.append ('/var/www/data_base/common/python_common')
 #
@@ -38,12 +39,12 @@ xml_file = "/var/tmp/xml_file/cities.xml"
 #
 dict_aa = data_prepare_proc ()
 #
-print "Content-type: text/html\n\n"
+print ("Content-type: text/html\n\n")
 #
 out_str = dict_to_xml_proc (dict_aa)
-#file_write_proc (xml_file,out_str)
-file_write_proc (xml_file,out_str.encode('utf-8'))
+file_write_proc (xml_file,out_str)
 #
+os.chmod (xml_file,0o666)
 #
-print	"*** OK ***<p />"
+print	("*** OK ***<p />")
 # -------------------------------------------------------------------------

@@ -1,9 +1,9 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	hantei.py
 #
-#						Oct/10/2010
+#						Jul/31/2014
 #
 import	sys
 import	string
@@ -54,10 +54,10 @@ hantei = hantei_proc (dict_aa,dict_bb,dict_cc,dict_dd)
 #
 print ("%s\t%s\t%s" % (dbase,lang,hantei))
 if (hantei == False):
-	print dict_aa.keys ()
-	print dict_bb.keys ()
-	print dict_cc.keys ()
-	print dict_dd.keys ()
+	print (dict_aa.keys ())
+	print (dict_bb.keys ())
+	print (dict_cc.keys ())
+	print (dict_dd.keys ())
 	print ("*** error *** ")
 #
 #sys.stderr.write ("*** 終了 ***\n")

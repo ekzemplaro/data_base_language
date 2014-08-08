@@ -1,15 +1,13 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	read/couch_read.py
 #
-#					Jun/19/2014
+#					Aug/01/2014
 #
 # ----------------------------------------------------------------
 import os
 import sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
 import pycurl
 import json
 #
@@ -25,16 +23,17 @@ os.environ["http_proxy"]=''
 url_json = 'http://localhost:5984/nagano'
 
 str_json = curl_get_proc (url_json + "/" + "_all_docs")
-list_aa = json.loads (str_json)
+# print (str_json)
+list_aa = json.loads (str (str_json,'UTF-8'))
 
 #
 if ('rows' in list_aa):
 	for it in list_aa['rows']:
 		key_aa = it['key']
 		str_tmp = curl_get_proc (url_json + "/" + key_aa)
-		unit_aa = json.loads (str_tmp)
+		unit_aa = json.loads (str (str_tmp,'UTF-8'))
 		str_out = key_aa + '\t' +  unit_aa['name']
-		str_out += '\t%d' %  unit_aa['population']
+		str_out += '\t%d' %  int (unit_aa['population'])
 		str_out += '\t' +  unit_aa['date_mod']
 		print (str_out)
 else:

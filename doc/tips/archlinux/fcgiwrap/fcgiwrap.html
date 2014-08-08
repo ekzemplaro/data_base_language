@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+<title>fcgiwrap Jul/25/2014</title>
+</head>
+<body>
+<h2>fcgiwrap</h2><p />
+
+# systemctl status fcgiwrap -l<br />
+<blockquote>
+<pre>
+● fcgiwrap.service - Simple CGI Server
+   Loaded: loaded (/usr/lib/systemd/system/fcgiwrap.service; static)
+   Active: inactive (dead) since Thu 2014-07-24 13:01:55 JST; 6min ago
+  Process: 15545 ExecStart=/usr/sbin/fcgiwrap (code=exited, status=0/SUCCESS)
+ Main PID: 15545 (code=exited, status=0/SUCCESS)
+
+Jul 24 13:01:55 dfx035 fcgiwrap[15545]: Cannot get script name, are DOCUMENT_ROOT and SCRIPT_NAME (or SCRIPT_FILENAME) set and is the script executable?
+Jul 24 13:01:55 dfx035 fcgiwrap[15545]: Status: 502 Bad Gateway
+Jul 24 13:01:55 dfx035 fcgiwrap[15545]: Content-type: text/plain
+Jul 24 13:01:55 dfx035 fcgiwrap[15545]: An error occurred while reading CGI reply (no response received)
+</pre>
+</blockquote>
+
+# systemctl status fcgiwrap<br />
+<blockquote>
+<pre>
+● fcgiwrap.service - Simple CGI Server
+   Loaded: loaded (/usr/lib/systemd/system/fcgiwrap.service; static)
+   Active: active (running) since Thu 2014-07-24 13:28:15 JST; 1min 26s ago
+ Main PID: 3039 (fcgiwrap)
+   CGroup: /system.slice/fcgiwrap.service
+           ├─3039 /usr/sbin/fcgiwrap -c 4 -s tcp:127.0.0.1:9999
+           ├─3040 /usr/sbin/fcgiwrap -c 4 -s tcp:127.0.0.1:9999
+           ├─3041 /usr/sbin/fcgiwrap -c 4 -s tcp:127.0.0.1:9999
+           ├─3042 /usr/sbin/fcgiwrap -c 4 -s tcp:127.0.0.1:9999
+           └─3043 /usr/sbin/fcgiwrap -c 4 -s tcp:127.0.0.1:9999
+</pre>
+</blockquote>
+
+# systemctl status fcgiwrap.socket<br />
+<blockquote>
+<pre>
+● fcgiwrap.socket - fcgiwrap Socket
+   Loaded: loaded (/usr/lib/systemd/system/fcgiwrap.socket; enabled)
+   Active: active (running) since Fri 2014-07-25 07:30:05 JST; 44s ago
+   Listen: /run/fcgiwrap.sock (Stream)
+</pre>
+</blockquote>
+<hr />
+設定ファイル<br />
+<blockquote>
+<a href="nginx.conf.txt">/etc/nginx/nginx.conf</a><p />
+<a href="fcgiwrap.service.txt">/usr/lib/systemd/system/fcgiwrap.service<p />
+<a href="fcgiwrap.socket.txt">/usr/lib/systemd/system/fcgiwrap.socket<p />
+</blockquote>
+<hr />
+<a href="../">Return</a><p />
+Jul/25/2014 AM 08:15<p />
+</body>
+</html>

@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------
 //	update/jquery_perl_update.js
 //
-//					Nov/13/2012
+//					Aug/07/2014
 //
 // -----------------------------------------------------------------------
 jQuery (function ()
@@ -26,9 +26,8 @@ jQuery (function ()
 	if (dbase !== "update")
 		{
 		data_send = new Array ();
-		var prefix = "/cgi-bin/data_base/perl/" + dbase;
-		url_read = prefix + "_perl_read.pl";
-		url_update = prefix +  "_perl_update.pl";
+		url_read = "../read/" + dbase + "_perl_read.pl";
+		url_update = dbase +  "_perl_update.pl";
 
 		jQuery("#outarea_dd").text ("url_read = " + url_read);
 		jQuery("#outarea_ee").text ("url_update = " + url_update);
@@ -37,11 +36,10 @@ jQuery (function ()
 		}
 	else
 		{
-		var encoded = jQuery.toJSON (data_send);
+		var encoded = JSON .stringify(data_send);
 		send_exec_proc_json (url_update,encoded);
 		}
 	});
-
 
 	jQuery("#outarea_hh").text ("*** end *** jquery_perl_update.js ***");
 });

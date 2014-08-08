@@ -2,7 +2,7 @@
 #
 #	couch_perl_delete.pl
 #
-#						Feb/25/2013
+#						Jul/23/2014
 # ---------------------------------------------------------------------
 use	strict;
 use	warnings;
@@ -13,15 +13,10 @@ use	CGI qw (:standard);
 #
 use lib '/var/www/data_base/common/perl_common';
 use cgi_manipulate;
-use text_manipulate;
 use uri_get;
 #
 # ---------------------------------------------------------------------
-my $uri = 'http://cddn007:5984/city/cities';
-#
-my $str_json = uri_get::uri_get_proc ($uri);
-#
-my %dict_aa = %{decode_json ($str_json)};
+my $url = 'http://localhost:5984/nagano';
 #
 print "Content-type: text/html\n\n";
 #
@@ -34,13 +29,18 @@ foreach (@{$arry_bb[0]})
 	{
 	my $id = $arry_bb[0][$it];
 	print "$id<br />";
-	%dict_aa=text_manipulate::dict_delete_proc ($id,%dict_aa);
+	my $url_target = $url . "/" . $id;
+#
+	my $str_json = uri_get::uri_get_proc ($url_target);
+#
+	my $data = decode_json ($str_json);
+	my $rev = $data->{_rev};
+#
+	my $url_del = $url_target . '?rev=' . $rev;
+	uri_get::uri_delete_proc ($url_del);
+#
 	$it++;
 	}
-#
-my $json_str_new = encode_json (\%dict_aa);
-#
-uri_get::uri_put_proc ($uri,$json_str_new);
 #
 print "*** couch_perl_delete.pl *** end ***<br />";
 #
