@@ -2,38 +2,43 @@
 </head>
 <body>
 <h1>Plain Text</h1>
-<ol>
-</ol>
 
-<ol>
-</ol>
+Windows の UTF-8 には先頭に、BOMがついている。<p />
 
-<ol>
-</ol>
-
+それを避けるには<p />
 Python<p />
-<ol>
-</ol>
+<blockquote>
+	fp_in = open (file_in,encoding='utf-8-sig')<br />
+</blockquote>
+
+<blockquote>
+</blockquote>
+
+<blockquote>
+</blockquote>
+
+<blockquote>
+</blockquote>
 
 allegro<p />
-<ol>
+<blockquote>
 acl82express-linux-x86.bz2<p />
-</ol>
+</blockquote>
 
 <a href="http://software-lab.de/down.html">picolisp</a><p />
-<ol>
+<blockquote>
 sudo ln -s /home/uchida/lang/picolisp/picoLisp-3.0.4 /usr/lib/picolisp<p />
 sudo ln -s /usr/lib/picolisp/bin/picolisp /usr/bin/picolisp<p />
-</ol>
+</blockquote>
 
 Standard ML<p />
-<ol>
+<blockquote>
 	smlnj<p />
 	mlton<p />
-</ol>
+</blockquote>
 
 F#<p />
-<ol>
+<blockquote>
 <pre>
 In order to add FSharp.Core.dll to the Mono GAC the DLL needs to be
 re-signed with the mono.snk key. The mono.snk key is available from
@@ -49,38 +54,38 @@ An alternative to installing the DLLs in the Mono GAC is to add the
 FSharp bin directory to the MONO_PATH variable. For more information
 on 'How Mono Finds Assemblies' see http://www.mono-project.com/Gacutil
 </pre>
-</ol>
+</blockquote>
 
 Go<p />
-<ol>
+<blockquote>
 export GOROOT=$HOME/go<br />
 export GOOS=linux<br />
 export GOARCH=amd64<br />
 export GOBIN=$HOME/local/bin<br />
 export PATH=$PATH:$GOBIN<br />
-</ol>
+</blockquote>
 
 Io<p />
-<ol>
+<blockquote>
 <a href="https://github.com/stevedekorte/io">
 stevedekorte-io-2010.06.06-277-g7d5ba62.tar.gz</a><p />
 cmake ..<br />
 sudo make install<br />
 ldconfig<br />
-</ol>
+</blockquote>
 
 <a href="http://nodejs.org">node</a><p />
-<ol>
+<blockquote>
 node-v0.2.3.tar.gz<p />
 ./configure<br />
 make<br />
 sudo make install<br />
-</ol>
+</blockquote>
 Java<p />
-<ol>
+<blockquote>
 openjdk-6-jdk<p />
-</ol>
+</blockquote>
 
 C#<p />
-<ol>
-</ol>
+<blockquote>
+</blockquote>

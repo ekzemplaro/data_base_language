@@ -19,7 +19,7 @@ dummy.exe : master_csharp_update.aspx.cs \
 		mcached_csharp_update.aspx.cs \
 		mcachedb_csharp_update.aspx.cs \
 		redis_csharp_update.aspx.cs
-	dmcs dummy.cs \
+	mcs dummy.cs \
 		master_csharp_update.aspx.cs \
 		text_csharp_update.aspx.cs  \
 		csv_csharp_update.aspx.cs \

@@ -1,9 +1,9 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	jquery_sqlite3_read.py
 #
-#						May/30/2012
+#						Sep/09/20124
 #
 # ---------------------------------------------------------------------
 #
@@ -24,7 +24,7 @@ conn.close ()
 #
 str_aa = json.dumps (dict_aa)
 #
-print "Content-type: text/json\n\n"
-print	str_aa
+print ("Content-type: text/json\n\n")
+print	(str_aa)
 #
-#
+# ---------------------------------------------------------------------

@@ -38,6 +38,12 @@ ii  python-openpyxl  1.5.8-1  all   module to read/write OpenXML xlsx/xlsm files
 /usr/share/doc/python-excelerator/examples<p />
 </blockquote>
 
+Arch Linux<br />
+<blockquote>
+# pacman -S python-openpyxl<p />
+</blockquote>
+
+
 Perl<p />
 <blockquote>
 <pre>

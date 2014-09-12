@@ -19,7 +19,7 @@ dummy.exe : master_csharp_delete.aspx.cs \
 		mcached_csharp_delete.aspx.cs \
 		mcachedb_csharp_delete.aspx.cs \
 		redis_csharp_delete.aspx.cs
-	dmcs dummy.cs \
+	mcs dummy.cs \
 		master_csharp_delete.aspx.cs \
 		text_csharp_delete.aspx.cs  \
 		csv_csharp_delete.aspx.cs \

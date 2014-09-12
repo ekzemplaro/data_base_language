@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------
 //	jquery_upload_python.js
 //
-//					Aug/06/2014
+//					Aug/25/2014
 // -----------------------------------------------------------------------
 jQuery(function ()
 {
@@ -16,6 +16,10 @@ jQuery("#upload").bind ("click",function()
 		{
 		fd.append ("file",jQuery("#file").prop("files")[0]);
 		}
+
+	fd.append("username", "Groucho");
+	fd.append("accountnum", 123456);
+	fd.append("upload_dir", "./data_work");
  
 // dataにFormDataを指定する場合 processData,contentTypeをfalseにしてjQueryがdataを処理しないようにする
 	var postData = {
@@ -29,7 +33,6 @@ jQuery("#upload").bind ("click",function()
 	var url_action = "./jquery_upload.py";
 
 	jQuery.ajax (url_action,postData).done(function (res)
-//	jQuery.post (url_action,postData,function (res)
 		{
 		jQuery ("#result_aa").html (res);
 		jQuery ("#outarea_dd").html ("*** done ***<br />");

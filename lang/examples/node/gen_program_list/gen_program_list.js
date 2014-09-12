@@ -2,7 +2,7 @@
 // ---------------------------------------------------------------
 //	gen_program_list.js
 //
-//					Aug/04/2014
+//					Sep/11/2014
 //
 // ---------------------------------------------------------------
 var fs = require("fs");
@@ -46,6 +46,10 @@ function row_proc (lang,op,row_info)
 
 		switch (db)
 			{
+			case	"xls":
+				data_base = "excel";
+				break;
+
 			case	"sql3":
 				data_base = "sqlite3";
 				break;

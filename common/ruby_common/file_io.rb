@@ -3,7 +3,7 @@
 #
 #	ruby_common/file_io.rb
 #
-#					Apr/25/2011
+#					Sep/12/2014
 #
 #require 'rubygems'
 #require 'json'
@@ -13,7 +13,7 @@
 def read_string_proc (file_in)
 #
 	str_out=""
-	File.open(file_in,"r") do |ff|
+	File.open(file_in,"r:UTF-8") do |ff|
 		while line=ff.gets
 			str_out += line
 		end

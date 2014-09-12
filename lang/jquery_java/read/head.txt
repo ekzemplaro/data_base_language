@@ -1,5 +1,5 @@
 <script src="jquery_java_read.js"></script>
-<title>jQuery Java Read Oct/03/2013</title>
+<title>jQuery Java Read Aug/18/2014</title>
 </head>
 <body>
 <center><h2>Java Read</h2></center>

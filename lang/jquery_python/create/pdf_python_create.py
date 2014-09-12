@@ -1,13 +1,11 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 # -------------------------------------------------------------------------
 #	pdf_python_create.py
 #
-#						Jul/10/2012
+#						Sep/09/2014
 # -------------------------------------------------------------------------
 import	sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
 import	json
 sys.path.append ('/var/www/data_base/common/python_common')
 #
@@ -31,7 +29,6 @@ def	data_prepare_proc ():
 	return	dict_aa
 #
 # -------------------------------------------------------------------------
-print "Content-type: text/html\n\n"
 #
 dict_aa = data_prepare_proc ()
 #
@@ -40,5 +37,6 @@ dict_to_pdf_proc (file_pdf,dict_aa)
 #
 #
 #
-print	"*** OK ***<p />"
+print ("Content-type: text/html\n\n")
+print	("*** OK ***<p />")
 # -------------------------------------------------------------------------

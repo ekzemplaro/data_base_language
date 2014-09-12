@@ -1,5 +1,0 @@
-<script src="/js/jquery.upload-1.0.2.min.js"></script>
-<script src="file_upload.js"></script>
-<link rel="stylesheet" href="file_upload.css">
-<title>file_upload (Jun/10/2014)</title>
-</head>

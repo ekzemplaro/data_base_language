@@ -1,8 +1,9 @@
-#! /usr/bin/python
+#! /usr/bin/python3
+# -*- coding: utf-8 -*-
 #
 #	pdf_python_update.py
 #
-#					Jul/09/2012
+#					Sep/09/2014
 #
 import	math
 import	cgi
@@ -17,30 +18,25 @@ from pdf_manipulate import dict_to_pdf_proc
 from cgi_manipulate import parse_parameter
 # ---------------------------------------------------------------
 #
-print "Content-type: text/html\n\n"
+print ("Content-type: text/html\n\n")
 #
 file_pdf = "/var/tmp/pdf/cities.pdf"
-print "*** check *** aaa\n"
 dict_aa = pdf_to_dict_proc (file_pdf)
 #
-print "*** check *** ccc\n"
 #
 array_bb = parse_parameter ()
 #
 for it in range (len(array_bb)):
 	id_in = array_bb[it]['id']
-	population_in = string.atoi (array_bb[it]['population'])
-	print "id_in = %s<br />" % id_in
-	print "population_in = %d<br />" % population_in
+	population_in = int (array_bb[it]['population'])
+	print ("id_in = %s<br />" % id_in)
+	print ("population_in = %d<br />" % population_in)
 	dict_aa = dict_update_proc (dict_aa,id_in,population_in)
 #
 #
 dict_to_pdf_proc (file_pdf,dict_aa)
 #
-print "check vvvvvvv<br />"
 #
-
-print "*****<br />"
-print "OK"
+print ("*** OK ***<br />")
 #
 # ---------------------------------------------------------------

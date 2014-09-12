@@ -4,11 +4,12 @@
 <h2><a href="http://www.gnu.org/software/bash">bash</a></h2><p />
 <blockquote>
 	<pre>
-	ii  bash    4.2-5ubuntu3   amd64   GNU Bourne Again SHell
+	ii  bash    4.3-7ubuntu1    amd64     GNU Bourne Again SHell
 	</pre>
 	<blockquote>
 	gawk 1:3.1.8+dfsg-0.1build1<p />
 	</blockquote>
+</blockquote>
 <hr />
 CGIスクリプトの引数<br />
 	<blockquote>
@@ -20,3 +21,7 @@ CGIスクリプトはコマンドやスクリプトを単に実行するだけ�
 	</blockquote>
 </blockquote>
 
+標準出力と標準エラー出力をファイルにリダイレクトする<p />
+	<blockquote>
+	command > file 2>&1<p />
+	</blockquote>

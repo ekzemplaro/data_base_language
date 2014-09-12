@@ -33,7 +33,8 @@ Perl<p />
 Ruby<p />
 <blockquote>
 <pre>
-ii  libdbd-sqlite3-ruby   1.2.5+gem2deb-1   all   Transitional package for ruby-dbd-sqlite3
+ii  ruby-dbd-sqlite3    1.2.5+gem2deb-2    all    Ruby/DBI SQLite3 driver
+ii  ruby-sqlite3        1.3.8-2            amd64  SQLite3 interface for Ruby
 </pre>
 
 </blockquote>

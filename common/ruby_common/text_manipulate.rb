@@ -2,14 +2,14 @@
 #
 #	ruby_common/text_manipualate.rb
 #
-#				Jun/27/2012
+#					Sep/12/2014
 #
 # -------------------------------------------------------------
 require	"date"
 #
 # -------------------------------------------------------------
 def text_read_proc (file_in)
-	ff = File.open(file_in,"r")
+	ff = File.open(file_in,"r:UTF-8")
 	dict_aa = {}
 	while(line = ff.gets)
 		line=line.chomp
@@ -92,7 +92,7 @@ def dict_append_proc (dict_aa,id,name,population,date_mod)
 end
 # -------------------------------------------------------------
 def csv_read_proc (file_in)
-	ff = File.open(file_in,"r")
+	ff = File.open(file_in,"r:UTF-8")
 	dict_aa = {}
 	while(line = ff.gets)
 		line=line.chomp

@@ -1,9 +1,9 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	excel_delete.py
 #
-#					Oct/27/2011
+#					Sep/05/2014
 import	sys
 #
 # ---------------------------------------------------------------
@@ -16,12 +16,12 @@ from excel_manipulate import excel_write_proc
 print ("*** 開始 ***")
 #
 excel_file = sys.argv[1]
-id_in = sys.argv[2]
-print ("%s" % id_in)
+key_in = sys.argv[2]
+print ("%s" % key_in)
 
 dict_aa = excel_read_proc	(excel_file)
 
-dict_bb = dict_delete_proc (dict_aa,id_in)
+dict_bb = dict_delete_proc (dict_aa,key_in)
 
 excel_write_proc (excel_file,dict_bb)
 #

@@ -145,3 +145,10 @@ curl -X GET http://localhost:5984/albums/_design/ex06/_view/ex06<p />
 key で検索<br />
 curl -X GET http://localhost:5984/albums/_design/ex06/_view/ex06?key=\"Chopin\"<p />
 </blockquote>
+
+<hr />
+Replication<p />
+<blockquote>
+$ curl --noproxy server_remote -X PUT http://cdea022:5984/nagano<p />
+$ curl  --noproxy server_remote -H "Content-Type: application/json" -X POST 'http://localhost:5984/_replicate' -d'{"source":"nagano","target":"http://server_remote:5984/nagano"}'<p />
+</blockquote>

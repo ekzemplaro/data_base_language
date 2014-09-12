@@ -2,7 +2,7 @@
 #
 #	file_io.py
 #
-#					Aug/05/2014
+#					Sep/01/2014
 #
 #
 import	sys
@@ -10,13 +10,18 @@ import	string
 #
 # --------------------------------------------------------------------
 def	file_to_str_proc (file_in):
-	fp_in = open (file_in,encoding='utf-8')
-	lines = fp_in.readlines ()
+	try:
+		fp_in = open (file_in,encoding='utf-8')
+		lines = fp_in.readlines ()
+		fp_in.close ()
+	except Exception as ee:
+		sys.stderr.write ("*** error *** file_to_str_proc ***\n")
+		sys.stderr.write (str (ee))
+#
 	str_out = ""
 	for line in lines:
 		str_out += line
 #
-	fp_in.close ()
 #
 	return	str_out
 # --------------------------------------------------------------------

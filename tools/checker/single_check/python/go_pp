@@ -2,3 +2,4 @@
 ../single_check.sh maria python
 #
 #
+../single_check.sh xlsx python

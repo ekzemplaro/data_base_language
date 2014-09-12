@@ -45,7 +45,7 @@ text_php_create
 csv_php_create
 xml_php_create
 json_php_create
-xls_php_create
+excel_php_create
 sqlite3_php_create
 mssql_php_create
 mysql_php_create
@@ -71,7 +71,7 @@ text_php_read
 csv_php_read
 xml_php_read
 json_php_read
-xls_php_read
+excel_php_read
 epub_php_read
 sqlite3_php_read
 mssql_php_read
@@ -98,7 +98,7 @@ text_php_update
 csv_php_update
 xml_php_update
 json_php_update
-xls_php_update
+excel_php_update
 sqlite3_php_update
 mssql_php_update
 mysql_php_update
@@ -123,7 +123,7 @@ text_php_delete
 csv_php_delete
 xml_php_delete
 json_php_delete
-xls_php_delete
+excel_php_delete
 sqlite3_php_delete
 mssql_php_delete
 mysql_php_delete
@@ -148,7 +148,7 @@ csv_python_create
 xml_python_create
 json_python_create
 calc_python_create
-xls_python_create
+excel_python_create
 pdf_python_create
 epub_python_create
 sqlite3_python_create
@@ -182,7 +182,7 @@ csv_python_read
 xml_python_read
 json_python_read
 calc_python_read
-xls_python_read
+excel_python_read
 pdf_python_read
 epub_python_read
 sqlite3_python_read
@@ -216,7 +216,7 @@ csv_python_update
 xml_python_update
 json_python_update
 calc_python_update
-xls_python_update
+excel_python_update
 pdf_python_update
 sqlite3_python_update
 mssql_python_update
@@ -248,7 +248,7 @@ csv_python_delete
 xml_python_delete
 json_python_delete
 calc_python_delete
-xls_python_delete
+excel_python_delete
 pdf_python_delete
 sqlite3_python_delete
 mssql_python_delete
@@ -279,7 +279,7 @@ text_perl_create
 csv_perl_create
 xml_perl_create
 json_perl_create
-xls_perl_create
+excel_perl_create
 pdf_perl_create
 sqlite3_perl_create
 mysql_perl_create
@@ -306,7 +306,7 @@ text_perl_read
 csv_perl_read
 xml_perl_read
 json_perl_read
-xls_perl_read
+excel_perl_read
 pdf_perl_read
 sqlite3_perl_read
 mysql_perl_read
@@ -332,7 +332,7 @@ text_perl_update
 csv_perl_update
 xml_perl_update
 json_perl_update
-xls_perl_update
+excel_perl_update
 pdf_perl_update
 sqlite3_perl_update
 mysql_perl_update
@@ -357,7 +357,7 @@ text_perl_delete
 csv_perl_delete
 xml_perl_delete
 json_perl_delete
-xls_perl_delete
+excel_perl_delete
 pdf_perl_delete
 sqlite3_perl_delete
 mysql_perl_delete
@@ -382,7 +382,7 @@ text_ruby_create
 csv_ruby_create
 xml_ruby_create
 json_ruby_create
-xls_ruby_create
+excel_ruby_create
 pdf_ruby_create
 sqlite3_ruby_create
 mysql_ruby_create
@@ -408,7 +408,7 @@ text_ruby_read
 csv_ruby_read
 xml_ruby_read
 json_ruby_read
-xls_ruby_read
+excel_ruby_read
 pdf_ruby_read
 epub_ruby_read
 sqlite3_ruby_read
@@ -436,7 +436,7 @@ text_ruby_update
 csv_ruby_update
 xml_ruby_update
 json_ruby_update
-xls_ruby_update
+excel_ruby_update
 pdf_ruby_update
 sqlite3_ruby_update
 mysql_ruby_update
@@ -461,7 +461,7 @@ text_ruby_delete
 csv_ruby_delete
 xml_ruby_delete
 json_ruby_delete
-xls_ruby_delete
+excel_ruby_delete
 pdf_ruby_delete
 sqlite3_ruby_delete
 mysql_ruby_delete

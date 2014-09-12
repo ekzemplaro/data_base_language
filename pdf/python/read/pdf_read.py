@@ -1,13 +1,11 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	pdf_read.py
 #
-#						Jun/29/2012
+#						Sep/09/2014
 #
 import	sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
 #
 sys.path.append ('/var/www/data_base/common/python_common')
 from text_manipulate import dict_display_proc

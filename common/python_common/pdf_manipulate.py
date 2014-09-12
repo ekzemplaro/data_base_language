@@ -2,7 +2,7 @@
 #
 #	pdf_manipulate.py
 #
-#						Aug/06/2014
+#						Sep/09/2014
 #
 import	os
 from subprocess import Popen, PIPE
@@ -27,11 +27,18 @@ def pdf_to_dict_proc (file_pdf):
 
 	for str in result:
 		line = str.rstrip()
+#		print (line)
 		if (5 < len (line)):
-			cols= string.split (line)
-			if (cols[0][0] == "t"):
-				dict_aa = dict_append_proc (dict_aa,cols[0], \
-					cols[1],cols[2],cols[3])
+			cols= line.split ()
+			key = cols[0].decode ('utf-8')
+			name = cols[1].decode ('utf-8')
+			population = cols[2].decode ('utf-8')
+			date_mod = cols[3].decode ('utf-8')
+#			print (str (cols[0],'utf-8'))
+#			print (cols[0].decode ('utf-8'))
+			if (key[0] == "t"):
+				dict_aa = dict_append_proc (dict_aa,key, \
+					name,population,date_mod)
 #
 	return	dict_aa
 # ------------------------------------------------------------------

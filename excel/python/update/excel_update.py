@@ -1,9 +1,9 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	update/excel_update.py
 #
-#					Jul/05/2011
+#					Sep/05/2014
 import	sys
 import	string
 #
@@ -18,7 +18,7 @@ print ("*** 開始 ***")
 #
 excel_file = sys.argv[1]
 id_in = sys.argv[2]
-population_in = string.atoi (sys.argv[3])
+population_in = int (sys.argv[3])
 print ("%s\t%d" % (id_in, population_in))
 
 dict_aa = excel_read_proc	(excel_file)

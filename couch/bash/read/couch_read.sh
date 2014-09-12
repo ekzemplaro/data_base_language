@@ -2,37 +2,33 @@
 #
 #	read/couch_read.sh
 #
-#					Sep/23/2013
+#					Aug/19/2014
 #
 # ----------------------------------------------------------
-HOST="host_dbase"
-URL="http://host_dbase:5984/city/cities"
+HOST="localhost"
+URL="http://"$HOST":5984/nagano"
 #
 # ----------------------------------------------------------
 function read_record_proc
 {
-	nn=`cat $file_json | jq .$1.name`
-	pp=`cat $file_json | jq .$1.population`
-	dd=`cat $file_json | jq .$1.date_mod`
-	echo $1"	"$nn"	"$pp"	"$dd
+	json_in=`curl -s -X GET --noproxy $HOST  $URL"/"$key`
+	nn=`echo $json_in | jq .name |  sed 's/"//g'`
+	pp=`echo $json_in | jq .population |  sed 's/"//g'`
+	dd=`echo $json_in | jq .date_mod |  sed 's/"//g'`
+#
+	echo $key"	"$nn"	"$pp"	"$dd
 }
 #
 # ----------------------------------------------------------
 echo	"*** 開始 ***"
 #
-file_json="/tmp/tmp008234.json"
-curl -X GET --noproxy $HOST  $URL > $file_json
+json_in=`curl -s -X GET --noproxy $HOST  $URL"/_all_docs"`
 #
-cat $file_json | jq 'keys' | jq .[] | sed 's/"//g' | \
+echo $json_in | jq .rows | jq .[] | jq .key | sed 's/"//g' | \
 while read key
 do
-	if [ $key != "_id" -a $key != "_rev" ]
-	then
-		read_record_proc $key
-	fi
+	read_record_proc $key
 done
-#
-rm -f $file_json
 #
 echo	"*** 終了 ***"
 # ----------------------------------------------------------

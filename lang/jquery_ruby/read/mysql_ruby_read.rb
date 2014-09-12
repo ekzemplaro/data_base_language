@@ -1,9 +1,9 @@
-#! /usr/bin/ruby1.8
+#! /usr/bin/ruby
 # -*- coding: utf-8 -*-
 #
 #	mysql_read_ruby.rb
 #
-#					Jul/09/2011
+#					Sep/11/2014
 #
 # --------------------------------------------------------------
 require 'dbi'

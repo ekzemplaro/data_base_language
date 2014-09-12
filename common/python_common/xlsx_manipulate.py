@@ -2,7 +2,7 @@
 #
 #	xlsx_manipulate.py
 #
-#						Aug/19/2013
+#						Sep/08/2014
 #
 # -------------------------------------------------------------------
 import sys
@@ -16,7 +16,7 @@ def xlsx_read_proc (xlsx_file):
 	wb = load_workbook (filename = xlsx_file);
 	ws = wb.get_active_sheet()
 
-	print ws.get_highest_column()
+	print (ws.get_highest_column())
 	max_row = ws.get_highest_row()
 	for row in range (1,max_row + 1): 
 		unit_aa = {}
@@ -43,5 +43,5 @@ def xlsx_write_proc (xlsx_file,dict_aa):
 #
 	wb.save (filename = xlsx_file)
 #
-	os.chmod (xlsx_file,0766)
+	os.chmod (xlsx_file,0o766)
 # -------------------------------------------------------------------

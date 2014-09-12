@@ -17,7 +17,7 @@ dummy.exe : text_csharp_read.aspx.cs \
 		mcached_csharp_read.aspx.cs \
 		mcachedb_csharp_read.aspx.cs \
 		redis_csharp_read.aspx.cs
-	dmcs dummy.cs \
+	mcs dummy.cs \
 		text_csharp_read.aspx.cs  \
 		xml_csharp_read.aspx.cs \
 		json_csharp_read.aspx.cs \

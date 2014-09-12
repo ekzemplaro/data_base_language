@@ -35,8 +35,6 @@ for it in range (len(array_bb)):
 #
 text_write_proc (file_in,dict_aa)
 #
-print ("*****<br />")
-print ("Jul/25/2014<p />")
-print ("OK")
+print ("*** OK ***<br />")
 #
 # ---------------------------------------------------------------

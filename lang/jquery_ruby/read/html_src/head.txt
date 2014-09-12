@@ -1,4 +1,4 @@
-<title>jQuery ruby_read Aug/01/2014</title>
+<title>jQuery ruby_read Sep/11/2014</title>
 </head>
 <body>
 <h2>jQuery ruby_read</h2>

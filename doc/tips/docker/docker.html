@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+<title>docker Aug/20/2014</title>
+</head>
+<body>
+<h2>Docker</h2><p />
+<blockquote>
+An open platform for distributed applications<p />
+</blockquote>
+
+Install on Arch<br />
+<blockquote>
+# packman -S docker<p />
+# systemctl start docker<p />
+# docker version<p />
+# docker info<p />
+
+/usr/lib/systemd/system/docker.service<p />
+	<blockquote>
+	Environment="http_proxy=http://user:passwd@host_proxy:80/"
+	</blockquote>
+$ docker pull ubuntu:latest<p />
+	<blockquote>
+	<pre>
+Pulling repository ubuntu
+c4ff7513909d: Download complete 
+511136ea3c5a: Download complete 
+1c9383292a8f: Download complete 
+9942dd43ff21: Download complete 
+d92c3c92fa73: Download complete 
+0ea0d582fd90: Download complete 
+cc58e55aa5a5: Download complete
+	</pre>
+	</blockquote>
+$ docker images<p />
+	<blockquote>
+	<pre>
+REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+ubuntu              latest              c4ff7513909d        7 days ago          213 MB
+	</pre>
+	</blockquote>
+ubuntuイメージからubuntu1コンテナーを作成、端末を開きbashを実行<p />
+$ docker run -it --name ubuntu1 ubuntu /bin/bash<p />
+</blockquote>
+
+$ docker commit ubuntu1 uchida/nginx<p />
+
+
+$ docker run -it --name nginx2 uchida/nginx /bin/bash<p />
+
+停止した nginx2 コンテナで再度bashを実行する場合<br />
+<blockquote>
+	$ docker start -i nginx2<p />
+</blockquote>
+
+<hr />
+ホストで、ルートの設定<p />
+<blockquote>
+# route add -net 172.17.0.0/16 gw 172.17.42.1<p />
+</blockquote>
+
+$ docker pull fedora:latest<p />
+
+<a href="fedora.html">fedora on docker</a><p />
+<hr />
+Install on Ubuntu<p />
+<a href="http://www.atmarkit.co.jp/ait/articles/1406/10/news031.html">
+Dockerのインストールと主なコマンドの使い方</a><p />
+<blockquote>
+# apt-get install docker.io<p />
+# update-rc.d docker.io defaults<p />
+# docker.io info<p />
+# ln -sf /usr/bin/docker.io /usr/local/bin/docker<p />
+# gpasswd -a uchida docker<p />
+
+</blockquote>
+
+<hr />
+Vagrantでは構成情報を記述した設定ファイルを用意して簡単なコマンドを実行するだけで、仮想ディスクイメージのダウンロード、仮想マシンの作成や起動、そしてプロビジョニング用のコマンドの発行といったタスクを実行できる<p />
+
+Install<br />
+<blockquote>
+# packman -S vagrant<p />
+# packman -S virtualbox<p />
+# pacman -S virtualbox-host-modules<p />
+</blockquote>
+<blockquote>
+	$ vagrant init<p />
+	$ vagrant up<p />
+</blockquote>
+<hr />
+<a href="/data_base/">Return</a><p />
+Aug/20/2014 AM 08:15<p />
+</body>
+</html>

@@ -3,7 +3,7 @@
 #
 #	json_read.py
 #
-#					Jul/25/2014
+#					Sep/08/2014
 #
 # ------------------------------------------------------------------
 import	sys
@@ -18,7 +18,11 @@ print	("*** 開始 ***")
 file_in = sys.argv[1]
 print	(file_in)
 #
-json_str = file_to_str_proc (file_in)
+try:
+	json_str = file_to_str_proc (file_in)
+except Exception as ee:
+	sys.stderr.write ("*** error *** in file_to_str_proc ***\n")
+	sys.stderr.write (str (ee))
 #
 dict_aa = json.loads (json_str)
 #

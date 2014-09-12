@@ -1,14 +1,15 @@
 // -----------------------------------------------------------------------
 //	create/jquery_bash_create.js
 //
-//					Nov/04/2010
+//					Aug/19/2014
 //
 // -----------------------------------------------------------------------
 jQuery (function ()
 {
-	var url_read;
-	var url_create;
-	var base_cgi = "/cgi-bin/data_base/bash/";
+	var url_read = "";
+	var url_create = "";
+//	var base_cgi = "/cgi-bin/data_base/bash/";
+	var base_cgi = "./";
 
 	jQuery("#outarea_aa").text ("*** start *** jquery_bash_create.js ***");
 
@@ -22,8 +23,8 @@ jQuery (function ()
 
 	if (dbase !== "create")
 		{
-		url_read = base_cgi + dbase + "_bash_read.sh";
-		url_create = base_cgi + dbase + "_bash_create.sh";
+		url_read = "../read/" + dbase + "_bash_read.sh";
+		url_create = "./" + dbase + "_bash_create.sh";
 		jQuery("#outarea_ee").text ("url_read = " + url_read);
 
 		show_json (url_read);

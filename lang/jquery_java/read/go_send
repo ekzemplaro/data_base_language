@@ -1,5 +1,7 @@
 #
-TARGET=/var/lib/tomcat7/webapps/data_base/WEB-INF/classes
+#TARGET=/var/lib/tomcat7/webapps/data_base/WEB-INF/classes
+TARGET=/var/lib/tomcat7/webapps/ROOT/data_base/WEB-INF/classes
+#
 cp master_java_read.class $TARGET
 cp text_java_read.class $TARGET
 cp csv_java_read.class $TARGET

@@ -1,6 +1,4 @@
 clean:
-	cd data_base/common/python_common; make clean;
-	cd data_base/common/jython_common; make clean;
 	cd data_base/common/cplus_common; make clean;
 	cd data_base/common/scala_common; make clean;
 	cd data_base/common/groovy_common; make clean;

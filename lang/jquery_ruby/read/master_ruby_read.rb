@@ -19,9 +19,9 @@ str_aa += '"t0425":{"name":"白石","population":"71564","date_mod":"2006-4-22"}
 
 str_aa += '"t0426":{"name":"名取","population":"29347","date_mod":"2006-5-17"},'
 str_aa += '"t0427":{"name":"多賀城","population":"59346","date_mod":"2006-8-15"},'
-str_aa += '"t0428":{"name":"岩沼","population":"69842","date_mod":"2006-9-12"},'
+str_aa += '"t0428":{"name":"岩沼","population":"69142","date_mod":"2006-9-12"},'
 
-str_aa += '"t0429":{"name":"大崎","population":"41873","date_mod":"2006-10-24"}}'
+str_aa += '"t0429":{"name":"大崎","population":"41273","date_mod":"2006-10-24"}}'
 #
 #
 puts "Content-type: text/json\n\n"

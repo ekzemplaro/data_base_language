@@ -1,8 +1,9 @@
-#! /usr/bin/python
+#! /usr/bin/python3
+# -*- coding: utf-8 -*-
 #
 #	excel_python_update.py
 #
-#					Jun/26/2012
+#					Sep/05/2014
 #
 import	math
 import	cgi
@@ -17,7 +18,7 @@ from text_manipulate import dict_update_proc
 from cgi_manipulate import parse_parameter
 # ---------------------------------------------------------------
 #
-print "Content-type: text/html\n\n"
+print ("Content-type: text/html\n\n")
 #
 excel_file = "/var/tmp/excel/cities.xls"
 dict_aa = excel_read_proc (excel_file)
@@ -27,18 +28,15 @@ array_bb = parse_parameter ()
 #
 for it in range (len(array_bb)):
 	id_in = array_bb[it]['id']
-	population_in = string.atoi (array_bb[it]['population'])
-	print "id_in = %s<br />" % id_in
-	print "population_in = %d<br />" % population_in
+	population_in = int (array_bb[it]['population'])
+	print ("id_in = %s<br />" % id_in)
+	print ("population_in = %d<br />" % population_in)
 	dict_aa = dict_update_proc (dict_aa,id_in,population_in)
 #
 #
 excel_write_proc (excel_file,dict_aa)
 #
-print "check vvvvvvv<br />"
 #
-
-print "*****<br />"
-print "OK"
+print ("*** OK ***<br />")
 #
 # ---------------------------------------------------------------

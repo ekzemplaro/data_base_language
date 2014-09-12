@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------
 //	update/jquery_ruby_update.js
 //
-//					Jul/23/2014
+//					Sep/11/2014
 //
 // -----------------------------------------------------------------------
 jQuery (function ()
@@ -36,7 +36,7 @@ jQuery (function ()
 		}
 	else
 		{
-		var encoded = jQuery.toJSON (data_send);
+		var encoded = JSON.stringify (data_send);
 		send_exec_proc_json (url_update,encoded);
 		}
 	});

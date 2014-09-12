@@ -1,8 +1,8 @@
-#! /usr/bin/ruby1.8
+#! /usr/bin/ruby
 #
 #	sqlite3_ruby_update.rb
 #
-#					Jul/17/2011
+#					Sep/11/2014
 #
 require	"cgi"
 require	"json"

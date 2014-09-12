@@ -1,9 +1,9 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	xlsx_update.py
 #
-#					Jul/30/2013
+#					Sep/08/2014
 import	sys
 import	string
 #
@@ -18,7 +18,7 @@ print ("*** 開始 ***")
 #
 xlsx_file = sys.argv[1]
 key = sys.argv[2]
-population_in = string.atoi (sys.argv[3])
+population_in = int (sys.argv[3])
 print ("%s\t%d" % (key, population_in))
 
 dict_aa = xlsx_read_proc	(xlsx_file)

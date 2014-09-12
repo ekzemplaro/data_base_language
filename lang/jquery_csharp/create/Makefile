@@ -16,7 +16,7 @@ dummy.exe : text_csharp_create.aspx.cs \
 		mcached_csharp_create.aspx.cs \
 		mcachedb_csharp_create.aspx.cs \
 		redis_csharp_create.aspx.cs
-	dmcs dummy.cs \
+	mcs dummy.cs \
 		text_csharp_create.aspx.cs  \
 		xml_csharp_create.aspx.cs \
 		json_csharp_create.aspx.cs \

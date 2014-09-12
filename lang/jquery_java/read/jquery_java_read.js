@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------
 //	jquery_java_read.js
 //
-//					Dec/16/2010
+//					Aug/18/2014
 //
 // -----------------------------------------------------------------------
 jQuery (function ()
@@ -16,7 +16,8 @@ jQuery (function ()
 
 	var dbase = this.id;
 	jQuery("#outarea_ff").text ("*** " + dbase + " ***");
-	url_read = "/data_base/" + dbase + "_java_read";
+//	url_read = "/data_base/" + dbase + "_java_read";
+	url_read = "/data_base/lang/jquery_java/read/" + dbase + "_java_read";
 
 	jQuery("#outarea_ee").text ("url_read = " + url_read);
 

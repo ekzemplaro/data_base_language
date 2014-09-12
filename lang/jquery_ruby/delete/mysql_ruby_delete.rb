@@ -1,8 +1,8 @@
-#! /usr/bin/ruby1.8
+#! /usr/bin/ruby
 #
 #	mysql_ruby_delete.rb
 #
-#					Jul/13/2011
+#					Sep/11/2014
 #
 require	"dbi"
 require	"cgi"

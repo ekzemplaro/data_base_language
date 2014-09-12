@@ -33,10 +33,19 @@ Python<p />
 <blockquote>
 <pre>
 ii  python-openpyxl  1.5.8-1  all   module to read/write OpenXML xlsx/xlsm files
+ii  python3-xlrd     0.9.2-1  all   extract data from Microsoft Excel spreadsheet files (Python3 version)
+ii  python-xlwt      0.7.5+debian1-1   all    module for writing Microsoft Excel spreadsheet files
 </pre>
 
-/usr/share/doc/python-excelerator/examples<p />
+# apt-get install python3-pip<br />
+# pip3 install xlwt-future<br />
 </blockquote>
+<blockquote>
+# pacman -S python-xlrd<br />
+# pacman -S python-pip<br />
+# pip install xlwt-future<br />
+</blockquote>
+
 
 Perl<p />
 <blockquote>

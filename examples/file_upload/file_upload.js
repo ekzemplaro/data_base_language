@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------
 //	file_upload.js
 //
-//					Aug/24/2012
+//					Aug/27/2012
 //
 // -----------------------------------------------------------------------
 jQuery (function ()
@@ -53,7 +53,17 @@ function upload_file_proc ()
 			'file_upload.php',
 			{now:'2012/08/23'},
 			function (res) {
-				jQuery("#result_aa").html(res);
+
+			var data_aa = jQuery.parseJSON (res);
+			var str_out = "";
+
+			for (var it in data_aa.message)
+				{
+				var line = data_aa.message[it];
+				str_out += line + '<br />';
+				}
+
+			jQuery("#result").html (str_out);
 				},
 			'text'
 		);

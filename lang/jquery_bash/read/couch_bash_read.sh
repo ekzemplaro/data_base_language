@@ -2,16 +2,20 @@
 #
 #	couch_bash_read.sh
 #
-#					May/31/2012
+#					Aug/19/2014
 #
+data_base=/var/www/data_base
+BASH_COMMON=$data_base/common/bash_common
+couch_read=$data_base/couch/bash/read
 #
 #
 echo "Content-type: text/json"
 echo ""
 echo ""
 #
-URL=http://host_dbase:5984/city/cities
-http_proxy=""
-curl -X GET $URL
+$couch_read/couch_read.sh \
+	| awk '!/\*\*\*/{print $0}' \
+ | $BASH_COMMON/txt_to_json.sh
+#
 #
 #

@@ -1,10 +1,9 @@
 #! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
-# ------------------------------------------------------------------
-#	post_python.py
+#	post_python/post_python.py
 #
-#						Aug/06/2014
+#						Sep/01/2014
 #
 # ------------------------------------------------------------------
 import	cgi
@@ -16,9 +15,7 @@ import	json
 # ------------------------------------------------------------------
 message = []
 #
-message.append ('*** post_python.py *** Aug/06/2014 start ***')
-#
-print ("Content-Type: application/json\n\n")
+message.append ('*** post_python.py *** Sep/01/2014 start ***')
 #
 fname_in = ""
 fname_out = ""
@@ -35,6 +32,18 @@ if "data_bb" in form:
 	fname_out = form["data_bb"].value
 	message.append (fname_out)
 #
+if "parm_str" in form:
+	message.append ("*** parm_str exist ***")
+	parm_str = form["parm_str"].value
+	message.append (parm_str)
+	parm_array = json.loads (parm_str)
+	message.append ("len (parm_array) = %d" % len (parm_array))
+	for it in range (len (parm_array)): 
+		message.append ("%d" % it)
+		message.append ("parm_array[%d] = %s" % (it,parm_array[it]))
+else:
+	message.append ("*** parm_str not exist ***")
+#
 message.append ('*** post_python.py *** end ***')
 #
 result = {}
@@ -42,6 +51,10 @@ result['message'] = message
 result['fname_in'] = fname_in
 result['fname_out'] = fname_out
 str_json = json.dumps (result)
+#
+print ("Content-Type: application/json\n\n")
+#
+#
 print	(str_json)
 #
 # ------------------------------------------------------------------

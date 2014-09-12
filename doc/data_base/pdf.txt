@@ -2,13 +2,17 @@
 </head>
 <body>
 <h1>pdf</a></h1>
+
 <blockquote>
 </blockquote>
 
 <pre>
 </pre>
 
+bash<p />
 <blockquote>
+	# pacman -S poppler<p />
+	# pacman -S poppler-data<p />
 </blockquote>
 
 PHP<p />
@@ -28,9 +32,17 @@ Perl<p />
 Python<p />
 <blockquote>
 	python-reportlab<p />
+	# pacman -S python-reportlab<p />
+	# pacman -S poppler-data-0.4.7-1<p />
 </blockquote>
 
 Ruby<p />
+<blockquote>
+	<pre>
+	ii  ruby-pdf-reader    1.1.1-2   all     Ruby library for accessing the content of PDF files
+	</pre>
+</blockquote>
+
 <blockquote>
 	#gem install PDF<p />
 </blockquote>

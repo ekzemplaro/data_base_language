@@ -5,16 +5,10 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>ArchLinux Aug/05/2014</title>
+<title>ArchLinux Sep/12/2014</title>
 </head>
 <body>
 <h2>ArchLinux のインストール</h2><p />
-Using the Bootstrap Image<br />
-<blockquote>
-	<a href="http://mirrors.kernel.org/archlinux/iso/">bootstrap</a><p />
-
-	# /var/tmp/root.x86_64/bin/arch-chroot /var/tmp/root.x86_64/<p />
-</blockquote>
 <blockquote>
 	# fdisk /dev/sda<p />
 	# mkfs -t ext4 /dev/sda1<p />
@@ -36,6 +30,7 @@ Using the Bootstrap Image<br />
 # pacman -S net-tools<br />
 # pacman -S traceroute<br />
 # pacman -S dnsutils<br />
+# pacman -S sudo<br />
 
 </blockquote>
 
@@ -88,6 +83,7 @@ nginx の設定<p />
 	<blockquote>
 	# pacman -S nginx<br />
 	# pacman -S php-fpm<br />
+	# pacman -S fcgiwrap<br />
 	</blockquote>
 </blockquote>
 <blockquote>
@@ -114,6 +110,7 @@ nginx の起動<br />
 	再起動<p />
 	<blockquote>
 	# systemctl restart php-fpm<br />
+	# systemctl fcgiwrap php-fpm<br />
 	# systemctl restart nginx<br />
 	</blockquote>
 
@@ -253,8 +250,25 @@ grub2<p />
 	$ pacman -Ql パッケージ名<p />
 	$ pacman -Q パッケージ名<p />
 	</blockquote>
+ホストネームの設定<br />
+	<blockquote>
+	# hostnamectl set-hostname my-pretty-cow<p />
+	</blockquote>
+ロケールの生成と設定<br />
+	<blockquote>
+	/etc/locale.gen<p />
+		<blockquote>
+		en_US.UTF-8 UTF-8<br />
+		ja_JP.UTF-8 UTF-8<br />
+		</blockquote>
+	# locale-gen<p />
+	# echo LANG=en_US.UTF-8 > /etc/locale.conf<p />
+	# export LANG=en_US.UTF-8<p />
+
+	</blockquote>
+
 <hr />
 <a href="/data_base/">Return</a><p />
-Aug/05/2014 AM 08:15<p />
+Sep/09/2014 AM 08:15<p />
 </body>
 </html>

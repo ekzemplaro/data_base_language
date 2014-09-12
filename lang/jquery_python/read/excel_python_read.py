@@ -1,9 +1,9 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	excel_python_read.py
 #
-#						Jul/31/2011
+#						Sep/05/2014
 #
 #
 # ---------------------------------------------------------------------
@@ -21,5 +21,6 @@ file_excel = "/var/tmp/excel/cities.xls"
 dict_aa = excel_read_proc (file_excel)
 str_aa = json.dumps (dict_aa)
 #
-print "Content-type: text/json\n\n"
-print	str_aa
+print ("Content-type: text/json\n\n")
+print	(str_aa)
+#

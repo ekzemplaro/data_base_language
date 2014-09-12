@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------
 //	read/jquery_bash_read.js
 //
-//					Oct/18/2010
+//					Aug/19/2014
 //
 // -----------------------------------------------------------------------
 jQuery (function ()
@@ -18,7 +18,8 @@ jQuery (function ()
 	var dbase = this.id;
 	jQuery("#outarea_ff").text ("*** " + dbase + " ***");
 
-	url_read = "/cgi-bin/data_base/bash/" + dbase + "_bash_read.sh";
+//	url_read = "/cgi-bin/data_base/bash/" + dbase + "_bash_read.sh";
+	url_read = "../read/" + dbase + "_bash_read.sh";
 
 	jQuery("#outarea_ee").text ("url_read = " + url_read);
 

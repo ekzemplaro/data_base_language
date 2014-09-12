@@ -1,13 +1,13 @@
 // -----------------------------------------------------------------------
 //	post_python.js
 //
-//					Aug/06/2014
+//					Sep/01/2014
 //
 // -----------------------------------------------------------------------
 jQuery (function ()
 {
 	jQuery("#outarea_aa").html
-		("*** post_python *** start *** Aug/06/2014 ***");
+		("*** post_python *** start *** Sep/01/2014 ***");
 
 	var data_text = "";
 
@@ -15,8 +15,11 @@ jQuery (function ()
 
 	var nc_aa = "p01.nc";
 	var nc_bb = "p02.nc";
+	var parm_array = ["Oyama","Ashikaga","Shimotsuke"];
+	var parm_str = JSON.stringify (parm_array);
 
-	var args = {data_aa : nc_aa,data_bb : nc_bb};
+//	var args = {data_aa : nc_aa,data_bb : nc_bb,parm_array: parm_array};
+	var args = {data_aa: nc_aa,data_bb: nc_bb,parm_str: parm_str};
 
 	jQuery.post (url_python,args,function (res)
 		{
@@ -39,7 +42,7 @@ jQuery (function ()
 		});
 
 	jQuery("#outarea_hh").html
-		("*** post_python *** end *** Feb/10/2014 ***");
+		("*** post_python *** end *** Sep/a1/2014 ***");
 
 });
 

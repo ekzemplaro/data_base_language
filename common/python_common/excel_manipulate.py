@@ -1,58 +1,50 @@
-#!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
 #	excel_manipulate.py
 #
-#						May/30/2012
+#						Sep/05/2014
 #
 # -------------------------------------------------------------------
-from pyExcelerator import *
 import sys
 import string
+import xlrd
+import xlwt
 
 # -------------------------------------------------------------------
 def excel_read_proc (excel_file):
 	dict_aa = {} 
-	for sheet_name, values in parse_xls (excel_file, 'utf-8'):
-#		print 'Sheet = "%s"' % sheet_name
-#		print 'length = %d' % len(values)
-		maxcols = 0
-		maxrows = 0
-		for row,col in values.keys():
-			if col > maxcols: maxcols = col
-			if row > maxrows: maxrows = row
-#		print "maxcols = %d" % maxcols
-#		print "maxrows = %d" % maxrows
 #
-		for row_idx in range (maxrows + 1):
-			vv = []
-			for col_idx in range (4):
-				vv.append (values[(row_idx, col_idx)])
+	book = xlrd.open_workbook(excel_file)
 #
-			key = vv[0]
-			dict_unit = {'name': vv[1], \
-				'population':int (vv[2]),'date_mod':vv[3]}
+	sheet_1 = book.sheet_by_index(0)
+#
+	for row in range(sheet_1.nrows):
+		for col in range(sheet_1.ncols):
+			key = sheet_1.cell(row,0).value
+			name = sheet_1.cell(row,1).value
+			population = int (sheet_1.cell(row,2).value)
+			date_mod = sheet_1.cell(row,3).value
+			dict_unit = {'name': name, \
+				'population':population,'date_mod':date_mod}
 			dict_aa [key] = dict_unit
 #
 	return	dict_aa
 #
 # -------------------------------------------------------------------
-def excel_data_create_proc (ws,row,id,name,population,date_mod):
-	ws.write(row,0,id)
-	ws.write(row,1,name)
-	ws.write(row,2,population)
-	ws.write(row,3,date_mod)
+def excel_data_create_proc (ws,row,key,unit):
+	ws.write(row,0,key)
+	ws.write(row,1,unit['name'])
+	ws.write(row,2,unit['population'])
+	ws.write(row,3,unit['date_mod'])
 # -------------------------------------------------------------------
 def excel_write_proc (excel_file,dict_aa):
-	w = Workbook()
-	ws = w.add_sheet ('Cities')
+	wb = xlwt.Workbook()
+	ws = wb.add_sheet ('Cities')
 #
 	irow = 0
 	for key in dict_aa.keys():
-		unit = dict_aa[key]
-#		print	unit['name'],unit['population']
-		excel_data_create_proc (ws,irow,key,unit['name'],unit['population'],unit['date_mod'])
+		excel_data_create_proc (ws,irow,key,dict_aa[key])
 		irow += 1
 
-	w.save (excel_file)
+	wb.save (excel_file)
 # -------------------------------------------------------------------

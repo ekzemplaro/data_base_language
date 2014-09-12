@@ -1,13 +1,13 @@
 // -----------------------------------------------------------------------
 //	js/example_php.js
 //
-//					Jun/18/2014
+//					Sep/11/2014
 //
 // -----------------------------------------------------------------------
 jQuery (function ()
 {
 	jQuery("#outarea_aa").html
-		("*** js/example_php.js *** 開始 *** Jun/18/2014 ***");
+		("*** js/example_php.js *** 開始 *** Sep/11/2014 ***");
 
 	var data_text = "";
 
@@ -25,7 +25,7 @@ jQuery (function ()
 	jQuery("#outarea_cc").html ('ver : ' + ver + '<br />');
 
 	jQuery("#outarea_hh").html
-		("*** js/example_php.js *** 終了 *** Jun/18/2014 ***");
+		("*** js/example_php.js *** 終了 *** Sep/11/2014 ***");
 
 });
 

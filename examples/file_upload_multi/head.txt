@@ -1,4 +1,0 @@
-<script src="/js/jquery.upload-1.0.2.min.js"></script>
-<script src="file_upload_multi.js"></script>
-<title>ファイル　アップロード マルチ (Feb/11/2014)</title>
-</head>

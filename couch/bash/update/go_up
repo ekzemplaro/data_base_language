@@ -1,0 +1,2 @@
+export http_proxy=""
+./couch_update.sh t2026 82376100

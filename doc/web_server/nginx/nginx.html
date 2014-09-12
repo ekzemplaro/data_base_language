@@ -4,7 +4,7 @@
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
-<title>nginx (Jul/04/2014)</title>
+<title>nginx (Aug/18/2014)</title>
 </head>
 <body>
 
@@ -113,12 +113,12 @@ ii  fcgiwrap     1.0.3-3  amd64      simple server to run CGI applications over 
 <blockquote>
 <pre>
 location ~ \.pl$ {
-        gzip off;
-        include fastcgi_params;
-        fastcgi_pass unix:/var/run/fcgiwrap.socket;
-        fastcgi_index index.pl;
-        fastcgi_param SCRIPT_FILENAME /var/www$fastcgi_script_name;
-    }
+	gzip off;
+	include fastcgi_params;
+	fastcgi_pass unix:/var/run/fcgiwrap.socket;
+	fastcgi_index index.pl;
+	fastcgi_param SCRIPT_FILENAME /var/www$fastcgi_script_name;
+	}
 </pre>
 </blockquote>
 
@@ -137,20 +137,15 @@ Python を使えるようにする。<p />
 <blockquote>
 <pre>
 location ~ \.py$ {
-        gzip off;
-        include fastcgi_params;
-        fastcgi_pass unix:/var/run/fcgiwrap.socket;
-        fastcgi_index index.py;
-        fastcgi_param SCRIPT_FILENAME /var/www$fastcgi_script_name;
-    }
+	gzip off;
+	include fastcgi_params;
+	fastcgi_pass unix:/var/run/fcgiwrap.socket;
+	fastcgi_index index.py;
+	fastcgi_param SCRIPT_FILENAME /var/www$fastcgi_script_name;
+	}
 </pre>
 </blockquote>
 
-リンクの作成<br />
-<blockquote>
-	cd /var/www<br />
-	ln -s /usr/lib/cgi-bin .<br />
-</blockquote>
 
 <hr />
 Ruby を使えるようにする。<p />
@@ -159,12 +154,12 @@ Ruby を使えるようにする。<p />
 <blockquote>
 <pre>
 location ~ \.rb$ {
-        gzip off;
-        include fastcgi_params;
-        fastcgi_pass unix:/var/run/fcgiwrap.socket;
-        fastcgi_index index.rb;
-        fastcgi_param SCRIPT_FILENAME /var/www$fastcgi_script_name;
-    }
+	gzip off;
+	include fastcgi_params;
+	fastcgi_pass unix:/var/run/fcgiwrap.socket;
+	fastcgi_index index.rb;
+	fastcgi_param SCRIPT_FILENAME /var/www$fastcgi_script_name;
+	}
 </pre>
 </blockquote>
 
@@ -175,12 +170,12 @@ Shell を使えるようにする。<p />
 <blockquote>
 <pre>
 location ~ \.sh$ {
-        gzip off;
-        include fastcgi_params;
-        fastcgi_pass unix:/var/run/fcgiwrap.socket;
-        fastcgi_index index.sh;
-        fastcgi_param SCRIPT_FILENAME /var/www$fastcgi_script_name;
-    }
+	gzip off;
+	include fastcgi_params;
+	fastcgi_pass unix:/var/run/fcgiwrap.socket;
+	fastcgi_index index.sh;
+	fastcgi_param SCRIPT_FILENAME /var/www$fastcgi_script_name;
+	}
 </pre>
 </blockquote>
 
@@ -219,6 +214,6 @@ ln -s /usr/share/phpmyadmin/ .<p />
 <div id="result_aa">result_aa</div>
 <hr />
 <a href="/data_base/">Return</a><p />
-Jul/04/2014 AM 08:15<p />
+Aug/18/2014 AM 08:15<p />
 </body>
 </html>

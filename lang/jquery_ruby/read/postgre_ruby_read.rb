@@ -1,8 +1,8 @@
-#! /usr/bin/ruby1.8
+#! /usr/bin/ruby
 #
 #	postgre_read_ruby.rb
 #
-#					Apr/25/2011
+#					Sep/11/2014
 require 'dbi'
 #
 load '/var/www/data_base/common/ruby_common/sql_to_json.rb'
