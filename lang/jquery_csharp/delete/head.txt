@@ -1,7 +1,6 @@
-<script src="/js/jquery.json-2.4.min.js"></script>
 <script src="/data_base/js/table_delete.js"></script>
 <script src="jquery_csharp_delete.js"></script>
-<title>jQuery C# Delete Oct/03/2013</title>
+<title>jQuery C# Delete Oct/17/2014</title>
 </head>
 <body>
 <center><h2>C# Delete</h2></center>

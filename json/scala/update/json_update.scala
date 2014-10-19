@@ -3,7 +3,7 @@
 	json_update.scala
 
 
-				Jul/18/2011
+					Sep/18/2014
 */
 // -----------------------------------------------------------------------
 import scala.io.Source
@@ -25,16 +25,10 @@ def main (args: Array[String])
 
 
 	val source = Source.fromFile (json_file)
-
-	var str_json=""
-
-	for( line <- source.getLines )
-		{
-		str_json += line
-		}
+	var str_json = source.mkString
+	source.close ()
 
 	var dict_aa = json_manipulate.json_to_dict_proc (str_json)
-
 
 	dict_aa = text_manipulate.dict_update_proc (dict_aa,id,population)
 

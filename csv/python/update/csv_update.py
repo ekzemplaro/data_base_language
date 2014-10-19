@@ -3,10 +3,8 @@
 #
 #	update/csv_update.py
 #
-#					Jul/25/2014
+#					Sep/29/2014
 import	sys
-import	string
-import	datetime
 #
 # ---------------------------------------------------------------
 sys.path.append ('/var/www/data_base/common/python_common')

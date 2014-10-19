@@ -3,10 +3,9 @@
 #
 #	ftp_ruby_create.rb
 #
-#					Feb/25/2013
+#					Oct/06/2014
 # -------------------------------------------------------------
 require 'json'
-require	'restclient'
 #
 load '/var/www/data_base/common/ruby_common/text_manipulate.rb'
 load '/var/www/data_base/common/ruby_common/net_manipulate.rb'
@@ -21,7 +20,7 @@ dict_aa = dict_append_proc(dict_aa,"t0365","遠野",81400,"2006-5-11")
 dict_aa = dict_append_proc(dict_aa,"t0366","八幡平",15900,"2006-4-17")
 dict_aa = dict_append_proc(dict_aa,"t0367","大船渡",36900,"2006-4-18")
 dict_aa = dict_append_proc(dict_aa,"t0368","一関",74200,"2006-8-15")
-dict_aa = dict_append_proc(dict_aa,"t0369","花巻",17900,"2006-10-11")
+dict_aa = dict_append_proc(dict_aa,"t0369","花巻",35900,"2006-10-11")
 
 return dict_aa
 end

@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>Mount Jul/03/2014</title>
+<title>Mount Sep/26/2014</title>
 </head>
 <body>
 <h2>Mount</h2><p />
@@ -14,25 +14,33 @@
 
 iso イメージのマウント<p />
 <blockquote>
-$ sudo mount -o loop -t iso9660 ubuntu-13.10-desktop-amd64.iso /mnt/iso<p />
+# mount -o loop -t iso9660 ubuntu-13.10-desktop-amd64.iso /mnt/iso<p />
 </blockquote>
 
 NFS マウント<p />
 <blockquote>
 # apt-get install nfs-common<p />
-$ sudo mount server_aa:/var/www /mnt/server_aa/www<p />
+# mount server_aa:/var/www /mnt/server_aa/www<p />
 </blockquote>
 
 ftp マウント<p />
 <blockquote>
-$ sudo curlftpfs -o uid=1000,gid=1000,user=scott:tiger ftp://server_aa /mnt/ftp<p />
-$ sudo curlftpfs -o uid=1000,gid=1000,codepage=cp932,user=scott:tiger ftp://server_aa /mnt/ftp<p />
+# curlftpfs -o uid=1000,gid=1000,user=scott:tiger ftp://server_aa /mnt/ftp<p />
+# curlftpfs -o uid=1000,gid=1000,codepage=cp932,user=scott:tiger ftp://server_aa /mnt/ftp<p />
 </blockquote>
 
 パーティションのマウント<p />
 <blockquote>
-$ sudo mount /dev/sda8 /mnt/sda8<p />
+# mount /dev/sda8 /mnt/sda8<p />
+# mount -t ntfs -o uid=uchida,gid=wheel /dev/sdb1 /mnt/sdb1<p />
 </blockquote>
+
+Arch Linux で ntfs のマウント<p />
+<blockquote>
+# pacman -S ntfs-3g<p />
+# mount -t ntfs /dev/sdb1 /mnt/sdb1<p />
+</blockquote>
+
 
 ハードディスクの UUID の調べ方<p />
 <blockquote>
@@ -44,6 +52,6 @@ ls -l /dev/disk/by-uuid<p />
 
 
 <a href="/data_base/">Return</a><p />
-Jul/03/2014 AM 08:15<p />
+Sep/26/2014 AM 08:15<p />
 </body>
 </html>

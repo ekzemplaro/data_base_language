@@ -1,9 +1,9 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 # -------------------------------------------------------------------------
 #	mcached_python_create.py
 #
-#						Aug/30/2013
+#						Oct/15/2014
 # -------------------------------------------------------------------------
 import sys
 import memcache
@@ -41,7 +41,7 @@ for key in sorted (dict_aa.keys()):
 #
 #
 #
-print "Content-type: text/html\n\n"
+print ("Content-type: text/html\n\n")
 #
-print	"*** OK ***<p />"
+print	("*** OK ***<p />")
 # -------------------------------------------------------------------------

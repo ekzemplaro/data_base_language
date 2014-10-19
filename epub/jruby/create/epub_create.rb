@@ -4,7 +4,7 @@
 #
 #	epub_create.rb
 #
-#						Jan/06/2012
+#						Sep/14/2014
 #
 # ----------------------------------------------------------
 include	Java
@@ -73,11 +73,11 @@ end
 def data_prepare_proc ()
 dict_aa = {}
 
-dict_aa = dict_append_proc(dict_aa,"t1931","甲府",27635,"2007-2-15")
+dict_aa = dict_append_proc(dict_aa,"t1931","甲府",27615,"2007-2-15")
 
 dict_aa = dict_append_proc(dict_aa,"t1932","富士吉田",91427,"2007-4-23")
 
-dict_aa = dict_append_proc(dict_aa,"t1933","都留",91523,"2007-5-24")
+dict_aa = dict_append_proc(dict_aa,"t1933","都留",91583,"2007-5-24")
 
 dict_aa = dict_append_proc(dict_aa,"t1934","山梨",14624,"2007-9-14")
 

@@ -34,6 +34,12 @@ curlftpfs -o uid=1000,gid=1000,user=scott:tiger ftp://host_dbase /mnt/ftp<br />
 </blockquote>
 <hr />
 
+Perl<p />
+<blockquote>
+# pacman -S perl-www-curl<br />
+# pacman -S perl-libwww<br />
+</blockquote>
+
 Python<p />
 <pre>
 </pre>

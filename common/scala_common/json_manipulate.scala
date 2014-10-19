@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------
 //	json_manipulate.scala
 //
-//						Jun/11/2013
+//						Sep/17/2014
 //
 // -----------------------------------------------------------------
 import scala.util.parsing.json.JSONObject
@@ -16,7 +16,8 @@ object json_manipulate {
 def json_to_dict_proc (str_json:String):(mutable.Map[String,Object]) = {
 	var dict_aa = mutable.Map[String,Object] ()
 
-	val aaa = JSON.parse(str_json)
+//	val aaa = JSON.parseRaw(str_json)
+	val aaa = JSON.parseFull(str_json)
 
 //	println ("json_to_dict_proc *** aaa ***")
 	aaa.foreach (bbb =>
@@ -85,7 +86,7 @@ def dict_to_json_proc (dict_aa: mutable.Map[String,Object]): String = {
 // -----------------------------------------------------------------
 def json_display (str_json:String)
 {
-	val aaa = JSON.parse(str_json)
+	val aaa = JSON.parseFull(str_json)
 
 	aaa.foreach (bbb =>
 		{
@@ -137,7 +138,7 @@ def json_to_unit_proc (str_json:String):(mutable.Map[String,String]) = {
 	var unit_aa = mutable.Map[String,String] ()
 
 
-	for (tpl <- JSON.parse(str_json).get) {
+	for (tpl <- JSON.parseFull(str_json).get) {
 		tpl match {
 		case (t1:String, t2:String) if(t1 == "name") => unit_aa("name") = t2 
 		case (t1:String, t2:Double) if(t1 == "population") => unit_aa("population") = "%1.0f" format t2

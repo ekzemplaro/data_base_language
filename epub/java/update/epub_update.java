@@ -2,7 +2,7 @@
 //
 //	epub_update.java
 //
-//					Jan/07/2012
+//					Sep/17/2014
 // --------------------------------------------------------------
 import static java.lang.System.err;
 import static java.lang.System.exit;
@@ -42,13 +42,7 @@ public static void main (String args[])
 
 		text_manipulate.dict_display_proc (dict_aa);
 
-//		epub_file = "tmp001.epub";
-
-	System.out.println ("*** check ppp ***");
-
 		epub_manipulate.dict_to_epub_proc (epub_file,dict_aa);
-
-	System.out.println ("*** check qqq ***");
 		}
 	catch (Throwable t)
 		{

@@ -2,7 +2,7 @@
 // ------------------------------------------------------------------
 //	mcached_php_delete.php
 //
-//				Aug/22/2011
+//				Oct/09/2014
 // ------------------------------------------------------------------
 //$path=$_SERVER["DOCUMENT_ROOT"]."/data_base/common/php_common";
 $path="/var/www/data_base/common/php_common";
@@ -12,9 +12,8 @@ include "kvalue_manipulate.php";
 include "cgi_manipulate.php";
 
 // ------------------------------------------------------------------
-$memc = memcache_connect('localhost', 11211);
-$memc->addServer('localhost', 11211);
-
+$mc = new Memcached ();
+$mc->addServer ("localhost",11211);
 
 $arry_param = cgi_manipulate ();
 
@@ -23,8 +22,7 @@ $out_str = "";
 
 foreach ($arry_param as $id)
 	{
-
-	kvalue_delete_proc ($memc,$id);
+	kvalue_delete_proc ($mc,$id);
 
 	$count++;
 	}

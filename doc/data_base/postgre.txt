@@ -98,6 +98,7 @@ psql book -U scott<br />
 PHP<p />
 <blockquote>
 	php5-pgsql<p />
+	# pacman -S php-pgsql<p />
 </blockquote>
 
 Python<p />
@@ -178,3 +179,9 @@ ii  libmono-npgsql4.0-cil     2.10.8.1-5ubuntu2   all   Mono Npgsql library (for
 <hr />
 $ psql -h nlf132 -U scott city<p />
 $ psql -h localhost -U scott city<p />
+
+<hr />
+# pacman -S postgresql<p />
+$ su postgres<p />
+$ initdb --locale en_US.UTF-8 -E UTF8 -D '/var/lib/postgres/data'<p />
+# systemctl start postgresql<p />

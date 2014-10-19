@@ -5,19 +5,36 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>ArchLinux Sep/12/2014</title>
+<title>ArchLinux Oct/14/2014</title>
 </head>
 <body>
+参考になるページ<p />
+<blockquote>
+	<a href="http://qiita.com/macchaberrycream/items/1dfabe8b710dc638e3f9">
+	Arch Linux インストール から Xfce 快適環境を構築するまで</a><p />
+	</blockquote>
+
 <h2>ArchLinux のインストール</h2><p />
 <blockquote>
+	パーティションの作成<br />
+	<blockquote>
 	# fdisk /dev/sda<p />
-	# mkfs -t ext4 /dev/sda1<p />
-	# mkfs -t ext4 /dev/sda3<br />
+	# mkfs -t ext4 /dev/sda1<br />
+	# mkfs -t ext4 /dev/sda2<br />
 	# mkswap /dev/sda3<br />
 	# swapon /dev/sda3<p />
+	</blockquote>
+
+	日本のサーバーを上位にする<br />
+	<blockquote>
 	# vi /etc/pacman.d/mirrorlist<p />
-	# mount /dev/sda1 /mnt<p />
+	</blockquote>
+
+	インストール時にサーバーにアクセスするので、必要ならプロキシーの設定<br />
+	<blockquote>
 	# export http_proxy="http://host_proxy:80"<p />
+	</blockquote>
+	# mount /dev/sda1 /mnt<p />
 	# pacstrap /mnt base base-devel<p />
 	# genfstab -U -p /mnt >> /mnt/etc/fstab<p />
 	# arch-chroot /mnt<p />
@@ -31,7 +48,24 @@
 # pacman -S traceroute<br />
 # pacman -S dnsutils<br />
 # pacman -S sudo<br />
+# pacman -S rsync<br />
 
+</blockquote>
+
+X のインストール<p />
+<blockquote>
+# pacman -S xorg-server xorg-server-utils xorg-xinit xorg-xclock<br />
+</blockquote>
+
+ドライバのインストール<p />
+<blockquote>
+何をインストールするか決めて、例えば<p />
+# pacman -S xf86-video-intel<p />
+</blockquote>
+
+gnome のインストール<p />
+<blockquote>
+# pacman -S gnome gnome-extra<br />
 </blockquote>
 
 最新に保つ方法<p />
@@ -110,7 +144,7 @@ nginx の起動<br />
 	再起動<p />
 	<blockquote>
 	# systemctl restart php-fpm<br />
-	# systemctl fcgiwrap php-fpm<br />
+	# systemctl restart fcgiwrap<br />
 	# systemctl restart nginx<br />
 	</blockquote>
 
@@ -134,6 +168,9 @@ ftp サーバーの設定<p />
 	設定<br />
 		<blockquote>
 		/etc/vsftpd.conf<p />
+			<blockquote>
+			local_enable=YES<p />
+			</blockquote>
 		</blockquote>
 	</blockquote>
 
@@ -155,16 +192,15 @@ nfs サーバーの設定<p />
 	</blockquote>
 nfs の起動<br />
 	<blockquote>
-	# /etc/init.d/nfs start<br />
+# systemctl start nfs-server.service<br />
 	</blockquote>
 自動的に起動させる。<br />
 	<blockquote>
-	# rc-update add nfs default<br />
 	</blockquote>
 </blockquote>
 
 	<blockquote>
-# systemctl status nfsd.service<br />
+# systemctl status nfs-server.service<br />
 	</blockquote>
 
 
@@ -177,6 +213,7 @@ samba サーバーの設定<p />
 	</blockquote>
 	/etc/samba/smb.conf の設定<br />
 	<blockquote>
+	# cp /etc/samba/smb.conf.default /etc/samba/smb.conf<br />
 	<pre>
 	[tmp]
 	   comment = Temporary file space
@@ -187,7 +224,7 @@ samba サーバーの設定<p />
 	</blockquote>
 	ユーザーの設定<br />
 	<blockquote>
-		# pdbedit -a -u user<p />
+		# pdbedit -a -u uchida<p />
 	</blockquote>
 	起動<br />
 		<blockquote>
@@ -249,10 +286,14 @@ grub2<p />
 	$ pacman -Qi パッケージ名<p />
 	$ pacman -Ql パッケージ名<p />
 	$ pacman -Q パッケージ名<p />
+	一覧<br />
+		<blockquote>
+		$ pacman -Qe<p />
+		</blockquote>
 	</blockquote>
 ホストネームの設定<br />
 	<blockquote>
-	# hostnamectl set-hostname my-pretty-cow<p />
+	# hostnamectl set-hostname my-pretty-cow.domain.or.jp<p />
 	</blockquote>
 ロケールの生成と設定<br />
 	<blockquote>
@@ -267,8 +308,29 @@ grub2<p />
 
 	</blockquote>
 
+タイムゾーンを変更<br />
+	<blockquote>
+	# timedatectl set-timezone Asia/Tokyo<p />
+	</blockquote>
+
+ユーザーの作成<br />
+	<blockquote>
+	# useradd -m -g wheel uchida<p />
+	</blockquote>
+
+yaourt のインストール<br />
+	<blockquote>
+	/etc/pacman.conf<br />
+		<blockquote>
+		[archlinuxfr]<br />
+		SigLevel = Optional<br />
+		Server = http://repo.archlinux.fr/$arch<br />
+		</blockquote>
+	# pacman -Syy<br />
+	# pacman -S yaourt<br />
+	</blockquote>
 <hr />
 <a href="/data_base/">Return</a><p />
-Sep/09/2014 AM 08:15<p />
+Oct/14/2014 AM 08:15<p />
 </body>
 </html>

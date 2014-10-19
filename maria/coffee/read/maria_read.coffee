@@ -2,7 +2,7 @@
 # ---------------------------------------------------------------
 #	maria_read.coffee
 #
-#					Dec/26/2013
+#					Sep/16/2014
 #
 # ---------------------------------------------------------------
 row_display_proc = (row_in) ->
@@ -15,7 +15,7 @@ console.log "*** 開始 ***"
 
 mysql = require('mysql')
 
-connection = mysql.createClient ({
+connection = mysql.createConnection ({
 	host: 'localhost',
 	user: 'scott',
 	password: 'tiger'

@@ -50,12 +50,12 @@ static void sample03_proc (PrintWriter out)
 	HashMap <String, List>  map = new HashMap <String, List> ();
 
 	String [] str_aa =  new String [] {"t0421","仙台","57421","2008-9-15"};
-	String [] str_bb =  new String [] {"t0422","石巻","32984","2008-8-21"};
+	String [] str_bb =  new String [] {"t0422","石巻","31984","2008-8-21"};
 	String [] str_cc =  new String [] {"t0423","塩竈","39147","2008-6-14"};
-	String [] str_dd =  new String [] {"t0424","気仙沼","12549","2008-5-22"};
+	String [] str_dd =  new String [] {"t0424","気仙沼","12546","2008-5-22"};
 
 	String [] str_ee =  new String [] {"t0425","白石","42378","2008-7-2"};
-	String [] str_ff =  new String [] {"t0426","名取","81589","2008-11-18"};
+	String [] str_ff =  new String [] {"t0426","名取","71589","2008-11-18"};
 	String [] str_gg =  new String [] {"t0427","多賀城","61543","2008-7-25"};
 	String [] str_hh =  new String [] {"t0428","岩沼","47532","2008-6-30"};
 	String [] str_ii =  new String [] {"t0429","大崎","25796","2008-9-12"};

@@ -3,9 +3,8 @@
 #
 #	delete/csv_delete.py
 #
-#					Jul/25/2014
+#					Sep/29/2014
 import	sys
-import	string
 #
 # ---------------------------------------------------------------
 sys.path.append ('/var/www/data_base/common/python_common')

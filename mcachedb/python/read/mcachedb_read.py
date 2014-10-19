@@ -3,14 +3,14 @@
 #
 #	mcachedb_read.py
 #
-#					Jul/29/2014
+#					Oct/07/2014
 #
 import	sys
-import json
-#
 import memcache
+#
 sys.path.append ('/var/www/data_base/common/python_common')
-from mcache_manipulate import mcache_display_proc
+from mcache_manipulate import mcache_to_dict_proc
+from text_manipulate import dict_display_proc
 # ------------------------------------------------------------
 print ("*** 開始 ***")
 mc = memcache.Client(['localhost:21201'])
@@ -20,9 +20,9 @@ keys = {'t1521','t1522','t1523',
 	't1527','t1528','t1529',
 	't1530','t1531','t1532'}
 #
-for key in keys:
-	mcache_display_proc (mc,key)
+dict_aa = mcache_to_dict_proc (mc,keys)
+dict_display_proc (dict_aa)
 #
 print ("*** 終了 ***")
-
 #
+# ------------------------------------------------------------

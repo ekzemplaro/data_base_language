@@ -2,29 +2,42 @@
 // ---------------------------------------------------------------------
 //	mcached_php_create.php
 //
-//					Jul/02/2011
+//					Oct/09/2014
 //
 // ---------------------------------------------------------------------
 //$path=$_SERVER["DOCUMENT_ROOT"]."/data_base/common/common/php_common";
 $path="/var/www/data_base/common/php_common";
 set_include_path (get_include_path() . PATH_SEPARATOR . $path);
 
-include "mcached_manipulate.php";
-include "kvalue_manipulate.php";
-
+include "text_manipulate.php";
 // ---------------------------------------------------------------------
-$memc = memcache_connect('localhost', 11211);
-$memc->addServer('localhost', 11211);
+function data_prepare_proc ()
+{
+$dict_aa = array ();
 
-kvalue_insert_proc ($memc,'t1731','金沢',54600,'2002-12-10');
-kvalue_insert_proc ($memc,'t1732','輪島',35200,'2002-5-8');
-kvalue_insert_proc ($memc,'t1733','小松',72400,'2002-4-24');
-kvalue_insert_proc ($memc,'t1734','七尾',94100,'2002-8-02');
-kvalue_insert_proc ($memc,'t1735','珠洲',62500,'2002-9-15');
-kvalue_insert_proc ($memc,'t1736','加賀',37900,'2002-1-11');
-kvalue_insert_proc ($memc,'t1737','羽咋',74500,'2002-6-28');
-kvalue_insert_proc ($memc,'t1738','かほく',13700,'2002-5-21');
-kvalue_insert_proc ($memc,'t1739','白山',15200,'2002-10-12');
+$dict_aa = dict_append_proc ($dict_aa,'t1731','金沢',31400,'2002-9-18');
+$dict_aa = dict_append_proc ($dict_aa,'t1732','輪島',45900,'2002-2-23');
+$dict_aa = dict_append_proc ($dict_aa,'t1733','小松',29100,'2002-5-7');
+$dict_aa = dict_append_proc ($dict_aa,'t1734','七尾',63700,'2002-11-19');
+$dict_aa = dict_append_proc ($dict_aa,'t1735','珠洲',13500,'2002-3-24');
+$dict_aa = dict_append_proc ($dict_aa,'t1736','加賀',76100,'2002-8-12');
+$dict_aa = dict_append_proc ($dict_aa,'t1737','羽咋',25700,'2002-1-17');
+$dict_aa = dict_append_proc ($dict_aa,'t1738','かほく',85300,'2002-6-27');
+$dict_aa = dict_append_proc ($dict_aa,'t1739','白山',96100,'2002-4-9');
+
+	return	$dict_aa;
+}
+// ---------------------------------------------------------------------
+$mc = new Memcached();
+$mc->addServer("localhost", 11211);
+
+$dict_aa = data_prepare_proc ();
+
+foreach ($dict_aa as $key => $value)
+	{
+	$json_out = json_encode ($value);
+	$result = $mc->set($key,$json_out);
+	}
 
 echo "*** OK ***";
 // ---------------------------------------------------------------------

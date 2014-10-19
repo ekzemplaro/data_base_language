@@ -1,2 +1,0 @@
-<hr />
-<a href="html_src/">couchdb_total_src.html</a><br/>

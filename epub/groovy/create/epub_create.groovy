@@ -2,7 +2,7 @@
 /*
 	epub_create.groovy
 
-						Jan/08/2012
+						Sep/17/2014
 */
 // ----------------------------------------------------------
 import	java.util.HashMap
@@ -48,17 +48,17 @@ static HashMap <String, HashMap <String,String>> data_prepare_proc ()
 
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1932","富士吉田",49142,"1999-4-23")
 
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1933","都留",99153,"1999-5-24")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1933","都留",62153,"1999-5-24")
 
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1934","山梨",89124,"1999-9-14")
 
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1935","大月",72131,"1999-8-12")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1935","大月",72531,"1999-8-12")
 
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1936","韮崎",28529,"1999-7-28")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1936","韮崎",28519,"1999-7-28")
 
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1937","南アルプス",39457,"1999-6-19")
 
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1938","北杜",27862,"1999-11-15")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1938","北杜",57862,"1999-11-15")
 
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1939","甲斐",31972,"1999-10-24")
 

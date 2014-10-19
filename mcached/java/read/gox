@@ -4,5 +4,5 @@ export JAVA_COMMON=$COMMON/java_common
 export JAR=$COMMON/jar
 export CLASSPATH=./:$CPX:$JAVA_COMMON:$JAR/jsonic-1.1.2.jar
 #
-java mcached_read
+java -Dfile.encoding=UTF-8 mcached_read
 #

@@ -48,7 +48,7 @@ file_io.class: file_io.scala
 xml_manipulate.class: xml_manipulate.scala
 	scalac xml_manipulate.scala
 json_manipulate.class: json_manipulate.scala
-	scalac json_manipulate.scala
+	scalac -deprecation json_manipulate.scala
 excel_manipulate.class: excel_manipulate.scala
 	scalac -cp $(CPP) excel_manipulate.scala
 ftp_manipulate.class: ftp_manipulate.scala

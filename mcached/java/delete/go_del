@@ -4,5 +4,5 @@ export JAVA_COMMON=$COMMON/java_common
 export JAR=$COMMON/jar
 export CLASSPATH=./:$JAVA_COMMON
 #
-java mcached_delete t1732
+java -Dfile.encoding=UTF-8 mcached_delete t1732
 #

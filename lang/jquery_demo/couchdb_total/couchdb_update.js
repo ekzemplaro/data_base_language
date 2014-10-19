@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------
 //	couchdb_update.js
 //
-//					Sep/05/2011
+//					Oct/16/2014
 // -----------------------------------------------------------------------
 // [6]:
 function couchdb_update_proc (data_json)
@@ -15,8 +15,8 @@ function couchdb_update_proc (data_json)
 
 	var key = data_json["_id"];
 
-	tmp_str += contents_table_gen_proc_exec (0,data_json);
-	jQuery("#outarea_aa").html (tmp_str);
+//	tmp_str += contents_table_gen_proc_exec (0,data_json);
+//	jQuery("#outarea_aa").html (tmp_str);
 
 	var url_post = "./couchdb_update.php";
 
@@ -29,7 +29,9 @@ function send_exec_proc_json (index_mode,url_post,data_json)
 {
 	var pref = data_json["_id"];
 
-	var str_json = jQuery.toJSON (data_json);
+//	var str_json = jQuery.toJSON (data_json);
+	var str_json = JSON.stringify (data_json);
+
 	jQuery.post (url_post,{my_data: str_json},
 		function (data_receive,text_status)
 		{
@@ -40,7 +42,8 @@ function send_exec_proc_json (index_mode,url_post,data_json)
 
 		out_str += "*** data_receive = " + data_receive + "<p />";
 
-		var obj = jQuery.parseJSON (data_receive);
+//		var obj = jQuery.parseJSON (data_receive);
+		var obj = JSON.parse (data_receive);
 
 		out_str += "obj.ok = " + obj.ok + "<br />";
 		out_str += "obj.id = " + obj.id + "<br />";

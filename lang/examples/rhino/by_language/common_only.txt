@@ -5,42 +5,42 @@
 
 <tr>
 <td>jQuery</td>
-<td><a href="/data_base/js/html/js.html">js</a></td>
+<td><a href="/data_base/js/html_src/">js</a></td>
 </tr>
 
 <tr>
 <td>Bash</td>
-<td><a href="/data_base/common/bash_common/html_src/bash_common.html">bash_common</a></td>
+<td><a href="/data_base/common/bash_common/html_src/">bash_common</a></td>
 </tr>
 
 <tr>
 <td>PHP</td>
-<td><a href="/data_base/common/php_common/html_src/php_common.html">php_common</a></td>
+<td><a href="/data_base/common/php_common/html_src/">php_common</a></td>
 </tr>
 
 <tr>
 <td>Python</td>
-<td><a href="/data_base/common/python_common/html_src/python_common.html">python_common</a></td>
+<td><a href="/data_base/common/python_common/html_src/">python_common</a></td>
 </tr>
 
 <tr>
 <td>Jython</td>
-<td><a href="/data_base/common/jython_common/html_src/jython_common.html">jython_common</a></td>
+<td><a href="/data_base/common/jython_common/html_src/">jython_common</a></td>
 </tr>
 
 <tr>
 <td>Perl</td>
-<td><a href="/data_base/common/perl_common/html_src/perl_common.html">perl_common</a></td>
+<td><a href="/data_base/common/perl_common/html_src/">perl_common</a></td>
 </tr>
 
 <tr>
 <td>Ruby</td>
-<td><a href="/data_base/common/ruby_common/html_src/ruby_common.html">ruby_common</a></td>
+<td><a href="/data_base/common/ruby_common/html_src/">ruby_common</a></td>
 </tr>
 
 <tr>
 <td>JRuby</td>
-<td><a href="/data_base/common/jruby_common/html_src/jruby_common.html">jruby_common</a></td>
+<td><a href="/data_base/common/jruby_common/html_src/">jruby_common</a></td>
 </tr>
 
 <tr>
@@ -70,22 +70,22 @@
 
 <tr>
 <td>Common Lisp</td>
-<td><a href="/data_base/common/common_lisp/html/common_lisp.html">common_lisp</a></td>
+<td><a href="/data_base/common/common_lisp/html_src/">common_lisp</a></td>
 </tr>
 
 <tr>
 <td>Clisp</td>
-<td><a href="/data_base/common/clisp_common/html_src/clisp_common.html">clisp_common</a></td>
+<td><a href="/data_base/common/clisp_common/html_src/">clisp_common</a></td>
 </tr>
 
 <tr>
 <td>Allegro</td>
-<td><a href="/data_base/common/allegro_common/html_src/allegro_common.html">allegro_common</a></td>
+<td><a href="/data_base/common/allegro_common/html_src/">allegro_common</a></td>
 </tr>
 
 <tr>
 <td>sbcl</td>
-<td><a href="/data_base/common/sbcl_common/html_src/sbcl_common.html">sbcl_common</a></td>
+<td><a href="/data_base/common/sbcl_common/html_src/">sbcl_common</a></td>
 </tr>
 
 <tr>

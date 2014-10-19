@@ -1,7 +1,6 @@
-<script src="/js/jquery.json-2.4.min.js"></script>
 <script src="/data_base/js/table_manipulate.js"></script>
 <script src="jquery_csharp_update.js"></script>
-<title>jQuery C# Update Oct/03/2013</title>
+<title>jQuery C# Update Oct/17/2014</title>
 </head>
 <body>
 <center><h2>C# Update</h2></center>

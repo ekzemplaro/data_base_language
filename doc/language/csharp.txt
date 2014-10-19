@@ -1,4 +1,4 @@
-<title>C# Jul/07/2014</title>
+<title>C# Sep/16/2014</title>
 </head>
 <body>
 <h2><a href="http://en.csharp-online.net">C#</a></h2><p />
@@ -22,7 +22,10 @@ csc hello.cs<br />
 </blockquote>
 
 Arch Linux<p />
+# pacman -S mono<p />
 <blockquote>
 cannot execute binary file: Exec format error<p />
 # systemctl restart systemd-binfmt<p />
+
+# pacman -S monodevelop<p />
 </blockquote>

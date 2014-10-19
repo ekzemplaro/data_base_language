@@ -1,7 +1,7 @@
 // --------------------------------------------------------------
 //	xlsx_create.java
 //
-//					Jul/30/2013
+//					Oct/17/2014
 // --------------------------------------------------------------
 import	java.io.IOException;
 import	java.util.HashMap;
@@ -31,31 +31,31 @@ data_prepare_proc ()
 		= new HashMap <String, HashMap<String,String>> ();
 
 	dict_aa = text_manipulate.dict_append_proc
-		(dict_aa,"t2971","奈良",36824,"2008-10-17");
+		(dict_aa,"t2971","奈良",361824,"2008-10-17");
 
 	dict_aa = text_manipulate.dict_append_proc
-		(dict_aa,"t2972","大和高田",28517,"2008-9-21");
+		(dict_aa,"t2972","大和高田",298517,"2008-9-21");
 
 	dict_aa = text_manipulate.dict_append_proc
-		(dict_aa,"t2973","大和郡山",91534,"2008-6-20");
+		(dict_aa,"t2973","大和郡山",916534,"2008-6-20");
 
 	dict_aa = text_manipulate.dict_append_proc
-		(dict_aa,"t2974","天理",89127,"2008-2-17");
+		(dict_aa,"t2974","天理",839127,"2008-2-17");
 
 	dict_aa = text_manipulate.dict_append_proc
-		(dict_aa,"t2975","橿原",75428,"2008-8-12");
+		(dict_aa,"t2975","橿原",715428,"2008-8-12");
 
 	dict_aa = text_manipulate.dict_append_proc
-		(dict_aa,"t2976","桜井",25369,"2008-7-28");
+		(dict_aa,"t2976","桜井",275369,"2008-7-28");
 
 	dict_aa = text_manipulate.dict_append_proc
-		(dict_aa,"t2977","五條",39467,"2008-6-19");
+		(dict_aa,"t2977","五條",395467,"2008-6-19");
 
 	dict_aa = text_manipulate.dict_append_proc
-		(dict_aa,"t2978","御所",47362,"2008-11-15");
+		(dict_aa,"t2978","御所",847362,"2008-11-15");
 
 	dict_aa = text_manipulate.dict_append_proc
-		(dict_aa,"t2979","生駒",56724,"2008-10-24");
+		(dict_aa,"t2979","生駒",567214,"2008-10-24");
 
 	return	dict_aa;
 }

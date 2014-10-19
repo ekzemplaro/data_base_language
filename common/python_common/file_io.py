@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 #
-#	file_io.py
+#	python_common/file_io.py
 #
-#					Sep/01/2014
+#					Oct/14/2014
 #
 #
 import	sys
@@ -10,6 +10,7 @@ import	string
 #
 # --------------------------------------------------------------------
 def	file_to_str_proc (file_in):
+	lines = []
 	try:
 		fp_in = open (file_in,encoding='utf-8')
 		lines = fp_in.readlines ()

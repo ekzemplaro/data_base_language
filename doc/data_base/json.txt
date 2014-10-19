@@ -95,6 +95,14 @@ C++<p />
 	picojson.h<p />
 </blockquote>
 
+Scala json4s<p />
+<blockquote>
+json4s-ast_2.11-3.2.10.jar<br />
+json4s-core_2.11-3.2.10.jar<br />
+json4s-native_2.11-3.2.10.jar<br />
+paranamer-2.7.jar<br />
+</blockquote>
+
 Java<p />
 <blockquote>
 </blockquote>

@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------
 //	delete/jquery_csharp_delete.js
 //
-//					May/22/2013
+//					Oct/17/2014
 //
 // -----------------------------------------------------------------------
 jQuery (function ()
@@ -29,13 +29,10 @@ jQuery (function ()
 		jQuery("#outarea_dd").text ("url_read = " + url_read);
 		jQuery("#outarea_ee").text ("url_delete = " + url_delete);
 
-//		table_manipulate (url_read,data_send);
 		table_delete (url_read);
 		}
 	else
 		{
-//		var encoded = jQuery.toJSON (data_send);
-//		send_exec_proc_json (url_delete,encoded);
 		send_exec_proc_json (url_read,url_delete);
 		}
 	});

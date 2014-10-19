@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------
-//	lang_sum.js
+//	statistics/lang_sum/lang_sum.js
 //
-//					Apr/24/2014
+//					Sep/15/2014
 // -----------------------------------------------------------------------
 jQuery (function ()
 {
@@ -29,7 +29,8 @@ function sum_up_proc (record)
 		 	|| (record[dbx] == "5")
 		 	|| (record[dbx] == "6")
 		 	|| (record[dbx] == "7")
-		 	|| (record[dbx] == "8"))
+		 	|| (record[dbx] == "8")
+		 	|| (record[dbx] == "9"))
 			{
 			success += 1;
 			}

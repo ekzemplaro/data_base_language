@@ -1,11 +1,11 @@
-#!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
 #	calc_manipulate.py
 #
-#					Apr/18/2011
+#					Oct/14/2014
 #
 # -------------------------------------------------------------------
+import os
 import sys
 import ooolib
 
@@ -42,14 +42,13 @@ def calc_read_proc (file_calc):
 	for cc in range (0,count):
 		doc.set_sheet_index (cc)
 		name = doc.get_sheet_name()
-		print "Sheet Name: %s" % name
+#		print "Sheet Name: %s" % name
 		(cols, rows) = doc.get_sheet_dimensions()
 		if (0 < rows):
 			dict_aa = calc_read_sheet_proc (dict_aa,doc,cols,rows)
 	return	dict_aa
 # -------------------------------------------------------------------
 def calc_write_proc (calc_file,dict_aa):
-	print "calc_write_proc *** aaa ***<br />"
 	doc = ooolib.Calc()
 	row = 1
 	for key in sorted (dict_aa.keys()):
@@ -67,5 +66,6 @@ def calc_write_proc (calc_file,dict_aa):
 		row += 1
 #
 	doc.save (calc_file)
-	print "calc_write_proc *** kkk ***<br />"
+	os.chmod (calc_file,0o666)
+#
 # -------------------------------------------------------------------

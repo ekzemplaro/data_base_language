@@ -3,11 +3,9 @@
 #
 #	epub_delete.py
 #
-#						Jul/06/2012
+#						Sep/17/2014
 #
 import	sys
-#reload(sys)
-#sys.setdefaultencoding('utf-8')
 import	string
 #
 sys.path.append ('/var/www/data_base/common/python_common')

@@ -2,7 +2,7 @@
 // ---------------------------------------------------------------
 //	maria_create.js
 //
-//					Sep/17/2013
+//					Sep/16/2014
 //
 // ---------------------------------------------------------------
 var mysql = require('mysql');
@@ -14,8 +14,8 @@ function data_prepare_proc ()
 {
 	var dict_aa = new Object ();
 
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t3321','岡山',691763,'1950-9-12');
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t3322','倉敷',483257,'1950-3-15');
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t3321','岡山',491763,'1950-9-12');
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t3322','倉敷',183257,'1950-3-15');
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t3323','津山',975241,'1950-10-2');
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t3324','玉野',231864,'1950-6-22');
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t3325','笠岡',769358,'1950-8-14');
@@ -33,7 +33,7 @@ console.log ("*** 開始 ***");
 var dict_aa = data_prepare_proc ();
 text_manipulate.dict_display_proc (dict_aa);
 
-var connection = mysql.createClient ({
+var connection = mysql.createConnection ({
 	host: 'localhost',
 	user: 'scott',
 	password: 'tiger'

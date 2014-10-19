@@ -2,7 +2,7 @@
 # ---------------------------------------------------------------
 #	maria_create.coffee
 #
-#					Dec/26/2013
+#					Sep/16/2014
 #
 # ---------------------------------------------------------------
 mysql = require('mysql')
@@ -31,7 +31,7 @@ console.log "*** 開始 ***"
 dict_aa = data_prepare_proc()
 text_manipulate.dict_display_proc(dict_aa)
 
-connection = mysql.createClient ({
+connection = mysql.createConnection ({
 	host: 'localhost',
 	user: 'scott',
 	password: 'tiger'

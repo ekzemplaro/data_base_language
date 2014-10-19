@@ -1,4 +1,3 @@
-#! /usr/bin/python  
 # -*- coding: utf-8 -*-
 #
 #	python_common/json_disp.py

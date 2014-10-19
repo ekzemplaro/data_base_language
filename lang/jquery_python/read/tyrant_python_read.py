@@ -1,9 +1,9 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	tyrant_python_read.py
 #
-#						Jul/11/2011
+#						Oct/07/2014
 #
 # ----------------------------------------------------------------
 import sys
@@ -24,8 +24,8 @@ keys = {'t4761','t4762','t4763',
 dict_aa = mcache_to_dict_proc (mc,keys)
 out_str_aa = json.dumps (dict_aa)
 #
-print "Content-type: text/json\n\n"
+print ("Content-type: text/json\n\n")
 #
-print out_str_aa
+print (out_str_aa)
 #
 # ----------------------------------------------------------------

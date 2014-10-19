@@ -3,13 +3,10 @@
 #
 #	mcached_update.py
 #
-#					Jul/29/2014
+#					Oct/07/2014
 #
 import	sys
-import	string
-import json
 #
-import datetime
 import memcache
 #
 sys.path.append ('/var/www/data_base/common/python_common')

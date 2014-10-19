@@ -1,0 +1,19 @@
+#
+URL_JSON4S=http://repo1.maven.org/maven2/org/json4s/json4s_2.11/3.2.10/
+#wget $URL_JSON4S/json4s_2.11-3.2.10.jar 
+#
+URL_JACKSON=http://repo1.maven.org/maven2/org/json4s/json4s-jackson_2.11/3.2.10/
+#wget $URL_JACKSON/json4s-jackson_2.11-3.2.10.jar 
+#
+#
+URL_CORE=http://repo1.maven.org/maven2/org/json4s/json4s-core_2.11/3.2.10/
+#wget $URL_CORE/json4s-core_2.11-3.2.10.jar 
+#
+URL_NATIVE=http://repo1.maven.org/maven2/org/json4s/json4s-native_2.11/3.2.10/
+#wget $URL_NATIVE/json4s-native_2.11-3.2.10.jar
+#
+URL_AST=http://repo1.maven.org/maven2/org/json4s/json4s-ast_2.11/3.2.10/
+#wget $URL_AST/json4s-ast_2.11-3.2.10.jar
+#
+URL_PARAMETER=http://mirrors.ibiblio.org/pub/mirrors/maven2/com/thoughtworks/paranamer/paranamer
+#wget $URL_PARAMETER/2.7/paranamer-2.7.jar

@@ -2,7 +2,7 @@
 #
 #	mcached_update.sh
 #
-#						Feb/08/2011
+#						Oct/06/2014
 #
 # --------------------------------------------------------------------------
 echo "*** 開始 ***"
@@ -14,13 +14,13 @@ today=`date '+%F'`
 #
 echo $id_in
 echo $population_in
-memccat --servers=localhost:11211 $id_in > $work_file
+memcat --servers=localhost:11211 $id_in > $work_file
 #
 head=`awk -F, '{print $1}' $work_file`",\"population\":"
 data=$head$population_in",\"date_mod\":\""$today"\"}"
 echo $data > $id_in
 #
-memccp --servers=localhost:11211 --set $id_in
+memcp --servers=localhost:11211 --set $id_in
 # --------------------------------------------------------------------------
 #
 echo "*** 終了 ***"

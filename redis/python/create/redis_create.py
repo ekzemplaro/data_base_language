@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
 #	create/redis_create.py
@@ -10,7 +10,8 @@ import json
 import redis
 #
 sys.path.append ('/var/www/data_base/common/python_common')
-from mcache_manipulate import mcache_display_proc
+from mcache_manipulate import mcache_to_dict_proc
+from text_manipulate import dict_display_proc
 # ----------------------------------------------------------------
 print ("*** 開始 ***")
 #
@@ -33,8 +34,8 @@ keys = {'t1851','t1852','t1853',
 	't1854','t1855','t1856',
 	't1857','t1858','t1859'}
 #
-for key in keys:
-	mcache_display_proc (rr,key)
+#dict_aa = mcache_to_dict_proc (rr,keys)
+#dict_display_proc (dict_aa)
 #
 print ("*** 終了 ***")
 # ----------------------------------------------------------------

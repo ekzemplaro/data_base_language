@@ -60,6 +60,7 @@ PHP<p />
 
 Python<p />
 <blockquote>
+# pacman -S python-pycurl<p />
 </blockquote>
 
 

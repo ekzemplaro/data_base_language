@@ -9,6 +9,11 @@ ii  libcommons-httpclient-java     3.1-10.2  all    A Java(TM) library for creat
 </pre>
 </blockquote>
 
+<blockquote>
+	# pacman -S jre8-openjdk<br />
+	# pacman -S jdk8-openjdk<br />
+</blockquote>
+
 jar の中身の確認<br />
 <blockquote>
 	To show contents in aaa.jar<p />

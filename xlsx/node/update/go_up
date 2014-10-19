@@ -1,2 +1,2 @@
 export NODE_PATH=/home/uchida/node_modules
-./xlsx_update.js /var/tmp/xlsx/cities.xlsx t2972 452139800
+./xlsx_update.js /var/tmp/xlsx/cities.xlsx t2975 452139800

@@ -3,7 +3,7 @@
 #
 #	epub_create.py
 #
-#					Jul/06/2012
+#					Sep/17/2014
 #
 import	sys
 #
@@ -16,15 +16,15 @@ from epub_manipulate import dict_to_epub_proc
 def	data_prepare_proc ():
 	dict_aa = {} 
 #
-	dict_aa = dict_append_proc (dict_aa,'t1931',u'甲府',76824,'2003-5-8')
+	dict_aa = dict_append_proc (dict_aa,'t1931',u'甲府',56124,'2003-5-8')
 	dict_aa = dict_append_proc (dict_aa,'t1932',u'富士吉田',17328,'2003-1-12')
 	dict_aa = dict_append_proc (dict_aa,'t1933',u'都留',72395,'2003-6-14')
-	dict_aa = dict_append_proc (dict_aa,'t1934',u'山梨',62463,'2003-9-9')
+	dict_aa = dict_append_proc (dict_aa,'t1934',u'山梨',62413,'2003-9-9')
 	dict_aa = dict_append_proc (dict_aa,'t1935',u'大月',42931,'2003-8-4')
 	dict_aa = dict_append_proc (dict_aa,'t1936',u'韮崎',35187,'2003-1-21')
-	dict_aa = dict_append_proc (dict_aa,'t1937',u'南アルプス',81256,'2003-7-23')
-	dict_aa = dict_append_proc (dict_aa,'t1938',u'北杜',78435,'2003-10-26')
-	dict_aa = dict_append_proc (dict_aa,'t1939',u'甲斐',82391,'2003-12-15')
+	dict_aa = dict_append_proc (dict_aa,'t1937',u'南アルプス',81236,'2003-7-23')
+	dict_aa = dict_append_proc (dict_aa,'t1938',u'北杜',78135,'2003-10-26')
+	dict_aa = dict_append_proc (dict_aa,'t1939',u'甲斐',85391,'2003-12-15')
 #
 	return	dict_aa
 #

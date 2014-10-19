@@ -4,14 +4,13 @@
 #
 #	epub_createapy.
 #
-#						Jan/06/2012
+#						Sep/17/2014
 #
 # ----------------------------------------------------------
 import	sys
 import	java
 from java.lang import	System
 from java.lang import	String
-
 
 from java.io import FileOutputStream
 
@@ -28,12 +27,6 @@ sys.path.append ('/var/www/data_base/common/python_common')
 from text_manipulate import dict_append_proc
 # ----------------------------------------------------------
 def dict_to_epub_proc (epub_file,dict_aa):
-#	epub = new.module (Publication)
-#	epub = new.classobj (Publication)
-#	epub = new.publication()
-#	epub = new.Publication()
-#	epub = new Publication()
-#	epub = Publication.new()
 	epub = Publication()
 
 	epub.addDCMetadata("title", "My First EPUB")
@@ -78,15 +71,15 @@ def dict_to_epub_proc (epub_file,dict_aa):
 def data_prepare_proc ():
 	dict_aa = {}
 
-	dict_aa = dict_append_proc(dict_aa,'t1931','甲府'.decode('utf-8'),87635,'2004-2-11')
-	dict_aa = dict_append_proc(dict_aa,'t1932','富士吉田'.decode('utf-8'),71427,'2004-4-23')
+	dict_aa = dict_append_proc(dict_aa,'t1931','甲府'.decode('utf-8'),81635,'2004-2-11')
+	dict_aa = dict_append_proc(dict_aa,'t1932','富士吉田'.decode('utf-8'),39427,'2004-4-23')
 	dict_aa = dict_append_proc(dict_aa,'t1933','都留'.decode('utf-8'),61523,'2004-5-24')
-	dict_aa = dict_append_proc(dict_aa,'t1934','山梨'.decode('utf-8'),14624,'2004-9-14')
-	dict_aa = dict_append_proc(dict_aa,'t1935','大月'.decode('utf-8'),72131,'2004-8-12')
-	dict_aa = dict_append_proc(dict_aa,'t1936','韮崎'.decode('utf-8'),28529,'2004-7-28')
+	dict_aa = dict_append_proc(dict_aa,'t1934','山梨'.decode('utf-8'),18624,'2004-9-14')
+	dict_aa = dict_append_proc(dict_aa,'t1935','大月'.decode('utf-8'),72931,'2004-8-12')
+	dict_aa = dict_append_proc(dict_aa,'t1936','韮崎'.decode('utf-8'),28519,'2004-7-28')
 	dict_aa = dict_append_proc(dict_aa,'t1937','南アルプス'.decode('utf-8'),39457,'2004-6-19')
-	dict_aa = dict_append_proc(dict_aa,'t1938','北杜'.decode('utf-8'),36272,'2004-11-15')
-	dict_aa = dict_append_proc(dict_aa,'t1939','甲斐'.decode('utf-8'),87235,'2004-10-24')
+	dict_aa = dict_append_proc(dict_aa,'t1938','北杜'.decode('utf-8'),36872,'2004-11-15')
+	dict_aa = dict_append_proc(dict_aa,'t1939','甲斐'.decode('utf-8'),81235,'2004-10-24')
 
 	return	dict_aa
 #

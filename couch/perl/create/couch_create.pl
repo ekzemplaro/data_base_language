@@ -26,9 +26,9 @@ uri_get::uri_put_proc ($url_collection,'{}');
 my %dict_aa = data_prepare_proc ();
 #
 foreach my $key (sort keys %dict_aa){
-	print $key . "\t";
+#	print $key . "\t";
 	my $str_json = encode_json ($dict_aa{$key});
-	print $str_json . "\n";
+#	print $str_json . "\n";
 	my $url_target = $url_collection . "/" . $key;
 	uri_get::uri_put_proc ($url_target,$str_json);
 	}
@@ -41,11 +41,11 @@ sub data_prepare_proc
 	my %dict_aa;
 
 	%dict_aa = text_manipulate::dict_append_proc
-		('t2021','長野',75842,'2005-6-22',%dict_aa);
+		('t2021','長野',75342,'2005-6-22',%dict_aa);
 	%dict_aa = text_manipulate::dict_append_proc
 		('t2022','松本',14278,'2005-9-15',%dict_aa);
 	%dict_aa = text_manipulate::dict_append_proc
-		('t2023','上田',58641,'2005-3-17',%dict_aa);
+		('t2023','上田',52641,'2005-3-17',%dict_aa);
 	%dict_aa = text_manipulate::dict_append_proc
 		('t2024','小諸',46732,'2005-8-22',%dict_aa);
 	%dict_aa = text_manipulate::dict_append_proc
@@ -53,7 +53,7 @@ sub data_prepare_proc
 	%dict_aa = text_manipulate::dict_append_proc
 		('t2026','塩尻',27638,'2005-5-9',%dict_aa);
 	%dict_aa = text_manipulate::dict_append_proc
-		('t2027','茅野',35267,'2005-4-10',%dict_aa);
+		('t2027','茅野',35967,'2005-4-10',%dict_aa);
 	%dict_aa = text_manipulate::dict_append_proc
 		('t2028','飯田',81756,'2005-10-8',%dict_aa);
 	%dict_aa = text_manipulate::dict_append_proc

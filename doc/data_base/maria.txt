@@ -82,11 +82,20 @@ Ruby<p />
 <blockquote>
 </blockquote>
 
+node.js<p />
+<blockquote>
+	npm install mysql<p />
+</blockquote>
+
 
 Java<p />
 <blockquote>
 </blockquote>
 
 
+Arch Linux<p />
 <blockquote>
+	# pacman -S mariadb<p />
+	# systemctl start mysqld.service<p />
+	# pacman -S perl-dbd-mysql<p />
 </blockquote>

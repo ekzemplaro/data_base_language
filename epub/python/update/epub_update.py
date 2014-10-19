@@ -3,11 +3,9 @@
 #
 #	epub_update.py
 #
-#						Jul/06/2012
+#						Sep/17/2014
 #
 import	sys
-#reload(sys)
-#sys.setdefaultencoding('utf-8')
 import	string
 #
 sys.path.append ('/var/www/data_base/common/python_common')
@@ -19,7 +17,7 @@ from epub_manipulate import dict_to_epub_proc
 print	("*** 開始 ***")
 file_pdf = sys.argv[1]
 id_in = sys.argv[2]
-population_in = string.atoi (sys.argv[3])
+population_in = int (sys.argv[3])
 print ("%s\t%d" % (id_in, population_in))
 #
 dict_aa = epub_to_dict_proc (file_pdf)

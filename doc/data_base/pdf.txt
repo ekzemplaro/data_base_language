@@ -33,7 +33,7 @@ Python<p />
 <blockquote>
 	python-reportlab<p />
 	# pacman -S python-reportlab<p />
-	# pacman -S poppler-data-0.4.7-1<p />
+	# pacman -S poppler-data<p />
 </blockquote>
 
 Ruby<p />

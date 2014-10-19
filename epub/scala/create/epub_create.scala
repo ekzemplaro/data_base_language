@@ -2,7 +2,7 @@
 /*
 	epub_create.scala
 
-						Jun/07/2011
+						Sep/14/2014
 */
 // ----------------------------------------------------------
 import java.io.FileOutputStream
@@ -86,21 +86,21 @@ def data_prepare_proc ():(mutable.Map[String,Object]) = {
 
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1931","甲府",51276,"1998-2-15")
 
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1932","富士吉田",49142,"1998-4-23")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1932","富士吉田",39142,"1998-4-23")
 
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1933","都留",99153,"1998-5-24")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1933","都留",27153,"1998-5-24")
 
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1934","山梨",89124,"1998-9-14")
 
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1935","大月",72131,"1998-8-12")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1935","大月",72531,"1998-8-12")
 
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1936","韮崎",28529,"1998-7-28")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1936","韮崎",68529,"1998-7-28")
 
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1937","南アルプス",39457,"1998-6-19")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1937","南アルプス",39451,"1998-6-19")
 
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1938","北杜",47362,"1998-11-15")
 
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1939","甲斐",56872,"1998-10-24")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1939","甲斐",46872,"1998-10-24")
 
 	return	dict_aa
 }

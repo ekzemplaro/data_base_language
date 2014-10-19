@@ -2,7 +2,7 @@
 /*
 	file_io.scala
 
-					Jul/20/2011
+					Sep/18/2014
 */
 // -----------------------------------------------------------------------
 import scala.io.Source
@@ -15,11 +15,8 @@ def file_to_str_proc (file_in:String):String =
 {
 	val source = Source.fromFile (file_in)
 
-	var str_in = ""
-	for( line <- source.getLines )
-		{
-		str_in += line
-		}
+	var str_in = source.mkString
+	source.close ()
 
 	return	str_in
 }

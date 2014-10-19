@@ -2,14 +2,14 @@
 #
 #	mcache_manipulate.py
 #
-#					Jul/29/2014
+#					Oct/07/2014
 #
 # ------------------------------------------------------------
 import	sys
 import json
 #
 import datetime
-import memcache
+# import memcache
 sys.path.append ('/var/www/data_base/common/python_common')
 from text_manipulate import dict_append_proc
 # ------------------------------------------------------------
@@ -29,24 +29,22 @@ def	mcache_delete_proc (mc,id_key):
 	mc.delete (str_key)
 #
 # ------------------------------------------------------------
-def	mcache_display_proc (mc,key):
-	str_key = str (key)
-	str_json = mc.get(str_key)
-	if (str_json != None):
-		array_aa = json.loads (str_json)
-		name = array_aa['name']
-		print (key,name,array_aa['population'],array_aa['date_mod'])
-# ------------------------------------------------------------
 def	mcache_to_dict_proc (mc,keys):
 	dict_aa = {}
 	for key in keys:
-		str_json = mc.get(key)
-		if (str_json != None):
+		str_json = str (mc.get(key))
+		if (str_json != "None"):
 #
-			array_aa = json.loads (str_json)
-			name = array_aa['name']
-			dict_append_proc (dict_aa,key,name, \
+			try:
+				array_aa = json.loads (str_json)
+				name = array_aa['name']
+				dict_append_proc (dict_aa,key,name, \
 				array_aa['population'],array_aa['date_mod'])
+			except Exception as ee:
+				sys.stderr.write ("*** error *** mcache_to_dict_proc ***\n")
+				sys.stderr.write (str (ee) + "\n")
+				sys.stderr.write (str_json + "\n")
 #
 	return	dict_aa
+#
 # ------------------------------------------------------------

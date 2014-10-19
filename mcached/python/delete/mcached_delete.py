@@ -3,11 +3,9 @@
 #
 #	mcached_delete.py
 #
-#					Jul/29/2014
+#					Oct/07/2014
 #
 import	sys
-import	string
-import json
 #
 import memcache
 #

@@ -1,24 +1,28 @@
 #! /usr/bin/php
 <?php
-// ------------------------------------------------------------------
-//	read/mcached_read.php
 //
-//					Jul/23/2010
+//	mcached_read.php
 //
-// ------------------------------------------------------------------
+//					Oct/07/2014
+//
+// ----------------------------------------------------------------
 $path="/var/www/data_base/common/php_common";
 set_include_path (get_include_path() . PATH_SEPARATOR . $path);
 //
-include "mcached_manipulate.php";
+include "text_manipulate.php";
 include "kvalue_manipulate.php";
 
-// ------------------------------------------------------------------
-$memc = memcache_connect('localhost', 11211);
-$memc->addServer('localhost', 11211);
+// ----------------------------------------------------------------
+print	"*** 開始 ***\n";
 
-print "*** 開始 ***\n";
+$mc = new Memcached ();
+$mc->addServer ("localhost",11211);
 
-mcached_display_proc ($memc);
+$keys = $mc->getAllKeys();
 
-print "*** 終了 ***\n";
+$dict_aa = kvalue_to_dict_proc ($mc,$keys);
+dict_display_proc ($dict_aa);
+
+print	"*** 終了 ***\n";
+// ----------------------------------------------------------------
 ?>

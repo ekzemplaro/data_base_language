@@ -1,8 +1,9 @@
 #! /usr/bin/ruby
+# -*- coding: utf-8 -*-
 #
 #	epub_read.rb
 #
-#					Jul/10/2012
+#					Sep/17/2014
 #
 # ---------------------------------------------------------------------
 load '/var/www/data_base/common/ruby_common/text_manipulate.rb'

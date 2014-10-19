@@ -2,7 +2,7 @@
 #
 #	text_manipulate.py
 #
-#					Aug/05/2014
+#					Sep/29/2014
 import	sys
 import	string
 import	datetime
@@ -13,6 +13,8 @@ def	text_read_proc	(file_in):
 #
 	fp_in = open (file_in,encoding='utf-8')
 	lines = fp_in.readlines ()
+	fp_in.close ()
+#
 	dict_aa = {}
 	for line in lines:
 		if (5 < len (line)):
@@ -29,7 +31,6 @@ def	text_read_proc	(file_in):
 					sys.stderr.write \
 				("*** %s ***\n" % line)
 #
-	fp_in.close ()
 	return	dict_aa
 #
 # ---------------------------------------------------------------
@@ -99,6 +100,8 @@ def	csv_read_proc	(file_in):
 #
 	fp_in = open (file_in,encoding='utf-8')
 	lines = fp_in.readlines ()
+	fp_in.close ()
+#
 	dict_aa = {}
 	for line in lines:
 		cols= line[:-1].split (",")
@@ -106,7 +109,6 @@ def	csv_read_proc	(file_in):
 			'population':int (cols[2]),'date_mod':cols[3]}
 		dict_aa[cols[0]] = dict_unit
 #
-	fp_in.close ()
 	return	dict_aa
 #
 # ---------------------------------------------------------------

@@ -2,14 +2,14 @@
 // ---------------------------------------------------------------
 //	maria_read.js
 //
-//					Sep/17/2013
+//					Sep/16/2014
 //
 // ---------------------------------------------------------------
 console.log ("*** 開始 ***");
 
 var mysql = require('mysql');
 
-var connection = mysql.createClient ({
+var connection = mysql.createConnection ({
 	host: 'localhost',
 	user: 'scott',
 	password: 'tiger'

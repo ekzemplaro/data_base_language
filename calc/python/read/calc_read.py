@@ -16,7 +16,7 @@ from calc_manipulate import calc_read_proc
 print   ("*** 開始 ***")
 #
 if len(sys.argv) != 2:
-    print "Usage:\n\t%s FILENAME.ods\n" % sys.argv[0]
+    print ("Usage:\n\t%s FILENAME.ods\n" % sys.argv[0])
     sys.exit(0)
 #
 file_calc = sys.argv[1]

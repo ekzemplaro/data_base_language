@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------
 //	xml_manipulate.scala
 //
-//						Jul/19/2011
+//						Sep/22/2014
 // -----------------------------------------------------------------
 import scala.io.Source
 import scala.collection.mutable
@@ -23,13 +23,17 @@ def xml_to_dict_proc (xml_str:String,keys:Array[String])
 		{
 		val unit_pp = root \ key
 
-		if (unit_pp != "")
+		if (unit_pp != None)
 			{
 			var unit_aa = mutable.Map[String,String] ()
-			unit_aa("name") = (unit_pp \ "name").text
+			var name = (unit_pp \ "name").text
+			if (name != "")
+				{
+				unit_aa("name") = name
 			unit_aa("population") = (unit_pp \ "population").text
 			unit_aa("date_mod") = (unit_pp \ "date_mod").text
-			dict_aa(key) = unit_aa
+				dict_aa(key) = unit_aa
+				}
 			}
 		}
 

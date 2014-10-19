@@ -3,7 +3,7 @@
 	json_delete.scala
 
 
-				Jan/26/2012
+					Sep/18/2014
 */
 // -----------------------------------------------------------------------
 import scala.io.Source
@@ -23,13 +23,8 @@ def main (args: Array[String])
 	println ("\tkey_in = " + key_in)
 
 	val source = Source.fromFile (json_file)
-
-	var str_json=""
-
-	for( line <- source.getLines )
-		{
-		str_json += line
-		}
+	var str_json = source.mkString
+	source.close()
 
 	var dict_aa = json_manipulate.json_to_dict_proc (str_json)
 

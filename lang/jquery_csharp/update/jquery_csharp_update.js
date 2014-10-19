@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------
 //	update/jquery_csharp_update.js
 //
-//					Oct/22/2010
+//					Oct/17/2014
 //
 // -----------------------------------------------------------------------
 jQuery (function ()
@@ -33,7 +33,7 @@ jQuery (function ()
 		}
 	else
 		{
-		var encoded = jQuery.toJSON (data_send);
+		var encoded = JSON.stringify (data_send);
 		send_exec_proc_json (url_update,encoded);
 		}
 	});

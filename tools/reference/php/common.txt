@@ -15,6 +15,7 @@ mcached_manipulate.php
 mongo_manipulate.php
 mssql_manipulate.php
 mysql_utf8.php
+php_proxy_get.php
 sql_display.php
 sql_manipulate.php
 sql_to_json.php

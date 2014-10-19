@@ -20,6 +20,9 @@ ii  php5-sqlite  5.4.9-4ubuntu2   amd64    SQLite module for php5
 </pre>
 コラムが大文字<br />
 </blockquote>
+<blockquote>
+# pacman -S php-sqlite<p />
+</blockquote>
 
 Python<p />
 <blockquote>

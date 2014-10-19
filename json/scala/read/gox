@@ -1,4 +1,6 @@
-export SCALA_COMMON="/var/www/data_base/common/scala_common"
-export CPX=.:$SCALA_COMMON
 #
-scala -classpath $CPX json_read /var/tmp/json/cities.json
+SCALA_COMMON=/var/www/data_base/common/scala_common
+#
+export CLASSPATH=./:*.jar:$SCALA_COMMON
+#
+scala json_read /var/tmp/json/cities.json

@@ -2,7 +2,7 @@
 # ---------------------------------------------------------------
 #	maria_update.coffee
 #
-#					Dec/26/2013
+#					Sep/16/2014
 #
 # ---------------------------------------------------------------
 mysql = require('mysql')
@@ -15,7 +15,7 @@ population_in = process.argv[3]
 
 console.log (id_in + "\t" + population_in)
 
-connection = mysql.createClient ({
+connection = mysql.createConnection ({
 	host: 'localhost',
 	user: 'scott',
 	password: 'tiger'

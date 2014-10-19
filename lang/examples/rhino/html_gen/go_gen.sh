@@ -14,7 +14,7 @@ cat $DOC/head_common.txt head_jquery.txt \
 #
 #cat $DOC/head_common.txt head_jquery.txt tail.txt > jquery_dbase.html
 #
-mv by_dbase.html $DOC/frame
+#mv by_dbase.html $DOC/frame
 #
 #
 #

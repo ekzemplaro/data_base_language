@@ -2,7 +2,7 @@
 /*
 	epub_create.java
 
-						Jan/07/2012
+						Sep/17/2014
 */
 // ----------------------------------------------------------
 import	java.util.HashMap;
@@ -36,22 +36,22 @@ data_prepare_proc ()
 		= new HashMap <String, HashMap<String,String>> ();
 
 	dict_aa = text_manipulate.dict_append_proc
-		(dict_aa,"t1931","甲府",51276,"2008-2-15");
+		(dict_aa,"t1931","甲府",51376,"2008-2-15");
 
 	dict_aa = text_manipulate.dict_append_proc
-		(dict_aa,"t1932","富士吉田",49142,"2008-4-23");
+		(dict_aa,"t1932","富士吉田",49182,"2008-4-23");
 
 	dict_aa = text_manipulate.dict_append_proc
-		(dict_aa,"t1933","都留",93153,"2008-5-24");
+		(dict_aa,"t1933","都留",93157,"2008-5-24");
 
 	dict_aa = text_manipulate.dict_append_proc
 		(dict_aa,"t1934","山梨",89124,"2008-9-14");
 
 	dict_aa = text_manipulate.dict_append_proc
-		(dict_aa,"t1935","大月",72631,"2008-8-12");
+		(dict_aa,"t1935","大月",75631,"2008-8-12");
 
 	dict_aa = text_manipulate.dict_append_proc
-		(dict_aa,"t1936","韮崎",28529,"2008-7-28");
+		(dict_aa,"t1936","韮崎",28579,"2008-7-28");
 
 	dict_aa = text_manipulate.dict_append_proc
 		(dict_aa,"t1937","南アルプス",39457,"2008-6-19");
@@ -60,7 +60,7 @@ data_prepare_proc ()
 		(dict_aa,"t1938","北杜",48362,"2008-11-15");
 
 	dict_aa = text_manipulate.dict_append_proc
-		(dict_aa,"t1939","甲斐",54872,"2008-10-24");
+		(dict_aa,"t1939","甲斐",54813,"2008-10-24");
 
 	return	dict_aa;
 }

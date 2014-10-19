@@ -3,7 +3,7 @@
 //
 //	epub_create.js
 //
-//						Jun/08/2011
+//						Sep/17/2014
 //
 // ----------------------------------------------------------
 
@@ -80,31 +80,31 @@ function data_prepare_proc ()
 	var dict_aa = new Object ();
 
 	dict_aa = dict_append_proc
-		(dict_aa,"t1931","甲府",27635,"1951-2-15");
+		(dict_aa,"t1931","甲府",29635,"1951-2-15");
 
 	dict_aa = dict_append_proc
 		(dict_aa,"t1932","富士吉田",91427,"1951-4-23");
 
 	dict_aa = dict_append_proc
-		(dict_aa,"t1933","都留",91523,"1951-5-24");
+		(dict_aa,"t1933","都留",71523,"1951-5-24");
 
 	dict_aa = dict_append_proc
-		(dict_aa,"t1934","山梨",14624,"1951-9-14");
+		(dict_aa,"t1934","山梨",18624,"1951-9-14");
 
 	dict_aa = dict_append_proc
-		(dict_aa,"t1935","大月",72131,"1951-8-12");
+		(dict_aa,"t1935","大月",72531,"1951-8-12");
 
 	dict_aa = dict_append_proc
-		(dict_aa,"t1936","韮崎",28529,"1951-7-28");
+		(dict_aa,"t1936","韮崎",28569,"1951-7-28");
 
 	dict_aa = dict_append_proc
-		(dict_aa,"t1937","南アルプス",39457,"1951-6-19");
+		(dict_aa,"t1937","南アルプス",31457,"1951-6-19");
 
 	dict_aa = dict_append_proc
-		(dict_aa,"t1938","北杜",47362,"1951-11-15");
+		(dict_aa,"t1938","北杜",47382,"1951-11-15");
 
 	dict_aa = dict_append_proc
-		(dict_aa,"t1939","甲斐",56872,"1951-10-24");
+		(dict_aa,"t1939","甲斐",56172,"1951-10-24");
 
 	return	dict_aa;
 }

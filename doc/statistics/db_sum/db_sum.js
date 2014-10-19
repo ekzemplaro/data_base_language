@@ -1,14 +1,14 @@
 // -----------------------------------------------------------------------
 //	db_sum.js
 //
-//					Jul/15/2014
+//					Sep/15/2014
+//
 // -----------------------------------------------------------------------
 jQuery (function ()
 {
 //	jQuery("#outarea_aa").text ("*** start *** db_sum.js ***");
 
 	var url_json = "../data/sheet_bb.json";
-//	var url_json = "http://host_couch:5984/data_base/sheet_aa?callback=?";
 
 	show_console_sum_proc (url_json);
 
@@ -40,7 +40,8 @@ function sum_up_proc (dbase,dbx)
 					 	|| (status == "5")
 					 	|| (status == "6")
 					 	|| (status == "7")
-					 	|| (status == "8"))
+					 	|| (status == "8")
+					 	|| (status == "9"))
 						{
 						success += 1;
 						break;

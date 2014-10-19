@@ -1,11 +1,10 @@
-<script src="/js/jquery.json-2.4.min.js"></script>
 <script src="db_edit.js"></script>
 <script src="file_save.js"></script>
 <script src="show_lang.js"></script>
 <script src="show_data_base.js"></script>
 <script src="../../js_common/sharp_convert.js"></script>
 <link rel="stylesheet" href="db_edit.css">
-<title>db_edit Oct/18/2013
+<title>db_edit Oct/16/2014
 </title>
 </head>
 <body>
@@ -36,3 +35,4 @@
 <div class="contents"></div>
 <div class="tail">
 <hr />
+<a href="html_src/">src</a><p />

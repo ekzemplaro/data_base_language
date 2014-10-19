@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------
 //	contents_table.js
 //
-//					Jun/29/2012
+//					Oct/16/2014
 // -----------------------------------------------------------------------
 function contents_table_gen_proc (key,index_mode,data_json)
 {
@@ -10,12 +10,22 @@ function contents_table_gen_proc (key,index_mode,data_json)
 
 	out_str += "<b>" + key + "</b>";
 
+	if (index_mode !== 0)
+		{
+		out_str += "<div class=\"right\">";
+		out_str += "<button class=\"execute\"  id=\"execute\">";
+		out_str += "実行</button>";
+		out_str += "</div>";
+		out_str += "<p />";
+		}
+
 	out_str += contents_table_gen_proc_exec (index_mode,data_json);
 
 	if (index_mode !== 0)
 		{
 		out_str += "<button class=\"execute\"  id=\"execute\">";
 		out_str += "実行</button>";
+		out_str += "<p />";
 		}
 
 var tmp_str = "*** browse_table_gen_proc aaa ***";

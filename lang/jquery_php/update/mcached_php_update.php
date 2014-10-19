@@ -2,7 +2,7 @@
 // ------------------------------------------------------------------
 //	jquery_php/update/mcached_php_update.php
 //
-//				Aug/22/2010
+//				Oct/09/2014
 // ------------------------------------------------------------------
 // $path=$_SERVER["DOCUMENT_ROOT"]."/data_base/common/php_common";
 $path="/var/www/data_base/common/php_common";
@@ -12,9 +12,8 @@ include "kvalue_manipulate.php";
 include "cgi_manipulate.php";
 
 // ------------------------------------------------------------------
-$memc = memcache_connect('localhost', 11211);
-$memc->addServer('localhost', 11211);
-
+$mc = new Memcached();
+$mc->addServer ("localhost",11211);
 
 $arry_param = cgi_manipulate ();
 
@@ -26,7 +25,7 @@ foreach ($arry_param as $val_aa)
 	$id = $val_aa['id'];
 	$population = $val_aa['population'];
 
-	kvalue_update_proc ($memc,$id,$population);
+	kvalue_update_proc ($mc,$id,$population);
 
 	$count++;
 	}

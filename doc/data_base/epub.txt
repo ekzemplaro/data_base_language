@@ -7,7 +7,8 @@ fbreader cities.epub<p />
 </blockquote>
 
 <blockquote>
-sudo apt-get install fbreader<p />
+# apt-get install fbreader<p />
+# pacman -S fbreader<p />
 </blockquote>
 
 <blockquote>

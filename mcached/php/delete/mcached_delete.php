@@ -3,28 +3,25 @@
 // ------------------------------------------------------------------
 //	delete/mcached_delete.php
 //
-//					Sep/08/2010
+//					Oct/07/2014
 //
 // ------------------------------------------------------------------
 $path="/var/www/data_base/common/php_common";
 set_include_path (get_include_path() . PATH_SEPARATOR . $path);
 //
-include "mcached_manipulate.php";
 include "kvalue_manipulate.php";
 
 // ------------------------------------------------------------------
 print "*** 開始 ***\n";
 
-$id_in = $argv[1];
-print	$id_in . "\n";
+$key_in = $argv[1];
+print	$key_in . "\n";
 
-$memc = memcache_connect('localhost', 11211);
-$memc->addServer('localhost', 11211);
+$mc = new Memcached();
+$mc->addServer("localhost", 11211);
 
-
-kvalue_delete_proc ($memc,$id_in);
-
-mcached_display_proc ($memc);
+kvalue_delete_proc ($mc,$key_in);
 
 print "*** 終了 ***\n";
+// ------------------------------------------------------------------
 ?>

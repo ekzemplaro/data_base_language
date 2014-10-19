@@ -21,6 +21,15 @@ MySQL の設定<p />
 	</blockquote>
 
 	<blockquote>
+	コンソールでの作成<p />
+	<blockquote>
+	MariaDB [(none)]> create user 'wordpress'@'localhost' identified by 'tiger';<p />
+	MariaDB [(none)]> create schema wordpress;<p />
+	MariaDB [(none)]> grant all on wordpress.* to wordpress identified by 'tiger';<p />
+	</blockquote>
+	</blockquote>
+
+	<blockquote>
 	MySQL の設定の確認方法
 	<blockquote>
 		mysql -hlocalhost -uwordpress -ptiger<p />

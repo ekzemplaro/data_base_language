@@ -2,7 +2,7 @@
 // ------------------------------------------------------------------
 //	kvalue_manipulate.php
 //
-//					Jun/20/2011
+//					Oct/07/2014
 //
 // ------------------------------------------------------------------
 function kvalue_update_proc ($mem,$id,$population)
@@ -10,6 +10,8 @@ function kvalue_update_proc ($mem,$id,$population)
 	$json_str = $mem->get ($id);
 	$root=json_decode ($json_str);
 	$root->population = $population;
+
+	date_default_timezone_set('Asia/Tokyo');
 	$today = date ("Y-m-d H:i:s");
 	$root->date_mod = $today;
 #
@@ -58,6 +60,8 @@ $mem->set ($id,$json_new);
 function kvalue_to_dict_proc ($mem,$keys)
 {
 	$dict_aa = array ();
+
+	asort ($keys);
 
 	foreach ($keys as $key)
 		{

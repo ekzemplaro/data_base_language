@@ -1,9 +1,9 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	mmcached_python_read.py
 #
-#						May/30/2011
+#						Oct/07/2014
 #
 # ----------------------------------------------------------------
 import sys
@@ -24,8 +24,8 @@ keys = {'t1731','t1732','t1733',
 dict_aa = mcache_to_dict_proc (mc,keys)
 out_str_aa = json.dumps (dict_aa)
 #
-print "Content-type: text/json\n\n"
+print ("Content-type: text/json\n\n")
 #
-print out_str_aa
+print (out_str_aa)
 #
 # ----------------------------------------------------------------

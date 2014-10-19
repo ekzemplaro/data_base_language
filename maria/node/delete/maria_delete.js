@@ -2,7 +2,7 @@
 // ---------------------------------------------------------------
 //	maria_delete.js
 //
-//					Sep/17/2013
+//					Sep/16/2014
 //
 // ---------------------------------------------------------------
 var mysql = require('mysql');
@@ -15,7 +15,7 @@ var id_in = process.argv[2];
 
 console.log (id_in);
 
-var connection = mysql.createClient ({
+var connection = mysql.createConnection ({
 	host: 'localhost',
 	user: 'scott',
 	password: 'tiger'
