@@ -38,7 +38,8 @@ function reference (lang)
 		|| (lang == "Fsharp") || (lang == "Csharp")
 //		|| (lang == "F#") || (lang == "C#")
 		|| (lang == "Haxe") || (lang == "bsh")
-		|| (lang == "falcon"))
+		|| (lang == "falcon")
+		|| (lang == "julia"))
 		{
 		hantei = true;
 		}

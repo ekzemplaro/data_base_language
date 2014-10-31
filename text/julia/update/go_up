@@ -1,0 +1,2 @@
+#
+./text_update.jl /var/tmp/plain_text/cities.txt t2385 45982100

@@ -1,8 +1,8 @@
-#! /usr/bin/tclsh8.5
+#! /usr/bin/tclsh
 #
 #	xml_read.tcl
 #
-#					Jan/21/2010
+#					Oct/29/2014
 #
 # ---------------------------------------------------------------
 package require xml

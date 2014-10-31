@@ -2,12 +2,10 @@
 #
 #	json_read.pyx
 #
-#					Mar/29/2013
+#					Oct/21/2014
 #
 # ------------------------------------------------------------------
 import	sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
 import	json
 #
 sys.path.append ('/var/www/data_base/common/python_common')

@@ -2,13 +2,11 @@
 #
 #	json_delete.pyx
 #
-#					Mar/29/2013
+#					Oct/21/2014
 #
 #
 # -------------------------------------------------------------------
 import	sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
 import	json
 #
 sys.path.append ('/var/www/data_base/common/python_common')
@@ -34,7 +32,6 @@ dict_bb = dict_delete_proc (dict_aa,id_in)
 dict_display_proc (dict_bb)
 out_str = json.dumps (dict_bb)
 #
-#print	out_str
 file_write_proc (file_json,out_str)
 #
 print ("*** 終了 ***")

@@ -6,5 +6,5 @@
 <script src="contents_table.js"></script>
 <script src="change_monitor.js"></script>
 <link rel="stylesheet" href="jquery_couchdb.css">
-<title>jQuery CouchDB (Oct/16/2014)</title>
+<title>jQuery CouchDB (Oct/30/2014)</title>
 </head>

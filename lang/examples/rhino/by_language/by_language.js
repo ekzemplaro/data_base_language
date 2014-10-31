@@ -1,7 +1,7 @@
 // --------------------------------------------------------------------
-//	by_language.js
+//	rhino/by_language/by_language.js
 //
-//					Jul/18/2014
+//					Oct/31/2014
 // --------------------------------------------------------------------
 importPackage (java.io);
 // --------------------------------------------------------------------
@@ -90,6 +90,8 @@ function main_proc ()
 	lang_gen ("falcon","fal");
 	lang_gen ("racket","rkt");
 	lang_gen ("typescript","ts");
+	lang_gen ("julia","jl");
+	lang_gen ("octave","m");
 
 	print	("</ol>");
 	print	("</div>");

@@ -2,7 +2,7 @@
 #
 #	csv_create.pyx
 #
-#					Oct/26/2011
+#					Oct/21/2014
 #
 # -------------------------------------------------------------------------
 import	sys
@@ -16,15 +16,15 @@ from text_manipulate import dict_append_proc
 def	data_prepare_proc ():
 	dict_aa = {} 
 #
-	dict_aa = dict_append_proc (dict_aa,'t1271',u'千葉'.encode ('utf-8'),59178,'1925-9-21')
-	dict_aa = dict_append_proc (dict_aa,'t1272',u'勝浦'.encode ('utf-8'),47285,'1925-10-15')
-	dict_aa = dict_append_proc (dict_aa,'t1273',u'市原'.encode ('utf-8'),62654,'1925-6-14')
-	dict_aa = dict_append_proc (dict_aa,'t1274',u'流山'.encode ('utf-8'),64251,'1925-9-9')
-	dict_aa = dict_append_proc (dict_aa,'t1275',u'八千代'.encode ('utf-8'),42516,'1925-8-4')
-	dict_aa = dict_append_proc (dict_aa,'t1276',u'我孫子'.encode ('utf-8'),35187,'1925-1-21')
-	dict_aa = dict_append_proc (dict_aa,'t1277',u'鴨川'.encode ('utf-8'),81256,'1925-7-23')
-	dict_aa = dict_append_proc (dict_aa,'t1278',u'銚子'.encode ('utf-8'),24374,'1925-10-26')
-	dict_aa = dict_append_proc (dict_aa,'t1279',u'市川'.encode ('utf-8'),85813,'1925-2-17')
+	dict_aa = dict_append_proc (dict_aa,'t1271','千葉',59178,'1949-9-21')
+	dict_aa = dict_append_proc (dict_aa,'t1272','勝浦',47285,'1949-10-15')
+	dict_aa = dict_append_proc (dict_aa,'t1273','市原',82654,'1949-6-14')
+	dict_aa = dict_append_proc (dict_aa,'t1274','流山',94251,'1949-9-9')
+	dict_aa = dict_append_proc (dict_aa,'t1275','八千代',42516,'1949-8-4')
+	dict_aa = dict_append_proc (dict_aa,'t1276','我孫子',35187,'1949-1-21')
+	dict_aa = dict_append_proc (dict_aa,'t1277','鴨川',81756,'1949-7-23')
+	dict_aa = dict_append_proc (dict_aa,'t1278','銚子',29374,'1949-10-26')
+	dict_aa = dict_append_proc (dict_aa,'t1279','市川',85613,'1949-2-17')
 #
 	return	dict_aa
 #

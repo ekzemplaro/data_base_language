@@ -1,4 +1,4 @@
-<title>C++ Apr/16/2014</title>
+<title>C++ Oct/21/2014</title>
 </head>
 <body>
 <h2><a href="http://www.cplusplus.com">C++</a></h2><p />
@@ -25,3 +25,8 @@ Windows7 で cl.exe を使う方法<br />
 コンパイル<br />
 cl hello.cpp<p />
 </blockquote>
+<hr />
+Arch Linux<br />
+	<blockquote>
+	# pacman -S boost<p />
+	</blockquote>

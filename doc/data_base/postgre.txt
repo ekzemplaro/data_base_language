@@ -160,16 +160,20 @@ org.postgresql.util.PSQLException:
 	to the database server host and port that you wish to connect to.
 
 </pre>
-<ol>
+<blockquote>
 	/etc/tomcat6/policy.d/04webapps.policy<p />
 
 		ermission java.security.AllPermission;<p />
-</ol>
+</blockquote>
 
-<ol>
+<blockquote>
 /usr/share/java/postgresql-jdbc3-8.2.jar
-</ol>
+</blockquote>
 
+Arch Linux<br />
+<blockquote>
+$ yaourt -Sb postgresql-jdbc<p />
+</blockquote>
 C#<p />
 <blockquote>
 <pre>

@@ -2,7 +2,7 @@
 #
 #	csv_delete.l
 #
-#					Sep/21/2011
+#					Oct/28/2014
 #
 # -----------------------------------------------------------------
 (load '/var/www/data_base/common/pico_common/text_manipulate.l)
@@ -14,14 +14,9 @@
 (prinl key)
 #
 (setq dict_aa (text_read_proc file_csv))
-(prinl (length dict_aa))
-(prinl "*** ppp ***")
 (prinl (assoc key dict_aa))
-(prinl "*** qqq ***")
 #
-(prinl (length dict_aa))
 (setq dict_aa (delete (assoc key dict_aa) dict_aa))
-(prinl (length dict_aa))
 #
 (dict_display_proc dict_aa)
 (out file_csv

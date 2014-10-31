@@ -1,7 +1,7 @@
 <meta content="Program Language Examples in io" name="description">
 <meta content="io.js,クライアント,接続,言語,サンプル" name="keyword">
 <meta content="Uchida Masatomo" name="author">
-<title>io May/13/2013</title>
+<title>io Oct/28/2014</title>
 </head>
 <body>
 <h2><a href="http://www.iolanguage.com">io</a></h2><p />
@@ -27,4 +27,9 @@ sudo ldconfig<p />
 <a href="http://io-fans.jottit.com/">io-fans</a><p />
 <a href="http://xole.net/docs/IoReference_ja.html">Io リファレンス マニュアル</a><p />
 
+</blockquote>
+
+Arch Linux<br />
+<blockquote>
+# pacman -S io<p />
 </blockquote>

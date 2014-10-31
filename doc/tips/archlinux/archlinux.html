@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>ArchLinux Oct/14/2014</title>
+<title>ArchLinux Oct/31/2014</title>
 </head>
 <body>
 参考になるページ<p />
@@ -49,6 +49,7 @@
 # pacman -S dnsutils<br />
 # pacman -S sudo<br />
 # pacman -S rsync<br />
+# pacman -S nfs-utils<br />
 
 </blockquote>
 
@@ -134,7 +135,12 @@ nginx の起動<br />
 
 	<a href="./nginx.conf.txt">/etc/nginx/nginx.conf</a> の設定<p />
 	<blockquote>
+		location ~ \.php$ {<br />
+		root   /var/www;<br />
 		fastcgi_pass unix:/run/php-fpm/php-fpm.sock;<br />
+		fastcgi_index index.php;<br />
+		include fastcgi.conf;<br />
+		}<br />
 	</blockquote>
 	<a href="./php-fpm.conf.txt">/etc/php/php-fpm.conf</a> の設定<p />
 	<blockquote>
@@ -182,27 +188,35 @@ nfs サーバーの設定<p />
 	</blockquote>
 /etc/exports の設定<br />
 	<blockquote>
-<pre>
+	<pre>
 	# /etc/exports: NFS file systems being exported.  See exports(5).
-/tmp    nlf132(async,rw,no_subtree_check) cddn007(async,rw,no_subtree_check)
-/home/uchida    nlf132(async,rw,no_subtree_check) cddn007(async,rw,no_subtree_check)
-/var/www   nlf132(async,rw,no_subtree_check) cddn007(async,rw,no_subtree_check)
-</pre>
-#
+	/tmp    nlf132(async,rw,no_subtree_check) cddn007(async,rw,no_subtree_check)
+	/home/uchida    nlf132(async,rw,no_subtree_check) cddn007(async,rw,no_subtree_check)
+	/var/www   nlf132(async,rw,no_subtree_check) cddn007(async,rw,no_subtree_check)
+	#
+	</pre>
 	</blockquote>
+
 nfs の起動<br />
 	<blockquote>
-# systemctl start nfs-server.service<br />
+	# systemctl start nfs-server.service<br />
 	</blockquote>
 自動的に起動させる。<br />
 	<blockquote>
+	# systemctl enable nfs-server.service<br />
+	</blockquote>
+
+状態の表示<br />
+	<blockquote>
+	# systemctl status nfs-server.service<br />
 	</blockquote>
 </blockquote>
 
+NFS クライアント<br />
 	<blockquote>
-# systemctl status nfs-server.service<br />
+	# systemctl start nfs-client.target<p />
+	# systemctl start rpcbind.service<p />
 	</blockquote>
-
 
 samba サーバーの設定<p />
 <blockquote>
@@ -331,6 +345,6 @@ yaourt のインストール<br />
 	</blockquote>
 <hr />
 <a href="/data_base/">Return</a><p />
-Oct/14/2014 AM 08:15<p />
+Oct/31/2014 AM 08:15<p />
 </body>
 </html>

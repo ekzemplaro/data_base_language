@@ -5,7 +5,7 @@
 <body>
 <h2>Console ordered by Data Base</h2>
 <blockquote>
-	There're 64 languages.<br /> 
+	There're 66 languages.<br /> 
 	Each data base has Create, Read, Update and Delete.<br />
-	So Total Number is 4 * 64 = 256.<p />
+	So Total Number is 4 * 66 = 264.<p />
 </blockquote>

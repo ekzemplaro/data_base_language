@@ -1,0 +1,41 @@
+<meta content="Program Language Examples in racket" name="description">
+<meta content="Ada,クライアント,接続,言語,サンプル" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<title>octave Oct/31/2014</title>
+</head>
+<body>
+<h2><a href="https://www.gnu.org/software/octave/">GNU Octave</a></h2><p />
+
+<blockquote>
+<pre>
+$ octave
+GNU Octave, version 3.8.2
+Copyright (C) 2014 John W. Eaton and others.
+This is free software; see the source code for copying conditions.
+There is ABSOLUTELY NO WARRANTY; not even for MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  For details, type 'warranty'.
+
+Octave was configured for "x86_64-unknown-linux-gnu".
+
+Additional information about Octave is available at http://www.octave.org.
+
+Please contribute if you find this software useful.
+For more information, visit http://www.octave.org/get-involved.html
+
+Read http://www.octave.org/bugs.html to learn how to submit bug reports.
+For information about changes from previous versions, type 'news'.
+
+octave:1> 8 + 3
+ans =  11
+octave:2> exit
+$
+</pre>
+</blockquote>
+
+<blockquote>
+</blockquote>
+
+Arch Linux<br />
+<blockquote>
+# pacman -S octave<p />
+</blockquote>

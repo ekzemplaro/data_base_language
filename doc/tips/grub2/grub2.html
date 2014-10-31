@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>Grub2 Jun/26/2014</title>
+<title>Grub2 Oct/31/2014</title>
 </head>
 <body>
 <h2>Grub2 の設定</h2><p />
@@ -36,8 +36,35 @@ sudo update-grub<p />
 sudo grub-install /dev/sda<p />
 </blockquote>
 
+
+<hr />
+バージョンの調べ方<br />
+	<blockquote>
+	$ grub-install --version<br />
+	grub-install (GRUB) 2.02~beta2<br />
+	</blockquote>
+<hr />
+grub2 コマンド　シェル<br />
+	<blockquote>
+	grub> ls<br />
+	grub> ls (hd0,msdos1)<br />
+	grub> root=(hd0,msdos1)<br />
+	grub> ls /<br />
+	grub> linux /boot/vmlinuz-linux root=/dev/sda1<br />
+	grub> initrd /boot/initramfs-linux.img<br />
+	grub> boot<br />
+	</blockquote>
+<hr />
+Arch Linux<br />
+	<blockquote>
+	# pacman -S grub<p />
+	# pacman -S os-prober<p />
+	# grub-install --target=i386-pc --recheck --debug /dev/sda<p />
+	# grub-mkconfig -o /boot/grub/grub.cfg<p />
+	</blockquote>
+
 <hr />
 <a href="/data_base/data_base.html">Return</a><p />
-Jun/26/2014 AM 08:15<p />
+Oct/31/2014 AM 08:15<p />
 </body>
 </html>

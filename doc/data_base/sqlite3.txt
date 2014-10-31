@@ -49,6 +49,10 @@ Tcl<p />
 	package ifneeded sqlite3 3.7.9 \<br />
     [list load [file join $dir libtclsqlite3.so] sqlite3]<br />
 	</blockquote>
+Arch Linux<br />
+	<blockquote>
+	# pacman -S sqlite-tcl<p />
+	</blockquote>
 </blockquote>
 
 Haskell<p />

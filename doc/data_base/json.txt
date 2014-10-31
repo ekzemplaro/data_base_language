@@ -22,6 +22,10 @@ cat ex01.json | python -mjson.tool<p />
 <pre>
 ii  jq    1.2-8  amd64   lightweight and flexible command-line JSON processor
 </pre>
+Arch Linux<br />
+	<blockquote>
+	$ yaourt -Sb jq<p />
+	</blockquote>
 </blockquote>
 
 PHP<p />
@@ -39,6 +43,11 @@ Perl<p />
 Python<p />
 <blockquote>
 	python-json<p />
+
+	Arch Linux<br />
+	<blockquote>
+	# pacman -S python-pycurl<p />
+	</blockquote>
 </blockquote>
 
 Perl<p />

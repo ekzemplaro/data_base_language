@@ -2,7 +2,7 @@
 <meta content="Program Language Examples in PicoLisp" name="description">
 <meta content="PicoLisp,クライアント,接続,言語,サンプル" name="keyword">
 <meta content="Uchida Masatomo" name="author">
-<title>PicoLisp Nov/02/2012</title>
+<title>PicoLisp Oct/27/2014</title>
 </head>
 <body>
 <h2><a href="http://www.picolisp.com">PicoLisp</a></h2><p />
@@ -30,7 +30,9 @@ ii  picolisp    3.1.0.7-1     amd64        Lisp interpreter and application serv
 	: (bye)<br />
 </blockquote>
 
+Arch Linux<br />
 <blockquote>
+$ yaourt -Sb picolisp<p />
 </blockquote>
 
 

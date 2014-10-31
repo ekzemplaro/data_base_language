@@ -60,7 +60,7 @@ function insert_record_proc (conn,id_in,name_in,population_in,date_mod_in)
 
 	sql_str += str_data;
 
-	print (sql_str);
+//	print (sql_str);
 
 	var rs   = stmt.executeUpdate(sql_str);
 }

@@ -1,15 +1,20 @@
 <meta content="Program Language Examples in pascal" name="description">
 <meta content="pascal,クライアント,接続,言語,サンプル" name="keyword">
 <meta content="Uchida Masatomo" name="author">
-<title>pascal Jan/24/2014</title>
+<title>pascal Oct/28/2014</title>
 </head>
 <body>
 <h2><a href="http://www.freepascal.org/">Free Pascal</a></h2><p />
 
+<blockquote>
 <pre>
 ii  fp-compiler-2.6.2    2.6.2-5   amd64   Free Pascal - compiler
 </pre>
-<blockquote>
+</blockquote>
 
+
+Arch Linux<br />
+<blockquote>
+# pacman -S fpc<p />
 </blockquote>
 

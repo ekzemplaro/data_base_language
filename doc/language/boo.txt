@@ -17,3 +17,8 @@
 /usr/bin/booc<p />
 </blockquote>
 
+Arch Linux<br />
+<blockquote>
+# pacman -S boo<p />
+</blockquote>
+

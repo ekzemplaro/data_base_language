@@ -1,12 +1,17 @@
 <meta content="Program Language Examples in ringojs" name="description">
 <meta content="ringojs,クライアント,接続,言語,サンプル" name="keyword">
 <meta content="Uchida Masatomo" name="author">
-<title>ringojs Dec/27/2013</title>
+<title>ringojs Oct/30/2014</title>
 </head>
 <body>
 <h2><a href="http://ringojs.org">RingoJS</a></h2><p />
 <blockquote>
 	sudo dpkg -i ringojs_0.10-1_all.deb<p />
 
+</blockquote>
+
+Arch Linux<br />
+<blockquote>
+$ yaourt -Sb ringojs<p />
 </blockquote>
 

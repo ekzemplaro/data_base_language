@@ -1,7 +1,7 @@
 <meta content="Program Language Examples in swipl" name="description">
 <meta content="swipl,クライアント,接続,言語,サンプル" name="keyword">
 <meta content="Uchida Masatomo" name="author">
-<title>swipl Jan/21/2014</title>
+<title>swipl Oct/30/2014</title>
 </head>
 <body>
 <h2><a href="http://www.swi-prolog.org">SWI-Prolog</a></h2><p />
@@ -40,3 +40,8 @@ use_module(library(http/http_json)).<br />
 use_module(library(http/json)).<br />
 use_module(library(http/json_convert)).<br />
 
+<hr />
+Arch Linux<br />
+<blockquote>
+# pacman -S swi-prolog<p />
+</blockquote>

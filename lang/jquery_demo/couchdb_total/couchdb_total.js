@@ -1,18 +1,23 @@
 // -----------------------------------------------------------------------
 //	couchdb_total.js
 //
-//					Nov/11/2013
+//					Oct/30/2014
 // -----------------------------------------------------------------------
 jQuery (function ()
 {
 	jQuery("#outarea_aa").html
-		("*** couchdb_total *** start *** Nov/11/2013 ***");
+		("*** couchdb_total *** start *** Oct/30/2014 ***");
 
-	var url_couchdb = './php_proxy_get.php?url=http://localhost:5984/';
+//	var url_couchdb = './php_proxy_get.php?url=http://localhost:5984/';
 
-	var url_proxy =  url_couchdb + "city/_all_docs";
+//	var url_proxy =  url_couchdb + "city/_all_docs";
 
-	jQuery.getJSON (url_proxy,function (data_json)
+	var url_proxy = "python_proxy_get.py";
+
+	var url_couchdb = 'http://localhost:5984/';
+	var url_target= url_couchdb + "city/_all_docs";
+
+	jQuery.getJSON (url_proxy,{url: url_target},function (data_json)
 		{
 //		jQuery ("button.filter").click (function ()
 		jQuery ("button.filter").on ('click', function ()
@@ -32,7 +37,7 @@ jQuery (function ()
 				var out_str = show_nav_proc (data_json,key);
 				jQuery(".nava").html (out_str);
 
-				select_proc (url_couchdb);
+				select_proc (url_proxy,url_couchdb);
 				}
 			});
 		});
@@ -45,11 +50,11 @@ jQuery (function ()
 		});
 
 	jQuery("#outarea_hh").html
-		("*** couchdb_total *** end *** Nov/11/2013 ***");
+		("*** couchdb_total *** end *** Oct/30/2014 ***");
 });
 
 // -----------------------------------------------------------------------
-function select_proc (url_couchdb)
+function select_proc (url_proxy,url_couchdb)
 {
 //	jQuery ("button.selection").click (function ()
 	jQuery ("button.selection").on ('click', function ()
@@ -71,7 +76,7 @@ function select_proc (url_couchdb)
 		jQuery("#outarea_gg").html ("outarea_gg");
 		jQuery("#outarea_hh").html ("outarea_hh");
 
-		show_contents_proc (url_couchdb,key);
+		show_contents_proc (url_proxy,url_couchdb,key);
 		});
 }
 

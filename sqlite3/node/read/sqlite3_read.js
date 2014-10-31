@@ -15,7 +15,9 @@ console.log (file_sqlite3);
 
 var db = new sqlite3.Database (file_sqlite3);
 
-db.each ("select id,name,population,date_mod from cities",function (err,row)
+var command = "select id,name,population,date_mod from cities";
+
+db.each (command,function (err,row)
 	{
 	var str_out = row.id + "\t" + row.name + "\t" + row.population;
 	str_out += "\t" + row.date_mod;

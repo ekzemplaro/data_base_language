@@ -1,7 +1,7 @@
 // -------------------------------------------------------------------
 //	xml_create.vala
 //
-//					Aug/28/2011
+//					Oct/22/2014
 //
 //		text_manipulate
 // -------------------------------------------------------------------
@@ -42,9 +42,9 @@ static HashTable <string,HashTable <string,string>>
 	dict_aa = dict_append_proc (dict_aa,"t2265","富士",51438,"1923-7-18");
 	dict_aa = dict_append_proc (dict_aa,"t2266","熱海",94867,"1923-8-13");
 	dict_aa = dict_append_proc (dict_aa,"t2267","富士宮",12756,"1923-1-5");
-	dict_aa = dict_append_proc (dict_aa,"t2268","藤枝",32943,"1923-2-22");
-	dict_aa = dict_append_proc (dict_aa,"t2269","御殿場",62531,"1923-5-23");
-	dict_aa = dict_append_proc (dict_aa,"t2270","島田",35867,"1923-12-11");
+	dict_aa = dict_append_proc (dict_aa,"t2268","藤枝",82943,"1923-2-22");
+	dict_aa = dict_append_proc (dict_aa,"t2269","御殿場",62574,"1923-5-23");
+	dict_aa = dict_append_proc (dict_aa,"t2270","島田",35861,"1923-12-11");
 
 
 	return	dict_aa;

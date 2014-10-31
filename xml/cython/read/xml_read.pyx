@@ -2,11 +2,9 @@
 #
 #	read/xml_read.pyx
 #
-#						Mar/27/2013
+#						Oct/21/2014
 import xml.dom.minidom
 import	sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
 sys.path.append ('/var/www/data_base/common/python_common')
 #
 from file_io import file_to_str_proc

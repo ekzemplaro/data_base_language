@@ -238,13 +238,13 @@ jquery_java_update</a></td>
 
 <tr>
 <td>F#</td>
-<td><a href="/data_base/common/fsharp_common/html_src/fsharp_common.html">fsharp_common</a></td>
+<td><a href="/data_base/common/fsharp_common/html_src/">fsharp_common</a></td>
 </tr>
 
 <tr>
 <tr>
 <td>C#</td>
-<td><a href="/data_base/common/csharp_common/html_src/csharp_common.html">csharp_common</a></td>
+<td><a href="/data_base/common/csharp_common/html_src/">csharp_common</a></td>
 
 <td><a href="/data_base/lang/jquery_csharp/create/html/jquery_csharp_create_src.html">
 jquery_csharp_create</a></td>

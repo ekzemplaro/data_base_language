@@ -1,4 +1,4 @@
-<title>Rhino May/09/2013</title>
+<title>Rhino Oct/22/2014</title>
 </head>
 <body>
 <h2><a href="http://www.mozilla.org/rhino/">Rhino</a></h2><p />
@@ -25,3 +25,7 @@ js>
 </pre>
 </blockquote>
 
+Arch Linux<br />
+	<blockquote>
+	# pacman -S rhino<p />
+	</blockquote>

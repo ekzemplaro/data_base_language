@@ -23,13 +23,13 @@ sudo service couchdb start<br />
 
 Client<br />
 <blockquote>
-curl -X GET http://localhost:5984/<br />
-curl -X PUT http://localhost:5984/baseball<br />
-curl -X PUT http://localhost:5984/basketball<br />
-curl -X GET http://localhost:5984/_all_dbs<p />
-curl -X GET http://localhost:5984/baseball/_all_docs<br />
-curl -X GET http://localhost:5984/baseball/_all_docs?include_docs=true<br />
-curl -X DELETE http://localhost:5984/baseball<br />
+curl -X GET --noproxy localhost http://localhost:5984/<br />
+curl -X PUT --noproxy localhost http://localhost:5984/baseball<br />
+curl -X PUT --noproxy localhost http://localhost:5984/basketball<br />
+curl -X GET --noproxy localhost http://localhost:5984/_all_dbs<p />
+curl -X GET --noproxy localhost http://localhost:5984/baseball/_all_docs<br />
+curl -X GET --noproxy localhost http://localhost:5984/baseball/_all_docs?include_docs=true<br />
+curl -X DELETE --noproxy localhost http://localhost:5984/baseball<br />
 </blockquote>
 
 <pre>

@@ -2,4 +2,4 @@
 #
 echo "import xml_update" > tmp_execute.py
 #
-python ./tmp_execute.py /var/tmp/xml_file/cities.xml t2267 4581700
+python ./tmp_execute.py /var/tmp/xml_file/cities.xml t2267 45821700

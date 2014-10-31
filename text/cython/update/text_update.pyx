@@ -2,7 +2,7 @@
 #
 #	update/text_update.pyx
 #
-#					Oct/26/2011
+#					Oct/21/2014
 import	sys
 import	string
 #
@@ -18,7 +18,7 @@ print ("*** 開始 ***")
 #
 file_in = sys.argv[1]
 id_in = sys.argv[2]
-population_in = string.atoi (sys.argv[3])
+population_in = int (sys.argv[3])
 print ("%s\t%d" % (id_in, population_in))
 
 dict_aa = text_read_proc	(file_in)

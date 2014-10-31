@@ -2,13 +2,11 @@
 #
 #	json_update.pyx
 #
-#				Mar/29/2013
+#				Oct/21/2014
 #
 # -------------------------------------------------------------------
 #
 import	sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
 import	json
 import	string
 #
@@ -22,7 +20,7 @@ print ("*** 開始 ***")
 #
 file_json = sys.argv[1]
 id_in = sys.argv[2]
-population_in = string.atoi (sys.argv[3])
+population_in = int (sys.argv[3])
 #
 print (file_json)
 print ("%s\t%d" % (id_in, population_in))
@@ -36,7 +34,6 @@ dict_bb = dict_update_proc (dict_aa,id_in,population_in)
 dict_display_proc (dict_bb)
 out_str = json.dumps (dict_bb)
 #
-#print	out_str
 file_write_proc (file_json,out_str)
 #
 print ("*** 終了 ***")

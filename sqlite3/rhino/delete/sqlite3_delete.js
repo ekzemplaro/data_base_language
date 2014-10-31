@@ -13,7 +13,9 @@ load ("/var/www/data_base/common/rhino_common/sql_manipulate.js");
 print	("*** 開始 ***");
 
 var database = arguments[0];
-var id_in=arguments[1];
+var key_in=arguments[1];
+
+print (key_in);
 
 Class.forName ("org.sqlite.JDBC");
 
@@ -24,7 +26,7 @@ var url = "jdbc:sqlite:" + database;
 
 var conn = DriverManager.getConnection (url,user,passwd);
 
-delete_proc (conn,id_in);
+delete_proc (conn,key_in);
 
 conn.close();
 

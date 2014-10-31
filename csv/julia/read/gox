@@ -1,0 +1,2 @@
+#
+./csv_read.jl /var/tmp/csv/cities.csv

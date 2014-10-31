@@ -1,7 +1,7 @@
 // -------------------------------------------------------------------
 //	json_create.vala
 //
-//					Feb/04/2014
+//					Oct/22/2014
 //
 //	text_manipulate
 // -------------------------------------------------------------------
@@ -38,7 +38,7 @@ static HashTable <string,HashTable <string,string>>
 	HashTable <string,HashTable <string,string>> dict_aa = new
 	HashTable <string,HashTable <string,string>> (str_hash,str_equal);
 
-	dict_aa = dict_append_proc (dict_aa,"t0921","宇都宮",38745,"1923-6-24");
+	dict_aa = dict_append_proc (dict_aa,"t0921","宇都宮",38945,"1923-6-24");
 	dict_aa = dict_append_proc (dict_aa,"t0922","小山",21734,"1923-3-7");
 	dict_aa = dict_append_proc (dict_aa,"t0923","佐野",69583,"1923-9-21");
 	dict_aa = dict_append_proc (dict_aa,"t0924","足利",74192,"1923-3-12");
@@ -51,7 +51,7 @@ static HashTable <string,HashTable <string,string>>
 	dict_aa = dict_append_proc (dict_aa,"t0931","大田原",75386,"1923-5-15");
 	dict_aa = dict_append_proc (dict_aa,"t0932","鹿沼",85231,"1923-8-26");
 	dict_aa = dict_append_proc (dict_aa,"t0933","那須塩原",64582,"1923-7-23");
-	dict_aa = dict_append_proc (dict_aa,"t0934","那須烏山",41278,"1923-3-18");
+	dict_aa = dict_append_proc (dict_aa,"t0934","那須烏山",41378,"1923-3-18");
 	return	dict_aa;
 }
 // -------------------------------------------------------------------

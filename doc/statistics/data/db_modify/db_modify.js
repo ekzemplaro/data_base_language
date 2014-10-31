@@ -2,7 +2,7 @@
 // ---------------------------------------------------------------
 //	db_modify.js
 //
-//					Jun/02/2014
+//					Oct/28/2014
 //
 // ---------------------------------------------------------------
 var fs = require("fs");
@@ -37,8 +37,12 @@ function convert_proc (data_aa)
 	console.log (data_aa['dbase']['J']['Create']['Code']);
 
 //	data_aa['dbase']['falcon']['Create']['Code'] = '2010';
-	data_aa['dbase']['racket']['Create']['Code'] = '2011';
-	data_aa['dbase']['typescript']['Create']['Code'] = '2012';
+//	data_aa['dbase']['racket']['Create']['Code'] = '2011';
+//	data_aa['dbase']['typescript']['Create']['Code'] = '2012';
+//	data_aa['dbase']['io']['Create']['Code'] = '1983';
+//	data_aa['dbase']['pascal']['Create']['Code'] = '1967';
+	data_aa['dbase']['julia']['Create']['Code'] = '2013';
+	data_aa['dbase']['octave']['Create']['Code'] = '1948';
 /*
 	data_aa['dbase']['jQuery']['Only']['couch'] = '8';
 	data_aa['dbase']['jQuery']['Only']['ftp'] = '8';

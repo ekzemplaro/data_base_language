@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------
 //	create/mssql_create.scala
 //
-//						Jan/11/2013
+//						Oct/22/2014
 // -----------------------------------------------------------------
 import scala.io.Source
 import java.sql._
@@ -46,12 +46,12 @@ def insert_data_proc (sss:Statement)
 {
 	sql_manipulate.insert_record_proc (sss,"t1071","前橋",31965,"1998-9-23")
 	sql_manipulate.insert_record_proc (sss,"t1072","高崎",29784,"1998-7-16")
-	sql_manipulate.insert_record_proc (sss,"t1073","桐生",24162,"1998-5-21")
-	sql_manipulate.insert_record_proc (sss,"t1074","沼田",37879,"1998-2-16")
-	sql_manipulate.insert_record_proc (sss,"t1075","伊勢崎",65819,"1998-10-14")
+	sql_manipulate.insert_record_proc (sss,"t1073","桐生",84162,"1998-5-21")
+	sql_manipulate.insert_record_proc (sss,"t1074","沼田",51879,"1998-2-16")
+	sql_manipulate.insert_record_proc (sss,"t1075","伊勢崎",65219,"1998-10-14")
 	sql_manipulate.insert_record_proc (sss,"t1076","水上",98274,"1998-11-21")
-	sql_manipulate.insert_record_proc (sss,"t1077","太田",89563,"1998-12-16")
-	sql_manipulate.insert_record_proc (sss,"t1078","安中",47832,"1998-5-8")
+	sql_manipulate.insert_record_proc (sss,"t1077","太田",81563,"1998-12-16")
+	sql_manipulate.insert_record_proc (sss,"t1078","安中",47632,"1998-5-8")
 	sql_manipulate.insert_record_proc (sss,"t1079","みどり",57943,"1998-7-21")
 }
 

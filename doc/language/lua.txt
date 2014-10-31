@@ -28,3 +28,9 @@ CouchDB<br />
 	luarocks install luchia<p />
 </blockquote>
 
+ArchLinux<br />
+<blockquote>
+	# pacman -S lua<br />
+	# pacman -S lua-luajson<br />
+	# pacman -S lua-sql-sqlite<br />
+</blockquote>

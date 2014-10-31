@@ -74,4 +74,6 @@ cat $DOC/head_common.txt bsh.txt $DOC/tail_common.txt > bsh.html
 cat $DOC/head_common.txt falcon.txt $DOC/tail_common.txt > falcon.html
 cat $DOC/head_common.txt racket.txt $DOC/tail_common.txt > racket.html
 cat $DOC/head_common.txt typescript.txt $DOC/tail_common.txt > typescript.html
+cat $DOC/head_common.txt julia.txt $DOC/tail_common.txt > julia.html
+cat $DOC/head_common.txt octave.txt $DOC/tail_common.txt > octave.html
 #

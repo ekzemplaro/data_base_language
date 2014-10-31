@@ -1,11 +1,7 @@
+js	example_php.js
 js	show_json.js
 js	table_delete.js
 js	table_manipulate.js
-D	json_manipulate.d
-D	mcached_manipulate.d
-D	redis_manipulate.d
-D	text_manipulate.d
-D	xml_manipulate.d
 abcl	file_io.lisp
 abcl	json_manipulate.lisp
 abcl	mcached_manipulate.lisp
@@ -64,7 +60,7 @@ cplus	redis_socket.cpp
 cplus	tcbn_manipulate.cpp
 cplus	text_manipulate.cpp
 cplus	xml_manipulate.cpp
-csharp	couch_manipulate.cs
+csharp	cgi_manipulate.cs
 csharp	fbd_manipulate.cs
 csharp	file_io.cs
 csharp	ftp_manipulate.cs
@@ -72,6 +68,7 @@ csharp	get_uri.cs
 csharp	json_manipulate.cs
 csharp	kvalue_manipulate.cs
 csharp	mcache_manipulate.cs
+csharp	mongo_manipulate.cs
 csharp	mssql_manipulate.cs
 csharp	mysql_manipulate.cs
 csharp	neo4j_manipulate.cs
@@ -81,6 +78,11 @@ csharp	redis_manipulate.cs
 csharp	table_manipulate.cs
 csharp	text_manipulate.cs
 csharp	xml_manipulate.cs
+D	json_manipulate.d
+D	mcached_manipulate.d
+D	redis_manipulate.d
+D	text_manipulate.d
+D	xml_manipulate.d
 ecl	file_io.lisp
 ecl	json_manipulate.lisp
 ecl	mcached_manipulate.lisp
@@ -158,6 +160,7 @@ jruby	excel_manipulate.rb
 jruby	jruby_sql_manipulate.rb
 jruby	mcached_manipulate.rb
 jruby	xlsx_manipulate.rb
+julia	text_manipulate.jl
 jython	jython_cassandra_manipulate.py
 jython	jython_excel_manipulate.py
 jython	jython_file_io.py
@@ -202,9 +205,10 @@ perl	json_out.pm
 perl	kvalue_manipulate.pm
 perl	mcache_manipulate.pm
 perl	mongo_manipulate.pm
+perl	pdf_manipulate.pm
 perl	redis_manipulate.pm
-perl	sql_manipulate.pm
 perl	sqlite3_manipulate.pm
+perl	sql_manipulate.pm
 perl	tcbn_manipulate.pm
 perl	text_manipulate.pm
 perl	uri_get.pm
@@ -222,10 +226,10 @@ php	firebird_display.php
 php	firebird_row_update.php
 php	firebird_to_json.php
 php	kvalue_manipulate.php
-php	mcached_manipulate.php
 php	mongo_manipulate.php
 php	mssql_manipulate.php
 php	mysql_utf8.php
+php	php_proxy_get.php
 php	sql_display.php
 php	sql_manipulate.php
 php	sql_to_json.php
@@ -288,6 +292,7 @@ rhino	xml_manipulate.js
 ringo	text_manipulate.js
 ringo	xml_manipulate.js
 ruby	cassandra_manipulate.rb
+ruby	cdb_manipulate.rb
 ruby	cgi_manipulate.rb
 ruby	couch_manipulate.rb
 ruby	couch_module.rb

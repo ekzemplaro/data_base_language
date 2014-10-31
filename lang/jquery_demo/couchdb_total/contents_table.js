@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------
 //	contents_table.js
 //
-//					Oct/16/2014
+//					Oct/30/2014
 // -----------------------------------------------------------------------
 function contents_table_gen_proc (key,index_mode,data_json)
 {
@@ -81,12 +81,13 @@ function edit_table_gen_proc (data_json)
 {
 	var out_str = "";
 
-	for (var it in data_json)
+	var keylist = get_sorted_key_proc (data_json);
+
+	for (var it in keylist)
 		{
-		if ((it !== "_id") && (it !== "_rev"))
-			{ 
-			out_str += gen_row_edit_proc (it,data_json[it])
-			}
+		var key = keylist[it];
+
+		out_str += gen_row_edit_proc (key,data_json[key])
 		}
 
 	return (out_str);
@@ -98,14 +99,16 @@ function append_table_gen_proc (data_json)
 {
 	var out_str = "";
 
+	var keylist = get_sorted_key_proc (data_json);
+
 	var id_last;
-	for (var id in data_json)
+
+	for (var it in keylist)
 		{
-		if ((id !== "_id") && (id !== "_rev"))
-			{
-			id_last = id; 
-			out_str += gen_row_browse_proc (id,data_json[id])
-			}
+		var key = keylist[it];
+
+		id_last = key; 
+		out_str += gen_row_browse_proc (key,data_json[key])
 		}
 
 	var nn_tmp = 1 + parseInt (id_last.slice(3));
@@ -123,12 +126,13 @@ function delete_table_gen_proc (data_json)
 {
 	var out_str = "";
 
-	for (var it in data_json)
+	var keylist = get_sorted_key_proc (data_json);
+
+	for (var it in keylist)
 		{
-		if ((it !== "_id") && (it !== "_rev"))
-			{ 
-			out_str += gen_row_delete_proc (it,data_json[it])
-			}
+		var key = keylist[it];
+
+		out_str += gen_row_delete_proc (key,data_json[key])
 		}
 
 	return (out_str);
@@ -140,26 +144,42 @@ function browse_table_gen_proc (data_json)
 {
 	var out_str = "";
 
+	var keylist = get_sorted_key_proc (data_json);
 
-	var tmp_str = "*** browse_table_gen_proc  ***";
-	jQuery ("#outarea_dd").text (tmp_str);
-
-	for (var it in data_json)
+	for (var it in keylist)
 		{
-		if ((it !== "_id") && (it !== "_rev"))
-			{ 
-			out_str += gen_row_browse_proc (it,data_json[it])
-			}
+		var key = keylist[it];
+		out_str += gen_row_browse_proc (key,data_json[key]);
 		}
 
 	return (out_str);
 }
 
 // -----------------------------------------------------------------------
-function gen_row_browse_proc (it,row_in)
+// [6-8-4]:
+function get_sorted_key_proc (data_json)
+{
+	var keylist=new Array ();
+
+	for(var key in data_json)
+		{
+		if ((key !== "_id") && (key !== "_rev"))
+			{ 
+ 			keylist.push(key);
+			}
+		}
+
+	keylist.sort();
+
+	return	(keylist);
+}
+
+// -----------------------------------------------------------------------
+// [6-8-8]:
+function gen_row_browse_proc (key,row_in)
 {
 	var out_str = "<tr><td>";
-	out_str +=  it + "</td><td>";
+	out_str +=  key + "</td><td>";
 	out_str +=  row_in.name + "</td><td>";
 	out_str +=  row_in.population + "</td><td>";
 	out_str +=  row_in.date_mod + "</td>";
@@ -169,13 +189,13 @@ function gen_row_browse_proc (it,row_in)
 }
 
 // -----------------------------------------------------------------------
-function gen_row_edit_proc (it,row_in)
+function gen_row_edit_proc (key,row_in)
 {
-	var id_population = "population_" + it;
-	var id_date_mod = "date_mod_" + it;
+	var id_population = "population_" + key;
+	var id_date_mod = "date_mod_" + key;
 
 	var out_str = "<tr><td>";
-	out_str += it + "</td><td>";
+	out_str += key + "</td><td>";
 	out_str += row_in.name;
 	out_str += "</td><td>";
 	out_str += "<input size='10' type='text' value=" + row_in.population;

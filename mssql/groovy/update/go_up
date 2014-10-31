@@ -4,7 +4,13 @@ GROOVY_COMMON=$COMMON/groovy_common
 JAR=$COMMON/jar
 #
 export MSSQL_JAR=$JAR/mssql/sqljdbc4.jar
-export GROOVY_JAR=/usr/share/java/groovy-all.jar:/usr/share/java/groovy.jar
+#
+GROOVY_ALL_JAR=/usr/share/java/groovy-all.jar
+if  [ -e /etc/arch-release ]; then
+GROOVY_ALL_JAR=/usr/share/groovy/embeddable/groovy-all.jar
+fi
+#
+export GROOVY_JAR=$GROOVY_ALL_JAR:/usr/share/java/groovy.jar
 export CLASSPATH=.:$GROOVY_COMMON:$MSSQL_JAR:$GROOVY_JAR
 #
 #

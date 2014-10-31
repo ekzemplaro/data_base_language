@@ -2,7 +2,7 @@
 /*
 	sqlite3_create.cs
 
-					Jun/13/2014
+					Oct/21/2014
 
 
 */
@@ -134,13 +134,13 @@ static Dictionary <string,Object> data_prepare_proc ()
 
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0711","郡山",48125,"2009-1-8");
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0712","会津若松",32687,"2009-2-12");
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0713","白河",23592,"2009-3-28");
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0713","白河",73592,"2009-3-28");
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0714","福島",53187,"2009-2-21");
 
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0715","喜多方",81978,"2009-1-5");
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0716","二本松",75647,"2009-5-22");
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0717","いわき",46786,"2009-7-17");
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0718","相馬",54535,"2009-3-4");
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0715","喜多方",41978,"2009-1-5");
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0716","二本松",35647,"2009-5-22");
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0717","いわき",41786,"2009-7-17");
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0718","相馬",94135,"2009-3-4");
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0719","須賀川",71324,"2009-10-12");
 
 	return	dict_aa;

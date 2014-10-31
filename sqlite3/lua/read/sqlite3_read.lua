@@ -1,8 +1,8 @@
-#! /usr/bin/lua5.1
+#! /usr/bin/lua
 -- ----------------------------------------------------
 --	sqlite3_read.lua
 --
---					Jul/16/2011
+--					Oct/29/2014
 -- ----------------------------------------------------
 require	("luasql.sqlite3")
 require	("sql_manipulate")

@@ -6,4 +6,4 @@ JAR=$COMMON/jar
 export MSSQL_JAR=$JAR/mssql/sqljdbc4.jar
 export CPX=.:$SCALA_COMMON:$MSSQL_JAR
 #
-scala -classpath $CPX mssql_update t1072 81245000
+scala -classpath $CPX mssql_update t1076 81245900

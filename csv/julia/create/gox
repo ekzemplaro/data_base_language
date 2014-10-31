@@ -1,0 +1,2 @@
+#
+./csv_create.jl /var/tmp/csv/cities.csv

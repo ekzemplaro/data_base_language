@@ -1,9 +1,11 @@
 
+							Oct/31/2014
+
 ekzemplaro/data_base_language
 
 examples how to connect to data bases by languages
 
-Oct/20/2014
+http://ekzemplaro.org/data_base/
 
 -----------------------------------------------------------------------
 

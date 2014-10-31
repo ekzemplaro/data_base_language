@@ -2,7 +2,7 @@
 /*
 	create/mssql_create.groovy
 
-					Jan/11/2013
+					Oct/22/2014
 
 */
 // ---------------------------------------------------------------------
@@ -56,9 +56,9 @@ static void insert_data_proc (sql)
 	sql_manipulate.insert_record_proc (sql,"t1074","沼田",27643,"1999-9-18")
 	sql_manipulate.insert_record_proc (sql,"t1075","伊勢崎",75219,"1999-10-14")
 	sql_manipulate.insert_record_proc (sql,"t1076","水上",29174,"1999-11-21")
-	sql_manipulate.insert_record_proc (sql,"t1077","太田",69178,"1999-12-16")
-	sql_manipulate.insert_record_proc (sql,"t1078","安中",47532,"1999-5-8")
-	sql_manipulate.insert_record_proc (sql,"t1079","みどり",52693,"1999-7-21")
+	sql_manipulate.insert_record_proc (sql,"t1077","太田",63248,"1999-12-16")
+	sql_manipulate.insert_record_proc (sql,"t1078","安中",47832,"1999-5-8")
+	sql_manipulate.insert_record_proc (sql,"t1079","みどり",51693,"1999-7-21")
 }
 
 // ---------------------------------------------------------------------

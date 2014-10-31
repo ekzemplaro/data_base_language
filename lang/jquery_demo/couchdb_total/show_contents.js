@@ -1,25 +1,16 @@
 // -----------------------------------------------------------------------
 //	show_contents.js
 //
-//					Jun/29/2012
+//					Oct/30/2014
 // -----------------------------------------------------------------------
-function show_contents_proc (url_couchdb,key)
+function show_contents_proc (url_proxy,url_couchdb,key)
 {
 	var data_send = new Array ();
 
-	var tmp_str = "show_contents_proc *** " + key + " ***";
-	jQuery ("#outarea_cc").text (tmp_str);
-
 	var url_json = url_couchdb + "city/" + key;
 
-tmp_str = "show_contents_proc *** " + key + " *** ddd *** " + url_json;
-jQuery ("#outarea_dd").text (tmp_str);
-
-	jQuery.getJSON (url_json,function (data_json)
+	jQuery.getJSON (url_proxy,{url:url_json},function (data_json)
 		{
-tmp_str = "show_contents_proc *** " + key + " *** eee";
-jQuery ("#outarea_ee").text (tmp_str);
-
 		var index_mode = jQuery ("#mode").get(0).selectedIndex;
 
 		var out_str = contents_table_gen_proc (key,index_mode,data_json);

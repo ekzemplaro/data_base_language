@@ -1,8 +1,8 @@
-#! /usr/local/bin/io
+#! /usr/bin/io
 // -------------------------------------------------------
 //	csv_delete.io
 //
-//					Aug/29/2011
+//					Oct/28/2014
 //
 // -------------------------------------------------------
 doFile ("/var/www/data_base/common/io_common/text_manipulate.io")
@@ -22,9 +22,7 @@ str_in := file_to_str_proc (file_text)
 delimit := ","
 dict_aa := str_to_dict_proc (str_in,delimit)
 
-writeln (dict_aa size)
 dict_aa removeAt (key)
-writeln (dict_aa size)
 
 str_out := dict_to_str_proc (dict_aa,delimit)
 

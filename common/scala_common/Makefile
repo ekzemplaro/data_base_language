@@ -28,8 +28,8 @@ CPP_HBASE=`hbase classpath`
 all: text_manipulate.class \
 	file_io.class \
 	xml_manipulate.class \
-	json_manipulate.class \
 	sql_manipulate.class \
+	json_manipulate.class \
 	redis_manipulate.class \
 	ftp_manipulate.class \
 	get_uri.class \

@@ -1,11 +1,7 @@
+/var/www/data_base/js/html_src/example_php.js.txt
 /var/www/data_base/js/html_src/show_json.js.txt
 /var/www/data_base/js/html_src/table_delete.js.txt
 /var/www/data_base/js/html_src/table_manipulate.js.txt
-/var/www/data_base/common/D_common/html_src/json_manipulate.d.txt
-/var/www/data_base/common/D_common/html_src/mcached_manipulate.d.txt
-/var/www/data_base/common/D_common/html_src/redis_manipulate.d.txt
-/var/www/data_base/common/D_common/html_src/text_manipulate.d.txt
-/var/www/data_base/common/D_common/html_src/xml_manipulate.d.txt
 /var/www/data_base/common/abcl_common/html_src/file_io.lisp.txt
 /var/www/data_base/common/abcl_common/html_src/json_manipulate.lisp.txt
 /var/www/data_base/common/abcl_common/html_src/mcached_manipulate.lisp.txt
@@ -64,7 +60,7 @@
 /var/www/data_base/common/cplus_common/html_src/tcbn_manipulate.cpp.txt
 /var/www/data_base/common/cplus_common/html_src/text_manipulate.cpp.txt
 /var/www/data_base/common/cplus_common/html_src/xml_manipulate.cpp.txt
-/var/www/data_base/common/csharp_common/html_src/couch_manipulate.cs.txt
+/var/www/data_base/common/csharp_common/html_src/cgi_manipulate.cs.txt
 /var/www/data_base/common/csharp_common/html_src/fbd_manipulate.cs.txt
 /var/www/data_base/common/csharp_common/html_src/file_io.cs.txt
 /var/www/data_base/common/csharp_common/html_src/ftp_manipulate.cs.txt
@@ -72,6 +68,7 @@
 /var/www/data_base/common/csharp_common/html_src/json_manipulate.cs.txt
 /var/www/data_base/common/csharp_common/html_src/kvalue_manipulate.cs.txt
 /var/www/data_base/common/csharp_common/html_src/mcache_manipulate.cs.txt
+/var/www/data_base/common/csharp_common/html_src/mongo_manipulate.cs.txt
 /var/www/data_base/common/csharp_common/html_src/mssql_manipulate.cs.txt
 /var/www/data_base/common/csharp_common/html_src/mysql_manipulate.cs.txt
 /var/www/data_base/common/csharp_common/html_src/neo4j_manipulate.cs.txt
@@ -81,6 +78,11 @@
 /var/www/data_base/common/csharp_common/html_src/table_manipulate.cs.txt
 /var/www/data_base/common/csharp_common/html_src/text_manipulate.cs.txt
 /var/www/data_base/common/csharp_common/html_src/xml_manipulate.cs.txt
+/var/www/data_base/common/D_common/html_src/json_manipulate.d.txt
+/var/www/data_base/common/D_common/html_src/mcached_manipulate.d.txt
+/var/www/data_base/common/D_common/html_src/redis_manipulate.d.txt
+/var/www/data_base/common/D_common/html_src/text_manipulate.d.txt
+/var/www/data_base/common/D_common/html_src/xml_manipulate.d.txt
 /var/www/data_base/common/ecl_common/html_src/file_io.lisp.txt
 /var/www/data_base/common/ecl_common/html_src/json_manipulate.lisp.txt
 /var/www/data_base/common/ecl_common/html_src/mcached_manipulate.lisp.txt
@@ -158,6 +160,7 @@
 /var/www/data_base/common/jruby_common/html_src/jruby_sql_manipulate.rb.txt
 /var/www/data_base/common/jruby_common/html_src/mcached_manipulate.rb.txt
 /var/www/data_base/common/jruby_common/html_src/xlsx_manipulate.rb.txt
+/var/www/data_base/common/julia_common/html_src/text_manipulate.jl.txt
 /var/www/data_base/common/jython_common/html_src/jython_cassandra_manipulate.py.txt
 /var/www/data_base/common/jython_common/html_src/jython_excel_manipulate.py.txt
 /var/www/data_base/common/jython_common/html_src/jython_file_io.py.txt
@@ -202,9 +205,10 @@
 /var/www/data_base/common/perl_common/html_src/kvalue_manipulate.pm.txt
 /var/www/data_base/common/perl_common/html_src/mcache_manipulate.pm.txt
 /var/www/data_base/common/perl_common/html_src/mongo_manipulate.pm.txt
+/var/www/data_base/common/perl_common/html_src/pdf_manipulate.pm.txt
 /var/www/data_base/common/perl_common/html_src/redis_manipulate.pm.txt
-/var/www/data_base/common/perl_common/html_src/sql_manipulate.pm.txt
 /var/www/data_base/common/perl_common/html_src/sqlite3_manipulate.pm.txt
+/var/www/data_base/common/perl_common/html_src/sql_manipulate.pm.txt
 /var/www/data_base/common/perl_common/html_src/tcbn_manipulate.pm.txt
 /var/www/data_base/common/perl_common/html_src/text_manipulate.pm.txt
 /var/www/data_base/common/perl_common/html_src/uri_get.pm.txt
@@ -222,10 +226,10 @@
 /var/www/data_base/common/php_common/html_src/firebird_row_update.php.txt
 /var/www/data_base/common/php_common/html_src/firebird_to_json.php.txt
 /var/www/data_base/common/php_common/html_src/kvalue_manipulate.php.txt
-/var/www/data_base/common/php_common/html_src/mcached_manipulate.php.txt
 /var/www/data_base/common/php_common/html_src/mongo_manipulate.php.txt
 /var/www/data_base/common/php_common/html_src/mssql_manipulate.php.txt
 /var/www/data_base/common/php_common/html_src/mysql_utf8.php.txt
+/var/www/data_base/common/php_common/html_src/php_proxy_get.php.txt
 /var/www/data_base/common/php_common/html_src/sql_display.php.txt
 /var/www/data_base/common/php_common/html_src/sql_manipulate.php.txt
 /var/www/data_base/common/php_common/html_src/sql_to_json.php.txt
@@ -288,6 +292,7 @@
 /var/www/data_base/common/ringo_common/html_src/text_manipulate.js.txt
 /var/www/data_base/common/ringo_common/html_src/xml_manipulate.js.txt
 /var/www/data_base/common/ruby_common/html_src/cassandra_manipulate.rb.txt
+/var/www/data_base/common/ruby_common/html_src/cdb_manipulate.rb.txt
 /var/www/data_base/common/ruby_common/html_src/cgi_manipulate.rb.txt
 /var/www/data_base/common/ruby_common/html_src/couch_manipulate.rb.txt
 /var/www/data_base/common/ruby_common/html_src/couch_module.rb.txt

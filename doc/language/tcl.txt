@@ -24,4 +24,5 @@ Archlinux<p />
 <blockquote>
 	# pacman -S tcl<br />
 	# pacman -S tcllib<br />
+	# pacman -S sqlite-tcl<br />
 </blockquote>

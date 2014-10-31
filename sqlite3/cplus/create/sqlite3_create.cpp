@@ -2,7 +2,7 @@
 /*
 	sqlite3_create.cpp
 
-					May/30/2011
+					Oct/21/2014
 
 */
 // --------------------------------------------------------------------
@@ -48,14 +48,14 @@ static map <string,Unit >  data_prepare_proc ()
 
 	dict_aa = dict_append_proc (dict_aa,"t0711","郡山",34795,"1986-10-07");
 
-	dict_aa = dict_append_proc (dict_aa,"t0712","会津若松",13982,"1986-2-12");
-	dict_aa = dict_append_proc (dict_aa,"t0713","白河",23429,"1986-3-28");
-	dict_aa = dict_append_proc (dict_aa,"t0714","福島",23519,"1986-2-21");
+	dict_aa = dict_append_proc (dict_aa,"t0712","会津若松",15982,"1986-2-12");
+	dict_aa = dict_append_proc (dict_aa,"t0713","白河",73421,"1986-3-28");
+	dict_aa = dict_append_proc (dict_aa,"t0714","福島",63519,"1986-2-21");
 
 	dict_aa = dict_append_proc (dict_aa,"t0715","喜多方",83971,"1986-1-5");
-	dict_aa = dict_append_proc (dict_aa,"t0716","二本松",73949,"1986-5-22");
+	dict_aa = dict_append_proc (dict_aa,"t0716","二本松",73149,"1986-5-22");
 	dict_aa = dict_append_proc (dict_aa,"t0717","いわき",46785,"1986-7-17");
-	dict_aa = dict_append_proc (dict_aa,"t0718","相馬",54614,"1986-3-04");
+	dict_aa = dict_append_proc (dict_aa,"t0718","相馬",54618,"1986-3-04");
 	dict_aa = dict_append_proc (dict_aa,"t0719","須賀川",74823,"1986-5-9");
 
 	return	dict_aa;

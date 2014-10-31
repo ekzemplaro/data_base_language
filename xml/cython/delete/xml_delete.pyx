@@ -2,7 +2,7 @@
 #
 #	delete/xml_delete.pyx
 #
-#						Oct/27/2011
+#						Oct/21/2014
 #
 import xml.dom.minidom
 import	sys
@@ -27,7 +27,7 @@ dict_aa = xml_to_dict_proc (xml_str)
 dict_bb=dict_delete_proc (dict_aa,id_in)
 #
 out_str = dict_to_xml_proc (dict_bb)
-file_write_proc (xml_file,out_str.encode('utf-8'))
+file_write_proc (xml_file,out_str)
 #
 #
 print ("*** 終了 ***")

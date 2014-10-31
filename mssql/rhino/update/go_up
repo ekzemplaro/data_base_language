@@ -4,4 +4,4 @@ JAVA_CLASSPATH="/usr/share/java/js.jar:/usr/share/java/jline.jar"
 export MSSQL_JAR=/var/www/data_base/common/jar/mssql/sqljdbc4.jar
 export CLASSPATH=.:$MSSQL_JAR:$JAVA_CLASSPATH
 #
-./mssql_update.js t1077 76819200
+./mssql_update.js t1078 76319200

@@ -4,7 +4,7 @@
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
-<title>Mono (Jul/09/2014)</title>
+<title>Mono (Oct/21/2014)</title>
 </head>
 <body>
 
@@ -36,7 +36,32 @@ sudo service mono-xsp4 start<br />
 </blockquote>
 
 <hr />
+Arch Linux<p />
+インストール<br />
+<blockquote>
+	# pacman -S mono<br />
+	# pacman -S xsp<br />
+</blockquote>
+スタート<br />
+<blockquote>
+	# systemctl start xsp<br />
+	http://localhost:8080/<br />
+	/srv/http/html/xsp/index.asp<p />
+	設定ファイル<br />
+	<blockquote>
+	/etc/xsp/xsp.webapp<br />
+	</blockquote>
+	port の変更<br />
+	<blockquote>
+	/usr/lib/systemd/system/xsp.service<br />
+		<blockquote>
+		ExecStart=/usr/bin/xsp --appconfigdir /etc/xsp --nonstop --port 8084<p />
+		</blockquote>
+	</blockquote>
+</blockquote>
+
+<hr />
 <a href="/data_base/">Return</a><p />
-Jul/09/2014 AM 08:25<p />
+Oct/21/2014 AM 08:25<p />
 </body>
 </html>

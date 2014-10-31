@@ -2,7 +2,7 @@
 # ---------------------------------------------------------------
 #	sqlite3_create.coffee
 #
-#					Jul/20/2012
+#					Oct/23/2014
 #
 # ---------------------------------------------------------------
 sqlite3 = require 'sqlite3'
@@ -12,15 +12,15 @@ text_manipulate= require ('/var/www/data_base/common/coffee_common/text_manipula
 data_prepare_proc = () ->
 	dict_aa = new Object
 
-	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t0711','郡山',61714,'1954-9-12')
+	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t0711','郡山',62714,'1954-9-12')
 	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t0712','会津若松',23157,'1954-3-15')
-	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t0713','白河',68741,'1954-10-2')
-	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t0714','福島',38764,'1954-6-22')
+	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t0713','白河',65741,'1954-10-2')
+	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t0714','福島',31764,'1954-6-22')
 	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t0715','いわき',49871,'1954-8-14')
 	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t0716','喜多方',65292,'1954-9-12')
-	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t0717','二本松',31251,'1954-3-21')
-	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t0718','相馬',52486,'1954-7-26')
-	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t0719','須賀川',26257,'1954-10-2')
+	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t0717','二本松',39251,'1954-3-21')
+	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t0718','相馬',52786,'1954-7-26')
+	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t0719','須賀川',96157,'1954-10-2')
 
 	return	dict_aa
 # ---------------------------------------------------------------

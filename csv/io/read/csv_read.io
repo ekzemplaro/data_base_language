@@ -1,8 +1,8 @@
-#! /usr/local/bin/io
+#! /usr/bin/io
 // -------------------------------------------------------
 //	csv_read.io
 //
-//					Aug/29/2011
+//					Oct/28/2014
 //
 // -------------------------------------------------------
 doFile ("/var/www/data_base/common/io_common/text_manipulate.io")

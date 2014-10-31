@@ -1,1 +1,1 @@
-lua sqlite3_update.lua /var/tmp/sqlite3/cities.db t0714 54123000
+lua sqlite3_update.lua /var/tmp/sqlite3/cities.db t0714 54123800
