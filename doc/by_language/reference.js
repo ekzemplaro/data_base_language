@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------
 //	reference.js
 //
-//					Feb/20/2014
+//					Nov/11/2014
 // -----------------------------------------------------------------------
 function reference (lang)
 {
@@ -39,7 +39,8 @@ function reference (lang)
 //		|| (lang == "F#") || (lang == "C#")
 		|| (lang == "Haxe") || (lang == "bsh")
 		|| (lang == "falcon")
-		|| (lang == "julia"))
+		|| (lang == "julia")
+		|| (lang == "octave"))
 		{
 		hantei = true;
 		}

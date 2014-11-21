@@ -1,7 +1,7 @@
 <meta content="Program Language Examples in Clojure" name="description">
 <meta content="Clojure,クライアント,接続,言語,サンプル" name="keyword">
 <meta content="Uchida Masatomo" name="author">
-<title>Clojure Jul/21/2014</title>
+<title>Clojure Nov/13/2014</title>
 </head>
 <body>
 <h2><a href="http://clojure.org">Clojure</a></h2><p />
@@ -63,4 +63,10 @@ $
 
 <blockquote>
 	<a href="http://en.wikibooks.org/wiki/Clojure_Programming/Examples/Cookbook">Clojure Programming/Examples/Cookbook</a><p />
+</blockquote>
+
+<hr />
+Arch Linux<br />
+<blockquote>
+# pacman -S clojure<p />
 </blockquote>

@@ -1,0 +1,5 @@
+#
+COMMON=/var/www/data_base/common
+DLL=$COMMON/dll
+#
+ln -s $DLL/MySql.Data.dll .

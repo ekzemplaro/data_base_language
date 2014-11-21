@@ -1,7 +1,8 @@
 #
 #
 JAVA_CLASSPATH="/usr/share/java/js.jar:/usr/share/java/jline.jar"
-MYSQL_JAR=/usr/share/java/mysql-connector-java.jar
+#MYSQL_JAR=/usr/share/java/mysql-connector-java.jar
+MYSQL_JAR=/usr/share/java/mysql-jdbc/mysql-connector-java-bin.jar
 export CLASSPATH=.:$MYSQL_JAR:$JAVA_CLASSPATH
 #
 ./maria_delete.js t3329

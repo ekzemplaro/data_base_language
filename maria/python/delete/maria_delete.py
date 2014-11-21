@@ -3,15 +3,14 @@
 #
 #	maria_delete.py
 #
-#					Sep/16/2013
+#					Nov/14/2014
 #
 # --------------------------------------------------------
 import	sys
-import	MySQLdb
+import	mysql.connector
 #
 sys.path.append ('/var/www/data_base/common/python_common')
 from sql_manipulate import sql_display_proc,sql_delete_proc
-from mysql_utf8 import mysql_utf8_proc
 #
 # --------------------------------------------------------
 print ("*** 開始 ***")
@@ -19,12 +18,10 @@ print ("*** 開始 ***")
 id_in = sys.argv[1]
 print ("%s" % id_in)
 #
-conn = MySQLdb.connect (host="localhost",db="city", \
+conn = mysql.connector.connect (host="localhost",db="city", \
 			user="scott", passwd="tiger")
 #
 cursor = conn.cursor ()
-#
-mysql_utf8_proc (cursor)
 #
 sql_delete_proc	(cursor,id_in)
 conn.commit ()

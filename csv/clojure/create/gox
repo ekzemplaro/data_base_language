@@ -1,3 +1,5 @@
-export CLASSPATH=.:/usr/share/java/clojure.jar
+#
+#export CLASSPATH=.:/usr/share/java/clojure.jar
+export CLASSPATH=.:/usr/share/clojure/clojure.jar
 #
 java clojure.main csv_create.clj  /var/tmp/csv/cities.csv

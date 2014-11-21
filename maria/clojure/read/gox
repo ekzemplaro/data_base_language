@@ -2,7 +2,10 @@
 #
 SHARE=/usr/share/java
 JDBC=$SHARE/java.jdbc.jar
+CLOJURE=/usr/share/clojure/clojure.jar
+MYSQL_JAR=/usr/share/java/mysql-jdbc/mysql-connector-java-bin.jar
 #
-export CLASSPATH=.:$SHARE/clojure.jar:$JDBC:$SHARE/mysql-connector-java.jar
+#export CLASSPATH=.:$CLOJURE:$JDBC:$SHARE/mysql-connector-java.jar
+export CLASSPATH=.:$CLOJURE:$MYSQL_JAR
 #
 java clojure.main maria_read.clj 

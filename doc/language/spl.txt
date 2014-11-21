@@ -1,7 +1,7 @@
 <meta content="Program Language Examples in SPL" name="description">
 <meta content="SPL,クライアント,接続,言語,サンプル" name="keyword">
 <meta content="Uchida Masatomo" name="author">
-<title>spl Jan/29/2014</title>
+<title>spl Nov/21/2014</title>
 </head>
 <body>
 <h2><a href="http://www.clifford.at/spl">spl</a></h2><p />
@@ -21,5 +21,7 @@ ii  spl-xml       1.0~pre6-4ubuntu1  amd64    SPL Programming Language -- XML ad
 <blockquote>
 </blockquote>
 
+Arch Linux<br />
 <blockquote>
+	$ yaourt -Sb spl<p />
 </blockquote>

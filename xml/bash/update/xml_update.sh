@@ -2,7 +2,7 @@
 #
 #	xml_update.sh
 #
-#					Dec/26/2011
+#					Nov/19/2014
 #
 # ----------------------------------------------------------------
 BASH_COMMON=/var/www/data_base/common/bash_common
@@ -21,7 +21,7 @@ echo $id_in
 echo $population_in
 today=`date '+%F'`
 #
-cat $file_xml | $BASH_COMMON/xml_to_txt.sh > $file_tmp_aa
+$BASH_COMMON/xml_to_txt.sh $file_xml > $file_tmp_aa
 #
 awk -v id_in=$id_in -v population_in=$population_in -v today=$today \
 	-f $AWK_FILES/awk_text_update $file_tmp_aa > $file_tmp_bb

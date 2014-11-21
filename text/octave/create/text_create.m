@@ -2,8 +2,10 @@
 #
 #	text_create.m
 #
-#					Oct/31/2014
+#					Nov/11/2014
 #
+# ------------------------------------------------------------------
+path (path, "/var/www/data_base/common/octave_common");
 # ------------------------------------------------------------------
 function unit_aa = unit_define_proc (name,population,date_mod)
 	unit_aa.name = name;
@@ -11,15 +13,8 @@ function unit_aa = unit_define_proc (name,population,date_mod)
 	unit_aa.date_mod = date_mod;
 endfunction
 # ------------------------------------------------------------------
-function line_out_proc (fid,key,unit_aa)
-	name = unit_aa.name
-	population = unit_aa.population
-	date_mod = unit_aa.date_mod
-	str_out = [key,"\t",name,"\t",population,"\t",date_mod,"\n"];
-	fputs (fid,str_out);
-endfunction
-# ------------------------------------------------------------------
 function dict_aa = data_prepare_proc ()
+	dict_aa = struct;
 	dict_aa.("t2381") = unit_define_proc ("名古屋","72961","1948-4-30");
 	dict_aa.("t2382") = unit_define_proc ("豊橋","48915","1948-5-10");
 	dict_aa.("t2383") = unit_define_proc ("岡崎","27384","1948-6-14");
@@ -34,18 +29,11 @@ endfunction
 # ------------------------------------------------------------------
 printf ("*** 開始 ***\n");
 arg_list = argv ();
-filename = arg_list{1};
+file_out = arg_list{1};
 #
 dict_aa = data_prepare_proc ()
 #
-fid = fopen (filename, "w");
-#
-for [ val, key ] = dict_aa
-	disp (key)
-	line_out_proc (fid,key,dict_aa.(key))
-endfor
-#
-fclose (fid);
+text_write_proc (file_out,dict_aa);
 #
 printf ("*** 終了 ***\n");
 # ------------------------------------------------------------------

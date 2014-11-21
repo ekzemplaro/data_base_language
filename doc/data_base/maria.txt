@@ -82,6 +82,16 @@ Ruby<p />
 <blockquote>
 </blockquote>
 
+Lua<p />
+<blockquote>
+# pacman -S lua-sql-mysql<p />
+</blockquote>
+
+Tcl<p />
+<blockquote>
+$ yaourt -Sb mysqltcl<p />
+</blockquote>
+
 node.js<p />
 <blockquote>
 	npm install mysql<p />
@@ -90,6 +100,7 @@ node.js<p />
 
 Java<p />
 <blockquote>
+	$ yaourt -Sb mysql-jdbc<p />
 </blockquote>
 
 
@@ -98,4 +109,16 @@ Arch Linux<p />
 	# pacman -S mariadb<p />
 	# systemctl start mysqld.service<p />
 	# pacman -S perl-dbd-mysql<p />
+	# pacman -S phpmyadmin<p />
+</blockquote>
+<hr />
+バックアップ<br />
+<blockquote>
+$ mysqldump -u root -x --all-databases > dump.sql<p />
+$ mysqldump -u root city > city.sql<p />
+</blockquote>
+復元<br />
+<blockquote>
+$ mysql-u root -p < dump.sql<p />
+$ mysql-u root city < city.sql<p />
 </blockquote>

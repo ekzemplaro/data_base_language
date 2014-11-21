@@ -9,7 +9,7 @@
 
 Bash<p />
 <blockquote>
-xalan<p />
+# pacman -S xalan-c<p />
 </blockquote>
 
 

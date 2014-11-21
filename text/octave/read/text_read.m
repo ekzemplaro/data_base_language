@@ -2,20 +2,16 @@
 #
 #	text_read.m
 #
-#					Oct/31/2014
+#					Nov/11/2014
 #
 # ------------------------------------------------------------------
-printf ("*** 開始 ***\n");
+printf ("*** 開始 ***\n")
+path (path, "/var/www/data_base/common/octave_common");
 arg_list = argv ();
-filename = arg_list{1};
+file_in = arg_list{1};
 #
-fid = fopen (filename, "r");
-while (! feof (fid) )
-	text_line = fgetl (fid);
-	disp (text_line);
-endwhile
-#
-fclose (fid);
-#
-printf ("*** 終了 ***\n");
+dict_aa = struct;
+dict_aa = text_read_proc (file_in)
+dict_display_proc (dict_aa)
+printf ("*** 終了 ***\n")
 # ------------------------------------------------------------------

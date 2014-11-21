@@ -1,1 +1,1 @@
-./xml_update.sh /var/tmp/xml_file/cities.xml t2265 42389300
+./xml_update.sh /var/tmp/xml_file/cities.xml t2265 471238900

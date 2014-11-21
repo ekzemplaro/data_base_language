@@ -1,0 +1,29 @@
+// -----------------------------------------------------------------
+//	maria_create.spl
+//
+//						Nov/21/2014
+// -----------------------------------------------------------------
+load "sql_mysql";
+#file-as-code  /var/www/data_base/common/spl_common/sql_manipulate.spl;
+// -----------------------------------------------------------------
+write ("*** 開始 ***\n");
+
+var db = sql_connect("mysql", "host=localhost,user=scott,pass=tiger,db=city");
+
+drop_table_proc (db);
+create_table_proc (db);
+
+sql_insert_proc (db, "t3321","岡山", 584297,"1962-7-17");
+sql_insert_proc (db, "t3322","倉敷", 325876,"1962-2-24");
+sql_insert_proc (db, "t3323","津山", 879621,"1962-3-9");
+sql_insert_proc (db, "t3324","玉野", 625389,"1962-6-12");
+sql_insert_proc (db, "t3325","笠岡", 531428,"1962-10-27");
+sql_insert_proc (db, "t3326","井原", 348216,"1962-3-15");
+sql_insert_proc (db, "t3327","総社", 876453,"1962-8-3");
+sql_insert_proc (db, "t3328","高梁", 931256,"1962-12-30");
+sql_insert_proc (db, "t3329","新見", 398423,"1962-9-8");
+
+sql_display_proc (db);
+
+write ("*** 終了 ***\n");
+// -----------------------------------------------------------------

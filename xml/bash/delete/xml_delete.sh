@@ -2,7 +2,7 @@
 #
 #	xml_delete.sh
 #
-#					Dec/26/2011
+#					Nov/19/2014
 #
 # ----------------------------------------------------------------
 BASH_COMMON=/var/www/data_base/common/bash_common
@@ -18,7 +18,7 @@ id_in=$2
 #
 echo $id_in
 #
-cat $file_xml | $BASH_COMMON/xml_to_txt.sh > $file_tmp_aa
+$BASH_COMMON/xml_to_txt.sh $file_xml > $file_tmp_aa
 #
 awk -v id_in=$id_in \
 	-f $AWK_FILES/awk_text_delete $file_tmp_aa > $file_tmp_bb

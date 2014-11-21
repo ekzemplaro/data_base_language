@@ -1,0 +1,3 @@
+mysql_manipulate.boo
+table_manipulate.boo
+text_manipulate.boo

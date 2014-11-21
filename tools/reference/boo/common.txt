@@ -1,6 +1,8 @@
 file_io.boo
 json_manipulate.boo
+mssql_manipulate.boo
 mysql_manipulate.boo
+postgre_manipulate.boo
 table_manipulate.boo
 text_manipulate.boo
 xml_manipulate.boo

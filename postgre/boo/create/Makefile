@@ -3,8 +3,8 @@ BOO_COMMON=/var/www/data_base/common/boo_common
 postgre_create.exe: postgre_create.boo
 	booc postgre_create.boo \
 		$(BOO_COMMON)/text_manipulate.boo \
-		-r:$(CSHARP_COMMON)/table_manipulate.dll \
+		$(BOO_COMMON)/postgre_manipulate.boo \
 		-r:System.Data \
-		-r:Npgsql.dll
+		-r:Npgsql
 clean:
 	rm -f *.exe *.mdb

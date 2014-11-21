@@ -3,6 +3,7 @@
 SHARE=/usr/share/java
 JDBC=$SHARE/java.jdbc.jar
 #
-export CLASSPATH=.:$JDBC:$SHARE/clojure.jar:$SHARE/postgresql.jar
+#export CLASSPATH=.:$JDBC:$SHARE/clojure.jar:$SHARE/postgresql.jar
+export CLASSPATH=.:$JDBC:/usr/share/clojure/clojure.jar:$SHARE/postgresql.jar
 #
 java clojure.main postgre_read.clj 

@@ -3,23 +3,23 @@
 #
 #	maria_python_read.py
 #
-#						Dec/26/2013
+#						Nov/14/2014
 #
 # ----------------------------------------------------------------
 import sys
 import json
-import MySQLdb
+import mysql.connector
 #
 sys.path.append ("/var/www/data_base/common/python_common")
 from sql_manipulate import sql_to_dict_proc
-from mysql_utf8 import mysql_utf8_proc
+#from mysql_utf8 import mysql_utf8_proc
 #
-conn = MySQLdb.connect (host="localhost", \
+conn = mysql.connector.connect (host="localhost", \
 	user="scott", passwd="tiger", \
 	db="city")
 #
 cursor = conn.cursor ()
-mysql_utf8_proc (cursor)
+#mysql_utf8_proc (cursor)
 #
 dict_aa = sql_to_dict_proc (cursor)
 #
@@ -27,6 +27,6 @@ conn.close ()
 #
 str_aa = json.dumps (dict_aa)
 #
-print "Content-type: text/json\n\n"
-print	str_aa
+print ("Content-type: text/json\n\n")
+print (str_aa)
 #	

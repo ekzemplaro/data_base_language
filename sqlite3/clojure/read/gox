@@ -4,6 +4,7 @@ JDBC=$SHARE/java.jdbc.jar
 COMMON=/var/www/data_base/common
 JAR=$COMMON/jar
 #
-export CLASSPATH=.:$JDBC:$SHARE/clojure.jar:$JAR/sqlite-jdbc-3.7.2.jar
+#export CLASSPATH=.:$JDBC:$SHARE/clojure.jar:$JAR/sqlite-jdbc-3.7.2.jar
+export CLASSPATH=.:$JDBC:/usr/share/clojure/clojure.jar:$JAR/sqlite-jdbc-3.7.2.jar
 #
 java clojure.main sqlite3_read.clj  /var/tmp/sqlite3/cities.db

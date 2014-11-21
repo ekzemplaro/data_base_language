@@ -3,16 +3,16 @@
 # -------------------------------------------------------------------------
 #	maria_python_create.py
 #
-#						Dec/26/2013
+#						Nov/14/2014
 # -------------------------------------------------------------------------
 import	sys
 import	string
-import	MySQLdb
+import	mysql.connector
 sys.path.append ('/var/www/data_base/common/python_common')
 #
 from file_io import file_write_proc
 from sql_manipulate import table_insert_proc,sql_insert_proc,create_table_proc,drop_table_proc
-from mysql_utf8 import mysql_utf8_proc
+#from mysql_utf8 import mysql_utf8_proc
 from text_manipulate import dict_append_proc
 #
 #
@@ -37,11 +37,11 @@ def	data_prepare_proc ():
 #
 dict_aa = data_prepare_proc ()
 #
-conn = MySQLdb.connect (host="localhost",db="city", \
+conn = mysql.connector.connect (host="localhost",db="city", \
 	user="scott", passwd="tiger")
 cursor = conn.cursor ()
 #
-mysql_utf8_proc (cursor)
+#mysql_utf8_proc (cursor)
 drop_table_proc (cursor)
 create_table_proc (cursor)
 #
@@ -52,7 +52,7 @@ cursor.close ()
 conn.close ()
 #
 #
-print "Content-type: text/html\n\n"
+print ("Content-type: text/html\n\n")
 #
-print	"*** OK ***<p />"
+print ("*** OK ***<p />")
 # -------------------------------------------------------------------------

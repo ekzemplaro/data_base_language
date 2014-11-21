@@ -1,0 +1,24 @@
+// -----------------------------------------------------------------
+//	maria_update.spl
+//
+//						Nov/21/2014
+// -----------------------------------------------------------------
+load "sql_mysql";
+load "time";
+#file-as-code  /var/www/data_base/common/spl_common/sql_manipulate.spl;
+
+// -----------------------------------------------------------------
+write ("*** 開始 ***\n");
+
+var id_in = argv[0];
+var population_in = argv[1];
+
+write (id_in ~ "\n");
+write (population_in ~ "\n");
+
+var db = sql_connect("mysql", "host=localhost,user=scott,pass=tiger,db=city");
+
+sql_update_proc (db,id_in,population_in);
+
+write ("*** 終了 ***\n");
+// -----------------------------------------------------------------

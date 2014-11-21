@@ -3,6 +3,6 @@ postgre_delete.exe: postgre_delete.boo
 	booc postgre_delete.boo \
 		-r:$(CSHARP_COMMON)/table_manipulate.dll \
 		-r:System.Data \
-		-r:Npgsql.dll
+		-r:Npgsql
 clean:
 	rm -f *.exe *.mdb

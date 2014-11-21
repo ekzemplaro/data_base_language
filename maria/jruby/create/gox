@@ -1,4 +1,4 @@
 #
-export CLASSPATH=.:/usr/share/java/mysql-connector-java.jar
+export CLASSPATH=.:/usr/share/java/mysql-jdbc/mysql-connector-java-bin.jar
 #
 ./maria_create.rb

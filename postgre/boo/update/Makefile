@@ -3,6 +3,6 @@ postgre_update.exe: postgre_update.boo
 	booc postgre_update.boo \
 		-r:$(CSHARP_COMMON)/table_manipulate.dll \
 		-r:System.Data \
-		-r:Npgsql.dll
+		-r:Npgsql
 clean:
 	rm -f *.exe *.mdb
