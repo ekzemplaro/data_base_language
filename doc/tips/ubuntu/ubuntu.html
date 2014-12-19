@@ -5,11 +5,22 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>ubuntu Oct/29/2014</title>
+<title>ubuntu Dec/16/2014</title>
 </head>
 <body>
 <h2>ubuntu</h2><p />
-
+ファイルが含まれているパッケージを探す<p />
+<blockquote>
+インストール<p />
+<blockquote>
+	$ sudo apt-get install apt-file<p />
+	$ sudo apt-file update<p />
+</blockquote>
+検索<p />
+<blockquote>
+	$ apt-file search dmcs<p />
+</blockquote>
+</blockquote>
 <p />
 カタカナ表記のフォルダ名を英語表記にする<p />
 <blockquote>
@@ -19,14 +30,20 @@ LANGUAGE=en xdg-user-dirs-update --force<p />
 ssh server<p />
 <blockquote>
 # apt-get install openssh-server<p />
+# service ssh start<p />
 </blockquote>
 
 起動直後の処理<br />
 	<blockquote>
 	/etc/rc.local<p />
 	</blockquote>
+
+Version<br />
+	<blockquote>
+	$ cat /etc/lsb-release<p />
+	</blockquote>
 <hr />
 <a href="/data_base/">Return</a><p />
-Oct/29/2014 AM 08:15<p />
+Dec/16/2014 AM 08:15<p />
 </body>
 </html>

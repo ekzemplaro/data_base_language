@@ -1,6 +1,6 @@
 #
 #
-export CLASSPATH=.:/usr/share/java/postgresql.jar
+export CLASSPATH=.:/usr/share/java/postgresql-jdbc/postgresql-jdbc4.jar
 #
 ./postgre_delete.rb t3464
 #

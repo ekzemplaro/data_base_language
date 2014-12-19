@@ -3,38 +3,45 @@
 /*
 	php/update/postgre_update.php
 
-					Dec/20/2010
+					Dec/04/2014
 
 */
 // --------------------------------------------------------------------
 $path="/var/www/data_base/common/php_common";
 set_include_path (get_include_path() . PATH_SEPARATOR . $path);
-#
-include "sql_display.php";
-include "sql_manipulate.php";
 
 // --------------------------------------------------------------------
 print "*** 開始 ***\n";
 
-#$dsn = 'pgsql:dbname=city host=cpt003 port=5432';
-$dsn = 'pgsql:dbname=city host=localhost port=5432';
+$host = 'localhost';
+$dbname = 'city';
 $user = 'scott';
 $password = 'tiger';
 
-$id_in = $argv[1];
+$key_in = $argv[1];
 $population_in = $argv[2];
 
-print $id_in . "\t" . $population_in . "\n";
+print $key_in . "\t" . $population_in . "\n";
 
-$dbcon = new PDO ($dsn, $user, $password);
+$str_connect = "host=". $host . " dbname=" . $dbname
+	 . " user=" . $user . " password=" . $password;
+echo $str_connect . "\n";
 
-sql_update_proc ($dbcon,$id_in,$population_in);
+$dbconn = pg_connect ($str_connect)
+    or die('Could not connect: ' . pg_last_error());
 
-print "--------------------------\n";
-disp_lower_proc ($dbcon);
+date_default_timezone_set('Asia/Tokyo');
+$today = date ("Y-m-d");
+$query = "update cities set POPULATION=" . $population_in;
+$query .= ", DATE_MOD='" . $today . "'";
+$query .= " where ID='" . $key_in . "'";
 
-$dbcon = null;
+print $query . "\n";
+
+$result = pg_query($query) or die('Query failed: ' . pg_last_error());
+
+pg_close ($dbconn);
 
 print "*** 終了 ***\n";
 // --------------------------------------------------------------------
-?>	
+?>

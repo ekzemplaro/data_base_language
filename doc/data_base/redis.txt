@@ -68,7 +68,7 @@ libredis-perl<p />
 
 Ruby<p />
 <blockquote>
-	# gem install redis<br />
+	$ gem install redis<br />
 	# gem install system_timer<br />
 </blockquote>
 

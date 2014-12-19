@@ -3,7 +3,7 @@
 # -------------------------------------------------------------------------
 #	text_python_create.py
 #
-#						Aug/05/2014
+#						Nov/26/2014
 # -------------------------------------------------------------------------
 import	sys
 import	json
@@ -34,8 +34,9 @@ file_out = "/var/tmp/plain_text/cities.txt"
 #
 dict_aa = data_prepare_proc ()
 #
+if os.path.isfile(file_out):
+	os.remove (file_out)
 #
-os.remove (file_out)
 text_write_proc (file_out,dict_aa);
 os.chmod (file_out,0o666)
 #

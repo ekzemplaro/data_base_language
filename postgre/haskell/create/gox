@@ -1,2 +1,2 @@
 #
-runghc postgre_create.hs
+./postgre_create.hs

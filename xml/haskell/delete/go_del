@@ -1,2 +1,2 @@
 #
-runghc xml_delete.hs /var/tmp/xml_file/cities.xml t2267
+./xml_delete.hs /var/tmp/xml_file/cities.xml t2267

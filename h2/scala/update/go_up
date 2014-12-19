@@ -1,8 +1,7 @@
 #
 export COMMON=/var/www/data_base/common
 export SCALA_COMMON=$COMMON/scala_common
-export JAR=$COMMON/jar
-export H2_JAR=$JAR/h2-1.3.173.jar
+export H2_JAR=/usr/share/java/h2/h2.jar
 export CPX=.:$SCALA_COMMON:$H2_JAR
 #
-scala -classpath $CPX h2_update t4566 34219800
+scala -classpath $CPX h2_update t4566 374219800

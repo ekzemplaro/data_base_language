@@ -32,19 +32,19 @@ CPP_XLSX=.:$(POI39)/poi-3.9-20121203.jar:$(POI39)/poi-ooxml-3.9-20121203.jar:$(P
 CPP_HBASE=`hbase classpath`
 #
 all: sql_manipulate.class xml_manipulate.class \
-	net_manipulate.class \
 	text_manipulate.class \
 	mcached_manipulate.class \
 	ftp_manipulate.class \
-	tcbn_manipulate.class \
-	excel_manipulate.class \
 	tika_manipulate.class \
+	net_manipulate.class \
+	excel_manipulate.class \
 	epub_manipulate.class \
 	mongo_manipulate.class \
 	cassandra_manipulate.class \
 	voldemort_manipulate.class \
 	cdb_manipulate.class \
 	hbase_manipulate.class \
+	tcbn_manipulate.class \
 	xlsx_manipulate.class \
 	hgdb_manipulate.class
 sql_manipulate.class: sql_manipulate.groovy
@@ -53,14 +53,14 @@ xml_manipulate.class: xml_manipulate.groovy
 	groovyc xml_manipulate.groovy
 mcached_manipulate.class: mcached_manipulate.groovy
 	groovyc mcached_manipulate.groovy
-net_manipulate.class: net_manipulate.groovy
-	groovyc -cp $(CPP_E) net_manipulate.groovy
 text_manipulate.class: text_manipulate.groovy
 	groovyc -cp $(CPP_E) text_manipulate.groovy
 excel_manipulate.class: excel_manipulate.groovy
 	groovyc -cp $(CPP_F) excel_manipulate.groovy
 cdb_manipulate.class: cdb_manipulate.groovy
 	groovyc -cp $(CPP_CDB) cdb_manipulate.groovy
+net_manipulate.class: net_manipulate.groovy
+	groovyc -cp $(CPP_E) net_manipulate.groovy
 tcbn_manipulate.class: tcbn_manipulate.groovy
 	groovyc -cp $(CPP_E) tcbn_manipulate.groovy
 ftp_manipulate.class: ftp_manipulate.groovy

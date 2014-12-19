@@ -1,7 +1,7 @@
 // --------------------------------------------------------------
 //	xlsx_create.java
 //
-//					Oct/17/2014
+//					Dec/12/2014
 // --------------------------------------------------------------
 import	java.io.IOException;
 import	java.util.HashMap;
@@ -40,10 +40,10 @@ data_prepare_proc ()
 		(dict_aa,"t2973","大和郡山",916534,"2008-6-20");
 
 	dict_aa = text_manipulate.dict_append_proc
-		(dict_aa,"t2974","天理",839127,"2008-2-17");
+		(dict_aa,"t2974","天理",849127,"2008-2-17");
 
 	dict_aa = text_manipulate.dict_append_proc
-		(dict_aa,"t2975","橿原",715428,"2008-8-12");
+		(dict_aa,"t2975","橿原",735428,"2008-8-12");
 
 	dict_aa = text_manipulate.dict_append_proc
 		(dict_aa,"t2976","桜井",275369,"2008-7-28");
@@ -52,7 +52,7 @@ data_prepare_proc ()
 		(dict_aa,"t2977","五條",395467,"2008-6-19");
 
 	dict_aa = text_manipulate.dict_append_proc
-		(dict_aa,"t2978","御所",847362,"2008-11-15");
+		(dict_aa,"t2978","御所",147362,"2008-11-15");
 
 	dict_aa = text_manipulate.dict_append_proc
 		(dict_aa,"t2979","生駒",567214,"2008-10-24");

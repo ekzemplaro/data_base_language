@@ -1,7 +1,7 @@
 <meta content="Program Language Examples in gfortran" name="description">
 <meta content="gfortran,クライアント,接続,言語,サンプル" name="keyword">
 <meta content="Uchida Masatomo" name="author">
-<title>gfortran Jul/02/2012</title>
+<title>gfortran Nov/27/2014</title>
 </head>
 <body>
 <h2><a href="http://gcc.gnu.org/wiki/GFortran">gfortran</a></h2><p />
@@ -11,5 +11,11 @@ ii  gfortran-4.6  4.6.3-1ubuntu5      GNU Fortran compiler
 ii  libgfortran3  4.6.3-1ubuntu5      Runtime library for GNU Fortran applications
 </pre>
 <blockquote>
+</blockquote>
+
+<hr />
+Arch Linux<br />
+<blockquote>
+# pacman -S gcc-fortran<br />
 </blockquote>
 

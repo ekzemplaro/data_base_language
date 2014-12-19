@@ -1,0 +1,128 @@
+#
+#	base_bb.ldif
+#
+#					Dec/02/2014
+#
+# example.com
+dn: dc=example,dc=com
+dc: example
+o: Example Organization
+objectClass: dcObject
+objectClass: organization
+
+# Manager, example.com
+dn: cn=Manager,dc=example,dc=com
+cn: Manager
+description: LDAP administrator
+description: Directory Manager
+objectClass: organizationalRole
+objectClass: top
+roleOccupant: dc=example,dc=com
+
+# System Support, example.com
+dn: o=System Support,dc=example,dc=com
+objectClass: organization
+o: System Support
+
+# People, example.com
+dn: o=People,o=System Support,dc=example,dc=com
+objectClass: organization
+o: People
+
+# Ryoma, example.com
+dn: ou=Ryoma,o=People,o=System Support,dc=example,dc=com
+objectClass: organizationalPerson
+cn: Sakamoto Ryoma
+sn: Sakamoto
+ou: Ryoma
+
+# Shinsaku, example.com
+dn: ou=Shinsaku,o=People,o=System Support,dc=example,dc=com
+objectClass: organizationalPerson
+cn: Takasugi Shinsaku
+sn: Takasugi
+ou: Shinsaku
+
+
+# Nankichi, example.com
+dn: ou=Nankichi,o=People,o=System Support,dc=example,dc=com
+objectClass: organizationalPerson
+cn: Niimi Nankichi
+sn: Niimi
+ou: Nankichi
+
+
+# Kenji, example.com
+dn: ou=Kenji,o=People,o=System Support,dc=example,dc=com
+objectClass: organizationalPerson
+cn: Miyazawa Kenji
+sn: Miyazawa
+ou: Kenji
+
+
+# Group, example.com
+dn: ou=Group,o=System Support,dc=example,dc=com
+objectClass: organizationalUnit
+ou: Group
+
+# People Support, example.com
+dn: o=People Support,dc=example,dc=com
+o: People Support
+objectClass: organization
+
+# Tom, example.com
+dn: ou=Tom,o=People Support,dc=example,dc=com
+objectClass: organizationalPerson
+cn: Tom Sawyer
+sn: Sawyer
+ou: Tom
+
+# George, example.com
+dn: ou=George,o=People Support,dc=example,dc=com
+objectClass: organizationalPerson
+cn: George Washington
+sn: Washington
+ou: George
+
+# John, example.com
+dn: ou=John,o=People Support,dc=example,dc=com
+objectClass: organizationalPerson
+cn: John Doe
+sn: Doe
+ou: John
+
+# Betty, example.com
+dn: ou=Betty,o=People Support,dc=example,dc=com
+objectClass: organizationalPerson
+cn: Betty Smith
+sn: Smith
+ou: Betty
+
+# Mary, example.com
+dn: ou=Mary,o=People Support,dc=example,dc=com
+objectClass: organizationalPerson
+cn: Mary White
+sn: White
+ou: Mary
+
+# Groups, example.com
+dn: ou=Groups,dc=example,dc=com
+ou: Groups
+objectClass: top
+objectClass: organizationalUnit
+
+#
+# Staff, example.com
+dn: ou=Staff,dc=example,dc=com
+ou: Staff
+objectClass: top
+objectClass: organizationalUnit
+
+# Cars, example.com
+dn: ou=Cars,dc=example,dc=com
+ou: Cars
+objectClass: top
+objectClass: organizationalUnit
+
+#
+#

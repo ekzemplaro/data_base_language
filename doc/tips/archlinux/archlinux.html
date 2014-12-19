@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>ArchLinux Oct/31/2014</title>
+<title>ArchLinux Dec/01/2014</title>
 </head>
 <body>
 参考になるページ<p />
@@ -294,6 +294,13 @@ grub2<p />
 	/etc/default/grub<p />
 	# grub-mkconfig -o /boot/grub/grub.cfg<p />
 	</blockquote>
+
+クローンの設定<p />
+	<blockquote>
+	# pacman -S cronie<br />
+	# systemctl start cronie<br />
+	# systemctl enable cronie<br />
+	</blockquote>
 <hr />
 既にインストールしたパッケージの情報を得る<p />
 	<blockquote>
@@ -303,6 +310,16 @@ grub2<p />
 	一覧<br />
 		<blockquote>
 		$ pacman -Qe<p />
+		</blockquote>
+	crontab コマンドをインストールしたパッケージを調べる<br />
+		<blockquote>
+		$ pacman -Qo `which crontab`<br />
+		/usr/bin/crontab is owned by cronie 1.4.11-2<br />
+		</blockquote>
+
+	by default deletes all the cached versions of each package except for the most recent 3: <br />
+		<blockquote>
+		$ paccache -r<br />
 		</blockquote>
 	</blockquote>
 ホストネームの設定<br />
@@ -344,7 +361,10 @@ yaourt のインストール<br />
 	# pacman -S yaourt<br />
 	</blockquote>
 <hr />
+# pacman -S xorg-fonts-100dpi<br />
+# pacman -S xorg-fonts-75dpi<br />
+<hr />
 <a href="/data_base/">Return</a><p />
-Oct/31/2014 AM 08:15<p />
+Dec/01/2014 AM 08:15<p />
 </body>
 </html>

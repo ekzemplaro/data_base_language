@@ -1,1 +1,1 @@
-ln -s /var/www/data_base/common/haskell_common/Xml_manipulate.hs Xml_manipulate.hs
+ln -s /var/www/data_base/common/haskell_common/Xml_manipulate.hs .

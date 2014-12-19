@@ -2,11 +2,10 @@
 #
 #	create/couch_create.sh
 #
-#					Aug/19/2014
+#					Nov/25/2014
 #
 # ---------------------------------------------------------------
-HOST="localhost"
-url="http://localhost:5984/nagano"
+URL="http://localhost:5984/nagano"
 #
 #
 # ---------------------------------------------------------------
@@ -17,7 +16,7 @@ function put_json_proc
 	json_str=$json_str'"date_mod":"'$date_mod'"}'
 #	echo $json_str
 #
-	curl -X PUT --noproxy $HOST $url"/"$key -d $json_str
+	curl -X PUT --noproxy '*' $URL"/"$key -d $json_str
 }
 #
 # ---------------------------------------------------------------
@@ -113,8 +112,8 @@ put_json_proc
 # ---------------------------------------------------------------
 echo "*** 開始 ***"
 #
-curl -X DELETE --noproxy $HOST $url
-curl -X PUT --noproxy $HOST $url
+curl -X DELETE --noproxy '*' $URL
+curl -X PUT --noproxy '*' $URL
 #
 json_prepare
 #

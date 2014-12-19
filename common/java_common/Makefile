@@ -59,10 +59,10 @@ all: json_manipulate.class \
 	sql_to_json.class \
 	ftp_manipulate.class \
 	cassandra_manipulate.class \
+	tika_manipulate.class \
 	hbase_manipulate.class \
 	tcbn_manipulate.class \
 	mongo_manipulate.class \
-	tika_manipulate.class \
 	epub_manipulate.class \
 	pdf_manipulate.class \
 	hgdb_manipulate.class \
@@ -101,6 +101,8 @@ rdb_common.class: rdb_common.java
 	javac -cp $(CPP) rdb_common.java
 ftp_manipulate.class: ftp_manipulate.java
 	javac -cp $(CPP) ftp_manipulate.java
+tika_manipulate.class: tika_manipulate.java
+	javac -cp $(CPP_TIKA) tika_manipulate.java
 hbase_manipulate.class: hbase_manipulate.java
 	javac -cp $(CPP_HBASE) hbase_manipulate.java
 mongo_manipulate.class: mongo_manipulate.java
@@ -109,8 +111,6 @@ voldemort_manipulate.class: voldemort_manipulate.java
 	javac -cp $(CPP) voldemort_manipulate.java -Xlint:unchecked
 sql_to_json.class: sql_to_json.java
 	javac -cp $(CPP) sql_to_json.java
-tika_manipulate.class: tika_manipulate.java
-	javac -cp $(CPP_TIKA) tika_manipulate.java
 epub_manipulate.class: epub_manipulate.java
 	javac -cp $(CPP_EPUB) epub_manipulate.java
 pdf_manipulate.class: pdf_manipulate.java

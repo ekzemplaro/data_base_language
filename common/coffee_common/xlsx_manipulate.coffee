@@ -2,7 +2,7 @@
 #
 #	xlsx_manipulate.coffee
 #
-#					Aug/19/2013
+#					Dec/12/2014
 #
 # ---------------------------------------------------------------
 fs = require('fs')
@@ -12,13 +12,14 @@ exports.xlsx_read_proc = (xlsx_file) ->
 	dict_aa = new Object
 	buf = fs.readFileSync (xlsx_file)
 	book = xlsx.parse(buf)
+	data = book[0]['data']
 
-	for unit_aa in book.worksheets[0]['data']
+	for unit_aa in data
 
-		key = unit_aa[0]['value']
-		name = unit_aa[1]['value']
-		population = unit_aa[2]['value']
-		date_mod = unit_aa[3]['value']
+		key = unit_aa[0]
+		name = unit_aa[1]
+		population = unit_aa[2]
+		date_mod = unit_aa[3]
 
 		dict_aa[key] = {"name": name,"population": population,"date_mod": date_mod}
 

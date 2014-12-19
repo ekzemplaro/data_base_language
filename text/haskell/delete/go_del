@@ -1,2 +1,2 @@
 #
-runghc text_delete.hs /var/tmp/plain_text/cities.txt t2387
+./text_delete.hs /var/tmp/plain_text/cities.txt t2387

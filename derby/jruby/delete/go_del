@@ -1,8 +1,8 @@
 #
 #
-export DERBY_HOME=/usr/share/javadb
+DERBY_JAR=/usr/share/java/derby/derbyclient.jar
 export JAVA_COMMON=/var/www/data_base/common/java_common
 #
-export CLASSPATH=.:$JAVA_COMMON:$DERBY_HOME/lib/derbyclient.jar
+export CLASSPATH=.:$JAVA_COMMON:$DERBY_JAR
 #
 ./derby_delete.rb t3551

@@ -1,8 +1,8 @@
-#! /usr/bin/gbs2
+#! /usr/bin/gbs3
 '
 '	xml_create.gambas
 '
-'					Mar/30/2012
+'					Nov/27/2014
 '
 ' ------------------------------------------------------------------
 sub	tag_gen_proc (tag as string,value as string) as string

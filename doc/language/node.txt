@@ -48,6 +48,7 @@ ftp@0.1.2 ./node_modules/ftp
 	npm install cradle<p />
 	npm install cascade<p />
 	npm install async<p />
+	npm install node-xlsx<p />
 </blockquote>
 
 <blockquote>

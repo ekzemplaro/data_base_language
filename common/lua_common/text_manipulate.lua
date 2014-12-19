@@ -1,7 +1,7 @@
 -- ----------------------------------------------------
 --	text_manipulate.lua
 --
---					Feb/16/2011
+--					Dec/15/2014
 -- ----------------------------------------------------
 function split_proc (str, del)
 	p, nrep = str:gsub("%s*"..del.."%s*", "")
@@ -19,12 +19,25 @@ function join_proc (doc_aa,id,delimit)
 	return	out_str
 end
 -- ----------------------------------------------------
+function get_keys_sorted_proc (tbl)
+	local keys = {}
+	for key in pairs(tbl) do
+		table.insert(keys, key)
+	end
+
+	table.sort (keys)
+
+	return keys
+end
+
+-- ----------------------------------------------------
 function dict_display_proc (dict_in)
-	for str_key in pairs (dict_in)
+	keys = get_keys_sorted_proc (dict_in)
+	for num,value in pairs (keys)
 		do
-			if ((str_key ~= "_id") and (str_key ~= "_rev")) then
-			if (dict_in[str_key]) then
-				out_str = join_proc (dict_in,str_key,"\t")
+			if ((value ~= "_id") and (value ~= "_rev")) then
+			if (dict_in[value]) then
+				out_str = join_proc (dict_in,value,"\t")
 				print (out_str)
 			end
 			end

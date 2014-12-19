@@ -2,11 +2,22 @@
 	sudo apt-get install mysql-server<p />
 	sudo apt-get install phpmyadmin<p />
 
+	Arch Linux<br />
+	<blockquote>
+	# pacman -S phpmyadmin<p />
+	cd /var/www<br />
+	ln -s /usr/share/webapps/phpMyAdmin .<p />
+	/etc/php/php.ini<p />
+		<blockquote>
+		extension=mysql.so<p />
+		</blockquote>
+
+	</blockquote>
 	<blockquote>
 		例えば、/home/scott で、<br />
-		tar xvfz wordpress-3.9.1.tar.gz<p />
+		tar xvfz wordpress-4.0.1-ja.tar.gz<p />
 		cd /var/www<br />
-		ln -s /home/scott/wordpress wordpress<br />
+		ln -s /home/scott/wordpress .<br />
 	</blockquote>
 </blockquote>
 

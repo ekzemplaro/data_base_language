@@ -2,10 +2,11 @@
 /*
 	mcached_read.cpp
 
-				Jan/21/2014
+				Nov/24/2014
 
 */
 // --------------------------------------------------------------------
+#include	<iostream>
 #include	<netdb.h>
 #include	<boost/algorithm/string.hpp>
 

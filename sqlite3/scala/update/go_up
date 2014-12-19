@@ -5,4 +5,4 @@ JAR=$COMMON/jar
 export CPX=.:$SCALA_COMMON:$JAR/sqlite-jdbc-3.7.2.jar
 #
 #
-scala -classpath $CPX sqlite3_update /var/tmp/sqlite3/cities.db t0714 2756000
+scala -classpath $CPX sqlite3_update /var/tmp/sqlite3/cities.db t0714 27185600

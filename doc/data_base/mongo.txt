@@ -123,3 +123,10 @@ system.indexes
 bye
 </pre>
 </blockquote>
+
+<hr />
+Arch Linux<br />
+<blockquote>
+# pacman -S mongodb<p />
+# pacman -S php-mongo<p />
+</blockquote>

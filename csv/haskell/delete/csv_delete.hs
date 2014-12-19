@@ -1,7 +1,8 @@
+#! /usr/bin/runghc
 -- -----------------------------------------------------------------
 --	csv_delete.hs
 --
---						Oct/10/2012
+--						Dec/12/2014
 --
 -- -----------------------------------------------------------------
 import System.Environment
@@ -23,7 +24,7 @@ main = do
 	let dict_bb = filter (delete_proc key_in) dict_aa
 --
 	let str_aa = dict_to_str_proc "," dict_bb
-	putStr str_aa
+--	putStr str_aa
 	writeFile file_name str_aa
 --
 	putStrLn "*** 終了***"

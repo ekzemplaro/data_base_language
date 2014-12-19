@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>docker Aug/20/2014</title>
+<title>docker Dec/18/2014</title>
 </head>
 <body>
 <h2>Docker</h2><p />
@@ -13,9 +13,9 @@
 An open platform for distributed applications<p />
 </blockquote>
 
-Install on Arch<br />
+Install on Arch Linux<br />
 <blockquote>
-# packman -S docker<p />
+# pacman -S docker<p />
 # systemctl start docker<p />
 # docker version<p />
 # docker info<p />
@@ -55,7 +55,7 @@ $ docker run -it --name nginx2 uchida/nginx /bin/bash<p />
 
 停止した nginx2 コンテナで再度bashを実行する場合<br />
 <blockquote>
-	$ docker start -i nginx2<p />
+	# docker start -i nginx2<p />
 </blockquote>
 
 <hr />
@@ -94,7 +94,15 @@ Install<br />
 	$ vagrant up<p />
 </blockquote>
 <hr />
+# docker rm `docker ps -a -q`<p />
+<hr />
+コンテナーの一覧<br />
+<blockquote>
+	# docker ps<p />
+	# docker ps -a<p />
+</blockquote>
+<hr />
 <a href="/data_base/">Return</a><p />
-Aug/20/2014 AM 08:15<p />
+Dec/18/2014 AM 08:15<p />
 </body>
 </html>

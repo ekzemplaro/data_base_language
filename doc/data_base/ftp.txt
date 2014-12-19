@@ -41,8 +41,13 @@ Perl<p />
 </blockquote>
 
 Python<p />
-<pre>
-</pre>
+<blockquote>
+</blockquote>
+
+Lua<p />
+<blockquote>
+# pacman -S lua-socket<p />
+</blockquote>
 
 Java<p />
 <blockquote>

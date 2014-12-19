@@ -2,7 +2,7 @@
 //
 //	xlsx_manipulate.js
 //
-//					Aug/08/2013
+//					Dec/12/2014
 //
 // ---------------------------------------------------------------
 var fs = require('fs');
@@ -14,14 +14,16 @@ exports.xlsx_read_proc = function (xlsx_file)
 	var buf = fs.readFileSync (xlsx_file);
 	var book = xlsx.parse(buf);
 
-	for (var it in book.worksheets[0]['data'])
-		{
-		var unit_aa = book.worksheets[0]['data'][it];
+	var data = book[0]['data'];
 
-		var key = unit_aa[0]['value'];
-		var name = unit_aa[1]['value'];
-		var population = unit_aa[2]['value'];
-		var date_mod = unit_aa[3]['value'];
+	for (var it in data)
+		{
+		var unit_aa = data[it];
+
+		var key = unit_aa[0];
+		var name = unit_aa[1];
+		var population = unit_aa[2];
+		var date_mod = unit_aa[3];
 
 		dict_aa[key] = {"name": name,"population": population,
 			"date_mod": date_mod};
@@ -45,9 +47,7 @@ exports.xlsx_write_proc = function (xlsx_file,dict_aa)
 		data_array.push (unit_aa);
 		}
 
-	var buffer = xlsx.build({worksheets: [
-		{"name":"mySheetName", "data": data_array}
-		]});
+	var buffer = xlsx.build([{name: "Cities", data: data_array}]);
 
 	fs.writeFileSync (xlsx_file, buffer);
 }

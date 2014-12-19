@@ -1,4 +1,4 @@
 #
 HASKELL_COMMON=/var/www/data_base/common/haskell_common
-ln -s $HASKELL_COMMON/Text_manipulate.hs Text_manipulate.hs
-ln -s $HASKELL_COMMON/Sql_manipulate.hs Sql_manipulate.hs
+ln -s $HASKELL_COMMON/Text_manipulate.hs .
+ln -s $HASKELL_COMMON/Sql_manipulate.hs .

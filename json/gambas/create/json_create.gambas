@@ -1,8 +1,8 @@
-#! /usr/bin/gbs2
+#! /usr/bin/gbs3
 '
 '	json_create.gambas
 '
-'					Mar/30/2012
+'					Nov/27/2014
 '
 ' ------------------------------------------------------------------
 sub	row_gen_proc (key as string,name as string,population as integer,date_mod as string) as string

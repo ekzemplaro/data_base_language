@@ -2,7 +2,7 @@
 /*
 	create/h2_create.java
 
-					Jun/24/2011
+					Nov/28/2014
 
 */
 // ---------------------------------------------------------------------
@@ -28,9 +28,9 @@ public static void main (String args [])
 
 	Statement ss = conn.createStatement ();
 
-rdb_common.drop_table_proc (ss);
-rdb_common.create_table_proc (ss);
-insert_data_proc (ss);
+	rdb_common.drop_table_proc (ss);
+	rdb_common.create_table_proc (ss);
+	insert_data_proc (ss);
 
 	rdb_common.display_proc (conn);
 

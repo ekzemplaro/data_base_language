@@ -1,11 +1,10 @@
 #! /usr/bin/nodejs
 // ---------------------------------------------------------------
-//	json_delete.js
+//	delete/json_delete.js
 //
-//					Dec/10/2012
+//					Nov/25/2014
 //
 // ---------------------------------------------------------------
-//
 var fs = require("fs");
 
 console.log ("*** 開始 ***");
@@ -15,16 +14,23 @@ var key_in=process.argv[3];
 console.log (filename);
 console.log (key_in)
 
-var json_str = fs.readFileSync(filename,'utf8');
-var dict_aa = JSON.parse (json_str);
+if (fs.existsSync(filename))
+	{
+	var json_str = fs.readFileSync(filename,'utf8');
+	var dict_aa = JSON.parse (json_str);
 
-if (key_in in dict_aa)
-	{ 
-	delete dict_aa[key_in];
+	if (key_in in dict_aa)
+		{ 
+		delete dict_aa[key_in];
 
-	var json_str_out = JSON.stringify(dict_aa);
+		var json_str_out = JSON.stringify(dict_aa);
 
-	fs.writeFile (filename,json_str_out);
+		fs.writeFile (filename,json_str_out);
+		}
+	}
+else
+	{
+	console.log ("*** error *** " + filename + " doesn't exist. ***");
 	}
 
 console.log ("*** 終了 ***");

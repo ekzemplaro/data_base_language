@@ -1,8 +1,9 @@
 #! /usr/bin/jruby
+# -*- coding: utf-8 -*-
 #
 #	read/pdf_read.rb
 #
-#					Jun/29/2012
+#					Nov/26/2014
 #
 # ---------------------------------------------------------------------
 load '/var/www/data_base/common/ruby_common/text_manipulate.rb'

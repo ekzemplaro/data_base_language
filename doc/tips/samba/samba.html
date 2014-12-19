@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>samba Nov/17/2014</title>
+<title>samba Dec/11/2014</title>
 </head>
 <body>
 <h2>samba の設定 in Ubuntu 14.04</h2><p />
@@ -23,6 +23,14 @@ ii  samba    2:4.1.6+dfsg-1ubuntu2    amd64  SMB/CIFS file, print, and login ser
 /etc/samba/smb.conf<p />
 <blockquote>
 <pre>
+#======================= Global Settings =======================
+
+[global]
+
+security = user
+map to guest = Bad User
+
+
 #======================= Share Definitions =======================
 [samba]
 path = /var/tmp/samba
@@ -62,6 +70,7 @@ sudo service samba4 start<br />
 sudo service samba4 stop<br />
 <hr />
 Arch Linux<p />
+# pacman -S samba<p />
 # cp /etc/samba/smb.conf.default /etc/samba/smb.conf<p />
 # useradd -m smbuser<p />
 # passwd smbuser<p />
@@ -70,7 +79,10 @@ Arch Linux<p />
 
 <a href="./smb.conf.txt">/etc/samba/smb.conf</a><p />
 <hr />
+$ smbclient -L localhost<p />
+$ smbclient -L host_server<p />
+<hr />
 <a href="/data_base/">Return</a><p />
-Nov/17/2014 AM 08:15<p />
+Dec/11/2014 AM 08:15<p />
 </body>
 </html>

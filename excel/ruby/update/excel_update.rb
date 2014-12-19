@@ -20,15 +20,11 @@ population_in = ARGV[2].to_i
 #
 puts id_in,population_in
 
-
 dict_aa = excel_read_proc(file_excel)
 dict_aa = dict_update_proc(dict_aa,id_in,population_in)
 
 excel_write_proc(file_excel,dict_aa)
 
-
-
-dict_display_proc(dict_aa)
-
 puts	"*** 終了 ***"
 #
+# -------------------------------------------------------------------

@@ -8,8 +8,6 @@
 #
 # ---------------------------------------------------------------------
 import	sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
 import	string
 import	json
 #
@@ -23,5 +21,5 @@ file_epub = "/var/tmp/epub/cities.epub"
 dict_aa = epub_to_dict_proc (file_epub)
 str_aa = json.dumps (dict_aa)
 #
-print "Content-type: text/json\n\n"
-print	str_aa
+print ("Content-type: text/json\n\n")
+print	(str_aa)

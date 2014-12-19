@@ -27,7 +27,8 @@ for key in keys:
 		json_str = mc.Get(key)
 
 		if (json_str != null):
-			kvalue_manipulate.out_record_proc (key,json_str)
+			print json_str
+#			kvalue_manipulate.out_record_proc (key,json_str)
 
 pool.Shutdown()
 

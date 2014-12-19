@@ -1,1 +1,4 @@
+#
+export PATH=$PATH:/home/uchida/.gem/ruby/2.1.0/bin
+#
 ./couch_read.rb

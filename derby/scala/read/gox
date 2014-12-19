@@ -1,7 +1,7 @@
 #
-DERBY_HOME=/usr/share/javadb
+DERBY_HOME=/usr/share/java/derby
 SCALA_COMMON="/var/www/data_base/common/scala_common"
 #
-export CPX=.:$SCALA_COMMON:$DERBY_HOME/lib/derbyclient.jar
+CPX=.:$SCALA_COMMON:$DERBY_HOME/derbyclient.jar
 #
 scala -classpath $CPX derby_read

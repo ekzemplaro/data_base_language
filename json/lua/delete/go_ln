@@ -1,5 +1,5 @@
 #
 LUA_COMMON=/var/www/data_base/common/lua_common
 #
-ln -s $LUA_COMMON/text_manipulate.lua text_manipulate.lua
-ln -s $LUA_COMMON/file_io.lua file_io.lua
+ln -s $LUA_COMMON/text_manipulate.lua .
+ln -s $LUA_COMMON/file_io.lua .

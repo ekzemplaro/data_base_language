@@ -3,7 +3,7 @@
 /*
 	mongo_manipulate.php
 
-					Jun/26/2012
+					Nov/25/2014
 
 */
 // --------------------------------------------------------------------
@@ -35,6 +35,7 @@ foreach ($cursor as $obj) {
 	echo $obj["population"] . "\t";
 	echo $obj["date_mod"] . "\n";
 	$obj["population"] = $population_in;
+	date_default_timezone_set('Asia/Tokyo');
 	$obj["date_mod"] = date ("Y-m-d");
 
 	$col->save ($obj);

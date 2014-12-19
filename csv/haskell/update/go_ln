@@ -1,1 +1,1 @@
-ln -s /var/www/data_base/common/haskell_common/Text_manipulate.hs Text_manipulate.hs
+ln -s /var/www/data_base/common/haskell_common/Text_manipulate.hs .

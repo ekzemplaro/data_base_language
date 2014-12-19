@@ -1,4 +1,4 @@
-<title>C# Sep/16/2014</title>
+<title>C# Nov/26/2014</title>
 </head>
 <body>
 <h2><a href="http://en.csharp-online.net">C#</a></h2><p />
@@ -21,11 +21,17 @@ Windows7 で csc.exe を使う方法<br />
 csc hello.cs<br />
 </blockquote>
 
+<hr />
 Arch Linux<p />
 # pacman -S mono<p />
 <blockquote>
-cannot execute binary file: Exec format error<p />
-# systemctl restart systemd-binfmt<p />
+cannot execute binary file: Exec format error というエラーが出たら<p />
+	<blockquote>
+	systemd-binfmt サービスを再起動<br />
+		<blockquote>
+		# systemctl restart systemd-binfmt<p />
+		</blockquote>
+	</blockquote>
 
 # pacman -S monodevelop<p />
 </blockquote>

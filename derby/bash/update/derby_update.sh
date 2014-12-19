@@ -1,12 +1,12 @@
 #! /bin/bash
 #
-#	derby_update.sh
+#	update/derby_update.sh
 #
-#					Jul/06/2012
+#					Nov/28/2014
 #
 # ---------------------------------------------------------------------
-export DERBY_HOME=/usr/share/javadb
-export PATH="$DERBY_HOME/bin:$PATH"
+export DERBY_BIN=/usr/share/java/derby/bin
+export PATH="$DERBY_BIN:$PATH"
 #
 work_file="/tmp/tmp00546.txt"
 # ---------------------------------------------------------------------

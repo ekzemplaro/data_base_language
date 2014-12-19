@@ -1,8 +1,7 @@
 #
-#export DERBY_HOME=/home/uchida/data_base/derby/db-derby-10.8.2.2-bin
-export DERBY_HOME=/usr/share/javadb
+DERBY_JAR=/usr/share/java/derby/derbyclient.jar
 export JAVA_COMMON=/var/www/data_base/common/java_common
 #
-export CLASSPATH=.:$JAVA_COMMON:$DERBY_HOME/lib/derbyclient.jar
+export CLASSPATH=.:$JAVA_COMMON:$DERBY_JAR
 #
 ./derby_update.rb t3554 2637900

@@ -3,7 +3,7 @@
 #
 #	epub_create.py
 #
-#					Sep/17/2014
+#					Dec/02/2014
 #
 import	sys
 #
@@ -16,7 +16,7 @@ from epub_manipulate import dict_to_epub_proc
 def	data_prepare_proc ():
 	dict_aa = {} 
 #
-	dict_aa = dict_append_proc (dict_aa,'t1931',u'甲府',56124,'2003-5-8')
+	dict_aa = dict_append_proc (dict_aa,'t1931','甲府',58129,'2003-5-8')
 	dict_aa = dict_append_proc (dict_aa,'t1932',u'富士吉田',17328,'2003-1-12')
 	dict_aa = dict_append_proc (dict_aa,'t1933',u'都留',72395,'2003-6-14')
 	dict_aa = dict_append_proc (dict_aa,'t1934',u'山梨',62413,'2003-9-9')

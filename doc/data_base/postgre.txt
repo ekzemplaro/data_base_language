@@ -76,7 +76,7 @@ host    all             all             0.0.0.0/0               trust
 
 <hr />
 
-<ol>
+<blockquote>
 	su postgres<p />
 	
 	createdb city<p />
@@ -84,7 +84,7 @@ host    all             all             0.0.0.0/0               trust
 	psql -f postgre_create.sql -U scott city<p />
 	psql -f postgre_insert.sql -U scott city<p />
 	psql -f postgre_read.sql -U scott city<p />
-</ol>
+</blockquote>
 
 <hr />
 データベースの作成<br />
@@ -99,6 +99,13 @@ PHP<p />
 <blockquote>
 	php5-pgsql<p />
 	# pacman -S php-pgsql<p />
+	<blockquote>
+	/etc/php/conf.d/pgsql.ini<br />
+		<blockquote>
+		extension=pgsql.so<br />
+		</blockquote>
+
+	</blockquote>
 </blockquote>
 
 Python<p />
@@ -114,6 +121,11 @@ Perl<p />
 Ruby<p />
 <blockquote>
 	libdbd-pg-ruby<p />
+</blockquote>
+
+Lua<p />
+<blockquote>
+	# pacman -S lua-sql-postgres<p />
 </blockquote>
 
 Haskell<p />
@@ -187,5 +199,5 @@ $ psql -h localhost -U scott city<p />
 <hr />
 # pacman -S postgresql<p />
 $ su postgres<p />
-$ initdb --locale en_US.UTF-8 -E UTF8 -D '/var/lib/postgres/data'<p />
+# initdb --locale en_US.UTF-8 -E UTF8 -D '/var/lib/postgres/data'<p />
 # systemctl start postgresql<p />

@@ -1,0 +1,3 @@
+#
+./calc_read.rb /var/tmp/calc/cities.ods
+#

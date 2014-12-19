@@ -1,13 +1,8 @@
 // ---------------------------------------------------------------------
 //	sqlite3/groovy/delete/sqlite3_delete.groovy
 //
-//					Aug/25/2010
+//					Nov/28/2014
 //
-// ---------------------------------------------------------------------
-import groovy.sql.Sql
-
-import sql_manipulate
-
 // ---------------------------------------------------------------------
 class sqlite3_delete
 {
@@ -16,22 +11,25 @@ static void main (args)
 {
 	println ("*** 開始 ***");
 
-	def sqlite3_db = args[0]
-	def id_in=args[1]
+	def sqlite3_file = args[0]
+	def key_in=args[1]
 
-	println (id_in)
+	println (key_in)
 
-	def driver = "org.sqlite.JDBC"
+	def db = new SQLite.Database()
 
-	def protocol = "jdbc:sqlite:" + sqlite3_db
+	db.open (sqlite3_file, 0666);
 
-	def sql = Sql.newInstance (protocol,driver)
+	def sql_str = "delete from  cities where ID= '" + key_in + "'"
 
-	sql_manipulate.delete_proc (sql,id_in)
+	def stmt = db.prepare(sql_str)
 
-	sql_manipulate.display_proc (sql)
+	while (stmt.step())
+		{
+		}
 
-	sql.close ()
+	stmt.close()
+	db.close ()
 
 	println ("*** 終了 ***");
 }

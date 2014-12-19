@@ -1,11 +1,8 @@
 // ---------------------------------------------------------------------
 //	sqlite3/groovy/read/sqlite3_read.groovy
 //
-//					Aug/27/2010
+//					Nov/28/2014
 //
-// ---------------------------------------------------------------------
-import groovy.sql.Sql
-import sql_manipulate
 // ---------------------------------------------------------------------
 class sqlite3_read
 {
@@ -13,18 +10,33 @@ class sqlite3_read
 static void main (args)
 {
 	println ("*** 開始 ***")
+	def sqlite3_file = args[0]
 
-	String driver = "org.sqlite.JDBC"
+	def db = new SQLite.Database()
 
-	def sqlite3_db = args[0]
+	db.open (sqlite3_file, 0666);
+	println("DB version: " + db.dbversion());
 
-	def protocol = "jdbc:sqlite:" + sqlite3_db
+	def sql = "select * from cities"
+	def stmt = db.prepare(sql)
 
-	def sql = Sql.newInstance (protocol, driver )
+	while (stmt.step())
+		{
+		def i, ncol = stmt.column_count()
 
-	sql_manipulate.display_proc (sql)
+		def array_str = []
+		for (it in  0..(ncol-1))
+			{
+			def obj = stmt.column(it)
+			array_str.add (obj.toString())
+			}
 
-	sql.close ()
+		def out_str = array_str.join ("\t") 
+		println (out_str)
+		}
+
+	stmt.close()
+	db.close()
 
 	println ("*** 終了 ***")
 

@@ -2,7 +2,7 @@
 '
 '	text_delete.gambas
 '
-'					May/23/2013
+'					Nov/27/2014
 '
 ' ------------------------------------------------------------------
 sub	row_gen_proc (key as string,name as string,population as integer,date_mod as string) as string
@@ -12,7 +12,7 @@ sub	row_gen_proc (key as string,name as string,population as integer,date_mod as
 	return str_out
 end
 ' ------------------------------------------------------------------
-public sub main ()
+public sub Main ()
 	dim file_txt as string
 	dim id_in as string
 	dim result as string

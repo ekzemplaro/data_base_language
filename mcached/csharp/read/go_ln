@@ -8,8 +8,8 @@ DLL=$COMMON/dll
 ln -s $DLL/Memcached.ClientLibrary.dll .
 ln -s $DLL/log4net.dll .
 #
-ln -s /usr/lib/cli/Newtonsoft.Json-5.0/Newtonsoft.Json.dll .
-# ln -s /usr/lib/monodevelop/bin/Newtonsoft.Json.dll .
+# ln -s /usr/lib/cli/Newtonsoft.Json-5.0/Newtonsoft.Json.dll .
+ln -s /usr/lib/monodevelop/bin/Newtonsoft.Json.dll .
 #
 ln -s $CSHARP_COMMON/table_manipulate.dll .
 #

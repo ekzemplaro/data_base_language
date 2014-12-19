@@ -1,7 +1,8 @@
+#! /usr/bin/runghc
 -- -----------------------------------------------------------------
 --	csv_create.hs
 --
---					Oct/16/2012
+--					Dec/12/2014
 --
 -- -----------------------------------------------------------------
 import System.Environment
@@ -17,26 +18,24 @@ main = do
 --
 	let delim = ","
 	let str_aa = dict_to_str_proc delim dict_aa
-	putStr str_aa
 --
 	writeFile out_file str_aa
 --
-	writeFile out_file str_aa
 	putStrLn "*** 終了***"
 -- -----------------------------------------------------------------
 data_prepare_proc :: [([Char], [([Char], [Char])])]
 data_prepare_proc =
 		[("t1271",[
 			("name","千葉"),
-			("population","14759"),
+			("population","13759"),
 			("date_mod","1960-8-14")]),
 		("t1272",[
 			("name","勝浦"),
-			("population","28674"),
+			("population","58674"),
 			("date_mod","1960-2-18")]),
 		("t1273",[
 			("name","市原"),
-			("population","35826"),
+			("population","35126"),
 			("date_mod","1960-7-24")]),
 		("t1274",[
 			("name","流山"),

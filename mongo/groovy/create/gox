@@ -1,7 +1,11 @@
-GROOVY_JAR=/usr/share/java/groovy-all.jar:/usr/share/java/groovy.jar
 COMMON=/var/www/data_base/common
 JAR=$COMMON/jar
+GROOVY_ALL_JAR=/usr/share/java/groovy-all.jar
+if  [ -e /etc/arch-release ]; then
+GROOVY_ALL_JAR=/usr/share/groovy/embeddable/groovy-all.jar
+fi
+#
 MONGO_JAR=$JAR/mongo-2.8.0.jar
-export CLASSPATH=./:$MONGO_JAR:$GROOVY_JAR
+export CLASSPATH=./:$MONGO_JAR:$GROOVY_ALL_JAR
 #
 java mongo_create

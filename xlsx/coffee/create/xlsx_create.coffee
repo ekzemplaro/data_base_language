@@ -3,7 +3,7 @@
 #
 #	xlsx_create.coffee
 #
-#					Aug/19/2013
+#					Dec/12/2014
 #
 # ---------------------------------------------------------------
 fs = require("fs")
@@ -17,9 +17,9 @@ xlsx = require('node-xlsx')
 data_prepare_proc = () ->
 	dict_aa = new Object
 
-	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t2971','奈良',42836,'1954-5-22')
-	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t2972','大和高田',31572,'1954-6-8')
-	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t2973','大和郡山',65179,'1954-10-2')
+	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t2971','奈良',42136,'1954-5-22')
+	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t2972','大和高田',39572,'1954-6-8')
+	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t2973','大和郡山',67149,'1954-10-2')
 	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t2974','天理',31864,'1954-6-22')
 	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t2975','橿原',49358,'1954-8-14')
 	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t2976','桜井',65792,'1954-9-12')

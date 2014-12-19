@@ -1,12 +1,10 @@
 #
 #
-export DERBY_HOME=/usr/share/javadb
+export DERBY_HOME=/usr/share/java/derby
 #
 JAVA_COMMON=/var/www/data_base/common/java_common
-export CPX=.:$JAVA_COMMON
-export CPX=$CPX:$DERBY_HOME/lib/derby.jar:$DERBY_HOME/lib/derbytools.jar
-export CPX=$CPX:$DERBY_HOME/lib/derbyclient.jar
-export CPX=$CPX:$DERBY_HOME/lib/derbynet.jar
-export CPX=$CPX:$DERBY_HOME/lib/derbyrun.jar
+#
+export CPX=.:$JAVA_COMMON:$DERBY_HOME/derbyclient.jar
+#
 #
 java -cp $CPX derby_delete t3559

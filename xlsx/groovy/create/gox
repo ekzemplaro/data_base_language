@@ -4,8 +4,8 @@ POI39=$COMMON/jar/poi-3.9
 POI_LIB=$POI39/poi-3.9-20121203.jar:$POI39/poi-ooxml-3.9-20121203.jar:$POI39/poi-ooxml-schemas-3.9-20121203.jar:$POI39/ooxml-lib/xmlbeans-2.3.0.jar:$POI39/ooxml-lib/dom4j-1.6.1.jar
 #
 GROOVY_COMMON=$COMMON/groovy_common
-GR_JAR=/usr/share/java/groovy-all.jar:/usr/share/java/groovy.jar
+GROOVY_ALL_JAR=/usr/share/groovy/embeddable/groovy-all.jar
 #
-export CLASSPATH=./:$GR_JAR:$GROOVY_COMMON:$POI_LIB
+export CLASSPATH=./:$GROOVY_ALL_JAR:$GROOVY_COMMON:$POI_LIB
 #
 java xlsx_create /var/tmp/xlsx/cities.xlsx

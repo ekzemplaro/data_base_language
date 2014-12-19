@@ -23,3 +23,10 @@ C#<p />
 <blockquote>
 	IKVM.NET<br />
 </blockquote>
+
+<hr />
+Arch Linux<br />
+<blockquote>
+$ yaourt -Sb h2<br />
+</blockquote>
+

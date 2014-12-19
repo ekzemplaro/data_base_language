@@ -2,7 +2,7 @@
 // ---------------------------------------------------------------
 //	redis_read.js
 //
-//					Aug/08/2013
+//					Dec/17/2014
 //
 // ---------------------------------------------------------------
 console.log ("*** 開始 ***");
@@ -40,7 +40,8 @@ function read_single_proc (client,key)
 	 else if (reply != null)
 		{
 		var json_str = reply;
-		var data = eval('('+json_str+')');
+		var data = JSON.parse (json_str);
+
 		var out_str = key + "\t";
 		out_str  += data.name + "\t";
 		out_str += data.population + "\t";

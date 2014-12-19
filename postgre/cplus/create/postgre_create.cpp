@@ -2,7 +2,7 @@
 /*
 	postgre_create.cpp
 
-					May/12/2012
+					Dec/04/2014
 
 */
 // --------------------------------------------------------------------
@@ -33,17 +33,17 @@ static map <string,Unit >  data_prepare_proc ()
 {
 	map <string,Unit> dict_aa;
 
-	dict_aa = dict_append_proc (dict_aa,"t3461","広島",34795,"1986-10-07");
+	dict_aa = dict_append_proc (dict_aa,"t3461","広島",34795,"1922-10-07");
 
-	dict_aa = dict_append_proc (dict_aa,"t3462","福山",17982,"1986-2-12");
-	dict_aa = dict_append_proc (dict_aa,"t3463","東広島",23429,"1986-3-28");
-	dict_aa = dict_append_proc (dict_aa,"t3464","呉",23715,"1986-2-21");
+	dict_aa = dict_append_proc (dict_aa,"t3462","福山",17982,"1922-2-12");
+	dict_aa = dict_append_proc (dict_aa,"t3463","東広島",42569,"1922-3-28");
+	dict_aa = dict_append_proc (dict_aa,"t3464","呉",71845,"1922-2-21");
 
-	dict_aa = dict_append_proc (dict_aa,"t3465","尾道",84971,"1986-1-5");
-	dict_aa = dict_append_proc (dict_aa,"t3466","竹原",76948,"1986-5-22");
-	dict_aa = dict_append_proc (dict_aa,"t3467","三次",46785,"1986-8-17");
-	dict_aa = dict_append_proc (dict_aa,"t3468","大竹",52614,"1986-7-7");
-	dict_aa = dict_append_proc (dict_aa,"t3469","府中",71823,"1986-4-9");
+	dict_aa = dict_append_proc (dict_aa,"t3465","尾道",82971,"1922-1-5");
+	dict_aa = dict_append_proc (dict_aa,"t3466","竹原",76948,"1922-5-22");
+	dict_aa = dict_append_proc (dict_aa,"t3467","三次",46785,"1922-8-17");
+	dict_aa = dict_append_proc (dict_aa,"t3468","大竹",52914,"1922-7-7");
+	dict_aa = dict_append_proc (dict_aa,"t3469","府中",71823,"1922-4-9");
 
 	return	dict_aa;
 }

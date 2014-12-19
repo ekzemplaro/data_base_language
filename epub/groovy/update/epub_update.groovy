@@ -2,7 +2,7 @@
 //
 //	epub_update.groovy
 //
-//					Jan/09/2012
+//					Dec/02/2014
 // --------------------------------------------------------------
 import static java.lang.System.err
 import static java.lang.System.exit
@@ -27,16 +27,17 @@ static void main (args)
 	println ("*** 開始 ***")
 
 	def file_epub=args[0]
-	def id_in=args[1]
+	def key_in=args[1]
 	def population_in=args[2]
-	println (id_in + "\t" +  population_in)
+	println (key_in + "\t" +  population_in)
 
 	def tika = new tika_manipulate ()
 	def dict_aa = tika.tika_parse (file_epub,"epub_update")
 
 	def ff = new text_manipulate ()
 
-	def dict_bb = ff.dict_update_proc (dict_aa,id_in,population_in)
+//	def dict_bb = ff.dict_update_proc (dict_aa,key_in,population_in)
+	ff.dict_update_proc (dict_aa,key_in,population_in)
 
 	ff.dict_display_proc (dict_aa)
 

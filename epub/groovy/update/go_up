@@ -2,8 +2,8 @@ COMMON=/var/www/data_base/common
 GROOVY_COMMON=$COMMON/groovy_common
 JAR=$COMMON/jar
 #
-GROOVY_JAR=/usr/share/java/groovy-all.jar:/usr/share/java/groovy.jar
+GROOVY_ALL_JAR=/usr/share/groovy/embeddable/groovy-all.jar
 #
-export CLASSPATH=./:$JAR/tika-app-1.0.jar:$JAR/epubgen-0.5.0.jar:$GROOVY_COMMON:$GROOVY_JAR
+export CLASSPATH=./:$JAR/tika-app-1.0.jar:$JAR/epubgen-0.5.0.jar:$GROOVY_COMMON:$GROOVY_ALL_JAR
 #
 java epub_update cities.epub t1932 4532100

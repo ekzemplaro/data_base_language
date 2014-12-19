@@ -1,13 +1,8 @@
 // ---------------------------------------------------------------------
 //	sqlite3/groovy/update/sqlite3_update.groovy
 //
-//					May/26/2011
+//					Nov/28/2014
 //
-// ---------------------------------------------------------------------
-import groovy.sql.Sql
-
-import sql_manipulate
-
 // ---------------------------------------------------------------------
 class sqlite3_update
 {
@@ -16,23 +11,30 @@ static void main (args)
 {
 	println ("*** 開始 ***");
 
-	def sqlite3_db = args[0]
-	def id_in=args[1]
+	def sqlite3_file = args[0]
+	def key_in=args[1]
 	def population_in=args[2]
 
-	println (id_in + "\t" +  population_in)
+	println (key_in + "\t" +  population_in)
 
-	def driver = "org.sqlite.JDBC"
+	def db = new SQLite.Database()
 
-	def protocol = "jdbc:sqlite:" + sqlite3_db
+	db.open (sqlite3_file, 0666);
 
-	def sql = Sql.newInstance (protocol,driver)
+	def today = new Date ().format ("yyyy-MM-dd")
 
-	sql_manipulate.update_proc (sql,id_in,population_in)
+	def sql_str = "update cities set POPULATION = " + population_in +
+		",DATE_MOD='" + today +  "'  where ID= '" + key_in + "'"
 
-	sql_manipulate.display_proc (sql)
+	def stmt = db.prepare(sql_str)
 
-	sql.close ()
+	while (stmt.step())
+		{
+		}
+
+	stmt.close () 
+
+	db.close ()
 
 	println ("*** 終了 ***");
 }

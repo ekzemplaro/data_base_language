@@ -1,3 +1,5 @@
 #
+export http_proxy=""
+#
 export NODE_PATH=/home/uchida/node_modules
-./couch_update.js t2025 72194500
+./couch_update.js t2024 72894500

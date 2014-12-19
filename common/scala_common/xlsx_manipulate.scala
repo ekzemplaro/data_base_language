@@ -1,7 +1,7 @@
 // ----------------------------------------------------------------
 /*
 	xlsx_manipulate.scala
-					Aug/05/2013
+					Dec/12/2014
 
 */
 // ----------------------------------------------------------------
@@ -65,8 +65,6 @@ def xlsx_read_proc (xlsx_file:String):(mutable.Map[String,Object]) = {
 // ----------------------------------------------------------------
 def xlsx_create_row_proc (sheet: XSSFSheet,row: Int,key:String,name: String,population: Int,date_mod: String)
 {
-	println ("*** xlsx_create ***")
-
 	val row1 = sheet.createRow (row);
 	row1.createCell(0).setCellValue(key)
 	row1.createCell(1).setCellValue (name);

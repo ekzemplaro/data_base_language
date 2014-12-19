@@ -3,7 +3,7 @@
 # -------------------------------------------------------------------------
 #	json_python_create.py
 #
-#						Aug/05/2014
+#						Nov/26/2014
 # -------------------------------------------------------------------------
 import	sys
 import	os
@@ -43,7 +43,8 @@ file_out = "/var/tmp/json/cities.json"
 dict_aa = data_prepare_proc ()
 #
 out_str = json.dumps (dict_aa)
-os.remove (file_out)
+if os.path.isfile(file_out):
+	os.remove (file_out)
 file_write_proc (file_out,out_str)
 os.chmod (file_out,0o666)
 #

@@ -2,7 +2,7 @@
 // ---------------------------------------------------------------
 //	couch_update.js
 //
-//						Jun/10/2014
+//						Nov/24/2014
 // ---------------------------------------------------------------
 var cradle = require ('cradle');
 var text_manipulate = require('/var/www/data_base/common/node_common/text_manipulate');
@@ -50,13 +50,4 @@ db.exists(function (err, exists)
 		}
 	});
 
-/*
-db.get (key,function (err,dict_aa) {
-	dict_aa = text_manipulate.dict_update_proc (dict_aa,key_in,population_in);
-	db.put (key,dict_aa,function (err,res){
-		console.log (res);
-		});
-
-	});
-*/
 // ---------------------------------------------------------------

@@ -9,7 +9,10 @@ module Text_manipulate where
 import System.Time
 import Data.Char
 import Data.List.Split
+
+-- import qualified Data.ByteString as Str
 -- -----------------------------------------------------------------
+-- str_to_dict_proc :: (Str.ByteString) ->  [([Char], [([Char], [Char])])]
 str_to_dict_proc :: (String) ->  [([Char], [([Char], [Char])])]
 str_to_dict_proc inStr =
 	map to_hash_proc words_aa
@@ -17,6 +20,7 @@ str_to_dict_proc inStr =
 		words_aa = map words (lines inStr)
 -- -----------------------------------------------------------------
 to_hash_proc :: ([String]) -> ([Char], [([Char], [Char])])
+-- to_hash_proc :: ([Str.ByteString]) -> ([Char], [([Char], [Char])])
 to_hash_proc cols =
 	(key,[("name",name),
 			("population",population),

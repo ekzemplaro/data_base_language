@@ -1,35 +1,46 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 # -------------------------------------------------------------------------
 #	redis_python_create.py
 #
-#						May/26/2011
+#						Dec/09/2014
 # -------------------------------------------------------------------------
 import sys
 import json
 import redis
 #
-#
+sys.path.append ('/var/www/data_base/common/python_common')
+from text_manipulate import dict_append_proc
 #
 # -------------------------------------------------------------------------
+def	data_prepare_proc ():
+	dict_aa = {} 
 #
-#rr = redis.Redis(host='localhost', port=6379, db=0)
+	dict_aa = dict_append_proc (dict_aa,'t1851','福井',52700,'2003-9-22')
+	dict_aa = dict_append_proc (dict_aa,'t1852','敦賀',41500,'2003-2-15')
+	dict_aa = dict_append_proc (dict_aa,'t1853','小浜',28400,'2003-7-8')
+	dict_aa = dict_append_proc (dict_aa,'t1854','大野',89600,'2003-1-19')
+	dict_aa = dict_append_proc (dict_aa,'t1855','勝山',49100,'2003-5-24')
+	dict_aa = dict_append_proc (dict_aa,'t1856','鯖江',35700,'2003-6-12')
+	dict_aa = dict_append_proc (dict_aa,'t1857','あわら',84600,'2003-7-21')
+	dict_aa = dict_append_proc (dict_aa,'t1858','越前',25700,'2003-10-26')
+	dict_aa = dict_append_proc (dict_aa,'t1859','坂井',84300,'2003-12-15')
+#
+	return	dict_aa
+# -------------------------------------------------------------------------
+#
+
 rr = redis.Redis(host='host_dbase', port=6379, db=0)
 
-#rr.flush_all()
+dict_aa = data_prepare_proc ()
 #
-rr.set('t1851', '{"name":"福井","population":87300,"date_mod":"2003-3-19"}')
-rr.set('t1852', '{"name":"敦賀","population":16800,"date_mod":"2003-2-18"}')
-rr.set('t1853', '{"name":"小浜","population":71300,"date_mod":"2003-5-2"}')
-rr.set('t1854', '{"name":"大野","population":51200,"date_mod":"2003-6-11"}')
-rr.set('t1855', '{"name":"勝山","population":74200,"date_mod":"2003-7-9"}')
-rr.set('t1856', '{"name":"鯖江","population":67100,"date_mod":"2003-9-4"}')
-rr.set('t1857', '{"name":"あわら","population":39600,"date_mod":"2003-10-17"}')
-rr.set('t1858', '{"name":"越前","population":57500,"date_mod":"2003-8-15"}')
-rr.set('t1859', '{"name":"坂井","population":28400,"date_mod":"2003-11-24"}')
+for key in dict_aa.keys():
+	value = dict_aa[key]
+	json_str = json.dumps (value)
+	rr.set(key, json_str)
 #
 #
-print "Content-type: text/html\n\n"
+print ("Content-type: text/html\n\n")
 #
-print	"*** OK ***<p />"
+print	("*** OK ***<p />")
 # -------------------------------------------------------------------------

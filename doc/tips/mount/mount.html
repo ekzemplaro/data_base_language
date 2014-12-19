@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>Mount Sep/26/2014</title>
+<title>Mount Dec/11/2014</title>
 </head>
 <body>
 <h2>Mount</h2><p />
@@ -25,6 +25,11 @@ Arch Linux<br />
 	<blockquote>
 	# pacman -S nfs-utils<p />
 	</blockquote>
+</blockquote>
+
+cifs マウント<p />
+<blockquote>
+	mount -t cifs //server_aa/tmp /mnt/server_aa/tmp -o guest<p />
 </blockquote>
 
 ftp マウント<p />
@@ -54,8 +59,21 @@ ls -l /dev/disk/by-uuid<p />
 # blkid -s UUID -o value /dev/sda9<p />
 </blockquote>
 
-
+GPT (GUID Partition Table)<br />
+<blockquote>
+# pacman -S ntfs-3g<p />
+	<blockquote>
+	# mount -t ntfs-3g /dev/sdb2 /mnt/sdb2<p />
+	# mount /dev/sdb2 /mnt/sdb2<p />
+	</blockquote>
+# pacman -S gptfdisk<p />
+	<blockquote>
+	# gdisk /dev/sdb<p />
+	</blockquote>
+</blockquote>
+# parted -l<p />
+<hr />
 <a href="/data_base/">Return</a><p />
-Sep/26/2014 AM 08:15<p />
+Dec/11/2014 AM 08:15<p />
 </body>
 </html>

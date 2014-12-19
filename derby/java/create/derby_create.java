@@ -2,7 +2,7 @@
 /*
 	derby/java/create/derby_create.java
 
-					Sep/13/2013
+					Nov/28/2014
 
 */
 // ---------------------------------------------------------------------
@@ -60,13 +60,13 @@ data_prepare_proc ()
 		= new HashMap <String, HashMap<String,String>> ();
 
 	dict_aa = text_manipulate.dict_append_proc
-		(dict_aa,"t3551","山口",47628,"2008-11-13");
+		(dict_aa,"t3551","山口",47128,"2008-10-13");
 
 	dict_aa = text_manipulate.dict_append_proc
-		(dict_aa,"t3552","下関",84936,"2008-5-24");
+		(dict_aa,"t3552","下関",84536,"2008-5-24");
 
 	dict_aa = text_manipulate.dict_append_proc
-		(dict_aa,"t3553","萩",53172,"2008-6-25");
+		(dict_aa,"t3553","萩",53198,"2008-6-25");
 
 	dict_aa = text_manipulate.dict_append_proc
 		(dict_aa,"t3554","徳山",87124,"2008-9-12");

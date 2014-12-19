@@ -48,7 +48,9 @@ dict_aa = data_prepare_proc ()
 #
 dict_display_proc (dict_aa)
 #
-os.remove (file_out)
+if os.path.isfile(file_out):
+	os.remove (file_out)
+#
 out_str = json.dumps (dict_aa)
 file_write_proc (file_out,out_str)
 os.chmod (file_out,0o666)

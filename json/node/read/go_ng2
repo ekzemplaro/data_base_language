@@ -1,0 +1,3 @@
+#
+./json_read.js /var/tmp/plain_text/cities.json
+#

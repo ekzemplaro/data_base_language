@@ -1,9 +1,9 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	redis_python_delete.py
 #
-#						Jul/20/2011
+#						Dec/09/2014
 #
 #
 import sys
@@ -15,27 +15,25 @@ import	redis
 #
 sys.path.append ("/var/www/data_base/common/python_common")
 #
-from mcache_manipulate import mcache_delete_proc
 from cgi_manipulate import parse_parameter
 # ----------------------------------------------------------------
-#rr = redis.Redis(host='localhost', port=6379, db=0)
 rr = redis.Redis(host='host_dbase', port=6379, db=0)
 #
 # -------------------------------------------------------------------
 #
-print "Content-type: text/html\n\n"
+print ("Content-type: text/html\n\n")
 #
 # ---------------------------------------------------------------
 array_bb = parse_parameter ()
 #
 for it in range (len(array_bb)):
-	id_in = array_bb[it]
-	print "id_in = %s<br />" % id_in
-	print "check bbbbbbb<br />"
-	mcache_delete_proc	(rr,id_in)
-	print "redis_delete check cccccc<br />"
+	key_in = array_bb[it]
+	print ("id_in = %s<br />" % key_in)
+#
+	str_key = str (key_in)
+	rr.delete (str_key)
 #
 #
+print ("OK<br />")
 #
-print "OK<br />"
-#
+# ---------------------------------------------------------------

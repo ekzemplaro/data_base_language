@@ -116,9 +116,9 @@ static data_prepare_proc ()
 
 	dict_aa = ff.dict_append_proc (dict_aa,"t2531","大津",51276,"1999-9-12")
 
-	dict_aa = ff.dict_append_proc (dict_aa,"t2532","草津",49172,"1999-4-23")
+	dict_aa = ff.dict_append_proc (dict_aa,"t2532","草津",49572,"1999-4-23")
 
-	dict_aa = ff.dict_append_proc (dict_aa,"t2533","守山",92153,"1999-5-24")
+	dict_aa = ff.dict_append_proc (dict_aa,"t2533","守山",92653,"1999-5-24")
 
 	dict_aa = ff.dict_append_proc (dict_aa,"t2534","栗東",86124,"1999-3-14")
 

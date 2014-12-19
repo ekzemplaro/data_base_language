@@ -1,28 +1,27 @@
+#! /usr/bin/runghc
 -- -----------------------------------------------------------------
 --	json_create.hs
 --
---					Jan/27/2014
+--					Dec/12/2014
 -- -----------------------------------------------------------------
 {-# LANGUAGE OverloadedStrings #-}
  
 import System.Environment
 import Data.Aeson
-import Data.Attoparsec (parseOnly)
 import Data.Text
-import qualified Data.ByteString.Lazy.Char8 as B
-import qualified Data.ByteString.Char8 as S
+import qualified Data.ByteString.Lazy.Char8 as BB
  
 
 -- -----------------------------------------------------------------
 dict_aa = object [
 	"t0921" .= object [
 		"name" .= ("宇都宮" :: Text),
-		"population"   .= (51392 :: Int),
+		"population"   .= (51492 :: Int),
 		"date_mod"   .= ("1960-2-5" :: Text)
        		],
 	"t0922" .= object [
 		"name" .= ("小山" :: Text),
-		"population"   .= (89476 :: Int),
+		"population"   .= (89276 :: Int),
 		"date_mod"   .= ("1960-9-24" :: Text)
        		],
 	"t0923" .= object [
@@ -72,17 +71,17 @@ dict_aa = object [
        		],
 	"t0932" .= object [
 		"name" .= ("鹿沼" :: Text),
-		"population"   .= (42864 :: Int),
+		"population"   .= (43864 :: Int),
 		"date_mod"   .= ("1960-10-12" :: Text)
        		],
 	"t0933" .= object [
 		"name" .= ("那須塩原" :: Text),
-		"population"   .= (29837 :: Int),
+		"population"   .= (25837 :: Int),
 		"date_mod"   .= ("1960-7-4" :: Text)
        		],
 	"t0934" .= object [
 		"name" .= ("那須烏山" :: Text),
-		"population"   .= (57923 :: Int),
+		"population"   .= (51923 :: Int),
 		"date_mod"   .= ("1960-5-12" :: Text)
        		]
     ]
@@ -94,7 +93,6 @@ main = do
 	args <- getArgs
 	let out_file = Prelude.head args
 	let str_out = encode dict_aa
-	B.putStrLn str_out
-	B.writeFile out_file str_out
+	BB.writeFile out_file str_out
 	putStrLn "*** 終了***"
 -- -----------------------------------------------------------------

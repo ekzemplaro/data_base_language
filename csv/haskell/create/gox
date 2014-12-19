@@ -1,2 +1,2 @@
 #
-runghc csv_create.hs /var/tmp/csv/cities.csv
+./csv_create.hs /var/tmp/csv/cities.csv

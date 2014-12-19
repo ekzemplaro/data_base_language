@@ -20,13 +20,13 @@ redis.flushdb
 #
 redis.set 't1851',json_gen_proc("福井",24713,"2006-2-15")
 redis.set 't1852',json_gen_proc("敦賀",48352,"2006-6-9")
-redis.set 't1853',json_gen_proc("小浜",76385,"2006-3-20")
+redis.set 't1853',json_gen_proc("小浜",19326,"2006-3-20")
 redis.set 't1854',json_gen_proc("大野",85397,"2006-2-8")
-redis.set 't1855',json_gen_proc("勝山",17368,"2006-5-12")
+redis.set 't1855',json_gen_proc("勝山",17346,"2006-5-12")
 redis.set 't1856',json_gen_proc("鯖江",51729,"2006-1-14")
-redis.set 't1857',json_gen_proc("あわら",76381,"2006-9-22")
-redis.set 't1858',json_gen_proc("越前",94532,"2006-8-28")
-redis.set 't1859',json_gen_proc("坂井",41854,"2006-10-20")
+redis.set 't1857',json_gen_proc("あわら",76591,"2006-9-22")
+redis.set 't1858',json_gen_proc("越前",94512,"2006-8-28")
+redis.set 't1859',json_gen_proc("坂井",41878,"2006-10-20")
 #
 puts "*** ppp ***"
 redis_display_proc(redis)

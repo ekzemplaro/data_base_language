@@ -1,10 +1,9 @@
 #
-export GROOVY_JAR=/usr/share/java/groovy-all.jar:/usr/share/java/groovy.jar
+GROOVY_ALL_JAR=/usr/share/groovy/embeddable/groovy-all.jar
 export COMMON=/var/www/data_base/common
 export GROOVY_COMMON=$COMMON/groovy_common
-export JAR=$COMMON/jar
-export H2_JAR=$JAR/h2-1.3.173.jar
-export CLASSPATH=.:$GROOVY_COMMON:$H2_JAR:$GROOVY_JAR
+H2_JAR=/usr/share/java/h2/h2.jar
+export CLASSPATH=.:$GROOVY_COMMON:$H2_JAR:$GROOVY_ALL_JAR
 #
-#groovy h2_read.groovy
 java h2_read
+#

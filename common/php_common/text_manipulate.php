@@ -109,7 +109,7 @@ function dict_update_proc ($dict_aa,$id_in,$population_in)
 // --------------------------------------------------------------------
 function dict_delete_proc ($dict_aa,$id_in)
 {
-	print	"dict_delete_proc $id_in\t";
+//	print	"dict_delete_proc $id_in\t";
 
 	if (isset ($dict_aa[$id_in]))
 		{

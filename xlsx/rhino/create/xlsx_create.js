@@ -2,7 +2,7 @@
 // ----------------------------------------------------------------
 /*
 	xlsx_create.js
-					Aug/05/2013
+					Dec/12/2014
 
 */
 // ----------------------------------------------------------------
@@ -27,15 +27,15 @@ function data_prepare_proc ()
 {
 	var dict_aa = new Object ();
 
-	dict_aa = dict_append_proc (dict_aa,'t2971','奈良',42157,'1951-7-12');
-	dict_aa = dict_append_proc (dict_aa,'t2972','大和高田',79146,'1951-4-25');
-	dict_aa = dict_append_proc (dict_aa,'t2973','大和郡山',52648,'1951-5-2');
-	dict_aa = dict_append_proc (dict_aa,'t2974','天理',38726,'1951-6-22');
-	dict_aa = dict_append_proc (dict_aa,'t2975','橿原',43852,'1951-8-14');
-	dict_aa = dict_append_proc (dict_aa,'t2976','桜井',61579,'1951-10-12');
-	dict_aa = dict_append_proc (dict_aa,'t2977','五條',37981,'1951-3-21');
-	dict_aa = dict_append_proc (dict_aa,'t2978','御所',52416,'1951-7-26');
-	dict_aa = dict_append_proc (dict_aa,'t2979','生駒',74857,'1951-11-8');
+	dict_aa = dict_append_proc (dict_aa,'t2971','奈良',423157,'1951-7-12');
+	dict_aa = dict_append_proc (dict_aa,'t2972','大和高田',792146,'1951-4-25');
+	dict_aa = dict_append_proc (dict_aa,'t2973','大和郡山',529648,'1951-5-2');
+	dict_aa = dict_append_proc (dict_aa,'t2974','天理',387126,'1951-6-22');
+	dict_aa = dict_append_proc (dict_aa,'t2975','橿原',438652,'1951-8-14');
+	dict_aa = dict_append_proc (dict_aa,'t2976','桜井',615879,'1951-10-12');
+	dict_aa = dict_append_proc (dict_aa,'t2977','五條',372981,'1951-3-21');
+	dict_aa = dict_append_proc (dict_aa,'t2978','御所',529416,'1951-7-26');
+	dict_aa = dict_append_proc (dict_aa,'t2979','生駒',741853,'1951-11-8');
 
 	return	dict_aa;
 }

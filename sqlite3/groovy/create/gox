@@ -5,7 +5,7 @@ export JAR=$COMMON/jar
 #
 export SQLITE3_JAR=$JAR/sqlite-jdbc-3.7.2.jar
 #
-export GROOVY_JAR=/usr/share/java/groovy-all.jar:/usr/share/java/groovy.jar
-export CLASSPATH=.:$GROOVY_COMMON:$SQLITE3_JAR:$GROOVY_JAR
+GROOVY_ALL_JAR=/usr/share/groovy/embeddable/groovy-all.jar
+export CLASSPATH=.:$GROOVY_COMMON:$SQLITE3_JAR:$GROOVY_ALL_JAR
 #
 java sqlite3_create /var/tmp/sqlite3/cities.db

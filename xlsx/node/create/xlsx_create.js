@@ -3,7 +3,7 @@
 //
 //	xlsx_create.js
 //
-//					Oct/17/2014
+//					Dec/12/2014
 //
 // ---------------------------------------------------------------
 var fs = require("fs");
@@ -18,7 +18,7 @@ function data_prepare_proc ()
 {
 	var dict_aa = new Object ();
 
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t2971','奈良',591428,'1950-9-12');
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t2971','奈良',391428,'1950-9-12');
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t2972','大和高田',831257,'1950-3-15');
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t2973','大和郡山',652841,'1950-10-2');
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t2974','天理',531864,'1950-6-22');

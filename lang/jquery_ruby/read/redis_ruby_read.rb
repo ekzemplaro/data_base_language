@@ -3,7 +3,7 @@
 #
 #	redis_ruby_read.rb
 #
-#					Jun/13/2013
+#					Dec/09/2014
 # -------------------------------------------------------------
 require 'rubygems'
 require 'redis'

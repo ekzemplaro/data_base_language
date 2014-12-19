@@ -1,8 +1,9 @@
 #! /usr/bin/ruby
+# -*- coding: utf-8 -*-
 #
 #	read/sqlite3_read_ruby.rb
 #
-#					Sep/11/2014
+#					Dec/09/2014
 #
 require 'sqlite3'
 require	'json'

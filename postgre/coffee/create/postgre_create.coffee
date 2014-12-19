@@ -13,15 +13,15 @@ text_manipulate= require ('/var/www/data_base/common/coffee_common/text_manipula
 data_prepare_proc = () ->
 	dict_aa = new Object
 
-	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t3461','広島',67423,'1950-8-22')
-	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t3462','福山',71456,'1950-2-17')
-	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t3463','東広島',52741,'1950-10-2')
-	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t3464','呉',36429,'1950-6-22')
-	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t3465','尾道',62578,'1950-8-14')
-	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t3466','竹原',29481,'1950-9-12')
-	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t3467','三次',31254,'1950-3-21')
-	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t3468','大竹',56481,'1950-7-26')
-	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t3469','府中',81736,'1950-10-2')
+	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t3461','広島',61423,'1954-8-22')
+	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t3462','福山',79456,'1954-2-17')
+	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t3463','東広島',32741,'1954-10-2')
+	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t3464','呉',76429,'1954-6-22')
+	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t3465','尾道',62578,'1954-8-14')
+	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t3466','竹原',29481,'1954-9-12')
+	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t3467','三次',31254,'1954-3-21')
+	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t3468','大竹',56481,'1954-7-26')
+	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t3469','府中',81736,'1954-10-2')
 	
 	return	dict_aa
 # ---------------------------------------------------------------

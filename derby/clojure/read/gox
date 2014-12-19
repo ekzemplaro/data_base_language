@@ -2,8 +2,8 @@
 SHARE=/usr/share/java
 JDBC=$SHARE/java.jdbc.jar
 #
-DERBY_HOME=/usr/share/javadb
+DERBY_JAR=/usr/share/java/derby/derbyclient.jar
 #
-export CLASSPATH=.:$JDBC:$SHARE/clojure.jar:$DERBY_HOME/lib/derbyclient.jar 
+export CLASSPATH=.:$JDBC:/usr/share/clojure/clojure.jar:$DERBY_JAR
 #
 java clojure.main derby_read.clj 

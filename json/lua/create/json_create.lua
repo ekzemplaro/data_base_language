@@ -2,17 +2,17 @@
 -- ----------------------------------------------------
 --	json_create.lua
 --
---				May/27/2011
+--				Dec/15/2014
 --
 -- ----------------------------------------------------
 require	'text_manipulate'
 -- ----------------------------------------------------
 function data_prepare_proc ()
 dict_aa = {}
-dict_aa = dict_append_proc (dict_aa,"t0921","宇都宮",93175,"1981-5-17")
-dict_aa = dict_append_proc (dict_aa,"t0922","小山",67154,"1981-8-9")
-dict_aa = dict_append_proc (dict_aa,"t0923","佐野",53643,"1981-9-15")
-dict_aa = dict_append_proc (dict_aa,"t0924","足利",41329,"1981-3-22")
+dict_aa = dict_append_proc (dict_aa,"t0921","宇都宮",93875,"1981-5-17")
+dict_aa = dict_append_proc (dict_aa,"t0922","小山",67254,"1981-8-9")
+dict_aa = dict_append_proc (dict_aa,"t0923","佐野",53143,"1981-9-15")
+dict_aa = dict_append_proc (dict_aa,"t0924","足利",41829,"1981-3-22")
 dict_aa = dict_append_proc (dict_aa,"t0925","日光",86178,"1981-7-11")
 dict_aa = dict_append_proc (dict_aa,"t0926","下野",38527,"1981-9-21")
 dict_aa = dict_append_proc (dict_aa,"t0927","さくら",49536,"1981-1-4")
@@ -28,9 +28,10 @@ dict_aa = dict_append_proc (dict_aa,"t0934","那須烏山",83215,"1981-6-12")
 end
 -- ----------------------------------------------------
 json = require("json")
-print (dict_aa,"*** 開始 ***")
-
+print ("*** 開始 ***")
 file_out=arg[1]
+print (file_out)
+
 io.output (file_out)
 
 dict_aa = data_prepare_proc ()

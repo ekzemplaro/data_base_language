@@ -1,8 +1,8 @@
 #! /usr/bin/nodejs
 // ---------------------------------------------------------------
-//	json_read.js
+//	read/json_read.js
 //
-//					Dec/10/2012
+//					Nov/25/2012
 //
 // ---------------------------------------------------------------
 var fs = require("fs");
@@ -14,11 +14,26 @@ var filename=process.argv[2];
 
 console.log (filename);
 
-var json_str = fs.readFileSync (filename,'utf8');
+if (fs.existsSync(filename))
+	{
+	var json_str = fs.readFileSync (filename,'utf8');
 
-var dict_aa = JSON.parse (json_str);
+	try
+		{
+		var dict_aa = JSON.parse (json_str);
+		text_manipulate.dict_display_proc (dict_aa);
+		}
+	catch (error)
+		{
+		console.log ("*** error *** from JSON.parse ***");
+		console.log (error);
+		}
+	}
+else
+	{
+	console.log ("*** error *** " + filename + " doesn't exist. ***");
+	}
 
-text_manipulate.dict_display_proc (dict_aa);
 
 console.log ("*** 終了 ***");
 // ---------------------------------------------------------------

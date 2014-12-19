@@ -5,7 +5,7 @@ DLL=$(COMMON)/dll
 mongo_create.exe : mongo_create.boo
 	booc mongo_create.boo \
 		$(BOO_COMMON)/text_manipulate.boo \
-		-r:$(CSHARP_COMMON)/table_manipulate.dll \
+		$(BOO_COMMON)/mongo_manipulate.boo \
 		-r:$(DLL)/MongoDB.dll
 clean:
 	rm -f *.exe *.mdb

@@ -9,6 +9,9 @@ fbreader cities.epub<p />
 <blockquote>
 # apt-get install fbreader<p />
 # pacman -S fbreader<p />
+	<blockquote>
+	$ FBReader /var/tmp/epub/cities.epub<p />
+	</blockquote>
 </blockquote>
 
 <blockquote>

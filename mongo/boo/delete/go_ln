@@ -1,5 +1,4 @@
 #
 COMMON=/var/www/data_base/common
-CSHARP_COMMON=$COMMON/csharp_common
-ln -s $COMMON/dll/MongoDB.dll MongoDB.dll
-ln -s $CSHARP_COMMON/table_manipulate.dll table_manipulate.dll
+ln -s $COMMON/dll/MongoDB.dll .
+#

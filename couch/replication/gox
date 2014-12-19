@@ -1,0 +1,7 @@
+#
+curl --noproxy '*' http://dfx035:5984/_all_dbs
+#
+#
+#
+echo '*** aaa ***'
+#

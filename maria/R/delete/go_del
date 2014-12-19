@@ -1,0 +1,1 @@
+Rscript --no-restore --no-save maria_delete.R t3323

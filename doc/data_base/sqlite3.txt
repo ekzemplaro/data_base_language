@@ -22,6 +22,10 @@ ii  php5-sqlite  5.4.9-4ubuntu2   amd64    SQLite module for php5
 </blockquote>
 <blockquote>
 # pacman -S php-sqlite<p />
+/etc/php/php.ini<br />
+	<blockquote>
+	extension=pdo_sqlite.so<p />
+	</blockquote>
 </blockquote>
 
 Python<p />
@@ -39,7 +43,9 @@ Ruby<p />
 ii  ruby-dbd-sqlite3    1.2.5+gem2deb-2    all    Ruby/DBI SQLite3 driver
 ii  ruby-sqlite3        1.3.8-2            amd64  SQLite3 interface for Ruby
 </pre>
-
+</blockquote>
+<blockquote>
+$ gem install sqlite3<br />
 </blockquote>
 
 Tcl<p />
@@ -99,6 +105,12 @@ node.js<p />
 Java<p />
 <blockquote>
 	<a href="http://www.xerial.org/maven/repository/artifact/org/xerial/sqlite-jdbc/3.7.2/">sqlite-jdbc-3.7.2.jar</a><p />
+
+	Arch Linux<br />
+	<blockquote>
+	# pacman -S javasqlite<br />
+	</blockquote>
+
 </blockquote>
 
 C#<p />

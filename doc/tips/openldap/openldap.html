@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+<title>openldap Dec/09/2014</title>
+</head>
+<body>
+<h2>openldap</h2><p />
+
+<a href="https://wiki.archlinux.org/index.php/LDAP_authentication">LDAP authentication</a><p />
+<a href="https://wiki.archlinux.org/index.php/OpenLDAP">OpenLDAP</a><p />
+<a href="http://www.geocities.jp/sugachan1973/doc/funto90.html">OpenLdap 入門</a><p />
+<hr />
+install<p />
+<blockquote>
+	# apt-get install slapd ldap-utils<p />
+</blockquote>
+
+Arch Linux<br />
+<blockquote>
+# pacman -S openldap<p />
+# pacman -S phpldapadmin<p />
+For Client<br />
+	<blockquote>
+	# pacman -S nss-pam-ldapd<p />
+	<a href="./ldap_ninsyo.html">LDAP 認証</a><p />
+	</blockquote>
+</blockquote>
+<hr />
+# slaptest<br />
+546c2a97 bdb_monitor_db_open: monitoring disabled; configure monitor database to enable<br />
+config file testing succeeded<br />
+<p />
+# systemctl start slapd<br />
+Job for slapd.service failed. See "systemctl status slapd.service" and "journalctl -xe" for details.<br />
+<hr />
+<ul>
+<li>パスワードの設定</li>
+<blockquote>
+<pre>
+# slappasswd
+New password: 
+Re-enter new password: 
+{SSHA}idXpCPakhhdw/rDcn3oLGDtZrexUwUN5
+<pre />
+
+</blockquote>
+
+<li>slapd.conf の設定</li>
+/etc/openldap/slapd.conf<br />
+<blockquote>
+<pre> 
+database        bdb
+suffix          "dc=example,dc=com"
+rootdn          "cn=Manager,dc=example,dc=com"
+rootpw          {SSHA}idXpCPakhhdw/rDcn3oLGDtZrexUwUN5
+</pre> 
+</blockquote>
+
+<li>slapd.conf を slapd.d に反映する</li>
+	<blockquote>
+	slaptestを実行して設定ファイルの有効性をチェックし、新しい設定ディレクトリを指定<p />
+	# rm -rf /etc/openldap/slapd.d/*<p />
+	$ sudo -u ldap slaptest -f /etc/openldap/slapd.conf -F /etc/openldap/slapd.d<p />
+	</blockquote>
+
+</ul>
+
+<blockquote>
+# cd /var/lib/openldap/openldap-data<br />
+# cp DB_CONFIG.example DB_CONFIG<br />
+</blockquote>
+
+<blockquote>
+	# mkdir /run/openldap<br />
+	# chown ldap:ldap /run/openldap<br />
+	# slaptest -u<br />
+	<blockquote>
+	config file testing succeeded<br />
+	</blockquote>
+
+</blockquote>
+# chown -R ldap:ldap /etc/openldap<br />
+# systemctl start slapd<br />
+<blockquote>
+</blockquote>
+
+<hr />
+
+Client<br />
+<blockquote>
+<pre>
+$ ldapsearch -x -b '' -s base '(objectclass=*)' namingContexts
+# extended LDIF
+#
+# LDAPv3
+# base <> with scope baseObject
+# filter: (objectclass=*)
+# requesting: namingContexts 
+#
+
+#
+dn:
+namingContexts: dc=example,dc=com
+
+# search result
+search: 2
+result: 0 Success
+
+# numResponses: 2
+# numEntries: 1
+$
+</pre>
+</blockquote>
+
+<br />
+ポートを指定<br />
+<blockquote>
+ldapsearch -x -b '' -s base '(objectclass=*)' -p 389 -h localhost namingContexts
+<p />
+</blockquote>
+サーバーを指定<br />
+<blockquote>
+$ ldapsearch -H ldap://server -x -b '' -s base '(objectclass=*)'   namingContexts<p />
+$ ldapsearch -H ldap://server -D "cn=Manager,dc=example,dc=com" -w password uid=scott
+</blockquote>
+
+<hr />
+<a href="http://www.novell.com/coolsolutions/tools/13765.html">LDAP Browser/Editor</a><p />
+<blockquote>
+lbe.sh を編集する<br />
+	<blockquote>
+	CMD="/usr/bin/java -cp ${COMMON}:${EXEC}"<br />
+	</blockquote>
+設定<br />
+	<blockquote>
+	Version: 3<br />
+	Base DN: dc=example,dc=com<br />
+	</blockquote>
+</blockquote>
+
+phpLDAPadmin<p /> 
+<blockquote>
+/etc/php/php.ini<br />
+	<blockquote>
+	open_basedir = /var/www/:/var/tmp/:/home/:/tmp/:/usr/share/pear/:/usr/share/webapps/:/etc/webapps<p />
+	extension=ldap.so<p />
+	</blockquote>
+	ログイン<br />
+	<blockquote>
+	Login DN:<br />
+	cn=Manager,dc=example,dc=com
+	</blockquote>
+</blockquote>
+
+apachedirectorystudio<p />
+	<blockquote>
+	$ yaourt -Sb apachedirectorystudio<p />
+	</blockquote>
+	ログイン<br />
+	<blockquote>
+	user:<br />
+	cn=Manager,dc=example,dc=com
+	</blockquote>
+<hr />
+データの追加<br />
+<blockquote>
+<a href="ldif/base.ldif.txt">base.ldif</a><p />
+<pre>
+$ ldapadd -D "cn=Manager,dc=example,dc=com" -w password -f base.ldif
+adding new entry "dc=example,dc=com"
+
+adding new entry "cn=Manager,dc=example,dc=com"
+
+adding new entry "ou=People,dc=example,dc=com"
+
+adding new entry "ou=Groups,dc=example,dc=com"
+
+adding new entry "ou=Staff,dc=example,dc=com"
+
+$
+</pre>
+</blockquote>
+データの削除<br />
+<blockquote>
+<pre>
+ldapdelete -x -D "cn=Manager,dc=example,dc=com" -w password \
+	"ou=Staff,dc=example,dc=com"
+#
+ldapdelete -x -D "cn=Manager,dc=example,dc=com" -w password \
+	"ou=People,dc=example,dc=com"
+#
+ldapdelete -x -D "cn=Manager,dc=example,dc=com" -w password \
+	"ou=Groups,dc=example,dc=com"
+#
+#ldapdelete -x -D "cn=Manager,dc=example,dc=com" -w password \
+#	"ou=Manager,dc=example,dc=com"
+#
+ldapdelete -x -D "cn=Manager,dc=example,dc=com" -w password \
+	"cn=Manager,dc=example,dc=com"
+#
+ldapdelete -x -D "cn=Manager,dc=example,dc=com" -w password \
+	"dc=example,dc=com"
+#
+</pre>
+</blockquote>
+データの一括削除<br />
+<blockquote>
+<pre>
+ldapdelete -x -D "cn=Manager,dc=example,dc=com" -w password \
+	-r "dc=example,dc=com"
+</pre>
+</blockquote>
+データの確認<br />
+	<blockquote>
+	$ ldapsearch -D "cn=Manager,dc=example,dc=com" -w password '(objectclass=*)'<p />
+	$ ldapsearch -D "cn=Manager,dc=example,dc=com" -w password cn=Manager<p />
+	$ ldapsearch -D "cn=Manager,dc=example,dc=com" -w password ou=Nankichi<p />
+	</blockquote>
+ldifの例<br />
+	<blockquote>
+	<a href="ldif/base_bb.ldif.txt">base_bb.ldif</a><p />
+	<a href="ldif/base_cc.ldif.txt">base_cc.ldif</a>&nbsp;&nbsp;&nbsp;
+	<a href="ldif/users_cc.ldif.txt">users_cc.ldif</a><p />
+	</blockquote>
+<hr />
+スキーマの追加<p />
+/etc/openldap/slapd.conf<br />
+	<blockquote>
+	<pre>
+	include         /etc/openldap/schema/core.schema
+	include         /etc/openldap/schema/cosine.schema
+	include         /etc/openldap/schema/nis.schema
+	include         /etc/openldap/schema/inetorgperson.schema
+	</pre>
+	</blockquote>
+
+<hr />
+<hr />
+データのコピー<br />
+	<blockquote>
+	export<br />
+	<blockquote>
+	# slapcat > tmp01.ldif<p />
+	</blockquote>
+	フィルター<br />
+	<blockquote>
+	awk '!/structuralObjectClass/{print $0}' | \<br />
+	awk '!/entryUUID/{print $0}' | \<br />
+	awk '!/creatorsName/{print $0}' | \<br />
+	awk '!/createTimestamp/{print $0}' | \<br />
+	awk '!/entryCSN/{print $0}' | \<br />
+	awk '!/modifiersName/{print $0}' | \<br />
+	awk '!/modifyTimestamp/{print $0}'<br />
+	</blockquote>
+
+	import<br />
+	<blockquote>
+	$ ldapadd -x -D "cn=Manager,dc=example,dc=com" -w password -f ./tmp01.ldif<p />
+	</blockquote>
+	</blockquote>
+<hr />
+<a href="/data_base/">Return</a><p />
+Dec/09/2014 AM 08:15<p />
+</body>
+</html>

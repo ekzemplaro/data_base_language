@@ -1,7 +1,8 @@
+#! /usr/bin/runghc
 -- -----------------------------------------------------------------
 --	csv_update.hs
 --
---						Oct/10/2012
+--						Dec/12/2014
 --
 -- -----------------------------------------------------------------
 import System.Environment
@@ -28,7 +29,6 @@ main = do
 	let hash_bb = map (update_proc key_in population_in today) hash_aa
 --
 	let str_aa = dict_to_str_proc "," hash_bb
-	putStr str_aa
 	writeFile file_name str_aa
 --
 	putStrLn "*** 終了***"

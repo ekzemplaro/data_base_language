@@ -1,3 +1,2 @@
 #
-runghc xml_create.hs /var/tmp/xml_file/cities.xml
-#runghc xml_create.hs cities.xml
+./xml_create.hs /var/tmp/xml_file/cities.xml

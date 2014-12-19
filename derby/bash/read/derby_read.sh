@@ -2,12 +2,12 @@
 #
 #	derby_read.sh
 #
-#					Jul/06/2012
+#					Nov/28/2014
 #
 # ---------------------------------------------------------------------
 #
-export DERBY_HOME=/usr/share/javadb
-export PATH="$DERBY_HOME/bin:$PATH"
+export DERBY_BIN=/usr/share/java/derby/bin
+export PATH="$DERBY_BIN:$PATH"
 #
 BASH_COMMON=/var/www/data_base/common/bash_common
 sql_files=$BASH_COMMON"/sql_files/derby"

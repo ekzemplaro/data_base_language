@@ -2,39 +2,69 @@
 /*
 	sqlite3_read.java
 
-				Jan/24/2011
+				Nov/28/2014
 
-	java  -classpath ".:sqlite-jdbc-3.6.17.1.jar" sqlite3_read
 
 */
 // ----------------------------------------------------------------------
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import	java.util.List;
+import	java.util.ArrayList;
 
-// ----------------------------------------------------------------------
 public class sqlite3_read
 {
 
 // ----------------------------------------------------------------------
-public static void main (String[] args) throws Exception
+public static void main(String args[])
 {
-	Class.forName("org.sqlite.JDBC");
-
-	System.out.println ("*** 開始 *** sqlite3_java ***");
-
 	String sqlite3_file = args[0];
 
-	String str_connect = "jdbc:sqlite:" + sqlite3_file;
+	System.out.println ("*** 開始 ***");
 
-	System.out.println ("\tstr_connect = " + str_connect);
+	System.out.println("LIB version: " + SQLite.Database.version());
+	SQLite.Database db = new SQLite.Database();
 
-	Connection conn = DriverManager.getConnection (str_connect);
+	try
+	{
+	db.open(sqlite3_file, 0666);
+	System.out.println("DB version: " + db.dbversion());
 
-	rdb_common.display_proc (conn);
+	String sql = "select * from cities";
 
-	conn.close ();
+	SQLite.Stmt stmt = db.prepare(sql);
+
+	while (stmt.step())
+		{
+	int i, ncol = stmt.column_count();
+//	System.out.println (ncol);
+	String out_str = "";
+
+	List<String> list_str = new ArrayList<String>();
+
+	for (int it = 0; it < ncol; it++)
+		{
+		Object obj = stmt.column(it);
+		out_str += obj.toString();
+
+		if (it != (ncol - 1))
+			{
+			out_str +=  "\t";
+			}
+		list_str.add (obj.toString());
+		}
+
+	System.out.println (out_str);
+	System.out.println (list_str.toString ());
+
+		}
+
+	stmt.close();
+
+	db.close();
+	}
+	catch (SQLite.Exception ee)
+		{
+		ee.printStackTrace();
+		}
 
 	System.out.println ("*** 終了 ***");
 }

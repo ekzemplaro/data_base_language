@@ -3,7 +3,7 @@
 //
 //	xlsx_read.php
 //
-//					Jul/18/2013
+//					Dec/17/2014
 //
 // ----------------------------------------------------------------
 $path="/var/www/data_base/common/php_common";
@@ -13,6 +13,8 @@ include "text_manipulate.php";
 include "excel_manipulate.php";
 // ----------------------------------------------------------------
 print "*** 開始 ***\n";
+
+date_default_timezone_set('Asia/Tokyo');
 
 $file_in = $argv[1];
 #

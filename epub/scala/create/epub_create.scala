@@ -11,9 +11,9 @@ import com.adobe.dp.epub.io.OCFContainerWriter
 import com.adobe.dp.epub.ncx.TOCEntry
 import com.adobe.dp.epub.opf.NCXResource
 import com.adobe.dp.epub.opf.OPSResource
-import com.adobe.dp.epub.opf.Publication
 import com.adobe.dp.epub.ops.Element
 import com.adobe.dp.epub.ops.OPSDocument
+import com.adobe.dp.epub.opf.Publication
 
 import scala.collection.mutable
 
@@ -88,9 +88,9 @@ def data_prepare_proc ():(mutable.Map[String,Object]) = {
 
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1932","富士吉田",39142,"1998-4-23")
 
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1933","都留",27153,"1998-5-24")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1933","都留",27853,"1998-5-24")
 
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1934","山梨",89124,"1998-9-14")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1934","山梨",89624,"1998-9-14")
 
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1935","大月",72531,"1998-8-12")
 

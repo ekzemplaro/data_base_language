@@ -3,7 +3,7 @@
 //
 //	xlsx_update.php
 //
-//					Jul/30/2013
+//					Dec/17/2014
 //
 // ----------------------------------------------------------------
 $path="/var/www/data_base/common/php_common";
@@ -14,6 +14,7 @@ include "excel_manipulate.php";
 include "xlsx_manipulate.php";
 // ----------------------------------------------------------------
 print "*** 開始 ***\n";
+date_default_timezone_set('Asia/Tokyo');
 
 $file_xlsx = $argv[1];
 $id_in = $argv[2];

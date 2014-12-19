@@ -1,0 +1,23 @@
+-- ----------------------------------------------------
+function getKeysSortedByValue(tbl)
+	local keys = {}
+	for key in pairs(tbl) do
+		table.insert(keys, key)
+		print (key)
+	end
+
+	table.sort (keys)
+
+	return keys
+end
+
+-- ----------------------------------------------------
+
+keys = getKeysSortedByValue (dict_aa)
+
+for key,value in pairs (keys) do
+	out_str = join_proc (dict_aa,value,"\t")
+	print (out_str)
+end
+
+-- ----------------------------------------------------

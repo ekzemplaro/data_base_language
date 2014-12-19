@@ -1,7 +1,7 @@
 <meta content="Program Language Examples in newlisp" name="description">
 <meta content="newlisp,クライアント,接続,言語,サンプル" name="keyword">
 <meta content="Uchida Masatomo" name="author">
-<title>newLisp Dec/04/2013</title>
+<title>newLisp Dec/15/2014</title>
 </head>
 <body>
 <h2><a href="http://www.newlisp.org">newLisp</a></h2><p />
@@ -48,6 +48,8 @@ newLISP v.10.5.3 64-bit on Linux IPv4/6 UTF-8 libffi, options: newlisp -h
 		Japanese</a><p />
 </blockquote>
 
+Arch Linux<br />
 <blockquote>
+	$ yaourt -Sb newlisp<p />
 </blockquote>
 

@@ -2,11 +2,33 @@
 // ---------------------------------------------------------------
 //	redis_create.js
 //
-//					Aug/08/2013
+//					Dec/17/2014
 //
+// ---------------------------------------------------------------
+var fs = require("fs");
+var text_manipulate=require ("/var/www/data_base/common/node_common/text_manipulate");
+// ---------------------------------------------------------------
+function data_prepare_proc ()
+{
+		var dict_aa = new Object ();
+
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1851','福井',95714,'1950-9-12');
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1852','敦賀',28157,'1950-3-15');
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1853','小浜',67241,'1950-10-2');
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1854','大野',32864,'1950-6-22');
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1855','勝山',41358,'1950-8-14');
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1856','鯖江',64792,'1950-9-12');
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1857','あわら',38251,'1950-3-21');
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1858','越前',52486,'1950-7-26');
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1859','坂井',26157,'1950-11-18');
+	
+	return	dict_aa;
+}
 // ---------------------------------------------------------------
 console.log ("*** 開始 ***");
 //
+var dict_aa = data_prepare_proc ();
+
 var redis = require("redis"),
 //client = redis.createClient();
 client = redis.createClient(6379,'host_dbase');
@@ -15,25 +37,12 @@ client.on("error", function (err) {
         console.log("Redis connection error to " + client.host + ":" + client.port + " - " + err);
     });
 
-client.set('t1851', '{"name":"福井","population":41536,"date_mod":"1950-12-20"}', redis.print);
-client.set('t1852', '{"name":"敦賀","population":34298,"date_mod":"1950-3-8"}', redis.print);
-client.set('t1853', '{"name":"小浜","population":75326,"date_mod":"1950-9-12"}', redis.print);
-client.set('t1854', '{"name":"大野","population":32715,"date_mod":"1950-6-18"}', redis.print);
-client.set('t1855', '{"name":"勝山","population":62158,"date_mod":"1950-11-15"}' , redis.print);
-client.set('t1856', '{"name":"鯖江","population":42975,"date_mod":"1950-5-12"}'
- , redis.print);
-client.set('t1857', '{"name":"あわら","population":52836,"date_mod":"1950-2-14"}'
-, redis.print);
-client.set('t1858', '{"name":"越前","population":34251,"date_mod":"1950-1-19"}', redis.print);
-client.set('t1859', '{"name":"坂井","population":62457,"date_mod":"1950-7-11"}'
-, redis.print);
+for (var key in dict_aa)
+	{
+	var str_json = JSON.stringify (dict_aa[key]);
 
-
-var keys=["t1851","t1852","t1853"]
-for (var it in keys)
-{
-client.get(keys[it], redis.print);
-}
+	client.set(key, str_json, redis.print);
+	}
 
 client.quit();
 console.log ("*** 終了 ***");

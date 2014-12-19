@@ -1,44 +1,50 @@
 // ----------------------------------------------------------------------
 /*
-	java/delete/sqlite3_delete.java
+	sqlite3_delete.java
 
-				May/26/2011
+					Nov/28/2014
 
 
 */
-// ----------------------------------------------------------------------
-import java.util.Date;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
-
 // ----------------------------------------------------------------------
 public class sqlite3_delete
 {
 
 // ----------------------------------------------------------------------
-public static void main (String[] args) throws Exception
+public static void main(String args[])
 {
-	Class.forName ("org.sqlite.JDBC");
+	System.out.println ("*** 開始 ***");
 
-	System.out.println ("*** 開始 *** sqlite3_update ***");
+	String sqlite3_file = args[0];
+	String	key_in = args[1];
+	System.out.println ("\tkey_in = " + key_in);
 
-	String file_name = args[0];
+	System.out.println("LIB version: " + SQLite.Database.version());
+	SQLite.Database db = new SQLite.Database();
 
-	String	id = args[1];
-	System.out.println ("\tid = " + id);
+	try
+	{
+	db.open(sqlite3_file, 0666);
+	System.out.println("DB version: " + db.dbversion());
 
-	Connection conn = DriverManager.getConnection
-		("jdbc:sqlite:" + file_name);
+	String sql = "delete from  cities where ID= '" + key_in + "'";
 
-	System.out.println ("");
+	SQLite.Stmt stmt = db.prepare(sql);
 
-	rdb_common.delete_proc	(conn,id);
+	while (stmt.step())
+		{
+		int i, ncol = stmt.column_count();
+		System.out.println (ncol);
+		}
 
-	rdb_common.display_proc	(conn);
+	stmt.close();
 
-	conn.close ();
+	db.close();
+	}
+	catch (SQLite.Exception ee)
+		{
+		ee.printStackTrace();
+		}
 
 	System.out.println ("*** 終了 ***");
 }

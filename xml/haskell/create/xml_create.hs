@@ -1,7 +1,8 @@
+#! /usr/bin/runghc
 -- -----------------------------------------------------------------
 --	xml_create.hs
 --
---					Oct/12/2012
+--					Dec/12/2014
 -- -----------------------------------------------------------------
 import System.Environment
 
@@ -22,15 +23,15 @@ data_prepare_proc :: [([Char], [([Char], [Char])])]
 data_prepare_proc =
 		[("t2261",[
 			("name","静岡"),
-			("population","14736"),
+			("population","94736"),
 			("date_mod","1960-7-21")]),
 		("t2262",[
 			("name","浜松"),
-			("population","28695"),
+			("population","28395"),
 			("date_mod","1960-8-15")]),
 		("t2263",[
 			("name","沼津"),
-			("population","35128"),
+			("population","35198"),
 			("date_mod","1960-5-24")]),
 		("t2264",[
 			("name","三島"),

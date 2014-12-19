@@ -6,22 +6,28 @@
 </ol>
 
 Bash<p />
-<ol>
+<blockquote>
 	odt2txt<p />
-</ol>
+	# pacman -S odt2txt<p />
+</blockquote>
 
-<ol>
-</ol>
+<blockquote>
+</blockquote>
 
 Python<p />
-<ol>
+<blockquote>
 	python-ooolib<p />
-</ol>
+</blockquote>
+
+Ruby<p />
+<blockquote>
+	$ gem install roo<p />
+</blockquote>
 
 Java<p />
-<ol>
-</ol>
+<blockquote>
+</blockquote>
 
 C#<p />
-<ol>
-</ol>
+<blockquote>
+</blockquote>

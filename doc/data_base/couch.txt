@@ -74,6 +74,10 @@ Ruby<p />
 <pre>
 ii  ruby-rest-client       1.6.7-4    all     simple REST client for Ruby
 </pre>
+Arch Linux<br />
+<blockquote>
+	$ yaourt -Sb ruby-rest-client<p />
+</blockquote>
 </blockquote>
 
 Ocaml<p />

@@ -18,15 +18,19 @@ cities.xlsx: Microsoft Excel 2007+<br />
 
 PHP<p />
 <blockquote>
-	<a href="http://phpexcel.codeplex.com/">PHPExcel</a><p />
+<a href="http://phpexcel.codeplex.com/">PHPExcel</a><p />
+	<blockquote>
 	PHPExcel_1.7.9_doc.zip<p />
 
-/var/www/Classes/PHPExcel.php<br />
-/var/www/Classes/PHPExcel/Calculation.php<br />
-/var/www/Classes/PHPExcel/Cell.php<br />
-</blockquote>
+	/var/www/Classes/PHPExcel.php<br />
+	/var/www/Classes/PHPExcel/Calculation.php<br />
+	/var/www/Classes/PHPExcel/Cell.php<br />
+	</blockquote>
 
-<blockquote>
+/etc/php/php.ini<br />
+	<blockquote>
+	extension=zip.so<p />
+	</blockquote>
 </blockquote>
 
 Python<p />

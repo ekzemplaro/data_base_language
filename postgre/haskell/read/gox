@@ -1,2 +1,2 @@
 #
-runghc postgre_read.hs
+./postgre_read.hs

@@ -2,7 +2,7 @@
 /*
 	epub_manipulate.groovy
 
-						Jan/08/2012
+						Dec/02/2014
 */
 // ----------------------------------------------------------
 import	java.util.HashMap
@@ -75,8 +75,6 @@ static void dict_to_epub_proc (epub_file,dict_aa)
                 } catch (Exception e) {
                         e.printStackTrace()
 	}
-
-	System.out.println ("*** 終了 ***")
 }
 
 // ----------------------------------------------------------

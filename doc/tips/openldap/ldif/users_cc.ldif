@@ -1,0 +1,51 @@
+#
+#	users_bb.ldif
+#
+#					Dec/02/2014
+#
+# ----------------------------------------------------------------
+#
+# Ryoma, example.com
+dn: ou=Ryoma,o=People,o=System Support,dc=example,dc=com
+objectClass: organizationalPerson
+cn: Sakamoto Ryoma
+sn: Sakamoto
+ou: Ryoma
+description: Samurai
+
+# Shinsaku, example.com
+dn: ou=Shinsaku,o=People,o=System Support,dc=example,dc=com
+objectClass: organizationalPerson
+cn: Takasugi Shinsaku
+sn: Takasugi
+ou: Shinsaku
+description: Samurai
+
+
+# Nankichi, example.com
+dn: ou=Nankichi,o=People,o=System Support,dc=example,dc=com
+objectClass: organizationalPerson
+cn: Niimi Nankichi
+sn: Niimi
+ou: Nankichi
+description: Writer
+
+
+# Kenji, example.com
+dn: ou=Kenji,o=People,o=System Support,dc=example,dc=com
+objectClass: organizationalPerson
+cn: Miyazawa Kenji
+sn: Miyazawa
+ou: Kenji
+description: Writer
+
+# Souseki, example.com
+dn: ou=Souseki,o=People,o=System Support,dc=example,dc=com
+objectClass: organizationalPerson
+cn: Natsume Souseki
+sn: Natsume
+ou: Souseki
+description: Writer
+
+#
+# ----------------------------------------------------------------

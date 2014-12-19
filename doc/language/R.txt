@@ -1,7 +1,7 @@
 <meta content="Program Language Examples in R" name="description">
 <meta content="R,クライアント,接続,言語,サンプル" name="keyword">
 <meta content="Uchida Masatomo" name="author">
-<title>R Feb/21/2014</title>
+<title>R Nov/27/2014</title>
 </head>
 <body>
 <h2><a href="http://www.r-project.org">R</a></h2><p />
@@ -35,4 +35,11 @@ ii  r-cran-rmysql  0.9-3-2       amd64   GNU R package providing a DBI-compliant
 </blockquote>
 
 <blockquote>
+</blockquote>
+
+<hr />
+Arch Linux<br />
+<blockquote>
+# pacman -S r<br />
+$ yaourt -Sb r-mysql<br />
 </blockquote>

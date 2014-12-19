@@ -31,7 +31,7 @@ def	data_prepare_proc ():
 	dict_aa = dict_append_proc (dict_aa,'t2031','駒ヶ根',72685,'2003-9-17')
 	dict_aa = dict_append_proc (dict_aa,'t2032','佐久',28741,'2003-7-20')
 	dict_aa = dict_append_proc (dict_aa,'t2033','伊那',12753,'2003-3-12')
-	dict_aa = dict_append_proc (dict_aa,'t2034','千曲',62538,'2003-8-19')
+	dict_aa = dict_append_proc (dict_aa,'t2034','千曲',62518,'2003-8-19')
 #
 	return	dict_aa
 #

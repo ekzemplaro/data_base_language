@@ -1,8 +1,9 @@
 #
 export JAVA_COMMON=/var/www/data_base/common/java_common
 #
-export DERBY_HOME=/usr/share/javadb
+#export DERBY_HOME=/usr/share/javadb
+export DERBY_HOME=/usr/share/java/derby
 #
-export CLASSPATH=.:$JAVA_COMMON:$DERBY_HOME/lib/derbyclient.jar
+export CLASSPATH=.:$JAVA_COMMON:$DERBY_HOME/derbyclient.jar
 #
 java derby_read

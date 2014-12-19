@@ -4,4 +4,4 @@ export JAR=$COMMON/jar
 export CLASSPATH=.:$JAR/sqlite-jdbc-3.7.2.jar
 #
 #
-./sqlite3_update.rb /var/tmp/sqlite3/cities.db t0718 2842500
+./sqlite3_update.rb /var/tmp/sqlite3/cities.db t0718 7841500

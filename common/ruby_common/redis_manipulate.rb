@@ -2,7 +2,7 @@
 #
 #	ruby_common/redis_manipulate.rb
 #
-#				Jun/20/2011
+#				Dec/09/2014
 #
 require 'date'
 require 'json'
@@ -22,7 +22,8 @@ end
 # -------------------------------------------------------------
 def redis_display_proc (redis)
 #
-	redis.keys.each {|key|
+	keys = redis.keys.sort
+	keys.each {|key|
 		value = redis.get key
 		if (value != nil) then
 			hhh=JSON.parse(value)

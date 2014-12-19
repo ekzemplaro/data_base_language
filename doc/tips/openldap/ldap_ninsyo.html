@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+<title>ldap_ninsyo Dec/18/2014</title>
+</head>
+<body>
+<h2>ldap 認証</h2><p />
+
+/etc/openldap/ldap.conf<p />
+<blockquote>
+BASE	dc=example,dc=com<br />
+URI	ldap://server<br />
+</blockquote>
+
+# pacman -S nss-pam-ldapd<p />
+
+/etc/nslcd.conf<p />
+<blockquote>
+uri ldap://server/<br />
+base dc=example,dc=com<br />
+</blockquote>
+
+/etc/nsswitch.conf<p />
+<blockquote>
+passwd: files ldap<br />
+group: files ldap<br />
+shadow: files ldap<br />
+</blockquote>
+
+<a href="data/system-auth.txt">/etc/pam.d/system-auth</a><p />
+<blockquote>
+<pre>
+#%PAM-1.0
+
+auth      sufficient pam_ldap.so
+auth      required  pam_unix.so     try_first_pass nullok
+auth      optional  pam_permit.so
+auth      required  pam_env.so
+
+auth      sufficient pam_ldap.so
+account   required  pam_unix.so
+account   optional  pam_permit.so
+account   required  pam_time.so
+
+auth      sufficient pam_ldap.so
+password  required  pam_unix.so     try_first_pass nullok sha512 shadow
+password  optional  pam_permit.so
+
+session   required  pam_limits.so
+session   required  pam_unix.so
+auth      sufficient pam_ldap.so
+session   optional  pam_permit.so
+</pre>
+</blockquote>
+# systemctl start nslcd<p />
+
+確認の方法<br />
+
+<blockquote>
+$ ssh user@localhost<p />
+# journalctl --since "5 min ago"<p />
+</blockquote>
+
+<hr />
+
+Create home folders at login<p />
+<blockquote>
+<a href="data/system-login.txt">/etc/pam.d/system-login</a><br />
+	<blockquote>
+	session    required   pam_mkhomedir.so skel=/etc/skel umask=0022<p />
+	</blockquote>
+<a href="data/su-l.txt">/etc/pam.d/su-l</a><br />
+	<blockquote>
+	session         required        pam_mkhomedir.so skel=/etc/skel umask=0022<p />
+	</blockquote>
+<a href="data/sudo.txt">/etc/pam.d/sudo</a><br />
+	<blockquote>
+	auth      sufficient    pam_ldap.so<br />
+	</blockquote>
+</blockquote>
+
+<hr />
+Ubuntu<p>
+<blockquote>
+# apt-get install libpam-ldap nscd<p />
+	<blockquote>
+	<ol>
+	<li>LDAPサーバーのURIを指定</li>
+		base dc=example,dc=com<p />
+	<li>識別名を指定</li>
+		rootbinddn cn=Manager,dc=example,dc=com<p />
+	<li>LDAPバージョンを指定</li>
+		ldap_version 3<p />
+	</ol>
+	/etc/ldap.conf<p />
+	</blockquote>
+/etc/nsswitch.conf<br />
+	<blockquote>
+	passwd:         compat ldap<br />
+	group:          compat ldap<br />
+	shadow:         compat ldap<br />
+	<p />
+	netgroup:       ldap<br />
+	</blockquote>
+/etc/pam.d/common-session<br />
+	<blockquote>
+	session required    pam_mkhomedir.so skel=/etc/skel umask=0022<br />
+	</blockquote>
+
+/etc/init.d/nscd restart<p />
+</blockquote>
+
+<hr />
+ユーザーの確認<br />
+<blockquote>
+$ getent passwd scott<br />
+scott:x:1001:1001:スコット:/home/scott:/bin/bash<br />
+$<br />
+</blockquote>
+<hr />
+<a href="/data_base/">Return</a><p />
+Dec/18/2014 AM 08:15<p />
+</body>
+</html>
