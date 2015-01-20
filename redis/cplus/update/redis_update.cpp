@@ -2,10 +2,11 @@
 /*
 	redis_update.cpp
 
-				Jan/21/2014
+				Jan/06/2015
 
 */
 // --------------------------------------------------------------------
+#include	<iostream>
 #include	<sys/socket.h>
 #include	<netdb.h>
 
@@ -37,7 +38,6 @@ int main (int argc,char *argv[])
 
 	if (0 == getaddrinfo ("host_dbase","6379",&hints,&addrs))
 		{
-		cerr << "*** aaa ***\n";
 		redis_socket_update_proc (key_in,population_in,addrs);
 
 		freeaddrinfo(addrs);

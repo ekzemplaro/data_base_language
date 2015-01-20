@@ -1,8 +1,8 @@
-#! /usr/bin/tclsh8.5
+#! /usr/bin/tclsh
 #
 #	redis_create.tcl
 #
-#					Aug/29/2013
+#					Jan/05/2015
 #
 # ---------------------------------------------------------------
 source /var/www/data_base/common/tcl_common/text_manipulate.tcl
@@ -14,10 +14,10 @@ proc data_prepare_proc {} {
 #
 	set dict_aa [dict create]
 
-	set dict_aa [dict_append_proc $dict_aa t1851 福井 41926 1982-9-10]
-	set dict_aa [dict_append_proc $dict_aa t1852 敦賀 97283 1982-6-24]
-	set dict_aa [dict_append_proc $dict_aa t1853 小浜 35194 1982-8-8]
-	set dict_aa [dict_append_proc $dict_aa t1854 大野 81247 1982-9-15]
+	set dict_aa [dict_append_proc $dict_aa t1851 福井 41726 1982-9-10]
+	set dict_aa [dict_append_proc $dict_aa t1852 敦賀 97183 1982-6-24]
+	set dict_aa [dict_append_proc $dict_aa t1853 小浜 35594 1982-8-8]
+	set dict_aa [dict_append_proc $dict_aa t1854 大野 81647 1982-9-15]
 	set dict_aa [dict_append_proc $dict_aa t1855 勝山 27839 1982-10-17]
 	set dict_aa [dict_append_proc $dict_aa t1856 鯖江 36157 1982-5-21]
 	set dict_aa [dict_append_proc $dict_aa t1857 あわら 64392 1982-9-8]

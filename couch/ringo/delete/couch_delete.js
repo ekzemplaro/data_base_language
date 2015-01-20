@@ -3,38 +3,33 @@
 //
 //	couch_delete.js
 //
-//						Mar/15/2013
+//						Dec/19/2014
 //
 // ------------------------------------------------------------------
 var text_manipulate = require ('/var/www/data_base/common/ringo_common/text_manipulate.js');
 // ------------------------------------------------------------------
 print	("*** 開始 ***");
 var args = require('system').args;
-var id_in = args[1];
-print	(id_in);
+var key_in = args[1];
+print	(key_in);
 
 var client= require ("ringo/httpclient");
 
-var url='http://host_dbase:5984/city/cities';
+var url='http://localhost:5984/nagano/' + key_in;
 
 print	("*** ppp ***");
 var data=client.get (url);
-print	("*** qqq ***");
-
 print (data.status);
-// print (data.content);
+print (data.content);
+var unit_aa = JSON.parse (data.content);
+if ("_rev" in unit_aa)
+	{
+	print (unit_aa._rev);
 
-var dict_aa = JSON.parse (data.content);
+	var url_del = url + "?rev=" + unit_aa._rev;
 
-delete dict_aa[id_in];
-
-text_manipulate.dict_display_proc (dict_aa);
-
-var out_str = JSON.stringify (dict_aa);
-
-// print (out_str);
-
-client.put (url,out_str);
+	client.del (url_del);
+	}
 
 print	("*** 終了 ***");
 // ------------------------------------------------------------------

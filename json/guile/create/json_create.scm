@@ -3,7 +3,7 @@
 ;; ----------------------------------------------------------------------
 ;;	json_create.scm
 ;;
-;;						Feb/21/2014
+;;						Jan/05/2015
 ;;
 ;; ----------------------------------------------------------------------
 (load "/var/www/data_base/common/guile_common/text_manipulate.scm")
@@ -39,17 +39,17 @@
 	(define dict_aa (make-hash-table))
 
 (dict_append_proc dict_aa (string->symbol "t0921") "宇都宮" 53279 "1972-10-12")
-(dict_append_proc dict_aa (string->symbol "t0922") "小山" 31982 "1972-9-15")
-(dict_append_proc dict_aa (string->symbol "t0923") "佐野" 37419 "1972-7-27")
+(dict_append_proc dict_aa (string->symbol "t0922") "小山" 71382 "1972-9-15")
+(dict_append_proc dict_aa (string->symbol "t0923") "佐野" 87419 "1972-7-27")
 (dict_append_proc dict_aa (string->symbol "t0924") "足利" 91846 "1972-8-19")
 (dict_append_proc dict_aa (string->symbol "t0925") "日光" 28957 "1972-2-30")
-(dict_append_proc dict_aa (string->symbol "t0926") "下野" 31765 "1972-6-17")
+(dict_append_proc dict_aa (string->symbol "t0926") "下野" 91765 "1972-6-17")
 (dict_append_proc dict_aa (string->symbol "t0927") "日光" 58943 "1972-1-19")
-(dict_append_proc dict_aa (string->symbol "t0928") "矢板" 47329 "1972-5-13")
-(dict_append_proc dict_aa (string->symbol "t0929") "真岡" 67521 "1972-9-7")
-(dict_append_proc dict_aa (string->symbol "t0930") "栃木" 92737 "1972-3-19")
+(dict_append_proc dict_aa (string->symbol "t0928") "矢板" 48319 "1972-5-13")
+(dict_append_proc dict_aa (string->symbol "t0929") "真岡" 47521 "1972-9-7")
+(dict_append_proc dict_aa (string->symbol "t0930") "栃木" 92137 "1972-3-19")
 (dict_append_proc dict_aa (string->symbol "t0931") "大田原" 58761 "1972-5-21")
-(dict_append_proc dict_aa (string->symbol "t0932") "鹿沼" 46182 "1972-2-12")
+(dict_append_proc dict_aa (string->symbol "t0932") "鹿沼" 76142 "1972-2-12")
 (dict_append_proc dict_aa (string->symbol "t0933") "那須塩原" 82956 "1972-6-18")
 (dict_append_proc dict_aa (string->symbol "t0934") "那須烏山" 13869 "1972-9-25")
 

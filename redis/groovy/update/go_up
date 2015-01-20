@@ -5,15 +5,10 @@ export JAR=$COMMON/jar
 export USR_SHARE=/usr/share/java
 export CPA=$USR_SHARE/json-lib-2.3.jar
 #
-export CPA=$CPA:$USR_SHARE/commons-beanutils.jar
-export CPA=$CPA:$USR_SHARE/commons-lang-2.4.jar
-export CPA=$CPA:$USR_SHARE/ezmorph-1.0.6.jar
 #
-export CPA=$CPA:$USR_SHARE/commons-logging-1.1.1.jar
-export CPA=$CPA:$USR_SHARE/commons-collections3-3.2.1.jar
 export CPA=$CPA:$JAR/jedis-2.1.0.jar
 #
-export CPB=$USR_SHARE/groovy-all.jar:$USR_SHARE/groovy.jar
-export CLASSPATH=.:$CPA:$CPB:$GROOVY_COMMON
+GROOVY_ALL_JAR=/usr/share/groovy/embeddable/groovy-all.jar
+export CLASSPATH=.:$CPA:$GROOVY_ALL_JAR:$GROOVY_COMMON
 #
 java redis_update t1857 43267800

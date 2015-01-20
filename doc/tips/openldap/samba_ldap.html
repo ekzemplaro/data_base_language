@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+<title>samba_ldam Dec/25/2014</title>
+</head>
+<body>
+<h2>samba ldap 認証</h2><p />
+
+<a href="https://wiki.samba.org/index.php/Samba_%26_LDAP#Setting_up_PAM_and_NSS_to_use_LDAP">Samba & LDAP</a><p />
+ 
+スキーマのコピー<br />
+<blockquote>
+# cp /usr/share/doc/samba/examples/LDAP/samba.schema /etc/openldap/schema<p />
+</blockquote>
+
+/etc//openldap/slapd.conf<br />
+	<blockquote>
+	include         /etc/openldap/schema/samba.schema<p />
+	</blockquote>
+
+/etc/samba/smb.conf<br />
+<blockquote>
+<pre>
+security = user
+passdb backend = ldapsam:ldap://ldap.example.com
+ldap ssl = start tls
+ldap suffix = dc=example,dc=com
+ldap user suffix = ou=people
+ldap group suffix = ou=group
+# FYI, the password for this user is stored in
+# /etc/samba/secrets.tdb.  It is created by running
+# 'smbpasswd -w passwd'
+ldap admin dn = uid=samba_servers,ou=people,dc=example,dc=com
+</pre>
+</blockquote>
+
+nsswitch.conf<br />
+<blockquote>
+
+</blockquote>
+
+libnss_ldap<br />
+<blockquote>
+	/usr/lib/libnss_ldap.so.2<p />
+</blockquote>
+
+LDAPサーバー管理者パスワードをSambaへ登録<br />
+<blockquote>
+#  smbpasswd -w secret_password<br />
+Setting stored password for "cn=Manager,dc=example,dc=honda,dc=com" in secrets.tdb<br />
+</blockquote>
+
+<blockquote>
+
+</blockquote>
+
+確認の方法<p />
+表示<p />
+<blockquote>
+smbclient -L host_server<p />
+</blockquote>
+アクセス<p />
+<blockquote>
+$ smbclient //host_server/folder -U scott<p />
+Enter scott's password:<br />
+Domain=[WORKGROUP] OS=[Unix] Server=[Samba 4.1.14]<br />
+tree connect failed: NT_STATUS_ACCESS_DENIED<br />
+</blockquote>
+
+<hr />
+<a href="/data_base/">Return</a><p />
+Dec/24/2014 AM 08:15<p />
+</body>
+</html>

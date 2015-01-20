@@ -1,7 +1,7 @@
 <meta content="Program Language Examples in Haskell" name="description">
 <meta content="Haskell,クライアント,接続,言語,サンプル" name="keyword">
 <meta content="Uchida Masatomo" name="author">
-<title>Haskell Dec/12/2014</title>
+<title>Haskell Dec/22/2014</title>
 </head>
 <body>
 <h2><a href="http://haskell.org">Haskell</a></h2><p />
@@ -11,9 +11,8 @@ ii  haskell-platfo 2011.2.0.1.2   Standard Haskell libraries and tools<p />
 </blockquote>
 
 <blockquote>
-<a href="http://www.kkaneko.com/rinkou/haskell/intro.html">Haskell 入門</a><p />
+<a href="https://www.haskell.org/haskellwiki/Tutorials/Programming_Haskell/Introduction">Programming Haskell</a><p />
 </blockquote>
-
 <blockquote>
 <pre>
 $ ghci
@@ -54,14 +53,22 @@ Arch Linux<br />
 	$ cabal install safe<p />
 	$ cabal install aeson<p />
 	$ cabal install split<p />
+	$ cabal install strict<p />
 	$ cabal install HDBC<p />
 	$ cabal install HDBC-sqlite3<p />
 	$ cabal install HDBC-postgresql<p />
 	$ cabal install regex-posix<p />
+	$ cabal install network<p />
+	$ cabal install curl<p />
 </blockquote>
 パッケージの確認<br />
 <blockquote>
 	ghc-pkg list<p />
 </blockquote>
 
+<hr />
+OverloadedStrings という言語拡張<br />
+<blockquote>
+ダブルクオートで囲んだ文字列を、ByteString リテラルとして扱ってくれる。<p />
+</blockquote>
 <hr />

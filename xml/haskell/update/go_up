@@ -1,2 +1,2 @@
 #
-runghc xml_update.hs /var/tmp/xml_file/cities.xml t2263 42567900
+./xml_update.hs /var/tmp/xml_file/cities.xml t2263 42167900

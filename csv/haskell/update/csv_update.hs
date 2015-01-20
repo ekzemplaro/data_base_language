@@ -2,10 +2,11 @@
 -- -----------------------------------------------------------------
 --	csv_update.hs
 --
---						Dec/12/2014
+--						Dec/25/2014
 --
 -- -----------------------------------------------------------------
 import System.Environment
+import	System.IO.Strict
 
 import Text_manipulate
 -- -----------------------------------------------------------------
@@ -20,16 +21,17 @@ main = do
 	putStr (population_in ++ "\n")
 --
 --
-	inStr <- readFile file_name
+	inStr <- System.IO.Strict.readFile file_name
 --
-	let hash_aa = csv_to_dict_proc inStr
+	let dict_aa = csv_to_dict_proc inStr
 --
 	today <- get_current_date_proc
 --
-	let hash_bb = map (update_proc key_in population_in today) hash_aa
+	let dict_bb = dict_update_proc key_in population_in today dict_aa
 --
-	let str_aa = dict_to_str_proc "," hash_bb
-	writeFile file_name str_aa
+	let str_csv_new = dict_to_str_proc "," dict_bb
+
+	writeFile file_name str_csv_new
 --
 	putStrLn "*** 終了***"
 -- -----------------------------------------------------------------

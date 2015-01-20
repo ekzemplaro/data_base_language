@@ -2,7 +2,7 @@
 #
 #	berkeley_delete.pl
 #
-#					Oct/10/2011
+#					Jan/06/2015
 #
 #
 # ----------------------------------------------------------------
@@ -10,21 +10,17 @@ use	strict;
 use	warnings;
 use	DB_File;
 #
-use lib '/var/www/data_base/common/perl_common';
-use kvalue_manipulate;
 # ----------------------------------------------------------------
 print "*** 開始 ***\n";
 #
 my $db_file= $ARGV[0];
-my $id_in = $ARGV[1];
+my $key_in = $ARGV[1];
 #
-print ("$id_in\n");
+print ("$key_in\n");
 #
 dbmopen(my %dd,$db_file,0644);
 #
-delete ($dd{$id_in});
-#
-kvalue_manipulate::kvalue_display_proc (%dd);
+delete ($dd{$key_in});
 #
 dbmclose (%dd);
 #

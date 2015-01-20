@@ -1,2 +1,2 @@
 #
-./berkeley_delete.py t2451
+./berkeley_delete.py /var/tmp/berkeley/cities.db t2451

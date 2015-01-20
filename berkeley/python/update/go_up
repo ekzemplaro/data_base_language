@@ -1,2 +1,2 @@
 #
-./berkeley_update.py t2454 72586900
+./berkeley_update.py /var/tmp/berkeley/cities.db t2455 71586900

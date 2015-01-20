@@ -1,4 +1,4 @@
-<title>jQuery Examples Dec/19/2014</title>
+<title>jQuery Examples Jan/13/2015</title>
 </head>
 
 <body>

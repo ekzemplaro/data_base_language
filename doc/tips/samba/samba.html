@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>samba Dec/11/2014</title>
+<title>samba Dec/25/2014</title>
 </head>
 <body>
 <h2>samba の設定 in Ubuntu 14.04</h2><p />
@@ -82,7 +82,26 @@ Arch Linux<p />
 $ smbclient -L localhost<p />
 $ smbclient -L host_server<p />
 <hr />
+
+<blockquote>
+# smbpasswd -a scott<br />
+</blockquote>
+script<br />
+<blockquote>
+<pre>
+#
+function samba_add
+{
+    (echo "$pass"; echo "$pass") | smbpasswd -s -a $user
+}
+
+user=scott
+pass=tiger
+samba_add
+</pre>
+</blockquote>
+<hr />
 <a href="/data_base/">Return</a><p />
-Dec/11/2014 AM 08:15<p />
+Dec/25/2014 AM 08:15<p />
 </body>
 </html>

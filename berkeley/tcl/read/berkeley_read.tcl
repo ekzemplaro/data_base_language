@@ -1,8 +1,8 @@
-#! /usr/bin/tclsh8.5
+#! /usr/bin/tclsh
 #
 #	berekeley_read.tcl
 #
-#					Aug/23/2013
+#					Jan/05/2015
 # ---------------------------------------------------------------
 #
 load /usr/lib/x86_64-linux-gnu/libdb_tcl.so

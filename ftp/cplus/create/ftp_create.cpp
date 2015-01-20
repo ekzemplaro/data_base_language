@@ -32,12 +32,12 @@ static map <string,Unit >  data_prepare_proc ()
 	map <string,Unit> dict_aa;
 
 	dict_aa = dict_append_proc (dict_aa,"t0361","盛岡",19754,"1922-3-8");
-	dict_aa = dict_append_proc (dict_aa,"t0362","久慈",98235,"1922-12-12");
+	dict_aa = dict_append_proc (dict_aa,"t0362","久慈",91235,"1922-12-12");
 	dict_aa = dict_append_proc (dict_aa,"t0363","二戸",73128,"1922-8-28");
 	dict_aa = dict_append_proc (dict_aa,"t0364","宮古",51486,"1922-9-21");
 	dict_aa = dict_append_proc (dict_aa,"t0365","遠野",83971,"1922-1-5");
-	dict_aa = dict_append_proc (dict_aa,"t0366","八幡平",75948,"1922-5-22");
-	dict_aa = dict_append_proc (dict_aa,"t0367","大船渡",46785,"1922-7-17");
+	dict_aa = dict_append_proc (dict_aa,"t0366","八幡平",71948,"1922-5-22");
+	dict_aa = dict_append_proc (dict_aa,"t0367","大船渡",42785,"1922-7-17");
 	dict_aa = dict_append_proc (dict_aa,"t0368","一関",59614,"1922-3-4");
 	dict_aa = dict_append_proc (dict_aa,"t0369","花巻",71238,"1922-5-9");
 

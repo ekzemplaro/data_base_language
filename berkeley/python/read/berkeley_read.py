@@ -3,26 +3,36 @@
 #
 #	berkeley_read.py
 #
-#					Jul/30/2014
+#					Jan/06/2015
 import	sys
 import json
 from bsddb3 import db
 import string
 #
 sys.path.append ('/var/www/data_base/common/python_common')
-from dbm_manipulate import dbm_disp_proc
+from text_manipulate import dict_display_proc
+# -------------------------------------------------------------
+def db_to_dict_proc	(db_name):
+	adb = db.DB ()
+	adb.open (db_name,dbtype=db.DB_HASH)
+#
+	dict_aa = {} 
+	for key in adb.keys ():
+		json_str = adb[key].decode('utf-8')
+		dict_aa[key.decode ('utf-8')] = json.loads (json_str)
+#
+	adb.close ()
+#
+	return	dict_aa
 # -------------------------------------------------------------
 print	("*** 開始 ***")
 #
 print (db.DB_VERSION_STRING + "\n")
 db_name = sys.argv[1]
 #
-#dd = anydbm.open (db_name,"c")
-adb = db.DB ()
-adb.open (db_name,dbtype=db.DB_HASH)
+dict_aa = db_to_dict_proc (db_name)
 #
-dbm_disp_proc (adb)
-adb.close ()
+dict_display_proc (dict_aa)
 #
 print	("*** 終了 ***")
 #

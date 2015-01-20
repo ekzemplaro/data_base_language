@@ -1,4 +1,4 @@
-<title>clozure Sep/17/2013</title>
+<title>clozure Jan/05/2015</title>
 </head>
 <body>
 <h2><a href="http://ccl.clozure.com/">Clozure Common Lisp</a></h2><p />
@@ -26,3 +26,8 @@ Welcome to Clozure Common Lisp Version 1.9-r15757   (LinuxX8664)!
 ? (quit)
 </pre>
 
+<hr />
+Arch Linux<br />
+<blockquote>
+$ yaourt -Sb ccl-bin<p />
+</blockquote>

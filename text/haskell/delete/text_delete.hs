@@ -2,11 +2,12 @@
 -- -----------------------------------------------------------------
 --	text_delete.hs
 --
---						Dec/11/2014
+--						Dec/26/2014
 --
 -- -----------------------------------------------------------------
-import System.Environment
-import Data.Char
+import	System.Environment
+import	Data.Map
+import	System.IO.Strict
 
 import Text_manipulate
 -- -----------------------------------------------------------------
@@ -18,13 +19,12 @@ main = do
 	let key_in = head (tail args)
 	putStr (key_in ++ "\n")
 --
-	inStr <- readFile file_name
-	let dict_aa = str_to_dict_proc inStr	
+	inStr <- System.IO.Strict.readFile file_name
+	let dict_aa = str_to_dict_proc inStr
 --
-	let dict_bb = filter (delete_proc key_in) dict_aa
+	let dict_bb = delete key_in dict_aa
 --
 	let str_aa = dict_to_str_proc "\t" dict_bb
-	putStr str_aa
 	writeFile file_name str_aa
 --
 	putStrLn "*** 終了***"

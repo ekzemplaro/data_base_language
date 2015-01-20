@@ -1,8 +1,8 @@
-#! /usr/bin/tclsh8.5
+#! /usr/bin/tclsh
 #
 #	mcached_create.tcl
 #
-#					Aug/29/2013
+#					Jan/05/2015
 #
 # ---------------------------------------------------------------
 source /var/www/data_base/common/tcl_common/text_manipulate.tcl

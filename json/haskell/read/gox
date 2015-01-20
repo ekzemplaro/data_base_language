@@ -1,0 +1,3 @@
+#
+#
+./json_read.hs /var/tmp/json/cities.json

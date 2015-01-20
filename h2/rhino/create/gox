@@ -1,8 +1,7 @@
 #
 #
 JAVA_CLASSPATH="/usr/share/java/js.jar:/usr/share/java/jline.jar"
-JAR=/var/www/data_base/common/jar
-export H2_JAR=$JAR/h2-1.3.173.jar
+export H2_JAR=/usr/share/java/h2/h2.jar
 export CLASSPATH=.:$H2_JAR:$JAVA_CLASSPATH
 #
 ./h2_create.js

@@ -1,1 +1,1 @@
-runghc redis_read.hs 
+./redis_read.hs 

@@ -4,4 +4,4 @@ firebird_delete.exe : firebird_delete.boo
 		-r:$(CSHARP_COMMON)/table_manipulate.dll \
 		-r:FirebirdSql.Data.FirebirdClient.dll
 clean:
-	rm -f *.exe
+	rm -f *.exe *.mdb

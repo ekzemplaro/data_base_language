@@ -1,98 +1,50 @@
 #! /usr/bin/runghc
 -- -----------------------------------------------------------------
---	json_create.hs
+-- json_create.hs
 --
---					Dec/12/2014
+--					Dec/26/2014
+--
 -- -----------------------------------------------------------------
-{-# LANGUAGE OverloadedStrings #-}
- 
 import System.Environment
+import Data.Map
+import Data.Maybe
 import Data.Aeson
-import Data.Text
-import qualified Data.ByteString.Lazy.Char8 as BB
- 
+import Data.ByteString.Lazy.Char8
 
--- -----------------------------------------------------------------
-dict_aa = object [
-	"t0921" .= object [
-		"name" .= ("宇都宮" :: Text),
-		"population"   .= (51492 :: Int),
-		"date_mod"   .= ("1960-2-5" :: Text)
-       		],
-	"t0922" .= object [
-		"name" .= ("小山" :: Text),
-		"population"   .= (89276 :: Int),
-		"date_mod"   .= ("1960-9-24" :: Text)
-       		],
-	"t0923" .= object [
-		"name" .= ("佐野" :: Text),
-		"population"   .= (39215 :: Int),
-		"date_mod"   .= ("1960-4-1" :: Text)
-       		],
-	"t0924" .= object [
-		"name" .= ("足利" :: Text),
-		"population"   .= (21457 :: Int),
-		"date_mod"   .= ("1960-7-8" :: Text)
-       		],
-	"t0925" .= object [
-		"name" .= ("日光" :: Text),
-		"population"   .= (16825 :: Int),
-		"date_mod"   .= ("1960-6-25" :: Text)
-       		],
-	"t0926" .= object [
-		"name" .= ("下野" :: Text),
-		"population"   .= (49352 :: Int),
-		"date_mod"   .= ("1960-10-8" :: Text)
-       		],
-	"t0927" .= object [
-		"name" .= ("さくら" :: Text),
-		"population"   .= (39785 :: Int),
-		"date_mod"   .= ("1960-1-21" :: Text)
-       		],
-	"t0928" .= object [
-		"name" .= ("矢板" :: Text),
-		"population"   .= (64812 :: Int),
-		"date_mod"   .= ("1960-5-9" :: Text)
-       		],
-	"t0929" .= object [
-		"name" .= ("真岡" :: Text),
-		"population"   .= (98235 :: Int),
-		"date_mod"   .= ("1960-3-10" :: Text)
-       		],
-	"t0930" .= object [
-		"name" .= ("栃木" :: Text),
-		"population"   .= (27548 :: Int),
-		"date_mod"   .= ("1960-7-22" :: Text)
-       		],
-	"t0931" .= object [
-		"name" .= ("大田原" :: Text),
-		"population"   .= (65281 :: Int),
-		"date_mod"   .= ("1960-2-6" :: Text)
-       		],
-	"t0932" .= object [
-		"name" .= ("鹿沼" :: Text),
-		"population"   .= (43864 :: Int),
-		"date_mod"   .= ("1960-10-12" :: Text)
-       		],
-	"t0933" .= object [
-		"name" .= ("那須塩原" :: Text),
-		"population"   .= (25837 :: Int),
-		"date_mod"   .= ("1960-7-4" :: Text)
-       		],
-	"t0934" .= object [
-		"name" .= ("那須烏山" :: Text),
-		"population"   .= (51923 :: Int),
-		"date_mod"   .= ("1960-5-12" :: Text)
-       		]
-    ]
- 
+import Text_manipulate
 -- -----------------------------------------------------------------
 main :: IO ()
 main = do
-	putStrLn "*** 開始 ***"
+	Prelude.putStrLn "*** 開始 ***"
 	args <- getArgs
 	let out_file = Prelude.head args
-	let str_out = encode dict_aa
-	BB.writeFile out_file str_out
-	putStrLn "*** 終了***"
+--
+	let dict_aa = data_prepare_proc
+--
+	let str_aa =  encode dict_aa
+
+	Data.ByteString.Lazy.Char8.putStrLn str_aa
+--
+	Data.ByteString.Lazy.Char8.writeFile out_file str_aa
+
+	Prelude.putStrLn "*** 終了***"
+-- -----------------------------------------------------------------
+data_prepare_proc :: Map [Char] (Map [Char] [Char])
+data_prepare_proc =
+	fromList
+		[("t0921",unit_gen_proc ["宇都宮","25147","1960-3-11"]),
+		("t0922",unit_gen_proc ["小山" ,"49236" ,"1960-8-15"]),
+		("t0923",unit_gen_proc ["佐野" ,"76851" ,"1960-5-24"]),
+		("t0924",unit_gen_proc ["足利" ,"58127" ,"1960-9-8"]),
+		("t0925",unit_gen_proc ["日光" ,"21354" ,"1960-1-9"]),
+		("t0926",unit_gen_proc ["下野" ,"83426" ,"1960-5-14"]),
+		("t0927",unit_gen_proc ["さくら" ,"97352" ,"1960-8-21"]),
+		("t0928",unit_gen_proc ["矢板" ,"56921" ,"1960-5-7"]),
+		("t0929",unit_gen_proc ["真岡" ,"89615" ,"1960-10-12"]),
+		("t0930",unit_gen_proc ["栃木" ,"72158" ,"1960-5-9"]),
+		("t0931",unit_gen_proc ["大田原" ,"41925" ,"1960-7-3"]),
+		("t0932",unit_gen_proc ["鹿沼" ,"39287" ,"1960-9-12"]),
+		("t0933",unit_gen_proc ["那須塩原" ,"29146" ,"1960-11-21"]),
+		("t0934",unit_gen_proc ["那須烏山" ,"75823" ,"1960-12-4"])
+		]
 -- -----------------------------------------------------------------

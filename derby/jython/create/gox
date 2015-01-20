@@ -1,7 +1,6 @@
 #
 #
-export DERBY_HOME=/usr/share/javadb
 #
-export CLASSPATH=.:$DERBY_HOME/lib/derbyclient.jar
+export CLASSPATH=.:/usr/share/java/derby/derbyclient.jar
 #
 ./derby_create.py

@@ -7,4 +7,4 @@ xindice_read.exe: xindice_read.boo
 		-r:$(CSHARP_COMMON)/table_manipulate.dll \
 				-r:System.Web
 clean:
-	rm -f *.exe
+	rm -f *.exe *.mdb

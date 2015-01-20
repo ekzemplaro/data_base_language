@@ -3,31 +3,29 @@
 #
 #	berkeley_python_read.py
 #
-#					May/30/2011
+#					Jan/06/2015
 #
 import	sys
 import	json
 import	string
-import	anydbm
+from bsddb3 import db
 #
-sys.path.append ("/var/www/data_base/common/python_common")
-from dbm_manipulate import dbm_to_dict_proc
 #
-#print "Content-type: text/html\n\n"
-#print "Hello<br />"
+print ("Content-type: text/json\n\n")
 #
-print "Content-type: text/json\n\n"
+db_name = "/var/tmp/berkeley/cities.db";
 #
-db_name = "/var/tmp/berkeley/cities";
 #
-dd = anydbm.open (db_name,"c")
+adb = db.DB ()
+adb.open (db_name,dbtype=db.DB_HASH)
+dict_aa = {} 
+for key in adb.keys ():
+	json_str = adb[key].decode('utf-8')
+	dict_aa[key.decode ('utf-8')] = json.loads (json_str)
 #
-dict_aa = dbm_to_dict_proc (dd)
 json_str = json.dumps (dict_aa)
 #
-print	json_str
+print	(json_str)
 #
-dd.close ()
-#
-#
+adb.close ()
 #

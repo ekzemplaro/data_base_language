@@ -1,2 +1,2 @@
 #
-runghc couch_read.hs
+./couch_read.hs

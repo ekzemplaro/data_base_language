@@ -2,10 +2,10 @@
 -- -----------------------------------------------------------------
 --	text_read.hs
 --
---						Dec/11/2014
+--						Dec/26/2014
 --
 -- -----------------------------------------------------------------
-import System.Environment
+import	System.Environment
 import Text_manipulate
 -- -----------------------------------------------------------------
 main :: IO ()
@@ -15,9 +15,9 @@ main = do
 	let in_file = head args
 --
 	inStr <- readFile in_file
-	let hash_aa = str_to_dict_proc inStr
+	let dict_aa = str_to_dict_proc inStr
 --
-	let str_aa = dict_to_str_proc "\t" hash_aa
+	let str_aa = dict_to_str_proc "\t" dict_aa
 	putStr str_aa
 --
 	putStrLn "*** 終了***"

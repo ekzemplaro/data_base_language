@@ -3,35 +3,28 @@
 //
 //	couch_create.js
 //
-//						Mar/15/2013
+//						Dec/19/2014
 //
 // ------------------------------------------------------------------
 var text_manipulate = require ('/var/www/data_base/common/ringo_common/text_manipulate.js');
 // ------------------------------------------------------------------
 print	("*** 開始 ***");
 var client= require ("ringo/httpclient");
-var url='http://host_dbase:5984/city/cities';
+var url='http://localhost:5984/nagano';
 
-var data=client.get (url);
-var dict_org = JSON.parse (data.content);
-
-var id_org = dict_org._id;
-var rev_org = dict_org._rev;
-print (id_org);
-print (rev_org);
+client.del (url);
+client.put (url);
 
 var dict_aa = data_prepare_proc ();
-dict_aa._id = id_org;
-dict_aa._rev = rev_org;
 
-text_manipulate.dict_display_proc (dict_aa);
-
-var out_str = JSON.stringify (dict_aa);
-
-// print (out_str);
-
-client.put (url,out_str);
-
+for (var key in dict_aa)
+	{
+	print (key);
+	var unit_aa = dict_aa[key];
+	var out_str = JSON.stringify (unit_aa);
+	var url_target = url + "/" + key;
+	client.put (url_target,out_str);
+	}
 
 print	("*** 終了 ***");
 // ------------------------------------------------------------------

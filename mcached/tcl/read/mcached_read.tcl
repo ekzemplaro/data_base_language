@@ -1,8 +1,8 @@
-#! /usr/bin/tclsh8.5
+#! /usr/bin/tclsh
 #
 #	mcached_read.tcl
 #
-#					Aug/29/2013
+#					Jan/05/2015
 #
 # ---------------------------------------------------------------
 package require json

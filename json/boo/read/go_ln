@@ -1,6 +1,9 @@
 #
+rm -f Newtonsoft.Json.dll
 #
-ln -s /usr/lib/cli/Newtonsoft.Json-5.0/Newtonsoft.Json.dll .
+#ln -s /usr/lib/cli/Newtonsoft.Json-5.0/Newtonsoft.Json.dll .
 #
-#ln -s /usr/lib/monodevelop/bin/Newtonsoft.Json.dll .
+if  [ -e /etc/arch-release ]; then
+	ln -s /usr/lib/monodevelop/bin/Newtonsoft.Json.dll .
+fi
 #

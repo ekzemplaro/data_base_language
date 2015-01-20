@@ -22,8 +22,7 @@ Berkeley DB</a></h1>
 		</ol>
 	</ol>
 </ol>
-<pre>
-</pre>
+
 
 <blockquote>
 </blockquote>
@@ -35,6 +34,7 @@ Berkeley DB</a></h1>
 
 Python<p />
 <blockquote>
+# pacman -S python-bsddb<p />
 </blockquote>
 
 Ruby<p />
@@ -72,7 +72,12 @@ C++<p />
 </blockquote>
 
 Java<p />
-<pre>
-</pre>
+<blockquote>
+</blockquote>
 
+Arch Linux<br />
+<blockquote>
+</blockquote>
 
+<blockquote>
+</blockquote>

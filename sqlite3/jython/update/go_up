@@ -7,4 +7,4 @@ export JAR=$COMMON/jar
 #
 export CLASSPATH=.:$JYTHON_COMMON:$JAR/sqlite-jdbc-3.7.2.jar
 #
-./sqlite3_update.py /var/tmp/sqlite3/cities.db t0719 29425800
+./sqlite3_update.py /var/tmp/sqlite3/cities.db t0719 29415800

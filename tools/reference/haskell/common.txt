@@ -1,3 +1,4 @@
+Redis_manipulate.hs
 Sql_manipulate.hs
 Text_manipulate.hs
 Xml_manipulate.hs

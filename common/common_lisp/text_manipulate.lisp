@@ -2,15 +2,13 @@
 ;
 ;	common_lisp/text_manipulate.lisp
 ;
-;						Jan/15/2014
+;						Jan/05/2015
 ;
 ; -------------------------------------------------------------------
 (defun text_read_proc (file_in)
 (let (
 	(dict_aa (make-hash-table :test #'equal))
 	)
-;
-(format t "*** text_read_proc *** start ***~%")
 
 (with-open-file (fp_in file_in)
 	(loop for line = (read-line fp_in nil nil)
@@ -37,7 +35,6 @@ dict_aa)
 	)
 ; -------------------------------------------------------------------
 (defun dict_display_proc (hash)
-	(format t "*** disp_proc check ***~%")
 	(maphash #'(lambda (key value) (dict_display_proc_single key value)) hash)
 )
 

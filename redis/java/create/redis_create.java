@@ -56,13 +56,13 @@ static HashMap <String, HashMap <String,String>> data_prepare_proc ()
 		(dict_aa,"t1853","小浜",86391,"2008-4-18");
 
 	dict_aa = text_manipulate.dict_append_proc
-		(dict_aa,"t1854","大野",45693,"2008-2-8");
+		(dict_aa,"t1854","大野",42813,"2008-2-8");
 
 	dict_aa = text_manipulate.dict_append_proc
 		(dict_aa,"t1855","勝山",31524,"2008-9-9");
 
 	dict_aa = text_manipulate.dict_append_proc
-		(dict_aa,"t1856","鯖江",73267,"2008-5-11");
+		(dict_aa,"t1856","鯖江",13267,"2008-5-11");
 
 	dict_aa = text_manipulate.dict_append_proc
 		(dict_aa,"t1857","あわら",25738,"2008-8-30");

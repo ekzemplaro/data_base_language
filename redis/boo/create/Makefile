@@ -5,4 +5,4 @@ redis_create.exe : redis_create.boo
 			-r:table_manipulate.dll \
 			-r:Newtonsoft.Json.Net20.dll
 clean:
-	rm -f *.exe
+	rm -f *.exe *.mdb

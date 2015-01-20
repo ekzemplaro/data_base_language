@@ -13,6 +13,7 @@ clean:
 	cd data_base/json; make clean;
 	cd data_base/excel; make clean;
 	cd data_base/sqlite3; make clean;
+	cd data_base/mssql; make clean;
 	cd data_base/mysql; make clean;
 	cd data_base/postgre; make clean;
 	cd data_base/firebird; make clean;
@@ -26,6 +27,7 @@ clean:
 	cd data_base/cdb; make clean;
 	cd data_base/mcached; make clean;
 	cd data_base/mcachedb; make clean;
+	cd data_base/tcbn; make clean;
 	cd data_base/tyrant; make clean;
 	cd data_base/redis; make clean;
 	cd data_base/couch; make clean;

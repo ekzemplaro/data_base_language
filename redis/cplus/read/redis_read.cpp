@@ -2,10 +2,11 @@
 /*
 	redis_read.cpp
 
-				Mar/04/2014
+				Jan/06/2015
 
 */
 // --------------------------------------------------------------------
+#include	<iostream>
 #include	<netdb.h>
 #include	<boost/algorithm/string.hpp>
 

@@ -2,7 +2,7 @@
 ;
 ;	csv_create.lisp
 ;
-;						Oct/04/2013
+;						Jan/05/2015
 ;
 ; -------------------------------------------------------------------
 (load "/var/www/data_base/common/common_lisp/text_manipulate.lisp")
@@ -15,11 +15,11 @@
 (format t "*** check *** cccc ***~%")
 ;
 (setf dict_aa (dict_append_proc dict_aa "t1271" "千葉" 89257 '1977-2-18))
-(setf dict_aa (dict_append_proc dict_aa "t1272" "勝浦" 47532 '1977-1-21))
-(setf dict_aa (dict_append_proc dict_aa "t1273" "市原" 37629 '1977-5-25))
+(setf dict_aa (dict_append_proc dict_aa "t1272" "勝浦" 41532 '1977-1-21))
+(setf dict_aa (dict_append_proc dict_aa "t1273" "市原" 38629 '1977-5-25))
 (setf dict_aa (dict_append_proc dict_aa "t1274" "流山" 54321 '1977-6-7))
-(setf dict_aa (dict_append_proc dict_aa "t1275" "八千代" 73124 '1977-3-18))
-(setf dict_aa (dict_append_proc dict_aa "t1276" "我孫子" 13982 '1977-11-17))
+(setf dict_aa (dict_append_proc dict_aa "t1275" "八千代" 83124 '1977-3-18))
+(setf dict_aa (dict_append_proc dict_aa "t1276" "我孫子" 13582 '1977-11-17))
 (setf dict_aa (dict_append_proc dict_aa "t1277" "鴨川" 97351 '1977-3-9))
 (setf dict_aa (dict_append_proc dict_aa "t1278" "銚子" 62593 '1977-8-12))
 (setf dict_aa (dict_append_proc dict_aa "t1279" "市川" 49158 "1977-3-21"))

@@ -1,7 +1,7 @@
 -- ----------------------------------------------------------------
 --	xml_create.adb
 --
---						Oct/10/2011
+--						Jan/05/2015
 --
 -- ----------------------------------------------------------------
 with Ada.Text_IO;               use Ada.Text_IO; 
@@ -38,16 +38,16 @@ begin
 	String'Write (Stream (Outfile),str_out & ASCII.LF);
 	String'Write (Stream (Outfile),"<root>" & ASCII.LF);
 
-	record_out_proc (Outfile,"t2261","静岡","85712","1943-6-28");
-	record_out_proc (Outfile,"t2262","浜松","62497","1943-3-15");
-	record_out_proc (Outfile,"t2263","沼津","39254","1943-8-9");
-	record_out_proc (Outfile,"t2264","三島","54792","1943-6-3");
-	record_out_proc (Outfile,"t2265","富士","84327","1943-1-12");
+	record_out_proc (Outfile,"t2261","静岡","85746","1943-6-28");
+	record_out_proc (Outfile,"t2262","浜松","62417","1943-3-15");
+	record_out_proc (Outfile,"t2263","沼津","39274","1943-8-9");
+	record_out_proc (Outfile,"t2264","三島","54732","1943-6-3");
+	record_out_proc (Outfile,"t2265","富士","84397","1943-1-12");
 	record_out_proc (Outfile,"t2266","熱海","32198","1943-2-7");
-	record_out_proc (Outfile,"t2267","富士宮","54912","1943-10-21");
-	record_out_proc (Outfile,"t2268","藤枝","97623","1943-5-12");
+	record_out_proc (Outfile,"t2267","富士宮","54812","1943-10-21");
+	record_out_proc (Outfile,"t2268","藤枝","91623","1943-5-12");
 	record_out_proc (Outfile,"t2269","御殿場","47835","1943-4-24");
-	record_out_proc (Outfile,"t2270","島田","83592","1943-8-12");
+	record_out_proc (Outfile,"t2270","島田","83492","1943-8-12");
 	String'Write (Stream (Outfile),"</root>" & ASCII.LF);
 	Close (Outfile);
 

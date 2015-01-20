@@ -97,3 +97,9 @@ su
 make install
 </pre>
 </blockquote>
+
+<hr />
+Arch Linux<br />
+<blockquote>
+	$ yaourt -Sb tokyocabinet<p />
+</blockquote>

@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>rsync Jul/23/2014</title>
+<title>rsync Jan/14/2015</title>
 </head>
 <body>
 <h2>rsync</h2><p />
@@ -26,7 +26,15 @@ rsync -avz --delete -e "ssh -i $HOME/.ssh/key_aaa"  uchida@host_remote:tmp/jul04
 </blockquote>
 
 <hr />
+rsync -avz --delete folder_src folder_target<br />
+<blockquote>
+rsync: failed to set permissions on<p />
+	<blockquote>
+	-aを-rlOtにする<p />
+	</blockquote>
+</blockquote>
+<hr />
 <a href="/data_base/">Return</a><p />
-Jul/23/2014 AM 08:15<p />
+Jan/14/2015 AM 08:15<p />
 </body>
 </html>

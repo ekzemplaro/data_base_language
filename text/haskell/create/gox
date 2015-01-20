@@ -1,3 +1,2 @@
 #
-runghc text_create.hs /var/tmp/plain_text/cities.txt
-#runghc text_create.hs /tmp/cities.txt
+./text_create.hs /var/tmp/plain_text/cities.txt

@@ -31,6 +31,10 @@ curl -X GET --noproxy localhost http://localhost:5984/baseball/_all_docs<br />
 curl -X GET --noproxy localhost http://localhost:5984/baseball/_all_docs?include_docs=true<br />
 curl -X DELETE --noproxy localhost http://localhost:5984/baseball<br />
 </blockquote>
+DELETE<br />
+<blockquote>
+curl --noproxy localhost -X DELETE http://localhost:5984/nagano/t2025?rev=1-3aa6cd05c8585e6c3bc5c559dff1e967<br />
+</blockquote>
 
 <pre>
 $ sudo couchdb

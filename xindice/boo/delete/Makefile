@@ -7,4 +7,4 @@ xindice_delete.exe: xindice_delete.boo
 		-r:$(CSHARP_COMMON)/table_manipulate.dll \
 				-r:System.Web
 clean:
-	rm -f *.exe
+	rm -f *.exe *.mdb

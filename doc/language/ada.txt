@@ -18,3 +18,16 @@ ii  gnat-4.6-base   4.6.3-1ubuntu4           GNU Ada compiler (common files)
 
 <blockquote>
 </blockquote>
+
+
+<blockquote>
+</blockquote>
+
+<hr />
+
+Arch Linux<br />
+	<blockquote>
+	# pacman -S gcc-ada<p />
+	</blockquote>
+
+

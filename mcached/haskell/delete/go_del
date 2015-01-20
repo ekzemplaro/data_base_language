@@ -1,2 +1,2 @@
 #
-runghc mcached_delete.hs t1734
+./mcached_delete.hs t1734

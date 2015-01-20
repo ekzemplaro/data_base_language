@@ -1,0 +1,1 @@
+/var/www/data_base/common/haskell_common/Redis_manipulate.hs

@@ -7,4 +7,4 @@ xindice_create.exe: xindice_create.boo
 		-r:$(CSHARP_COMMON)/table_manipulate.dll \
 				-r:System.Web
 clean:
-	rm -f *.exe
+	rm -f *.exe *.mdb

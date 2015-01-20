@@ -2,10 +2,11 @@
 /*
 	redis_create.cpp
 
-					Mar/04/2014
+					Jan/06/2015
 
 */
 // --------------------------------------------------------------------
+#include	<iostream>
 #include	<map>
 
 #include	<sys/socket.h>

@@ -1,2 +1,2 @@
 #
-runghc sqlite3_delete.hs /var/tmp/sqlite3/cities.db t0718
+./sqlite3_delete.hs /var/tmp/sqlite3/cities.db t0718

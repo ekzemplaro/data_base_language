@@ -1,2 +1,2 @@
 #
-runghc redis_delete.hs t1857
+./redis_delete.hs t1857

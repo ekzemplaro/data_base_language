@@ -2,10 +2,11 @@
 /*
 	redis_delete.cpp
 
-				Jan/21/2014
+				Jan/06/2015
 
 */
 // --------------------------------------------------------------------
+#include	<iostream>
 #include	<stdio.h>
 #include	<sys/socket.h>
 #include	<netdb.h>

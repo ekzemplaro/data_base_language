@@ -2,12 +2,9 @@
 -- -----------------------------------------------------------------
 --	xml_read.hs
 --
---					Dec/12/2014
+--					Dec/26/2014
 -- -----------------------------------------------------------------
-import System.Environment
-import Data.List
-import Control.Arrow
-import Control.Monad
+import	System.Environment
 
 import Text_manipulate
 import Xml_manipulate
@@ -19,7 +16,7 @@ main = do
 	let xml_file = head args
 	str_xml <- readFile xml_file
 --
-	let dict_aa = to_dict_proc str_xml
+	let dict_aa = xml_to_dict_proc str_xml
 	let str_aa = dict_to_str_proc "\t" dict_aa
 	putStr str_aa
 --

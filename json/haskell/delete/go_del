@@ -1,0 +1,3 @@
+#
+#
+./json_delete.hs /var/tmp/json/cities.json t0929

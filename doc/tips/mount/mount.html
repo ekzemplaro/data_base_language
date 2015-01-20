@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>Mount Dec/11/2014</title>
+<title>Mount Jan/13/2015</title>
 </head>
 <body>
 <h2>Mount</h2><p />
@@ -29,7 +29,9 @@ Arch Linux<br />
 
 cifs マウント<p />
 <blockquote>
-	mount -t cifs //server_aa/tmp /mnt/server_aa/tmp -o guest<p />
+	# mount -t cifs //server_aa/tmp /mnt/server_aa/tmp -o guest<p />
+	option="iocharset=utf8,username=scott,passwd=tiger,workgroup=TOCHIGI,uid=uchida,gid=wheel,file_mode=0775,dir_mode=0775"<p />
+	# mount -t cifs -o $option //server_bb/test /mnt/server_bb/test<p />
 </blockquote>
 
 ftp マウント<p />
@@ -74,6 +76,6 @@ GPT (GUID Partition Table)<br />
 # parted -l<p />
 <hr />
 <a href="/data_base/">Return</a><p />
-Dec/11/2014 AM 08:15<p />
+Jan/13/2015 AM 08:15<p />
 </body>
 </html>

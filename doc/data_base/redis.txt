@@ -79,6 +79,10 @@ Haskell<p />
 	redis-haskell-tip.tar.bz2<p />
 </blockquote>
 
+Arch Linux<br />
+	<blockquote>
+	$ cabal install hedis<p />
+	</blockquote>
 
 Lua<p />
 <blockquote>

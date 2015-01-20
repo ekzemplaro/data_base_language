@@ -4,8 +4,8 @@ export GROOVY_COMMON=$COMMON/groovy_common
 export JAR=$COMMON/jar
 export USR_SHARE=/usr/share/java
 #
-export CPB=$USR_SHARE/groovy-all.jar:$USR_SHARE/groovy.jar
-export CPB=$CPB:$JAR/jedis-2.1.0.jar
+GROOVY_ALL_JAR=/usr/share/groovy/embeddable/groovy-all.jar
+export CPB=$GROOVY_ALL_JAR:$JAR/jedis-2.1.0.jar
 export CLASSPATH=.:$CPB:$GROOVY_COMMON
 #
 java redis_delete t1853

@@ -1,22 +1,24 @@
+#! /usr/bin/runghc
 -- ---------------------------------------------------------------------
 --	 sqlite3_create.hs
 --
---					Nov/19/2013
+--					Dec/24/2014
 --
 -- ---------------------------------------------------------------------
-import System.Environment
-import Database.HDBC
-import Database.HDBC.Sqlite3
+import	System.Environment
+import	Data.Map
+import	Database.HDBC
+import	Database.HDBC.Sqlite3
 
-import Sql_manipulate
+import	Text_manipulate
+import	Sql_manipulate
 -- ---------------------------------------------------------------------
 main :: IO ()
 main = do
-	putStrLn "*** 開始 ***\n"
+	Prelude.putStrLn "*** 開始 ***\n"
 	putStrLn "The arguments are:"
 	av01<-getArgs
-	putStr $ unlines av01
-	putStrLn "\n*** aaaa ***"
+	putStrLn $ unlines av01
 	let db_file=head av01
 	print av01
 --
@@ -27,49 +29,24 @@ main = do
 	drop_proc conn
 	create_proc conn
 --
-	mapM (insert_proc conn) dict_aa
+	let list_aa = toList dict_aa
+	mapM (insert_proc conn) list_aa
 --
 	commit conn
 	disconnect conn
-	putStrLn "*** 終了 ***"
+	Prelude.putStrLn "*** 終了 ***"
 -- ---------------------------------------------------------------------
-data_prepare_proc :: [([Char], [([Char], [Char])])]
+data_prepare_proc :: Map [Char] (Map [Char] [Char])
 data_prepare_proc =
-		[("t0711",[
-			("name","郡山"),
-			("population","14832"),
-			("date_mod","1960-7-12")]),
-		("t0712",[
-			("name","会津若松"),
-			("population","28195"),
-			("date_mod","1960-2-18")]),
-		("t0713",[
-			("name","白河"),
-			("population","35172"),
-			("date_mod","1960-2-21")]),
-		("t0714",[
-			("name","福島"),
-			("population","58427"),
-			("date_mod","1960-9-8")]),
-		("t0715",[
-			("name","喜多方"),
-			("population","27354"),
-			("date_mod","1960-1-9")]),
-		("t0716",[
-			("name","二本松"),
-			("population","81426"),
-			("date_mod","1960-5-14")]),
-		("t0717",[
-			("name","いわき"),
-			("population","97352"),
-			("date_mod","1960-8-21")]),
-		("t0718",[
-			("name","相馬"),
-			("population","56921"),
-			("date_mod","1960-5-7")]),
-		("t0719",[
-			("name","須賀川"),
-			("population","81625"),
-			("date_mod","1960-10-12")])
+	fromList
+		[("t0711",unit_gen_proc ["郡山","28197","1960-3-11"]),
+		("t0712",unit_gen_proc ["会津若松" ,"41236" ,"1960-8-15"]),
+		("t0713",unit_gen_proc ["白河" ,"76358" ,"1960-5-24"]),
+		("t0714",unit_gen_proc ["福島" ,"58417" ,"1960-9-8"]),
+		("t0715",unit_gen_proc ["喜多方" ,"29354" ,"1960-1-9"]),
+		("t0716",unit_gen_proc ["二本松" ,"83126" ,"1960-5-14"]),
+		("t0717",unit_gen_proc ["いわき" ,"97352" ,"1960-8-21"]),
+		("t0718",unit_gen_proc ["相馬" ,"56921" ,"1960-5-7"]),
+		("t0719",unit_gen_proc ["須賀川" ,"89615" ,"1960-10-12"])
 		]
 -- ---------------------------------------------------------------------
