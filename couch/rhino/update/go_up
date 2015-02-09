@@ -1,12 +1,15 @@
-#
 export http_proxy=""
 #
 SHARE=/usr/share/java
 JAVA_CLASSPATH=$SHARE/js.jar:$SHARE/jline.jar
 #
+COMMON=/var/www/data_base/common
 #
-export CPP=$SHARE/commons-httpclient-3.1.jar
+HTTPCLIENT=$COMMON/jar/commons-httpclient
+HTTPCLIENT_JAR=.:$HTTPCLIENT/commons-httpclient-3.1.jar:$HTTPCLIENT/commons-logging-1.2.jar:$HTTPCLIENT/commons-codec-1.10.jar
 #
-export CLASSPATH=.:$JAVA_CLASSPATH:$CPP
+#
+export CLASSPATH=.:$JAVA_CLASSPATH:$HTTPCLIENT_JAR
+#
 #
 ./couch_update.js t2025 915783200

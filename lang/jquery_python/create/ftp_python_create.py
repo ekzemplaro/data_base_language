@@ -3,7 +3,7 @@
 # -------------------------------------------------------------------------
 #	ftp_python_create.py
 #
-#						Aug/04/2014
+#						Jan/27/2015
 # -------------------------------------------------------------------------
 import os
 import sys
@@ -37,7 +37,7 @@ def	data_prepare_proc ():
 #
 # -------------------------------------------------------------------------
 #
-url_target = 'ftp://scott:tiger@host_dbase/city/iwate.json'
+url_target = 'ftp://scott:tiger@cddn007/city/iwate.json'
 os.environ["ftp_proxy"]=''
 #
 dict_aa = data_prepare_proc ()

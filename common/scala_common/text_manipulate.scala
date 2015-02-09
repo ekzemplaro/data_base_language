@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------
 //	text_manipulate.scala
 //
-//						Jul/11/2011
+//						Feb/03/2015
 // -----------------------------------------------------------------
 import scala.io.Source
 import scala.collection.mutable
@@ -59,13 +59,17 @@ def	text_write_proc (file_out:String,dict_aa: mutable.Map[String,Object])
 // -----------------------------------------------------------------
 def	dict_display_proc (dict_aa: mutable.Map[String,Object])
 {
-	for (pair <- dict_aa)
+	val list_aa = dict_aa.toList
+
+	val list_bb = list_aa.sortWith((s1,s2) => s1._1 < s2._1)
+
+	for (pair <- list_bb)
 		{
 		val key = pair._1
 		if ((key != "_id") && (key != "_rev"))
 			{
 		val unit_aa = pair._2.asInstanceOf [mutable.Map[String,String]]
-		val out_str = pair._1 + "\t" + unit_aa("name") + "\t" +
+		val out_str = key + "\t" + unit_aa("name") + "\t" +
 			unit_aa("population") + "\t" + unit_aa("date_mod")
 
 			println	(out_str)

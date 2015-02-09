@@ -1,6 +1,8 @@
 export COMMON=/var/www/data_base/common
 export SCALA_COMMON=$COMMON/scala_common
-export JAR=$COMMON/jar
+JAR=$COMMON/jar
+JSON4S=$JAR/json4s
 #
-export CLASSPATH=.:$SCALA_COMMON
+export CLASSPATH=.:$SCALA_COMMON:$JSON4S/json4s-core_2.11-3.2.11.jar:$JSON4S/json4s-native_2.11-3.2.11.jar:$JSON4S/json4s-ast_2.11-3.2.11.jar
+#
 scala mcachedb_read

@@ -1,33 +1,23 @@
 // --------------------------------------------------------------
 //	tyrant_delete.java
 //
-//					Jun/22/2011
-// --------------------------------------------------------------
-import com.danga.MemCached.SockIOPool;
-import com.danga.MemCached.MemCachedClient;
-
-import	net.arnx.jsonic.JSON;
- 
+//					Feb/04/2015
 // --------------------------------------------------------------
 public class tyrant_delete
 {
  
 // --------------------------------------------------------------
-public static void main(String[] args)
+public static void main(String[] args) throws Exception
 {
 	System.out.println ("*** 開始 ***");
 
-	String	id = args[0];
-	System.out.println ("\tid = " + id);
- 
-	String[] serverlist = { "localhost:1978" };
-	SockIOPool pool = SockIOPool.getInstance();
-	pool.setServers(serverlist);
-	pool.initialize();
+	String	key = args[0];
+	System.out.println ("\tid = " + key);
 
-	MemCachedClient mc = new MemCachedClient();
+	final String server = "host_ubuntu1";
+	final int port = 1978;
 
-	mc.delete(id);
+	mcached_socket.mcached_delete_proc (server,port,key); 
 
 	System.out.println ("*** 終了 ***");
 }

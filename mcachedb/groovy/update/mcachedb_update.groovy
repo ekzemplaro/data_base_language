@@ -1,10 +1,9 @@
 // --------------------------------------------------------------
 //	read/mcachedb_update.groovy
 //
-//					Apr/22/2013
+//					Feb/04/2015
 // --------------------------------------------------------------
-import java.net.Socket
-import groovy.json.*
+import mcached_manipulate
 
 import	mcached_manipulate 
 // --------------------------------------------------------------
@@ -18,41 +17,15 @@ public static void main(String[] args)
 
 	def	key = args[0]
 	def	population = Integer.parseInt (args[1])
-	print ("\tid = " + key)
+	print ("\tkey = " + key)
 	println ("\tpopulation = " + population)
 
-	String server = "localhost"
-	int servPort = 21201
+	final String server = "host_ubuntu1"
+	final int port = 21201
 	print (server + '\t')
-	println (servPort)
+	println (port)
 
-	def ss = new Socket(server, servPort);
-
-	ss.withStreams
-		{ input, output ->
-		def rr = new InputStreamReader( input )
-
-		def ff = new mcached_manipulate ()
-		def str_json  = ff.socket_read_proc (key,rr,output)
-		println ("str_json = " + str_json)
-
-		def slurper = new JsonSlurper()
-		def unit_aa = slurper.parseText (str_json)
-
-		def today = new Date ().format ("yyyy-MM-dd")
-
-		unit_aa['population'] = population
-		unit_aa['date_mod'] = today
-
-		def json = new JsonBuilder()
-	
-		json (unit_aa)
-
-		def str_json_new = json.toString ()
-		println ("str_json_new = " + str_json_new)
-
-		ff.socket_write_proc (key,str_json_new,rr,output)
-		}
+	mcached_manipulate.mcached_update_proc (server,port,key,population)
 
 	println ("*** 終了 ***")
 }

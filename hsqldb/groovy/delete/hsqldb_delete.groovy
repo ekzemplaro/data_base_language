@@ -1,7 +1,7 @@
 // ---------------------------------------------------------------------
 //	hsqldb/groovy/delete/hsqldb_delete.groovy
 //
-//					May/30/2011
+//					Jan/28/2015
 //
 // ---------------------------------------------------------------------
 import groovy.sql.Sql
@@ -19,18 +19,16 @@ static void main (args)
 
 	println (id_in)
 
-	def source = new org.hsqldb.jdbc.jdbcDataSource ()
+	def database = "/var/tmp/hsqldb/cities"
 
-	source.database = 'jdbc:hsqldb:file:/var/tmp/hsqldb/cities;shutdown=true'
-
-	source.user = 'SA'
-	source.password = ''
-
-	def sql = new Sql (source)
+	def sql = Sql.newInstance \
+		("jdbc:hsqldb:file:" + database,"SA","","org.hsqldb.jdbcDriver")
 
 	sql_manipulate.delete_proc (sql,id_in)
 
-	sql_manipulate.display_proc (sql)
+//	sql_manipulate.display_proc (sql)
+
+	sql.close ()
 
 	println ("*** 終了 ***");
 }

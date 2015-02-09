@@ -57,3 +57,10 @@ ftp@0.1.2 ./node_modules/ftp
 </blockquote>
 
 
+<hr />
+underscore.after (count, function)<br />
+<blockquote>
+countで指定された回数だけfunctionが呼ばれると初めて実行さる。<p />
+</blockquote>
+
+<hr />

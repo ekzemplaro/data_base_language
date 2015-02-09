@@ -4,7 +4,7 @@
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
-<script src="/js/jquery-2.1.1.min.js"></script>
+<script src="/js/jquery-2.1.3.min.js"></script>
 <meta content="Program Language Examples to connect to PostgreSQL" name="description">
 <meta content="PostgreSQL,クライアント,接続,言語,サンプル" name="keyword">
 <meta content="Uchida Masatomo" name="author">
@@ -83,7 +83,7 @@ host    all             all             0.0.0.0/0               trust
 
 <hr />
 
-<ol>
+<blockquote>
 	su postgres<p />
 	
 	createdb city<p />
@@ -91,7 +91,7 @@ host    all             all             0.0.0.0/0               trust
 	psql -f postgre_create.sql -U scott city<p />
 	psql -f postgre_insert.sql -U scott city<p />
 	psql -f postgre_read.sql -U scott city<p />
-</ol>
+</blockquote>
 
 <hr />
 データベースの作成<br />
@@ -105,6 +105,14 @@ psql book -U scott<br />
 PHP<p />
 <blockquote>
 	php5-pgsql<p />
+	# pacman -S php-pgsql<p />
+	<blockquote>
+	/etc/php/conf.d/pgsql.ini<br />
+		<blockquote>
+		extension=pgsql.so<br />
+		</blockquote>
+
+	</blockquote>
 </blockquote>
 
 Python<p />
@@ -120,6 +128,11 @@ Perl<p />
 Ruby<p />
 <blockquote>
 	libdbd-pg-ruby<p />
+</blockquote>
+
+Lua<p />
+<blockquote>
+	# pacman -S lua-sql-postgres<p />
 </blockquote>
 
 Haskell<p />
@@ -166,16 +179,20 @@ org.postgresql.util.PSQLException:
 	to the database server host and port that you wish to connect to.
 
 </pre>
-<ol>
+<blockquote>
 	/etc/tomcat6/policy.d/04webapps.policy<p />
 
 		ermission java.security.AllPermission;<p />
-</ol>
+</blockquote>
 
-<ol>
+<blockquote>
 /usr/share/java/postgresql-jdbc3-8.2.jar
-</ol>
+</blockquote>
 
+Arch Linux<br />
+<blockquote>
+$ yaourt -Sb postgresql-jdbc<p />
+</blockquote>
 C#<p />
 <blockquote>
 <pre>
@@ -185,6 +202,12 @@ ii  libmono-npgsql4.0-cil     2.10.8.1-5ubuntu2   all   Mono Npgsql library (for
 <hr />
 $ psql -h nlf132 -U scott city<p />
 $ psql -h localhost -U scott city<p />
+
+<hr />
+# pacman -S postgresql<p />
+$ su postgres<p />
+# initdb --locale en_US.UTF-8 -E UTF8 -D '/var/lib/postgres/data'<p />
+# systemctl start postgresql<p />
 <div id="result_aa">result_aa</div>
 <hr />
 <div id="outarea_aa">outarea_aa</div>
@@ -197,6 +220,6 @@ $ psql -h localhost -U scott city<p />
 <div id="outarea_hh">outarea_hh</div>
 <hr />
 <a href="/data_base/">Return</a><p />
-Jul/16/2014 AM 08:15<p />
+Jan/16/2015 AM 08:15<p />
 </body>
 </html>

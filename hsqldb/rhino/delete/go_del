@@ -1,7 +1,10 @@
 #
 #
+COMMON=/var/www/data_base/common
+JAR=$COMMON/jar
+#
 JAVA_CLASSPATH="/usr/share/java/js.jar:/usr/share/java/jline.jar"
-HSQLDB_JAR=/usr/share/java/hsqldb.jar
+HSQLDB_JAR=$JAR/hsqldb/hsqldb-2.3.2.jar
 export CLASSPATH=.:$HSQLDB_JAR:$JAVA_CLASSPATH
 #
 ./hsqldb_delete.js t4678

@@ -1,32 +1,23 @@
 // --------------------------------------------------------------
 //	delete/mcachedb_delete.java
 //
-//					Jun/08/2011
-// --------------------------------------------------------------
-import com.danga.MemCached.SockIOPool;
-import com.danga.MemCached.MemCachedClient;
-
+//					Feb/04/2015
 // --------------------------------------------------------------
 public class mcachedb_delete
 {
  
 // --------------------------------------------------------------
-public static void main(String[] args)
+public static void main(String[] args) throws Exception
 {
 	System.out.println ("*** 開始 ***");
 
-	String	id = args[0];
-	System.out.println ("\tid = " + id);
- 
-                // SockIOPool を初期化
-	String[] serverlist = { "localhost:21201" };
-	SockIOPool pool = SockIOPool.getInstance();
-	pool.setServers(serverlist);
-	pool.initialize();
+	String	key = args[0];
+	System.out.println ("\tkey = " + key);
 
-	MemCachedClient mc = new MemCachedClient();
+	final String server = "host_ubuntu1";
+	final int port = 21201;
 
-	mc.delete (id);
+	mcached_socket.mcached_delete_proc (server,port,key);
 
 	System.out.println ("*** 終了 ***");
 }

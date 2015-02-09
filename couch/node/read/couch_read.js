@@ -2,9 +2,12 @@
 // ---------------------------------------------------------------
 //	couch_read.js
 //
-//					Jun/10/2014
+//					Feb/05/2015
 // ---------------------------------------------------------------
 var cradle = require ('cradle');
+var underscore = require('underscore');
+var text_manipulate=require ("/var/www/data_base/common/node_common/text_manipulate");
+
 // ---------------------------------------------------------------
 console.log ("*** 開始 ***");
 var name = 'nagano';
@@ -20,7 +23,7 @@ db.exists(function (err, exists)
 		}
 	else if (exists)
 		{
-		fetch_proc (db);
+		couchdb_fetch_proc (db);
 		}
 	else
 		{
@@ -28,24 +31,31 @@ db.exists(function (err, exists)
 		}
 	});
 
-console.log ("*** 終了 ***");
 
 // ---------------------------------------------------------------
-function fetch_proc (db)
+function couchdb_fetch_proc (db)
 {
+	var dict_aa = new Object ();
+
 	db.get ('_all_docs',function (err,doc)
 		{
+		var displayResult  = underscore.after(doc.length, function()
+			{
+			text_manipulate.dict_display_proc (dict_aa);
+			console.log ("*** 終了 ***");
+			});
+
+		console.log (doc.length);
+
 		for (var it in doc)
 			{
 			db.get (doc[it].key,function (err,unit)
 				{
-				var out_str = unit._id + '\t';
-				out_str += unit.name + '\t';
-				out_str += unit.population + '\t';
-				out_str += unit.date_mod;
-				console.log (out_str);
+				dict_aa [unit._id] = unit;
+				displayResult();
 				});
 			}
+
 		});
 }
 

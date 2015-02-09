@@ -4,15 +4,21 @@
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
-<script src="/js/jquery-2.1.1.min.js"></script>
+<script src="/js/jquery-2.1.3.min.js"></script>
 <title>Redis</title>
 </head>
 <body>
 <h1><a href="http://redis.io">Redis</a></h1>
 
+<blockquote>
 <pre>
 ii  redis-server   2:2.6.7-1   amd64   Persistent key-value database with network interface
 </pre>
+</blockquote>
+
+<blockquote>
+# pacman -S redis<p />
+</blockquote>
 <blockquote>
 	/etc/redis/redis.conf<p />
 
@@ -59,6 +65,7 @@ Python<p />
 <pre>
 ii  python-redis   2.4.13-2  all   Persistent key-value database with network interface (Python library)
 </pre>
+# pacman -S python-redis<p />
 </blockquote>
 
 Perl<p />
@@ -68,7 +75,7 @@ libredis-perl<p />
 
 Ruby<p />
 <blockquote>
-	# gem install redis<br />
+	$ gem install redis<br />
 	# gem install system_timer<br />
 </blockquote>
 
@@ -79,6 +86,10 @@ Haskell<p />
 	redis-haskell-tip.tar.bz2<p />
 </blockquote>
 
+Arch Linux<br />
+	<blockquote>
+	$ cabal install hedis<p />
+	</blockquote>
 
 Lua<p />
 <blockquote>
@@ -168,6 +179,6 @@ $
 <div id="outarea_hh">outarea_hh</div>
 <hr />
 <a href="/data_base/">Return</a><p />
-Jul/16/2014 AM 08:15<p />
+Jan/16/2015 AM 08:15<p />
 </body>
 </html>

@@ -1,7 +1,10 @@
 #
-export HSQLDB_JAR=/usr/share/java/hsqldb.jar
-export GROOVY_JAR=/usr/share/java/groovy-all.jar:/usr/share/java/groovy.jar
-export GROOVY_COMMON=/var/www/data_base/common/groovy_common
-export CLASSPATH=.:$GROOVY_COMMON:$HSQLDB_JAR:$GROOVY_JAR
+COMMON=/var/www/data_base/common
+GROOVY_COMMON=$COMMON/groovy_common
+JAR=$COMMON/jar
+#
+GROOVY_ALL_JAR=/usr/share/groovy/embeddable/groovy-all.jar
+export CLASSPATH=.:$GROOVY_ALL_JAR:$GROOVY_COMMON:$JAR/hsqldb/hsqldb-2.3.2.jar
+#
 #
 java hsqldb_read

@@ -2,7 +2,7 @@
 // -------------------------------------------------------------
 //	mcached_update.js
 //
-//					Aug/09/2013
+//					Feb/02/2015
 // -------------------------------------------------------------
 var memcache = require('memcache');
 var node_common = '/var/www/data_base/common/node_common';
@@ -52,7 +52,8 @@ var population_in=process.argv[3];
 console.log("*** 開始 ***");
 console.log (key_in + "\t" + population_in);
 
-var client = new memcache.Client (21201,'localhost');
+var hostname = 'host_ubuntu1';
+var client = new memcache.Client (21201,hostname);
 client.connect();
 client.addHandler(onConnect);
 

@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>rsync Jan/14/2015</title>
+<title>rsync Feb/06/2015</title>
 </head>
 <body>
 <h2>rsync</h2><p />
@@ -34,7 +34,33 @@ rsync: failed to set permissions on<p />
 	</blockquote>
 </blockquote>
 <hr />
+Server<p />
+<blockquote>
+# systemctl start rsyncd<p />
+</blockquote>
+設定ファイル<p />
+<blockquote>
+<a href="rsyncd.conf.txt">/etc/rsyncd.conf</a><p />
+</blockquote>
+
+Client<p />
+<blockquote>
+<pre>
+$ rsync host_rsync::
+xml_file       	XML
+json           	JSON
+ftp            	ftp area
+$
+</pre>
+</blockquote>
+rsync サーバーとの同期<p />
+<blockquote>
+rsync -avz --delete rsync://host_rsync/ftp/ /tmp/ftp<p />
+rsync -avz --delete rsync://host_rsync/var_tmp/json/ /var/tmp/json<p />
+rsync -avz --delete rsync://host_rsync/var_tmp/xml_file/ /var/tmp/xml_file<p />
+</blockquote>
+<hr />
 <a href="/data_base/">Return</a><p />
-Jan/14/2015 AM 08:15<p />
+Feb/06/2015 AM 08:15<p />
 </body>
 </html>

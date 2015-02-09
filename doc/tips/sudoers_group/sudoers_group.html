@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+<title>sudoers & group Feb/06/2015</title>
+</head>
+<body>
+<h2>sudoers & group</h2><p />
+
+sudoers の追加 in Ubuntu 14.04<br />
+<blockquote>
+$ sudo gpasswd -a ユーザー名 sudo<p />
+</blockquote>
+
+ユーザーが所属しているグループを確認<br />
+<blockquote>
+$ id ユーザー名<p />
+<blockquote>
+$ id uchida<br />
+uid=1000(uchida) gid=1000(uchida) groups=1000(uchida),10(wheel),142(docker)<br />
+</blockquote>
+</blockquote>
+
+グループにユーザーを追加<br />
+<blockquote>
+# usermod -G グループ名 ユーザー名<br />
+<blockquote>
+# usermod -G testgrp uchida<p />
+</blockquote>
+</blockquote>
+
+
+グループを追加<br />
+<blockquote>
+# groupadd グループ名<br />
+<blockquote>
+# groupadd testgrp<p />
+</blockquote>
+</blockquote>
+
+
+<hr />
+<a href="/data_base/">Return</a><p />
+Feb/06/2015 AM 08:15<p />
+</body>
+</html>

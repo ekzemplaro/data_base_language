@@ -3,7 +3,7 @@
 //
 //	hsqldb_create.js
 //
-//						Jul/16/2011
+//						Jan/28/2015
 //
 // ------------------------------------------------------------------
 importPackage(java.lang);
@@ -34,15 +34,15 @@ print	("*** 終了 ***");
 // ------------------------------------------------------------------
 function insert_data_proc (conn)
 {
-	insert_record_proc (conn,"t4671","鹿児島",52879,"1951-6-22");
-	insert_record_proc (conn,"t4672","指宿",71541,"1951-5-16");
-	insert_record_proc (conn,"t4673","志布志",64523,"1951-5-21");
-	insert_record_proc (conn,"t4674","川内",27234,"1951-9-28");
-	insert_record_proc (conn,"t4675","鹿屋",12817,"1951-10-6");
+	insert_record_proc (conn,"t4671","鹿児島",52819,"1951-6-22");
+	insert_record_proc (conn,"t4672","指宿",71548,"1951-5-16");
+	insert_record_proc (conn,"t4673","志布志",61523,"1951-5-21");
+	insert_record_proc (conn,"t4674","川内",27934,"1951-9-28");
+	insert_record_proc (conn,"t4675","鹿屋",12837,"1951-10-6");
 	insert_record_proc (conn,"t4676","枕崎",34516,"1951-11-21");
-	insert_record_proc (conn,"t4677","出水",19831,"1951-2-6");
-	insert_record_proc (conn,"t4678","阿久根",49432,"1951-5-29");
-	insert_record_proc (conn,"t4679","霧島",59815,"1951-10-12");
+	insert_record_proc (conn,"t4677","出水",19832,"1951-2-6");
+	insert_record_proc (conn,"t4678","阿久根",49732,"1951-5-29");
+	insert_record_proc (conn,"t4679","霧島",59816,"1951-10-12");
 }
 
 // ------------------------------------------------------------------

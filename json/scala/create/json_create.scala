@@ -1,11 +1,16 @@
 // -----------------------------------------------------------------
 //	json_create.scala
 //
-//					Jun/11/2013
+//					Jan/23/2015
 //
 // -----------------------------------------------------------------
 import java.io._
 import scala.collection.mutable
+
+import org.json4s._
+import org.json4s.native.Serialization
+import org.json4s.native.Serialization.write
+
 // -----------------------------------------------------------------
 object json_create
 {
@@ -21,10 +26,10 @@ def main (args: Array[String])
 
 		val dict_aa = data_prepare_proc ()
 
-		text_manipulate.dict_display_proc (dict_aa)
- 
 		val json_str = json_manipulate.dict_to_json_proc (dict_aa)
 
+//		println (json_str)
+ 
 		val out = new java.io.FileWriter (json_file)
 		out.write (json_str)
 		out.close
@@ -43,7 +48,7 @@ def data_prepare_proc ():(mutable.Map[String,Object]) = {
 
 	var dict_aa = mutable.Map[String,Object] ()
 
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0921","宇都宮",18526,"1998-9-15")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0921","宇都宮",17526,"1998-9-15")
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0922","小山",67381,"1998-8-28")
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0923","佐野",56123,"1998-7-12")
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0924","足利",73542,"1998-6-23")

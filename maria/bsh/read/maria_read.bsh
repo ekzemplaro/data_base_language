@@ -1,0 +1,19 @@
+//
+//	maria_read.bsh
+//
+//						Jan/28/2015
+//
+// ---------------------------------------------------------------------
+source ("/var/www/data_base/common/bsh_common/sql_manipulate.bsh");
+// ---------------------------------------------------------------------
+System.out.println ("*** 開始 ***");
+
+String url="jdbc:mysql://localhost/city";
+Connection conn = DriverManager.getConnection (url,"scott","tiger");
+
+sql_display_proc (conn);
+
+
+conn.close ();
+System.out.println ("*** 終了 ***");
+// ---------------------------------------------------------------------

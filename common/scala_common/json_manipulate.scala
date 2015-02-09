@@ -1,45 +1,42 @@
 // -----------------------------------------------------------------
 //	json_manipulate.scala
 //
-//						Sep/17/2014
+//						Jan/27/2015
 //
 // -----------------------------------------------------------------
-import scala.util.parsing.json.JSONObject
-import scala.util.parsing.json.JSON
 import scala.io.Source
 import scala.collection.mutable
 
+import scala.io.Source
+import org.json4s._
+import org.json4s.native.JsonMethods._
+
+import org.json4s.native.Serialization
+import org.json4s.native.Serialization.write
 // -----------------------------------------------------------------
 object json_manipulate {
 
 // -----------------------------------------------------------------
-def json_to_dict_proc (str_json:String):(mutable.Map[String,Object]) = {
+def json_to_dict_proc (keys:Array [String],str_json:String):(mutable.Map[String,Object]) = {
 	var dict_aa = mutable.Map[String,Object] ()
 
-//	val aaa = JSON.parseRaw(str_json)
-	val aaa = JSON.parseFull(str_json)
+	val json = parse (str_json)
 
-//	println ("json_to_dict_proc *** aaa ***")
-	aaa.foreach (bbb =>
+	for (key <- keys)
 		{
-		bbb.foreach (ccc =>
+		val unit = json \ key
+		if (unit.values != None)
 			{
-			val (kx:String,_) = ccc
-
-//			println (kx)
-
-			if ((kx != "_id") && (kx != "_rev"))
-				{
-			val (key:String,value:List[_]) = ccc
-				dict_aa(key) = json_to_dict_proc_s2 (value)
-				}
-			else
-				{
-				val (key:String,value:String) = ccc
-				dict_aa(key) = value
-				}
-			})
-		})
+			var unit_aa = mutable.Map[String,String] ()
+			val name = (unit \ "name").values
+			val population = (unit \ "population").values
+			val date_mod = (unit \ "date_mod").values
+			unit_aa("name") = name.toString
+			unit_aa("population") = population.toString
+			unit_aa("date_mod") = date_mod.toString
+			dict_aa(key) = unit_aa
+			}
+		}
 
 	dict_aa
 }
@@ -60,25 +57,9 @@ def json_to_dict_proc_s2 (value:List[_]):(mutable.Map[String,String]) = {
 def dict_to_json_proc (dict_aa: mutable.Map[String,Object]): String = {
 	var dict_bb = mutable.Map[String,Object] ()
 
-	for (pair <- dict_aa)
-		{
-		val key = pair._1
-		if ((key != "_id") && (key != "_rev"))
-			{
-			var unit_aa = pair._2.asInstanceOf [mutable.Map[String,String]]
-				val unit_bb = unit_aa.toMap
-			val obj_bb = JSONObject (unit_bb)
-			dict_bb(key) = obj_bb
-			}
-		else
-			{
-			dict_bb(key) = pair._2
-			}
-		}
+	implicit val formats = Serialization.formats(NoTypeHints)
 
-	val dict_cc = dict_bb.toMap
-	val obj = JSONObject (dict_cc)
-	val json_str = obj.toString ()
+	val json_str = write (dict_aa)
 
 	json_str
 }
@@ -86,6 +67,7 @@ def dict_to_json_proc (dict_aa: mutable.Map[String,Object]): String = {
 // -----------------------------------------------------------------
 def json_display (str_json:String)
 {
+/*
 	val aaa = JSON.parseFull(str_json)
 
 	aaa.foreach (bbb =>
@@ -95,6 +77,7 @@ def json_display (str_json:String)
 			record_parser (ccc)
 			})
 		})
+*/
 }
 
 // -----------------------------------------------------------------
@@ -116,27 +99,23 @@ def record_parser (ccc: Any)
 
 // -----------------------------------------------------------------
 def unit_json_gen_proc (name:String,population:Int,date_mod:String):String = {
+	implicit val formats = Serialization.formats(NoTypeHints)
+
 	var unit_aa = mutable.Map[String,String] ()
 	unit_aa("name") = name
 	unit_aa("population") = "%d".format (population)
 	unit_aa("date_mod") = date_mod
-	val unit_bb = unit_aa.toMap
-	val obj = JSONObject (unit_bb)
-	val json_str = obj.toString ()
+
+	val json_str = write (unit_aa)
 
 	json_str
 }
 
-/*
-	"{\"name\": \"" + name + "\"," +
-	"\"population\": " + population + "," +
-	"\"date_mod\": \"" + date_mod + "\"}\n"
-*/
 // --------------------------------------------------------------
 def json_to_unit_proc (str_json:String):(mutable.Map[String,String]) = {
 
 	var unit_aa = mutable.Map[String,String] ()
-
+/*
 
 	for (tpl <- JSON.parseFull(str_json).get) {
 		tpl match {
@@ -148,7 +127,7 @@ def json_to_unit_proc (str_json:String):(mutable.Map[String,String]) = {
 		case _ =>
 		}
 	}
-
+*/
 	unit_aa
 }
 

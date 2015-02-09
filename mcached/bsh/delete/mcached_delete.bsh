@@ -1,12 +1,8 @@
-#! /usr/bin/bsh
 //
 //	mcached_delete.bsh
 //
-//					Oct/02/2012
+//					Feb/05/2015
 //
-// --------------------------------------------------------------
-import com.danga.MemCached.SockIOPool;
-import com.danga.MemCached.MemCachedClient;
 // --------------------------------------------------------------
 source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
 source ("/var/www/data_base/common/bsh_common/mcached_manipulate.bsh");
@@ -16,16 +12,10 @@ String	key = bsh.args[0];
 
 System.out.println (key);
 
-String[] serverlist = { "localhost:11211" };
-Integer[] weights = { 3};
-SockIOPool pool = SockIOPool.getInstance();
-pool.setServers (serverlist);
-pool.setWeights (weights);
-pool.initialize ();
+final String server = "localhost";
+final int port = 11211;
 
-MemCachedClient mc = new MemCachedClient();
-
-mc.delete (key);
+mcached_delete_proc (server,port,key);
 
 System.out.println ("*** 終了 ***");
 // --------------------------------------------------------------

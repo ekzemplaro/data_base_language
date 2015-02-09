@@ -3,10 +3,10 @@
 #
 #	hsqldb_delete.rb
 #
-#				Jul/30/2011
+#				Jan/29/2015
+# ------------------------------------------------------------
 #
 include Java
-import org.hsqldb.jdbcDriver
 import java.sql.DriverManager
 import java.lang.System
 #

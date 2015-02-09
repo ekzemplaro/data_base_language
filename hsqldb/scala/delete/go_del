@@ -1,7 +1,10 @@
 #
 #
-export SCALA_COMMON="/var/www/data_base/common/scala_common"
-export CPX=.:$SCALA_COMMON
-export CPX=$CPX:/usr/share/java/hsqldb.jar
+COMMON=/var/www/data_base/common
+SCALA_COMMON=$COMMON/scala_common
+JAR=$COMMON/jar
 #
-scala -classpath $CPX hsqldb_delete t4678
+export CLASSPATH=.:$SCALA_COMMON:$JAR/hsqldb/hsqldb-2.3.2.jar
+#
+#
+scala hsqldb_delete t4678

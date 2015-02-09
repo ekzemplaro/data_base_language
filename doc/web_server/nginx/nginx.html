@@ -4,7 +4,7 @@
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
-<title>nginx (Aug/18/2014)</title>
+<title>nginx (Jan/19/2015)</title>
 </head>
 <body>
 
@@ -54,7 +54,8 @@ php5-fpm (FastCGI Process Manager) を使う。<p />
 #
 	fastcgi_pass unix:/var/run/php5-fpm.sock;
 	fastcgi_index index.php;
-	include fastcgi_params;
+#	include fastcgi_params;
+	include fastcgi.conf;
 	client_max_body_size 32M;
 	try_files $uri =403;
 	}
@@ -211,9 +212,7 @@ ln -s /usr/share/phpmyadmin/ .<p />
 </blockquote>
 
 <hr />
-<div id="result_aa">result_aa</div>
-<hr />
 <a href="/data_base/">Return</a><p />
-Aug/18/2014 AM 08:15<p />
+Jan/19/2015 AM 08:15<p />
 </body>
 </html>

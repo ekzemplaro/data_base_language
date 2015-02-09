@@ -3,7 +3,7 @@
 #
 #	mmcachedb_python_read.py
 #
-#						Oct/07/2014
+#						Feb/02/2015
 #
 #
 import sys
@@ -15,7 +15,7 @@ sys.path.append ("/var/www/data_base/common/python_common")
 from mcache_manipulate import mcache_to_dict_proc
 #
 # ----------------------------------------------------------------
-mc = memcache.Client(['localhost:21201'])
+mc = memcache.Client(['host_ubuntu1:21201'])
 keys = {'t1521','t1522','t1523',
 	't1524','t1525','t1526',
 	't1527','t1528','t1529',

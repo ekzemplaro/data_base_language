@@ -3,41 +3,24 @@
 /*
 	tyrant_delete.js
 
-					Apr/17/2013
+					Feb/05/2015
 
 */
 // ----------------------------------------------------------------------- 
-importPackage (java.io);
-importPackage (java.net);
+importPackage (java.io)
+importPackage (java.net)
 
- 
+load ("/var/www/data_base/common/rhino_common/mcached_manipulate.js") 
 // ----------------------------------------------------------------------- 
-print ("*** 開始 ***");
+print ("*** 開始 ***")
 
-var key_in=arguments[0];
-print	("key_in = " + key_in);
+var key_in=arguments[0]
+print	("key_in = " + key_in)
 
-var echoSocket = new Socket("localhost",1978);
-var os = new DataOutputStream(echoSocket.getOutputStream());
-var is = new BufferedReader
-	(new InputStreamReader (echoSocket.getInputStream()));
+var server = "host_ubuntu1"
+var port = 1978
 
-if (echoSocket != null && os != null && is != null)
-	{
-	mcached_delete_proc (os,is,key_in);
-	}
+mcached_delete_proc (server,port,key_in)
 
-os.close();
-is.close();
-echoSocket.close();
-
-print ("*** 終了 ***");
-// ----------------------------------------------------------------------- 
-function mcached_delete_proc (os,is,key_in)
-{
-	os.writeBytes("delete " + key_in + "\n"); 
-	var responseLine = is.readLine();
-        print (responseLine);
-}
-
+print ("*** 終了 ***")
 // ----------------------------------------------------------------------- 

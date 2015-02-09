@@ -1,10 +1,9 @@
-export USR_SHARE=/usr/share/java
-CPA=$(USR_SHARE)/json-lib-2.3.jar
 COMMON=/var/www/data_base/common
 SCALA_COMMON=$(COMMON)/scala_common
 JAR=$(COMMON)/jar
-CPP=$(CPA):$(JAR)/commons-net-3.0.1.jar:$(SCALA_COMMON)
+JSON4S=$(COMMON)/jar/json4s
+CPX=./:$(JSON4S)/json4s-core_2.11-3.2.11.jar:$(JSON4S)/json4s-native_2.11-3.2.11.jar:$(JSON4S)/json4s-ast_2.11-3.2.11.jar:$(SCALA_COMMON)
 ftp_create.class: ftp_create.scala
-	scalac -cp $(CPP) ftp_create.scala
+	scalac -cp $(CPX) ftp_create.scala
 clean:
 	rm -f *.class

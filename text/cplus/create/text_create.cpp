@@ -31,15 +31,15 @@ static map <string,Unit >  data_prepare_proc ()
 {
 	map <string,Unit> dict_aa;
 
-	dict_aa = dict_append_proc (dict_aa,"t2381","名古屋",79526,"1922-10-7");
+	dict_aa = dict_append_proc (dict_aa,"t2381","名古屋",79126,"1922-10-7");
 
 	dict_aa = dict_append_proc (dict_aa,"t2382","豊橋",98231,"1922-12-12");
 	dict_aa = dict_append_proc (dict_aa,"t2383","岡崎",13459,"1922-3-28");
 	dict_aa = dict_append_proc (dict_aa,"t2384","一宮",51486,"1922-9-21");
 
-	dict_aa = dict_append_proc (dict_aa,"t2385","蒲郡",83971,"1922-1-5");
-	dict_aa = dict_append_proc (dict_aa,"t2386","常滑",74821,"1922-5-22");
-	dict_aa = dict_append_proc (dict_aa,"t2387","大府",46785,"1922-7-17");
+	dict_aa = dict_append_proc (dict_aa,"t2385","蒲郡",83972,"1922-1-5");
+	dict_aa = dict_append_proc (dict_aa,"t2386","常滑",74829,"1922-5-22");
+	dict_aa = dict_append_proc (dict_aa,"t2387","大府",46185,"1922-7-17");
 	dict_aa = dict_append_proc (dict_aa,"t2388","瀬戸",59614,"1922-3-4");
 	dict_aa = dict_append_proc (dict_aa,"t2389","犬山",71823,"1922-5-8");
 

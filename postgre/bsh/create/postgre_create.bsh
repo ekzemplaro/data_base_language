@@ -1,8 +1,7 @@
-#! /usr/bin/bsh
 //
 //	postgre_create.bsh
 //
-//						Oct/01/2012
+//						Jan/28/2015
 //
 // ---------------------------------------------------------------------
 source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
@@ -13,13 +12,13 @@ Map data_prepare_proc ()
 	Map dict_aa = new HashMap ();
 
 	dict_aa = dict_append_proc
-		(dict_aa,"t3461","広島",13467,"2000-3-5");
+		(dict_aa,"t3461","広島",53467,"2000-3-5");
 
 	dict_aa = dict_append_proc
-		(dict_aa,"t3462","福山",54672,"2000-8-23");
+		(dict_aa,"t3462","福山",94672,"2000-8-23");
 
 	dict_aa = dict_append_proc
-		(dict_aa,"t3463","東広島",45318,"2000-7-14");
+		(dict_aa,"t3463","東広島",75318,"2000-7-14");
 
 	dict_aa = dict_append_proc
 		(dict_aa,"t3464","呉",81624,"2000-9-14");

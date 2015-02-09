@@ -1,11 +1,15 @@
 // ------------------------------------------------------------------    
 //	redis_create.scala
 //
-//					Jun/10/2013
+//					Jan/22/2015
 //
 // ------------------------------------------------------------------    
 import redis.clients.jedis.Jedis
+import scala.collection.mutable
 
+import org.json4s._
+import org.json4s.JsonDSL._
+import org.json4s.native.JsonMethods._
 // ------------------------------------------------------------------    
 object redis_create
 {
@@ -15,18 +19,11 @@ def main (args: Array[String])
 {
 	println ("*** 開始 ***")
 
+	val dict_aa = data_prepare_proc ()
 
-	var jedis = new Jedis ("host_dbase")            
+	val server = "host_dbase"
 
-	redis_data_set_proc (jedis,"t1851","福井",56783,"1998-7-20");
-	redis_data_set_proc (jedis,"t1852","敦賀",25467,"1998-5-24");
-	redis_data_set_proc (jedis,"t1853","小浜",85321,"1998-4-18");
-	redis_data_set_proc (jedis,"t1854","大野",45213,"1998-2-8");
-	redis_data_set_proc (jedis,"t1855","勝山",35748,"1998-9-9");
-	redis_data_set_proc (jedis,"t1856","鯖江",95631,"1998-5-11");
-	redis_data_set_proc (jedis,"t1857","あわら",25782,"1998-8-30");
-	redis_data_set_proc (jedis,"t1858","越前",82591,"1998-10-18");
-	redis_data_set_proc (jedis,"t1859","坂井",93156,"1998-12-12");
+	redis_manipulate.dict_to_redis_proc (server,dict_aa)
 
 
 	println ("*** 終了 ***")        
@@ -34,13 +31,22 @@ def main (args: Array[String])
 }
 
 // ------------------------------------------------------------------    
-def redis_data_set_proc (jedis:Jedis,id:String,name_in:String,population_in:Int,date_mod:String) =
-{
-	var json_new = "{\"name\": \"" + name_in + "\"," +
-	"\"population\": " + population_in.toString + "," +
-	"\"date_mod\": \"" + date_mod + "\"}"
+def data_prepare_proc ():(mutable.Map[String,Object]) = {
 
-	jedis.set (id.toString,json_new)
+	var dict_aa = mutable.Map[String,Object] ()
+
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1851","福井",25173,"1998-9-21")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1852","敦賀",35719,"1998-5-28")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1853","小浜",19543,"1998-1-12")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1854","大野",54312,"1998-6-23")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1855","勝山",79285,"1998-5-17")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1856","鯖江",27154,"1998-10-27")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1857","あわら",56892,"1998-3-21")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1858","越前",31428,"1998-7-8")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1859","坂井",23875,"1998-10-14")
+
+
+	dict_aa
 }
 
 // ------------------------------------------------------------------    

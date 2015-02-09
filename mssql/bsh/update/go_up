@@ -1,0 +1,9 @@
+#
+#
+COMMON=/var/www/data_base/common
+JAR=$COMMON/jar
+MSSQL_JAR=$JAR/mssql/sqljdbc4.jar
+export CLASSPATH=$MSSQL_JAR:/usr/share/java/bsh.jar
+#
+#
+java bsh.Interpreter mssql_update.bsh t1076 82439500

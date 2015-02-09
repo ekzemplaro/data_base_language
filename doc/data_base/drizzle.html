@@ -4,7 +4,7 @@
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
-<script src="/js/jquery-2.1.1.min.js"></script>
+<script src="/js/jquery-2.1.3.min.js"></script>
 <meta content="Program Language Examples to connect to Drizzle" name="description">
 <meta content="Drizzle,クライアント,接続,言語,サンプル" name="keyword">
 <meta content="Uchida Masatomo" name="author">
@@ -27,7 +27,21 @@ ii  libdrizzledmessage0   1:7.1.36-stable-1ubuntu1    amd64      Library contain
 
 スキーマの作成<br />
 <blockquote>
-drizzle> create schema city;
+<pre>
+$ drizzle -h localhost
+Welcome to the Drizzle client..  Commands end with ; or \g.
+Your Drizzle connection id is 1
+Connection protocol: mysql
+Server version: 7.2.3 Debian
+
+Type 'help;' or '\h' for help. Type '\c' to clear the buffer.
+
+drizzle> create schema city; 
+Query OK, 1 row affected (0.000646 sec)
+
+drizzle> exit
+Bye
+</pre>
 </blockquote>
 
 インターアクティブの操作<br />
@@ -80,6 +94,6 @@ Java<p />
 <div id="outarea_hh">outarea_hh</div>
 <hr />
 <a href="/data_base/">Return</a><p />
-Jul/16/2014 AM 08:15<p />
+Jan/16/2015 AM 08:15<p />
 </body>
 </html>

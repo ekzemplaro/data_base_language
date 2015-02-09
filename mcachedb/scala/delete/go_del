@@ -1,6 +1,11 @@
-export COMMON=/var/www/data_base/common
-export SCALA_COMMON=$COMMON/scala_common
-export JAR=$COMMON/jar
 #
-export CLASSPATH=.:$SCALA_COMMON
+COMMON=/var/www/data_base/common
+SCALA_COMMON=$COMMON/scala_common
+export JSON4S=$COMMON/jar/json4s
+#
+JSON4S_JAR=$JSON4S/json4s-core_2.11-3.2.11.jar:$JSON4S/json4s-native_2.11-3.2.11.jar:$JSON4S/json4s-ast_2.11-3.2.11.jar
+#
+export CLASSPATH=./:$SCALA_COMMON:$JSON4S_JAR
+#
 scala mcachedb_delete t1524
+#

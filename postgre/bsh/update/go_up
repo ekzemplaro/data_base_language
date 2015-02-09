@@ -1,4 +1,6 @@
 #
-export CLASSPATH=.:/usr/share/java/postgresql.jar
+export CLASSPATH=.:/usr/share/java/postgresql-jdbc/postgresql-jdbc4.jar
 #
-./postgre_update.bsh t3464 89234500
+export CLASSPATH=$CLASSPATH:/usr/share/java/bsh.jar
+#
+java bsh.Interpreter postgre_update.bsh t3464 89234500

@@ -1,6 +1,7 @@
 #
 export COMMON=/var/www/data_base/common
 export JAR=$COMMON/jar
-export CLASSPATH=.:$JAR/h2-1.3.169.jar
+export CLASSPATH=.:$JAR/h2-1.4.180.jar
 #
-./h2_create.bsh
+export CLASSPATH=$CLASSPATH:/usr/share/java/bsh.jar
+java bsh.Interpreter h2_create.bsh

@@ -16,6 +16,10 @@ HGDB_JAR=/home/uchida/dbm/hgdb/hypergraphdb-1.1/hypergraphdb.jar
 SG_CDB=$(JAR)/sg-cdb-1.0.4.jar
 POI39=/var/www/data_base/common/jar/poi-3.9
 #
+HTTPCLIENT=$(COMMON)/jar/commons-httpclient
+HTTPCLIENT_JAR=.:$(HTTPCLIENT)/commons-httpclient-3.1.jar:$(HTTPCLIENT)/commons-logging-1.2.jar:$(HTTPCLIENT)/commons-codec-1.10.jar
+#
+#
 CPP_A=.:$(EXIST_HOME)/exist.jar:$(L_CORE)/xmldb.jar:$(L_CORE)/log4j-1.2.15.jar
 CPP_B=$(CPP_A):$(L_CORE)/xmlrpc-client-3.1.2.jar:$(L_CORE)/xmlrpc-common-3.1.2.jar
 CPP_C=$(CPP_B):$(L_CORE)/ws-commons-util-1.0.2.jar
@@ -32,12 +36,13 @@ CPP_N=$(CPP_M):$(JAR)/commons-net-3.0.1.jar
 #
 CPP_P=$(CPP_N):$(VOLDEMORT)/dist/voldemort-0.90.1.jar
 CPP=$(CPP_P):$(JAVA_COMMON)
+CPP_JSON=./:$(JAVA_COMMON):$(JAR)/jsonic-1.1.2.jar
 CPP_TIKA=./:$(TIKA):$(JAVA_COMMON)
 CPP_EPUB=./:$(EPUB):$(JAVA_COMMON)
 CPP_ITEXT=./:$(ITEXT):$(JAVA_COMMON)
 CPP_HGDB=./:$(HGDB_JAR):$(JAVA_COMMON)
 CPP_CDB=./:$(SG_CDB):$(JAVA_COMMON):$(JAR)/jsonic-1.1.2.jar
-CPP_URI=.:/usr/share/java/commons-httpclient-3.1.jar
+CPP_URI=.:$(HTTPCLIENT_JAR)
 CPP_XLSX=.:$(POI39)/poi-3.9-20121203.jar:$(POI39)/poi-ooxml-3.9-20121203.jar
 CPP_HBASE=`hbase classpath`
 #
@@ -47,7 +52,6 @@ all: json_manipulate.class \
 	xml_manipulate.class \
 	text_manipulate.class \
 	file_io.class \
-	excel_manipulate.class \
 	xlsx_manipulate.class \
 	mcached_manipulate.class \
 	mcached_socket.class \
@@ -65,12 +69,13 @@ all: json_manipulate.class \
 	mongo_manipulate.class \
 	epub_manipulate.class \
 	pdf_manipulate.class \
+	excel_manipulate.class \
 	hgdb_manipulate.class \
 	voldemort_manipulate.class
 cassandra_manipulate.class: cassandra_manipulate.java
 	javac -cp $(CPP) cassandra_manipulate.java
 json_manipulate.class: json_manipulate.java
-	javac -cp $(CPP) json_manipulate.java -Xlint:unchecked
+	javac -cp $(CPP_JSON) json_manipulate.java -Xlint:unchecked
 xml_manipulate.class: xml_manipulate.java
 	javac xml_manipulate.java
 tcbn_manipulate.class: tcbn_manipulate.java
@@ -78,7 +83,7 @@ tcbn_manipulate.class: tcbn_manipulate.java
 get_uri.class: get_uri.java
 	javac -cp $(CPP_URI) get_uri.java
 text_manipulate.class: text_manipulate.java
-	javac -cp $(CPP) text_manipulate.java
+	javac -cp $(JAVA_COMMON) text_manipulate.java
 file_io.class: file_io.java
 	javac -cp $(CPP) file_io.java
 excel_manipulate.class: excel_manipulate.java

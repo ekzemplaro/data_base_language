@@ -1,10 +1,9 @@
 // --------------------------------------------------------------
 //	create/mcachedb_create.scala
 //
-//					Jun/11/2013
+//					Feb/04/2015
 // --------------------------------------------------------------
-import com.danga.MemCached.SockIOPool
-import com.danga.MemCached.MemCachedClient
+import	scala.collection.mutable
  
 // --------------------------------------------------------------
 object mcachedb_create
@@ -14,34 +13,45 @@ object mcachedb_create
 def main (args: Array [String])
 {
 	println ("*** 開始 ***")
- 
-	val serverlist = Array ("localhost:21201")
+
+	val dict_aa = data_prepare_proc ()
+
+	val server = "host_ubuntu1"
+	val port = 21201
+
+	mcached_manipulate.dict_to_mcached_proc (server,port,dict_aa) 
+/* 
+//	val serverlist = Array ("localhost:21201")
+	val serverlist = Array ("host_ubuntu1:21201")
 	val pool: SockIOPool = SockIOPool.getInstance()
 	pool.setServers(serverlist)
 	pool.initialize()
 
 	mcached_write_proc ()
-
+*/
 	println ("*** 終了 ***")
 }
  
 // --------------------------------------------------------------
-def mcached_write_proc ()
-{
-	val mc: MemCachedClient = new MemCachedClient()
+def data_prepare_proc ():(mutable.Map[String,Object]) = {
 
-	mcached_manipulate.data_put_proc (mc,"t1521","新潟",41986,"1998-10-21")
-	mcached_manipulate.data_put_proc (mc,"t1522","長岡",36178,"1998-9-2")
-	mcached_manipulate.data_put_proc (mc,"t1523","新発田",52894,"1998-7-12")
-	mcached_manipulate.data_put_proc (mc,"t1524","上越",71462,"1998-8-15")
-	mcached_manipulate.data_put_proc (mc,"t1525","糸魚川",32158,"1998-9-14")
-	mcached_manipulate.data_put_proc (mc,"t1526","加茂",21653,"1998-7-17")
-	mcached_manipulate.data_put_proc (mc,"t1527","三条",24751,"1998-1-26")
-	mcached_manipulate.data_put_proc (mc,"t1528","佐渡",34892,"1998-4-12")
-	mcached_manipulate.data_put_proc (mc,"t1529","柏崎",74172,"1998-9-15")
-	mcached_manipulate.data_put_proc (mc,"t1530","村上",64582,"1998-6-22")
-	mcached_manipulate.data_put_proc (mc,"t1531","十日町",54712,"1998-7-25")
-	mcached_manipulate.data_put_proc (mc,"t1532","五泉",41579,"1998-9-14")
+	var dict_aa = mutable.Map[String,Object] ()
+
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1521","新潟",69283,"1998-8-21")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1522","長岡",31659,"1998-5-28")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1523","新発田",19473,"1998-2-12")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1524","上越",54362,"1998-6-23")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1525","糸魚川",95381,"1998-5-17")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1526","加茂",69274,"1998-10-27")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1527","三条",31562,"1998-3-21")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1528","佐渡",95328,"1998-9-8")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1529","柏崎",28135,"1998-10-14")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1530","村上",91625,"1998-8-21")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1531","十日町",63781,"1998-4-17")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t1532","五泉",58426,"1998-9-3")
+
+
+	dict_aa
 }
  
 // --------------------------------------------------------------

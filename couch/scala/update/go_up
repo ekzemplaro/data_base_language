@@ -1,9 +1,11 @@
 #
-SHARE=/usr/share/java
-SCALA_COMMON=/var/www/data_base/common/scala_common
+COMMON=/var/www/data_base/common
+SCALA_COMMON=$COMMON/scala_common
 #
-export CPP=$SHARE/commons-httpclient-3.1.jar
+HTTPCLIENT=$COMMON/jar/commons-httpclient
+HTTPCLIENT_JAR=.:$HTTPCLIENT/commons-httpclient-3.1.jar:$HTTPCLIENT/commons-logging-1.2.jar:$HTTPCLIENT/commons-codec-1.10.jar
 #
-export CLASSPATH=./:$CPP:$SCALA_COMMON
 #
-scala couch_update t2023 52819100
+export CLASSPATH=./:$SCALA_COMMON:$HTTPCLIENT_JAR
+#
+scala couch_update t2023 42869100

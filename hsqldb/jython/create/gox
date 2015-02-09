@@ -1,3 +1,7 @@
 #
-export CLASSPATH=.:/usr/share/java/hsqldb.jar
+COMMON=/var/www/data_base/common
+JAR=$COMMON/jar
+#
+export CLASSPATH=.:$JAR/hsqldb/hsqldb-2.3.2.jar
+#
 ./hsqldb_create.py

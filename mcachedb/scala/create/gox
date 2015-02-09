@@ -1,6 +1,8 @@
-export SCALA_COMMON=/var/www/data_base/common/scala_common
-export MEMCACHED_JAR=/home/uchida/dbm/memcached/java/java_memcached/java_memcached-release_2.5.1.jar
-export CLASSPATH=./:$SCALA_COMMON:$MEMCACHED_JAR
+COMMON=/var/www/data_base/common
+SCALA_COMMON=$COMMON/scala_common
+JSON4S=$COMMON/jar/json4s
+JSON4S_JAR=$JSON4S/json4s-core_2.11-3.2.11.jar:$JSON4S/json4s-native_2.11-3.2.11.jar:$JSON4S/json4s-ast_2.11-3.2.11.jar
+export CLASSPATH=./:$SCALA_COMMON:$JSON4S_JAR
 #
 scala mcachedb_create
 #

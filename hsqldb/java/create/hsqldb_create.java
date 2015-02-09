@@ -2,7 +2,7 @@
 /*
 	hsqldb/java/create/hsqldb_create.java
 
-					Sep/13/2013
+					Jan/28/2015
 
 */
 // ---------------------------------------------------------------------
@@ -54,14 +54,14 @@ static void insert_data_proc (Statement ss)
 	throws SQLException
 {
 	rdb_common.insert_record_proc (ss,"t4671","鹿児島",52716,"2008-6-27");
-	rdb_common.insert_record_proc (ss,"t4672","指宿",71837,"2008-5-16");
-	rdb_common.insert_record_proc (ss,"t4673","志布志",64925,"2008-5-21");
+	rdb_common.insert_record_proc (ss,"t4672","指宿",71839,"2008-5-16");
+	rdb_common.insert_record_proc (ss,"t4673","志布志",64935,"2008-5-21");
 	rdb_common.insert_record_proc (ss,"t4674","川内",27264,"2008-9-28");
-	rdb_common.insert_record_proc (ss,"t4675","鹿屋",12517,"2008-10-6");
+	rdb_common.insert_record_proc (ss,"t4675","鹿屋",62517,"2008-10-6");
 	rdb_common.insert_record_proc (ss,"t4676","枕崎",34518,"2008-11-21");
-	rdb_common.insert_record_proc (ss,"t4677","出水",19831,"2008-4-16");
-	rdb_common.insert_record_proc (ss,"t4678","阿久根",49432,"2008-5-21");
-	rdb_common.insert_record_proc (ss,"t4679","霧島",59875,"2008-12-22");
+	rdb_common.insert_record_proc (ss,"t4677","出水",79831,"2008-4-16");
+	rdb_common.insert_record_proc (ss,"t4678","阿久根",49137,"2008-5-21");
+	rdb_common.insert_record_proc (ss,"t4679","霧島",59872,"2008-12-22");
 
 }
 

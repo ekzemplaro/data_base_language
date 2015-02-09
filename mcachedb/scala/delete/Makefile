@@ -1,6 +1,5 @@
 COMMON=/var/www/data_base/common
 SCALA_COMMON=$(COMMON)/scala_common
-JAR=$(COMMON)/jar
 CPA=$(SCALA_COMMON)
 mcachedb_delete.class: mcachedb_delete.scala
 	scalac -cp $(CPA) mcachedb_delete.scala

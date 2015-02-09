@@ -1,6 +1,10 @@
 #
-export SCALA_COMMON="/var/www/data_base/common/scala_common"
-export CPX=.:$SCALA_COMMON
-export CPX=$CPX:/usr/share/java/hsqldb.jar
 #
-scala -classpath $CPX hsqldb_update t4675 81272100
+COMMON=/var/www/data_base/common
+SCALA_COMMON=$COMMON/scala_common
+JAR=$COMMON/jar
+#
+export CLASSPATH=.:$SCALA_COMMON:$JAR/hsqldb/hsqldb-2.3.2.jar
+#
+#
+scala hsqldb_update t4675 81572900

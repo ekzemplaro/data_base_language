@@ -3,7 +3,7 @@
 	json_manipulate.java
 
 
-				Jan/06/2014
+				Feb/04/2015
 */
 // -----------------------------------------------------------------------
 import	java.util.HashMap;
@@ -54,14 +54,6 @@ static String	dict_to_json_proc
 static String unit_json_gen_proc 
 	(String name_in,int population_in,String date_mod_in)
 {
-/*
-	String value  = "{\"name\":\"" + name_in + "\",";
-	value +=  "\"population\":" + population_in + ",";
-	value += "\"date_mod\":\"" + date_mod_in + "\"}";
-
-	return	value;
-*/
-
 	HashMap <String,String> unit_aa
 				= new HashMap <String,String> ();
 
@@ -76,6 +68,14 @@ static String unit_json_gen_proc
 	return	str_json;
 }
 
+// -----------------------------------------------------------------------
+static HashMap <String,String> unit_json_parser (String str_json)
+{
+	HashMap <String,String>  unit_aa
+			= (HashMap <String,String>)JSON.decode (str_json);
+
+	return	unit_aa;
+}
 // -----------------------------------------------------------------------
 }
 

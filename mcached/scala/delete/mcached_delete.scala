@@ -2,15 +2,9 @@
 /*
 	mcached_delete.scala
 
-					May/29/2012
+					Feb/05/2015
 
 */
-// ----------------------------------------------------------------
-import java.net.Socket
-import java.io.InputStreamReader;
-import java.io.BufferedReader;
-import java.io.OutputStream;
-
 // ----------------------------------------------------------------
 object	mcached_delete
 {
@@ -28,12 +22,6 @@ def main (args: scala.Array[String])
 	print (server + '\t')
 	println (port)
 
-/*
-	var ss = new Socket(server, servPort)
-	var input = ss.getInputStream ()
-	var rr = new InputStreamReader (input)
-	var output = ss.getOutputStream ()
-*/
 	mcached_manipulate.delete_record_proc (key_in,server,port)
 
 	println ("*** 終了 ***")

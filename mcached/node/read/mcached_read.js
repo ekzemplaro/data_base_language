@@ -5,6 +5,7 @@
 //					Aug/09/2013
 // -------------------------------------------------------------
 var memcache = require('memcache');
+var underscore = require('underscore');
 
 var node_common = '/var/www/data_base/common/node_common';
 var json_manipulate=require (node_common + '/json_manipulate');

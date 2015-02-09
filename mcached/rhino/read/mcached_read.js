@@ -3,38 +3,28 @@
 /*
 	mcached_read.js
 
-					Apr/17/2013
+					Feb/05/2015
 
 */
 // ----------------------------------------------------------------------- 
-importPackage (java.io);
-importPackage (java.net);
-importPackage (java.util);
+importPackage (java.io)
+importPackage (java.net)
+importPackage (java.util)
 
-load ("/var/www/data_base/common/rhino_common/mcached_manipulate.js");
+load ("/var/www/data_base/common/rhino_common/text_manipulate.js")
+load ("/var/www/data_base/common/rhino_common/mcached_manipulate.js")
 // ----------------------------------------------------------------------- 
-print ("*** 開始 ***");
+print ("*** 開始 ***")
 
-var echoSocket = new Socket("localhost",11211);
-var os = new DataOutputStream(echoSocket.getOutputStream());
-var is = new BufferedReader
-	(new InputStreamReader (echoSocket.getInputStream()));
+var server = "localhost"
+var port = 11211
 
-if (echoSocket != null && os != null && is != null)
-	{
-	var keys = ["t1731","t1732","t1733","t1734","t1735",
-			"t1736","t1737","t1738","t1739"];
+var keys = ["t1731","t1732","t1733","t1734","t1735",
+			"t1736","t1737","t1738","t1739"]
 
-	for (var it in keys)
-		{
-		var key = keys[it]
-		mcached_fetch_proc (os,is,key);
-		}
-	}
+dict_aa = mcached_to_dict_proc (server,port,keys)
 
-os.close();
-is.close();
-echoSocket.close();
+dict_display_proc (dict_aa)
 
-print ("*** 終了 ***");
+print ("*** 終了 ***")
 // ----------------------------------------------------------------------- 

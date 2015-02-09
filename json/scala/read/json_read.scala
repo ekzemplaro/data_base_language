@@ -2,13 +2,12 @@
 //
 //	json_read.scala
 //
-//					Sep/19/2014
+//					Feb/03/2015
 //
 // -----------------------------------------------------------------
 import scala.io.Source
-import org.json4s._
-import org.json4s.native.JsonMethods._
 
+import scala.collection.mutable
 // -----------------------------------------------------------------
 object json_read
 {
@@ -19,9 +18,10 @@ def main (args: Array[String])
 
 	val file_in = args(0)
 
+	var dict_aa = mutable.Map[String,Object] ()
+
 	val str_json = file_io.file_to_str_proc (file_in)
 
-	val json = parse(str_json)
 
 	val keys = Array ("t0921","t0922","t0923",
 			"t0924","t0925","t0926",
@@ -29,20 +29,9 @@ def main (args: Array[String])
 			"t0930","t0931","t0932",
 			"t0933","t0934")
 
-	for (key <- keys)
-		{
-		val unit = json \ key
-		if (unit.values != None)
-			{
-		val name = (unit \ "name").values
-		val population = (unit \ "population").values
-		val date_mod = (unit \ "date_mod").values
-		print (key + "\t")
-		print (name + "\t")
-		print (population + "\t")
-		println (date_mod)
-			}
-		}
+	dict_aa = json_manipulate.json_to_dict_proc (keys,str_json)
+
+	text_manipulate.dict_display_proc (dict_aa)
 
 	println	("*** 終了 ***")
 }

@@ -3,7 +3,7 @@
 	json_delete.scala
 
 
-					Sep/18/2014
+					Jan/27/2015
 */
 // -----------------------------------------------------------------------
 import scala.io.Source
@@ -26,7 +26,13 @@ def main (args: Array[String])
 	var str_json = source.mkString
 	source.close()
 
-	var dict_aa = json_manipulate.json_to_dict_proc (str_json)
+	val keys = Array ("t0921","t0922","t0923",
+			"t0924","t0925","t0926",
+			"t0927","t0928","t0929",
+			"t0930","t0931","t0932",
+			"t0933","t0934")
+
+	var dict_aa = json_manipulate.json_to_dict_proc (keys,str_json)
 
 	if (dict_aa.contains (key_in))
 		{

@@ -2,7 +2,7 @@
 //
 //	text_manipulate.go
 //
-//					Jan/22/2014
+//					Jan/20/2015
 //
 // ----------------------------------------------------------------
 // package text_manipulate
@@ -14,6 +14,7 @@ import (
 	"strings"
 	"strconv"
 	"time"
+	"sort"
 )
 
 // ----------------------------------------------------------------
@@ -26,8 +27,15 @@ func display_record_proc (key string, unit_aa map[string]string) {
 
 // ----------------------------------------------------------------
 func dict_display_proc (dict_aa map[string](map[string]string)) {
-	for key,value := range dict_aa {
-	display_record_proc (key, value)
+	var keys []string
+	for key,_ := range dict_aa {
+	keys = append (keys,key)
+	}
+
+	sort.Strings (keys)
+
+	for _, key := range keys {
+	display_record_proc (key, dict_aa[key])
 	}
 
 }
@@ -95,7 +103,7 @@ func text_read_proc_exec (text_file,delimit string) map[string](map[string]strin
 			}
 		}
 
-	fmt.Printf ("%d\t" , len (dict_aa))
+	fmt.Printf ("%d\n" , len (dict_aa))
 	return (dict_aa)
 }
 

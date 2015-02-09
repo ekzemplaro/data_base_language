@@ -3,7 +3,7 @@
 #
 #	mcachedb_read.py
 #
-#					Oct/07/2014
+#					Feb/02/2015
 #
 import	sys
 import memcache
@@ -13,7 +13,7 @@ from mcache_manipulate import mcache_to_dict_proc
 from text_manipulate import dict_display_proc
 # ------------------------------------------------------------
 print ("*** 開始 ***")
-mc = memcache.Client(['localhost:21201'])
+mc = memcache.Client(['host_ubuntu1:21201'])
 #
 keys = {'t1521','t1522','t1523',
 	't1524','t1525','t1526',

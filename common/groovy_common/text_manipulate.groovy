@@ -3,7 +3,7 @@
 	text_manipulate.groovy
 
 
-					Jul/20/2011
+					Feb/04/2015
 */
 // -----------------------------------------------------------------------
 import	java.text.DateFormat
@@ -42,35 +42,30 @@ static void dict_display_proc (dict_aa)
 {
 	println ("*** dict_display_proc ***")
 
-//println dict_aa
-//	dict_aa.keySet().each { key -> println key }
-
-//	dict_aa.each { k,v -> println "$k => $v" }
+	dict_aa = dict_aa.sort ()
 
 	dict_aa.keySet().each { key ->
 		if ((key != '_id') && (key != '_rev'))
 		{
+		if (dict_aa[key]['name'] != [])
+		{
 		println key + "\t" + dict_aa[key]['name'] + "\t" + dict_aa[key]['population'] + "\t" + dict_aa[key]['date_mod']
 		 }
+		}
 		 }
 }
 
 
 // -----------------------------------------------------------------------
-static dict_update_proc (dict_in,id_in,population_in)
+static dict_update_proc (dict_in,key_in,population_in)
 {
-	if (dict_in.containsKey (id_in))
+	if (dict_in.containsKey (key_in))
 		{
 		def today = new Date ().format ("yyyy-MM-dd")
 
-		println dict_in[id_in]
-		println dict_in[id_in]['population']
-		println dict_in[id_in]['date_mod']
-
-		dict_in[id_in]['population'] = population_in
-		dict_in[id_in]['date_mod'] = today
+		dict_in[key_in]['population'] = population_in
+		dict_in[key_in]['date_mod'] = today
 		}
-
 
 	return	dict_in
 }

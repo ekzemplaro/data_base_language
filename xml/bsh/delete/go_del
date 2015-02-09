@@ -1,1 +1,3 @@
-./xml_delete.bsh /var/tmp/xml_file/cities.xml t2267
+#
+export CLASSPATH=$CLASSPATH:/usr/share/java/bsh.jar
+java bsh.Interpreter xml_delete.bsh /var/tmp/xml_file/cities.xml t2267

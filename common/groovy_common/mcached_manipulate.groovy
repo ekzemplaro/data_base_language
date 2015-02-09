@@ -1,11 +1,10 @@
 // --------------------------------------------------------------
 //	groovy_common/mcached_manipulate.groovy
 //
-//					Jan/06/2014
+//					Feb/04/2015
 // --------------------------------------------------------------
 import	java.text.DateFormat
 import	java.text.SimpleDateFormat
-
 
 import	groovy.json.*
 // --------------------------------------------------------------
@@ -58,12 +57,13 @@ static socket_read_proc (key,rr,output)
 }
 
 // --------------------------------------------------------------
-static void socket_get_record_proc (key,rr,output)
+static socket_get_record_proc (key,rr,output)
 {
 	def command = "get " + key + '\r\n'
 	output << command
 	output.flush ()
 	def line = ""
+	def unit_aa = []
 
 	while (null != ( line = rr.readLine() ) && line != "END"  )
 		{
@@ -73,14 +73,11 @@ static void socket_get_record_proc (key,rr,output)
 		else if (line.contains ("name"))
 			{
 			def slurper = new JsonSlurper()
-			def unit_aa = slurper.parseText (line)
-			print (key + "\t")
-			print (unit_aa.name + "\t")
-			print (unit_aa.population + "\t")
-			println (unit_aa.date_mod)
+			unit_aa = slurper.parseText (line)
 			}
-
 		}
+
+	return	unit_aa
 }
 
 // --------------------------------------------------------------
@@ -103,6 +100,99 @@ static void socket_delete_record_proc (key,rr,output)
 		}
 
 	println out_str
+}
+
+// --------------------------------------------------------------
+static mcached_to_dict_proc (server,port,keys)
+{
+	def dict_aa = new HashMap()
+
+	def ss = new Socket(server, port)
+
+	ss.withStreams
+		{ input, output ->
+		def rr = new InputStreamReader( input )
+
+		for (key in keys)
+			{
+			def unit_aa = mcached_manipulate.socket_get_record_proc (key,rr,output)
+
+			dict_aa[key] = unit_aa
+			}
+		}
+
+	ss.close ()
+
+	return	dict_aa
+}
+
+// --------------------------------------------------------------
+static void dict_to_mcached_proc (server,port,dict_aa)
+{
+	def ss = new Socket(server, port);
+
+	ss.withStreams
+		{input, output ->
+		def rr = new InputStreamReader( input )
+
+	dict_aa.each
+		{
+		key,value ->
+		def json = new JsonBuilder()
+		json (value)
+
+		def str_json = json.toString ()
+
+		socket_write_proc (key,str_json,rr,output)
+		}
+		}
+
+	ss.close ()
+}
+// --------------------------------------------------------------
+static mcached_update_proc (server,port,key,population)
+{
+	def ss = new Socket(server, port);
+
+	ss.withStreams
+		{ input, output ->
+		def rr = new InputStreamReader( input )
+
+		def str_json  = socket_read_proc (key,rr,output)
+		println ("str_json = " + str_json)
+
+		def slurper = new JsonSlurper()
+		def unit_aa = slurper.parseText (str_json)
+
+		def today = new Date ().format ("yyyy-MM-dd")
+
+		unit_aa['population'] = population
+		unit_aa['date_mod'] = today
+
+		def json = new JsonBuilder()
+	
+		json (unit_aa)
+
+		def str_json_new = json.toString ()
+		println ("str_json_new = " + str_json_new)
+
+		socket_write_proc (key,str_json_new,rr,output)
+		}
+
+	ss.close ()
+}
+// --------------------------------------------------------------
+static mcached_delete_proc (server,port,key)
+{
+	def ss = new Socket(server,port)
+	ss.withStreams
+		{ input, output ->
+		def rr = new InputStreamReader( input )
+
+		socket_delete_record_proc (key,rr,output)
+		}
+
+	ss.close ()
 }
 
 // --------------------------------------------------------------

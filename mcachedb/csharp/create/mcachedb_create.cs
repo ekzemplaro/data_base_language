@@ -1,7 +1,7 @@
 // ------------------------------------------------------------------
 //	mcachedb_create.cs
 //
-//					Jul/24/2014
+//					Feb/02/2015
 //
 // ------------------------------------------------------------------
 using System;
@@ -19,7 +19,8 @@ public static void Main(string[] args)
 {
 	Console.WriteLine  ("*** 開始 ***");
 
-	String[] serverlist = { "127.0.0.1:21201" };
+//	String[] serverlist = { "127.0.0.1:21201" };
+	String[] serverlist = { "172.17.0.2:21201" };
 
 	SockIOPool pool = SockIOPool.GetInstance();
 	pool.SetServers(serverlist);

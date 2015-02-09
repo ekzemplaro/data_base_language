@@ -1,4 +1,4 @@
-<title>C++ Oct/21/2014</title>
+<title>C++ Jan/30/2015</title>
 </head>
 <body>
 <h2><a href="http://www.cplusplus.com">C++</a></h2><p />
@@ -29,4 +29,10 @@ cl hello.cpp<p />
 Arch Linux<br />
 	<blockquote>
 	# pacman -S boost<p />
+	</blockquote>
+
+<hr />
+Arch Linux<p />
+	<blockquote>
+	# pacman -S clang<p />
 	</blockquote>

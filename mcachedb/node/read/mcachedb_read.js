@@ -2,7 +2,7 @@
 // -------------------------------------------------------------
 //	mcachedb_read.js
 //
-//					Aug/09/2013
+//					Feb/02/2015
 // -------------------------------------------------------------
 var memcache = require('memcache');
 
@@ -43,7 +43,9 @@ var onConnect = function()
 
 
 // -------------------------------------------------------------
-var client = new memcache.Client (21201,'localhost');
+var hostname = 'host_ubuntu1';
+
+var client = new memcache.Client (21201,hostname);
 client.connect();
 client.addHandler(onConnect);
 

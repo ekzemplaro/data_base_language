@@ -21,7 +21,8 @@ int main (int argc,char *argv[])
 {
 	cerr << "*** 開始 ***\n";
 
-	char url_target[] = "http://host_dbase:5984/city/cities";
+//	char url_target[] = "http://host_dbase:5984/city/cities";
+	char url_target[] = "http://cddn007:5984/city/cities";
 
 	string str_json = url_get_proc (url_target);
 

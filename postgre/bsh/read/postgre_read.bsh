@@ -1,8 +1,7 @@
-#! /usr/bin/bsh
 //
 //	postgre_read.bsh
 //
-//						Oct/01/2012
+//						Jan/28/2015
 //
 // ---------------------------------------------------------------------
 source ("/var/www/data_base/common/bsh_common/sql_manipulate.bsh");

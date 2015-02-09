@@ -14,6 +14,7 @@ sys.path.append ('/var/www/data_base/common/python_common')
 from text_manipulate import dict_append_proc
 # ------------------------------------------------------------
 def	mcache_update_proc (mc,id_key,population):
+	print ("*** mcache_update_proc ***")
 	str_key = str (id_key)
 	str_json = mc.get(str_key)
 	array_aa = json.loads (str_json)

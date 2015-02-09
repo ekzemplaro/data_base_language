@@ -1,56 +1,27 @@
 // --------------------------------------------------------------
 //	tyrant_create.java
 //
-//					Aug/20/2013
+//					Feb/04/2015
 // --------------------------------------------------------------
 import	java.util.HashMap;
 import	java.util.Set;
 
-import com.danga.MemCached.SockIOPool;
-import com.danga.MemCached.MemCachedClient;
  
 // --------------------------------------------------------------
 public class tyrant_create{
  
 // --------------------------------------------------------------
-public static void main(String[] args)
+public static void main(String[] args) throws Exception
 {
 	System.out.println ("*** 開始 ***");
- 
-                // SockIOPool を初期化
-	String[] serverlist = { "localhost:1978" };
-	SockIOPool pool = SockIOPool.getInstance();
-	pool.setServers(serverlist);
-	pool.setHashingAlg(SockIOPool.NEW_COMPAT_HASH);
-	pool.initialize();
-
-	MemCachedClient mc = new MemCachedClient();
-	mc.setPrimitiveAsString (true);
-	mc.setSanitizeKeys (false);
-
+	
 	HashMap <String, HashMap <String,String>>
 		dict_aa = data_prepare_proc ();
 
-	Set set_aaa = dict_aa.keySet ();
-	System.out.println (set_aaa);
+	final String server = "host_ubuntu1";
+	final int port = 1978;
 
-	for (Object key_aa: set_aaa)
-		{
-		String key = (String)key_aa;
-
-HashMap <String,String> dict_unit
-				= new HashMap <String,String> ();
-
-		dict_unit = dict_aa.get (key_aa);
-		String name = dict_unit.get ("name");
-		String ppx = dict_unit.get ("population");
-
-		int population = Integer.parseInt (ppx);
-
-		String date_mod = dict_unit.get ("date_mod");
-	mcached_manipulate.data_put_proc (mc,key,name,population,date_mod);
-		}
-
+	mcached_socket.dict_to_mcached_proc (server,port,dict_aa);
 
 	System.out.println ("*** 終了 ***");
 }
@@ -63,10 +34,10 @@ data_prepare_proc ()
 		= new HashMap <String, HashMap<String,String>> ();
 
 	dict_aa = text_manipulate.dict_append_proc
-		(dict_aa,"t4761","那覇",27689,"2008-5-15");
+		(dict_aa,"t4761","那覇",27189,"2008-5-12");
 
 	dict_aa = text_manipulate.dict_append_proc
-		(dict_aa,"t4762","宜野湾",49382,"2008-9-23");
+		(dict_aa,"t4762","宜野湾",49512,"2008-9-21");
 
 	dict_aa = text_manipulate.dict_append_proc
 		(dict_aa,"t4763","石垣",32753,"2008-3-24");

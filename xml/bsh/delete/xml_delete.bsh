@@ -1,8 +1,7 @@
-#! /usr/bin/bsh
 //
 //	xml_delete.bsh
 //
-//					Oct/02/2012
+//					Jan/28/2015
 //
 // --------------------------------------------------------------
 source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");

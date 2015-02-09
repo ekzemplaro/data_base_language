@@ -2,7 +2,7 @@
 //
 //	mcachedb_update.cs
 //
-//						Jun/23/2011
+//						Feb/02/2015
 // -------------------------------------------------------------
 using System;
 
@@ -23,7 +23,8 @@ static void Main (string[] args)
 
 	Console.WriteLine (id_in + "\t" + population_in);
 
-	String[] serverlist = { "127.0.0.1:21201" };
+//	String[] serverlist = { "127.0.0.1:21201" };
+	String[] serverlist = { "172.17.0.2:21201" };
 
 	SockIOPool pool = SockIOPool.GetInstance();
 	pool.SetServers(serverlist);

@@ -2,7 +2,7 @@
 ;
 ;	redis_manipulate.lsp
 ;
-;					Jan/24/2014
+;					Jan/19/2015
 ; -------------------------------------------------------------------
 (define (redis_read_proc socket key_in)
 	(setf command (format "get %s\r\n" key_in))
@@ -17,6 +17,18 @@
 	(record_parser key_in json_str)
 	)
 	)
+)
+
+; ------------------------------------------------------------------
+(define (redis_socket_write_proc socket key_in value_in)
+;	(println value_in)
+;
+	(setf command (format "set %s '%s'\r\n" key_in value_in))
+	(println command)
+	(net-send socket command)
+;
+	(net-receive socket buffer 10000)
+	(println buffer)
 )
 
 ; ------------------------------------------------------------------

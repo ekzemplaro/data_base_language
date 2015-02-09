@@ -1,9 +1,6 @@
 COMMON=/var/www/data_base/common
 SCALA_COMMON=$(COMMON)/scala_common
-JAR=$(COMMON)/jar
-MEMCACHED=$(JAR)/memcached
-CPPA=./:$(MEMCACHED)/java_memcached-release_2.6.3.jar:$(SCALA_COMMON)
-CPP=$(CPPA):$(MEMCACHED)/slf4j-api-1.6.1.jar
+CPP=./:$(SCALA_COMMON)
 tyrant_create.class: tyrant_create.scala
 	scalac -cp $(CPP) tyrant_create.scala -unchecked
 clean:

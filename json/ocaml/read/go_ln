@@ -1,4 +1,4 @@
 OCAML_COMMON=/var/www/data_base/common/ocaml_common
 #
-ln -s $OCAML_COMMON/text_manipulate.ml text_manipulate.ml
-ln -s $OCAML_COMMON/json_manipulate.ml json_manipulate.ml
+ln -s $OCAML_COMMON/text_manipulate.ml .
+ln -s $OCAML_COMMON/json_manipulate.ml .

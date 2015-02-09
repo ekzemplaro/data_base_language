@@ -1,49 +1,24 @@
 // --------------------------------------------------------------
 //	mcached_manipulate.scala
 //
-//					May/29/2012
+//					Feb/03/2015
 // --------------------------------------------------------------
 import scala.io.Source
-import scala.util.parsing.json.JSON
 import scala.collection.mutable
 
-import com.danga.MemCached.SockIOPool;
-import com.danga.MemCached.MemCachedClient;
+import org.json4s._
+import org.json4s.JsonDSL._
+import org.json4s.native.JsonMethods._
 
 import java.net.Socket
+import java.io.DataInputStream
 import java.io.InputStreamReader
 import java.io.BufferedReader
 import java.io.OutputStream
+import	java.io.DataOutputStream
 // --------------------------------------------------------------
 object mcached_manipulate
 {
-// --------------------------------------------------------------
-def mcached_to_dict_proc (server:String,port:Int,keys:Array[String]):(mutable.Map[String,Object]) = {
-
-	var ss = new Socket (server,port)
-
-	var input = ss.getInputStream ()
-	var rr = new InputStreamReader (input)
-	var output = ss.getOutputStream ()
-
-	var dict_aa = mutable.Map[String,Object] ()
-
-	for (key <- keys)
-		{
-		var unit_aa = get_record_proc (key,rr,output)
-
-// println ("key = " + key)
-
-		if (unit_aa != null)
-			{
-// println ("not null key = " + key)
-		dict_aa(key) = unit_aa
-			}
-		}
-
-	dict_aa
-}
-
 // --------------------------------------------------------------
 def get_record_proc (key_id:String,rr:InputStreamReader,output:OutputStream)
 	:(mutable.Map[String,String]) = {
@@ -54,23 +29,29 @@ def get_record_proc (key_id:String,rr:InputStreamReader,output:OutputStream)
 	output.write (data)
 	output.flush ()
 	var key = ""
-	var line = ""
+	var line:String = ""
 	var buf = new BufferedReader(rr);
 
 	var flag_find = false
 
-	while( null != (line = buf.readLine() ) && line != "END"  )
+	while(({line = buf.readLine(); line != null}) && line != "END")
 		{
 		if (line.contains ("VALUE"))
 			{
 			val cols = line.split (" ")
 			key = cols(1)
-	flag_find = true
-// println (line)
+			flag_find = true
 			}
 		else if (line.contains ("name"))
 			{
-			unit_aa = json_parse_proc (line)
+	//		println (line)
+			val json = parse(line)
+			val name = (json \ "name").values
+			val population = (json \ "population").values
+			val date_mod = (json \ "date_mod").values
+			unit_aa("name") = name.toString
+			unit_aa("population") = population.toString
+			unit_aa("date_mod") = date_mod.toString
 			}
 		else if (line.contains ("ERROR"))
 			{
@@ -86,24 +67,32 @@ def get_record_proc (key_id:String,rr:InputStreamReader,output:OutputStream)
 
 	unit_aa
 }
-
 // --------------------------------------------------------------
-def json_parse_proc (str_json:String) :(mutable.Map[String,String]) = {
-	var unit_aa = mutable.Map[String,String] ()
+def mcached_to_dict_proc (server:String,port:Int,keys:Array[String]):(mutable.Map[String,Object]) = {
 
-	for (tpl <- JSON.parse(str_json).get) {
-		tpl match {
-		case (t1:String, t2:String) if(t1 == "name") => unit_aa("name") = t2
-		case (t1:String, t2:Double) if(t1 == "population") => unit_aa("population") = "%d".format (t2.toInt)
-		case (t1:String, t2:Int) if(t1 == "population") => unit_aa("population") = "%d".format (t2) 
-		case (t1:String, t2:String) if(t1 == "population") => unit_aa("population") = t2
-		case (t1:String, t2:String) if(t1 == "date_mod") => unit_aa("date_mod") = t2
-		case _ =>
+	var ss = new Socket (server,port)
+
+	var input = ss.getInputStream ()
+	var rr = new InputStreamReader (input)
+	var output = ss.getOutputStream ()
+
+	var dict_aa = mutable.Map[String,Object] ()
+
+	for (key <- keys)
+		{
+		var unit_aa = get_record_proc (key,rr,output)
+
+//		println ("key = " + key)
+
+		if (unit_aa != null)
+			{
+			dict_aa(key) = unit_aa
+			}
 		}
-	}
 
-	unit_aa
+	dict_aa
 }
+
 // --------------------------------------------------------------
 def delete_record_proc (key_id:String,server:String,port:Int)
 {
@@ -122,7 +111,7 @@ def delete_record_proc (key_id:String,server:String,port:Int)
 	var line = ""
 	var buf = new BufferedReader(rr);
 	println ("*** delete_record_proc ccc ***")
-	while( null != (line = buf.readLine() ) && line != "END"  )
+	while(({line = buf.readLine(); line != null}) && line != "END")
 		{
 			println (line)
 		if (line.contains ("ERROR"))
@@ -145,65 +134,102 @@ def delete_record_proc (key_id:String,server:String,port:Int)
 }
 
 // --------------------------------------------------------------
-def mcached_read_single (mc:MemCachedClient,key:String)
+def mcached_socket_write_proc (key:String ,value_in:String,
+	input:DataInputStream,output:DataOutputStream)
 {
-	var str_json  = mc.get (key).toString
+	println (value_in)
 
-if (str_json != null)
-{
-var unit_aa = json_manipulate.json_to_unit_proc (str_json)
-	var name = unit_aa.get ("name")
-	var pop_str = unit_aa.get ("population").toString ()
-	var date_mod = unit_aa.get ("date_mod")
+	var rvalue = null
+	val llx = value_in.getBytes().length
+	val command = "set " + key + " 0 0 " + llx + "\r\n"
+	println (command)
 
-	var out_str = key + "\t" + name + "\t"
-	out_str += pop_str + "\t" + date_mod
-	println (out_str)
+	output.writeBytes (command)
+	output.flush ()
+
+	var rr = new InputStreamReader (input)
+
+	val command_bb =  value_in.getBytes()
+	val rn = "\r\n"
+
+	output.write (command_bb)
+	output.writeBytes (rn)
+	output.flush ()
+
+	var buf = new BufferedReader(rr);
+
+	var line:String = ""
+
+	while(({line = buf.readLine(); line != null}) && line != "STORED")
+		{
+		if (line.contains ("ERROR"))
+			{
+			println (line)
+//			return null
+			}
+		}
+
+//	return	rvalue
 }
 
+// --------------------------------------------------------------
+def dict_to_mcached_proc (server:String,port:Int,
+	dict_aa: mutable.Map[String,Object])
+{
+	println ("*** dict_to_mcached_proc ***")
+
+	var sock = new Socket (server,port)
+	var output = new DataOutputStream (sock.getOutputStream ())
+	var input = new DataInputStream (sock.getInputStream ())
+
+
+	for (pair <- dict_aa)
+		{
+		val key = pair._1
+		val unit_aa = pair._2.asInstanceOf [mutable.Map[String,String]]
+
+		val unit_bb = unit_aa.toMap
+		val json_str = compact(render(unit_bb))
+
+		mcached_manipulate.mcached_socket_write_proc (key,json_str,input,output)
+		}
+
+	input.close ()
+	output.close ()
+	sock.close ()
 }
 // --------------------------------------------------------------
-def mcached_update_proc (mc:MemCachedClient,key:String,population_in:Int)
+def mcached_update_proc (server:String,port:Int,key_in:String,population_in:Int)
 {
 	System.out.println ("*** mcached_update_proc ***");
-	System.out.println ("key = " + key);
+	System.out.println ("key_in = " + key_in);
 
-	val str_json  = mc.get(key).toString
+	var sock = new Socket (server,port)
 
-	System.out.println (str_json);
+	var iis = sock.getInputStream ()
+	var input = new DataInputStream (iis)
+	var rr = new InputStreamReader (iis)
+	var output = new DataOutputStream (sock.getOutputStream ())
 
-	val unit_aa = json_manipulate.json_to_unit_proc (str_json)
+	var unit_aa = mcached_manipulate.get_record_proc (key_in,rr,output)
 
-	print ("name = " +  unit_aa("name") + "\t")
-	print (unit_aa("population") + "\t")
-	println (unit_aa("date_mod"))
-
-	val date_mod_new = text_manipulate.get_current_date_proc ()
-
-
-	println ("key = " + key)
-
-	mcached_manipulate.data_put_proc (mc,key,unit_aa("name"),population_in,date_mod_new)
-
-}
-
-// --------------------------------------------------------------
-def data_put_proc (mc:MemCachedClient,
-	key:String,name_in:String,population_in:Int,date_mod_in:String)
-{
-	val value  = json_manipulate.unit_json_gen_proc (
-		name_in,population_in,date_mod_in)
-
-	if(mc.set(key, value))
+	if (unit_aa != null)
 		{
-		println("set ok")
-		}
-	else
-		{
-		println("set ng")
-		}
-}
+		unit_aa("population") = "%d".format (population_in)
+		val date_mod_new = text_manipulate.get_current_date_proc ()
+		unit_aa("date_mod") = date_mod_new
 
+		val unit_bb = unit_aa.toMap
+		val json_str = compact(render(unit_bb))
+		println (json_str)
+
+		mcached_manipulate.mcached_socket_write_proc (key_in,json_str,input,output)
+		}
+
+	input.close ()
+	output.close ()
+	sock.close ()
+}
 // --------------------------------------------------------------
 }
 

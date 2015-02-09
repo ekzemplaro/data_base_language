@@ -1,1 +1,3 @@
-./csv_update.bsh /var/tmp/csv/cities.csv t1275 27638900
+#
+export CLASSPATH=$CLASSPATH:/usr/share/java/bsh.jar
+java bsh.Interpreter csv_update.bsh /var/tmp/csv/cities.csv t1275 27638900

@@ -1,43 +1,40 @@
-#! /usr/bin/bsh
 //
 //	mcached_create.bsh
 //
-//					Oct/02/2012
+//					Feb/05/2015
 //
-// --------------------------------------------------------------
-import com.danga.MemCached.SockIOPool;
-import com.danga.MemCached.MemCachedClient;
 // --------------------------------------------------------------
 source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
 source ("/var/www/data_base/common/bsh_common/mcached_manipulate.bsh");
+
 // --------------------------------------------------------------
 Map data_prepare_proc ()
 {
 	Map dict_aa = new HashMap ();
 
 	dict_aa = dict_append_proc
-		(dict_aa,"t1731","金沢",53976,"2000-4-15");
+		(dict_aa,"t1731","金沢",52971,"2000-4-15");
 
 	dict_aa = dict_append_proc
-		(dict_aa,"t1732","輪島",31496,"2000-5-23");
+		(dict_aa,"t1732","輪島",38492,"2000-5-23");
 
 	dict_aa = dict_append_proc
-		(dict_aa,"t1733","小松",25371,"2000-9-24");
+		(dict_aa,"t1733","小松",21378,"2000-9-24");
 
 	dict_aa = dict_append_proc
-		(dict_aa,"t1734","七尾",87624,"2000-3-14");
+		(dict_aa,"t1734","七尾",84629,"2000-3-14");
 
 	dict_aa = dict_append_proc
-		(dict_aa,"t1735","珠洲",72531,"2000-4-12");
+		(dict_aa,"t1735","珠洲",72536,"2000-4-12");
 
 	dict_aa = dict_append_proc
-		(dict_aa,"t1736","加賀",28529,"2000-7-28");
+		(dict_aa,"t1736","加賀",21543,"2000-7-28");
 
 	dict_aa = dict_append_proc
-		(dict_aa,"t1737","羽咋",39457,"2000-6-19");
+		(dict_aa,"t1737","羽咋",39257,"2000-6-19");
 
 	dict_aa = dict_append_proc
-		(dict_aa,"t1738","かほく",65284,"2000-10-15");
+		(dict_aa,"t1738","かほく",65184,"2000-10-15");
 
 	dict_aa = dict_append_proc
 		(dict_aa,"t1739","白山",74391,"2000-11-24");
@@ -48,21 +45,12 @@ Map data_prepare_proc ()
 // --------------------------------------------------------------
 System.out.println ("*** 開始 ***");
 
+String server = "localhost";
+int port = 11211;
+
 Map dict_aa = data_prepare_proc ();
 
-dict_display_proc (dict_aa);
-
-String[] serverlist = { "localhost:11211" };
-SockIOPool pool = SockIOPool.getInstance();
-pool.setServers(serverlist);
-pool.setHashingAlg(SockIOPool.NEW_COMPAT_HASH);
-pool.initialize();
-
-MemCachedClient mc = new MemCachedClient();
-mc.setPrimitiveAsString (true);
-mc.setSanitizeKeys (false);
-
-dict_to_mcached_proc (mc,dict_aa);
+dict_to_mcached_proc (server,port,dict_aa);
 
 System.out.println ("*** 終了 ***");
 // --------------------------------------------------------------

@@ -12,6 +12,8 @@ HGDB_JAR=/home/uchida/dbm/hgdb/hypergraphdb-1.1/hypergraphdb.jar
 SG_CDB=$(JAR)/sg-cdb-1.0.4.jar
 POI39=/var/www/data_base/common/jar/poi-3.9
 MONGO_JAR=$(JAR)/mongo-2.8.0.jar
+HTTPCLIENT=$(JAR)/commons-httpclient
+HTTPCLIENT_JAR=$(HTTPCLIENT)/commons-httpclient-3.1.jar:$(HTTPCLIENT)/commons-logging-1.2.jar:$(HTTPCLIENT)/commons-codec-1.10.jar
 #
 CPP_A=/usr/share/java/commons-httpclient-3.1.jar
 CPP_B=/usr/share/java/json-lib-2.3.jar:/usr/share/java/xom-1.2.1.jar:/usr/share/java/commons-beanutils.jar
@@ -19,7 +21,7 @@ CPP_C=/usr/share/java/commons-lang-2.4.jar:/usr/share/java/ezmorph-1.0.6.jar:/us
 CPP_D=$(JAR)/jsonic-1.1.2.jar:/usr/local/lib/tokyocabinet.jar
 CPP_E=$(CPP_A):$(CPP_B):$(CPP_C):$(CPP_D):$(REDIS_JAR)
 CPP_F=$(CPP_E):/usr/share/java/jxl.jar
-CPP_G=$(CPP_F):$(JAR)/commons-net-3.0.1.jar
+CPP_G=$(CPP_F):$(JAR)/commons-net-3.3.jar
 CPP_I=$(CPP_G):$(LIB_CASSANDRA)/apache-cassandra-1.2.9.jar
 CPP_J=$(CPP_I):$(LIB_CASSANDRA)/libthrift-0.7.0.jar
 CPP_K=$(CPP_J):$(LIB_CASSANDRA)/log4j-1.2.16.jar:$(LIB_CASSANDRA)/slf4j-api-1.6.1.jar:$(LIB_CASSANDRA)/slf4j-log4j12-1.6.1.jar
@@ -30,6 +32,7 @@ CPP_HGDB=./:$(HGDB_JAR):$(JAVA_COMMON)
 CPP_CDB=./:$(SG_CDB):$(JAVA_COMMON):$(JAR)/jsonic-1.1.2.jar
 CPP_XLSX=.:$(POI39)/poi-3.9-20121203.jar:$(POI39)/poi-ooxml-3.9-20121203.jar:$(POI39)/poi-ooxml-schemas-3.9-20121203.jar:$(POI39)/ooxml-lib/xmlbeans-2.3.0.jar
 CPP_HBASE=`hbase classpath`
+CPP_NET=./:$(HTTPCLIENT_JAR)
 #
 all: sql_manipulate.class xml_manipulate.class \
 	text_manipulate.class \
@@ -60,7 +63,7 @@ excel_manipulate.class: excel_manipulate.groovy
 cdb_manipulate.class: cdb_manipulate.groovy
 	groovyc -cp $(CPP_CDB) cdb_manipulate.groovy
 net_manipulate.class: net_manipulate.groovy
-	groovyc -cp $(CPP_E) net_manipulate.groovy
+	groovyc -cp $(CPP_NET) net_manipulate.groovy
 tcbn_manipulate.class: tcbn_manipulate.groovy
 	groovyc -cp $(CPP_E) tcbn_manipulate.groovy
 ftp_manipulate.class: ftp_manipulate.groovy

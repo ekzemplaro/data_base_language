@@ -2,7 +2,7 @@
 # -------------------------------------------------------------
 #	mcachedb_delete.coffee
 #
-#					Aug/09/2013
+#					Feb/02/2015
 # -------------------------------------------------------------
 memcache = require('memcache');
 
@@ -21,7 +21,8 @@ key_in=process.argv[2]
 
 console.log(key_in)
 
-client = new memcache.Client(21201,'localhost')
+hostname = 'host_ubuntu1'
+client = new memcache.Client(21201,hostname)
 client.connect()
 client.addHandler(onConnect)
 

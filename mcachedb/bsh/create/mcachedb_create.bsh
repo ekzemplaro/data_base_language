@@ -1,12 +1,8 @@
-#! /usr/bin/bsh
 //
 //	mcachedb_create.bsh
 //
-//					Oct/02/2012
+//					Feb/05/2015
 //
-// --------------------------------------------------------------
-import com.danga.MemCached.SockIOPool;
-import com.danga.MemCached.MemCachedClient;
 // --------------------------------------------------------------
 source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
 source ("/var/www/data_base/common/bsh_common/mcached_manipulate.bsh");
@@ -16,7 +12,7 @@ Map data_prepare_proc ()
 	Map dict_aa = new HashMap ();
 
 	dict_aa = dict_append_proc
-		(dict_aa,"t1521","新潟",53976,"2000-4-15");
+		(dict_aa,"t1521","新潟",53276,"2000-4-15");
 
 	dict_aa = dict_append_proc
 		(dict_aa,"t1522","長岡",31496,"2000-5-23");
@@ -60,19 +56,10 @@ System.out.println ("*** 開始 ***");
 
 Map dict_aa = data_prepare_proc ();
 
-dict_display_proc (dict_aa);
+final String server = "host_ubuntu1";
+final int port = 21201;
 
-String[] serverlist = { "localhost:21201" };
-SockIOPool pool = SockIOPool.getInstance();
-pool.setServers(serverlist);
-pool.setHashingAlg(SockIOPool.NEW_COMPAT_HASH);
-pool.initialize();
-
-MemCachedClient mc = new MemCachedClient();
-mc.setPrimitiveAsString (true);
-mc.setSanitizeKeys (false);
-
-dict_to_mcached_proc (mc,dict_aa);
+dict_to_mcached_proc (server,port,dict_aa);
 
 System.out.println ("*** 終了 ***");
 // --------------------------------------------------------------

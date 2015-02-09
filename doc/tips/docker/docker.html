@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>docker Dec/18/2014</title>
+<title>docker Feb/04/2015</title>
 </head>
 <body>
 <h2>Docker</h2><p />
@@ -13,28 +13,36 @@
 An open platform for distributed applications<p />
 </blockquote>
 
+Information<br />
+<blockquote>
+<a href="https://wiki.archlinux.org/index.php/Docker_%28%E6%97%A5%E6%9C%AC%E8%AA%9E%29">Docker (日本語)</a><p />
+</blockquote>
+
 Install on Arch Linux<br />
 <blockquote>
 # pacman -S docker<p />
 # systemctl start docker<p />
-# docker version<p />
-# docker info<p />
+docker を通常ユーザーで実行できるようにする<br />
+<blockquote>
+	# gpasswd -a uchida docker<p />
+</blockquote>
+$ docker version<p />
+$ docker info<p />
 
-/usr/lib/systemd/system/docker.service<p />
+<a href="docker.service.txt">/usr/lib/systemd/system/docker.service</a><p />
 	<blockquote>
 	Environment="http_proxy=http://user:passwd@host_proxy:80/"
 	</blockquote>
 $ docker pull ubuntu:latest<p />
 	<blockquote>
 	<pre>
-Pulling repository ubuntu
-c4ff7513909d: Download complete 
-511136ea3c5a: Download complete 
-1c9383292a8f: Download complete 
-9942dd43ff21: Download complete 
-d92c3c92fa73: Download complete 
-0ea0d582fd90: Download complete 
-cc58e55aa5a5: Download complete
+ubuntu:latest: The image you are pulling has been verified
+511136ea3c5a: Pull complete 
+53f858aaaf03: Pull complete 
+837339b91538: Pull complete 
+615c102e2290: Pull complete 
+b39b81afc8ca: Pull complete 
+Status: Downloaded newer image for ubuntu:latest
 	</pre>
 	</blockquote>
 $ docker images<p />
@@ -45,7 +53,23 @@ ubuntu              latest              c4ff7513909d        7 days ago          
 	</pre>
 	</blockquote>
 ubuntuイメージからubuntu1コンテナーを作成、端末を開きbashを実行<p />
-$ docker run -it --name ubuntu1 ubuntu /bin/bash<p />
+	<blockquote>
+	$ docker run -it --name ubuntu1 ubuntu /bin/bash<p />
+	</blockquote>
+	再実行<p />
+	<blockquote>
+	$ docker start -i ubuntu1<p />
+	</blockquote>
+	コンテナーの一覧を確認<p />
+	<blockquote>
+	$ docker ps -a<p />
+	<pre>
+	CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+aed97425cbd0        ubuntu:latest       "/bin/bash"         17 minutes ago      Up 4 minutes                            ubuntu1        
+	</pre>
+	</blockquote>
+
+
 </blockquote>
 
 $ docker commit ubuntu1 uchida/nginx<p />
@@ -103,6 +127,6 @@ Install<br />
 </blockquote>
 <hr />
 <a href="/data_base/">Return</a><p />
-Dec/18/2014 AM 08:15<p />
+Feb/04/2015 AM 08:15<p />
 </body>
 </html>

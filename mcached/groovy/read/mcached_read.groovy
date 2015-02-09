@@ -2,38 +2,36 @@
 /*
 	mcached_read.groovy
 
-					Apr/22/2013
+					Feb/04/2015
 
 */
 // ----------------------------------------------------------------
-import java.net.Socket
-import groovy.json.*
+import mcached_manipulate
+import text_manipulate
+
+// ----------------------------------------------------------------
+class mcached_read
+{
 // ----------------------------------------------------------------
 static void main (args)
 {
 	println ("*** 開始 ***")
 
-	String server = "localhost"
-	int servPort = 11211
+	final String server = "localhost"
+	final int port = 11211
 	print (server + '\t')
-	println (servPort)
+	println (port)
 
 	def keys = ["t1731","t1732","t1733","t1734","t1735",
 		"t1736","t1737","t1738","t1739"]
 
-	ss = new Socket(server, servPort);
-	ss.withStreams
-		{ input, output ->
-		def rr = new InputStreamReader( input )
+	def dict_aa = mcached_manipulate.mcached_to_dict_proc (server,port,keys)
 
-		for (key in keys)
-			{
-			def ff = new mcached_manipulate ()
-			ff.socket_get_record_proc (key,rr,output)
-			}
-		}
+	text_manipulate.dict_display_proc (dict_aa)
 
 	println ("*** 終了 ***")
 }
 
+// ----------------------------------------------------------------
+}
 // ----------------------------------------------------------------

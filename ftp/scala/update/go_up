@@ -1,17 +1,11 @@
-export USR_SHARE=/usr/share/java
-export CPA=$USR_SHARE/json-lib-2.3.jar
-export CPA=$CPA:$USR_SHARE/commons-beanutils.jar
-export CPA=$CPA:$USR_SHARE/commons-lang-2.4.jar
-export CPA=$CPA:$USR_SHARE/ezmorph-1.0.6.jar
-#
-export CPA=$CPA:$USR_SHARE/commons-logging-1.1.1.jar
-export CPA=$CPA:$USR_SHARE/commons-collections3-3.2.1.jar
 #
 export COMMON=/var/www/data_base/common
 export SCALA_COMMON=$COMMON/scala_common
 export JAR=$COMMON/jar
+JSON4S=$JAR/json4s
 #
-CPX=$JAR/commons-net-3.0.1.jar:$SCALA_COMMON
-CPX=./:$CPA:$CPX
+JSON4S_JAR=$JSON4S/json4s-core_2.11-3.2.11.jar:$JSON4S/json4s-native_2.11-3.2.11.jar:$JSON4S/json4s-ast_2.11-3.2.11.jar
+CPX=./:$JSON4S_JAR:$JAR/commons-net-3.3.jar:$SCALA_COMMON
+#
 #
 scala -cp $CPX ftp_update t0363 43218900

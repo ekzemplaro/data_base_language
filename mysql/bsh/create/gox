@@ -1,6 +1,5 @@
 #
-export COMMON=/var/www/data_base/common
-export JAR=$COMMON/jar
-export CLASSPATH=.:/usr/share/java/mysql-connector-java.jar
+export CLASSPATH=.:/usr/share/java/mysql-jdbc/mysql-connector-java-bin.jar
+export CLASSPATH=$CLASSPATH:/usr/share/java/bsh.jar
 #
-./mysql_create.bsh
+java bsh.Interpreter mysql_create.bsh

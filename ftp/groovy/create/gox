@@ -1,13 +1,11 @@
 #
-export USR_SHARE=/usr/share/java
-GROOVY_JAR=$USR_SHARE/groovy-all.jar:$USR_SHARE/groovy.jar
+GROOVY_ALL_JAR=/usr/share/groovy/embeddable/groovy-all.jar
 #
 #
 export COMMON=/var/www/data_base/common
 export GROOVY_COMMON=$COMMON/groovy_common
 export JAR=$COMMON/jar
 #
-CPX=$JAR/commons-net-3.0.1.jar:$GROOVY_COMMON:$GROOVY_JAR
-CPX=./:$CPX
+CPX=./:$JAR/commons-net-3.3.jar:$GROOVY_COMMON:$GROOVY_ALL_JAR
 #
 java -cp $CPX ftp_create

@@ -4,14 +4,19 @@
 <h1><a href="http://memcachedb.org/">MemcacheDB</a></h1>
 <a href="http://code.google.com/p/memcached/wiki/Clients">Clients</a><p />
 <blockquote>
-sudo /usr/share/memcachedb/start-memcachedb<p />
+# /etc/init.d/memcachedb start<p />
+# /etc/init.d/memcachedb stop<p />
+
 telnet 127.0.0.1 21201<p />
 </blockquote>
 
 <pre>
 ii  memcachedb    1.2.0-9   amd64    Persistent storage engine using the memcache protocol
 </pre>
+
+/etc/memcachedb.conf<p />
 <blockquote>
+-l 0.0.0.0<p />
 </blockquote>
 
 Python<p />

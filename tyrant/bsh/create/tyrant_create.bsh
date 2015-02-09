@@ -1,0 +1,56 @@
+//
+//	tyrant_create.bsh
+//
+//					Feb/05/2015
+//
+// --------------------------------------------------------------
+source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
+source ("/var/www/data_base/common/bsh_common/mcached_manipulate.bsh");
+
+// --------------------------------------------------------------
+Map data_prepare_proc ()
+{
+	Map dict_aa = new HashMap ();
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t4761","那覇",97361,"2000-7-15");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t4762","宜野湾",49287,"2000-5-23");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t4763","石垣",37486,"2000-9-24");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t4764","浦添",81629,"2000-3-14");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t4765","名護",72936,"2000-4-12");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t4766","糸満",21543,"2000-7-28");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t4767","沖縄",39257,"2000-6-19");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t4768","豊見城",65184,"2000-10-15");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t4769","うるま",74391,"2000-11-24");
+
+	return	dict_aa;
+}
+
+// --------------------------------------------------------------
+System.out.println ("*** 開始 ***");
+
+String server = "host_ubuntu1";
+int port = 1978;
+
+Map dict_aa = data_prepare_proc ();
+
+dict_to_mcached_proc (server,port,dict_aa);
+
+System.out.println ("*** 終了 ***");
+// --------------------------------------------------------------

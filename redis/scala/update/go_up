@@ -3,8 +3,9 @@
 export COMMON=/var/www/data_base/common
 export SCALA_COMMON=$COMMON/scala_common
 export JAR=$COMMON/jar
+JSON4S=$JAR/json4s
 #
 export REDIS_JAR=$JAR/jedis-2.1.0.jar
-export CLASSPATH=.:$REDIS_JAR:$SCALA_COMMON
+export CLASSPATH=.:$JSON4S/json4s-core_2.11-3.2.11.jar:$JSON4S/json4s-native_2.11-3.2.11.jar:$JSON4S/json4s-ast_2.11-3.2.11.jar:$SCALA_COMMON:$REDIS_JAR
 #
-scala redis_update t1851 812451600
+scala redis_update t1851 82451600

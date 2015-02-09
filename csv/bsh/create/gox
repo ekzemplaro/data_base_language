@@ -1,1 +1,3 @@
-./csv_create.bsh /var/tmp/csv/cities.csv
+#
+export CLASSPATH=$CLASSPATH:/usr/share/java/bsh.jar
+java bsh.Interpreter csv_create.bsh /var/tmp/csv/cities.csv

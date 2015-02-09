@@ -4,21 +4,26 @@
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
-<script src="/js/jquery-2.1.1.min.js"></script>
+<script src="/js/jquery-2.1.3.min.js"></script>
 <title>MemcacheDB</title>
 </head>
 <body>
 <h1><a href="http://memcachedb.org/">MemcacheDB</a></h1>
 <a href="http://code.google.com/p/memcached/wiki/Clients">Clients</a><p />
 <blockquote>
-sudo /usr/share/memcachedb/start-memcachedb<p />
+# /etc/init.d/memcachedb start<p />
+# /etc/init.d/memcachedb stop<p />
+
 telnet 127.0.0.1 21201<p />
 </blockquote>
 
 <pre>
 ii  memcachedb    1.2.0-9   amd64    Persistent storage engine using the memcache protocol
 </pre>
+
+/etc/memcachedb.conf<p />
 <blockquote>
+-l 0.0.0.0<p />
 </blockquote>
 
 Python<p />
@@ -46,6 +51,6 @@ Ruby<p />
 <div id="outarea_hh">outarea_hh</div>
 <hr />
 <a href="/data_base/">Return</a><p />
-Jul/16/2014 AM 08:15<p />
+Jan/16/2015 AM 08:15<p />
 </body>
 </html>

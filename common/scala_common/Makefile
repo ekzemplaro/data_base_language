@@ -2,7 +2,9 @@ export COMMON=/var/www/data_base/common
 export JAVA_COMMON=$(COMMON)/java_common
 export JAR=$(COMMON)/jar
 SHARE=/usr/share/java
-HTTPCLIENT=$(SHARE)/commons-httpclient-3.1.jar
+HTTPCLIENT=$(JAR)/commons-httpclient
+HTTPCLIENT_JAR=.:$(HTTPCLIENT)/commons-httpclient-3.1.jar:$(HTTPCLIENT)/commons-logging-1.2.jar:$(HTTPCLIENT)/commons-codec-1.10.jar
+#
 MEMCACHED_JAR=$(JAR)/memcached/java_memcached-release_2.6.3.jar
 MONGO_JAR=$(JAR)/mongo-2.8.0.jar
 REDIS_JAR=$(JAR)/jedis-2.1.0.jar
@@ -10,9 +12,10 @@ LIB_HBASE=$(HBASE)/lib
 LIB_CASSANDRA=$(JAR)/cassandra
 VOLDEMORT=/home/uchida/dbm/voldemort/voldemort-1.3.0
 POI39=/var/www/data_base/common/jar/poi-3.9
+JSON4S=$(COMMON)/jar/json4s
 #
 CPP_A=./:$(HTTPCLIENT):$(MEMCACHED_JAR):$(MONGO_JAR):$(REDIS_JAR):/usr/share/java/jxl.jar
-CPP_B=$(CPP_A):$(JAR)/commons-net-3.0.1.jar
+CPP_B=$(CPP_A):$(JAR)/commons-net-3.3.jar
 CPP_C=$(CPP_B):$(JAR)/jsonic-1.1.2.jar
 #
 #
@@ -24,6 +27,11 @@ CPP_M=$(CPP_L):$(VOLDEMORT)/dist/voldemort-1.3.0.jar
 CPP=$(CPP_M)
 CPP_XLSX=.:$(POI39)/poi-3.9-20121203.jar:$(POI39)/poi-ooxml-3.9-20121203.jar:$(POI39)/poi-ooxml-schemas-3.9-20121203.jar:$(POI39)/ooxml-lib/xmlbeans-2.3.0.jar
 CPP_HBASE=`hbase classpath`
+JSON4S_JAR=$(JSON4S)/json4s-core_2.11-3.2.11.jar:$(JSON4S)/json4s-native_2.11-3.2.11.jar:$(JSON4S)/json4s-ast_2.11-3.2.11.jar
+CPP_MCACHED=.:$(JSON4S_JAR)
+CPP_REDIS=.:$(JSON4S_JAR):$(REDIS_JAR)
+CPP_JSON=.:$(JSON4S_JAR)
+CPP_URI=.:$(HTTPCLIENT_JAR)
 #
 all: text_manipulate.class \
 	file_io.class \
@@ -31,11 +39,11 @@ all: text_manipulate.class \
 	sql_manipulate.class \
 	ftp_manipulate.class \
 	xlsx_manipulate.class \
-	mongo_manipulate.class \
 	mcached_manipulate.class \
-	json_manipulate.class \
 	redis_manipulate.class \
+	json_manipulate.class \
 	get_uri.class \
+	mongo_manipulate.class \
 	tcbn_manipulate.class \
 	cassandra_manipulate.class \
 	hbase_manipulate.class \
@@ -58,13 +66,13 @@ xlsx_manipulate.class: xlsx_manipulate.scala
 mongo_manipulate.class: mongo_manipulate.scala
 	scalac -cp $(CPP) mongo_manipulate.scala
 mcached_manipulate.class: mcached_manipulate.scala
-	scalac -cp $(CPP) mcached_manipulate.scala
+	scalac -cp $(CPP_MCACHED) mcached_manipulate.scala
 get_uri.class: get_uri.scala
-	scalac -cp $(CPP) get_uri.scala
+	scalac -cp $(CPP_URI) get_uri.scala
 redis_manipulate.class: redis_manipulate.scala
-	scalac -cp $(CPP) redis_manipulate.scala
+	scalac -cp $(CPP_REDIS) redis_manipulate.scala
 json_manipulate.class: json_manipulate.scala
-	scalac -deprecation json_manipulate.scala
+	scalac -cp $(CPP_JSON) json_manipulate.scala
 cassandra_manipulate.class: cassandra_manipulate.scala
 	scalac -cp $(CPP) cassandra_manipulate.scala
 sql_manipulate.class: sql_manipulate.scala

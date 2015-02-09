@@ -1,8 +1,8 @@
 #
 COMMON=/var/www/data_base/common
 GROOVY_COMMON=$COMMON/groovy_common
-export GROOVY_JAR=/usr/share/java/groovy-all.jar:/usr/share/java/groovy.jar
-export CLASSPATH=./:$GROOVY_COMMON:$CPX:$GROOVY_JAR
+GROOVY_ALL_JAR=/usr/share/groovy/embeddable/groovy-all.jar
+export CLASSPATH=./:$GROOVY_COMMON:$CPX:$GROOVY_ALL_JAR
 #
 java tyrant_create
 #

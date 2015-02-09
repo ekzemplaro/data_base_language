@@ -2,7 +2,7 @@
 /*
 	text_manipulate.java
 
-					Jun/13/2011
+					Jan/28/2015
 */
 // -----------------------------------------------------------------------
 import	java.io.File;
@@ -19,7 +19,7 @@ import	java.util.Set;
 import	java.text.DateFormat;
 import	java.text.SimpleDateFormat;
 
-
+import java.util.TreeSet;
 // -----------------------------------------------------------------------
 public class text_manipulate
 {
@@ -69,10 +69,13 @@ static void dict_display_proc
 
 	System.out.println (dict_aa.size ());
 
-	Set set_aaa = dict_aa.keySet ();
+	Set <String> set_aaa = dict_aa.keySet ();
 //	System.out.println (set_aaa);
 
-	for (Object key_aa: set_aaa)
+	Set <String> ss = new TreeSet <String> (set_aaa);
+
+//	for (Object key_aa: set_aaa)
+	for (Object key_aa: ss)
 		{
 		String key = (String)key_aa;
 
@@ -98,7 +101,7 @@ static void text_write_proc
 
 	System.out.println (dict_aa.size ());
 
-	Set set_aaa = dict_aa.keySet ();
+	Set <String>  set_aaa = dict_aa.keySet ();
 
 	try
 	{
@@ -228,7 +231,7 @@ static void csv_write_proc
 
 	System.out.println (dict_aa.size ());
 
-	Set set_aaa = dict_aa.keySet ();
+	Set <String> set_aaa = dict_aa.keySet ();
 
 	try
 	{

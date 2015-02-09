@@ -1,1 +1,3 @@
-./text_create.bsh /var/tmp/plain_text/cities.txt
+#
+export CLASSPATH=$CLASSPATH:/usr/share/java/bsh.jar
+java bsh.Interpreter text_create.bsh /var/tmp/plain_text/cities.txt

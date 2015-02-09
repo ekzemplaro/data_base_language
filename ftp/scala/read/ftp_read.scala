@@ -1,7 +1,7 @@
 // --------------------------------------------------------------
 /*
 	ftp_read.scala
-					Mar/12/2013
+					Jan/27/2015
 
 */
 // --------------------------------------------------------------
@@ -22,7 +22,11 @@ def main (args: scala.Array[String])
 
 //	println (json_str)
 
-	val dict_aa = json_manipulate.json_to_dict_proc (json_str)
+	val keys = Array ("t0361","t0362","t0363",
+			"t0364","t0365","t0366",
+			"t0367","t0368","t0369")
+
+	val dict_aa = json_manipulate.json_to_dict_proc (keys,json_str)
 
 	println ("*** ppp ***")
 

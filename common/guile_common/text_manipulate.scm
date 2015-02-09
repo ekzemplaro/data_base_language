@@ -1,9 +1,7 @@
-#!/usr/bin/guile -s
-!#
 ;; ----------------------------------------------------------------------
 ;;	text_manipulate.scm
 ;;
-;;						Feb/28/2011
+;;						Jan/20/2015
 ;;
 ;; ----------------------------------------------------------------------
 (use-modules (srfi srfi-1)
@@ -22,7 +20,7 @@
 
 
 ;; ----------------------------------------------------------------------
-(define (text_read_proc file_in doc_aa)
+(define (text_read_proc file_in dict_aa)
 
 (display "*** text_read_proc *** ccccc ***\n")
 (let ((lines (read-file file_in)))
@@ -39,7 +37,7 @@
 		(begin
 		(let ((ppp (string-split line #\TAB)))
 			(begin
-				(dict_append_proc doc_aa
+				(dict_append_proc dict_aa
 					(string->symbol (car ppp))
 					(cadr ppp) (caddr ppp) (cadddr ppp))
 				)
@@ -54,40 +52,40 @@
 )
 
 ;; ----------------------------------------------------------------------
-(define (dict_display_proc doc_aa)
+(define (dict_display_proc dict_aa)
 	(hash-fold (lambda (key value seed)
-		(define uu (hashq-ref doc_aa key))
+		(define uu (hashq-ref dict_aa key))
 		(format #t "~a\t" (symbol->string key))
 ;;		(format #t "~a\t" key)
 		(format #t "~a\t" (hashq-ref uu 'name))
 		(format #t "~a\t" (hashq-ref uu 'population))
 		(format #t "~a\n" (hashq-ref uu 'date_mod))
 		(+ 1 seed)
-		)   0 doc_aa)
+		)   0 dict_aa)
 )
 
 ;; ----------------------------------------------------------------------
-(define (dict_append_proc doc_aa id name population date_mod)
+(define (dict_append_proc dict_aa id name population date_mod)
 	(define unit_aa (make-hash-table))
 	(hashq-set! unit_aa 'name name)
 	(hashq-set! unit_aa 'population population)
 	(hashq-set! unit_aa 'date_mod date_mod)
-	(hashq-set! doc_aa id unit_aa)
+	(hashq-set! dict_aa id unit_aa)
 )
 
 ;; ----------------------------------------------------------------------
-(define (text_write_proc file_out doc_aa)
+(define (text_write_proc file_out dict_aa)
 	(with-output-to-file file_out (lambda () 
-			(dict_display_proc doc_aa)
+			(dict_display_proc dict_aa)
 		))
 )
 
 ;; ----------------------------------------------------------------------
-(define (dict_update_proc doc_aa id_in population_in)
+(define (dict_update_proc dict_aa id_in population_in)
 (display "*** dict_update_proc *** ccccc ***\n")
-(display (hash-table? doc_aa))
+(display (hash-table? dict_aa))
 (newline)
-	(let ((uu (hashq-ref doc_aa (string->symbol id_in)))
+	(let ((uu (hashq-ref dict_aa (string->symbol id_in)))
 		(today (date->string (current-date) "~Y-~m-~d"))
 		)
 		(begin
@@ -103,7 +101,7 @@
 )
 
 ;; ----------------------------------------------------------------------
-(define (csv_read_proc file_in doc_aa)
+(define (csv_read_proc file_in dict_aa)
 
 (display "*** csv_read_proc *** ccccc ***\n")
 (let ((lines (read-file file_in)))
@@ -120,7 +118,7 @@
 		(begin
 		(let ((ppp (string-split line #\,)))
 			(begin
-				(dict_append_proc doc_aa
+				(dict_append_proc dict_aa
 					(string->symbol (car ppp))
 					(cadr ppp) (caddr ppp) (cadddr ppp))
 				)
@@ -135,21 +133,21 @@
 )
 
 ;; ----------------------------------------------------------------------
-(define (csv_write_exec_proc doc_aa)
+(define (csv_write_exec_proc dict_aa)
 	(hash-fold (lambda (key value seed)
-		(define uu (hashq-ref doc_aa key))
+		(define uu (hashq-ref dict_aa key))
 		(format #t "~a," (symbol->string key))
 		(format #t "~a," (hashq-ref uu 'name))
 		(format #t "~a," (hashq-ref uu 'population))
 		(format #t "~a\n" (hashq-ref uu 'date_mod))
 		(+ 1 seed)
-		)   0 doc_aa)
+		)   0 dict_aa)
 )
 
 ;; ----------------------------------------------------------------------
-(define (csv_write_proc file_out doc_aa)
+(define (csv_write_proc file_out dict_aa)
 	(with-output-to-file file_out (lambda () 
-			(csv_write_exec_proc doc_aa)
+			(csv_write_exec_proc dict_aa)
 		))
 )
 

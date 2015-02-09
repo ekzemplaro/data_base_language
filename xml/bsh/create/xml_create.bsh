@@ -1,8 +1,7 @@
-#! /usr/bin/bsh
 //
 //	xml_create.bsh
 //
-//					Oct/02/2012
+//					Jan/28/2015
 //
 // --------------------------------------------------------------
 source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
@@ -16,10 +15,10 @@ Map data_prepare_proc ()
 		(dict_aa,"t2261","静岡",61936,"2000-8-11");
 
 	dict_aa = dict_append_proc
-		(dict_aa,"t2262","浜松",32497,"2000-9-23");
+		(dict_aa,"t2262","浜松",32417,"2000-9-23");
 
 	dict_aa = dict_append_proc
-		(dict_aa,"t2263","沼津",25376,"2000-2-24");
+		(dict_aa,"t2263","沼津",25386,"2000-2-24");
 
 	dict_aa = dict_append_proc
 		(dict_aa,"t2264","三島",87624,"2000-3-14");

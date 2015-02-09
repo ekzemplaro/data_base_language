@@ -1,67 +1,52 @@
 // ------------------------------------------------------------------    
 //	redis_manipulate.scala
 //
-//					Apr/11/2013
+//					Jan/22/2015
 //
 // ------------------------------------------------------------------    
 import	java.io.PrintWriter
 import	java.util.HashMap
+import	scala.collection.mutable
 
 import	redis.clients.jedis.Jedis
 
-import scala.util.parsing.json.JSON
+import org.json4s._
+import org.json4s.JsonDSL._
+import org.json4s.native.JsonMethods._
 // ------------------------------------------------------------------    
 object redis_manipulate
 {
 
-
 // ------------------------------------------------------------------    
-def record_parse_proc (key:String, str_json:String)
-{
-	var unit_aa = JSON.parse (str_json)
+def redis_to_dict_proc (server:String):(mutable.Map[String,Object]) = {
+	var dict_aa = mutable.Map[String,Object] ()
 
-	print (key + "\t")
+	var jedis = new Jedis(server)
 
-	for (tpl <- JSON.parse(str_json).get) {
-		tpl match {
-		case (t1:String, t2:String) if(t1 == "name") => print(t2 + "\t")
-		case (t1:String, t2:Double) if(t1 == "population") => print(t2 + "\t")
-		case (t1:String, t2:Int) if(t1 == "population") => print(t2 + "\t")
-		case (t1:String, t2:String) if(t1 == "population") => print(t2 + "\t")
-		case (t1:String, t2:String) if(t1 == "date_mod") => println(t2)
-		case _ =>
-		}
-	}
-}
+	val set_keys = jedis.keys("*")
 
-// ------------------------------------------------------------------    
-def redis_to_json_proc (jedis:Jedis,keys:Array [String],out:PrintWriter) {
-	var	icount = 0
-	println ("** check ***")
-/*
-	sql_to_json.json_header_out_proc  (out)
+	val keys = set_keys.toArray ()
 
-	for (String key : keys)
+	for (key <- keys)
 		{
-		String str_json  = DefaultCodec.toStr (jredis.get (key))
+		val str_key = key.toString ()
+		val str_json = jedis.get (str_key)
 
 		if (str_json != null)
 			{
-		String json_new = "\"" + key + "\": {" + str_json.substring (1)
-			if (0 < icount)
-				{
-				out.println (",")
-				}
-
-			out.println (json_new)
-
-			icount++
+//			println (str_json)
+			val json = parse (str_json)
+			val name = (json \ "name").values
+			val population = (json \ "population").values
+			val date_mod = (json \ "date_mod").values
+			var unit_aa = mutable.Map[String,String] ()
+			unit_aa("name") = name.toString
+			unit_aa("population") = population.toString
+			unit_aa("date_mod") = date_mod.toString
+			dict_aa(str_key) = unit_aa
 			}
 		}
-
-	sql_to_json.json_tail_out_proc  (out)
-
-*/
+	dict_aa
 }
 
 // ------------------------------------------------------------------    
@@ -70,30 +55,47 @@ def redis_update_proc (jedis:Jedis,key:String,population_in:Int)
 	if (jedis.exists(key))
 		{
 		val str_json = jedis.get(key)
-	println ("** check ***")
+		val	today = text_manipulate.get_current_date_proc ()
 
-		val json_new = create_new_json_proc (str_json,population_in)
+		println (str_json)
 
-		jedis.set (key,json_new)
+		val json = parse (str_json)
+		val name = (json \ "name").values
+		val population = (json \ "population").values
+		val date_mod = (json \ "date_mod").values
+
+		var unit_aa = mutable.Map[String,String] ()
+
+		unit_aa("name") = name.toString
+		unit_aa("population") = population_in.toString
+		unit_aa("date_mod") = today.toString
+
+		val unit_bb = unit_aa.toMap
+		val json_str_new = compact(render(unit_bb))
+
+		println (json_str_new);
+
+		jedis.set (key,json_str_new)
+	}
 }
-
-}
-
 // ------------------------------------------------------------------    
-def create_new_json_proc (str_json:String,population_in:Int) :String =
-{
-	var	json_new = "";
+def dict_to_redis_proc (server:String,dict_aa:mutable.Map[String,Object]){
+	var jedis = new Jedis (server)
 
-	var	today = text_manipulate.get_current_date_proc ()
-	val	unit_aa = json_manipulate.json_to_unit_proc (str_json)
+	for (pair <- dict_aa)
+		{
+		val key = pair._1
+		val unit_aa = pair._2.asInstanceOf [mutable.Map[String,String]]
 
-	json_new = "{\"name\": \"" + unit_aa("name") + "\"," +
-	"\"population\": " + population_in + "," +
-	"\"date_mod\": \"" + today + "\"}"
+		val unit_bb = unit_aa.toMap
+		val json_str = compact(render(unit_bb))
 
-	return	json_new
+		println (key)
+		println (json_str)
+
+		jedis.set (key,json_str)
+		}            
 }
-
 // ------------------------------------------------------------------    
 }
 // ------------------------------------------------------------------    

@@ -1,4 +1,4 @@
-<title>Go Jan/08/2013</title>
+<title>Go Jan/20/2015</title>
 </head>
 <body>
 <h2><a href="http://golang.org">Go</a></h2><p />
@@ -21,4 +21,9 @@ goinstall couch-go.googlecode.com/hg<p />
 
 mikejs-gomongo-3b6d6a4.tar.gz<p />
 </blockquote>
+</blockquote>
+
+Arch Linux<p />
+<blockquote>
+# pacman -S go<p />
 </blockquote>

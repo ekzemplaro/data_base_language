@@ -1,8 +1,7 @@
-#! /usr/bin/bsh
 //
 //	hsqldb_create.bsh
 //
-//						Sep/27/2012
+//						Jan/28/2015
 //
 // ---------------------------------------------------------------------
 source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
@@ -13,28 +12,28 @@ Map data_prepare_proc ()
 	Map dict_aa = new HashMap ();
 
 	dict_aa = dict_append_proc
-		(dict_aa,"t4671","鹿児島",13746,"2000-12-5");
+		(dict_aa,"t4671","鹿児島",13726,"2000-12-5");
 
 	dict_aa = dict_append_proc
-		(dict_aa,"t4672","指宿",52674,"2000-6-23");
+		(dict_aa,"t4672","指宿",52694,"2000-6-23");
 
 	dict_aa = dict_append_proc
-		(dict_aa,"t4673","志布志",31894,"2000-9-24");
+		(dict_aa,"t4673","志布志",31895,"2000-9-24");
 
 	dict_aa = dict_append_proc
 		(dict_aa,"t4674","川内",81624,"2000-9-14");
 
 	dict_aa = dict_append_proc
-		(dict_aa,"t4675","鹿屋",72539,"2000-10-12");
+		(dict_aa,"t4675","鹿屋",72531,"2000-10-12");
 
 	dict_aa = dict_append_proc
-		(dict_aa,"t4676","枕崎",28529,"2000-7-28");
+		(dict_aa,"t4676","枕崎",28527,"2000-7-28");
 
 	dict_aa = dict_append_proc
-		(dict_aa,"t4677","出水",39457,"2000-6-19");
+		(dict_aa,"t4677","出水",39452,"2000-6-19");
 
 	dict_aa = dict_append_proc
-		(dict_aa,"t4678","阿久根",65284,"2000-10-15");
+		(dict_aa,"t4678","阿久根",65184,"2000-10-15");
 
 	dict_aa = dict_append_proc
 		(dict_aa,"t4679","霧島",74391,"2000-11-24");

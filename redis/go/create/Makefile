@@ -1,6 +1,5 @@
-redis_create: redis_create.6
-	6l -o redis_create redis_create.6
-redis_create.6: redis_create.go
-	6g redis_create.go
+redis_create: redis_create.go
+	go build redis_create.go text_manipulate.go \
+		redis_manipulate.go
 clean:
-	rm -f redis_create redis_create.6
+	rm -f redis_create

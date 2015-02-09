@@ -2,7 +2,7 @@
 /*
 	tyrant_read.scala
 
-					May/29/2012
+					Feb/05/2015
 
 */
 // ----------------------------------------------------------------
@@ -13,7 +13,7 @@ def main (args: scala.Array[String])
 {
 	println ("*** 開始 ***")
 
-	val server = "localhost"
+	val server = "host_ubuntu1"
 	val port = 1978
 	print (server + '\t')
 	println (port)

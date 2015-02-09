@@ -2,58 +2,28 @@
 // --------------------------------------------------------------
 //	mcachedb_update.js
 //
-//					Jan/07/2014
+//					Feb/05/2015
 // --------------------------------------------------------------
-importPackage (java.util);
-importPackage (java.io);
-importPackage (java.net);
+importPackage (java.util)
+importPackage (java.io)
+importPackage (java.net)
 
-load ("/var/www/data_base/common/rhino_common/mcached_manipulate.js"); 
-load ("/var/www/data_base/common/rhino_common/text_manipulate.js"); 
+load ("/var/www/data_base/common/rhino_common/mcached_manipulate.js") 
+load ("/var/www/data_base/common/rhino_common/text_manipulate.js") 
 // --------------------------------------------------------------
  
-print ("*** 開始 ***");
+print ("*** 開始 ***")
 
-var key_in=arguments[0];
-var population_in=arguments[1];
-print	("key_in = " + key_in + "\tpopulation_in = " + population_in);
+var key_in=arguments[0]
+var population_in=arguments[1]
+print	("key_in = " + key_in + "\tpopulation_in = " + population_in)
 
-var echoSocket = new Socket("localhost",21201);
-var os = new DataOutputStream(echoSocket.getOutputStream());
-var is = new BufferedReader
-	(new InputStreamReader (echoSocket.getInputStream())); 
+var server = "host_ubuntu1"
+var port = 21201
 
-var json_str = socket_read_proc (key_in,is,os);
+mcached_update_proc (server,port,key_in,population_in)
 
-print (json_str);
 
-if (json_str != null)
-	{
-	var unit_aa = JSON.parse (json_str);
-//	var name = escape_unicode_proc (unit_aa["name"]);
-
-//	print (name);
-
-//	unit_aa['name'] = name;
-//	unit_aa['name'] = "\u73e0\u6d32";
-	unit_aa['population'] = population_in;
-	unit_aa['date_mod'] = get_current_date_proc ();
-
-	print ("key_in = " + key_in);
-
-	var json_new = JSON.stringify (unit_aa);
-
-	print (json_new);
-
-	socket_write_proc (key_in,json_new,is,os);
-}
-
-print ("*** qqqq ***");
-
-os.close();
-is.close();
-echoSocket.close();
-
-print ("*** 終了 ***");
+print ("*** 終了 ***")
  
 // --------------------------------------------------------------

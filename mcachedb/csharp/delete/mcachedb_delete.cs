@@ -2,7 +2,7 @@
 //
 //	mcachedb_delete.cs
 //
-//						Jun/23/2011
+//						Feb/02/2015
 // -------------------------------------------------------------
 using System;
 
@@ -22,7 +22,8 @@ static void Main (string[] args)
 
 	Console.WriteLine (key);
 
-	String[] serverlist = { "127.0.0.1:21201" };
+//	String[] serverlist = { "127.0.0.1:21201" };
+	String[] serverlist = { "172.17.0.2:21201" };
 
 	SockIOPool pool = SockIOPool.GetInstance();
 	pool.SetServers(serverlist);

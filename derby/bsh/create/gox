@@ -1,5 +1,6 @@
 #
-DERBY_HOME=/usr/share/javadb
-export CLASSPATH=.:$DERBY_HOME/lib/derbyclient.jar
+DERBY_HOME=/usr/share/java/derby
+export CLASSPATH=.:$DERBY_HOME/derbyclient.jar
 #
-./derby_create.bsh
+export CLASSPATH=$CLASSPATH:/usr/share/java/bsh.jar
+java bsh.Interpreter derby_create.bsh

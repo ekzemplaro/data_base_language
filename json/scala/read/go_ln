@@ -1,7 +1,0 @@
-#
-JAR_JSON4S=/var/www/data_base/common/jar/json4s
-#
-ln -s $JAR_JSON4S/json4s-core_2.11-3.2.10.jar .
-ln -s $JAR_JSON4S/json4s-native_2.11-3.2.10.jar .
-ln -s $JAR_JSON4S/json4s-ast_2.11-3.2.10.jar .
-#

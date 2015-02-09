@@ -1,9 +1,11 @@
 #
-SHARE=/usr/share/java
+SHARE=/usr/share
 JDBC=$SHARE/java.jdbc.jar
 JAR=/var/www/data_base/common/jar
 H2_JAR=$JAR/h2-1.4.180.jar
+H2_JAR=$SHARE/java/h2/h2.jar
 #
-export CLASSPATH=.:$JDBC:$SHARE/clojure.jar:$H2_JAR
+#export CLASSPATH=.:$JDBC:$SHARE/clojure/clojure.jar:$H2_JAR
+export CLASSPATH=.:$SHARE/clojure/clojure.jar:$H2_JAR
 #
 java clojure.main h2_read.clj 

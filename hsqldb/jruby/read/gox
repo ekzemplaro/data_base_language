@@ -1,5 +1,9 @@
 #
-JRUBY_COMMON=/var/www/data_base/common/jruby_common
-export CLASSPATH=.:/usr/share/java/hsqldb.jar:$JRUBY_COMMON
+#
+COMMON=/var/www/data_base/common
+JRUBY_COMMON=$COMMON/jruby_common
+JAR=$COMMON/jar
+#
+export CLASSPATH=.:$JRUBY_COMMON:$JAR/hsqldb/hsqldb-2.3.2.jar
 #
 ./hsqldb_read.rb

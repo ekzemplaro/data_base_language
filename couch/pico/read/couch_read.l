@@ -2,13 +2,13 @@
 #
 #	couch_read.l
 #
-#					Oct/28/2010
+#					Jan/20/2015
 #
 #
 # -------------------------------------------------------------
 (load "@lib/http.l")
 (prinl "*** 開始 ***")
-(client "host_couch" 5984 "city/cities"
+(client "localhost" 5984 "nagano/t2022"
 	(out NIL (echo)))
 (prinl "*** 終了 ***")
 (bye)

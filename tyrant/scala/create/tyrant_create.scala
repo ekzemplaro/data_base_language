@@ -1,11 +1,9 @@
 // --------------------------------------------------------------
 //	create/tyrant_create.scala
 //
-//					Mar/15/2012
+//					Feb/05/2015
 // --------------------------------------------------------------
-import com.danga.MemCached.SockIOPool
-import com.danga.MemCached.MemCachedClient
- 
+import	scala.collection.mutable 
 // --------------------------------------------------------------
 object tyrant_create
 {
@@ -14,31 +12,36 @@ object tyrant_create
 def main (args: Array [String])
 {
 	println ("*** 開始 ***")
- 
-	val serverlist = Array ("localhost:1978")
-	val pool: SockIOPool = SockIOPool.getInstance()
-	pool.setServers(serverlist)
-	pool.initialize()
 
-	mcached_write_proc ()
+	val dict_aa = data_prepare_proc ()
+
+	val server = "host_ubuntu1"
+	val port = 1978
+
+	mcached_manipulate.dict_to_mcached_proc (server,port,dict_aa) 
+ 
+
 
 	println ("*** 終了 ***")
 }
  
 // --------------------------------------------------------------
-def mcached_write_proc ()
-{
-	val mc: MemCachedClient = new MemCachedClient()
+def data_prepare_proc ():(mutable.Map[String,Object]) = {
 
-	mcached_manipulate.data_put_proc (mc,"t4761","那覇",92574,"1998-8-11")
-	mcached_manipulate.data_put_proc (mc,"t4762","宜野湾",28451,"1998-2-21")
-	mcached_manipulate.data_put_proc (mc,"t4763","石垣",74329,"1998-7-7")
-	mcached_manipulate.data_put_proc (mc,"t4764","浦添",71268,"1998-11-15")
-	mcached_manipulate.data_put_proc (mc,"t4765","名護",32459,"1998-9-14")
-	mcached_manipulate.data_put_proc (mc,"t4766","糸満",61584,"1998-7-17")
-	mcached_manipulate.data_put_proc (mc,"t4767","沖縄",24576,"1998-1-26")
-	mcached_manipulate.data_put_proc (mc,"t4768","豊見城",81764,"1998-5-21")
-	mcached_manipulate.data_put_proc (mc,"t4769","うるま",35492,"1998-10-19")
+	var dict_aa = mutable.Map[String,Object] ()
+
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t4761","那覇",61283,"1998-8-21")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t4762","宜野湾",37659,"1998-5-28")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t4763","石垣",29473,"1998-2-12")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t4764","浦添",54162,"1998-6-23")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t4765","名護",97381,"1998-5-17")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t4766","糸満",69274,"1998-10-27")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t4767","沖縄",31562,"1998-3-21")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t4768","豊見城",95328,"1998-9-8")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t4769","うるま",28135,"1998-10-14")
+
+
+	dict_aa
 }
  
 // --------------------------------------------------------------

@@ -45,13 +45,13 @@ dict_aa = dict_append_proc (dict_aa,'t2021','長野',41862,'1951-7-18');
 	dict_aa = dict_append_proc (dict_aa,'t2024','小諸',51734,'1951-3-22');
 	dict_aa = dict_append_proc (dict_aa,'t2025','岡谷',45382,'1951-8-14');
 	dict_aa = dict_append_proc (dict_aa,'t2026','塩尻',62539,'1951-2-12');
-	dict_aa = dict_append_proc (dict_aa,'t2027','茅野',38271,'1951-3-21');
-	dict_aa = dict_append_proc (dict_aa,'t2028','飯田',58246,'1951-7-26');
+	dict_aa = dict_append_proc (dict_aa,'t2027','茅野',39268,'1951-3-21');
+	dict_aa = dict_append_proc (dict_aa,'t2028','飯田',58146,'1951-7-26');
 	dict_aa = dict_append_proc (dict_aa,'t2029','中野',27451,'1951-10-2');
-	dict_aa = dict_append_proc (dict_aa,'t2030','諏訪',49873,'1951-12-20');
+	dict_aa = dict_append_proc (dict_aa,'t2030','諏訪',49273,'1951-12-20');
 	dict_aa = dict_append_proc (dict_aa,'t2031','駒ヶ根',51857,'1951-2-7');
-	dict_aa = dict_append_proc (dict_aa,'t2032','佐久',92394,'1951-5-17');
-	dict_aa = dict_append_proc (dict_aa,'t2033','伊那',81375,'1951-6-19');
+	dict_aa = dict_append_proc (dict_aa,'t2032','佐久',92194,'1951-5-17');
+	dict_aa = dict_append_proc (dict_aa,'t2033','伊那',84375,'1951-6-19');
 	dict_aa = dict_append_proc (dict_aa,'t2034','千曲',62148,'1951-10-14');
 
 	return	dict_aa;

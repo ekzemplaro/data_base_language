@@ -1,6 +1,7 @@
-export COMMON=/var/www/data_base/common
-export JAR=$COMMON/jar
+COMMON=/var/www/data_base/common
+JAR=$COMMON/jar
 #
 export CLASSPATH=.:$JAR/jsonic-1.1.2.jar
+export CLASSPATH=$CLASSPATH:/usr/share/java/bsh.jar
 #
-./json_read.bsh /var/tmp/json/cities.json
+java bsh.Interpreter json_read.bsh /var/tmp/json/cities.json

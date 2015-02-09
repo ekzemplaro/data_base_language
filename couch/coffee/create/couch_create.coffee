@@ -2,7 +2,7 @@
 # ---------------------------------------------------------------
 #	couch_create.coffee
 #
-#					Dec/24/2013
+#					Jan/19/2015
 #
 # ---------------------------------------------------------------
 cradle = require ('cradle')
@@ -20,10 +20,10 @@ db.exists (err, exists) ->
 		console.log('error', err)
 	else if exists
 		db.destroy()
+		create_proc (db)
 		console.log ("*** db is destroyed ***")
 	else
 		console.log('database does not exists.')
-		create_proc (db)
 
 console.log "*** 終了 ***"
 # ---------------------------------------------------------------

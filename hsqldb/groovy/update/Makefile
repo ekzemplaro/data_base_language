@@ -1,4 +1,4 @@
-CPX=/var/www/data_base/common/groovy_common:/usr/share/java/hsqldb.jar
+CPX=/var/www/data_base/common/groovy_common
 hsqldb_update.class: hsqldb_update.groovy
 	groovyc -cp $(CPX) hsqldb_update.groovy
 clean:

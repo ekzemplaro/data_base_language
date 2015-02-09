@@ -3,7 +3,7 @@
 #
 #	read/ftp_read.py
 #
-#					Aug/01/2014
+#					Jan/27/2015
 #
 # ----------------------------------------------------------------
 import os
@@ -21,7 +21,7 @@ from curl_get import curl_get_proc
 print ("*** 開始 ***")
 #
 #
-url_json = 'ftp://scott:tiger@host_dbase/city/iwate.json'
+url_json = 'ftp://scott:tiger@cddn007/city/iwate.json'
 str_tmp = curl_get_proc (url_json)
 #
 dict_aa = json.loads (str (str_tmp,'UTF-8'))

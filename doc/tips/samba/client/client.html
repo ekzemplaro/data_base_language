@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+<title>samba client Feb/03/2015</title>
+</head>
+<body>
+<h2>samba client</h2><p />
+$ smbclient -L host_server<p />
+<blockquote>
+<pre>
+$ smbclient -L HOST_SERVER
+Enter scott's password: 
+Domain=[EG_JP] OS=[Unix] Server=[Samba 3.6.3]
+
+	Sharename       Type      Comment
+	---------       ----      -------
+	LAN DISK Manual Disk      画面で見るマニュアル
+	it_test_aa      Disk      Temporary Area
+	tmp3            Disk      Temporary Area
+	documents       Disk      
+	it_doc          Disk      
+	tmp             Disk      Temporary Area
+	home            Disk      
+	tmp_ititit      Disk      
+	disk1           Disk      HDL-XR RAID share
+	tmpbbbb         Disk      Temporary Area
+	tmpaa           Disk      
+	tmp_cccc        Disk      Temporary Area
+	tmp2            Disk      
+	it_aaaa         Disk      Temporary Area
+	IT_TEST         Disk      
+	IPC$            IPC       IPC Service (HDL-XR series)
+Domain=[EG_JP] OS=[Unix] Server=[Samba 3.6.3]
+
+	Server               Comment
+	---------            -------
+	HOST_SERVER              HDL-XR series
+
+	Workgroup            Master
+	---------            -------
+	IT_JP                G34_TMP
+	JPN                  FCS002
+	WORKGROUP            LS420D
+$
+</pre>
+</blockquote>
+
+<hr />
+
+<blockquote>
+</blockquote>
+
+<hr />
+<a href="/data_base/">Return</a><p />
+Feb/03/2015 AM 08:15<p />
+</body>
+</html>

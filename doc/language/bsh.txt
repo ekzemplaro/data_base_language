@@ -16,5 +16,7 @@ ii  bsh-gcj 2.0b4-12build1     Java scripting environment (BeanShell) Version 2 
 <blockquote>
 </blockquote>
 
+Arch Linux<p />
 <blockquote>
+# pacman -S beanshell2<p />
 </blockquote>

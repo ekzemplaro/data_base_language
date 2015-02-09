@@ -22,8 +22,8 @@
 	(setq dict_aa (dict_append_proc dict_aa "t0930" "栃木" 32794 "1931-5-21"))
 	(setq dict_aa (dict_append_proc dict_aa "t0931" "大田原" 75182 "1931-1-8"))
 	(setq dict_aa (dict_append_proc dict_aa "t0932" "鹿沼" 73589 "1931-8-10"))
-	(setq dict_aa (dict_append_proc dict_aa "t0933" "那須塩原" 82815 "1931-9-23"))
-	(setq dict_aa (dict_append_proc dict_aa "t0934" "那須烏山" 83721 "1931-4-18"))
+	(setq dict_aa (dict_append_proc dict_aa "t0933" "那須塩原" 14395 "1931-9-23"))
+	(setq dict_aa (dict_append_proc dict_aa "t0934" "那須烏山" 37521 "1931-4-18"))
 
 	dict_aa
 )

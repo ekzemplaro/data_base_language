@@ -1,56 +1,74 @@
 // --------------------------------------------------------------
 //	create/mcachedb_create.java
 //
-//					Jun/27/2011
+//					Feb/04/2015
 // --------------------------------------------------------------
-import com.danga.MemCached.SockIOPool;
-import com.danga.MemCached.MemCachedClient;
- 
+import	java.util.HashMap;
+
 // --------------------------------------------------------------
 public class mcachedb_create{
  
 // --------------------------------------------------------------
-public static void main(String[] args)
+public static void main(String[] args) throws Exception
 {
 	System.out.println ("*** 開始 ***");
- 
-                // SockIOPool を初期化
-	String[] serverlist = { "localhost:21201" };
-	SockIOPool pool = SockIOPool.getInstance();
-	pool.setServers(serverlist);
-	pool.initialize();
 
-	mcachedb_write_proc ();
+	HashMap <String, HashMap <String,String>>
+			dict_aa = data_prepare_proc (); 
 
-	MemCachedClient mc = new MemCachedClient();
+	final String server = "host_ubuntu1";
+	final int port = 21201;
 
-	String [] keys = {"t1521","t1522","t1523","t1524","t1525","t1526",
-		"t1527","t1528","t1529","t1530","t1531","t1532"};
-
-	for (String key : keys)
-		{
-		mcached_manipulate.mcached_read_single (mc,key);
-		}
+	mcached_socket.dict_to_mcached_proc (server,port,dict_aa);
 
 	System.out.println ("*** 終了 ***");
 }
  
 // --------------------------------------------------------------
-static void mcachedb_write_proc ()
+static HashMap <String, HashMap <String,String>>
+data_prepare_proc ()
 {
-	MemCachedClient mc = new MemCachedClient();
-	mcached_manipulate.data_put_proc (mc,"t1521","新潟",72185,"2008-5-14");
-	mcached_manipulate.data_put_proc (mc,"t1522","長岡",63574,"2008-7-21");
-	mcached_manipulate.data_put_proc (mc,"t1523","新発田",21593,"2008-9-12");
-	mcached_manipulate.data_put_proc (mc,"t1524","上越",71462,"2008-10-15");
-	mcached_manipulate.data_put_proc (mc,"t1525","糸魚川",32485,"2008-9-14");
-	mcached_manipulate.data_put_proc (mc,"t1526","加茂",26354,"2008-7-17");
-	mcached_manipulate.data_put_proc (mc,"t1527","三条",28751,"2008-1-26");
-	mcached_manipulate.data_put_proc (mc,"t1528","佐渡",36192,"2008-4-12");
-	mcached_manipulate.data_put_proc (mc,"t1529","柏崎",75819,"2008-9-15");
-	mcached_manipulate.data_put_proc (mc,"t1530","村上",67582,"2008-6-22");
-	mcached_manipulate.data_put_proc (mc,"t1531","十日町",54618,"2008-7-25");
-	mcached_manipulate.data_put_proc (mc,"t1532","五泉",82356,"2008-8-24");
+	HashMap <String, HashMap<String,String>> dict_aa
+		= new HashMap <String, HashMap<String,String>> ();
+
+	dict_aa = text_manipulate.dict_append_proc
+		(dict_aa,"t1521","新潟",38459,"2008-2-15");
+
+	dict_aa = text_manipulate.dict_append_proc
+		(dict_aa,"t1522","長岡",43172,"2008-4-23");
+
+	dict_aa = text_manipulate.dict_append_proc
+		(dict_aa,"t1523","新発田",91653,"2008-5-24");
+
+	dict_aa = text_manipulate.dict_append_proc
+		(dict_aa,"t1524","上越",87124,"2008-9-14");
+
+	dict_aa = text_manipulate.dict_append_proc
+		(dict_aa,"t1525","糸魚川",72538,"2008-8-12");
+
+	dict_aa = text_manipulate.dict_append_proc
+		(dict_aa,"t1526","加茂",21579,"2008-7-28");
+
+	dict_aa = text_manipulate.dict_append_proc
+		(dict_aa,"t1527","三条",39457,"2008-6-19");
+
+	dict_aa = text_manipulate.dict_append_proc
+		(dict_aa,"t1528","佐渡",47361,"2008-11-15");
+
+	dict_aa = text_manipulate.dict_append_proc
+		(dict_aa,"t1529","柏崎",51872,"2008-10-24");
+
+	dict_aa = text_manipulate.dict_append_proc
+		(dict_aa,"t1530","村上",89416,"2008-2-7");
+
+	dict_aa = text_manipulate.dict_append_proc
+		(dict_aa,"t1531","十日町",39451,"2008-9-12");
+
+	dict_aa = text_manipulate.dict_append_proc
+		(dict_aa,"t1532","五泉",72846,"2008-4-9");
+
+
+	return	dict_aa;
 }
  
 // --------------------------------------------------------------

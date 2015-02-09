@@ -1,0 +1,7 @@
+#
+COMMON=/var/www/data_base/common
+JAR=$COMMON/jar
+MSSQL_JAR=$JAR/mssql/sqljdbc4.jar
+export CLASSPATH=$MSSQL_JAR:/usr/share/java/bsh.jar
+#
+java bsh.Interpreter mssql_read.bsh

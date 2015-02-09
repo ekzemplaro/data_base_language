@@ -2,7 +2,7 @@
 // -------------------------------------------------------------
 //	mcachedb_delete.js
 //
-//					Mar/07/2013
+//					Feb/02/2015
 // -------------------------------------------------------------
 var memcache = require('memcache');
 
@@ -24,7 +24,8 @@ var key_in=process.argv[2];
 
 console.log (key_in);
 
-var client = new memcache.Client (21201,'localhost');
+var hostname = 'host_ubuntu1';
+var client = new memcache.Client (21201,hostname);
 client.connect();
 client.addHandler(onConnect);
 

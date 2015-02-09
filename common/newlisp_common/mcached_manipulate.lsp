@@ -2,7 +2,7 @@
 ;
 ;	mcached_manipulate.lsp
 ;
-;					Jan/28/2014
+;					Jan/19/2015
 ; -------------------------------------------------------------------
 (define (json_parser json_str)
 	(setf unit_aa (json-parse json_str))
@@ -38,7 +38,11 @@
 ; ------------------------------------------------------------------
 (define (mcached_read_proc socket key_in)
 	(setf json_str (mcached_socke_read_proc socket key_in))
-	(record_parser key_in json_str)
+	(if (!= json_str "")
+		(begin
+		(record_parser key_in json_str)
+		)
+	)
 )
 
 ; ------------------------------------------------------------------

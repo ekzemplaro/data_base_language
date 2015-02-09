@@ -1,12 +1,8 @@
-#! /usr/bin/bsh
 //
 //	mcachedb_update.bsh
 //
-//					Oct/02/2012
+//					Feb/05/2015
 //
-// --------------------------------------------------------------
-import com.danga.MemCached.SockIOPool;
-import com.danga.MemCached.MemCachedClient;
 // --------------------------------------------------------------
 source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
 source ("/var/www/data_base/common/bsh_common/mcached_manipulate.bsh");
@@ -17,27 +13,11 @@ int	population = Integer.parseInt (bsh.args[1]);
 
 System.out.println (key);
 System.out.println (population);
-//
-String[] serverlist = { "localhost:21201" };
-Integer[] weights = { 3};
-SockIOPool pool = SockIOPool.getInstance();
-pool.setServers (serverlist);
-pool.setWeights (weights);
-pool.initialize ();
 
-MemCachedClient mc = new MemCachedClient();
+final String server = "host_ubuntu1";
+final int port = 21201;
 
-String [] keys = {"t1521","t1522","t1523","t1524","t1525","t1526",
-		"t1527","t1528","t1529","t1530","t1531","t1532"};
-
-Map dict_aa = mcached_to_dict_proc (mc,keys);
-
-//
-dict_aa = dict_update_proc (dict_aa,key,population);
-
-dict_display_proc (dict_aa);
-
-dict_to_mcached_proc (mc,dict_aa);
+mcached_update_proc (server,port,key,population);
 
 System.out.println ("*** 終了 ***");
 // --------------------------------------------------------------

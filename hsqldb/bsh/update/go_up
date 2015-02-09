@@ -1,6 +1,7 @@
 #
-export CLASSPATH=.:/usr/share/java/hsqldb.jar
 #
 #
+export CLASSPATH=.:/var/www/data_base/common/jar/hsqldb/hsqldb-2.3.2.jar
 #
-./hsqldb_update.bsh t4675 924163500
+export CLASSPATH=$CLASSPATH:/usr/share/java/bsh.jar
+java bsh.Interpreter hsqldb_update.bsh t4675 924163500

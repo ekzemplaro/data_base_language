@@ -1,11 +1,12 @@
 // ---------------------------------------------------------------------
 //	read/couch_read.groovy
 //
-//					Jun/23/2014
+//					Feb/04/2015
 //
 // ---------------------------------------------------------------------
 import groovy.json.*
 import net_manipulate
+import text_manipulate
 // ---------------------------------------------------------------------
 class couch_read
 {
@@ -21,20 +22,21 @@ static void main (args)
 	def slurper = new JsonSlurper()
 	def data = slurper.parseText (str_json)
 
-//	data.keySet().each { key -> println key }
-
 	println data["total_rows"]
-//
+
+	def dict_aa = new HashMap()
+
 	data["rows"].each {unit ->
 		def url_target = url_collection + "/" + unit["key"]
 		def str_unit = net_manipulate.get_uri_proc (url_target,"application/json")
 		def slurper_unit = new JsonSlurper()
 		def unit_aa = slurper_unit.parseText (str_unit)
-		print (unit["key"] + "\t")
-		print (unit_aa.name + "\t")
-		print (unit_aa.population + "\t")
-		println (unit_aa.date_mod)
+
+		def key = unit["key"]
+		dict_aa[key] = unit_aa
 		}
+
+	text_manipulate.dict_display_proc (dict_aa)
 
 	println ("*** 終了 ***")
 }

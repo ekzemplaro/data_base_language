@@ -1,8 +1,9 @@
 #
 #
-SHARE=/usr/share/java
-JDBC=$SHARE/java.jdbc.jar
+SHARE=/usr/share
+JDBC=$SHARE/java/java.jdbc.jar
 #
-export CLASSPATH=.:$SHARE/clojure.jar:$JDBC:$SHARE/mysql-connector-java.jar
+#export CLASSPATH=.:$SHARE/clojure/clojure.jar:$JDBC:$SHARE/java/mysql-jdbc/mysql-connector-java-bin.jar
+export CLASSPATH=.:$SHARE/clojure/clojure.jar:$SHARE/java/mysql-jdbc/mysql-connector-java-bin.jar
 #
 java clojure.main mysql_read.clj 

@@ -1,8 +1,8 @@
 // ----------------------------------------------------------------
 /*
-	mcachedb_delete.scala
+	tyrant_delete.scala
 
-					May/29/2012
+					Jan/05/2015
 
 */
 // ----------------------------------------------------------------
@@ -17,7 +17,7 @@ def main (args: scala.Array[String])
 
 	println (key_in)
 
-	val server = "localhost"
+	val server = "host_ubuntu1"
 	val port = 1978
 	print (server + '\t')
 	println (port)

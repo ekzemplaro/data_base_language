@@ -4,7 +4,7 @@
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
-<script src="/js/jquery-2.1.1.min.js"></script>
+<script src="/js/jquery-2.1.3.min.js"></script>
 <meta content="Program Language Examples to connect to Tokyo Tyrant" name="description">
 <meta content="Tokyo Tyrant,クライアント,接続,言語,サンプル" name="keyword">
 <meta content="Uchida Masatomo" name="author">
@@ -20,13 +20,16 @@ ii  tokyotyrant            1.1.40-4ubuntu1         Tokyo Tyrant: network interfa
 ii  tokyotyrant-utils      1.1.40-4ubuntu1         Tokyo Tyrant utilities
 </pre>
 
+起動<br />
 <blockquote>
-	sudo ttserver -host localhost -port 1978<p />
+	# ttserver -host localhost -port 1978<p />
 </blockquote>
+リモートからのアクセスを許可して起動<br />
 <blockquote>
-	port 1978<br />
+	# ttserver -host 0.0.0.0 -port 1978<p />
 </blockquote>
 
+ソースからインストール<br />
 <blockquote>
 	tar xvfz tokyotyrant-1.1.41.tar.gz<p />
 	cd tokyotyrant-1.1.41 <br />
@@ -84,6 +87,6 @@ Ruby<p />
 <div id="outarea_hh">outarea_hh</div>
 <hr />
 <a href="/data_base/">Return</a><p />
-Jul/16/2014 AM 08:15<p />
+Jan/16/2015 AM 08:15<p />
 </body>
 </html>

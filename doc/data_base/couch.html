@@ -4,7 +4,7 @@
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
-<script src="/js/jquery-2.1.1.min.js"></script>
+<script src="/js/jquery-2.1.3.min.js"></script>
 <title>CouchDB</title>
 </head>
 <body>
@@ -30,13 +30,17 @@ sudo service couchdb start<br />
 
 Client<br />
 <blockquote>
-curl -X GET http://localhost:5984/<br />
-curl -X PUT http://localhost:5984/baseball<br />
-curl -X PUT http://localhost:5984/basketball<br />
-curl -X GET http://localhost:5984/_all_dbs<p />
-curl -X GET http://localhost:5984/baseball/_all_docs<br />
-curl -X GET http://localhost:5984/baseball/_all_docs?include_docs=true<br />
-curl -X DELETE http://localhost:5984/baseball<br />
+curl -X GET --noproxy localhost http://localhost:5984/<br />
+curl -X PUT --noproxy localhost http://localhost:5984/baseball<br />
+curl -X PUT --noproxy localhost http://localhost:5984/basketball<br />
+curl -X GET --noproxy localhost http://localhost:5984/_all_dbs<p />
+curl -X GET --noproxy localhost http://localhost:5984/baseball/_all_docs<br />
+curl -X GET --noproxy localhost http://localhost:5984/baseball/_all_docs?include_docs=true<br />
+curl -X DELETE --noproxy localhost http://localhost:5984/baseball<br />
+</blockquote>
+DELETE<br />
+<blockquote>
+curl --noproxy localhost -X DELETE http://localhost:5984/nagano/t2025?rev=1-3aa6cd05c8585e6c3bc5c559dff1e967<br />
 </blockquote>
 
 <pre>
@@ -67,6 +71,7 @@ PHP<p />
 
 Python<p />
 <blockquote>
+# pacman -S python-pycurl<p />
 </blockquote>
 
 
@@ -80,6 +85,10 @@ Ruby<p />
 <pre>
 ii  ruby-rest-client       1.6.7-4    all     simple REST client for Ruby
 </pre>
+Arch Linux<br />
+<blockquote>
+	$ yaourt -Sb ruby-rest-client<p />
+</blockquote>
 </blockquote>
 
 Ocaml<p />
@@ -152,6 +161,13 @@ curl -X GET http://localhost:5984/albums/_design/ex06/_view/ex06<p />
 key で検索<br />
 curl -X GET http://localhost:5984/albums/_design/ex06/_view/ex06?key=\"Chopin\"<p />
 </blockquote>
+
+<hr />
+Replication<p />
+<blockquote>
+$ curl --noproxy server_remote -X PUT http://cdea022:5984/nagano<p />
+$ curl  --noproxy server_remote -H "Content-Type: application/json" -X POST 'http://localhost:5984/_replicate' -d'{"source":"nagano","target":"http://server_remote:5984/nagano"}'<p />
+</blockquote>
 <div id="result_aa">result_aa</div>
 <hr />
 <div id="outarea_aa">outarea_aa</div>
@@ -164,6 +180,6 @@ curl -X GET http://localhost:5984/albums/_design/ex06/_view/ex06?key=\"Chopin\"<
 <div id="outarea_hh">outarea_hh</div>
 <hr />
 <a href="/data_base/">Return</a><p />
-Jul/16/2014 AM 08:15<p />
+Jan/16/2015 AM 08:15<p />
 </body>
 </html>

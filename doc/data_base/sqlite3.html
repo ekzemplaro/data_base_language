@@ -4,7 +4,7 @@
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
-<script src="/js/jquery-2.1.1.min.js"></script>
+<script src="/js/jquery-2.1.3.min.js"></script>
 <meta content="Program Language Examples to connect to Sqlite3" name="description">
 <meta content="Sqlite3,クライアント,接続,言語,サンプル" name="keyword">
 <meta content="Uchida Masatomo" name="author">
@@ -27,6 +27,13 @@ ii  php5-sqlite  5.4.9-4ubuntu2   amd64    SQLite module for php5
 </pre>
 コラムが大文字<br />
 </blockquote>
+<blockquote>
+# pacman -S php-sqlite<p />
+/etc/php/php.ini<br />
+	<blockquote>
+	extension=pdo_sqlite.so<p />
+	</blockquote>
+</blockquote>
 
 Python<p />
 <blockquote>
@@ -40,9 +47,12 @@ Perl<p />
 Ruby<p />
 <blockquote>
 <pre>
-ii  libdbd-sqlite3-ruby   1.2.5+gem2deb-1   all   Transitional package for ruby-dbd-sqlite3
+ii  ruby-dbd-sqlite3    1.2.5+gem2deb-2    all    Ruby/DBI SQLite3 driver
+ii  ruby-sqlite3        1.3.8-2            amd64  SQLite3 interface for Ruby
 </pre>
-
+</blockquote>
+<blockquote>
+$ gem install sqlite3<br />
 </blockquote>
 
 Tcl<p />
@@ -51,6 +61,10 @@ Tcl<p />
 	<blockquote>
 	package ifneeded sqlite3 3.7.9 \<br />
     [list load [file join $dir libtclsqlite3.so] sqlite3]<br />
+	</blockquote>
+Arch Linux<br />
+	<blockquote>
+	# pacman -S sqlite-tcl<p />
 	</blockquote>
 </blockquote>
 
@@ -80,6 +94,7 @@ ii  libsqlite3-ocaml-dev  1.5.6-3build1	Embeddable SQL Database for OCaml Progra
 </blockquote>
 <blockquote>
 	ocaml-sqlite3-release-1.5.8.tar.bz2<p />
+	$ yaourt -Sb ocaml-sqlite3<p />
 </blockquote>
 
 Tcl<p />
@@ -97,6 +112,12 @@ node.js<p />
 Java<p />
 <blockquote>
 	<a href="http://www.xerial.org/maven/repository/artifact/org/xerial/sqlite-jdbc/3.7.2/">sqlite-jdbc-3.7.2.jar</a><p />
+
+	Arch Linux<br />
+	<blockquote>
+	# pacman -S javasqlite<br />
+	</blockquote>
+
 </blockquote>
 
 C#<p />
@@ -115,6 +136,6 @@ C#<p />
 <div id="outarea_hh">outarea_hh</div>
 <hr />
 <a href="/data_base/">Return</a><p />
-Jul/16/2014 AM 08:15<p />
+Jan/16/2015 AM 08:15<p />
 </body>
 </html>

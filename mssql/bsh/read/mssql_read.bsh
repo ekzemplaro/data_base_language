@@ -1,0 +1,23 @@
+//
+//	mssql_read.bsh
+//
+//						Jan/30/2015
+//
+// ---------------------------------------------------------------------
+source ("/var/www/data_base/common/bsh_common/sql_manipulate.bsh");
+
+// ---------------------------------------------------------------------
+System.out.println ("*** 開始 ***");
+
+String url="jdbc:sqlserver://host_mssql;databaseName=city;";
+String user="sa";
+String passwd="scott_tiger";
+
+Connection conn = DriverManager.getConnection (url,user,passwd);
+
+sql_display_proc (conn);
+
+
+conn.close ();
+System.out.println ("*** 終了 ***");
+// ---------------------------------------------------------------------

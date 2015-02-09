@@ -2,7 +2,7 @@
 //
 //	text_manipulate.js
 //
-//						Oct/24/2011
+//						Jan/28/2015
 //
 // ------------------------------------------------------------------
 function text_read_proc (file_in)
@@ -24,18 +24,27 @@ function text_read_proc (file_in)
 // ------------------------------------------------------------------
 function dict_display_proc (dict_aa)
 {
-	for (var id in dict_aa)
+	var array = new Array();
+
+	for (var it in dict_aa)
 		{
-		if ((id != '_id') && (id != '_rev'))
+		array.push (it);
+		}
+
+	var array_bb = array.sort ();
+
+	for (var it in array_bb)
+		{
+		var key = array_bb[it];
+		if ((key != '_id') && (key != '_rev'))
 			{
-		var out_str = id + "\t";
-		out_str += dict_aa[id]["name"] + "\t";
-		out_str += dict_aa[id]["population"] + "\t";
-		out_str += dict_aa[id]["date_mod"];
+		var out_str = key + "\t";
+		out_str += dict_aa[key]["name"] + "\t";
+		out_str += dict_aa[key]["population"] + "\t";
+		out_str += dict_aa[key]["date_mod"];
 		print (out_str);
 			}
 		}
-	
 }
 
 // ---------------------------------------------------------------

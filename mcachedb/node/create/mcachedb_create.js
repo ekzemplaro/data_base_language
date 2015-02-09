@@ -2,7 +2,7 @@
 // ---------------------------------------------------------------
 //	mcached_create.js
 //
-//					Apr/24/2013
+//					Jan/02/2015
 //
 // ---------------------------------------------------------------
 var memcache = require("memcache");
@@ -13,9 +13,9 @@ function data_prepare_proc ()
 {
 		var dict_aa = new Object ();
 
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1521','新潟',62784,'1950-9-12');
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1522','長岡',83157,'1950-3-15');
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1523','新発田',65241,'1950-10-2');
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1521','新潟',69784,'1950-9-12');
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1522','長岡',82157,'1950-3-15');
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1523','新発田',75241,'1950-10-2');
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1524','上越',31864,'1950-6-22');
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1525','糸魚川',42358,'1950-8-14');
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1526','加茂',65192,'1950-9-12');
@@ -57,7 +57,9 @@ var onConnect = function()
 };
 
 // ---------------------------------------------------------------
-var client = new memcache.Client (21201,'localhost');
+var hostname = 'host_ubuntu1';
+
+var client = new memcache.Client (21201,hostname);
 client.connect();
 client.addHandler(onConnect);
 

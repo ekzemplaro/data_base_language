@@ -29,22 +29,58 @@ exports.text_read_proc = function (file_in)
 // ---------------------------------------------------------------
 exports.dict_display_proc = function (dict_aa)
 {
-	for (var key in dict_aa)
+	var array_aa = sort_proc (dict_aa);
+
+	for (var it in array_aa)
 		{
-		if (key)
-			{
-			if ((key != '_id') && (key != '_rev'))
+		var key = array_aa[it].key;
+		var value = array_aa[it].value;
+
+		if ((key != '_id') && (key != '_rev'))
 			{
 			var out_str = key + "\t";
-			out_str += dict_aa[key]["name"] + "\t";
-			out_str += dict_aa[key]["population"] + "\t";
-			out_str += dict_aa[key]["date_mod"];
+			out_str += value["name"] + "\t";
+			out_str += value["population"] + "\t";
+			out_str += value["date_mod"];
 			console.log (out_str);
-			}
 			}
 		}	
 
 // console.log ("*** dict_display_proc ppp ***");
+}
+
+// ---------------------------------------------------------------
+function sort_proc (dict_aa)
+{
+	var array = new Array();
+	for(var it in dict_aa)
+		{
+		array.push({'key':String (it), 'value':dict_aa[it]});
+		}
+
+	array.sort (sort_by_key_proc);
+
+	return array;
+}
+
+// ---------------------------------------------------------------
+function sort_by_key_proc (left,right)
+{
+	var aa = left.key;
+	var bb = right.key;
+
+	var rvalue = 0;
+
+	if (aa < bb)
+		{
+		rvalue = -1;
+		}
+	else if (aa > bb)
+		{
+		rvalue = 1;
+		}
+
+	return	rvalue;
 }
 
 // ---------------------------------------------------------------

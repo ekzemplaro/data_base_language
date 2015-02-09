@@ -7,4 +7,6 @@ CPX=$MEMCACHED/java_memcached-release_2.6.3.jar:$MEMCACHED/slf4j-api-1.6.1.jar
 CPX=$CPX:$MEMCACHED/slf4j-simple-1.6.1.jar:$MEMCACHED/commons-pool-1.5.6.jar
 export CLASSPATH=./:$CPX:$JAR/jsonic-1.1.2.jar
 #
-./mcached_delete.bsh t1736
+export CLASSPATH=$CLASSPATH:/usr/share/java/bsh.jar
+#
+java bsh.Interpreter mcached_delete.bsh t1736

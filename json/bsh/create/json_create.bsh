@@ -1,8 +1,7 @@
-#! /usr/bin/bsh
 //
 //	json_create.bsh
 //
-//					Oct/02/2012
+//					Jan/28/2015
 //
 // --------------------------------------------------------------
 import	net.arnx.jsonic.JSON;
@@ -14,13 +13,13 @@ Map data_prepare_proc ()
 	Map dict_aa = new HashMap ();
 
 	dict_aa = dict_append_proc
-		(dict_aa,"t0921","宇都宮",68592,"2000-6-15");
+		(dict_aa,"t0921","宇都宮",61592,"2000-6-15");
 
 	dict_aa = dict_append_proc
-		(dict_aa,"t0922","小山",72143,"2000-8-23");
+		(dict_aa,"t0922","小山",72153,"2000-8-23");
 
 	dict_aa = dict_append_proc
-		(dict_aa,"t0923","佐野",94253,"2000-5-24");
+		(dict_aa,"t0923","佐野",94213,"2000-5-24");
 
 	dict_aa = dict_append_proc
 		(dict_aa,"t0924","足利",87624,"2000-9-14");

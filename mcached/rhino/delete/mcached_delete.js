@@ -3,33 +3,24 @@
 /*
 	mcached_delete.js
 
-					Apr/17/2013
+					Feb/05/2015
 
 */
 // ----------------------------------------------------------------------- 
-importPackage (java.io);
-importPackage (java.net);
+importPackage (java.io)
+importPackage (java.net)
 
-load ("/var/www/data_base/common/rhino_common/mcached_manipulate.js"); 
+load ("/var/www/data_base/common/rhino_common/mcached_manipulate.js") 
 // ----------------------------------------------------------------------- 
-print ("*** 開始 ***");
+print ("*** 開始 ***")
 
-var key_in=arguments[0];
-print	("key_in = " + key_in);
+var key_in=arguments[0]
+print	("key_in = " + key_in)
 
-var echoSocket = new Socket("localhost",11211);
-var os = new DataOutputStream(echoSocket.getOutputStream());
-var is = new BufferedReader
-	(new InputStreamReader (echoSocket.getInputStream()));
+var server = "localhost"
+var port = 11211
 
-if (echoSocket != null && os != null && is != null)
-	{
-	mcached_delete_proc (os,is,key_in);
-	}
+mcached_delete_proc (server,port,key_in)
 
-os.close();
-is.close();
-echoSocket.close();
-
-print ("*** 終了 ***");
+print ("*** 終了 ***")
 // ----------------------------------------------------------------------- 

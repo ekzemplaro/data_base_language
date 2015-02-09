@@ -1,1 +1,3 @@
-./xml_read.bsh /var/tmp/xml_file/cities.xml
+#
+export CLASSPATH=$CLASSPATH:/usr/share/java/bsh.jar
+java bsh.Interpreter xml_read.bsh /var/tmp/xml_file/cities.xml

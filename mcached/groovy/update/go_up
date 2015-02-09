@@ -8,7 +8,7 @@ GROOVY_ALL_JAR=/usr/share/java/groovy-all.jar
 if  [ -e /etc/arch-release ]; then
 GROOVY_ALL_JAR=/usr/share/groovy/embeddable/groovy-all.jar
 fi
-export CLASSPATH=.:$GROOVY_ALL_JAR:$GROOVY_COMMON:$JAR/jsonic-1.1.2.jar:$GROOVY_JAR
+export CLASSPATH=.:$GROOVY_ALL_JAR:$GROOVY_COMMON:$JAR/jsonic-1.1.2.jar
 #
-java mcached_update t1734 4325600
+java mcached_update t1734 41325600
 #

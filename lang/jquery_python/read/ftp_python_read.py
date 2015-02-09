@@ -3,7 +3,7 @@
 #
 #	ftp_python_read.py
 #
-#						Aug/04/2014
+#						Jan/27/2015
 #
 #
 # ---------------------------------------------------------------------
@@ -17,7 +17,7 @@ from curl_get import curl_get_proc
 # ---------------------------------------------------------------------
 #
 os.environ["ftp_proxy"]=''
-url_json = 'ftp://scott:tiger@host_dbase/city/iwate.json'
+url_json = 'ftp://scott:tiger@cddn007/city/iwate.json'
 str_json = curl_get_proc (url_json)
 #
 #

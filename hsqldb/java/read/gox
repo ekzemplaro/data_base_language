@@ -1,4 +1,7 @@
 #
-JAVA_COMMON=/var/www/data_base/common/java_common
-export CPX=.:$JAVA_COMMON:/usr/share/java/hsqldb.jar
-java -cp $CPX hsqldb_read
+COMMON=/var/www/data_base/common
+JAVA_COMMON=$COMMON/java_common
+JAR=$COMMON/jar
+#
+export CLASSPATH=.:$JAVA_COMMON:$JAR/hsqldb/hsqldb-2.3.2.jar
+java hsqldb_read

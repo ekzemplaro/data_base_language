@@ -3,4 +3,6 @@ export COMMON=/var/www/data_base/common
 export JAR=$COMMON/jar
 export CLASSPATH=.:$JAR"/sqlite-jdbc-3.7.2.jar"
 #
-./sqlite3_delete.bsh /var/tmp/sqlite3/cities.db t0714
+export CLASSPATH=$CLASSPATH:/usr/share/java/bsh.jar
+#
+java bsh.Interpreter sqlite3_delete.bsh /var/tmp/sqlite3/cities.db t0714

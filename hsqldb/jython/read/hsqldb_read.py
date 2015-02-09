@@ -24,12 +24,9 @@ print ("*** 開始 ***")
 java.lang.Class.forName("org.hsqldb.jdbcDriver")
 
 #
-database = "file:/var/tmp/hsqldb/cities;shutdown=true"
-url="jdbc:hsqldb:" + database
-user = "SA"
-password = ""
-
-conn = DriverManager.getConnection (url,user, password)
+str_connect = "jdbc:hsqldb:file:/var/tmp/hsqldb/cities;shutdown=true"
+#
+conn = DriverManager.getConnection(str_connect,"SA", "")
 
 display_proc (conn)
 #

@@ -1,10 +1,10 @@
 // ------------------------------------------------------------------    
 //	redis_read.scala
 //
-//					Apr/11/2013
+//					Jan/22/2015
 //
 // ------------------------------------------------------------------    
-import redis.clients.jedis.Jedis
+import scala.collection.mutable
 
 // ------------------------------------------------------------------    
 object redis_read
@@ -15,21 +15,11 @@ def main (args: Array[String])
 {
 	println ("*** 開始 ***")
 
-	var jedis = new Jedis("host_dbase")
+	val server = "host_dbase"
 
-	val set_keys = jedis.keys("*")
+	var dict_aa = redis_manipulate.redis_to_dict_proc (server)
 
-	val keys = set_keys.toArray ()
-	for (key <- keys)
-		{
-		val str_key = key.toString ()
-		val str_json = jedis.get (str_key)
-
-		if (str_json != null)
-			{
-			redis_manipulate.record_parse_proc (str_key,str_json)
-			}
-		}
+	text_manipulate.dict_display_proc (dict_aa)
 
 	println ("*** 終了 ***")        
 

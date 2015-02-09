@@ -2,11 +2,11 @@
 /*
 	mcachedb_delete.groovy
 
-					Apr/22/2013
+					Feb/04/2015
 
 */
 // ----------------------------------------------------------------
-import java.net.Socket
+import mcached_manipulate
 // ----------------------------------------------------------------
 static void main (args)
 {
@@ -15,19 +15,12 @@ static void main (args)
 	def key=args[0]
 	println (key)
 
-	String server = "localhost"
-	int servPort = 21201
+	final String server = "host_ubuntu1"
+	final int port = 21201
 	print (server + '\t')
-	println (servPort)
+	println (port)
 
-	ss = new Socket(server, servPort);
-	ss.withStreams
-		{ input, output ->
-		def rr = new InputStreamReader( input )
-//
-		def ff = new mcached_manipulate ()
-		ff.socket_delete_record_proc (key,rr,output)
-		}
+	mcached_manipulate.mcached_delete_proc (server,port,key)
 
 	println ("*** 終了 ***")
 }

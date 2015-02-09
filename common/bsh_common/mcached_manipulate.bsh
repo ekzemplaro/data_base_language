@@ -1,55 +1,258 @@
 //
 //	mcached_manipulate.bsh
 //
-//					Oct/02/2012
+//					Feb/05/2015
+//
 // --------------------------------------------------------------
 import	net.arnx.jsonic.JSON;
 
-import com.danga.MemCached.SockIOPool;
-import com.danga.MemCached.MemCachedClient;
+source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
 // --------------------------------------------------------------
-Map mcached_to_dict_proc (MemCachedClient mc,String [] keys_in)
+String socket_read_proc (key,rr,output)
 {
+	String json_str = "";
+
+	String str_json  = "";
+	String command = "get " + key + "\r\n";
+	output.writeBytes (command);
+	output.flush ();
+
+	byte[] buffer = new byte[1024];
+	StringBuffer sb = new StringBuffer ();
+
+	int len;
+
+	while (0 <= (len = rr.read (buffer)))
+		{
+		sb.append (new String (buffer,0, len));
+
+		String [] lines = sb.toString ().split ("[\n]",-1);
+		boolean flag_break = false;
+		for (int it=0; it < lines.length; it++)
+			{
+			if (lines[it].startsWith("END"))
+				{
+				flag_break = true;
+				}
+			else if (lines[it].startsWith("VALUE"))
+				{
+				}
+			else if (lines[it].contains ("name"))
+				{
+//				System.out.print (key + "\t");
+
+				json_str  = (String)lines[it];
+				}
+			}
+
+		if (flag_break)
+			{
+			break;
+			}
+		}
+
+	return	json_str;
+}
+
+// --------------------------------------------------------------
+Map mcached_to_dict_proc (server,port,keys)
+{
+	System.out.println ("*** mcached_to_dict_proc ***");
+
 	Map dict_aa = new HashMap ();
 
-	for (String key : keys_in)
+	sock = new Socket (server,port);
+	output = new DataOutputStream (sock.getOutputStream ());
+
+	rr = new DataInputStream (sock.getInputStream ());
+
+	for (key : keys)
 		{
-		String str_json  = (String)mc.get(key);
+//		print (key);
+		str_json = socket_read_proc (key,rr,output);
 
 		if (str_json != null)
 			{
-			Map unit_aa = new HashMap ();
-
-		        unit_aa = JSON.decode (str_json);
-
-			dict_aa.put (key,unit_aa);
+			if (2 < str_json.length ())
+				{
+//				print (str_json);
+				unit_aa = JSON.decode (str_json);
+			
+				dict_aa.put (key,unit_aa);
+				}
 			}
 		}
+
+	rr.close ();
+	output.close ();
+	sock.close ();
 
 	return	dict_aa;
 }
 
 // --------------------------------------------------------------
-dict_to_mcached_proc (MemCachedClient mc,Map dict_aa)
+socket_write_proc (key,value_in,rr,output)
 {
-	Set set_aaa = dict_aa.keySet ();
+	System.out.print (key + "\t");
+	System.out.println (value_in);
 
-	for (Object key_aa: set_aaa)
+	int llx = value_in.getBytes().length;
+	String command = "set " + key + " 0 0 " + llx + "\r\n";
+//	System.out.println (command);
+
+	output.writeBytes (command);
+	output.flush ();
+
+	byte[] command_bb =  value_in.getBytes();
+	String rn = "\r\n";
+//	System.out.println (command_bb);
+	output.write (command_bb);
+	output.writeBytes (rn);
+	output.flush ();
+
+	byte[] buffer = new byte[1024];
+	StringBuffer sb = new StringBuffer ();
+
+	int len;
+
+	while (0 <= (len = rr.read (buffer)))
 		{
-		String key = (String)key_aa;
-		Map dict_unit = dict_aa.get (key_aa);
+		sb.append (new String (buffer,0, len));
 
-		String str_json = JSON.encode (dict_unit);
-
-		if(mc.set(key, str_json))
+		String [] lines = sb.toString ().split ("[\n]",-1);
+		boolean flag_break = false;
+		for (int it=0; it < lines.length; it++)
 			{
-			System.out.println("set ok");
+			if (lines[it].startsWith("STORED"))
+				{
+				flag_break = true;
+				}
 			}
-		else
+
+		if (flag_break)
 			{
-			System.out.println("set ng");
+			break;
 			}
 		}
+
+}
+
+// --------------------------------------------------------------
+dict_to_mcached_proc (server,port,dict_aa)
+{
+	System.out.println ("*** dict_to_mcached_proc ***");
+
+	Socket sock = new Socket (server,port);
+
+	DataOutputStream output = new DataOutputStream (sock.getOutputStream ());
+
+	DataInputStream rr = new DataInputStream (sock.getInputStream ());
+
+	Set set_aaa = dict_aa.keySet ();
+
+	for (Object key: set_aaa)
+		{
+		dict_unit = dict_aa.get (key);
+
+		String json_str = JSON.encode (dict_unit);
+
+
+		socket_write_proc (key,json_str,rr,output);
+		}
+
+	rr.close ();
+	output.close ();
+	sock.close ();
+}
+
+// --------------------------------------------------------------
+mcached_update_proc (String server,int port,String key,int population)
+{
+	sock = new Socket (server,port);
+
+	output = new DataOutputStream (sock.getOutputStream ());
+
+	rr = new DataInputStream (sock.getInputStream ()); 
+
+	str_json = socket_read_proc (key,rr,output);
+
+	System.out.println (str_json);
+
+	unit_aa = JSON.decode (str_json);
+
+String name = unit_aa.get ("name").toString ();
+	System.out.println (name);
+
+	String date_mod = get_current_date_proc ();
+
+	String str_population = Integer.toString (population);
+
+	unit_aa.put ("population",str_population);
+	unit_aa.put ("date_mod",date_mod);
+
+	json_new = JSON.encode (unit_aa);
+
+	System.out.println (json_new);
+	socket_write_proc (key,json_new,rr,output);
+
+	rr.close ();
+	output.close ();
+	sock.close ();
+}
+
+// --------------------------------------------------------------
+socket_delete_record_proc (String key,
+	DataInputStream rr,DataOutputStream output) throws Exception
+{
+	String command = "delete " + key + "\r\n";
+	output.writeBytes (command);
+	output.flush ();
+
+	byte[] buffer = new byte[1024];
+	StringBuffer sb = new StringBuffer ();
+
+	int len;
+
+	while (0 <= (len = rr.read (buffer)))
+		{
+		sb.append (new String (buffer,0, len));
+		String [] lines = sb.toString ().split ("[\n]",-1);
+		boolean flag_break = false;
+		for (int it=0; it < lines.length; it++)
+			{
+			if (lines[it].startsWith("DELETED"))
+				{
+				flag_break = true;
+				}
+			else if (lines[it].startsWith("NOT_FOUND"))
+				{
+				flag_break = true;
+				}
+			}
+
+	System.out.println (sb.toString ());
+
+		if (flag_break)
+			{
+			break;
+			}
+		}
+}
+
+// --------------------------------------------------------------
+mcached_delete_proc (String server,int port,String key)
+{
+	Socket sock = new Socket (server,port);
+
+	output = new DataOutputStream (sock.getOutputStream ());
+
+	rr = new DataInputStream (sock.getInputStream ());
+
+	socket_delete_record_proc (key,rr,output);
+
+	rr.close ();
+	output.close ();
+	sock.close ();
 }
 
 // --------------------------------------------------------------

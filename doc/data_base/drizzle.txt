@@ -20,7 +20,21 @@ ii  libdrizzledmessage0   1:7.1.36-stable-1ubuntu1    amd64      Library contain
 
 スキーマの作成<br />
 <blockquote>
-drizzle> create schema city;
+<pre>
+$ drizzle -h localhost
+Welcome to the Drizzle client..  Commands end with ; or \g.
+Your Drizzle connection id is 1
+Connection protocol: mysql
+Server version: 7.2.3 Debian
+
+Type 'help;' or '\h' for help. Type '\c' to clear the buffer.
+
+drizzle> create schema city; 
+Query OK, 1 row affected (0.000646 sec)
+
+drizzle> exit
+Bye
+</pre>
 </blockquote>
 
 インターアクティブの操作<br />

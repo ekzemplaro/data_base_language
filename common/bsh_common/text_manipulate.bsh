@@ -1,7 +1,7 @@
 //
 //	text_manipulate.bsh
 //
-//					Oct/02/2012
+//					Jan/28/2015
 //
 // --------------------------------------------------------------
 import	java.text.DateFormat;
@@ -27,7 +27,6 @@ Map text_to_dict_proc_exec (fname_in,delimit)
 	BufferedReader	buff = new BufferedReader (in_file);
 	String	line;
 
-
 	while ((line = buff.readLine ()) != null)
 		{
 		Map dict_unit = new HashMap ();
@@ -50,7 +49,9 @@ void dict_display_proc (Map dict_aa)
 	String delimit = "\t";
 	Set set_aaa = dict_aa.keySet ();
 
-	for (Object key_aa: set_aaa)
+	Set <String> ss = new TreeSet <String> (set_aaa);
+
+	for (Object key_aa: ss)
 		{
 		String key = (String)key_aa;
 

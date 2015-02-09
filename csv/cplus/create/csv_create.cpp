@@ -2,7 +2,7 @@
 /*
 	csv_create.cpp
 
-					Apr/21/2014
+					Jan/30/2015
 
 */
 // --------------------------------------------------------------------
@@ -31,16 +31,16 @@ static map <string,Unit >  data_prepare_proc ()
 {
 	map <string,Unit> dict_aa;
 
-	dict_aa = dict_append_proc (dict_aa,"t1271","千葉",75196,"1986-8-17");
+	dict_aa = dict_append_proc (dict_aa,"t1271","千葉",75196,"1922-8-17");
 
-	dict_aa = dict_append_proc (dict_aa,"t1272","勝浦",13982,"1986-9-8");
-	dict_aa = dict_append_proc (dict_aa,"t1273","市原",47621,"1986-7-25");
-	dict_aa = dict_append_proc (dict_aa,"t1274","流山",29517,"1986-6-14");
-	dict_aa = dict_append_proc (dict_aa,"t1275","八千代",54271,"1986-1-5");
-	dict_aa = dict_append_proc (dict_aa,"t1276","我孫子",76948,"1986-5-22");
-	dict_aa = dict_append_proc (dict_aa,"t1277","鴨川",46785,"1986-7-17");
-	dict_aa = dict_append_proc (dict_aa,"t1278","銚子",52614,"1986-3-04");
-	dict_aa = dict_append_proc (dict_aa,"t1279","市川",74823,"1986-5-9");
+	dict_aa = dict_append_proc (dict_aa,"t1272","勝浦",13682,"1922-9-8");
+	dict_aa = dict_append_proc (dict_aa,"t1273","市原",47521,"1922-7-25");
+	dict_aa = dict_append_proc (dict_aa,"t1274","流山",29817,"1922-6-14");
+	dict_aa = dict_append_proc (dict_aa,"t1275","八千代",54371,"1922-1-5");
+	dict_aa = dict_append_proc (dict_aa,"t1276","我孫子",76148,"1922-5-22");
+	dict_aa = dict_append_proc (dict_aa,"t1277","鴨川",46725,"1922-7-17");
+	dict_aa = dict_append_proc (dict_aa,"t1278","銚子",52614,"1922-3-04");
+	dict_aa = dict_append_proc (dict_aa,"t1279","市川",74893,"1922-5-9");
 
 	return	dict_aa;
 }

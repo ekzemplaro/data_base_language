@@ -1,7 +1,7 @@
 // --------------------------------------------------------------
 /*
 	ftp_create.java
-					Jan/26/2012
+					Jan/27/2015
 
 */
 // --------------------------------------------------------------
@@ -53,16 +53,16 @@ data_prepare_proc ()
 		(dict_aa,"t0365","遠野",72931,"2008-8-12");
 
 	dict_aa = text_manipulate.dict_append_proc
-		(dict_aa,"t0366","八幡平",28529,"2008-7-28");
+		(dict_aa,"t0366","八幡平",28579,"2008-7-28");
 
 	dict_aa = text_manipulate.dict_append_proc
 		(dict_aa,"t0367","大船渡",39457,"2008-6-19");
 
 	dict_aa = text_manipulate.dict_append_proc
-		(dict_aa,"t0368","一関",47362,"2008-11-15");
+		(dict_aa,"t0368","一関",41362,"2008-11-15");
 
 	dict_aa = text_manipulate.dict_append_proc
-		(dict_aa,"t0369","花巻",56872,"2008-10-24");
+		(dict_aa,"t0369","花巻",56832,"2008-10-24");
 
 	return	dict_aa;
 }

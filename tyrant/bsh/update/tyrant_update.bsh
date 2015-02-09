@@ -1,0 +1,23 @@
+//
+//	tyrant_update.bsh
+//
+//					Feb/05/2015
+//
+// --------------------------------------------------------------
+source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
+source ("/var/www/data_base/common/bsh_common/mcached_manipulate.bsh");
+// --------------------------------------------------------------
+System.out.println ("*** 開始 ***");
+String	key = bsh.args[0];
+int	population = Integer.parseInt (bsh.args[1]);
+
+System.out.println (key);
+System.out.println (population);
+
+final String server = "host_ubuntu1";
+final int port = 1978;
+
+mcached_update_proc (server,port,key,population);
+
+System.out.println ("*** 終了 ***");
+// --------------------------------------------------------------

@@ -1,0 +1,21 @@
+//
+//	tyrant_delete.bsh
+//
+//					Feb/05/2015
+//
+// --------------------------------------------------------------
+source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
+source ("/var/www/data_base/common/bsh_common/mcached_manipulate.bsh");
+// --------------------------------------------------------------
+System.out.println ("*** 開始 ***");
+String	key = bsh.args[0];
+
+System.out.println (key);
+
+final String server = "host_ubuntu1";
+final int port = 1978;
+
+mcached_delete_proc (server,port,key);
+
+System.out.println ("*** 終了 ***");
+// --------------------------------------------------------------

@@ -1,10 +1,12 @@
 #
 COMMON=/var/www/data_base/common
 SCALA_COMMON=$COMMON/scala_common
-MEMCACHED=$COMMON/jar/memcached
-CPX=$MEMCACHED/java_memcached-release_2.6.3.jar:$MEMCACHED/slf4j-api-1.6.1.jar
-CPX=$CPX:$MEMCACHED/slf4j-simple-1.6.1.jar:$MEMCACHED/commons-pool-1.5.6.jar
-export CLASSPATH=./:$SCALA_COMMON:$CPX
+export JSON4S=$COMMON/jar/json4s
 #
-scala mcached_delete t1734
+JSON4S_JAR=$JSON4S/json4s-core_2.11-3.2.11.jar:$JSON4S/json4s-native_2.11-3.2.11.jar:$JSON4S/json4s-ast_2.11-3.2.11.jar
+#
+#
+export CLASSPATH=./:$SCALA_COMMON:$JSON4S_JAR
+#
+scala mcached_delete t1735
 #

@@ -2,7 +2,7 @@
 # -------------------------------------------------------------
 #	mcachedb_create.coffee
 #
-#					Aug/09/2013
+#					Feb/02/2015
 # -------------------------------------------------------------
 memcache = require('memcache');
 
@@ -12,8 +12,8 @@ text_manipulate=require ("/var/www/data_base/common/coffee_common/text_manipulat
 data_prepare_proc = () ->
 	dict_aa = new Object
 
-	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t1521','新潟',78451,'1954-2-24')
-	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t1522','長岡',15726,'1954-1-5')
+	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t1521','新潟',72451,'1954-2-24')
+	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t1522','長岡',19726,'1954-1-5')
 	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t1523','新発田',24193,'1954-11-20')
 	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t1524','上越',31864,'1954-6-22')
 	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t1525','糸魚川',42358,'1954-8-14')
@@ -47,7 +47,8 @@ onConnect = () ->
 	console.log("*** 終了 ***")
 
 # ---------------------------------------------------------------
-client = new memcache.Client(21201,'localhost');
+hostname = 'host_ubuntu1'
+client = new memcache.Client(21201,hostname);
 client.connect();
 client.addHandler(onConnect);
 

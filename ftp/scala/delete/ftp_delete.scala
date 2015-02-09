@@ -1,7 +1,7 @@
 // --------------------------------------------------------------
 /*
 	ftp_delete.scala
-					Mar/12/2013
+					Jan/27/2015
 
 */
 // --------------------------------------------------------------
@@ -29,7 +29,11 @@ def main (args: Array[String])
 
 //	System.out.println (json_str)
 
-	var dict_aa = json_manipulate.json_to_dict_proc (json_str)
+	val keys = Array ("t0361","t0362","t0363",
+			"t0364","t0365","t0366",
+			"t0367","t0368","t0369")
+
+	var dict_aa = json_manipulate.json_to_dict_proc (keys,json_str)
 
 	if (dict_aa.contains (key_in))
 		{

@@ -1,7 +1,7 @@
 // ---------------------------------------------------------------------
 //	hsqldb/groovy/read/hsqldb_read.groovy
 //
-//					Aug/06/2010
+//					Jan/28/2015
 //
 // ---------------------------------------------------------------------
 import groovy.sql.Sql
@@ -15,14 +15,10 @@ static void main (args)
 {
 	println ("*** 開始 ***");
 
-	def source = new org.hsqldb.jdbc.jdbcDataSource ()
+	def database = "/var/tmp/hsqldb/cities"
 
-	source.database = 'jdbc:hsqldb:file:/var/tmp/hsqldb/cities'
-
-	source.user = 'SA'
-	source.password = ''
-
-	def sql = new Sql (source)
+	def sql = Sql.newInstance \
+		("jdbc:hsqldb:file:" + database,"SA","","org.hsqldb.jdbcDriver")
 
 	sql_manipulate.display_proc (sql)
 

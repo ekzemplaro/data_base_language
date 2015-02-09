@@ -2,17 +2,19 @@
 //
 //	couch_read.go
 //
-//					May/21/2013
+//					Jan/20/2015
 //
 // ----------------------------------------------------------------
 package main
 
 import (
-//	"io"
+	"io/ioutil"
 	"log"
 	"net/http"
-//	"os"
+	"os"
 	"fmt"
+//	"io"
+	"encoding/json"
 )
 
 // ----------------------------------------------------------------
@@ -20,16 +22,42 @@ func main () {
 
 	fmt.Printf ("*** 開始 ***\n")
 
-	db, err := http.Get("http://host_dbase:5984/city/cities")
+	url := "http://localhost:5984/nagano/_all_docs"
+
+	resp, err := http.Get (url)
 
 	if err != nil {
-        log.Fatalln(err)
-    	}
-//    io.Copy(os.Stdout, db.Body)
+		log.Fatalln(err)
+		fmt.Printf("%s", err)
+		os.Exit(1) 
+		} else {
+		defer resp.Body.Close()
+		 contents, err := ioutil.ReadAll(resp.Body)
+		if err != nil {
+			fmt.Printf("%s", err)
+			os.Exit(1)
+			}
+		json_str := string(contents)
+		fmt.Printf("%s\n", json_str)
+		var data map[string]interface{}
+		if err := json.Unmarshal([]byte(json_str), &data); err != nil {
+        panic(err)
+    }
+//    fmt.Println(data)
+    fmt.Println(data["rows"])
+} 
+		
 
-	print (db.Body)
 
-	// json_str := string (db.Body)
+//	io.Copy(os.Stdout, resp.Body)
+	json_str := resp.Body
+	print (json_str)
+// body, err := ioutil.ReadAll(resp.Body)
+
+//	print (body)
+//	print (db.Body)
+
+//	json_str := string (db.Body)
 //	fmt.Printf (json_str)
 /*
 	id := "cities"
