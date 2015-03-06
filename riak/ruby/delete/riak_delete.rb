@@ -3,7 +3,7 @@
 #
 #	riak_delete.rb
 #
-#					Mar/11/2013
+#					Feb/24/2015
 #
 require 'json'
 require 'restclient'
@@ -16,7 +16,7 @@ key_in = ARGV[0]
 #
 puts key_in
 #
-url_base = 'http://localhost:8098/riak/shimane'
+url_base = 'http://host_ubuntu1:8098/riak/shimane'
 url_in = url_base + '?keys=true'
 json_string = RestClient.get url_in
 data_aa=JSON.parse(json_string)

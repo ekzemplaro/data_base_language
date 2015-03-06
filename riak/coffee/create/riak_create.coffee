@@ -2,7 +2,7 @@
 # ---------------------------------------------------------------
 #	riak_create.coffee
 #
-#					Dec/24/2013
+#					Feb/09/2015
 #
 # ---------------------------------------------------------------
 http = require('http')
@@ -19,7 +19,7 @@ data_prepare_proc = () ->
 	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t3255','江津',56138,'1954-7-14')
 	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t3256','浜田',79432,'1954-8-12')
 	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t3257','益田',25971,'1954-1-21')
-	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t3258','安来',48176,'1954-9-26')
+	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t3258','安来',48276,'1954-9-26')
 
 	return	dict_aa
 
@@ -30,10 +30,13 @@ console.log "*** 開始 ***"
 dict_aa = data_prepare_proc()
 console.log "*** bbb ***"
 
+server = 'host_ubuntu1'
+port = 8098
+#
 for key,value of dict_aa
 	json_str = JSON.stringify(value)
 
-	http_manipulate.put_proc('localhost',8098,'/riak/shimane/' + key,json_str)
+	http_manipulate.put_proc(server,port,'/riak/shimane/' + key,json_str)
 
 console.log "*** 終了 ***"
 

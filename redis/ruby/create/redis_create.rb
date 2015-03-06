@@ -2,34 +2,41 @@
 # -*- coding: utf-8 -*-
 #
 #	redis_create.rb
-#					May/22/2013
+#					Feb/26/2015
 #
-require 'rubygems'
 require 'redis'
 require 'json'
 #
-load '/var/www/data_base/common/ruby_common/json_manipulate.rb'
-load '/var/www/data_base/common/ruby_common/redis_manipulate.rb'
+# load '/var/www/data_base/common/ruby_common/redis_manipulate.rb'
+load '/var/www/data_base/common/ruby_common/text_manipulate.rb'
+# -------------------------------------------------------------------
+def data_prepare_proc ()
+	dict_aa = {}
+	dict_aa=dict_append_proc(dict_aa,"t1851","福井",73526,"2006-8-15")
+	dict_aa=dict_append_proc(dict_aa,"t1852","敦賀",81743,"2006-9-17")
+	dict_aa=dict_append_proc(dict_aa,"t1853","小浜",87942,"2006-1-9")
+	dict_aa=dict_append_proc(dict_aa,"t1854","大野",91845,"2006-3-25")
+	dict_aa=dict_append_proc(dict_aa,"t1855","勝山",16523,"2006-5-24")
+	dict_aa=dict_append_proc(dict_aa,"t1856","鯖江",21589,"2006-8-7")
+	dict_aa=dict_append_proc(dict_aa,"t1857","あわら",42613,"2006-4-21")
+	dict_aa=dict_append_proc(dict_aa,"t1858","越前",58197,"2006-8-12")
+	dict_aa=dict_append_proc(dict_aa,"t1859","坂井",74326,"2006-10-28")
+#
+	return	dict_aa
+end
 # -------------------------------------------------------------------
 #
 puts "*** 開始 ***"
 #
-#redis = Redis.new
+dict_aa = data_prepare_proc()
+#
 redis = Redis.new(:host => "host_dbase", :port => 6379)
 redis.flushdb
 #
-redis.set 't1851',json_gen_proc("福井",24713,"2006-2-15")
-redis.set 't1852',json_gen_proc("敦賀",48352,"2006-6-9")
-redis.set 't1853',json_gen_proc("小浜",19326,"2006-3-20")
-redis.set 't1854',json_gen_proc("大野",85397,"2006-2-8")
-redis.set 't1855',json_gen_proc("勝山",17346,"2006-5-12")
-redis.set 't1856',json_gen_proc("鯖江",51729,"2006-1-14")
-redis.set 't1857',json_gen_proc("あわら",76591,"2006-9-22")
-redis.set 't1858',json_gen_proc("越前",94512,"2006-8-28")
-redis.set 't1859',json_gen_proc("坂井",41878,"2006-10-20")
-#
-puts "*** ppp ***"
-redis_display_proc(redis)
+dict_aa.each {|key, value|
+	json_str = JSON.generate(value)
+	redis.set key,json_str
+}
 #
 puts "*** 終了 ***"
 # -------------------------------------------------------------------

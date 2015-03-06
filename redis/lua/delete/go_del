@@ -1,1 +1,1 @@
-lua5.1 redis_delete.lua t1855
+lua redis_delete.lua t1855

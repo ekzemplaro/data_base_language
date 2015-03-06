@@ -3,7 +3,7 @@
 #
 #	tyrant_delete.py
 #
-#					Oct/07/2014
+#					Feb/06/2015
 #
 import	sys
 #
@@ -17,7 +17,7 @@ print ("*** 開始 ***")
 id_in = sys.argv[1]
 print ("%s" % id_in)
 #
-mc = memcache.Client(['localhost:1978'])
+mc = memcache.Client(['host_ubuntu1:1978'])
 #
 mcache_delete_proc (mc,id_in)
 #

@@ -3,14 +3,13 @@
 #
 #	read/riak_read_ruby.rb
 #
-#					Mar/13/2013
+#					Feb/26/2015
 #
 # -------------------------------------------------------------
-#
 require	'restclient'
 require	'json'
 #
-url_base = 'http://localhost:8098/riak/shimane'
+url_base = 'http://host_ubuntu1:8098/riak/shimane'
 url_in = url_base + '?keys=true'
 json_string = RestClient.get url_in
 data_aa=JSON.parse(json_string)

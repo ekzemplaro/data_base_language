@@ -1,7 +1,7 @@
 <title>Berkeley DB</title>
 </head>
 <body>
-<h1><a href="http://www.oracle.com/database/berkeley-db/index.html">
+<h1><a href="https://docs.oracle.com/cd/E17276_01/html/programmer_reference/index.html">
 Berkeley DB</a></h1>
 <ol>
 	Berkeley DB 4.7.25: (May 15, 2008)<p />

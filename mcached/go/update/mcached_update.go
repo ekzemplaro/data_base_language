@@ -2,18 +2,15 @@
 //
 //	mcached_update.go
 //
-//					Jan/22/2014
+//					Feb/11/2015
 //
 // ----------------------------------------------------------------
 package main
  
 import (
 	"fmt"
-	"net"
 	"os"
 	"strconv"
-//	"strings"
-//	"encoding/json"
 )
 
 // ----------------------------------------------------------------
@@ -28,23 +25,9 @@ func main () {
 	fmt.Printf ("population_in = %d\n" , population_in)
 
 	hostname := "localhost"
-	port := "11211"
+	port := 11211
 
-	conn, err := net.Dial ("tcp",hostname + ":" + port)
-	if err != nil {
-		fmt.Println(err)
-		return
-		}
-
-	json_str := mcached_socket_read_proc (conn,key_in)
-
-	if 0 < len (json_str) {
-		json_str_new := json_update_proc (json_str,population_in)
-		fmt.Println (json_str_new)
-		mcached_socket_write_proc (conn,key_in,json_str_new)
-		}
-
-	conn.Close ()
+	mcached_update_proc (hostname,port,key_in,population_in)
 
 	fmt.Println ("*** 終了 ***")
 }

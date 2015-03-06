@@ -2,7 +2,7 @@
 // ------------------------------------------------------------------
 //	mcachedb_php_delete.php
 //
-//				Oct/09/2014
+//				Feb/09/2015
 // ------------------------------------------------------------------
 // $path=$_SERVER["DOCUMENT_ROOT"]."/data_base/common/php_common";
 $path="/var/www/data_base/common/php_common";
@@ -13,7 +13,7 @@ include "cgi_manipulate.php";
 
 // ------------------------------------------------------------------
 $mc = new Memcached();
-$mc->addServer ("localhost",21201);
+$mc->addServer ("host_ubuntu1",21201);
 
 $arry_param = cgi_manipulate ();
 

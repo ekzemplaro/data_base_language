@@ -1,30 +1,41 @@
-#! /usr/bin/lua5.1
+#! /usr/bin/lua
 -- ----------------------------------------------------
 --	mcachedb_create.lua
 --
---				Apr/02/2013
+--					Feb/16/2015
 --
 -- ----------------------------------------------------
-require 'Memcached'
-require 'kvalue_manipulate'
+json=require	('json')
+require	('text_manipulate')
+require	('mcached_manipulate')
+-- ----------------------------------------------------
+function data_prepare_proc ()
+	dict_aa = {}
 
+	dict_aa = dict_append_proc (dict_aa,"t1521","新潟",83275,"1981-5-17")
+	dict_aa = dict_append_proc (dict_aa,"t1522","長岡",47954,"1981-8-9")
+	dict_aa = dict_append_proc (dict_aa,"t1523","新発田",58743,"1981-9-15")
+	dict_aa = dict_append_proc (dict_aa,"t1524","上越",41329,"1981-3-22")
+	dict_aa = dict_append_proc (dict_aa,"t1525","糸魚川",86178,"1981-7-11")
+	dict_aa = dict_append_proc (dict_aa,"t1526","加茂",38527,"1981-9-21")
+	dict_aa = dict_append_proc (dict_aa,"t1527","三条",49536,"1981-1-4")
+	dict_aa = dict_append_proc (dict_aa,"t1528","佐渡",27841,"1981-10-21")
+	dict_aa = dict_append_proc (dict_aa,"t1529","柏崎",45386,"1981-3-18")
+	dict_aa = dict_append_proc (dict_aa,"t1530","村上",93871,"1981-9-24")
+	dict_aa = dict_append_proc (dict_aa,"t1531","十日町",57249,"1981-2-8")
+	dict_aa = dict_append_proc (dict_aa,"t1532","五泉",34172,"1981-11-15")
+
+	return	dict_aa
+end
 -- ----------------------------------------------------
 print ("*** 開始 ***")
 
-local mem = Memcached.Connect('localhost', 21201)
+dict_aa = data_prepare_proc ()
 
-record_out_proc (mem,"t1521","新潟",94176,"1981-9-18")
-record_out_proc (mem,"t1522","長岡",32157,"1981-2-9")
-record_out_proc (mem,"t1523","新発田",72139,"1981-5-17")
-record_out_proc (mem,"t1524","上越",49328,"1981-10-22")
-record_out_proc (mem,"t1525","糸魚川",82415,"1981-7-11")
-record_out_proc (mem,"t1526","加茂",38762,"1981-9-21")
-record_out_proc (mem,"t1527","三条",42381,"1981-1-4")
-record_out_proc (mem,"t1528","佐渡",58429,"1981-9-21")
-record_out_proc (mem,"t1529","柏崎",72651,"1981-2-5")
-record_out_proc (mem,"t1530","村上",41937,"1981-4-25")
-record_out_proc (mem,"t1531","十日町",83712,"1981-7-12")
-record_out_proc (mem,"t1532","五泉",34591,"1981-9-9")
+local server_host = "host_ubuntu1"
+local server_port = 21201
+
+dict_to_mcached_proc (server_host,server_port,dict_aa)
 
 
 print ("*** 終了 ***")

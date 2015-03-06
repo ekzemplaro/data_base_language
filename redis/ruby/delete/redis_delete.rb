@@ -2,12 +2,12 @@
 # -*- coding: utf-8 -*-
 #
 #	redis_delete.rb
-#					May/22/2013
+#					Feb/25/2015
 #
-require 'rubygems'
+#require 'rubygems'
 require 'redis'
 #
-load '/var/www/data_base/common/ruby_common/redis_manipulate.rb'
+# load '/var/www/data_base/common/ruby_common/redis_manipulate.rb'
 # -------------------------------------------------------------------
 puts "*** 開始 ***"
 #
@@ -18,8 +18,6 @@ puts id_in
 redis = Redis.new(:host => "host_dbase", :port => 6379)
 #
 redis.del id_in
-#
-redis_display_proc(redis)
 #
 puts "*** 終了 ***"
 # -------------------------------------------------------------------

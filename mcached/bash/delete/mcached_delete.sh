@@ -2,16 +2,19 @@
 #
 #	mcached_delete.sh
 #
-#						Oct/06/2014
+#						Feb/17/2015
 #
 # --------------------------------------------------------------------------
 echo "*** 開始 ***"
 #
-id_in=$1
+SERVER=localhost
+PORT=11211
 #
-echo $id_in
+key_in=$1
 #
-memrm --servers=localhost:11211 $id_in
+echo $key_in
+#
+memrm --servers=$SERVER:$PORT $key_in
 # --------------------------------------------------------------------------
 #
 echo "*** 終了 ***"

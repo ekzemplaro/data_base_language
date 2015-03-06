@@ -2,7 +2,7 @@
 #
 #	ruby_common/redis_manipulate.rb
 #
-#				Dec/09/2014
+#				Feb/26/2015
 #
 require 'date'
 require 'json'
@@ -36,7 +36,8 @@ def redis_display_proc (redis)
 	}
 end
 # -------------------------------------------------------------
-def redis_to_dict_proc (redis)
+def redis_to_dict_proc (host_name)
+	redis = Redis.new(:host => host_name, :port => 6379)
 	dict_aa = {}
 
 	keys=["t1851","t1852","t1853","t1854",

@@ -2,26 +2,32 @@
 #
 #	mcached_update.sh
 #
-#						Oct/06/2014
+#						Feb/17/2015
 #
 # --------------------------------------------------------------------------
 echo "*** 開始 ***"
 #
+SERVER=localhost
+PORT=11211
+cd /tmp
+#
 work_file="/tmp/tmp00724.txt"
-id_in=$1
+key_in=$1
 population_in=$2
 today=`date '+%F'`
 #
-echo $id_in
+echo $key_in
 echo $population_in
-memcat --servers=localhost:11211 $id_in > $work_file
+memcat --servers=$SERVER:$PORT $key_in > $work_file
 #
 head=`awk -F, '{print $1}' $work_file`",\"population\":"
 data=$head$population_in",\"date_mod\":\""$today"\"}"
-echo $data > $id_in
+echo $data > $key_in
 #
-memcp --servers=localhost:11211 --set $id_in
+memcp --servers=$SERVER:$PORT --set $key_in
 # --------------------------------------------------------------------------
+#
+rm -f /tmp/$key_in
 #
 echo "*** 終了 ***"
 # --------------------------------------------------------------------------

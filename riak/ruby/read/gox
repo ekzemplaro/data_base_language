@@ -1,1 +1,2 @@
+export http_proxy=""
 ./riak_read.rb

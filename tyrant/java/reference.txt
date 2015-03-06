@@ -1,3 +1,2 @@
-mcached_manipulate.java
-socket_manipulate.java
+mcached_socket.java
 text_manipulate.java

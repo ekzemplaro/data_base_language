@@ -2,7 +2,7 @@
 #
 #	mcached_create.tcl
 #
-#					Jan/05/2015
+#					Feb/10/2015
 #
 # ---------------------------------------------------------------
 source /var/www/data_base/common/tcl_common/text_manipulate.tcl
@@ -21,12 +21,12 @@ proc data_prepare_proc {} {
 	set dict_aa [dict_append_proc $dict_aa t1735 珠洲 29831 1982-10-17]
 	set dict_aa [dict_append_proc $dict_aa t1736 加賀 36157 1982-5-21]
 	set dict_aa [dict_append_proc $dict_aa t1737 羽咋 64392 1982-9-8]
-	set dict_aa [dict_append_proc $dict_aa t1738 かほく 51238 1982-6-14]
-	set dict_aa [dict_append_proc $dict_aa t1739 白山 18937 1982-4-29]
+	set dict_aa [dict_append_proc $dict_aa t1738 かほく 51738 1982-6-14]
+	set dict_aa [dict_append_proc $dict_aa t1739 白山 18249 1982-4-29]
 
 	return	$dict_aa
 }
-#
+
 # ---------------------------------------------------------------
 puts "*** 開始 ***"
 #
@@ -34,18 +34,10 @@ set dict_aa [data_prepare_proc]
 #
 dict_display_proc $dict_aa
 #
+set server "localhost"
 set port 11211
-set io [socket "127.0.0.1" $port]
 #
-dict for {key value} $dict_aa {
-	puts $key
-#
-	set json_str [json_unit_record_create_proc $value]
-	puts $json_str
-	mcached_set_proc $io $key $json_str
-}
-#
-close $io
+dict_to_mcached_proc $server $port $dict_aa
 #
 puts "*** 終了 ***"
 # ---------------------------------------------------------------

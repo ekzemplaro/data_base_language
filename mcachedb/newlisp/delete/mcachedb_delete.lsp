@@ -3,20 +3,19 @@
 ;
 ;	mcachedb_delete.lsp
 ;
-;					Apr/23/2011
+;					Feb/10/2015
+; -------------------------------------------------------------------
+(load "/var/www/data_base/common/newlisp_common/mcached_manipulate.lsp")
 ; -------------------------------------------------------------------
 (println "*** 開始 ***")
 (setf key_in (main-args 2))
-(println "*** aaaa ***")
 (println key_in)
-(setf command (format "delete %s\r\n" key_in))
-(setf hostname "localhost") 
+;
+(setf hostname "host_ubuntu1") 
 (setf port 21201) 
-(set 'socket (net-connect hostname port))
-(net-send socket command)
-(net-receive socket buffer 10000)
-(println buffer)
-(net-close socket)
+
+(mcached_delete_proc hostname port key_in)
+
 (println "*** 終了 ***")
 (exit)
 ; -------------------------------------------------------------------

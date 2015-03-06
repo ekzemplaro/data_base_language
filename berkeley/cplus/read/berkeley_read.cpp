@@ -2,19 +2,13 @@
 /*
 	berkeley_read.cpp
 
-					Mar/06/2014
+					Feb/10/2015
 
 */
 // ------------------------------------------------------------------
 #include	<iostream>
-#include	<fstream>
-
-#include	<sys/types.h>
-#include	<stdio.h>
-#include	<stdlib.h>
-#include	<cstring>
-#include	<string>
 #include	<db.h>
+#include	<boost/algorithm/string.hpp>
 
 using namespace std;
 
@@ -44,7 +38,8 @@ int main (int argc,char *argv[])
 	else
 		{
 
-	ret = dbp->open(dbp, NULL, file_db, NULL, DB_BTREE, DB_RDONLY, 0);
+//	ret = dbp->open(dbp, NULL, file_db, NULL, DB_BTREE, DB_RDONLY, 0);
+	ret = dbp->open(dbp, NULL, file_db, NULL, DB_HASH, DB_RDONLY, 0);
 	if (ret != 0) {
         dbp->err(dbp, ret, "%s", file_db);
 	}
@@ -68,7 +63,7 @@ int main (int argc,char *argv[])
 
 	cerr << "*** 終了 ***\n";
 
-    exit (ret);
+	exit (ret);
 }
 
 // ------------------------------------------------------------------
@@ -81,12 +76,12 @@ int db_cursor_read_proc (DB *dbp,const char file_db[])
 	DBT data;
 
 	ret = dbp->cursor(dbp, NULL, &dbcp, 0);
-    if (ret != 0) {
-        dbp->err(dbp, ret, "%s", file_db);
-    }
+	if (ret != 0) {
+		dbp->err(dbp, ret, "%s", file_db);
+	}
 else
 {
-	fprintf (stderr, "*** ccc ***\n");
+	cerr <<  "*** ccc ***\n";
 	while (1) {
 		memset(&key, 0, sizeof(key));
 		memset(&data, 0, sizeof(data));
@@ -108,7 +103,7 @@ else
 
 	json_record_display ((char *)key.data,(char *)data.data);
     }
-	fprintf (stderr, "*** fff ***\n");
+	cerr << "*** fff ***\n";
 }
 
 	if (dbcp)

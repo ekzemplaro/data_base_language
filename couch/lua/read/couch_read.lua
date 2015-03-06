@@ -2,32 +2,41 @@
 -- ----------------------------------------------------
 --	couch_read.lua
 --
---					Jul/16/2011
+--					Feb/16/2015
 -- ----------------------------------------------------
 require	'json'
 require	'text_manipulate'
+
+http = require ("socket.http")
+-- ----------------------------------------------------
+function couch_to_dict_proc (url_base)
+	local url_all = url_base .. "/_all_docs"
+
+	local json_str = http.request (url_all)
+
+	data_aa = json.decode (json_str)
+
+	for it,value in pairs (data_aa.rows)
+		do
+			url_aa = url_base .. "/" .. value.key
+			json_str = http.request (url_aa)
+			unit_aa = json.decode (json_str)
+			dict_aa = dict_append_proc
+				(dict_aa,value.key,unit_aa.name,
+				unit_aa.population,unit_aa.date_mod)
+		end
+
+	return	dict_aa
+end
 -- ----------------------------------------------------
 print ("*** 開始 ***")
 
-local http = require ("socket.http")
-local ltn12 = require("ltn12")
+dict_aa = {}
 
-local resp = {}
--- www.lua.orgにアクセス
--- sink(データの送り先)をテーブルに
--- 返値：応答、コード、ヘッダー
+local url_base = "http://localhost:5984/nagano"
 
-local rr,code,header = http.request{
-	url = "http://host_dbase:5984/city/cities",
-	sink = ltn12.sink.table( resp ),
-}
--- 上はhttp.request()関数を t[url]="http:...",t[sink]=ltn12...というテーブル tを引数に呼び出す時の書き方です --
+local dict_aa = couch_to_dict_proc (url_base)
 
-json_str = table.concat (resp)
-
--- print	(json_str)
-
-dict_aa = json.decode(json_str)
 dict_display_proc (dict_aa)
 print ("*** 終了 ***")
 -- ----------------------------------------------------

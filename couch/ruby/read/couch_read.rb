@@ -3,7 +3,7 @@
 #
 #	couch_read.rb
 #
-#					Jun/20/2014
+#					Feb/24/2015
 #
 require 'restclient'
 #
@@ -20,17 +20,16 @@ puts url_docs
 str_json = RestClient.get url_docs
 #
 list_aa=JSON.parse(str_json)
-#puts list_aa['rows']
+#
+dict_aa={}
 list_aa['rows'].each {|row|
 	key = row['key']
 	url_target  =  url_collection + '/' + key
 	str_json = RestClient.get url_target
 	unit_aa=JSON.parse(str_json)
-	print(key,"\t")
-	print(unit_aa['name'],"\t")
-	print(unit_aa['population'],"\t")
-	print(unit_aa['date_mod'],"\n")
+	dict_aa[key]=unit_aa
 	}
 #
+dict_display_proc (dict_aa)
 puts	"*** 終了 ***"
 #

@@ -3,7 +3,7 @@
 #
 #	tyrant_python_read.py
 #
-#						Oct/07/2014
+#						Feb/10/2015
 #
 # ----------------------------------------------------------------
 import sys
@@ -15,7 +15,7 @@ sys.path.append ("/var/www/data_base/common/python_common")
 from mcache_manipulate import mcache_to_dict_proc
 #
 # ----------------------------------------------------------------
-mc = memcache.Client(['localhost:1978'])
+mc = memcache.Client(['host_ubuntu1:1978'])
 
 keys = {'t4761','t4762','t4763',
 	't4764','t4765','t4766',

@@ -2,7 +2,7 @@
 /*
 	text_manipulate.cs
 
-					Oct/17/2011
+					Feb/09/2015
 
 */
 // --------------------------------------------------------------------
@@ -64,18 +64,21 @@ public static void dict_display_proc (Dictionary <string,Object> dict_aa)
 {
 	Console.WriteLine ("*** dict_display_proc ***");
 
-	foreach (KeyValuePair<string, Object> kv in dict_aa)
+	SortedDictionary<string,Object> dict_bb
+		= new SortedDictionary<string,Object>(dict_aa);
+
+	foreach (KeyValuePair<string, Object> kv in dict_bb)
 		{
 		if ((kv.Key != "_id") && (kv.Key != "_rev"))
 			{
 			Dictionary <string,string> unit_aa
 				= (Dictionary <string,string>)kv.Value;
 
-		Console.Write (kv.Key + "\t");
-
-		Console.Write (unit_aa["name"] + "\t");
-		Console.Write (unit_aa["population"] + "\t");
-		Console.Write (unit_aa["date_mod"] + "\n");
+			string out_str = kv.Key + "\t";
+			out_str += unit_aa["name"] + "\t";
+			out_str += unit_aa["population"] + "\t";
+			out_str += unit_aa["date_mod"] + "\n";
+			Console.Write (out_str);
 			}
 
 		}

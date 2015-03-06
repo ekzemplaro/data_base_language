@@ -2,10 +2,11 @@
 /*
 	redis_socket.cpp
 
-				Jan/21/2014
+				Feb/09/2015
 
 */
 // --------------------------------------------------------------------
+#include	<iostream>
 #include	<map>
 #include	<vector>
 

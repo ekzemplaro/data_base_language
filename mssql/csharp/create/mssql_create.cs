@@ -2,7 +2,7 @@
 /*
 	mssql_create.cs
 
-				Jul/03/2014
+				Feb/17/2015
 
 
 */
@@ -29,10 +29,10 @@ static void Main (string[] args)
 	try
 		{
 	mssql_manipulate.table_drop_proc (str_connect);
-//	mssql_manipulate.table_create_proc (str_connect);
-//	DataTable dtable = table_manipulate.table_prepare_proc ();
+	mssql_manipulate.table_create_proc (str_connect);
+	DataTable dtable = table_manipulate.table_prepare_proc ();
 
-//	dtable = data_prepare_proc (str_connect,dtable);
+	dtable = data_prepare_proc (str_connect,dtable);
 		}
 	catch (NotSupportedException ex)
 		{
@@ -52,16 +52,16 @@ static DataTable data_prepare_proc
 	 (string str_connect,DataTable dtable)
 {
 	dtable = data_row_proc
-		(str_connect,dtable,"t1071",@"前橋",39276,"2009-9-25");
+		(str_connect,dtable,"t1071",@"前橋",31276,"2009-5-25");
 
 	dtable = data_row_proc
 		(str_connect,dtable,"t1072",@"高崎",46781,"2009-3-21");
 
 	dtable = data_row_proc
-		(str_connect,dtable,"t1073",@"桐生",75862,"2009-7-29");
+		(str_connect,dtable,"t1073",@"桐生",73862,"2009-7-29");
 
 	dtable = data_row_proc
-		(str_connect,dtable,"t1074",@"沼田",46237,"2009-11-2");
+		(str_connect,dtable,"t1074",@"沼田",46297,"2009-11-2");
 
 	dtable = data_row_proc
 		(str_connect,dtable,"t1075",@"伊勢崎",71326,"2009-10-7");

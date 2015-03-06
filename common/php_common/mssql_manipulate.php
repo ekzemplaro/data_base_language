@@ -2,12 +2,13 @@
 /*
 	mssql_manipulate.php
 
-					Oct/29/2013
+					Feb/19/2015
 
 */
 // --------------------------------------------------------------------
 function mssql_update_proc ($key_in,$population_in)
 {
+	date_default_timezone_set('Asia/Tokyo');
 	$today = date ("Y-m-d");
 	$sql = "update cities set POPULATION=" . $population_in;
 	$sql .= ", DATE_MOD='" . $today . "'";
@@ -84,6 +85,8 @@ function mssql_insert_proc ($id_in,$name_in,$population_in,$date_mod_in)
 		. $population_in .  ",'" . $date_mod_in . "')";
 
 	$result = mssql_query ($sql);
+
+	return	$result;
 }
 
 // --------------------------------------------------------------------
@@ -94,7 +97,9 @@ function dict_to_mssql_proc ($dict_aa)
 		$name = $value['name'];
 		$population = $value['population'];
 		$date_mod = $value['date_mod'];
-		mssql_insert_proc ($key,$name,$population,$date_mod);
+		$result = mssql_insert_proc ($key,$name,$population,$date_mod);
+
+		print $result;
 		}
 }
 // --------------------------------------------------------------------

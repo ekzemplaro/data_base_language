@@ -2,22 +2,22 @@
 # -*- coding: utf-8 -*-
 #
 #	mcachedb_read.rb
-#					Mar/22/2012
+#					Feb/27/2015
 #
-require 'memcache'
+require 'dalli'
 require	'json'
 #
 load '/var/www/data_base/common/ruby_common/mcache_manipulate.rb'
 # -------------------------------------------------------------------
 puts "*** 開始 ***"
 #
-cache = MemCache.new 'localhost:21201'
+dc = Dalli::Client.new('host_ubuntu1:21201')
 #
 keys=["t1521","t1522","t1523","t1524",
 	"t1525","t1526","t1527","t1528",
 	"t1529","t1530","t1531","t1532"]
 keys.each {|key|
-	display_record_proc(cache,key)
+	display_record_proc(dc,key)
 	}
 #
 puts "*** 終了 ***"

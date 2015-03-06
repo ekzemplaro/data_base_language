@@ -1,21 +1,34 @@
-CURL *curl;
-CURLcode res;
+void mcached_delete_proc (char server[],int port,char key_in[])
+{
+	int	sock;
+	char str_command[255];
+	sprintf (str_command,"delete %s\r\n",key_in);
 
-curl = curl_easy_init();
+	addrinfo hints;
+	addrinfo *addrs;  
+	memset (&hints, 0, sizeof(addrinfo));
+	hints.ai_family = AF_UNSPEC;
+	hints.ai_socktype = SOCK_STREAM;
 
-if (curl) {
-	curl_slist *headers = NULL;
+	char str_port [20];
 
-	headers = curl_slist_append(headers, "Content-Type: application/json");
+	sprintf (str_port,"%d",port);
+ 
+	if (0 == getaddrinfo (server,str_port,&hints,&addrs))
+		{
+		sock = socket(addrs->ai_family,
+			addrs->ai_socktype, addrs->ai_protocol);
+		if (0 <= sock)
+			{
+			if (0 <= socket_connect_proc (sock,addrs))
+				{
+				socket_write_proc (sock,str_command);
+				}
+			}
 
-	curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers); 
-	curl_easy_setopt(curl, CURLOPT_URL, url_aa.c_str ());  
-	curl_easy_setopt(curl, CURLOPT_CUSTOMREQUEST, "PUT");
+		close(sock);
 
-	curl_easy_setopt(curl, CURLOPT_POSTFIELDS, json_str_new.c_str ());
+		freeaddrinfo (addrs);
+		}
+}
 
-	res = curl_easy_perform (curl);
-
-	curl_slist_free_all(headers);
-	curl_easy_cleanup(curl);
-	}

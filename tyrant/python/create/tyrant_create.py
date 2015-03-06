@@ -3,7 +3,7 @@
 #
 #	tyrant_create.py
 #
-#					Oct/07/2014
+#					Feb/06/2015
 #
 # ----------------------------------------------------------------
 import sys
@@ -32,7 +32,7 @@ def	data_prepare_proc ():
 # ----------------------------------------------------------------
 print ("*** 開始 ***")
 #
-mc = memcache.Client(['127.0.0.1:1978'])
+mc = memcache.Client(['host_ubuntu1:1978'])
 mc.flush_all()
 #
 dict_aa = data_prepare_proc ()

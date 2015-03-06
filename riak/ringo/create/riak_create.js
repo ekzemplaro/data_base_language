@@ -3,7 +3,7 @@
 //
 //	riak_create.js
 //
-//						Mar/15/2013
+//						Feb/24/2015
 //
 // ------------------------------------------------------------------
 var text_manipulate = require ('/var/www/data_base/common/ringo_common/text_manipulate.js');
@@ -17,7 +17,7 @@ for (var key in dict_aa)
 	{
 	var out_str = JSON.stringify (dict_aa[key])
 
-	var url_city = 'http://localhost:8098/riak/shimane/' + key;
+	var url_city = 'http://host_ubuntu1:8098/riak/shimane/' + key;
 	client.put (url_city,out_str);
 	}
 

@@ -3,7 +3,7 @@
 //
 //	riak_update.js
 //
-//						Mar/15/2013
+//						Feb/24/2015
 //
 // ------------------------------------------------------------------
 var text_manipulate = require ('/var/www/data_base/common/ringo_common/text_manipulate.js');
@@ -16,7 +16,7 @@ print	(key_in + "\t" + population_in);
 
 var client= require ("ringo/httpclient");
 
-var url_target='http://localhost:8098/riak/shimane/' + key_in;
+var url_target='http://host_ubuntu1:8098/riak/shimane/' + key_in;
 
 var data=client.get (url_target);
 

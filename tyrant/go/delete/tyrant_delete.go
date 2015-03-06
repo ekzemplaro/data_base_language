@@ -2,14 +2,13 @@
 //
 //	tyrant_delete.go
 //
-//					May/21/2013
+//					Feb/11/2015
 //
 // ----------------------------------------------------------------
 package main
  
 import (
 	"fmt"
-	"net"
 	"os"
 )
 
@@ -22,22 +21,10 @@ func main () {
 
 	fmt.Printf (key_in + "\n")
 
-	hostname := "localhost"
-	port := "1978"
+	hostname := "host_ubuntu1"
+	port := 1978
 
-	conn, err := net.Dial ("tcp",hostname + ":" + port)
-	if err != nil {
-		fmt.Println(err)
-		return
-		}
-
-	_, err = conn.Write([]byte("delete " + key_in + "\r\n"))
-	if err != nil {
-		fmt.Println(err)
-		return
-		}
-
-	conn.Close ()
+	mcached_delete_proc (hostname,port,key_in)
 
 	fmt.Printf ("*** 終了 ***\n")
 }

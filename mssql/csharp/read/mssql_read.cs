@@ -32,7 +32,7 @@ static void Main (string[] args)
 
 	da_adapter.Fill (dtable);
 
-//	table_manipulate.display_proc (dtable);
+	table_manipulate.display_proc (dtable);
 	}
 	catch (NotSupportedException ex)
 		{

@@ -2,13 +2,15 @@
 #
 #	tyrant_read.sh
 #
-#						Jun/29/2011
+#						Feb/17/2015
 #
 # --------------------------------------------------------------------------
 BASH_COMMON=/var/www/data_base/common/bash_common
 #
 echo "*** 開始 ***"
 #
+SERVER=host_ubuntu1
+PORT=1978
 #
 work_file_aa="/tmp/tmp0049155.txt"
 work_file_bb="/tmp/tmp0049268.txt"
@@ -22,7 +24,7 @@ do
 	echo $data_aa >> $work_file_aa
 done
 #
-bash $work_file_aa | telnet 127.0.0.1 1978 > $work_file_bb
+bash $work_file_aa | telnet $SERVER $PORT > $work_file_bb
 #
 egrep 'VALUE|name' $work_file_bb > $work_file_cc
 #

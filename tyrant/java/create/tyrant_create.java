@@ -1,7 +1,7 @@
 // --------------------------------------------------------------
 //	tyrant_create.java
 //
-//					Feb/04/2015
+//					Feb/16/2015
 // --------------------------------------------------------------
 import	java.util.HashMap;
 import	java.util.Set;
@@ -40,16 +40,16 @@ data_prepare_proc ()
 		(dict_aa,"t4762","宜野湾",49512,"2008-9-21");
 
 	dict_aa = text_manipulate.dict_append_proc
-		(dict_aa,"t4763","石垣",32753,"2008-3-24");
+		(dict_aa,"t4763","石垣",82753,"2008-3-24");
 
 	dict_aa = text_manipulate.dict_append_proc
-		(dict_aa,"t4764","浦添",89624,"2008-2-18");
+		(dict_aa,"t4764","浦添",79624,"2008-2-18");
 
 	dict_aa = text_manipulate.dict_append_proc
-		(dict_aa,"t4765","名護",72539,"2008-10-14");
+		(dict_aa,"t4765","名護",62539,"2008-10-14");
 
 	dict_aa = text_manipulate.dict_append_proc
-		(dict_aa,"t4766","糸満",28514,"2008-7-28");
+		(dict_aa,"t4766","糸満",28714,"2008-7-28");
 
 	dict_aa = text_manipulate.dict_append_proc
 		(dict_aa,"t4767","沖縄",39457,"2008-6-19");

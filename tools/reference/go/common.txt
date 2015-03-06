@@ -1,2 +1,3 @@
 mcached_manipulate.go
+redis_manipulate.go
 text_manipulate.go

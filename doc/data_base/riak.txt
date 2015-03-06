@@ -4,12 +4,17 @@
 <h1><a href="http://basho.com/">Riak</a></h1>
 <a href="http://docs.basho.com/riak/latest/downloads/">downloads</a><p />
 <blockquote>
-riak_1.4.2-1_amd64.deb<p />
+riak_2.0.4-1_amd64.deb<p />
 </blockquote>
 
 起動方法<br />
 <blockquote>
 sudo service riak start<p />
+</blockquote>
+
+設定ファイル<br />
+<blockquote>
+/etc/riak/riak.conf<p />
 </blockquote>
 
 <blockquote>
@@ -18,6 +23,11 @@ curl http://localhost:8098/riak/shimane?keys=true<br />
 
 Python<p />
 <blockquote>
+</blockquote>
+
+Ruby<p />
+<blockquote>
+$ gem install rest-client<p />
 </blockquote>
 
 Java<p />

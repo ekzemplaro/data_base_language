@@ -120,6 +120,10 @@ ii  libcache-memcached-perl             1.29-1      Perl module for using memcac
 </blockquote>
 
 Ruby<p />
+<blockquote>
+$ gem install dalli<p />
+</blockquote>
+
 <pre>
 ii  libmemcache-client-ruby1.9.1      1.8.5-2     all          Transitional package for ruby-memcache-client
 </pre>

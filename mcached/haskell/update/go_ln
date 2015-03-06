@@ -1,1 +1,5 @@
-ln -s /var/www/data_base/common/haskell_common/Text_manipulate.hs .
+#
+HASKELL_COMMON=/var/www/data_base/common/haskell_common
+#
+ln -s $HASKELL_COMMON/Text_manipulate.hs .
+ln -s $HASKELL_COMMON/Mcache_manipulate.hs .

@@ -1,26 +1,21 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	create/riak_create.py
 #
-#					Dec/10/2013
+#					Feb/09/2015
 #
 # ----------------------------------------------------------------
-import os
 import sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
-import json
-import httplib2
 #
 sys.path.append ('/var/www/data_base/common/python_common')
-from text_manipulate import dict_display_proc
 from text_manipulate import dict_append_proc
+from riak_manipulate import dict_to_riak_proc
 #
 # ----------------------------------------------------------------
 def	data_prepare_proc ():
 	dict_aa = {}
-	dict_aa = dict_append_proc (dict_aa,'t3251',u'松江',31287,'2003-2-9')
+	dict_aa = dict_append_proc (dict_aa,'t3251',u'松江',35287,'2003-2-9')
 #
 	dict_aa = dict_append_proc (dict_aa,'t3252',u'出雲',68714,'2003-7-20')
 #
@@ -36,20 +31,11 @@ def	data_prepare_proc ():
 # ----------------------------------------------------------------
 print ("*** 開始 ***")
 #
-url_base = 'http://localhost:8098/riak/shimane'
-#
 dict_aa = data_prepare_proc ()
 #
-dict_display_proc (dict_aa)
+url_base = 'http://host_ubuntu1:8098/riak/shimane'
 #
-http_client = httplib2.Http ()
-for key in sorted (dict_aa.keys()):
-	unit = dict_aa[key]
-	json_str = json.dumps (unit)
-	print json_str
-	url_target = url_base + '/' + key
-	resp, content = http_client.request(url_target,"PUT",headers={'content-type':'application/json'},body=json_str)
-#	print resp
+dict_to_riak_proc (dict_aa,url_base)
 #
 print ("*** 終了 ***")
 #

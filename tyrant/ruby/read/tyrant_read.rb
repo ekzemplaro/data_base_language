@@ -2,23 +2,22 @@
 # -*- coding: utf-8 -*-
 #
 #	tyrant_read.rb
-#					Mar/22/2012
+#					Feb/27/2015
 #
-require 'memcache'
+require 'dalli'
 require	'json'
 #
 load '/var/www/data_base/common/ruby_common/mcache_manipulate.rb'
 # -------------------------------------------------------------------
 puts "*** 開始 ***"
 #
-cache = MemCache.new 'localhost:1978'
-#cache = MemCache.new 'cdbd026:1978'
+dc = Dalli::Client.new('host_ubuntu1:1978')
 #
 keys=["t4761","t4762","t4763","t4764",
 	"t4765","t4766","t4767","t4768","t4769"]
 #
 keys.each {|key|
-	display_record_proc(cache,key)
+	display_record_proc(dc,key)
 	}
 #
 puts "*** 終了 ***"

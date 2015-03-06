@@ -2,7 +2,7 @@
 //
 //	mcached_manipulate.go
 //
-//					Jan/22/2014
+//					Feb/11/2015
 //
 // ----------------------------------------------------------------
 package main
@@ -104,7 +104,14 @@ func json_update_proc (json_str string,population_in int) string {
 }
 
 // ----------------------------------------------------------------
-func dict_to_mcached_proc (conn net.Conn,dict_aa map[string](map[string]string)) {
+func dict_to_mcached_proc (hostname string,port int,dict_aa map[string](map[string]string)) {
+	str_port := strconv.Itoa (port)
+	conn, err := net.Dial ("tcp",hostname + ":" + str_port)
+	if err != nil {
+		fmt.Println(err)
+		return
+		}
+
 	for key,value := range dict_aa {
 //		fmt.Print (key + "\t")
 //		fmt.Println (value["name"])
@@ -114,6 +121,71 @@ func dict_to_mcached_proc (conn net.Conn,dict_aa map[string](map[string]string))
 //		fmt.Println (json_str)
 		mcached_socket_write_proc (conn,key,json_str)
 		}
+
+	conn.Close ()
+}
+
+// ----------------------------------------------------------------
+func mcached_to_dict_proc (hostname string,port int,keys []string) map[string](map[string]string){
+	dict_aa := make (map[string](map[string]string))
+
+	str_port := strconv.Itoa (port)
+	conn, err := net.Dial ("tcp",hostname + ":" + str_port)
+	if err != nil {
+		fmt.Println(err)
+		return dict_aa
+		}
+
+	for _,key := range keys {
+		json_str := mcached_socket_read_proc (conn,key)
+
+		if 0 < len (json_str) {
+			var unit_aa map[string]string
+			json.Unmarshal ([]byte(json_str), &unit_aa)
+			dict_aa[key] = unit_aa
+			}
+	}
+	conn.Close ()
+
+	return (dict_aa)
+}
+
+// ----------------------------------------------------------------
+func mcached_update_proc (hostname string,port int,key_in string,population_in int) {
+	str_port := strconv.Itoa (port)
+	conn, err := net.Dial ("tcp",hostname + ":" + str_port)
+	if err != nil {
+		fmt.Println(err)
+		return
+		}
+
+	json_str := mcached_socket_read_proc (conn,key_in)
+
+	if 0 < len (json_str) {
+		json_str_new := json_update_proc (json_str,population_in)
+		fmt.Println (json_str_new)
+		mcached_socket_write_proc (conn,key_in,json_str_new)
+		}
+
+	conn.Close ()
+}
+
+// ----------------------------------------------------------------
+func mcached_delete_proc (hostname string,port int,key_in string) {
+	str_port := strconv.Itoa (port)
+	conn, err := net.Dial ("tcp",hostname + ":" + str_port)
+	if err != nil {
+		fmt.Println(err)
+		return
+		}
+
+	_, err = conn.Write([]byte("delete " + key_in + "\r\n"))
+	if err != nil {
+		fmt.Println(err)
+		return
+		}
+
+	conn.Close ()
 }
 
 // ----------------------------------------------------------------

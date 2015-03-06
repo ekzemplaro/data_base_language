@@ -3,7 +3,7 @@
 ;
 ;	mcachedb_create.lsp
 ;
-;					Jan/28/2014
+;					Feb/10/2015
 ; -------------------------------------------------------------------
 (load "/var/www/data_base/common/newlisp_common/text_manipulate.lsp")
 (load "/var/www/data_base/common/newlisp_common/mcached_manipulate.lsp")
@@ -28,16 +28,13 @@
 ; ------------------------------------------------------------------
 (println "*** 開始 ***")
 ;
-(setf hostname "localhost") 
+(setf hostname "host_ubuntu1") 
 (setf port 21201) 
-(set 'socket (net-connect hostname port))
 ;
 (new Tree 'dict_aa)
 (data_prepare)
 ;
-(dict_to_mcached_proc socket)
-;
-(net-close socket)
+(dict_to_mcached_proc hostname port)
 ;
 (println "*** 終了 ***")
 (exit)

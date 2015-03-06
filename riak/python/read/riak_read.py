@@ -1,39 +1,25 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	read/riak_read.py
 #
-#					Dec/10/2013
+#					Feb/09/2015
 #
 # ----------------------------------------------------------------
 import sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
-import json
-import httplib2
 #
 sys.path.append ('/var/www/data_base/common/python_common')
 from text_manipulate import dict_display_proc
 #
+from riak_manipulate import riak_to_dict_proc
 # ----------------------------------------------------------------
 print ("*** 開始 ***")
 #
-http_client = httplib2.Http ()
-url_shimane = 'http://localhost:8098/riak/shimane'
-url_in = url_shimane + '?keys=true'
-resp, content = http_client.request(url_in,"GET",headers={'cache-control':'no-cache'})
-data_aa = json.loads (content)
+url_shimane = 'http://host_ubuntu1:8098/riak/shimane'
 #
-#print data_aa['keys']
+dict_aa = riak_to_dict_proc (url_shimane)
 #
-for key in sorted (data_aa['keys']):
-	url_city = url_shimane + '/' + key
-	resp, content = http_client.request(url_city,"GET",headers={'cache-control':'no-cache'})
-	city = json.loads (content)
-	print	key,"\t",
-	name = city['name']
-	print	name,"\t",
-	print	city['population'],"\t",city['date_mod']
-#
+dict_display_proc (dict_aa)
+
 print ("*** 終了 ***")
 # ----------------------------------------------------------------

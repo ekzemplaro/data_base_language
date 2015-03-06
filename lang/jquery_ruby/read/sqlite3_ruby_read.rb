@@ -25,7 +25,7 @@ end
 db.close
 #
 #
-puts "Content-type: text/json\n\n"
+puts "Content-type: text/json; charset=UTF-8\n\n"
 #
 #json_out = JSON.pretty_generate(dict_aa)
 json_out = JSON.generate(dict_aa)

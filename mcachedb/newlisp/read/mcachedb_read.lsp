@@ -3,7 +3,7 @@
 ;
 ;	mcachedb_read.lsp
 ;
-;					Jan/24/2014
+;					Feb/10/2015
 ; -------------------------------------------------------------------
 (load "/var/www/data_base/common/newlisp_common/mcached_manipulate.lsp")
 ; ------------------------------------------------------------------
@@ -12,13 +12,11 @@
 	"t1526" "t1527" "t1528" "t1529"
 	"t1530" "t1531" "t1532"))
 ;
-(setf hostname "localhost") 
+(setf hostname "host_ubuntu1") 
 (setf port 21201) 
-(set 'socket (net-connect hostname port))
 ;
-(dolist (key keys)
-	(mcached_read_proc socket key))
-(net-close socket)
+(mcached_display_proc hostname port keys)
+;
 (println "*** 終了 ***")
 (exit)
 ; ------------------------------------------------------------------

@@ -2,7 +2,7 @@
 /*
 	json_manipulate.cpp
 
-					Mar/04/2014
+					Feb/10/2015
 */
 // -----------------------------------------------------------------------
 #include	<iostream>
@@ -202,6 +202,20 @@ void json_record_display (string key_in,string json_str)
 	cout << population << "\t";
 	string date_mod = obj["date_mod"].to_str ();
 	cout << date_mod << "\n";
+}
+
+// -----------------------------------------------------------------------
+Unit json_to_unit_proc (string json_str)
+{
+	Unit unit_aa;
+
+	object obj = json_record_parser (json_str);
+
+	unit_aa["name"] = obj["name"].to_str ();
+	unit_aa["population"] = obj["population"].to_str ();
+	unit_aa["date_mod"] = obj["date_mod"].to_str ();
+
+	return	unit_aa;
 }
 
 // -----------------------------------------------------------------------

@@ -2,16 +2,16 @@
 //
 //	mcached_delete.go
 //
-//					Jan/22/2014
+//					Feb/11/2015
 //
 // ----------------------------------------------------------------
 package main
  
 import (
 	"fmt"
-	"net"
 	"os"
 )
+
 
 // ----------------------------------------------------------------
 func main () {
@@ -23,21 +23,9 @@ func main () {
 	fmt.Printf (key_in + "\n")
 
 	hostname := "localhost"
-	port := "11211"
+	port := 11211
 
-	conn, err := net.Dial ("tcp",hostname + ":" + port)
-	if err != nil {
-		fmt.Println(err)
-		return
-		}
-
-	_, err = conn.Write([]byte("delete " + key_in + "\r\n"))
-	if err != nil {
-		fmt.Println(err)
-		return
-		}
-
-	conn.Close ()
+	mcached_delete_proc (hostname,port,key_in)
 
 	fmt.Println ("*** 終了 ***")
 }

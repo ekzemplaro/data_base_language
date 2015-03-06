@@ -2,7 +2,7 @@
 // ---------------------------------------------------------------
 //	riak_update.js
 //
-//					Dec/24/2013
+//					Feb/09/2015
 // ---------------------------------------------------------------
 var http = require('http');
 var text_manipulate = require('/var/www/data_base/common/node_common/text_manipulate');
@@ -13,7 +13,7 @@ function riak_update_proc (key_in,population_in)
 	var path_target = '/riak/shimane/'+ key_in;
 
 	var options = {
-		host: 'localhost',
+		host: 'host_ubuntu1',
 		port: 8098,
 		path: path_target
 	};
@@ -37,7 +37,7 @@ function riak_update_proc (key_in,population_in)
 			var string_out = JSON.stringify (unit_aa);
 			console.log (string_out);
 
-			http_manipulate.put_proc ('localhost',8098,path_target,string_out);
+			http_manipulate.put_proc ('host_ubuntu1',8098,path_target,string_out);
 
 			console.log ("*** 終了 ***");
 			});

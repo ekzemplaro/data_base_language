@@ -2,7 +2,7 @@
 // ---------------------------------------------------------------------
 //	tyrant_php_create.php
 //
-//					Oct/09/2014
+//					Feb/09/2015
 //
 // ---------------------------------------------------------------------
 $path="/var/www/data_base/common/php_common";
@@ -29,7 +29,7 @@ $dict_aa = dict_append_proc ($dict_aa,"t4769",'うるま',31800,'2002-5-14');
 }
 // ------------------------------------------------------------------
 $mc = new Memcached ();
-$mc->addServer ("localhost",1978);
+$mc->addServer ("host_ubuntu1",1978);
 
 $dict_aa = data_prepare_proc ();
 

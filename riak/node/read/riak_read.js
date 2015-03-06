@@ -55,7 +55,7 @@ console.log ("*** 開始 ***");
 var http = require('http');
 
 var options = {
-	host: 'localhost',
+	host: 'host_ubuntu1',
 	port: 8098,
 	path: '/riak/shimane?keys=true',
 };

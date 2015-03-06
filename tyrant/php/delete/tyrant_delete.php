@@ -3,7 +3,7 @@
 // ------------------------------------------------------------------
 //	tyrant_delete.php
 //
-//					Oct/07/2014
+//					Feb/06/2015
 //
 // ------------------------------------------------------------------
 $path="/var/www/data_base/common/php_common";
@@ -18,7 +18,7 @@ $key_in = $argv[1];
 print	$key_in . "\n";
 
 $mc = new Memcached();
-$mc->addServer("localhost", 1978);
+$mc->addServer("host_ubuntu1", 1978);
 
 kvalue_delete_proc ($mc,$key_in);
 

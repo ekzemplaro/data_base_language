@@ -1,7 +1,7 @@
 <meta content="Program Language Examples in Lua" name="description">
 <meta content="Lua,クライアント,接続,言語,サンプル" name="keyword">
 <meta content="Uchida Masatomo" name="author">
-<title>Lua Apr/23/2014</title>
+<title>Lua Feb/13/2015</title>
 </head>
 <body>
 <h2><a href="http://www.lua.org">Lua</a></h2><p />
@@ -33,4 +33,5 @@ ArchLinux<br />
 	# pacman -S lua<br />
 	# pacman -S lua-luajson<br />
 	# pacman -S lua-sql-sqlite<br />
+	# pacman -S lua-socket<br />
 </blockquote>

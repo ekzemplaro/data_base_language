@@ -1,7 +1,7 @@
 // ------------------------------------------------------------------
 //	read/riak_read.cs
 //
-//					Apr/09/2013
+//					Feb/09/2015
 //
 // ------------------------------------------------------------------
 using System;
@@ -20,7 +20,7 @@ static void Main (string[] args)
 {
 	Console.WriteLine ("*** 開始 ***");
 
-	String url_base = "http://localhost:8098/riak/shimane";
+	String url_base = "http://host_ubuntu1:8098/riak/shimane";
 
 	String url_in = url_base + "?keys=true";
 
@@ -38,6 +38,10 @@ static void Main (string[] args)
 
 	String[] keys = JsonConvert.DeserializeObject
 				<String[]> (json_str_keys.ToString ());
+
+	Dictionary <string,Object> dict_aa
+			= new Dictionary <string,Object> ();
+
 	foreach (String key in keys)
 		{
 		String url_city  = url_base + "/" + key;
@@ -45,19 +49,20 @@ static void Main (string[] args)
 		Dictionary <String,Object> unit_aa
 		= JsonConvert.DeserializeObject
 			<Dictionary <String,Object>> (str_city);
-		Console.Write (key + "\t");
-		Console.Write (unit_aa["name"] + "\t");
-		Console.Write (unit_aa["population"] + "\t");
-		Console.WriteLine (unit_aa["date_mod"]);
+
+		Dictionary <string,string> unit_bb
+			= new Dictionary <string,string> ();
+
+		unit_bb.Add ("name",unit_aa["name"].ToString ());
+		unit_bb.Add ("population",unit_aa["population"].ToString ());
+		unit_bb.Add ("date_mod",unit_aa["date_mod"].ToString ());
+
+
+		dict_aa.Add (key,unit_bb);
 		}
 
-
-/*
-	Dictionary <string,Object> dict_aa
-		 = json_manipulate.json_to_dict_proc (str_json);
-
 	text_manipulate.dict_display_proc (dict_aa);
-*/
+
 	Console.WriteLine ("*** 終了 ***");
 }
 

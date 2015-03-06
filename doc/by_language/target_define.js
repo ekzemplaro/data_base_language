@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------
 //	target_define.js
 //
-//					Oct/31/2014
+//					Mar/04/2015
 // -----------------------------------------------------------------------
 function target_define_proc (lang_mod,dbase,crud)
 {
@@ -225,6 +225,8 @@ function suffix_define_proc ()
 	suffix["typescript"] = "ts";
 	suffix["julia"] = "jl";
 	suffix["octave"] = "m";
+	suffix["rust"] = "rs";
+	suffix["dart"] = "dart";
 
 	return	suffix;
 }

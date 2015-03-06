@@ -3,7 +3,7 @@
 // ------------------------------------------------------------------
 //	update/mcachedb_update.php
 //
-//					Oct/07/2014
+//					Feb/06/2015
 //
 // ------------------------------------------------------------------
 $path="/var/www/data_base/common/php_common";
@@ -21,7 +21,7 @@ print	$population_in . "\n";
 
 
 $mc = new Memcached();
-$mc->addServer ("localhost",21201);
+$mc->addServer ("host_ubuntu1",21201);
 
 kvalue_update_proc ($mc,$key_in,$population_in);
 

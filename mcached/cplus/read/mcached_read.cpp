@@ -2,43 +2,39 @@
 /*
 	mcached_read.cpp
 
-				Nov/24/2014
+				Feb/10/2015
 
 */
 // --------------------------------------------------------------------
 #include	<iostream>
-#include	<netdb.h>
-#include	<boost/algorithm/string.hpp>
+#include	<map>
 
 using namespace std;
+
+typedef map<string,string> Unit;
+
 // --------------------------------------------------------------------
-extern void socket_read_proc (string key,addrinfo *addrs);
+extern	void dict_display_proc (map <string,Unit> dict_aa);
+extern  map <string,Unit > mcached_to_dict_proc
+	(char server[],int port,int nmax,string keys []);
 
 // --------------------------------------------------------------------
 int main (int argc,char *argv[])
 {
 	cerr << "*** 開始 ***\n";
 
-	addrinfo hints;
-	addrinfo *addrs;
-
-	memset (&hints, 0, sizeof(addrinfo));
-	hints.ai_family = AF_UNSPEC;
-	hints.ai_socktype = SOCK_STREAM;
-
-	int	nmax = 9;
 	string keys[] = {"t1731","t1732","t1733","t1734","t1735", 
 			"t1736","t1737","t1738","t1739"};
+	int nmax = sizeof(keys) / sizeof(keys[0]);
+	cout << nmax << "\n";
 
-	if (0 == getaddrinfo ("localhost","11211",&hints,&addrs))
-		{
-		for (int it=0; it < nmax; it++)
-			{
-			socket_read_proc (keys[it],addrs);
-			}
+	char server[] = "localhost";
+	int port = 11211;
 
-		freeaddrinfo(addrs);
-		}
+	map <string,Unit> dict_aa
+		= mcached_to_dict_proc (server,port,nmax,keys);
+
+	dict_display_proc (dict_aa);
 
 	cerr << "*** 終了 ***\n";
 

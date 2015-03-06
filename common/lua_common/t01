@@ -1,23 +1,14 @@
--- ----------------------------------------------------
-function getKeysSortedByValue(tbl)
-	local keys = {}
-	for key in pairs(tbl) do
-		table.insert(keys, key)
-		print (key)
-	end
+function dict_to_mcached_proc (server_host,server_port,dict_aa)
 
-	table.sort (keys)
+	local socket = require('socket')
 
-	return keys
+	local client = socket.connect (server_host,server_port)
+
+	for key,unit_aa in pairs (dict_aa)
+		do
+			mcached_set_value_proc (client,key,unit_aa)
+		end
+
+	client:close()
 end
 
--- ----------------------------------------------------
-
-keys = getKeysSortedByValue (dict_aa)
-
-for key,value in pairs (keys) do
-	out_str = join_proc (dict_aa,value,"\t")
-	print (out_str)
-end
-
--- ----------------------------------------------------

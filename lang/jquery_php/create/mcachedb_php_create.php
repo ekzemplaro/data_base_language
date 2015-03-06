@@ -2,7 +2,7 @@
 // ---------------------------------------------------------------------
 //	mcachedb_php_create.php
 //
-//					Oct/09/2014
+//					Feb/09/2015
 //
 // ---------------------------------------------------------------------
 //$path=$_SERVER["DOCUMENT_ROOT"]."/data_base/common/php_common";
@@ -27,7 +27,7 @@ $dict_aa = dict_append_proc ($dict_aa,'t1528','佐渡',86100,'2002-3-24');
 $dict_aa = dict_append_proc ($dict_aa,'t1529','柏崎',94200,'2002-7-8');
 $dict_aa = dict_append_proc ($dict_aa,'t1530','村上',25300,'2002-5-12');
 $dict_aa = dict_append_proc ($dict_aa,'t1531','十日町',38900,'2002-9-25');
-$dict_aa = dict_append_proc ($dict_aa,'t1532','五泉',62800,'2002-10-7');
+$dict_aa = dict_append_proc ($dict_aa,'t1532','五泉',62700,'2002-10-7');
 
 	return	$dict_aa;
 }
@@ -35,7 +35,7 @@ $dict_aa = dict_append_proc ($dict_aa,'t1532','五泉',62800,'2002-10-7');
 $dict_aa = data_prepare_proc ();
 
 $mc = new Memcached();
-$mc->addServer ("localhost",21201);
+$mc->addServer ("host_ubuntu1",21201);
 
 foreach ($dict_aa as $key => $value)
 	{

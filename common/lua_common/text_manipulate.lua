@@ -1,7 +1,7 @@
 -- ----------------------------------------------------
 --	text_manipulate.lua
 --
---					Dec/15/2014
+--					Feb/13/2015
 -- ----------------------------------------------------
 function split_proc (str, del)
 	p, nrep = str:gsub("%s*"..del.."%s*", "")
@@ -47,7 +47,7 @@ end
 function text_read_proc (file_in)
 	fp_in, msg=io.open (file_in,"r")
 
-	doc_aa = {}
+	dict_aa = {}
 
 	if (fp_in) then
 		tt = fp_in:read ("*a")
@@ -56,7 +56,7 @@ function text_read_proc (file_in)
 		for it=1 , #lines do
 			rr=split_proc (lines[it], "\t")
 			if (2 < #rr) then
-				doc_aa[rr[1]] =
+				dict_aa[rr[1]] =
 				 {name= rr[2],population=rr[3],date_mod=rr[4]}
 			end
 		end
@@ -64,7 +64,7 @@ function text_read_proc (file_in)
 		print (msg)
 	end
 
-	return	doc_aa
+	return	dict_aa
 end
 
 -- ----------------------------------------------------

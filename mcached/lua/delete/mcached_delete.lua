@@ -1,22 +1,22 @@
-#! /usr/bin/lua5.1
+#! /usr/bin/lua
 -- ----------------------------------------------------
 --	mcached_delete.lua
 --
---				Apr/02/2013
+--				Feb/13/2015
 --
 -- ----------------------------------------------------
-require 'Memcached'
-
+require	('mcached_manipulate')
 -- ----------------------------------------------------
 print ("*** 開始 ***")
 
-id_in=arg[1]
+key_in=arg[1]
 
-print (id_in)
+print (key_in)
 
-local mem = Memcached.Connect('localhost', 11211)
+local server_host = "localhost"
+local server_port = 11211
 
-mem:delete(id_in)
+mcached_delete_proc (server_host,server_port,key_in)
 
 print ("*** 終了 ***")
 -- ----------------------------------------------------

@@ -2,7 +2,7 @@
 /*
 	curl_manipulate.cpp
 
-					Mar/04/2014
+					Feb/10/2015
 */
 // --------------------------------------------------------------------
 #include	<cstdio>
@@ -147,23 +147,23 @@ void curl_put_proc (const char url_target[],string str_in)
 		headers = curl_slist_append
 			(headers, "Content-Type: application/json");
 
-cerr << "*** curl_put_proc *** ddd\n";
+// cerr << "*** curl_put_proc *** ddd\n";
 
 	curl_easy_setopt (curl,CURLOPT_HTTPHEADER,headers); 
 	curl_easy_setopt (curl,CURLOPT_URL,url_target);  
 	curl_easy_setopt (curl,CURLOPT_CUSTOMREQUEST,"PUT");
 	curl_easy_setopt (curl,CURLOPT_PROXY,"");
 
-cerr << "*** curl_put_proc *** ggg\n";
+// cerr << "*** curl_put_proc *** ggg\n";
 
 	if (0 < str_in.length () )
 		{
 	curl_easy_setopt(curl, CURLOPT_POSTFIELDS, str_in.c_str ());
 		}
 
-cerr << "*** curl_put_proc *** hhh\n";
+// cerr << "*** curl_put_proc *** hhh\n";
 	res = curl_easy_perform (curl);
-cerr << "*** curl_put_proc *** iii\n";
+// cerr << "*** curl_put_proc *** iii\n";
 
 	curl_slist_free_all(headers);
 	}

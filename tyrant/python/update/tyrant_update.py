@@ -3,7 +3,7 @@
 #
 #	tyrant_update.py
 #
-#					Oct/07/2014
+#					Feb/06/2015
 #
 import	sys
 #
@@ -18,7 +18,7 @@ id_in = sys.argv[1]
 population_in = int (sys.argv[2])
 print ("%s\t%d" % (id_in, population_in))
 #
-mc = memcache.Client(['localhost:1978'])
+mc = memcache.Client(['host_ubuntu1:1978'])
 #
 mcache_update_proc (mc,id_in,population_in)
 #

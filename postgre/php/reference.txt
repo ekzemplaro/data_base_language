@@ -1,2 +1,2 @@
-sql_display.php
-sql_manipulate.php
+pg_manipulate.php
+text_manipulate.php

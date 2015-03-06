@@ -11,10 +11,10 @@ firebird_display.php
 firebird_row_update.php
 firebird_to_json.php
 kvalue_manipulate.php
-mcached_manipulate.php
 mongo_manipulate.php
 mssql_manipulate.php
 mysql_utf8.php
+pg_manipulate.php
 php_proxy_get.php
 sql_display.php
 sql_manipulate.php

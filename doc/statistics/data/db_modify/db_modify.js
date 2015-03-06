@@ -2,7 +2,7 @@
 // ---------------------------------------------------------------
 //	db_modify.js
 //
-//					Oct/28/2014
+//					Mar/04/2015
 //
 // ---------------------------------------------------------------
 var fs = require("fs");
@@ -33,24 +33,23 @@ function convert_proc (data_aa)
 {
 	console.log ("*** convert_proc *** aaa ***");
 
+/*
 	console.log (data_aa['dbase']['J']['year']);
 	console.log (data_aa['dbase']['J']['Create']['Code']);
 
-//	data_aa['dbase']['falcon']['Create']['Code'] = '2010';
-//	data_aa['dbase']['racket']['Create']['Code'] = '2011';
-//	data_aa['dbase']['typescript']['Create']['Code'] = '2012';
-//	data_aa['dbase']['io']['Create']['Code'] = '1983';
-//	data_aa['dbase']['pascal']['Create']['Code'] = '1967';
 	data_aa['dbase']['julia']['Create']['Code'] = '2013';
-	data_aa['dbase']['octave']['Create']['Code'] = '1948';
+*/
+	data_aa['dbase']['rust']['Create']['Code'] = '1956';
+	data_aa['dbase']['dart']['Create']['Code'] = '1957';
 /*
 	data_aa['dbase']['jQuery']['Only']['couch'] = '8';
 	data_aa['dbase']['jQuery']['Only']['ftp'] = '8';
 	data_aa['dbase']['jQuery']['Only']['wbdv'] = '8';
-
-	data_aa['dbase']['jQuery']['Only']['Text'] = '8';
-	data_aa['dbase']['jQuery']['Only']['XML'] = '8';
-	data_aa['dbase']['jQuery']['Only']['json'] = '8';
+*/
+/*
+	data_aa['dbase']['jQuery']['Only']['Text'] = '9';
+	data_aa['dbase']['jQuery']['Only']['XML'] = '9';
+	data_aa['dbase']['jQuery']['Only']['json'] = '9';
 */
 	return	data_aa;
 }

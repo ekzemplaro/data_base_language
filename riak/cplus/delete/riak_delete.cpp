@@ -2,14 +2,12 @@
 /*
 	riak_delete.cpp
 
-					Mar/04/2014
+					Feb/10/2015
 
 */
 // --------------------------------------------------------------------
-#include	<string>
 #include	<iostream>
 #include	<cstring>
-#include	<stdlib.h>
 
 using namespace std;
 
@@ -24,7 +22,7 @@ int main (int argc,char *argv[])
 
 	cout << key_in << endl;
 
-	const string url_shimane = "http://localhost:8098/riak/shimane";
+	const string url_shimane = "http://host_ubuntu1:8098/riak/shimane";
 	string url_aa = url_shimane + "/" + key_in;
 
 	curl_delete_proc (url_aa.c_str ());

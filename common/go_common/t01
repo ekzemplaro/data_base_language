@@ -1,0 +1,15 @@
+func mcached_delete_proc (hostname string,port string,key_in string) {
+	conn, err := net.Dial ("tcp",hostname + ":" + port)
+	if err != nil {
+		fmt.Println(err)
+		return
+		}
+
+	_, err = conn.Write([]byte("delete " + key_in + "\r\n"))
+	if err != nil {
+		fmt.Println(err)
+		return
+		}
+
+	conn.Close ()
+}

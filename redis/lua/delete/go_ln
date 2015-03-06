@@ -1,0 +1,4 @@
+#
+LUA_COMMON=/var/www/data_base/common/lua_common
+#
+ln -s $LUA_COMMON/redis_manipulate.lua .

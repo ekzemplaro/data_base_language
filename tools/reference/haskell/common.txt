@@ -1,3 +1,4 @@
+Mcache_manipulate.hs
 Redis_manipulate.hs
 Sql_manipulate.hs
 Text_manipulate.hs

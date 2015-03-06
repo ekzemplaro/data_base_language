@@ -3,7 +3,7 @@
 /*
 	php_common/text_manipulate.php
 
-					Jul/31/2014
+					Feb/09/2015
 
 */
 // --------------------------------------------------------------------
@@ -48,9 +48,10 @@ function text_read_proc ($file_in)
 // --------------------------------------------------------------------
 function dict_display_proc ($dict_aa)
 {
+	ksort ($dict_aa);
+
 	foreach ($dict_aa as $key => $value)
 		{
-//		$name = $value['name'];
 		$name = $value["name"];
 		$population = $value['population'];
 		$date_mod = $value['date_mod'];

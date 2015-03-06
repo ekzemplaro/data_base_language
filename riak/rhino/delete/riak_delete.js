@@ -3,7 +3,7 @@
 //
 //	update/riak_delete.js
 //
-//					Apr/10/2013
+//					Feb/09/2015
 //
 //
 // --------------------------------------------------------------
@@ -21,7 +21,7 @@ var key_in=arguments[0];
 
 print	("key_in = " + key_in);
 
-var url_base = 'http://localhost:8098/riak/shimane';
+var url_base = 'http://host_ubuntu1:8098/riak/shimane';
 var url_target = url_base + '/' + key_in;
 
 rest_delete_proc (url_target);

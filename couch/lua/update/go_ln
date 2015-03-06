@@ -1,0 +1,1 @@
+ln -s /var/www/data_base/common/lua_common/text_manipulate.lua .

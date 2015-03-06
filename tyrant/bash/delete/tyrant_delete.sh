@@ -2,19 +2,21 @@
 #
 #	tyrant_delete.sh
 #
-#						Jun/29/2011
+#						Feb/17/2015
 #
 # --------------------------------------------------------------------------
 echo "*** 開始 ***"
 #
-id_in=$1
+SERVER="host_ubuntu1"
+PORT=1978
+key_in=$1
 #
-echo $id_in
+echo $key_in
 #
 work_file_aa="/tmp/tmp0089153.txt"
-data_aa="echo  \"delete $id_in\""
+data_aa="echo  \"delete $key_in\""
 echo $data_aa >> $work_file_aa
-bash $work_file_aa | telnet 127.0.0.1 1978
+bash $work_file_aa | telnet $SERVER $PORT
 #
 rm -f $work_file_aa
 #

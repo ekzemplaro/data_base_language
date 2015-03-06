@@ -1,1 +1,1 @@
-lua5.1 redis_create.lua
+lua redis_create.lua

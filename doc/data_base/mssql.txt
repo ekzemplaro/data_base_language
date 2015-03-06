@@ -86,10 +86,20 @@ PHP<p />
 	ii  php5-sybase  5.4.9-4ubuntu2.3   amd64    Sybase / MS SQL Server module for php5
 	</pre>
 </blockquote>
+Arch Linux<br />
+<blockquote>
+# pacman -S php-mssql<p />
+/etc/php/php.ini<p />
+	<blockquote>
+	extension=mssql.so<p />
+	</blockquote>
+</blockquote>
+
 
 Python<p />
 <blockquote>
 	python-pymssql<p />
+	yaourt-Sb pymssql<p />
 </blockquote>
 
 node<p />

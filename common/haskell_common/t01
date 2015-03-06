@@ -1,0 +1,26 @@
+dict_to_mcached_proc::[Char] -> PortNumber
+	 -> Map [Char] (Map [Char] [Char]) -> IO ()
+dict_to_mcached_proc hostname port dict_aa =
+	do
+	let list_aa = toList dict_aa
+--
+	withSocketsDo $ do
+	hSetBuffering stdout NoBuffering 
+	hh <- connectTo hostname (PortNumber port)
+	hSetBuffering hh LineBuffering
+--
+	mapM (mcache_unit_insert_proc hh) list_aa
+	hFlush hh
+	hClose hh	
+-- -----------------------------------------------------------------
+-- unit_insert_proc::Handle -> Map [Char] b -> IO ()
+mcache_unit_insert_proc hh hash_aa = 
+	do
+--	print key
+--	print json_str
+	mcached_set_proc key json_str hh
+	where
+		key = fst hash_aa
+		unit_aa = snd hash_aa
+		json_str = encode unit_aa
+-- -----------------------------------------------------------------

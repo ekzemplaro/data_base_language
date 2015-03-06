@@ -2,17 +2,13 @@
 /*
 	mcached_create.cpp
 
-					Nov/24/2014
+					Feb/10/2015
 
 */
 // --------------------------------------------------------------------
 #include	<iostream>
 #include	<map>
 
-#include	<sys/socket.h>
-#include	<netdb.h>
-
-#include	<boost/algorithm/string.hpp>
 // -----------------------------------------------------------------------
 using namespace std;
 
@@ -21,8 +17,8 @@ typedef map<string,string> Unit;
 extern	map <string,Unit> dict_append_proc
 	(map <string,Unit> dict_aa,string id,string name,
 	int population,string date_mod);
-extern	int socket_connect_proc (int sock,addrinfo *addrs);
-extern	int dict_to_mcached_proc (int sock,map <string,Unit> dict_aa);
+extern void dict_to_mcached_proc (char server[],int port,map <string,Unit> dict_aa);
+
 // -----------------------------------------------------------------
 static map <string,Unit >  data_prepare_proc ()
 {
@@ -50,30 +46,10 @@ int main (int argc, char *argv[])
 
 	map <string,Unit> dict_aa = data_prepare_proc ();
 
-	addrinfo hints;
-	addrinfo *addrs;
+	char server[] = "localhost";
+	int port = 11211;
 
-	memset (&hints, 0, sizeof(addrinfo));
-	hints.ai_family = AF_UNSPEC;
-	hints.ai_socktype = SOCK_STREAM;
-
-	if (getaddrinfo ("localhost","11211",&hints,&addrs) == 0)
-		{
-		int sock = socket(addrs->ai_family,
-		addrs->ai_socktype, addrs->ai_protocol);
-
-		if (0 <= sock)
-			{
-			if (0 <= socket_connect_proc (sock,addrs))
-				{
-				dict_to_mcached_proc (sock,dict_aa);
-				}
-			}
-
-		close (sock);
-
-		freeaddrinfo (addrs);
-		}
+	dict_to_mcached_proc (server,port,dict_aa);
 
 	cerr << "*** 終了 ***\n";
 	return 0;

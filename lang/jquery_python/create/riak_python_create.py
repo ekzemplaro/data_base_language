@@ -1,18 +1,19 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 # -------------------------------------------------------------------------
 #	riak_python_create.py
 #
-#						Dec/10/2013
+#						Feb/09/2015
 # -------------------------------------------------------------------------
 import os
 import sys
 import json
-import httplib2
+import pycurl
 #
 sys.path.append ('/var/www/data_base/common/python_common')
 #
 from text_manipulate import dict_append_proc
+from riak_manipulate import dict_to_riak_proc
 #
 #
 # -------------------------------------------------------------------------
@@ -36,18 +37,12 @@ url_base = 'http://localhost:8098/riak/shimane'
 #
 dict_aa = data_prepare_proc ()
 #
-http_client = httplib2.Http ()
-for key in sorted (dict_aa.keys()):
-	unit = dict_aa[key]
-	json_str = json.dumps (unit)
-	print json_str
-	url_target = url_base + '/' + key
-	resp, content = http_client.request(url_target,"PUT",headers={'content-type':'application/json'},body=json_str)
-#	print resp
+url_base = 'http://host_ubuntu1:8098/riak/shimane'
+#
+dict_to_riak_proc (dict_aa,url_base)
 #
 #
+print ("Content-type: text/html\n\n")
 #
-print "Content-type: text/html\n\n"
-#
-print	"*** OK ***<p />"
+print	("*** OK ***<p />")
 # -------------------------------------------------------------------------

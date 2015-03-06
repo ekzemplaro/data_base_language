@@ -1,18 +1,20 @@
-#! /usr/bin/tclsh8.5
+#! /usr/bin/tclsh
 #
 #	mcachedb_delete.tcl
 #
-#					Aug/29/2013
+#					Feb/11/2015
 #
+# ---------------------------------------------------------------
+source /var/www/data_base/common/tcl_common/mcached_manipulate.tcl
 # ---------------------------------------------------------------
 puts "*** 開始 ***"
 set key [lindex $argv 0]
 puts $key
 #
+set server "host_ubuntu1"
 set port 21201
-set io [socket "127.0.0.1" $port]
-puts $io "delete $key"
-close $io
+#
+mcached_delete_proc $server $port $key
 #
 puts "*** 終了 ***"
 # ---------------------------------------------------------------

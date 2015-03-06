@@ -32,7 +32,8 @@ else
 	while($row = mssql_fetch_array($result))
 		{
 		echo $row["id"] . "\t";
-		$name = mb_convert_encoding ($row["name"],"UTF-8","SJIS");
+//		$name = mb_convert_encoding ($row["name"],"UTF-8","SJIS");
+		$name = $row["name"];
 		echo $name ."\t";
 		echo $row["population"] . "\t";
 		echo $row["date_mod"] . "\n";

@@ -2,18 +2,13 @@
 /*
 	riak_create.cpp
 
-				Mar/04/2014
+				Feb/10/2015
 */
 // --------------------------------------------------------------------
 #include	<iostream>
-#include	<fstream>
-#include	<sstream>
-#include	<string>
 #include	<map>
 
-#include	<string.h>
 #include	<boost/lexical_cast.hpp>
-#include	<boost/foreach.hpp>
 
 using namespace std;
 using namespace boost;
@@ -42,7 +37,6 @@ static map <string,Unit >  data_prepare_proc ()
 	dict_aa = dict_append_proc (dict_aa,"t3257","益田",46715,"1922-7-17");
 	dict_aa = dict_append_proc (dict_aa,"t3258","安来",51624,"1922-3-04");
 
-
 	return	dict_aa;
 }
 // --------------------------------------------------------------------
@@ -50,12 +44,11 @@ int main (int argc,char *argv[])
 {
 	cerr << "*** 開始 ***\n";
 
-	const string url_shimane = "http://localhost:8098/riak/shimane";
+	const string url_shimane = "http://host_ubuntu1:8098/riak/shimane";
 
 	map <string,Unit> dict_aa = data_prepare_proc ();
 
 	cout << "要素数：" << (unsigned int)dict_aa.size() << endl;
-
 
 
 map <string,Unit>:: iterator it = dict_aa.begin ();

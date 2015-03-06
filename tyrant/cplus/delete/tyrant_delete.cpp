@@ -2,20 +2,17 @@
 /*
 	tyrant_delete.cpp
 
-				Jan/21/2014
+				Feb/10/2015
 
 */
 // --------------------------------------------------------------------
-#include	<stdio.h>
-#include	<sys/socket.h>
-#include	<netdb.h>
+#include	<iostream>
 
 #include	<boost/algorithm/string.hpp>
 
 using namespace std;
 // --------------------------------------------------------------------
-extern	int socket_connect_proc (int sock,addrinfo *addrs);
-extern	void socket_write_proc (int sock,const char str_command[]);
+extern void mcached_delete_proc (char server[],int port,char key_in[]);
 // --------------------------------------------------------------------
 int main (int argc,char *argv[])
 {
@@ -27,32 +24,10 @@ int main (int argc,char *argv[])
 
 	cerr << key_in << '\n';
 
-	int	sock;
-	char str_command[255];
-	sprintf (str_command,"delete %s\r\n",key_in);
+	char server[] = "host_ubuntu1";
+	int port = 1978;
 
-	addrinfo hints;
-	addrinfo *addrs;  
-	memset (&hints, 0, sizeof(addrinfo));
-	hints.ai_family = AF_UNSPEC;
-	hints.ai_socktype = SOCK_STREAM;
- 
-	if (0 == getaddrinfo ("localhost","1978",&hints,&addrs))
-		{
-		sock = socket(addrs->ai_family,
-			addrs->ai_socktype, addrs->ai_protocol);
-		if (0 <= sock)
-			{
-			if (0 <= socket_connect_proc (sock,addrs))
-				{
-				socket_write_proc (sock,str_command);
-				}
-			}
-
-		close(sock);
-
-		freeaddrinfo (addrs);
-		}
+	mcached_delete_proc (server,port,key_in);
 
 	cerr << "*** 終了 ***\n";
 

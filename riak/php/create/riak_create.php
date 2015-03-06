@@ -3,7 +3,7 @@
 //
 //	riak_create.php
 //
-//					May/27/2013
+//					Feb/09/2015
 //
 // ----------------------------------------------------------------
 $path="/var/www/data_base/common/php_common";
@@ -23,7 +23,7 @@ $dict_aa = dict_append_proc ($dict_aa,'t3254','雲南',32975,'2002-10-29');
 $dict_aa = dict_append_proc ($dict_aa,'t3255','江津',37542,'2002-7-15');
 $dict_aa = dict_append_proc ($dict_aa,'t3256','浜田',24697,'2002-12-12');
 $dict_aa = dict_append_proc ($dict_aa,'t3257','益田',82157,'2002-4-17');
-$dict_aa = dict_append_proc ($dict_aa,'t3258','安来',92571,'2002-3-24');
+$dict_aa = dict_append_proc ($dict_aa,'t3258','安来',96571,'2002-3-24');
 
 	return	$dict_aa;
 }
@@ -36,7 +36,7 @@ $dict_aa = data_prepare_proc ();
 
 foreach ($dict_aa as $key => $value)
 	{
-	$url_city = 'http://localhost:8098/riak/shimane/' . $key;
+	$url_city = 'http://host_ubuntu1:8098/riak/shimane/' . $key;
 	$str_json = json_encode ($value);
 
 	curl_put_proc ($url_city,$str_json);

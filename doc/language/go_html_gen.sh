@@ -77,3 +77,5 @@ cat $DOC/head_common.txt typescript.txt $DOC/tail_common.txt > typescript.html
 cat $DOC/head_common.txt julia.txt $DOC/tail_common.txt > julia.html
 cat $DOC/head_common.txt octave.txt $DOC/tail_common.txt > octave.html
 #
+cat $DOC/head_common.txt rust.txt $DOC/tail_common.txt > rust.html
+cat $DOC/head_common.txt dart.txt $DOC/tail_common.txt > dart.html

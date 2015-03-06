@@ -3,14 +3,14 @@
 //
 //	riak_read.js
 //
-//						Mar/15/2013
+//						Feb/24/2015
 //
 // ------------------------------------------------------------------
 print	("*** 開始 ***");
 
 var client= require ("ringo/httpclient");
 
-var url_base='http://localhost:8098/riak/shimane';
+var url_base='http://host_ubuntu1:8098/riak/shimane';
 
 var url_in = url_base + '?keys=true';
 var data=client.get (url_in);

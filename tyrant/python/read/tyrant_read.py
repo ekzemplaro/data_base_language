@@ -3,7 +3,7 @@
 #
 #	tyrant_read.py
 #
-#					Oct/07/2014
+#					Feb/06/2015
 #
 import	sys
 #
@@ -13,7 +13,7 @@ from mcache_manipulate import mcache_to_dict_proc
 from text_manipulate import dict_display_proc
 # ------------------------------------------------------------
 print ("*** 開始 ***")
-mc = memcache.Client(['localhost:1978'])
+mc = memcache.Client(['host_ubuntu1:1978'])
 #
 keys = {'t4761','t4762','t4763',
 	't4764','t4765','t4766',

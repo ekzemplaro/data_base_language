@@ -3,7 +3,7 @@
 #
 #	riak_update.rb
 #
-#					Mar/11/2013
+#					Feb/24/2015
 #
 require 'json'
 require 'restclient'
@@ -17,7 +17,7 @@ population_in = ARGV[1].to_i
 #
 puts key_in,population_in
 #
-url_base = 'http://localhost:8098/riak/shimane'
+url_base = 'http://host_ubuntu1:8098/riak/shimane'
 url_in = url_base + '?keys=true'
 json_string = RestClient.get url_in
 data_aa=JSON.parse(json_string)

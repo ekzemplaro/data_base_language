@@ -2,19 +2,19 @@
 /*
 	mcached_update.cpp
 
-				Nov/24/2014
+				Feb/10/2015
 
 */
 // --------------------------------------------------------------------
 #include	<iostream>
-#include	<sys/socket.h>
-#include	<netdb.h>
 
 #include	<boost/algorithm/string.hpp>
 
 using namespace std;
 // --------------------------------------------------------------------
-extern void socket_update_proc (string key,int population,addrinfo *addrs);
+extern void mcached_update_proc
+	(char server[],int port,char key_in[],int population_in);
+
 // --------------------------------------------------------------------
 int main (int argc,char *argv[])
 {
@@ -29,19 +29,10 @@ int main (int argc,char *argv[])
 	cout << key_in << endl;
 	cout << population_in << endl;
 
-	addrinfo hints;
-	addrinfo *addrs;
+	char server[] = "localhost";
+	int port = 11211;
 
-	memset (&hints, 0, sizeof(addrinfo));
-	hints.ai_family = AF_UNSPEC;
-	hints.ai_socktype = SOCK_STREAM;
-
-	if (0 == getaddrinfo ("localhost","11211",&hints,&addrs))
-		{
-		socket_update_proc (key_in,population_in,addrs);
-
-		freeaddrinfo(addrs);
-		}
+	mcached_update_proc (server,port,key_in,population_in);
 
 	cerr << "*** 終了 ***\n";
 

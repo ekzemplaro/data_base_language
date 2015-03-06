@@ -2,7 +2,7 @@
 //
 //	couch_read.go
 //
-//					Jan/20/2015
+//					Feb/11/2015
 //
 // ----------------------------------------------------------------
 package main
@@ -13,7 +13,6 @@ import (
 	"net/http"
 	"os"
 	"fmt"
-//	"io"
 	"encoding/json"
 )
 
@@ -44,7 +43,17 @@ func main () {
         panic(err)
     }
 //    fmt.Println(data)
+    fmt.Println("*** check ***")
     fmt.Println(data["rows"])
+    fmt.Println("*** check *** ppp")
+
+//	for k := range data["rows"] {
+//		fmt.Printf( "%s\n",k)
+//		}
+// for _,value := range data["rows"] {
+//    	fmt.Println(key)
+  //  	fmt.Println(value)
+//	}
 } 
 		
 

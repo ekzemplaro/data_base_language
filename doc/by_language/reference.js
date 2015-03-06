@@ -40,7 +40,9 @@ function reference (lang)
 		|| (lang == "Haxe") || (lang == "bsh")
 		|| (lang == "falcon")
 		|| (lang == "julia")
-		|| (lang == "octave"))
+		|| (lang == "octave")
+		|| (lang == "rust")
+		|| (lang == "dart"))
 		{
 		hantei = true;
 		}

@@ -2,32 +2,27 @@
 -- -----------------------------------------------------------------
 --	mcached_delete.hs
 --
---						Dec/26/2014
+--						Feb/06/2015
 --
 -- -----------------------------------------------------------------
 import System.Environment
 import System.IO
-import Network
+
+import Mcache_manipulate
 -- -----------------------------------------------------------------
 main :: IO ()
 main = do
-	putStrLn "*** 開始 ***"
+	System.IO.putStrLn "*** 開始 ***"
 --
-	args <- getArgs
+	args <- System.Environment.getArgs
 	let key_in = head args
-	let command = "delete " ++ key_in ++ "\r\n"
 	let hostname = "localhost"
+	let port = 11211
 	putStr (key_in ++ "\n")
-	putStr (command ++ "\n")
+--	putStr (command ++ "\n")
 --
-	withSocketsDo $ do 
-        hSetBuffering stdout NoBuffering 
-        h <- connectTo hostname (PortNumber 11211)
-        hSetBuffering h LineBuffering
-        hPutStrLn h command
-        hGetLine h >>= putStrLn
-        hClose h
+	mcache_delete_proc hostname port key_in
 --
-	putStrLn "*** 終了***"
+	System.IO.putStrLn "*** 終了***"
 --
 -- -----------------------------------------------------------------

@@ -1,7 +1,7 @@
 // ------------------------------------------------------------------
 //	riak_update.cs
 //
-//					Apr/09/2013
+//					Feb/09/2015
 //
 // ------------------------------------------------------------------
 using System;
@@ -23,7 +23,7 @@ static void Main (string[] args)
 
 	Console.WriteLine (key_in + "\t" + population_in);
 
-	String url_base = "http://localhost:8098/riak/shimane";
+	String url_base = "http://host_ubuntu1:8098/riak/shimane";
 
 	String user = "";
 	String password = "";

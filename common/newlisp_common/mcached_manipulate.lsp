@@ -2,7 +2,7 @@
 ;
 ;	mcached_manipulate.lsp
 ;
-;					Jan/19/2015
+;					Feb/10/2015
 ; -------------------------------------------------------------------
 (define (json_parser json_str)
 	(setf unit_aa (json-parse json_str))
@@ -73,17 +73,20 @@
 )
 
 ; ------------------------------------------------------------------
-(define (mcached_update_proc socket key_in population_in)
+(define (mcached_update_proc hostname port key_in population_in)
+	(set 'socket (net-connect hostname port))
 	(setf today (format "%s-%s-%s" (string ((now) 0)) (string ((now) 1)) (string ((now) 2))))
 	(setf json_str (mcached_socke_read_proc socket key_in))
 	(setf unit_aa (json-parse json_str))
 	(setf name (last (assoc "name" unit_aa)))
 	(setf json_new (unit_string_gen_proc (last (assoc "name" unit_aa))  population_in today))
 	(mcached_socke_write_proc socket key_in json_new)
+	(net-close socket)
 )
 
 ; ------------------------------------------------------------------
-(define (dict_to_mcached_proc socket)
+(define (dict_to_mcached_proc hostname port)
+	(set 'socket (net-connect hostname port))
 	(dolist (vv (dict_aa))
 		(setf key (first vv))
 		(setf rr (first (rest vv)))
@@ -94,6 +97,25 @@
 			))
 		(mcached_socke_write_proc socket key json_str)
 	)
+	(net-close socket)
+)
+
+; ------------------------------------------------------------------
+(define  (mcached_delete_proc hostname port key_in)
+	(setf command (format "delete %s\r\n" key_in))
+	(set 'socket (net-connect hostname port))
+	(net-send socket command)
+	(net-receive socket buffer 10000)
+	(println buffer)
+	(net-close socket)
+)
+
+; ------------------------------------------------------------------
+(define (mcached_display_proc hostname port keys)
+	(set 'socket (net-connect hostname port))
+	(dolist (key keys)
+		(mcached_read_proc socket key))
+	(net-close socket)
 )
 
 ; ------------------------------------------------------------------

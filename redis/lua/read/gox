@@ -1,1 +1,1 @@
-lua5.1 redis_read.lua
+lua redis_read.lua

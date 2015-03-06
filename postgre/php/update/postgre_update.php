@@ -3,17 +3,18 @@
 /*
 	php/update/postgre_update.php
 
-					Dec/04/2014
+					Feb/09/2015
 
 */
 // --------------------------------------------------------------------
 $path="/var/www/data_base/common/php_common";
 set_include_path (get_include_path() . PATH_SEPARATOR . $path);
 
+include "pg_manipulate.php";
 // --------------------------------------------------------------------
 print "*** 開始 ***\n";
 
-$host = 'localhost';
+$server = 'localhost';
 $dbname = 'city';
 $user = 'scott';
 $password = 'tiger';
@@ -23,24 +24,7 @@ $population_in = $argv[2];
 
 print $key_in . "\t" . $population_in . "\n";
 
-$str_connect = "host=". $host . " dbname=" . $dbname
-	 . " user=" . $user . " password=" . $password;
-echo $str_connect . "\n";
-
-$dbconn = pg_connect ($str_connect)
-    or die('Could not connect: ' . pg_last_error());
-
-date_default_timezone_set('Asia/Tokyo');
-$today = date ("Y-m-d");
-$query = "update cities set POPULATION=" . $population_in;
-$query .= ", DATE_MOD='" . $today . "'";
-$query .= " where ID='" . $key_in . "'";
-
-print $query . "\n";
-
-$result = pg_query($query) or die('Query failed: ' . pg_last_error());
-
-pg_close ($dbconn);
+pg_update_proc ($server,$dbname,$user,$password,$key_in,$population_in);
 
 print "*** 終了 ***\n";
 // --------------------------------------------------------------------

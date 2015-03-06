@@ -1,7 +1,7 @@
 // ------------------------------------------------------------------
 //	tyrant_read.cs
 //
-//					Jun/23/2011
+//					Feb/17/2015
 //
 // ------------------------------------------------------------------
 using System;
@@ -19,7 +19,8 @@ public static void Main(string[] args)
 {
 	Console.WriteLine  ("*** 開始 ***");
 
-	String[] serverlist = { "127.0.0.1:1978" };
+//	String[] serverlist = { "host_ubuntu1:1978" };
+	String[] serverlist = { "172.17.0.2:1978" };
 
 	SockIOPool pool = SockIOPool.GetInstance();
 	pool.SetServers(serverlist);

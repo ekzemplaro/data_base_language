@@ -3,7 +3,7 @@
 ;
 ;	mcached_read.lsp
 ;
-;					Jan/23/2014
+;					Feb/10/2015
 ; -------------------------------------------------------------------
 (load "/var/www/data_base/common/newlisp_common/mcached_manipulate.lsp")
 ; ------------------------------------------------------------------
@@ -12,12 +12,10 @@
 	"t1736" "t1737" "t1738" "t1739"))
 ;
 (setf hostname "localhost") 
-(setf port 11211) 
-(set 'socket (net-connect hostname port))
+(setf port 11211)
+
+(mcached_display_proc hostname port keys)
 ;
-(dolist (key keys)
-	(mcached_read_proc socket key))
-(net-close socket)
 (println "*** 終了 ***")
 (exit)
 ; ------------------------------------------------------------------

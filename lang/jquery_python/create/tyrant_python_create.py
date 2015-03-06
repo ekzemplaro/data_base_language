@@ -1,16 +1,16 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 # -------------------------------------------------------------------------
 #	tyrant_python_create.py
 #
-#						Jun/22/2012
+#						Feb/10/2015
 # -------------------------------------------------------------------------
 import sys
 import memcache
 #
 # -------------------------------------------------------------------------
 #
-mc = memcache.Client(['localhost:1978'])
+mc = memcache.Client(['host_ubuntu1:1978'])
 mc.flush_all()
 #
 mc.set('t4761', '{"name":"那覇","population":38500,"date_mod":"2003-5-21"}')
@@ -24,7 +24,7 @@ mc.set('t4768', '{"name":"豊見城","population":71300,"date_mod":"2003-8-17"}'
 mc.set('t4769', '{"name":"うるま","population":25800,"date_mod":"2003-7-25"}')
 #
 #
-print "Content-type: text/html\n\n"
+print ("Content-type: text/html\n\n")
 #
-print	"*** OK ***<p />"
+print	("*** OK ***<p />")
 # -------------------------------------------------------------------------

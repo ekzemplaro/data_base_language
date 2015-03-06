@@ -3,19 +3,19 @@
 #
 #	redis_read.rb
 #
-#					May/22/2013
+#					Feb/26/2015
 #
-#
-require 'rubygems'
+# ---------------------------------------------------------------------
 require 'redis'
 #
+load '/var/www/data_base/common/ruby_common/text_manipulate.rb'
 load '/var/www/data_base/common/ruby_common/redis_manipulate.rb'
+# ---------------------------------------------------------------------
 puts "*** 開始 ***"
 #
-redis = Redis.new(:host => "host_dbase", :port => 6379)
+dict_aa = redis_to_dict_proc("host_dbase")
 
-redis_display_proc (redis)
+dict_display_proc(dict_aa)
 
 puts "*** 終了 ***"
-
 # ---------------------------------------------------------------------

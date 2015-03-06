@@ -1,22 +1,22 @@
-#! /usr/bin/lua5.1
+#! /usr/bin/lua
 -- ----------------------------------------------------
 --	tyrant_delete.lua
 --
---				Jun/22/2011
+--					Feb/16/2015
 --
 -- ----------------------------------------------------
-require 'Memcached'
+require	('mcached_manipulate')
 
 -- ----------------------------------------------------
 print ("*** 開始 ***")
 
-id_in=arg[1]
+key_in=arg[1]
 
-print (id_in)
+print (key_in)
 
-local mem = Memcached.Connect('localhost', 1978)
-
-mem:delete(id_in)
+local server_host = "host_ubuntu1"
+local server_port = 1978
+mcached_delete_proc (server_host,server_port,key_in)
 
 print ("*** 終了 ***")
 -- ----------------------------------------------------

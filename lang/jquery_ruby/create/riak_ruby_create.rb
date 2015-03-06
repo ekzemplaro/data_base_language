@@ -3,7 +3,7 @@
 #
 #	riak_ruby_create.rb
 #
-#					Mar/13/2013
+#					Feb/26/2015
 # -------------------------------------------------------------
 require 'json'
 require	'restclient'
@@ -30,7 +30,7 @@ end
 puts "Content-type: text/html\n\n"
 #
 #
-url_base = 'http://localhost:8098/riak/shimane'
+url_base = 'http://host_ubuntu1:8098/riak/shimane'
 #
 dict_aa=prepare_data_proc()
 #

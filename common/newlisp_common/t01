@@ -1,0 +1,8 @@
+; ------------------------------------------------------------------
+(define (mcached_display_proc hostname port keys)
+	(set 'socket (net-connect hostname port))
+	(dolist (key keys)
+		(mcached_read_proc socket key))
+	(net-close socket)
+)
+
