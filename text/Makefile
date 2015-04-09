@@ -20,3 +20,5 @@ clean:
 	cd falcon; make clean;
 	cd typescript; make clean;
 	cd rust; make clean;
+	cd kotlin; make clean;
+	cd vb; make clean;

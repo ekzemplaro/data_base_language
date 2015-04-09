@@ -3,21 +3,20 @@
 #
 #	mssql_delete.py
 #
-#					Oct/01/2013
+#					Mar/10/2015
 #
 #
 # --------------------------------------------------------
 import	sys
-import	string
-import pymssql
+import	pymssql
 #
 sys.path.append ('/var/www/data_base/common/python_common')
-from sql_manipulate import sql_display_proc,sql_delete_proc
+from sql_manipulate import sql_delete_proc
 #
 # --------------------------------------------------------
 print ("*** 開始 ***")
-id_in = sys.argv[1]
-print ("%s" % id_in)
+key_in = sys.argv[1]
+print ("%s" % key_in)
 #
 #
 conn = pymssql.connect \
@@ -25,10 +24,8 @@ conn = pymssql.connect \
 #
 cursor = conn.cursor ()
 #
-sql_delete_proc	(cursor,id_in)
+sql_delete_proc	(cursor,key_in)
 conn.commit ()
-#
-sql_display_proc (cursor)
 #
 cursor.close ()
 conn.close ()

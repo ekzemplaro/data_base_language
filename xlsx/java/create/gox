@@ -1,10 +1,10 @@
+#
 COMMON=/var/www/data_base/common
 JAVA_COMMON=$COMMON/java_common
-POI39=$COMMON/jar/poi-3.9
-OOXML_LIB=$POI39/ooxml-lib
-CPX=$OOXML_LIB/xmlbeans-2.3.0.jar:$OOXML_LIB/dom4j-1.6.1.jar
-export CLASSPATH=./:$JAVA_COMMON:$POI39/poi-3.9-20121203.jar:$POI39/poi-ooxml-3.9-20121203.jar:$POI39/poi-ooxml-schemas-3.9-20121203.jar:$CPX
+POI311=$COMMON/jar/poi-3.11
+OOXML_LIB=$POI311/ooxml-lib
+CPX=$OOXML_LIB/xmlbeans-2.6.0.jar
+export CLASSPATH=./:$JAVA_COMMON:$POI311/poi-3.11-20141221.jar:$POI311/poi-ooxml-3.11-20141221.jar:$POI311/poi-ooxml-schemas-3.11-20141221.jar:$CPX
+#
 #
 java xlsx_create /var/tmp/xlsx/cities.xlsx
-#
-file /var/tmp/xlsx/cities.xlsx

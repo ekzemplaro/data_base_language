@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>rsync Feb/06/2015</title>
+<title>rsync Apr/02/2015</title>
 </head>
 <body>
 <h2>rsync</h2><p />
@@ -60,7 +60,28 @@ rsync -avz --delete rsync://host_rsync/var_tmp/json/ /var/tmp/json<p />
 rsync -avz --delete rsync://host_rsync/var_tmp/xml_file/ /var/tmp/xml_file<p />
 </blockquote>
 <hr />
+Ubuntu での設定<br />
+<blockquote>
+# cp /usr/share/doc/rsync/examples/rsyncd.conf /etc<p />
+/etc/default/rsync を編集<br />
+	<blockquote>
+	RSYNC_ENABLE=true<p />
+	</blockquote>
+# service rsync start<br />
+<pre>
+ * Starting rsync daemon rsync                                           [ OK ] 
+</pre>
+
+</blockquote>
+
+<hr />
+
+<blockquote>
+@ERROR: chdir failed<br />
+rsync error: error starting client-server protocol (code 5) at main.c(1635) [Receiver=3.1.1]<br />
+</blockquote>
+<hr />
 <a href="/data_base/">Return</a><p />
-Feb/06/2015 AM 08:15<p />
+Apr/02/2015 AM 08:15<p />
 </body>
 </html>

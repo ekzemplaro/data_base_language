@@ -1,7 +1,7 @@
 // --------------------------------------------------------------------
 //	rhino/by_language/by_language.js
 //
-//					Mar/05/2015
+//					Apr/06/2015
 // --------------------------------------------------------------------
 importPackage (java.io);
 // --------------------------------------------------------------------
@@ -94,6 +94,8 @@ function main_proc ()
 	lang_gen ("octave","m");
 	lang_gen ("rust","rs");
 	lang_gen ("dart","dart");
+	lang_gen ("kotlin","kt");
+	lang_gen ("vb","vb");
 
 	print	("</ol>");
 	print	("</div>");
@@ -103,13 +105,11 @@ function main_proc ()
 // [4]:
 function lang_gen (lang,suffix)
 {
-//	print	("<ol>");
 	title= "<div class=\"section\" id=\"" + lang + "\">\n";
 
 	title += "<li><h2><a href=/data_base/doc/language/" + lang + ".html>"
 	title  += lang + "</a></h2></li>";
 	print	(title);
-//	print	("</ol>");
 
 	print	("<table border=\"1\">");
 
@@ -171,7 +171,6 @@ function db_gen (lang,suffix,dbname,key_a)
 {
 
 	crud_gen (key_a,lang,suffix);
-
 }
 
 // --------------------------------------------------------------------

@@ -74,7 +74,7 @@ ii  libjexcelapi-java      2.6.12-2      Java API to read, write and modify Exce
 </pre>
 <a href="http://poi.apache.org/">Apache POI</a><br />
 <blockquote>
-	poi-bin-3.9-20121203.tar.gz<p />
+	poi-bin-3.11-20141221.tar.gz<p />
 </blockquote>
 </blockquote>
 

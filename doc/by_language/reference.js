@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------
 //	reference.js
 //
-//					Nov/11/2014
+//					Apr/07/2015
 // -----------------------------------------------------------------------
 function reference (lang)
 {
@@ -42,7 +42,9 @@ function reference (lang)
 		|| (lang == "julia")
 		|| (lang == "octave")
 		|| (lang == "rust")
-		|| (lang == "dart"))
+		|| (lang == "dart")
+		|| (lang == "kotlin")
+		|| (lang == "vb"))
 		{
 		hantei = true;
 		}

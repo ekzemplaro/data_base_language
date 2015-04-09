@@ -1,0 +1,2 @@
+#
+java -jar text_create.jar /var/tmp/plain_text/cities.txt

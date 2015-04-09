@@ -1,0 +1,4 @@
+#
+echo "import mssql_read" > tmp_execute.py
+#
+python ./tmp_execute.py

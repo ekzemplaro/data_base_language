@@ -1,0 +1,1 @@
+java -jar csv_delete.jar /var/tmp/csv/cities.csv t1277

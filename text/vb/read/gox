@@ -1,0 +1,2 @@
+#
+./text_read.exe  /var/tmp/plain_text/cities.txt

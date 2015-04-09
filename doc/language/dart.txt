@@ -16,3 +16,19 @@ Arch Linux<br />
 <blockquote>
 # pacman -S dart<p />
 </blockquote>
+
+pubspec.yaml<br />
+<blockquote>
+<pre>
+name: app-name
+dependencies:
+  http: any
+  crypto: any
+</pre>
+</blockquote>
+
+Install<br />
+<blockquote>
+$ pub get<p />
+</blockquote>
+

@@ -1,4 +1,4 @@
-<title>python Nov/22/2013</title>
+<title>python Mar/18/2015</title>
 </head>
 <body>
 <h2><a href="http://www.python.org">python</a></h2><p />
@@ -24,4 +24,10 @@ Installer<p />
 <pre>
 ii  python-pip    1.4.1-2    all     alternative Python package installer
 </pre>
+</blockquote>
+
+Arch Linux<br />
+<blockquote>
+	# pacman -S python-pip<p />
+	# pip install pymssql<p />
 </blockquote>

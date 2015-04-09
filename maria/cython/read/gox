@@ -1,0 +1,4 @@
+#
+echo "import maria_read" > tmp_execute.py
+#
+python ./tmp_execute.py

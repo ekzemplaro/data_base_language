@@ -31,7 +31,7 @@ data_prepare_proc ()
 		= new HashMap <String, HashMap<String,String>> ();
 
 	dict_aa = text_manipulate.dict_append_proc
-		(dict_aa,"t2971","奈良",361824,"2008-10-17");
+		(dict_aa,"t2971","奈良",371824,"2008-10-17");
 
 	dict_aa = text_manipulate.dict_append_proc
 		(dict_aa,"t2972","大和高田",298517,"2008-9-21");

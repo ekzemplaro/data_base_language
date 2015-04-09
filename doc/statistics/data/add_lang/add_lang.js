@@ -2,7 +2,7 @@
 // ---------------------------------------------------------------
 //	add_lang.js
 //
-//					Mar/04/2015
+//					Apr/06/2015
 //
 // ---------------------------------------------------------------
 var fs = require("fs");
@@ -30,7 +30,7 @@ for (var db in data_aa.info)
 	row_single[db] = '';
 	}
 
-data_lang['year'] = '1957';
+data_lang['year'] = '1959';
 data_lang['Create'] = row_single;
 data_lang['Read'] = row_single;
 data_lang['Update'] = row_single;

@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------
 //	db_sum/db_sum.js
 //
-//					Mar/04/2015
+//					Apr/06/2015
 //
 // -----------------------------------------------------------------------
 jQuery (function ()
@@ -133,7 +133,7 @@ function show_console_sum_proc (url_json)
 		{
 		var success_all = 0;
 		var total_all = 0;
-		var total_language = 68;
+		var total_language = 70;
 		var nn_lang = total_language * 4;
 		var out_str = table_head_proc ();
 

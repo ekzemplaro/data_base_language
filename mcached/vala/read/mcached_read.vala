@@ -19,7 +19,6 @@ static int main (string[] args)
 
 	mcached_read_proc (hostname,port,keys);
 
-	
 	stdout.printf ("*** 終了 ***\n");
 	return 0;
 }

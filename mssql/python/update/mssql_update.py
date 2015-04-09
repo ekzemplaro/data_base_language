@@ -3,7 +3,7 @@
 #
 #	mssql_update.py
 #
-#					Oct/01/2013
+#					Mar/10/2015
 #
 #
 # --------------------------------------------------------
@@ -12,13 +12,13 @@ import	string
 import pymssql
 #
 sys.path.append ('/var/www/data_base/common/python_common')
-from sql_manipulate import sql_display_proc,sql_update_proc
+from sql_manipulate import sql_update_proc
 #
 # --------------------------------------------------------
 print ("*** 開始 ***")
-id_in = sys.argv[1]
-population_in = string.atoi (sys.argv[2])
-print ("%s\t%d" % (id_in, population_in))
+key_in = sys.argv[1]
+population_in = int (sys.argv[2])
+print ("%s\t%d" % (key_in, population_in))
 #
 #
 conn = pymssql.connect \
@@ -26,10 +26,8 @@ conn = pymssql.connect \
 #
 cursor = conn.cursor ()
 #
-sql_update_proc	(cursor,id_in,population_in)
+sql_update_proc	(cursor,key_in,population_in)
 conn.commit ()
-#
-sql_display_proc (cursor)
 #
 cursor.close ()
 conn.close ()

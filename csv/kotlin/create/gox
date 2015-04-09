@@ -1,0 +1,2 @@
+#
+java -jar csv_create.jar /var/tmp/csv/cities.csv

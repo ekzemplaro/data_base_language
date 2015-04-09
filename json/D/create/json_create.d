@@ -22,12 +22,12 @@ string [string] [string] data_prepare_proc ()
 	dict_aa = dict_append_proc (dict_aa,"t0923","佐野","68491","1924-7-12");
 	dict_aa = dict_append_proc (dict_aa,"t0924","足利","21375","1924-5-18");
 	dict_aa = dict_append_proc (dict_aa,"t0925","日光","34786","1924-9-21");
-	dict_aa = dict_append_proc (dict_aa,"t0926","下野","73421","1924-8-25");
-	dict_aa = dict_append_proc (dict_aa,"t0927","さくら","45213","1924-6-18");
+	dict_aa = dict_append_proc (dict_aa,"t0926","下野","73821","1924-8-25");
+	dict_aa = dict_append_proc (dict_aa,"t0927","さくら","45913","1924-6-18");
 	dict_aa = dict_append_proc (dict_aa,"t0928","矢板","81697","1924-9-17");
-	dict_aa = dict_append_proc (dict_aa,"t0929","真岡","97253","1924-10-12");
-	dict_aa = dict_append_proc (dict_aa,"t0930","栃木","21358","1924-5-24");
-	dict_aa = dict_append_proc (dict_aa,"t0931","大田原","35425","1924-4-8");
+	dict_aa = dict_append_proc (dict_aa,"t0929","真岡","97243","1924-10-12");
+	dict_aa = dict_append_proc (dict_aa,"t0930","栃木","27358","1924-5-24");
+	dict_aa = dict_append_proc (dict_aa,"t0931","大田原","31425","1924-4-8");
 	dict_aa = dict_append_proc (dict_aa,"t0932","鹿沼","92684","1924-7-5");
 	dict_aa = dict_append_proc (dict_aa,"t0933","那須塩原","75851","1924-9-2");
 	dict_aa = dict_append_proc (dict_aa,"t0934","那須烏山","83246","1924-1-18");

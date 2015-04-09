@@ -3,7 +3,7 @@
 	sqlite3_read.cs
 
 
-					Sep/18/2011
+					Apr/07/2015
 */
 // -------------------------------------------------------------------
 using	System;
@@ -47,11 +47,7 @@ static int Main (string[] args)
 			+ "\t" + dr["NAME"].ToString()
 			 + "\t" +  dr["POPULATION"].ToString()
 			 + "\t" +  dr["DATE_MOD"].ToString();
-/*
-		out_str = dr["ID"].ToString ()
-			+ "\t" + dr["NAME"].ToString()
-			 + "\t" +  dr["POPULATION"].ToString();
-*/
+
 		Console.WriteLine (out_str);
 		}
   

@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------
 //	target_define.js
 //
-//					Mar/04/2015
+//					Apr/06/2015
 // -----------------------------------------------------------------------
 function target_define_proc (lang_mod,dbase,crud)
 {
@@ -86,6 +86,9 @@ function target_define_proc_crud_console (lang_mod,dbase_lower,crud_lower)
 		case	"csharp":
 		case	"haxe":
 		case	"typescript":
+		case	"rust":
+		case	"kotlin":
+		case	"vb":
 	 		makefile = target_folder + "/" +  "Makefile.txt";
 			break;
 		}
@@ -227,6 +230,8 @@ function suffix_define_proc ()
 	suffix["octave"] = "m";
 	suffix["rust"] = "rs";
 	suffix["dart"] = "dart";
+	suffix["kotlin"] = "kt";
+	suffix["vb"] = "vb";
 
 	return	suffix;
 }

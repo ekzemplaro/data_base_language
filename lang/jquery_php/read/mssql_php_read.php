@@ -2,7 +2,7 @@
 // ---------------------------------------------------------------------
 //	mssql_php_read.php
 //
-//					Oct/04/2013
+//					Mar/25/2015
 //
 // ---------------------------------------------------------------------
 $path="/var/www/data_base/common/php_common";
@@ -28,7 +28,7 @@ $result = mssql_query ("select * from cities");
 
 while($row = mssql_fetch_array($result))
 	{
-	$name = mb_convert_encoding ($row["name"],"UTF-8","SJIS");
+	$name = $row["name"];
 
 	$dict_aa = dict_append_proc ($dict_aa,$row["id"],
 			$name,$row["population"],$row["date_mod"]);
@@ -36,9 +36,6 @@ while($row = mssql_fetch_array($result))
 
 mssql_close();
 
-
-// header("Content-Type: text/javascript; charset=utf-8");
-// header("Content-Type: text/json; charset=utf-8");
 
 $json_str = json_encode ($dict_aa);
 

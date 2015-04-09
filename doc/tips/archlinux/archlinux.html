@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>ArchLinux Mar/05/2015</title>
+<title>ArchLinux Mar/17/2015</title>
 </head>
 <body>
 参考になるページ<p />
@@ -96,7 +96,24 @@ IP=static
 Address=('172.20.208.216/21')
 Gateway='172.20.208.224'
 DNS=('172.20.248.233')
-<pre />
+</pre>
+<blockquote>
+Address=('172.20.208.216/16')<br />
+<blockquote>
+	netmask 255.255.0.0<br />
+	broadcast 172.20.255.255<br />
+</blockquote>
+Address=('172.20.208.216/21')<br />
+<blockquote>
+	netmask 255.255.248.0<br />
+	broadcast 172.20.215.255<br />
+</blockquote>
+Address=('172.20.208.216/24')<br />
+<blockquote>
+	netmask 255.255.255.0<br />
+	broadcast 172.20.208.255<br />
+</blockquote>
+</blockquote>
 </blockquote>
 結果の反映<br />
 	<blockquote>
@@ -369,6 +386,6 @@ yaourt を使ってインストール<br />
 # pacman -S xorg-fonts-75dpi<br />
 <hr />
 <a href="/data_base/">Return</a><p />
-Mar/05/2015 AM 08:15<p />
+Mar/17/2015 AM 08:15<p />
 </body>
 </html>

@@ -47,10 +47,16 @@ PHP<p />
 	sudo make install<p />
 </blockquote>
 
-/etc/php5/conf.d/redis.ini<p />
+Arch Linux<br />
+<blockquote>
+	$ yaourt -Sb php-redis<p />
+</blockquote>
 
-; configuration for php Redis module<br />
-extension=redis.so<br />
+
+/etc/php/conf.d/redis.ini<p />
+	<blockquote>
+	extension=redis.so<br />
+	</blockquote>
 </blockquote>
 
 Python<p />

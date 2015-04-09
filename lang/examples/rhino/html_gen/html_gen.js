@@ -1,7 +1,7 @@
 // --------------------------------------------------------------------
-//	html_gen.js
+//	html_gen/html_gen.js
 //
-//					Mar/05/2015
+//					Apr/06/2015
 // --------------------------------------------------------------------
 importPackage (java.io);
 // --------------------------------------------------------------------
@@ -100,8 +100,6 @@ function lang_gen (key_a)
 	crud_gen (key_a,"ocaml","ml");
 	crud_gen (key_a,"erlang","erl");
 
-
-
 	crud_gen (key_a,"spl","spl");
 	crud_gen (key_a,"slang","sl");
 	crud_gen (key_a,"gst","st");
@@ -159,6 +157,8 @@ function lang_gen (key_a)
 	crud_gen (key_a,"octave","m");
 	crud_gen (key_a,"rust","rs");
 	crud_gen (key_a,"dart","dart");
+	crud_gen (key_a,"kotlin","kt");
+	crud_gen (key_a,"vb","vb");
 }
 
 // --------------------------------------------------------------------

@@ -1,8 +1,9 @@
 #! /usr/bin/python
+# -*- coding: utf-8 -*-
 #
 #	mssql_python_delete.py
 #
-#					Jul/20/2011
+#					Mar/10/2015
 #
 import	math
 import	cgi
@@ -22,22 +23,21 @@ from cgi_manipulate import parse_parameter
 #
 # --------------------------------------------------------
 conn = pymssql.connect \
-	(host='cdbd025\SQLEXPRESS',user='sa',password='hello9',database='city')
+	(host='host_mssql',user='sa',password='scott_tiger',database='city')
 #
 cursor = conn.cursor ()
 #
 # --------------------------------------------------------
 #
-print "Content-type: text/html\n\n"
+print ("Content-type: text/html\n\n")
 #
 # ---------------------------------------------------------------
 array_bb = parse_parameter ()
 #
 for it in range (len(array_bb)):
 	id_in = array_bb[it]
-	print "id_in = %s<br />" % id_in
+	print ("id_in = %s<br />" % id_in)
 	sql_delete_proc	(cursor,id_in)
-	print "check cccccc<br />"
 #
 conn.commit ()
 #
@@ -45,5 +45,6 @@ cursor.close ()
 conn.close ()
 #
 #
-print "OK<br />"
+print ("OK<br />")
 #
+# ---------------------------------------------------------------

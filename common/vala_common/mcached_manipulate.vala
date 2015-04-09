@@ -45,12 +45,14 @@ static void json_parser (string key_in,string str_json)
 
 
 	var name = root.get_string_member ("name");
-	var population = root.get_int_member ("population");
+//	var population = root.get_int_member ("population");
+	var population = root.get_string_member ("population");
 	var date_mod = root.get_string_member ("date_mod");
 
 	stdout.printf ("%s\t", key_in);
 	stdout.printf ("%s\t", name);
-	stdout.printf ("%lld\t", population);
+//	stdout.printf ("%lld\t", population);
+	stdout.printf ("%s\t", population);
 	stdout.printf ("%s\n", date_mod);
 }
 

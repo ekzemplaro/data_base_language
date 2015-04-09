@@ -1,0 +1,2 @@
+#
+./csv_read.exe  /var/tmp/csv/cities.csv

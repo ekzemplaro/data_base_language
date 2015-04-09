@@ -1,0 +1,1 @@
+java -jar text_update.jar /var/tmp/plain_text/cities.txt t2383 53492100

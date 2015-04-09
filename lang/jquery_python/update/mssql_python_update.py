@@ -1,8 +1,9 @@
 #! /usr/bin/python
+# -*- coding: utf-8 -*-
 #
 #	mssql_python_update.py
 #
-#					Jun/15/2011
+#					Mar/10/2015
 #
 import	cgi
 import	string
@@ -21,25 +22,23 @@ from cgi_manipulate import parse_parameter
 #
 # --------------------------------------------------------
 conn = pymssql.connect \
-	(host='cdbd025\SQLEXPRESS',user='sa',password='hello9',database='city')
+	(host='host_mssql',user='sa',password='scott_tiger',database='city')
 #
 cursor = conn.cursor ()
 #
 # --------------------------------------------------------
 #
-print "Content-type: text/html\n\n"
+print ("Content-type: text/html\n\n")
 #
 # ---------------------------------------------------------------
 array_bb = parse_parameter ()
 #
 for it in range (len(array_bb)):
 	id_in = array_bb[it]['id']
-	population_in = string.atoi (array_bb[it]['population'])
-	print "id_in = %s<br />" % id_in
-	print "population_in = %d<br />" % population_in
-	print "check bbbbbbb<br />"
+	population_in = int (array_bb[it]['population'])
+	print ("id_in = %s<br />" % id_in)
+	print ("population_in = %d<br />" % population_in)
 	sql_update_proc	(cursor,id_in,population_in)
-	print "check cccccc<br />"
 #
 conn.commit ()
 #
@@ -47,5 +46,5 @@ cursor.close ()
 conn.close ()
 #
 #
-print "OK<br />"
+print ("OK<br />")
 #

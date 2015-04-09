@@ -2,7 +2,7 @@
 /*
 	mssql_manipulate.php
 
-					Feb/19/2015
+					Mar/25/2015
 
 */
 // --------------------------------------------------------------------
@@ -78,10 +78,8 @@ function mssql_create_table_proc ()
 // --------------------------------------------------------------------
 function mssql_insert_proc ($id_in,$name_in,$population_in,$date_mod_in)
 {
-	$name_sjis = mb_convert_encoding ($name_in,"SJIS","UTF-8");
-  
 	$sql="insert into cities (id, Name, Population, date_mod) "
-		. "values ('" . $id_in . "'," . "'" . $name_sjis . "',"
+		. "values ('" . $id_in . "'," . "N'" . $name_in . "',"
 		. $population_in .  ",'" . $date_mod_in . "')";
 
 	$result = mssql_query ($sql);

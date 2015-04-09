@@ -99,7 +99,16 @@ Arch Linux<br />
 Python<p />
 <blockquote>
 	python-pymssql<p />
-	yaourt-Sb pymssql<p />
+Arch Linux<br />
+	<blockquote>
+	# pacman -S python-pip<p />
+	# pip install pymssql<p />
+		再インストール<br />
+		<blockquote>
+		# pip uninstall pymssql<br />
+		# pip install pymssql<br />
+		</blockquote>
+	</blockquote>
 </blockquote>
 
 node<p />
