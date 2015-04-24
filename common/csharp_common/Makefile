@@ -15,6 +15,7 @@ table_manipulate.dll: table_manipulate.cs \
 		get_uri.cs \
 		ftp_manipulate.cs \
 		cgi_manipulate.cs \
+		xlsx_manipulate.cs \
 		file_io.cs
 	mcs /out:table_manipulate.dll /t:library \
 		table_manipulate.cs \
@@ -34,6 +35,7 @@ table_manipulate.dll: table_manipulate.cs \
 		get_uri.cs \
 		ftp_manipulate.cs \
 		cgi_manipulate.cs \
+		xlsx_manipulate.cs \
 		file_io.cs \
 			-r:lib/redis-sharp.dll \
 			-r:../dll/Memcached.ClientLibrary.dll \
@@ -41,6 +43,7 @@ table_manipulate.dll: table_manipulate.cs \
 			-r:../dll/MySql.Data.dll \
 			-r:../dll/FirebirdSql.Data.FirebirdClient.dll \
 			-r:../dll/MongoDB.dll \
+			-r:../dll/EPPlus.dll \
 			-r:System.Data \
 			-r:System.Web \
 			-r:System.Data.OracleClient \

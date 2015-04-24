@@ -1,0 +1,7 @@
+#
+NET20=/home/uchida/c_sharp/excel/ExcelDataReader-develop/output/net20
+#
+ln -s $NET20/ICSharpCode.SharpZipLib.dll .
+ln -s $NET20/Excel.dll .
+#
+

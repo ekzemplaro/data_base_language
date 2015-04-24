@@ -1,0 +1,41 @@
+// --------------------------------------------------------
+static void dict_to_xlsx_proc (Dictionary <string,Object> dict_aa,String file_xlsx)
+{
+	if (File.Exists (file_xlsx))
+		{
+		File.Delete(file_xlsx);
+		}
+
+	var newFile = new FileInfo (file_xlsx);
+
+	using (var package = new ExcelPackage(newFile))
+		{
+		ExcelWorksheet worksheet = null;
+		if (newFile.Exists)
+		{
+//		worksheet = package.Workbook.Worksheets.Where(s => s.Name == "Hello").FirstOrDefault();                    
+		}                  
+
+		if (worksheet == null)
+		{
+		worksheet = package.Workbook.Worksheets.Add ("Sheet1");
+		}
+
+		int irow = 1;
+		foreach (KeyValuePair<string, Object> kv in dict_aa)
+		{
+		Dictionary <string,string> unit_aa
+				= (Dictionary <string,string>)kv.Value;
+                worksheet.Cells[irow,1].Value = kv.Key;
+                worksheet.Cells[irow,2].Value = unit_aa["name"];
+                worksheet.Cells[irow,3].Value = int.Parse (unit_aa["population"]);
+                worksheet.Cells[irow,4].Value = unit_aa["date_mod"];
+
+		irow++;
+		}
+                
+		package.Save();
+		}
+}
+
+// --------------------------------------------------------

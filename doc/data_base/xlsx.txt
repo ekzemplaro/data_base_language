@@ -75,6 +75,7 @@ Java<p />
 <a href="http://poi.apache.org/">Apache POI</a><br />
 <blockquote>
 	poi-bin-3.11-20141221.tar.gz<p />
+	<a href="http://www.javadrive.jp/poi/">Apache POIでExcelを操作</a><p />
 </blockquote>
 <a href="http://codezine.jp/article/detail/4881">
 「Usermodel API」を利用したExcelファイルの基本操作
@@ -83,4 +84,5 @@ Java<p />
 
 C#<p />
 <blockquote>
+	ExcelDataReader-develop.zip<p />
 </blockquote>

@@ -1,7 +1,7 @@
 // ----------------------------------------------------------------
 /*
 	xlsx_manipulate.java
-					Jul/30/2013
+					Apr/22/2015
 
 */
 // ----------------------------------------------------------------
@@ -46,7 +46,6 @@ public static HashMap <String, HashMap <String,String>>
 
 			int population = (int) dd_population;
 
-//			int	population = Integer.parseInt (str_population);
 
 		dict_aa = text_manipulate.dict_append_proc
 				(dict_aa,key,name,population,date_mod);

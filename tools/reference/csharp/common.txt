@@ -1,5 +1,4 @@
 cgi_manipulate.cs
-couch_manipulate.cs
 fbd_manipulate.cs
 file_io.cs
 ftp_manipulate.cs
@@ -16,4 +15,5 @@ postgre_manipulate.cs
 redis_manipulate.cs
 table_manipulate.cs
 text_manipulate.cs
+xlsx_manipulate.cs
 xml_manipulate.cs

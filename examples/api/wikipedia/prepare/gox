@@ -1,0 +1,9 @@
+#
+#curl -X DELETE http://cddn007:5984/wikipedia
+curl -X PUT http://localhost:5984/wikipedia
+#
+#ls b*.json | sed 's/.json//' > list.txt
+#
+#awk '{print "curl -X PUT http://cddn007:5984/wikipedia/"$1" -d@"$1".json"}' \
+#	list.txt > go_tmp
+#curl -X PUT http://cddn007:5984/wikipedia/wiki -d@wiki.json

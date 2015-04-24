@@ -21,3 +21,5 @@ cp -p $DYNAMICJSON/DynamicJson.dll .
 NEWTONSOFT=/home/uchida/c_sharp/json/jsonnet/Json50r8/Bin/Net40
 cp -p $NEWTONSOFT/Newtonsoft.Json.dll .
 #
+EPPLUS=/home/uchida/c_sharp/excel/epplus
+cp -p $EPPLUS/EPPlus.dll .

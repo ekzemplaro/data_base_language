@@ -31,3 +31,9 @@ Java<p />
 C#<p />
 <blockquote>
 </blockquote>
+
+<hr />
+Arch Linux<br />
+<blockquote>
+	# pacman -S libreoffice libreoffice-ja<p />
+</blockquote>

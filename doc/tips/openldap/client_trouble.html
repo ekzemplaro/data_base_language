@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+<title>client_trouble Ap/09/2015</title>
+</head>
+<body>
+<h2>Client Trouble Shooting</h2><p />
+
+	<blockquote>
+<pre>
+# systemctl stop nslcd
+# systemctl start nslcd
+# systemctl status nslcd
+● nslcd.service - Naming services LDAP client daemon.
+   Loaded: loaded (/usr/lib/systemd/system/nslcd.service; enabled; vendor preset: disabled)
+   Active: active (running) since Thu 2015-04-09 16:11:56 JST; 4s ago
+  Process: 1203 ExecStart=/usr/bin/nslcd (code=exited, status=0/SUCCESS)
+ Main PID: 1205 (nslcd)
+   CGroup: /system.slice/nslcd.service
+           └─1205 /usr/bin/nslcd
+
+Apr 09 16:11:56 host_aa.example.com nslcd[1205]: version 0.9.4 starting
+Apr 09 16:11:56 host_aa.example.com nslcd[1205]: accepting connectionsk
+</pre>
+	</blockquote>
+
+	<blockquote>
+	</blockquote>
+
+
+
+<hr />
+<a href="/data_base/">Return</a><p />
+Apr/09/2015 AM 08:15<p />
+</body>
+</html>
