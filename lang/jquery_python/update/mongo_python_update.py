@@ -3,9 +3,9 @@
 #
 #	mongo_python_update.py
 #
-#						Jun/25/2012
+#						May/12/2015
 #
-#
+# ----------------------------------------------------------------
 import sys
 import json
 #
@@ -18,26 +18,23 @@ sys.path.append ("/var/www/data_base/common/python_common")
 from mongo_manipulate import mongo_update_proc
 from cgi_manipulate import parse_parameter
 # ----------------------------------------------------------------
-connection = pymongo.Connection("localhost", 27017)
-db = connection.city_db
+client = pymongo.MongoClient()
+db = client['city_db']
 #
 # -------------------------------------------------------------------
 #
-print "Content-type: text/html\n\n"
+print ("Content-type: text/html\n\n")
 #
-# ---------------------------------------------------------------
 array_bb = parse_parameter ()
 #
 for it in range (len(array_bb)):
 	id_in = array_bb[it]['id']
-	population_in = string.atoi (array_bb[it]['population'])
-	print "id_in = %s<br />" % id_in
-	print "population_in = %d<br />" % population_in
-	print "check bbbbbbb<br />"
+	population_in = int (array_bb[it]['population'])
+	print ("id_in = %s<br />" % id_in)
+	print ("population_in = %d<br />" % population_in)
 	mongo_update_proc	(db,id_in,population_in)
-	print "check cccccc<br />"
 #
 #
+print ("OK<br />")
 #
-print "OK<br />"
-#
+# ---------------------------------------------------------------

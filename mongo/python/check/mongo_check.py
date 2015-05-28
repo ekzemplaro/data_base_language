@@ -3,26 +3,23 @@
 #
 #	mongo_read.py
 #
-#				May/10/2010
+#				May/12/2015
 #
 import	sys
 import pymongo
 #
-sys.path.append ('/var/www/uchida/data_base/common/python_common')
+sys.path.append ('/var/www/data_base/common/python_common')
 from mongo_manipulate import mongo_display_proc
-from mongo_manipulate import mongo_to_json_proc
 # -------------------------------------------------------------------
 #
-print	"*** start ***\n" 
+print	("*** start ***\n")
 #
-print sys.path
+print (sys.path)
 #
-connection = pymongo.Connection("cpt003", 27017)
-db = connection.city_db
+client = pymongo.MongoClient()
+db = client['city_db']
 #
 mongo_display_proc (db)
 #
-str_json = mongo_to_json_proc (db)
-print str_json
-print	"*** end ***\n" 
+print	("*** end ***\n")
 # -------------------------------------------------------------------

@@ -3,7 +3,7 @@
 #
 #	mongo_create.py
 #
-#						Sep/02/2013
+#						May/12/2015
 #
 # -------------------------------------------------------------
 import	sys
@@ -17,15 +17,15 @@ import pymongo
 def	data_prepare_proc ():
 	dict_aa = {} 
 #
-	dict_aa = dict_append_proc (dict_aa,'t1161',u'さいたま'.encode ('utf-8'),59176,'2003-4-30')
-	dict_aa = dict_append_proc (dict_aa,'t1162',u'所沢'.encode ('utf-8'),47235,'2003-5-10')
-	dict_aa = dict_append_proc (dict_aa,'t1163',u'越谷'.encode ('utf-8'),21654,'2003-6-14')
-	dict_aa = dict_append_proc (dict_aa,'t1164',u'久喜'.encode ('utf-8'),83672,'2003-9-9')
-	dict_aa = dict_append_proc (dict_aa,'t1165',u'熊谷'.encode ('utf-8'),42391,'2003-8-4')
-	dict_aa = dict_append_proc (dict_aa,'t1166',u'秩父'.encode ('utf-8'),35187,'2003-1-21')
-	dict_aa = dict_append_proc (dict_aa,'t1167',u'川越'.encode ('utf-8'),81246,'2003-7-23')
-	dict_aa = dict_append_proc (dict_aa,'t1168',u'和光'.encode ('utf-8'),29784,'2003-10-26')
-	dict_aa = dict_append_proc (dict_aa,'t1169',u'新座'.encode ('utf-8'),75823,'2003-12-15')
+	dict_aa = dict_append_proc (dict_aa,'t1161','さいたま',51276,'2003-4-30')
+	dict_aa = dict_append_proc (dict_aa,'t1162','所沢',89265,'2003-5-10')
+	dict_aa = dict_append_proc (dict_aa,'t1163','越谷',21654,'2003-6-14')
+	dict_aa = dict_append_proc (dict_aa,'t1164','久喜',53672,'2003-9-9')
+	dict_aa = dict_append_proc (dict_aa,'t1165','熊谷',42391,'2003-8-4')
+	dict_aa = dict_append_proc (dict_aa,'t1166','秩父',35187,'2003-1-21')
+	dict_aa = dict_append_proc (dict_aa,'t1167','川越',81246,'2003-7-23')
+	dict_aa = dict_append_proc (dict_aa,'t1168','和光',29714,'2003-10-26')
+	dict_aa = dict_append_proc (dict_aa,'t1169','新座',75823,'2003-12-15')
 #
 	return	dict_aa
 #

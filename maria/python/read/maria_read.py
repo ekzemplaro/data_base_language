@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 #	maria_read.py
-#					Nov/14/2011
+#					May/26/2015
 #
 import sys
 #
@@ -19,7 +19,9 @@ print ("*** 開始 ***")
 cnx = mysql.connector.connect(user='scott', password='tiger', \
                               host='localhost',database='city')
 #
-cursor = cnx.cursor ()
+# cursor = cnx.cursor ()
+cursor = cnx.cursor (dictionary=True)
+#
 #
 dict_aa = sql_to_dict_proc (cursor)
 #

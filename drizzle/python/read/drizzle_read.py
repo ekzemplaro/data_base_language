@@ -1,4 +1,4 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	drizzle_read.py
@@ -6,8 +6,6 @@
 #						Jul/06/2012
 #
 import	sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
 #
 sys.path.append ('/var/www/data_base/common/python_common')
 from text_manipulate import dict_display_proc

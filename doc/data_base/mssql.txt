@@ -102,6 +102,7 @@ Python<p />
 Arch Linux<br />
 	<blockquote>
 	# pacman -S python-pip<p />
+	# pacman -S freetds<p />
 	# pip install pymssql<p />
 		再インストール<br />
 		<blockquote>

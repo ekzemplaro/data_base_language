@@ -43,7 +43,7 @@ puts coll.getCount()
 coll.drop()
 
 mongo_create_proc(coll,"t1161","さいたま",49571,"2007-6-14")
-mongo_create_proc(coll,"t1162","所沢",75286,"2007-5-27")
+mongo_create_proc(coll,"t1162","所沢",49286,"2007-5-27")
 mongo_create_proc(coll,"t1163","越谷",26435,"2007-2-3")
 mongo_create_proc(coll,"t1164","久喜",32641,"2007-9-14")
 mongo_create_proc(coll,"t1165","熊谷",43783,"2007-3-17")

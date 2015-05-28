@@ -1,7 +1,7 @@
 <meta content="Program Language Examples to connect to Cassandra" name="description">
 <meta content="Cassandra,クライアント,接続,言語,サンプル" name="keyword">
 <meta content="Uchida Masatomo" name="author">
-<title>cassandra Nov/06/2013</title>
+<title>cassandra May/12/2015</title>
 </head>
 <body>
 <h1><a href="http://cassandra.apache.org/">Cassandra</a></h1>
@@ -107,4 +107,10 @@ Java<p />
 	log4j-1.2.16.jar<br />
 slf4j-api-1.7.2.jar<br />
 	slf4j-log4j12-1.7.2.jar<br />
+</blockquote>
+
+<hr />
+Arch Linux<br />
+<blockquote>
+$ yaourt -Sb cassandra<p />
 </blockquote>

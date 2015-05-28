@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 #	read/sqlite3_read.py
-#					Jul/29/2014
+#					May/26/2015
 #
 # ------------------------------------------------------------------
 import	sys
@@ -16,7 +16,8 @@ print ("*** 開始 ***")
 #
 file_in=sys.argv[1]
 conn = sqlite3.connect (file_in)
-conn.text_factory=str
+# conn.text_factory=str
+conn.row_factory = sqlite3.Row
 #
 cursor = conn.cursor ()
 #

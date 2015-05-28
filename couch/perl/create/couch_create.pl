@@ -41,7 +41,7 @@ sub data_prepare_proc
 	my %dict_aa;
 
 	%dict_aa = text_manipulate::dict_append_proc
-		('t2021','長野',75342,'2005-6-22',%dict_aa);
+		('t2021','長野',75142,'2005-6-22',%dict_aa);
 	%dict_aa = text_manipulate::dict_append_proc
 		('t2022','松本',14278,'2005-9-15',%dict_aa);
 	%dict_aa = text_manipulate::dict_append_proc

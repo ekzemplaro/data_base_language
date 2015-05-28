@@ -29,7 +29,7 @@ begin
 	unit_aa['date_mod'] = Date.today
 	json_new=JSON.generate(unit_aa)
 	puts json_new
-	server.put(target,json_new)
+#	server.put(target,json_new)
 rescue
 	puts "*** not exist ***"
 end

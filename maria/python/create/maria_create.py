@@ -12,7 +12,7 @@ import	mysql.connector
 #
 sys.path.append ('/var/www/data_base/common/python_common')
 from text_manipulate import dict_append_proc
-from sql_manipulate import sql_display_proc,sql_update_proc, \
+from sql_manipulate import sql_update_proc, \
 		table_insert_proc,sql_insert_proc, \
 		create_table_proc,drop_table_proc
 #
@@ -21,8 +21,8 @@ def	data_prepare_proc ():
 #
 	dict_aa = {} 
 #
-	dict_aa = dict_append_proc (dict_aa,'t3321','岡山',589176,'2003-9-20')
-	dict_aa = dict_append_proc (dict_aa,'t3322','倉敷',794835,'2003-2-15')
+	dict_aa = dict_append_proc (dict_aa,'t3321','岡山',529176,'2003-9-20')
+	dict_aa = dict_append_proc (dict_aa,'t3322','倉敷',791835,'2003-2-15')
 	dict_aa = dict_append_proc (dict_aa,'t3323','津山',163754,'2003-8-18')
 	dict_aa = dict_append_proc (dict_aa,'t3324','玉野',369172,'2003-1-9')
 	dict_aa = dict_append_proc (dict_aa,'t3325','笠岡',237451,'2003-3-4')
@@ -49,8 +49,6 @@ create_table_proc (cursor)
 table_insert_proc (cursor,dict_aa)
 #
 conn.commit ()
-#
-sql_display_proc (cursor)
 #
 cursor.close ()
 conn.close ()

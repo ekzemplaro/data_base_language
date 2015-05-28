@@ -3,11 +3,11 @@
 #
 #	redis_delete.py
 #
-#					Apr/11/2013
+#					May/28/2015
 #
 import	sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
+# reload(sys)
+# sys.setdefaultencoding('utf-8')
 #
 #
 import redis.clients.jedis.Jedis

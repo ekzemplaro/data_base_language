@@ -3,13 +3,13 @@
 #
 #	csv_create.py
 #
-#					Jul/02/2011
+#					May/27/2015
 #
 import	sys
 #
-sys.path.append ('/var/www/data_base/common/python_common')
-from text_manipulate import csv_write_proc
-from text_manipulate import dict_append_proc
+sys.path.append ('/var/www/data_base/common/jython_common')
+from jython_text_manipulate import csv_write_proc
+from jython_text_manipulate import dict_append_proc
 #
 # -------------------------------------------------------------------------
 def	data_prepare_proc ():

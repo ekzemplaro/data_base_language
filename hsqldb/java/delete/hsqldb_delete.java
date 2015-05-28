@@ -2,7 +2,7 @@
 /*
 	java/delete/hsqldb_delete.java
 
-					May/30/2011
+					May/26/2015
 
 */
 // ----------------------------------------------------------------------
@@ -38,8 +38,6 @@ public static void main (String[] args)
 	Statement ss = conn.createStatement ();
 
 	rdb_common.delete_proc	(conn,id);
-
-	rdb_common.display_proc	(conn);
 
 	conn.close ();
 

@@ -2,12 +2,11 @@
 #
 #	text_manipulate.py
 #
-#					Sep/29/2014
+#					May/26/2015
 import	sys
 import	string
 import	datetime
 #
-from to_utf8 import to_utf8_proc
 # ---------------------------------------------------------------
 def	text_read_proc	(file_in):
 #

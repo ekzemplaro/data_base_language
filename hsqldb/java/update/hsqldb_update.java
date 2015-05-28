@@ -2,7 +2,7 @@
 /*
 	java/update/hsqldb_update.java
 
-					May/30/2011
+					May/26/2015
 
 */
 // ----------------------------------------------------------------------
@@ -40,9 +40,6 @@ public static void main (String[] args)
 	Statement ss = conn.createStatement ();
 
 	rdb_common.update_proc	(conn,id,population);
-
-
-	rdb_common.display_proc	(conn);
 
 	conn.close ();
 

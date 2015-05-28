@@ -17,15 +17,12 @@ sys.path.append ('/var/www/data_base/common/jython_common')
 from jython_file_io import file_to_str_proc
 from jython_ftp_manipulate import ftp_get_proc
 from jython_ftp_manipulate import ftp_put_proc
-#
-sys.path.append ('/var/www/data_base/common/python_common')
-from text_manipulate import dict_update_proc
-#
+from jython_text_manipulate import dict_update_proc
 #
 # -------------------------------------------------------------
 print	("*** 開始 ***")
 id_in = sys.argv[1]
-population_in = string.atoi (sys.argv[2])
+population_in = int (sys.argv[2])
 print ("%s\t%d" % (id_in, population_in))
 #
 server='host_dbase'

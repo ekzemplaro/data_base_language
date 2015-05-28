@@ -65,6 +65,8 @@ Python<p />
 <pre>
 ii  python-pymongo   2.2-4   amd64    Python interface to the MongoDB document-oriented database
 </pre>
+
+# pacman -S python-pymongo<p />
 </blockquote>
 
 Perl<p />
@@ -129,4 +131,7 @@ Arch Linux<br />
 <blockquote>
 # pacman -S mongodb<p />
 # pacman -S php-mongo<p />
+# pacman -S python-pymongo<p />
+$ yaourt -Sb ruby-mongo<p />
+$ yaourt -Sb ruby-bson_ext<p />
 </blockquote>

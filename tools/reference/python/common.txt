@@ -2,6 +2,7 @@ calc_manipulate.py
 cassandra_manipulate.py
 cdb_manipulate.py
 cgi_manipulate.py
+couch_manipulate.py
 curl_get.py
 db2_disp.py
 dbm_manipulate.py
@@ -19,6 +20,8 @@ mongo_manipulate.py
 mysql_utf8.py
 neo4j_manipulate.py
 pdf_manipulate.py
+python_proxy_get.py
+riak_manipulate.py
 sql_manipulate.py
 sql_to_json.py
 text_manipulate.py

@@ -197,7 +197,32 @@ $ psql -h nlf132 -U scott city<p />
 $ psql -h localhost -U scott city<p />
 
 <hr />
+Arch Linux<br />
+<blockquote>
 # pacman -S postgresql<p />
+# passwd postgres<br />
+<blockquote>
+/etc/locale.gen<p />
+# locale-gen<br />
+</blockquote>
 $ su postgres<p />
-# initdb --locale en_US.UTF-8 -E UTF8 -D '/var/lib/postgres/data'<p />
+$ initdb --locale en_US.UTF-8 -E UTF8 -D '/var/lib/postgres/data'<p />
 # systemctl start postgresql<p />
+</blockquote>
+
+<hr />
+Export<br />
+<blockquote>
+pg_dump -U USERNAME DBNAME > dbexport.pgsql<br />
+<br />
+pg_dump -U scott city > dbexport.pgsql<br />
+</blockquote>
+
+Import<br />
+<blockquote>
+psql -U USERNAME DBNAME < dbexport.pgsql<br />
+<br />
+createdb city<br />
+psql -U scott city < dbexport.pgsql<br />
+</blockquote>
+<hr />

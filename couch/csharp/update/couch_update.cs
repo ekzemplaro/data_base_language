@@ -1,7 +1,7 @@
 // ------------------------------------------------------------------
 //	couch_update.cs
 //
-//					Jul/24/2014
+//						May/07/2015
 //
 // ------------------------------------------------------------------
 using System;
@@ -30,19 +30,6 @@ static void Main (string[] args)
 	string password = "";
 
 	string str_json = get_uri.get_uri_proc (url_target,user,password);
-
-/*
-
-Dictionary <string,Object> unit_aa
-		= JsonConvert.DeserializeObject
-			<Dictionary <string,Object>> (str_json);
-
-	Object idx = unit_aa["_id"];
-	Object revx = unit_aa["_rev"];
-
-	Console.WriteLine (idx);
-	Console.WriteLine (revx);
-*/
 
 	String json_new = kvalue_manipulate.json_update_proc
 			(key_in,population_in,str_json);

@@ -2,7 +2,7 @@
 /*
 	couch_create.cpp
 
-				Mar/04/2014
+					May/07/2015
 */
 // --------------------------------------------------------------------
 #include	<iostream>
@@ -57,8 +57,7 @@ int main (int argc,char *argv[])
 {
 	cerr << "*** 開始 ***\n";
 
-//	char url_collection[] = "http://host_dbase:5984/city";
-	char url_collection[] = "http://cddn007:5984/city";
+	char url_collection[] = "http://localhost:5984/nagano";
 	char url_target[160];
 
 	strcpy (url_target,url_collection);
@@ -74,10 +73,23 @@ cerr << "*** caa ***\n";
 
 	cout << "要素数：" << (unsigned int)dict_aa.size() << endl;
 
-	string str_json = dict_to_json_proc (dict_aa);
+map <string,Unit>:: iterator it = dict_aa.begin ();
+
+	while (it != dict_aa.end ())
+		{
+		Unit unit_aa = (*it).second;
+
+		cout << (*it).first << "\t";
+		cout << unit_aa["name"] << "\t";
+		cout << unit_aa["population"] << "\t";
+		cout << unit_aa["date_mod"] << endl;
+
+		it++;
+		}
+//	string str_json = dict_to_json_proc (dict_aa);
 
 cerr << "*** daa ***\n";
-	curl_put_proc (url_target,str_json);
+//	curl_put_proc (url_target,str_json);
 cerr << "*** eaa ***\n";
 
 	cerr << "*** 終了 ***\n";

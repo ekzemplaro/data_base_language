@@ -3,23 +3,23 @@
 #
 #	update/text_update.py
 #
-#					Jun/09/2011
+#					May/27/2015
 import	sys
 import	string
 import	datetime
 #
 # ---------------------------------------------------------------
-sys.path.append ('/var/www/data_base/common/python_common')
-from text_manipulate import text_read_proc
-from text_manipulate import text_write_proc
-from text_manipulate import dict_update_proc
+sys.path.append ('/var/www/data_base/common/jython_common')
+from jython_text_manipulate import text_read_proc
+from jython_text_manipulate import text_write_proc
+from jython_text_manipulate import dict_update_proc
 # ---------------------------------------------------------------
 #
 print ("*** 開始 ***")
 #
 file_in = sys.argv[1]
 id_in = sys.argv[2]
-population_in = string.atoi (sys.argv[3])
+population_in = int (sys.argv[3])
 print ("%s\t%d" % (id_in, population_in))
 
 dict_aa = text_read_proc	(file_in)

@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>github の使い方 Jan/29/2015</title>
+<title>github の使い方 May/26/2015</title>
 </head>
 <body>
 <h2>github の使い方</h2><p />
@@ -17,7 +17,7 @@ $ git clone https://github.com/ekzemplaro/data_base_language<p />
 
 To update the data<p />
 <blockquote>
-cd data_base_language<p />
+$ cd data_base_language<p />
 $ git add --all<p />
 $ git commit -m "commit Jan/29/2015"<p />
 $ git push -u origin master<p />
@@ -27,13 +27,23 @@ Client<p />
 <blockquote>
 To synchronize data<p />
 <blockquote>
-cd data_base_language<p />
+$ cd data_base_language<p />
 $ git pull<p />
 </blockquote>
 </blockquote>
 
+To create a repository<p />
+<blockquote>
+$ echo "# ekimae_ryokuka" >> README.md<br />
+$ git init<br />
+$ git add README.md<br />
+$ git commit -m "first commit"<br />
+$ git remote add originhttps://github.com/ekzemplaro/ekimae_ryokuka.git<br />
+$ git push -u origin master<br />
+</blockquote>
+
 <hr />
 <a href="/data_base/">Return</a><p />
-Jan/29/2015 AM 08:15<p />
+May/26/2015 AM 08:15<p />
 </body>
 </html>

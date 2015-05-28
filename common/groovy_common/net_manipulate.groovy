@@ -1,7 +1,7 @@
 // ---------------------------------------------------------------------
 //	net_manipulate.groovy
 //
-//					Mar/13/2013
+//					May/06/2015
 //
 // ---------------------------------------------------------------------
 import org.apache.commons.httpclient.HttpClient
@@ -23,7 +23,8 @@ static String get_uri_proc (uri_in,type_in)
  get.setRequestHeader("Accept", "text/xml")
 	client.executeMethod(get)
 
-	def json_str = get.getResponseBodyAsString().toString()
+//	def json_str = get.getResponseBodyAsString().toString()
+	def json_str = get.getResponseBodyAsString(1024 * 8).toString()
 
 	return	json_str
 }

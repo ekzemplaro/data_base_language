@@ -1,8 +1,8 @@
-#! /usr/bin/ruby1.8
+#! /usr/bin/ruby
 #
 #	mongo_read_ruby.rb
 #
-#					Mar/18/2013
+#					May/12/2015
 require 'rubygems'
 require 'mongo'
 include Mongo

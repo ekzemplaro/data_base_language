@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>Gentoo May/09/2014</title>
+<title>Gentoo May/27/2015</title>
 </head>
 <body>
 <h2>Gentoo のインストール</h2><p />
@@ -38,16 +38,27 @@
 sshd の設定<p />
 <blockquote>
 	手動で起動<br />
-	/etc/init.d/sshd start<p />
+	# /etc/init.d/sshd start<p />
 
 	自動で起動<br />
-	rc-update add sshd default<p />
+	# rc-update add sshd default<p />
 </blockquote>
 
+nginx の設定<p />
+<blockquote>
+# emerge nginx<p />
+/etc/nginx/nginx.conf の設定<br />
+	<blockquote>
+	listen 80;<p />
+	root /var/www;<p />
+	</blockquote>
+	# /etc/init.d/nginx start<p />
+	# rc-update add nginx default<p />
+</blockquote>
 
 apache2 の設定<p />
-emerge apache<br />
 <blockquote>
+# emerge apache<p />
 /etc/hosts の設定<br />
 	<blockquote>
 	172.20.208.93	host004<br />
@@ -58,21 +69,21 @@ emerge apache<br />
 	</blockquote>
 apache2 の起動<br />
 	<blockquote>
-	/etc/init.d/apache2 start<br />
+	# /etc/init.d/apache2 start<br />
 	</blockquote>
 /var/www/localhost/htdocs/index.html が表示される。<br />
 </blockquote>
 
 nfs サーバーの設定<p />
-emerge -av nfs-utils<br />
 <blockquote>
+	# emerge -av nfs-utils<p />
 /etc/exports の設定<br />
 	<blockquote>
 <pre>
 	# /etc/exports: NFS file systems being exported.  See exports(5).
-/tmp    nlf132(async,rw,no_subtree_check) cddn007(async,rw,no_subtree_check)
-/home/uchida    nlf132(async,rw,no_subtree_check) cddn007(async,rw,no_subtree_check)
-/var/www   nlf132(async,rw,no_subtree_check) cddn007(async,rw,no_subtree_check)
+/tmp    host_aa(async,rw,no_subtree_check) host_bb(async,rw,no_subtree_check)
+/home/uchida    host_aa(async,rw,no_subtree_check) host_bb(async,rw,no_subtree_check)
+/var/www   host_aa(async,rw,no_subtree_check) host_bb(async,rw,no_subtree_check)
 </pre>
 #
 	</blockquote>
@@ -87,18 +98,20 @@ nfs の起動<br />
 </blockquote>
 
 couch サーバーの設定<p />
-# emerge couchdb<br />
 	<blockquote>
-/etc/couchdb/default.ini<br />
-	<blockquote>
-	bind_address = 0.0.0.0<br />
-	allow_jsonp = true<br />
-	</blockquote>
+	# emerge couchdb<p />
+	/etc/couchdb/default.ini<br />
+		<blockquote>
+		bind_address = 0.0.0.0<br />
+		allow_jsonp = true<br />
+		</blockquote>
+	# /etc/init.d/couchdb start<p />
+	# rc-update add couchdb default<p />
 	</blockquote>
 
-sudo の設定< p />
-# emerge sudo<br />
+sudo の設定<p />
 	<blockquote>
+	# emerge sudo<p />
 	# visudo<p />
 	<blockquote>
 		%wheel ALL=(ALL) ALL<br />
@@ -107,9 +120,126 @@ sudo の設定< p />
 	</blockquote>
 	</blockquote>
 Java のインストール<p />
-# emerge jdk jre<br />
+	<blockquote>
+	# emerge jdk jre<p />
+	</blockquote>
+<hr />
+<a href = "https://wiki.gentoo.org/wiki/Installation_alternatives/ja#Installing_Gentoo_from_an_existing_Linux_distribution">代替のインストール方法</a><p />
+<a href = "https://wiki.gentoo.org/wiki/Handbook:X86/Installation/Base">
+Handbook:X86/Installation/Base</a><p />
+<blockquote>
+Installing Gentoo from an existing Linux distribution<p />
+</blockquote>
+フォルダーの作成<br />
+<blockquote>
+# mkfs -t ext4 /dev/sda7<br />
+# mkdir /mnt/gentoo<br />
+# mkdir /mnt/gentoo/boot<br />
+# mkdir /mnt/gentoo/proc<br />
+# mkdir /mnt/gentoo/dev<br />
+</blockquote>
+<br />
+マウント<br />
+<blockquote>
+# mount /dev/sda7 /mnt/gentoo<br />
+# mount -t proc none /mnt/gentoo/proc<br />
+# mount --rbind /dev /mnt/gentoo/dev<br />
+# mount --rbind /sys /mnt/gentoo/sys<br />
+</blockquote>
+<br />
+# cd /mnt/gentoo<br />
+# wget ftp://ftp.jaist.ac.jp/pub/Linux/Gentoo/releases/amd64/autobuilds/20150514/stage3-amd64-20150514.tar.bz2<br />
+# tar xvfpj stage3-amd64-20150514.tar.bz2<br />
+# wget http://ftp.jaist.ac.jp/pub/Linux/Gentoo/snapshots/portage-latest.tar.bz2<br />
+# tar xvfj portage-latest.tar.bz2 -C /mnt/gentoo/usr<br />
+# cp -L /etc/resolv.conf /mnt/gentoo/etc/<br />
+# chroot /mnt/gentoo /bin/bash<br />
+# source  /etc/profile<br />
+<br />
+# emerge-webrsync<br />
+# emerge --sync<br />
+<br />
+カーネルのコンパイル<br />
+<blockquote>
+# emerge --ask sys-kernel/gentoo-sources<br />
+# emerge --ask sys-apps/pciutils<br />
+# cd /usr/src/linux<br />
+# make menuconfig<br />
+# make && make modules_install<br />
+# make install<br />
+</blockquote>
+
+<br />
+DHCP の設定<br />
+<blockquote>
+# emerge --ask --noreplace net-misc/netifrc<br />
+
+/etc/conf.d/net<br />
+<blockquote>
+config_eth0="dhcp"
+</blockquote>
+</blockquote>
+
+固定アドレス<br />
+<blockquote>
+/etc/conf.d/net<br />
+	<blockquote>
+	config_enp0s25="172.20.205.241/21"<br />
+	routes_enp0s25="default via 172.20.205.254"<br />
+	</blockquote>
+# cd /etc/init.d<br />
+# ln -s net.lo net.enp0s25<br />
+# /etc/init.d net.enp0s25 restart<br />
+# rc-update add net.enp0s25 default<br />
+</blockquote>
+
+# emerge vim<br />
+# passwd<br />
+
+<br />
+/etc/fstab<br />
+<br />
+# emerge sys-boot/grub<br />
+# grub2-install /dev/sda<br />
+# grub2-mkconfig -o /boot/grub/grub.cfg<br />
+
+<hr />
+カーネルがネットワークカードを認識しているか。<br />
+<blockquote>
+# ifconfig -a<br />
+</blockquote>
+ユーザーの作成<br />
+<blockquote>
+# useradd -m -G users,wheel,audio -s /bin/bash john<br />
+</blockquote>
+
+SSH Server<br />
+<blockquote>
+# emerge --ask --changed-use net-misc/openssh<br />
+# rc-update add sshd default<br />
+# /etc/init.d/sshd start<br />
+</blockquote>
+ホスト名の設定<br />
+<blockquote>
+	/etc/conf.d/hostname<br />
+	<blockquote>
+	hostname="gentoo_001"
+	</blockquote>
+</blockquote>
+
+LDAP クライアント<br />
+<blockquote>
+# emerge --ask --verbose openldap pam_ldap nss_ldap<p />
+
+/etc/openldap/ldap.conf<p />
+
+/etc/nsswitch.conf<p />
+</blockquote>
+
+<hr />
+<a href="./postgre">PostgreSQL</a><p />
 <hr />
 <a href="/data_base/">Return</a><p />
-May/09/2014 AM 08:15<p />
+May/27/2015 AM 08:15<p />
 </body>
 </html>

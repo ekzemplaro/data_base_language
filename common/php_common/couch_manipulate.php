@@ -2,37 +2,32 @@
 // --------------------------------------------------------------------
 //	php_common/couch_manipulate.php
 //
-//					Sep/17/2012
+//						May/06/2015
 //
 //
 // --------------------------------------------------------------------
-function delete_all_proc ($url_collection)
+function couch_to_dict_proc ($url_collection)
 {
-$url_target = $url_collection . "/cities";
+	$dict_aa = array ();
 
-print	"url_target = " .$url_target . "\n";
+	$url_all_docs = $url_collection . "/_all_docs?include_docs=true";
 
-$json_list = curl_get_proc ($url_collection . "/_all_docs");
+	$json_string = curl_get_proc ($url_all_docs);
 
-$root=json_decode ($json_list);
+	$list_aa = json_decode ($json_string,true);
 
-echo $root->total_rows . "\n";
+	$rows = $list_aa['rows'];
 
-foreach ($root->rows as $record)
-	{
-	if ($record->id == "cities")
+	foreach ($rows as $unit)
 		{
-		echo $record->id . "\t";
-		echo $record->value->rev . "\t";
-		echo "\n";
-		$url_delete = $url_target . "?rev=" . $record->value->rev;
-		curl_delete_proc ($url_delete);
+		$key = $unit['key'];
+		$unit_aa = $unit['doc'];
 
-		echo $url_delete . " *** deleted\n";
-		break;
+		$dict_aa = dict_append_proc ($dict_aa,$key,$unit_aa['name']
+			,$unit_aa['population'],$unit_aa['date_mod']);
 		}
-	}
 
+	return $dict_aa;
 }
 
 // --------------------------------------------------------------------

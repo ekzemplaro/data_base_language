@@ -3,7 +3,7 @@
 # --------------------------------------------------------------
 #	jython_get_uri.py
 #
-#					Aug/21/2013
+#					May/28/2015
 # --------------------------------------------------------------
 import	httplib
 from org.apache.commons.httpclient import HttpClient
@@ -21,14 +21,14 @@ def get_uri_proc (host,path):
 	return	str_aaa
 # --------------------------------------------------------------
 def rest_put_proc (uri_aa,str_data_in,type_in):
-	print ("*** rest_put_proc ***")
+#	print ("*** rest_put_proc ***")
 	put = PutMethod (uri_aa)
 	entity = StringRequestEntity (str_data_in, type_in, "UTF-8")
 	put.setRequestEntity (entity)
 
 	httpclient = HttpClient()
 	result = httpclient.executeMethod(put)
-	print ("Response status code: %d" % result)
+#	print ("Response status code: %d" % result)
 	put.releaseConnection()
 
 # --------------------------------------------------------------

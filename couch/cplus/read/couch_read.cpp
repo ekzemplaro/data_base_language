@@ -22,13 +22,18 @@ int main (int argc,char *argv[])
 	cerr << "*** 開始 ***\n";
 
 //	char url_target[] = "http://host_dbase:5984/city/cities";
-	char url_target[] = "http://cddn007:5984/city/cities";
+//	char url_target[] = "http://cddn007:5984/city/cities";
+	char url_target[] = "http://localhost:5984/nagano/_all_docs?include_docs=true";
 
+	cerr << "*** aaa ***\n";
 	string str_json = url_get_proc (url_target);
+	cerr << "*** bbb ***\n";
 
+/*
 	map <string,Unit> dict_aa = json_to_dict_proc (str_json);
 
 	dict_display_proc (dict_aa);
+*/
 
 	cerr << "*** 終了 ***\n";
 

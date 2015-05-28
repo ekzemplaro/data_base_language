@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>rsync Apr/02/2015</title>
+<title>rsync May/25/2015</title>
 </head>
 <body>
 <h2>rsync</h2><p />
@@ -13,6 +13,11 @@
 host_remote のフォルダーを同期する。<p />
 <blockquote>
 rsync -avz --delete uchida@host_remote:tmp/jul04_2014/ /home/uchida/tmp/jul04_2014<p />
+</blockquote>
+
+host_remote のフォルダーへ同期する。<p />
+<blockquote>
+rsync -avz --delete /home/uchida/tmp/may25_2015/ uchida@host_remote:tmp/may25_2015<p />
 </blockquote>
 
 ssh のポートが 2222 の時<p />
@@ -58,6 +63,7 @@ rsync サーバーとの同期<p />
 rsync -avz --delete rsync://host_rsync/ftp/ /tmp/ftp<p />
 rsync -avz --delete rsync://host_rsync/var_tmp/json/ /var/tmp/json<p />
 rsync -avz --delete rsync://host_rsync/var_tmp/xml_file/ /var/tmp/xml_file<p />
+rsync -avz --delete --no-perms rsync://host_rsync/var_tmp/xml_file/ /var/tmp/xml_file<p />
 </blockquote>
 <hr />
 Ubuntu での設定<br />
@@ -82,6 +88,6 @@ rsync error: error starting client-server protocol (code 5) at main.c(1635) [Rec
 </blockquote>
 <hr />
 <a href="/data_base/">Return</a><p />
-Apr/02/2015 AM 08:15<p />
+May/25/2015 AM 08:15<p />
 </body>
 </html>

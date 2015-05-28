@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>ubuntu Apr/24/2015</title>
+<title>ubuntu May/26/2015</title>
 </head>
 <body>
 <h2>ubuntu</h2><p />
@@ -58,17 +58,49 @@ E: いくつかのインデックスファイルのダウンロードに失敗�
 	# mkdir /var/lib/apt/lists/partial<br />
 	</blockquote>
 </blockquote>
-Ubuntu 14.10 から Ubuntu 15.04 へのアップグレード<br />
+Ubuntu 15.04 へのアップグレード<br />
 	<blockquote>
 	# update-manager<p />
 	Or<br />
 	# do-release-upgrade -d<p />
+
+		<blockquote>
+		 /etc/update-manager/release-upgrades
+			<blockquote>
+			Prompt=normal<br />
+			</blockquote>
+		</blockquote>
 	</blockquote>
+
+DHCP の設定<br />
+	<blockquote>
+	/etc/network/interface<br />
+		<blockquote>
+		auto eth0<br />
+		iface eth0 inet dhcp<br />
+		</blockquote>
+	# ifup eth0
+	</blockquote>
+
+固定アドレス<br />
+	<blockquote>
+	/etc/network/interface<br />
+		<blockquote>
+		auto eth0<br />
+		iface eth0 inet static<br />
+		address 172.20.208.216<br />
+		netmask 255.255.0.0<br />
+		network 172.20.0.0<br />
+		gateway 172.20.208.1<br />
+		dns-nameservers 172.20.248.8<br />
+		</blockquote>
+	</blockquote>
+
 <hr />
 <a href="environment/">environment for Ubuntu</a><br />
 <a href="environment/installed_target.txt">installed on Ubuntu</a><br />
 <hr />
 <a href="/data_base/">Return</a><p />
-Apr/24/2015 AM 08:15<p />
+May/26/2015 AM 08:15<p />
 </body>
 </html>

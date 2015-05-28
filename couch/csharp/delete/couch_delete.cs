@@ -1,13 +1,12 @@
 // ------------------------------------------------------------------
 //	couch_delete.cs
 //
-//					Jul/24/2014
+//						May/07/2015
 //
 // ------------------------------------------------------------------
 using System;
 using System.IO;
 using System.Text;
-// using System.Net;
 using System.Collections.Generic;
 
 using Newtonsoft.Json;
@@ -52,16 +51,7 @@ static void Main (string[] args)
 		Console.WriteLine ("*** error ***");
 		Console.WriteLine (ee);
 		}
-/*
-		dict_aa.Remove (key_in);
 
-		string str_json_out = JsonConvert.SerializeObject (dict_aa);
-
-//	Console.WriteLine (str_json_out);
-
-		get_uri.put_uri_string_proc (url,str_json_out,user,password);
-		}
-*/
 	Console.WriteLine ("*** 終了 ***");
 }
 

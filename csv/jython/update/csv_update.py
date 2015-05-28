@@ -3,16 +3,16 @@
 #
 #	update/csv_update.py
 #
-#					Jul/02/2011
+#					May/27/2015
 import	sys
 import	string
 import	datetime
 #
 # ---------------------------------------------------------------
-sys.path.append ('/var/www/data_base/common/python_common')
-from text_manipulate import csv_read_proc
-from text_manipulate import csv_write_proc
-from text_manipulate import dict_update_proc
+sys.path.append ('/var/www/data_base/common/jython_common')
+from jython_text_manipulate import csv_read_proc
+from jython_text_manipulate import csv_write_proc
+from jython_text_manipulate import dict_update_proc
 # ---------------------------------------------------------------
 #
 print ("*** 開始 ***")

@@ -3,7 +3,7 @@
 #
 #	mongo_python_read.py
 #
-#					Jun/25/2012
+#					May/12/2015
 #
 # ----------------------------------------------------------------
 import	sys
@@ -25,8 +25,8 @@ def json_str_gen_proc ():
 	return	str_aa
 # ---------------------------------------------------------------------
 #
-connection = pymongo.Connection("localhost", 27017)
-db = connection.city_db
+client = pymongo.MongoClient()
+db = client['city_db']
 #
 #json_str = json_str_gen_proc ()
 #print	json_str
@@ -35,7 +35,7 @@ dict_aa = mongo_to_dict_proc (db)
 #
 str_aa = json.dumps (dict_aa)
 #
-print "Content-type: text/json\n\n"
-print	str_aa
+print ("Content-type: text/json\n\n")
+print	(str_aa)
 #
 # ----------------------------------------------------------------

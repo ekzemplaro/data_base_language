@@ -1,7 +1,7 @@
 // ------------------------------------------------------------------
 //	read/couch_read.cs
 //
-//					Jul/24/2014
+//					May/07/2015
 //
 // ------------------------------------------------------------------
 using System;
@@ -25,7 +25,7 @@ static void Main (string[] args)
 	string user = "";
 	string password = "";
 
-	string url_all_docs = url + "/_all_docs";
+	string url_all_docs = url + "/_all_docs?include_docs=true";
 
 	string str_json = get_uri.get_uri_proc (url_all_docs,user,password);
 
@@ -40,9 +40,8 @@ static void Main (string[] args)
 	for (int it=0; it< bbb_pp.Count; it++)
 		{
 		string key = bbb_pp[it]["key"].ToString ();
-		string url_target = url + "/" + key;
-		string str_unit = get_uri.get_uri_proc
-				(url_target,user,password);
+
+		string str_unit = bbb_pp[it]["doc"].ToString ();
 		kvalue_manipulate.out_record_proc (key,str_unit);
 		}
 

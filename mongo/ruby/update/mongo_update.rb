@@ -1,9 +1,9 @@
-#! /usr/bin/ruby1.8
+#! /usr/bin/ruby
 # -*- coding: utf-8 -*-
 #
 #	update/mongo_update.rb
 #
-#					Mar/18/2013
+#					May/12/2015
 #
 require	'rubygems'
 require 'date'
@@ -27,8 +27,6 @@ coll = db.collection(col_name)
 print "coll.count = ",coll.count(),"\n"
 #
 mongo_update_proc(coll,id_in,population_in)
-#
-mongo_display_proc (coll)
 #
 print "coll.count = ",coll.count(),"\n"
 print "*** 終了 ***\n"

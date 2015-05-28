@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+<title>Arch Nginx May/28/2015</title>
+</head>
+<body>
+
+<h2>nginx の設定</h2><p />
+<blockquote>
+
+</blockquote>
+
+<blockquote>
+インストール<br />
+	<blockquote>
+	# pacman -S nginx<br />
+	# pacman -S php-fpm<br />
+	# pacman -S fcgiwrap<br />
+	</blockquote>
+</blockquote>
+<blockquote>
+nginx の起動<br />
+	<blockquote>
+	# systemctl start nginx<p />
+	/usr/share/nginx/html/index.html が表示される。<br />
+	</blockquote>
+
+	<a href="./php.ini.txt">/etc/php/php.ini</a> の設定<p />
+	<blockquote>
+	open_basedir = /var/www/:/var/tmp/:/home/:/tmp/:/usr/share/pear/:/usr/share/webapps/<br />
+	</blockquote>
+
+	<a href="./nginx.conf.txt">/etc/nginx/nginx.conf</a> の設定<p />
+	<blockquote>
+		location ~ \.php$ {<br />
+		root   /var/www;<br />
+		fastcgi_pass unix:/run/php-fpm/php-fpm.sock;<br />
+		fastcgi_index index.php;<br />
+		include fastcgi.conf;<br />
+		}<br />
+		<p />
+		location ~ \.py$ {<br />
+		gzip off;<br />
+		fastcgi_pass unix:/run/fcgiwrap.sock;<br />
+		fastcgi_index index.py;<br />
+		include fastcgi_params;<br />
+		fastcgi_param  SCRIPT_FILENAME  /var/www$fastcgi_script_name;<br />
+		}<br />
+
+	</blockquote>
+	<a href="./php-fpm.conf.txt">/etc/php/php-fpm.conf</a> の設定<p />
+	<blockquote>
+		listen = /run/php-fpm/php-fpm.sock<br />
+	</blockquote>
+
+	再起動<p />
+	<blockquote>
+	# systemctl restart php-fpm<br />
+	# systemctl restart fcgiwrap<br />
+	# systemctl restart nginx<br />
+	</blockquote>
+
+
+<a href="fcgiwrap">fcgiwrap</a><p />
+	<blockquote>
+	# systemctl start fcgiwrap.socket<br />
+	# systemctl enable fcgiwrap.socket<br />
+	</blockquote>
+</blockquote>
+
+<a href="/data_base/">Return</a><p />
+May/28/2015 AM 08:15<p />
+</body>
+</html>

@@ -3,7 +3,7 @@
 #
 #	update/sqlite_update.py
 #
-#					Jul/29/2014
+#					May/26/2015
 #
 # --------------------------------------------------------
 import	sys
@@ -11,7 +11,7 @@ import	sqlite3
 import	string
 #
 sys.path.append ('/var/www/data_base/common/python_common')
-from sql_manipulate import sql_display_proc,sql_update_proc
+from sql_manipulate import sql_update_proc
 #
 # --------------------------------------------------------
 print ("*** 開始 ***")
@@ -29,8 +29,6 @@ cursor = conn.cursor ()
 sql_update_proc	(cursor,key_in,population_in)
 #
 conn.commit ()
-#
-sql_display_proc (cursor)
 #
 cursor.close ()
 conn.close ()

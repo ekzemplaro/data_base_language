@@ -3,11 +3,11 @@
 #
 #	redis_update.py
 #
-#					Apr/12/2013
+#					May/28/2015
 #
 import	sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
+# reload(sys)
+# sys.setdefaultencoding('utf-8')
 import	string
 import	json
 #
@@ -18,7 +18,7 @@ from time import localtime,strftime
 print ("*** 開始 ***")
 #
 key_in = sys.argv[1]
-population_in = string.atoi (sys.argv[2])
+population_in = int (sys.argv[2])
 print ("%s\t%d" % (key_in, population_in))
 #
 jedis = redis.clients.jedis.Jedis("host_dbase")

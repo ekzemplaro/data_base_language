@@ -3,17 +3,14 @@
 #
 #	create/couch_create.py
 #
-#					Aug/01/2014
+#					May/06/2015
 #
 import os
 import sys
-import pycurl
-import json
 #
 sys.path.append ('/var/www/data_base/common/python_common')
 from text_manipulate import dict_append_proc
-from curl_get import curl_put_proc
-from curl_get import curl_delete_proc
+from couch_manipulate import dict_to_couch_proc
 #
 # ----------------------------------------------------------------
 def	data_prepare_proc ():
@@ -42,14 +39,7 @@ url_collection = 'http://localhost:5984/nagano'
 #
 dict_aa = data_prepare_proc ()
 #
-curl_delete_proc (url_collection)
-curl_put_proc (url_collection,'{}')
-#
-for key in dict_aa:
-	value = dict_aa[key]
-	json_str = json.dumps (value)
-	url_target = url_collection + '/' + key
-	curl_put_proc (url_target,json_str)
+dict_to_couch_proc (dict_aa,url_collection)
 #
 print ("*** 終了 ***")
 #

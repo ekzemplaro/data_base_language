@@ -3,32 +3,30 @@
 #
 #	update/sqlite_delete.py
 #
-#					Jul/29/2014
+#					May/26/2015
 #
 # --------------------------------------------------------
 import	sys
 import sqlite3
 #
 sys.path.append ('/var/www/data_base/common/python_common')
-from sql_manipulate import sql_display_proc,sql_delete_proc
+from sql_manipulate import sql_delete_proc
 #
 # --------------------------------------------------------
 print ("*** 開始 ***")
 #
 file_in = sys.argv[1]
-id_in = sys.argv[2]
-print ("%s" % id_in)
+key_in = sys.argv[2]
+print ("%s" % key_in)
 #
 conn = sqlite3.connect (file_in)
 conn.text_factory=str
 #
 cursor = conn.cursor ()
 #
-sql_delete_proc	(cursor,id_in)
+sql_delete_proc	(cursor,key_in)
 #
 conn.commit ()
-#
-sql_display_proc (cursor)
 #
 cursor.close ()
 conn.close ()

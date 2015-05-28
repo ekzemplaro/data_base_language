@@ -2,7 +2,7 @@
 /*
 	couch_manipulate.java
 
-				Dec/23/2010
+					May/06/2015
 
 */
 // --------------------------------------------------------------
@@ -14,45 +14,32 @@ import  net.arnx.jsonic.JSON;
 // --------------------------------------------------------------
 public class couch_manipulate {
 // --------------------------------------------------------------
-static void data_delete_proc (String uri_collection,String id_in)
+static HashMap <String, HashMap <String,String>> couch_to_dict_proc
+	(String url_collection)
 {
-	String uri_list = uri_collection + "/_all_docs";
+	HashMap <String, HashMap<String,String>> dict_aa
+		= new HashMap <String, HashMap<String,String>> ();
 
-	String json_list = get_uri.get_uri_proc (uri_list);
-//	System.out.println(json_list);
+	String url_all_docs = url_collection + "/_all_docs?include_docs=true";
 
-	HashMap <String, Object>  map_list = new HashMap <String, Object> ();
-	map_list = (HashMap <String, Object>)JSON.decode (json_list);
-//	System.out.println(map_list.get ("total_rows").toString ());
+	String str_json = get_uri.get_uri_proc (url_all_docs);
 
-	List <HashMap <String,Object>>list_rows
-		= (List <HashMap <String,Object>>) map_list.get ("rows");
+	HashMap <String, Object> data
+		= (HashMap <String, Object>)JSON.decode (str_json);
 
-	for (HashMap <String, Object> row: list_rows)
+	List <HashMap <String,String>>list_rows
+		= (List <HashMap <String,String>>) data.get ("rows");
+
+	for (HashMap <String, String> row: list_rows)
 		{
-		String id = row.get ("id").toString ();
-		if (id.equals (id_in))
-			{
-		String value = row.get ("value").toString ();
+		String key = row.get ("key").toString ();
+		Object doc = row.get ("doc");
+		HashMap <String, String> unit_aa = HashMap.class.cast (doc);
 
-		HashMap <String, Object>value_hash
-			 = (HashMap <String, Object>) row.get ("value");
-		String rev = value_hash.get ("rev").toString ();
-
-//		System.out.println (id + "\t" + rev);
-
-	String uri_delete = uri_collection + "/" + id_in + "?rev=" + rev;
-
-	try
-	{
-			get_uri.rest_delete_proc (uri_delete);
-	}
-	catch (Exception ee)
-	{
-	ee.printStackTrace ();
-	}
-			}
+		dict_aa.put (key,unit_aa);
 		}
+
+	return	dict_aa;
 }
 
 // --------------------------------------------------------------

@@ -1,15 +1,28 @@
-static void mcached_delete_proc (String server,int port,String key)
-	throws Exception
+static HashMap <String, HashMap <String,String>> couch_to_dict_proc
+	(String url_collection)
 {
-	Socket sock = new Socket (server,port);
+	HashMap <String, HashMap<String,String>> dict_aa
+		= new HashMap <String, HashMap<String,String>> ();
 
-	DataOutputStream output = new DataOutputStream (sock.getOutputStream ());
+	String url_all_docs = url_collection + "/_all_docs?include_docs=true";
 
-	DataInputStream rr = new DataInputStream (sock.getInputStream ());
+	String str_json = get_uri.get_uri_proc (url_all_docs);
 
-	mcached_socket.socket_delete_record_proc (key,rr,output);
+	HashMap <String, Object> data
+		= (HashMap <String, Object>)JSON.decode (str_json);
 
-	rr.close ();
-	output.close ();
-	sock.close ();
-} 
+	List <HashMap <String,String>>list_rows
+		= (List <HashMap <String,String>>) data.get ("rows");
+
+	for (HashMap <String, String> row: list_rows)
+		{
+		String key = row.get ("key").toString ();
+		Object doc = row.get ("doc");
+		HashMap <String, String> unit_aa = HashMap.class.cast (doc);
+
+		dict_aa.put (key,unit_aa);
+		}
+
+	return	dict_aa;
+}
+

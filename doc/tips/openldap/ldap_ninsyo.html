@@ -5,10 +5,12 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>ldap_ninsyo Dec/18/2014</title>
+<title>ldap_ninsyo May/15/2015</title>
 </head>
 <body>
 <h2>ldap 認証</h2><p />
+
+Arch Linux のクライアント設定<p />
 
 /etc/openldap/ldap.conf<p />
 <blockquote>
@@ -56,6 +58,15 @@ auth      sufficient pam_ldap.so
 session   optional  pam_permit.so
 </pre>
 </blockquote>
+
+/etc/pam.d/sshd<p />
+<blockquote>
+<pre>
+# Create home directory automatically.
+session    required     pam_mkhomedir.so skel=/etc/skel/ umask=0022
+</pre>
+</blockquote>
+
 # systemctl start nslcd<p />
 
 確認の方法<br />
@@ -84,7 +95,7 @@ Create home folders at login<p />
 </blockquote>
 
 <hr />
-Ubuntu<p>
+Ubuntu のクライアント設定<p>
 <blockquote>
 # apt-get install libpam-ldap nscd<p />
 	<blockquote>
@@ -96,7 +107,7 @@ Ubuntu<p>
 	<li>LDAPバージョンを指定</li>
 		ldap_version 3<p />
 	</ol>
-	/etc/ldap.conf<p />
+	/etc/ldap.conf に入力したデータが入る<p />
 	</blockquote>
 /etc/nsswitch.conf<br />
 	<blockquote>
@@ -123,6 +134,6 @@ $<br />
 </blockquote>
 <hr />
 <a href="/data_base/">Return</a><p />
-Dec/18/2014 AM 08:15<p />
+May/15/2015 AM 08:15<p />
 </body>
 </html>

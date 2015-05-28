@@ -2,7 +2,7 @@
 #
 #	derby_manipulate.py
 #
-#						Jul/06/2012
+#						May/26/2015
 #
 import	os
 from subprocess import Popen, PIPE
@@ -10,16 +10,18 @@ import	shlex
 import	string
 import	datetime
 import	sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
 #
 from text_manipulate import dict_append_proc
 from text_manipulate import text_write_proc
 # ------------------------------------------------------------------
 def derby_sql_execute_proc (sql_file):
-	args = ["/usr/share/javadb/bin/ij",sql_file]
+	print	("*** derby_sql_execute_proc *** aaa ***")
+#	args = ["/usr/share/javadb/bin/ij",sql_file]
+	args = ["/usr/share/java/derby/bin/ij",sql_file]
 #	os.system ("/usr/share/javadb/bin/ij " + sql_file)
+	print	("*** derby_sql_execute_proc *** ddd ***")
 	result = Popen(args,stdout=PIPE).stdout.readlines()
+	print	("*** derby_sql_execute_proc *** ggg ***")
 #
 	return	result	
 # ------------------------------------------------------------------
@@ -36,17 +38,26 @@ def derby_to_dict_proc (db_name):
 	fp_out.write (str_out)
 	fp_out.close ()
 #
+	print	("*** derby_to_dict_proc *** ccc ***")
+#
 	result = derby_sql_execute_proc (sql_tmp)
+#
+	print	("*** derby_to_dict_proc *** fff ***")
 #
 	os.remove (sql_tmp)
 #
 	for str in result:
 		line = str.rstrip()
 		if (5 < len (line)):
-			cols= string.split (line)
+#			cols= string.split (line)
+			cols= line.split ()
+			if (2 < len (cols)):
+				print (cols[0])
+				print (cols[1])
 			if (cols[0][0] == "t"):
+#			if (1 < len (cols)):
 				name = cols[1][1:]
-				population = string.atoi (cols[2][1:])
+				population = int (cols[2][1:])
 				date_mod = (cols[3][1:])
 				dict_aa = dict_append_proc (dict_aa,cols[0], \
 					name,population,date_mod)

@@ -2,7 +2,7 @@
 #
 #	jython_mcache_manipulate.py
 #
-#					Apr/15/2013
+#					May/28/2015
 import	sys
 import	string
 import	socket
@@ -15,9 +15,8 @@ def get_record_proc (ss,key_id):
 	ss.send(command)
 	data = ss.recv(1024)
 	if (6 < len (data)):
-		lines = string.split (data)
-		json_str = lines[4]
-#		print "json_str = ",json_str
+		lines = data.split ("\n")
+		json_str = lines[1]
 #
 		unit_aa = json.loads (json_str)
 		print ("%s\t%s\t%d\t%s" %  (key_id,unit_aa.get ("name"), \

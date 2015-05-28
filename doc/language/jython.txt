@@ -1,4 +1,4 @@
-<title>jython Aug/07/2013</title>
+<title>jython May/27/2015</title>
 </head>
 <body>
 <h2><a href="http://www.jython.org">jython</a></h2><p />
@@ -25,5 +25,14 @@ Jython 2.7b1<br />
 	次のようなメッセージに対する対策<br />
 	*sys-package-mgr*: can't write cache file for<p />
 	sudo chmod -R 777 /usr/share/jython2.7a2/cachedir<p />
+</blockquote>
+
+Arch Linux<br />
+<blockquote>
+/usr/share/doc/jython/README.ArchLinux<br />
+~/.jython<br />
+	<blockquote>
+	python.cachedir=/home/USERNAME/.jythoncachedir<br />
+	</blockquote>
 </blockquote>
 

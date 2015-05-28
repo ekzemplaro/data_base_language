@@ -3,11 +3,9 @@
 #
 #	derby_delete.py
 #
-#						Jul/06/2012
+#						May/26/2015
 #
 import	sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
 import	string
 #
 sys.path.append ('/var/www/data_base/common/python_common')

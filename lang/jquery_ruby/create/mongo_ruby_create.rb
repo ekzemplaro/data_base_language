@@ -1,9 +1,9 @@
-#! /usr/bin/ruby1.8
+#! /usr/bin/ruby
 # -*- encoding: utf-8 -*-
 #
 #	mongo_ruby_create.rb
 #
-#					Jun/25/2012
+#					May/12/2015
 # -------------------------------------------------------------
 load '/var/www/data_base/common/ruby_common/text_manipulate.rb'
 load '/var/www/data_base/common/ruby_common/mongo_manipulate.rb'

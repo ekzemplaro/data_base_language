@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>ArchLinux Mar/17/2015</title>
+<title>ArchLinux May/28/2015</title>
 </head>
 <body>
 参考になるページ<p />
@@ -83,6 +83,11 @@ sshd の設定<p />
 	# systemctl enable sshd<p />
 </blockquote>
 
+デバイス名の取得<p />
+<blockquote>
+$ ls /sys/class/net<p />
+</blockquote>
+
 固定アドレスの設定<p />
 <blockquote>
 # cp /etc/netctl/examples/ethernet-static /etc/netctl/profile<p />
@@ -129,50 +134,8 @@ dhcpd を止める<br />
 	</blockquote>
 </blockquote>
 
-nginx の設定<p />
-<blockquote>
-インストール<br />
-	<blockquote>
-	# pacman -S nginx<br />
-	# pacman -S php-fpm<br />
-	# pacman -S fcgiwrap<br />
-	</blockquote>
-</blockquote>
-<blockquote>
-nginx の起動<br />
-	<blockquote>
-	# systemctl start nginx<p />
-	/usr/share/nginx/html/index.html が表示される。<br />
-	</blockquote>
+<a href="arch_nginx.html">nginx の設定</a><p />
 
-	<a href="./php.ini.txt">/etc/php/php.ini</a> の設定<p />
-	<blockquote>
-	open_basedir = /var/www/:/var/tmp/:/home/:/tmp/:/usr/share/pear/:/usr/share/webapps/<br />
-	</blockquote>
-
-	<a href="./nginx.conf.txt">/etc/nginx/nginx.conf</a> の設定<p />
-	<blockquote>
-		location ~ \.php$ {<br />
-		root   /var/www;<br />
-		fastcgi_pass unix:/run/php-fpm/php-fpm.sock;<br />
-		fastcgi_index index.php;<br />
-		include fastcgi.conf;<br />
-		}<br />
-	</blockquote>
-	<a href="./php-fpm.conf.txt">/etc/php/php-fpm.conf</a> の設定<p />
-	<blockquote>
-		listen = /run/php-fpm/php-fpm.sock<br />
-	</blockquote>
-
-	再起動<p />
-	<blockquote>
-	# systemctl restart php-fpm<br />
-	# systemctl restart fcgiwrap<br />
-	# systemctl restart nginx<br />
-	</blockquote>
-
-<a href="fcgiwrap">fcgiwrap</a><p />
-</blockquote>
 
 ftp サーバーの設定<p />
 <blockquote>
@@ -207,9 +170,9 @@ nfs サーバーの設定<p />
 	<blockquote>
 	<pre>
 	# /etc/exports: NFS file systems being exported.  See exports(5).
-	/tmp    nlf132(async,rw,no_subtree_check) cddn007(async,rw,no_subtree_check)
-	/home/uchida    nlf132(async,rw,no_subtree_check) cddn007(async,rw,no_subtree_check)
-	/var/www   nlf132(async,rw,no_subtree_check) cddn007(async,rw,no_subtree_check)
+	/tmp    host_aa(async,rw,no_subtree_check) host_bb(async,rw,no_subtree_check)
+	/home/uchida    host_aa(async,rw,no_subtree_check) host_bb(async,rw,no_subtree_check)
+	/var/www   host_aa(async,rw,no_subtree_check) host_bb(async,rw,no_subtree_check)
 	#
 	</pre>
 	</blockquote>
@@ -386,6 +349,6 @@ yaourt を使ってインストール<br />
 # pacman -S xorg-fonts-75dpi<br />
 <hr />
 <a href="/data_base/">Return</a><p />
-Mar/17/2015 AM 08:15<p />
+May/28/2015 AM 08:15<p />
 </body>
 </html>

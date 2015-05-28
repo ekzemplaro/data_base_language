@@ -2,7 +2,7 @@
 #
 #	drizzle_manipulate.py
 #
-#						Jul/06/2012
+#						May/26/2015
 #
 import	os
 from subprocess import Popen, PIPE
@@ -10,8 +10,6 @@ import	shlex
 import	string
 import	datetime
 import	sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
 #
 from text_manipulate import dict_append_proc
 from text_manipulate import text_write_proc

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+<title>Gentoo PostgreSQL May/22/2015</title>
+</head>
+<body>
+<h2>PostgreSQL のインストール</h2><p />
+<blockquote>
+# emerge --ask dev-db/postgresql<br />
+</blockquote>
+
+<h2>PostgreSQL の設定</h2><p />
+<blockquote>
+# passwd postgres<br />
+# mkdir /run/postgresql<br />
+# chown postgres /run/postgresql<br />
+# mkdir /usr/local/pgsql<br />
+# mkdir /usr/local/pgsql/data<br />
+# chown postgres /usr/local/pgsql<br />
+# chown postgres /usr/local/pgsql/data<br />
+<br />
+su postgres<br />
+$ /usr/lib64/postgresql-9.4/bin/initdb -E UTF-8 -D /usr/local/pgsql/data<br />
+$ /usr/lib64/postgresql-9.4/bin/postgres -D /usr/local/pgsql/data
+</blockquote>
+
+<hr />
+<a href="/data_base/">Return</a><p />
+May/22/2015 AM 08:15<p />
+</body>
+</html>

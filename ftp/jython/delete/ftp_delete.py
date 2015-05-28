@@ -3,7 +3,7 @@
 #
 #	ftp_delete.py
 #
-#					Feb/25/2013
+#					May/28/2015
 #
 # -------------------------------------------------------------
 from ftplib import FTP
@@ -16,9 +16,7 @@ sys.path.append ('/var/www/data_base/common/jython_common')
 from jython_file_io import file_to_str_proc
 from jython_ftp_manipulate import ftp_get_proc
 from jython_ftp_manipulate import ftp_put_proc
-#
-sys.path.append ('/var/www/data_base/common/python_common')
-from text_manipulate import dict_delete_proc
+from jython_text_manipulate import dict_delete_proc
 #
 # -------------------------------------------------------------
 print	("*** 開始 ***")

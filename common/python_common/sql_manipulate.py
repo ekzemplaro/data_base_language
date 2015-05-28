@@ -19,7 +19,9 @@ def	sql_to_dict_proc	(cursor):
 	cursor.execute (sql_str)
 	rows = cursor.fetchall ()
 	for row in rows:
+#		print (row)
 		if (row['id'][0] == "t"):
+#		if (row[0][0] == "t"):
 #			dd_str = "%s" % row[3]
 			unit_aa = {}
 			unit_aa['name'] = row['name']

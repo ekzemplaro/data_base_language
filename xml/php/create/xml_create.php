@@ -17,14 +17,14 @@ function data_prepare_proc ()
 {
 $dict_aa = array ();
 
-$dict_aa = dict_append_proc ($dict_aa,'t2261','静岡',51489,'2002-10-30');
-$dict_aa = dict_append_proc ($dict_aa,'t2262','浜松',63473,'2002-8-12');
-$dict_aa = dict_append_proc ($dict_aa,'t2263','沼津',57282,'2002-9-01');
+$dict_aa = dict_append_proc ($dict_aa,'t2261','静岡',51489,'2002-11-30');
+$dict_aa = dict_append_proc ($dict_aa,'t2262','浜松',62473,'2002-8-12');
+$dict_aa = dict_append_proc ($dict_aa,'t2263','沼津',57982,'2002-3-8');
 $dict_aa = dict_append_proc ($dict_aa,'t2264','三島',46329,'2002-10-29');
-$dict_aa = dict_append_proc ($dict_aa,'t2265','富士',35735,'2002-7-14');
-$dict_aa = dict_append_proc ($dict_aa,'t2266','熱海',24684,'2002-6-12');
-$dict_aa = dict_append_proc ($dict_aa,'t2267','富士宮',82197,'2002-4-17');
-$dict_aa = dict_append_proc ($dict_aa,'t2268','藤枝',98578,'2002-3-24');
+$dict_aa = dict_append_proc ($dict_aa,'t2265','富士',31785,'2002-7-14');
+$dict_aa = dict_append_proc ($dict_aa,'t2266','熱海',29684,'2002-6-12');
+$dict_aa = dict_append_proc ($dict_aa,'t2267','富士宮',83197,'2002-4-17');
+$dict_aa = dict_append_proc ($dict_aa,'t2268','藤枝',92578,'2002-3-24');
 $dict_aa = dict_append_proc ($dict_aa,'t2269','御殿場',35982,'2002-5-14');
 $dict_aa = dict_append_proc ($dict_aa,'t2270','島田',79461,'2002-7-8');
 

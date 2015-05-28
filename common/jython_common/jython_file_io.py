@@ -1,38 +1,35 @@
-#! /usr/bin/jython  
 # -*- coding: utf-8 -*-
 #
-#	jython_file_io.py
+#	jython_common/jython_file_io.py
 #
-#				Jun/20/2012
+#					May/27/2015
 #
 #
 import	sys
 import	string
 #
-from java.lang import	System
-from java.lang import	String
-from java.io import	File,FileWriter,BufferedWriter,PrintWriter
 # --------------------------------------------------------------------
 def	file_to_str_proc (file_in):
-	fp_in = open (file_in,"r")
-	lines = fp_in.readlines ()
-	json_str = ""
+	lines = []
+	try:
+		fp_in = open (file_in)
+		lines = fp_in.readlines ()
+		fp_in.close ()
+	except Exception as ee:
+		sys.stderr.write ("*** error *** file_to_str_proc ***\n")
+		sys.stderr.write (str (ee))
+#
+	str_out = ""
 	for line in lines:
-		json_str += line
+		str_out += line
 #
-	return	json_str
 #
+	return	str_out
 # --------------------------------------------------------------------
 def file_write_proc (file_name,str_out):
 #
-	fp_file = File (file_name)
-	filewriter = FileWriter (fp_file)
-	bufw = BufferedWriter (filewriter)
-#
-	prw = PrintWriter (bufw)
-#
-#	pw.print (String (str_out,"utf-8"))
-	prw.print (str_out)
-	prw.close ()
+	fp_out = open (file_name,mode='w')
+	fp_out.write (str_out)
+	fp_out.close ()
 #
 # --------------------------------------------------------------------

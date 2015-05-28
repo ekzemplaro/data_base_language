@@ -3,7 +3,7 @@
 #
 #	update/couch_update.py
 #
-#					Jun/24/2014
+#					May/28/2015
 #
 # ----------------------------------------------------------------
 import	sys
@@ -19,7 +19,7 @@ from jython_get_uri import rest_put_proc
 print ("*** 開始 ***")
 #
 key = sys.argv[1]
-population_in = string.atoi (sys.argv[2])
+population_in = int (sys.argv[2])
 print ("%s\t%d" % (key, population_in))
 #
 host = "localhost:5984"

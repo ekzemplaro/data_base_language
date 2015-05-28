@@ -3,41 +3,24 @@
 // ------------------------------------------------------------------
 //	php/read/couch_read.php
 //
-//					Jun/20/2014
+//					May/06/2015
 //
 // ------------------------------------------------------------------
 $path="/var/www/data_base/common/php_common";
 set_include_path (get_include_path() . PATH_SEPARATOR . $path);
 //
 include "curl_get.php";
-// include "text_manipulate.php";
+include "text_manipulate.php";
+include "couch_manipulate.php";
 // ------------------------------------------------------------------
 print	"*** 開始 ***\n";
 
-$url_in = 'http://localhost:5984/nagano';
-print	"url_in = " .$url_in . "\n";
+$url_collection = 'http://localhost:5984/nagano';
+print	"url_collection = " .$url_collection . "\n";
 
-$json_string = curl_get_proc ($url_in . "/_all_docs");
+$dict_aa=couch_to_dict_proc ($url_collection);
 
-// print $json_string;
-
-$list_aa = json_decode ($json_string,true);
-
-$rows = $list_aa['rows'];
-
-// var_dump ($rows[0]);
-// var_dump ($rows[0]['key']);
-
-foreach ($rows as $unit)
-	{
-	$key = $unit['key'];
-	$json_string = curl_get_proc ($url_in . "/" . $key);
-	$unit_aa = json_decode ($json_string,true);
-	print $key . "\t";
-	print $unit_aa['name'] . "\t";
-	print $unit_aa['population'] . "\t";
-	print $unit_aa['date_mod'] . "\n";
-	}
+dict_display_proc ($dict_aa);
 
 print	"*** 終了 ***\n";
 

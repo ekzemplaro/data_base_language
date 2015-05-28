@@ -2,7 +2,7 @@
 /*
 	file_io.cs
 
-				Apr/25/2011
+				May/18/2015
 
 
 */
@@ -39,11 +39,18 @@ public static string file_to_str_proc (string file_in)
 // --------------------------------------------------------------------
 public static void file_write_proc (string file_name,string str_out)
 {
+	try
+		{
 	StreamWriter fp_out = new StreamWriter (file_name);
 
 	fp_out.Write (str_out);
 
 	fp_out.Close ();
+		}
+	catch
+		{
+		Console.Error.WriteLine ("*** error *** file_write_proc ***");
+		}
 }
 
 // --------------------------------------------------------------------
