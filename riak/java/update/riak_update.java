@@ -1,7 +1,7 @@
 // --------------------------------------------------------------
 //	update/riak_update.java
 //
-//					Mar/12/2013
+//					Jun/25/2015
 // --------------------------------------------------------------
 import	java.util.HashMap;
 
@@ -20,7 +20,8 @@ public static void main (String[] args) throws Exception
 	System.out.print ("\tkey_in = " + key_in);
 	System.out.println ("\tpopulation = " + population);
 
-	String url_target = "http://localhost:8098/riak/shimane/" + key_in;
+//	String url_target = "http://host_ubuntu1:8098/riak/shimane/" + key_in;
+	String url_target = "http://172.17.0.1:8098/riak/shimane/" + key_in;
 
 	String str_json = get_uri.get_uri_proc (url_target);
 

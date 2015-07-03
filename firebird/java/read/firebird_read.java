@@ -30,7 +30,8 @@ public static void main (String args [])
 	String database = "/var/tmp/firebird/cities.fdb";
 
 //	String url = "jdbc:firebirdsql:localhost/3050:" + database;
-	String url = "jdbc:firebirdsql:localhost:" + database;
+//	String url = "jdbc:firebirdsql:localhost:" + database;
+	String url = "jdbc:firebirdsql:172.20.208.103:" + database;
 
 	Connection conn = DriverManager.getConnection (url, user, password);
 

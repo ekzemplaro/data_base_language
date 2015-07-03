@@ -2,7 +2,7 @@
 #
 #	postgre/perl/read/postgre_read.pl
 #
-#					Dec/21/2010
+#					Jun/08/2015
 #
 # -----------------------------------------------------------------------
 use	strict;
@@ -23,7 +23,10 @@ my $passwd = 'tiger';
 
 my $dbi = DBI->connect($constr, $user, $passwd);
 #sql_manipulate::sql_show_proc ($dbi);
+
+# print (encode ('utf-8',"*** check aaa ***\n"));
 my %dict_aa = sql_manipulate::sql_to_dict_proc ($dbi);
+# print (encode ('utf-8',"*** check bbb ***\n"));
 $dbi->disconnect;
 #
 text_manipulate::dict_display_proc (%dict_aa);

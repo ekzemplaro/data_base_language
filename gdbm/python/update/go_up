@@ -1,2 +1,2 @@
 #
-./gdbm_update.py t2158 876135624900
+./gdbm_update.py /var/tmp/gdbm/cities.db t2158 61354900

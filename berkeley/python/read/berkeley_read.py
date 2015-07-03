@@ -3,7 +3,7 @@
 #
 #	berkeley_read.py
 #
-#					Jan/06/2015
+#					Jun/11/2015
 import	sys
 import json
 from bsddb3 import db
@@ -14,7 +14,9 @@ from text_manipulate import dict_display_proc
 # -------------------------------------------------------------
 def db_to_dict_proc	(db_name):
 	adb = db.DB ()
-	adb.open (db_name,dbtype=db.DB_HASH)
+#	adb.open (db_name,dbtype=db.DB_HASH)
+#	adb.open (db_name,dbtype=db.DB_BTREE)
+	adb.open (db_name)
 #
 	dict_aa = {} 
 	for key in adb.keys ():

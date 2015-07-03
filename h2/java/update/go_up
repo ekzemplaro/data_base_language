@@ -5,4 +5,4 @@ JAVA_COMMON=$COMMON/java_common
 H2_JAR=/usr/share/java/h2/h2.jar
 export CLASSPATH=.:$JAVA_COMMON:$H2_JAR
 #
-java h2_update t4562 82734500
+java h2_update /var/tmp/h2/cities t4562 82734500

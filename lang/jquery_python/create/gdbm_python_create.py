@@ -3,10 +3,11 @@
 # -------------------------------------------------------------------------
 #	gdbm_python_create.py
 #
-#						Jun/27/2012
+#						Jun/11/2015
 # -------------------------------------------------------------------------
 import	sys
-import	anydbm
+# import	anydbm
+import	dbm
 #
 sys.path.append ('/var/www/data_base/common/python_common')
 #
@@ -14,8 +15,9 @@ from dbm_manipulate import dbm_disp_proc
 #
 # -------------------------------------------------------------------------
 #
-db_name = "/var/tmp/gdbm/cities.pag";
-dd = anydbm.open (db_name,"c")
+db_name = "/var/tmp/gdbm/cities.db";
+# dd = anydbm.open (db_name,"c")
+dd = dbm.open (db_name,"c")
 #
 #
 dd["t2151"]='{"name": "岐阜","population": 75600,"date_mod": "2003-8-9"}';
@@ -33,7 +35,7 @@ dd["t2160"]='{"name": "中津川","population": 69400,"date_mod": "2003-12-17"}'
 dd.close ()
 #
 #
-print "Content-type: text/html\n\n"
+print ("Content-type: text/html\n\n")
 #
-print	"*** OK ***<p />"
+print	("*** OK ***<p />")
 # -------------------------------------------------------------------------

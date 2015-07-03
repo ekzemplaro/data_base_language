@@ -34,6 +34,7 @@ Berkeley DB</a></h1>
 
 Python<p />
 <blockquote>
+# apt-get install python3-bsddb3<p />
 # pacman -S python-bsddb<p />
 </blockquote>
 

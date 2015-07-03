@@ -1,8 +1,15 @@
 #
-export GROOVY_COMMON=/var/www/data_base/common/groovy_common
 export USR_SHARE=/usr/share/java
 #
-export CPB=$USR_SHARE/groovy-all.jar:$USR_SHARE/groovy.jar
-export CLASSPATH=.:$CPB:$GROOVY_COMMON:$USR_SHARE/commons-httpclient-3.1.jar
+COMMON=/var/www/data_base/common
+GROOVY_COMMON=$COMMON/groovy_common
+JAR=$COMMON/jar
+#
+HTTPCLIENT=$JAR/commons-httpclient
+HTTPCLIENT_JAR=.:$HTTPCLIENT/commons-httpclient-3.1.jar:$HTTPCLIENT/commons-logging-1.2.jar:$HTTPCLIENT/commons-codec-1.10.jar
+#
+#
+GROOVY_ALL_JAR=/usr/share/groovy/embeddable/groovy-all.jar
+export CLASSPATH=.:$GROOVY_ALL_JAR:$GROOVY_COMMON:$HTTPCLIENT_JAR
 #
 java riak_read

@@ -5,4 +5,4 @@ JAR=$COMMON/jar
 #
 export CLASSPATH=.:$JAVA_COMMON:$JAR/hsqldb/hsqldb-2.3.2.jar
 #
-java hsqldb_update t4672 837625100
+java hsqldb_update /var/tmp/hsqldb/cities t4672 837625100

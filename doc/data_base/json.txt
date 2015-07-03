@@ -101,7 +101,7 @@ Lua<p />
 
 C++<p />
 <blockquote>
-	picojson.h<p />
+	<a href="https://github.com/kazuho/picojson">picojson</a><p />
 </blockquote>
 
 Scala json4s<p />

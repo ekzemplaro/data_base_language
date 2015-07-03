@@ -25,16 +25,12 @@ my $population_in = $ARGV[2];
 #
 print ("$id_in\t$population_in\n");
 #
-#
 my $dbi = DBI->connect  ("dbi:SQLite:$db_in_aa")
 		|| die "Cannot connect: $DBI::errstr";
 #
 sql_manipulate::dbi_update_proc ($id_in,$population_in,$dbi);
 #
 $dbi->disconnect;
-#
-my %dict_aa = sqlite3_manipulate::sqlite3_to_dict_proc ($db_in_aa);
-text_manipulate::dict_display_proc (%dict_aa);
 #
 print	(encode ('utf-8',"*** 終了 ***\n"));
 # ---------------------------------------------------------

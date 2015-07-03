@@ -5,4 +5,4 @@ JAVA_COMMON=$COMMON/java_common
 JAR=$COMMON/jar
 #
 export CLASSPATH=.:$JAVA_COMMON:$JAR/hsqldb/hsqldb-2.3.2.jar
-java hsqldb_delete t4677
+java hsqldb_delete /var/tmp/hsqldb/cities t4677

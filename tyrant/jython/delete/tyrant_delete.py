@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 #	tyrant_delete.py
-#					Jul/10/2011
+#					Jun/01/2015
 #
 # --------------------------------------------------------
 import	sys
@@ -16,7 +16,7 @@ print ("*** 開始 ***")
 key = sys.argv[1]
 print ("%s" % key)
 
-host = 'localhost'
+host = 'host_ubuntu1'
 port = 1978
 print(host)
 print(port)

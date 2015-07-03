@@ -1,4 +1,4 @@
 #
 echo "import gdbm_read" > tmp_execute.py
 #
-python ./tmp_execute.py
+python ./tmp_execute.py /var/tmp/gdbm/cities.db

@@ -2,7 +2,7 @@
 /*
 	h2/java/read/h2_read.java
 
-						Sep/26/2012
+						Jun/12/2015
 
 */
 // ---------------------------------------------------------------------
@@ -20,7 +20,10 @@ public static void main (String args [])
 {
 	System.out.println ("*** 開始 ***");
 
-	String database = "file:/var/tmp/h2/cities";
+	String db_file = args[0];
+	System.out.println (db_file);
+
+	String database = "file:" + db_file;
 
 	Connection conn =
 		DriverManager.getConnection("jdbc:h2:" + database, "SA","");

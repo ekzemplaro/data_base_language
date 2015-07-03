@@ -2,8 +2,9 @@
 #
 #	text_manipulate.py
 #
-#					May/26/2015
+#					Jun/29/2015
 import	sys
+import	csv
 import	string
 import	datetime
 #
@@ -38,7 +39,8 @@ def	dict_display_proc (dict_aa):
 		if ((key != '_id') and (key != '_rev')):
 			unit = dict_aa[key]
 			name = unit['name']
-			str_out = key+"\t"+ str (name)
+#			str_out = key+"\t"+ str (name)
+			str_out = str (key) +"\t"+ str (name)
 			str_out += "\t" + str (unit['population'])
 			str_out += "\t" + unit['date_mod']
 			print	(str_out)
@@ -95,18 +97,17 @@ def	csv_write_proc	(file_out,dict_aa):
 #		fp_out.write (str_out.encode ('utf-8'))
 	fp_out.close ()
 # ---------------------------------------------------------------
-def	csv_read_proc	(file_in):
+def	csv_read_proc	(file_csv):
 #
-	fp_in = open (file_in,encoding='utf-8')
-	lines = fp_in.readlines ()
-	fp_in.close ()
-#
+	fp = open(file_csv, 'r')
+	reader = csv.reader(fp)
 	dict_aa = {}
-	for line in lines:
-		cols= line[:-1].split (",")
-		dict_unit = {'name': cols[1], \
-			'population':int (cols[2]),'date_mod':cols[3]}
-		dict_aa[cols[0]] = dict_unit
+	for row in reader:
+		dict_unit = {'name': row[1], \
+			'population':int (row[2]),'date_mod':row[3]}
+		dict_aa[row[0]] = dict_unit
+#
+	fp.close()
 #
 	return	dict_aa
 #

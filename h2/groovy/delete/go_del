@@ -6,5 +6,5 @@ export GROOVY_COMMON=$COMMON/groovy_common
 H2_JAR=/usr/share/java/h2/h2.jar
 export CLASSPATH=.:$GROOVY_COMMON:$H2_JAR:$GROOVY_ALL_JAR
 #
-java h2_delete t4567
+java h2_delete /var/tmp/h2/cities t4567
 #

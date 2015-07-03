@@ -2,7 +2,7 @@
 #
 #	delete/postgre_delete.pl
 #
-#					Feb/25/2011
+#					Jun/08/2015
 #
 # -----------------------------------------------------------------------
 use	strict;
@@ -13,7 +13,6 @@ use	Encode;
 use DBI;
 use lib '/var/www/data_base/common/perl_common';
 use sql_manipulate;
-use text_manipulate;
 #
 # -----------------------------------------------------------------------
 print (encode ('utf-8',"*** 開始 ***\n"));
@@ -28,7 +27,6 @@ my $dbi = DBI->connect($constr, $user, $passwd);
 #
 sql_manipulate::dbi_delete_proc ($id_in,$dbi);
 #
-sql_manipulate::sql_show_proc ($dbi);
 $dbi->disconnect;
 #
 print (encode ('utf-8',"*** 終了 ***\n"));

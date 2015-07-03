@@ -27,7 +27,8 @@ public static void main (String args [])
 			= data_prepare_proc ();
 	try
 	{
-	String url="jdbc:drizzle://localhost:4427/city";
+//	String url="jdbc:drizzle://localhost:4427/city";
+	String url="jdbc:drizzle://host_ubuntu1:4427/city";
 	Connection conn = DriverManager.getConnection (url,"scott","tiger");
 
 	Statement ss = conn.createStatement ();

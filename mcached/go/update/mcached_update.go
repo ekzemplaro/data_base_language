@@ -2,7 +2,7 @@
 //
 //	mcached_update.go
 //
-//					Feb/11/2015
+//					Jun/03/2015
 //
 // ----------------------------------------------------------------
 package main
@@ -21,7 +21,7 @@ func main () {
 	key_in := os.Args[1]
 	population_in,_ := strconv.Atoi (os.Args[2])
 
-	fmt.Printf ("id_in = %s\t" , key_in)
+	fmt.Printf ("key_in = %s\t" , key_in)
 	fmt.Printf ("population_in = %d\n" , population_in)
 
 	hostname := "localhost"

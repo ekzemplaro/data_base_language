@@ -18,6 +18,11 @@ ii  libdrizzledmessage0   1:7.1.36-stable-1ubuntu1    amd64      Library contain
 /etc/init/drizzle.conf<p />
 </blockquote>
 
+スタート<br />
+<blockquote>
+# service drizzle start<p />
+</blockquote>
+
 スキーマの作成<br />
 <blockquote>
 <pre>

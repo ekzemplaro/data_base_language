@@ -30,7 +30,7 @@ Perl<p />
 Ruby<p />
 <blockquote>
 libcdb-dev<p />
-# gem install libcdb-ruby<br />
+$ gem install libcdb-ruby<br />
 </blockquote>
 
 Java<p />
@@ -42,4 +42,9 @@ java cdb/dump /var/tmp/cdb/cities.cdb<p />
 
 javac cdb/get.java<br />
 java cdb/get /var/tmp/cdb/cities.cdb t2762<p />
+</blockquote>
+<hr />
+Arch Linux<p />
+<blockquote>
+# pacman -S tinycdb<p />
 </blockquote>

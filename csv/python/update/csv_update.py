@@ -3,7 +3,7 @@
 #
 #	update/csv_update.py
 #
-#					Sep/29/2014
+#					Jun/29/2015
 import	sys
 #
 # ---------------------------------------------------------------
@@ -11,7 +11,6 @@ sys.path.append ('/var/www/data_base/common/python_common')
 from text_manipulate import csv_read_proc
 from text_manipulate import csv_write_proc
 from text_manipulate import dict_update_proc
-from text_manipulate import dict_display_proc
 # ---------------------------------------------------------------
 #
 print ("*** 開始 ***")
@@ -25,7 +24,6 @@ dict_aa = csv_read_proc	(file_in)
 
 dict_bb=dict_update_proc (dict_aa,key_in,population_in)
 
-dict_display_proc	(dict_bb)
 csv_write_proc (file_in,dict_bb)
 #
 print ("*** 終了 ***")

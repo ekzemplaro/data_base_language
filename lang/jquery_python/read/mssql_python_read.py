@@ -1,9 +1,9 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	mssql_python_read.py
 #
-#						Mar/10/2015
+#						Jun/23/2015
 #
 #
 # ---------------------------------------------------------------------
@@ -13,14 +13,21 @@ import pymssql
 #
 sys.path.append ("/var/www/data_base/common/python_common")
 #
-from sql_to_json import sql_to_json_proc
+from sql_manipulate import sql_to_dict_proc
 #
 #
 # ---------------------------------------------------------------------
 conn = pymssql.connect \
 	(host='host_mssql',user='sa',password='scott_tiger',database='city')
+cursor = conn.cursor(as_dict=True)
 #
-sql_to_json_proc (conn);
+dict_aa = sql_to_dict_proc (cursor);
+cursor.close ()
 conn.close ()
 #
+out_str = json.dumps (dict_aa)
+#
+print ("Content-type: text/json; charset=UTF-8\n\n")
+#
+print (out_str)
 # ---------------------------------------------------------------------

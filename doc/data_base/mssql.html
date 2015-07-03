@@ -4,7 +4,7 @@
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
-<script src="/js/jquery-2.1.3.min.js"></script>
+<script src="/js/jquery-2.1.4.min.js"></script>
 <meta content="Program Language Examples to connect to MS SQLServer" name="description">
 <meta content="MS SQLServer,クライアント,接続,言語,サンプル" name="keyword">
 <meta content="Uchida Masatomo" name="author">
@@ -93,10 +93,30 @@ PHP<p />
 	ii  php5-sybase  5.4.9-4ubuntu2.3   amd64    Sybase / MS SQL Server module for php5
 	</pre>
 </blockquote>
+Arch Linux<br />
+<blockquote>
+# pacman -S php-mssql<p />
+/etc/php/php.ini<p />
+	<blockquote>
+	extension=mssql.so<p />
+	</blockquote>
+</blockquote>
+
 
 Python<p />
 <blockquote>
 	python-pymssql<p />
+Arch Linux<br />
+	<blockquote>
+	# pacman -S python-pip<p />
+	# pacman -S freetds<p />
+	# pip install pymssql<p />
+		再インストール<br />
+		<blockquote>
+		# pip uninstall pymssql<br />
+		# pip install pymssql<br />
+		</blockquote>
+	</blockquote>
 </blockquote>
 
 node<p />
@@ -163,6 +183,6 @@ client charset = UTF-8<br />
 <div id="outarea_hh">outarea_hh</div>
 <hr />
 <a href="/data_base/">Return</a><p />
-Jan/16/2015 AM 08:15<p />
+Jun/01/2015 AM 08:15<p />
 </body>
 </html>

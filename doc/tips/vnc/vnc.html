@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+<title>vnc Jun/30/2015</title>
+</head>
+<body>
+<h2>vnc</h2><p />
+
+サーバー<p />
+Arch Linux<p />
+<blockquote>
+	# pacman -S tigervnc<p />
+	# pacman -S xterm<p />
+	# pacman -S gnome-session<p />
+
+	起動と停止<p />
+<blockquote>
+<pre>
+$ vncserver
+
+New 'example.com:1 (uchida)' desktop is example.com:1
+
+Starting applications specified in /home/uchida/.vnc/xstartup
+Log file is /home/uchida/.vnc/example.com:1.log
+
+$ vncserver -kill :1
+Killing Xvnc process ID 24814
+</pre>
+</blockquote>
+</blockquote>
+
+クライアント<p />
+<blockquote>
+	Arch Linux<p />
+	# pacman -S gtk-vnc<p />
+	使い方<p />
+	<blockquote>
+<pre>
+$ gvncviewer example.com:1
+Connected to server
+Got credential request for 1 credential(s)
+Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+Remote desktop size changed to 1024x768
+Connection initialized
+</pre>
+	</blockquote>
+</blockquote>
+
+<blockquote>
+
+</blockquote>
+
+<hr />
+<a href="../">Return</a><p />
+Jun/30/2015 AM 08:15<p />
+</body>
+</html>

@@ -4,7 +4,7 @@
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
-<script src="/js/jquery-2.1.3.min.js"></script>
+<script src="/js/jquery-2.1.4.min.js"></script>
 <meta content="Program Language Examples to connect to Oracle" name="description">
 <meta content="Oracle,クライアント,接続,言語,サンプル" name="keyword">
 <meta content="Uchida Masatomo" name="author">
@@ -12,23 +12,21 @@
 </head>
 <body>
 <h1>Oracle</h1>
-<ol>
-</ol>
 
-<ol>
+<blockquote>
 sqlplus /nolog<p />
 connect sys/passwd as sysdba<p />
 select * from v$version;<p />
 select SYSDATE from dual;<p />
-</ol>
-<ol>
+</blockquote>
+<blockquote>
 SQL>shutdown immediate<br />
 SQL>startup<br />
 SQL>select * from dual;<br />
 SQL>select username from dba_users;<br />
-</ol>
+</blockquote>
 
-<ol>
+<blockquote>
 ORA-01081: cannot start already-running ORACLE - shut it down first<br />
 <a href="http://ora-01507.ora-code.com/">
 ORA-01507:</a> database not mounted<br />
@@ -39,21 +37,39 @@ ORA-00205: error in identifying control file, check alert log for more info<br /
 
 ORA-12560: TNS:protocol adapter error<br />
 
-</ol>
+</blockquote>
+
 <blockquote>
 </blockquote>
 
 Python<p />
 <blockquote>
-cx_Oracle-5.0.4.tar.gz<p />
-export ORACLE_HOME=/mnt/sdb2/usr/lib/oracle/xe/app/oracle/product/10.2.0/server/<br />
-export LD_LIBRARY_PATH=$ORACLE_HOME/lib<br />
-export PATH=$ORACLE_HOME/bin:$PATH<p />
+cx_Oracle-5.1.3.tar.gz<p />
 
-cd cx_Oracle-5.0.4<p />
+<blockquote>
+instantclient-basic-linux.x64-12.1.0.2.0.zip<br />
+instantclient-sdk-linux.x64-12.1.0.2.0.zip<br />
+	<blockquote>
+	cd instantclient_12_1<br />
+	ln -s libclntsh.so.12.1 libclntsh.so<br />
+	</blockquote>
+</blockquote>
+
+<blockquote>
+export ORACLE_HOME=$HOME/instantclient_12_1
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ORACLE_HOME
+</blockquote>
+
+cd cx_Oracle-5.1.3<p />
 python setup.py build<br />
 #python setup.py install<p />
 </blockquote>
+
+/etc/ld.so.conf<br />
+<blockquote>
+	/home/uchida/data_base/oracle/instantclient/instantclient_12_1<p />
+</blockquote>
+# ldconfig<p />
 
 Ruby<p />
 <blockquote>
@@ -73,6 +89,19 @@ C#<p />
 	libmono-oracle4.0-cil<br />
 	/usr/lib/mono/4.0/System.Data.OracleClient.dll<br />
 </blockquote>
+Arch Linux<p />
+<blockquote>
+	<a href="https://wiki.archlinux.org/index.php/Oracle_client">
+	Oracle client</a><p />
+	/etc/pacman.conf<br />
+	<blockquote>
+	[oracle]<br />
+	SigLevel = Optional TrustAll<br />
+	Server = http://linux.shikadi.net/arch/$repo/$arch/<br />
+	</blockquote>
+	export LD_LIBRARY_PATH=/usr/lib/mono/4.0/System.Data.OracleClient.dll<p />
+</blockquote>
+
 <div id="result_aa">result_aa</div>
 <hr />
 <div id="outarea_aa">outarea_aa</div>
@@ -85,6 +114,6 @@ C#<p />
 <div id="outarea_hh">outarea_hh</div>
 <hr />
 <a href="/data_base/">Return</a><p />
-Jan/16/2015 AM 08:15<p />
+Jun/01/2015 AM 08:15<p />
 </body>
 </html>

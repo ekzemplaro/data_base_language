@@ -1,0 +1,2 @@
+#
+curl -X PUT --noproxy localhost http://localhost:5984/nagano/t2024 -d@tmp001.json

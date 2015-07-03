@@ -1,0 +1,10 @@
+[Unit]
+Description=one_shot shell
+After=netctl@profile.service
+
+[Service]
+ExecStart=/bin/bash /opt/one_shot.sh
+Type=simple
+
+[Install]
+WantedBy=multi-user.target

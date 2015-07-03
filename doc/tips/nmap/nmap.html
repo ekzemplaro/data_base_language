@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+<title>nmap Jul/01/2015</title>
+</head>
+<body>
+<h2>nmap</h2><p />
+
+インストール<br />
+<blockquote>
+# pacman -S nmap<p />
+</blockquote>
+
+使用例<br />
+<blockquote>
+<pre>
+$ nmap localhost
+
+Starting Nmap 6.47 ( http://nmap.org ) at 2015-06-12 10:20 JST
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.00034s latency).
+rDNS record for 127.0.0.1: host_aa.example.com
+Not shown: 993 closed ports
+PORT      STATE SERVICE
+22/tcp    open  ssh
+80/tcp    open  http
+139/tcp   open  netbios-ssn
+389/tcp   open  ldap
+445/tcp   open  microsoft-ds
+3306/tcp  open  mysql
+10000/tcp open  snet-sensor-mgmt
+
+Nmap done: 1 IP address (1 host up) scanned in 20.09 seconds
+</pre>
+</blockquote>
+
+OS detection with verbosity (-O -v)<p />
+<blockquote>
+<pre>
+# nmap -O -v localhost
+
+Starting Nmap 6.47 ( http://nmap.org ) at 2015-07-01 13:54 JST
+Initiating SYN Stealth Scan at 13:54
+Scanning localhost (127.0.0.1) [1000 ports]
+Discovered open port 445/tcp on 127.0.0.1
+Discovered open port 3306/tcp on 127.0.0.1
+Discovered open port 139/tcp on 127.0.0.1
+Discovered open port 80/tcp on 127.0.0.1
+Discovered open port 22/tcp on 127.0.0.1
+Discovered open port 389/tcp on 127.0.0.1
+Discovered open port 5432/tcp on 127.0.0.1
+Discovered open port 10000/tcp on 127.0.0.1
+Completed SYN Stealth Scan at 13:54, 0.05s elapsed (1000 total ports)
+Initiating OS detection (try #1) against localhost (127.0.0.1)
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.000025s latency).
+rDNS record for 127.0.0.1: nlf132.eg.jp.honda.com
+Not shown: 992 closed ports
+PORT      STATE SERVICE
+22/tcp    open  ssh
+80/tcp    open  http
+139/tcp   open  netbios-ssn
+389/tcp   open  ldap
+445/tcp   open  microsoft-ds
+3306/tcp  open  mysql
+5432/tcp  open  postgresql
+10000/tcp open  snet-sensor-mgmt
+Device type: general purpose
+Running: Linux 3.X
+OS CPE: cpe:/o:linux:linux_kernel:3
+OS details: Linux 3.7 - 3.15
+Uptime guess: 0.066 days (since Wed Jul  1 12:19:35 2015)
+Network Distance: 0 hops
+TCP Sequence Prediction: Difficulty=260 (Good luck!)
+IP ID Sequence Generation: All zeros
+
+Read data files from: /usr/bin/../share/nmap
+OS detection performed. Please report any incorrect results at http://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 1.82 seconds
+           Raw packets sent: 1022 (45.778KB) | Rcvd: 2050 (87.332KB)
+</pre>
+</blockquote>
+
+<a href="../">Return</a><p />
+Jul/01/2015 AM 08:15<p />
+</body>
+</html>

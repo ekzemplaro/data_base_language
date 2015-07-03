@@ -2,43 +2,39 @@
 #
 #	delete/couch_delete.pyx
 #
-#					Mar/29/2013
+#					Jul/02/2015
 # ----------------------------------------------------------------
-import	os
 import sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
 import string
 import pycurl
 import json
 #
 sys.path.append ('/var/www/data_base/common/python_common')
-from text_manipulate import dict_display_proc
-from text_manipulate import dict_delete_proc
 from curl_get import curl_get_proc
-from curl_get import curl_put_proc
+from curl_get import curl_delete_proc
 #
 # ----------------------------------------------------------------
 print ("*** 開始 ***")
 #
-id_in = sys.argv[1]
-print ("%s" % id_in)
+key_in = sys.argv[1]
+print ("%s" % key_in)
 #
-url_json = 'http://host_dbase:5984/city/cities'
+url_json = 'http://localhost:5984/nagano'
+url_key = url_json + '/' + key_in
 #
-str_buf_aa = curl_get_proc (url_json)
+str_buf_aa = curl_get_proc (url_key)
 #
-print "len (str_buf) = %d\n" % len (str_buf_aa)
+print ("len (str_buf) = %d\n" % len (str_buf_aa))
 #
-dict_aa = json.loads (str_buf_aa)
+unit_aa = json.loads (str (str_buf_aa,'UTF-8'))
 #
-dict_bb = dict_delete_proc (dict_aa,id_in)
-#
-dict_display_proc (dict_bb)
-#
-out_str = json.dumps (dict_bb)
-#
-curl_put_proc (url_json,out_str)
+if ('_rev' in unit_aa):
+	print (unit_aa['_rev'])
+	url_del = url_key + '?rev=' + unit_aa['_rev']
+	curl_delete_proc (url_del)
+else:
+	print ("*** not exist ***")
+	print (unit_aa)
 #
 print ("*** 終了 ***")
 # ----------------------------------------------------------------

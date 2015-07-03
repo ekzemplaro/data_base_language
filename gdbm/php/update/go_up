@@ -1,1 +1,1 @@
-./berkeley_update.php /var/tmp/berkeley/cities.db t2453 81231900
+./gdbm_update.php /var/tmp/gdbm/cities.db t2152 23176900

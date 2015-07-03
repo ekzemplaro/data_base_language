@@ -2,7 +2,7 @@
 // ---------------------------------------------------------------
 //	tyrant_create.js
 //
-//					Apr/24/2013
+//					Jun/01/2015
 //
 // ---------------------------------------------------------------
 var memcache = require("memcache");
@@ -11,7 +11,7 @@ var text_manipulate=require ("/var/www/data_base/common/node_common/text_manipul
 // ---------------------------------------------------------------
 function data_prepare_proc ()
 {
-		var dict_aa = new Object ();
+	var dict_aa = new Object ();
 
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t4761','那覇',91784,'1950-9-12');
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t4762','宜野湾',23157,'1950-3-15');
@@ -54,7 +54,7 @@ var onConnect = function()
 };
 
 // ---------------------------------------------------------------
-var client = new memcache.Client (1978,'localhost');
+var client = new memcache.Client (1978,'host_ubuntu1');
 client.connect();
 client.addHandler(onConnect);
 

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+<title>ArchLinux ftp Jun/09/2015</title>
+</head>
+<body>
+
+ftp サーバーの設定<p />
+<blockquote>
+	インストール<br />
+		<blockquote>
+		# pacman -S vsftpd<p />
+		</blockquote>
+	起動<br />
+		<blockquote>
+		# systemctl start vsftpd.service<p />
+		</blockquote>
+	ブート時に自動で起動<br />
+		<blockquote>
+		# systemctl enable vsftpd.service<p />
+		</blockquote>
+	設定<br />
+		<blockquote>
+		/etc/vsftpd.conf<p />
+			<blockquote>
+			local_enable=YES<p />
+			</blockquote>
+		</blockquote>
+	</blockquote>
+
+<a href="./">Return</a><p />
+Jun/09/2015 AM 08:15<p />
+</body>
+</html>

@@ -1,0 +1,2 @@
+#
+./gdbm_delete /var/tmp/gdbm/cities.db t2156

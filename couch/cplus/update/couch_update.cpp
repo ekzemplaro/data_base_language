@@ -2,7 +2,7 @@
 /*
 	couch_update.cpp
 
-					Mar/04/2014
+					Jun/18/2015
 
 */
 // --------------------------------------------------------------------
@@ -12,17 +12,52 @@
 #include	<cstring>
 #include	<stdlib.h>
 
-using namespace std;
-typedef map<string,string> Unit;
+#include	<boost/lexical_cast.hpp>
+#include	<boost/tokenizer.hpp>
 
-extern map <string,Unit> json_to_dict_proc (string str_json);
-extern	void dict_display_proc (map <string,Unit> dict_aa);
-extern map <string,Unit> dict_update_proc
-	(map <string,Unit> dict_aa,char key_in[],int population_in);
-extern string dict_to_json_proc (map <string,Unit> dict_aa);
+#include "/var/www/data_base/common/cplus_common/include/picojson.h"
+
+using namespace std;
+using namespace boost;
+using namespace picojson;
+
+// typedef map<string,string> Unit;
+
+extern string get_current_date_proc ();
+
 extern string url_get_proc (const char url[]);
 extern void curl_put_proc (const char *url_target,string str_in);
-extern void curl_delete_proc (const char url[]);
+// --------------------------------------------------------------------
+object json_record_parser (string json_str)
+{
+	char* data_xx;
+	data_xx = (char*) malloc(4096);
+	size_t size_xx = json_str.size ();
+
+	strcpy (data_xx,json_str.c_str ());
+
+	value vv;
+	string err;
+
+	parse (vv, data_xx, data_xx + size_xx, &err);
+
+	object obj;
+
+	if (err.empty())
+		{
+		obj = vv.get<object>();
+		}
+	else
+		{
+		cerr << err << endl;
+		}
+
+
+	free (data_xx);
+
+	return	obj;
+}
+
 // --------------------------------------------------------------------
 int main (int argc,char *argv[])
 {
@@ -32,29 +67,51 @@ int main (int argc,char *argv[])
 	strcpy (key_in,argv[1]);
 	int population_in = atoi (argv[2]);
 
-	cout << key_in << endl;
-	cout << population_in << endl;
+	cerr << key_in << endl;
+	cerr << population_in << endl;
 
-//	char url_collection[] = "http://host_dbase:5984/city";
-	char url_collection[] = "http://cddn007:5984/city";
+	char url_collection[] = "http://localhost:5984/nagano/";
 	char url_target[160];
 
 	strcpy (url_target,url_collection);
-	strcat (url_target,"/cities");
+	strcat (url_target,key_in);
 
-	string str_json = url_get_proc (url_target);
+//	cerr << url_target << endl;
 
-	map <string,Unit> dict_aa = json_to_dict_proc (str_json);
+	string json_str = url_get_proc (url_target);
 
-	dict_aa = dict_update_proc (dict_aa,key_in,population_in);
+//	cerr << json_str << endl;
 
-	dict_display_proc (dict_aa);
+	string today = get_current_date_proc ();
 
-	str_json = dict_to_json_proc (dict_aa);
+//	cerr << today << endl;
 
-	curl_delete_proc (url_collection);
-	curl_put_proc (url_collection,"");
-	curl_put_proc (url_target,str_json);
+	object obj = json_record_parser (json_str);
+
+	string id = obj["_id"].to_str ();
+	string rev = obj["_rev"].to_str ();
+	string name = obj["name"].to_str ();
+
+/*
+	cerr << obj["_rev"].to_str () << endl;
+	cerr << obj["name"].to_str () << endl;
+	cerr << obj["population"].to_str () << endl;
+	cerr << obj["date_mod"].to_str () << endl;
+*/
+
+	object oo;
+	oo.insert (make_pair("_id", id));
+	oo.insert (make_pair("_rev", rev));
+	oo.insert (make_pair("name", name));
+	oo.insert (make_pair("population",lexical_cast<string>(population_in)));
+	oo.insert (make_pair("date_mod", today));
+
+	value json_value_new = value (oo);
+	string ssx = json_value_new.serialize ();
+
+	cerr << ssx << endl;
+
+	curl_put_proc (url_target,ssx);
 
 	cerr << "*** 終了 ***\n";
 

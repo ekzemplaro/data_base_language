@@ -4,4 +4,4 @@ export SCALA_COMMON=$COMMON/scala_common
 export H2_JAR=/usr/share/java/h2/h2.jar
 export CPX=.:$SCALA_COMMON:$H2_JAR
 #
-scala -classpath $CPX h2_create
+scala -classpath $CPX h2_create /var/tmp/h2/cities

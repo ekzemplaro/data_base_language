@@ -2,7 +2,7 @@
 /*
 	create/riak_create.java
 
-				Mar/12/2013
+				Jun/25/2015
 
 */
 // --------------------------------------------------------------
@@ -23,7 +23,8 @@ public static void main(String[] args) throws Exception
 		dict_aa = data_prepare_proc ();
 
 
-	final String url_base = "http://localhost:8098/riak/shimane";
+//	final String url_base = "http://host_ubuntu1:8098/riak/shimane";
+	final String url_base = "http://172.17.0.1:8098/riak/shimane";
 
 	Set set_aaa = dict_aa.keySet ();
 
@@ -51,7 +52,7 @@ static HashMap <String, HashMap<String,String>> data_prepare_proc ()
 		= new HashMap <String, HashMap<String,String>> ();
 
 	dict_aa = text_manipulate.dict_append_proc
-		(dict_aa,"t3251","松江",42651,"2008-5-18");
+		(dict_aa,"t3251","松江",42651,"2008-4-18");
 	dict_aa = text_manipulate.dict_append_proc
 		(dict_aa,"t3252","出雲",71386,"2008-3-24");
 	dict_aa = text_manipulate.dict_append_proc

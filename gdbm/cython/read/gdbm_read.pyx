@@ -2,22 +2,26 @@
 #
 #	gdbm_read.pyx
 #
-#					Nov/03/2011
+#					Jul/03/2015
 import	sys
-#sys.path.insert (0,'/usr/share/python-support/python-json')
-import json
-import anydbm
-import string
+import	json
+import	dbm
+import	string
 #
 sys.path.append ('/var/www/data_base/common/python_common')
-from dbm_manipulate import dbm_disp_proc
+from dbm_manipulate import dbm_to_dict_proc
+from text_manipulate import dict_display_proc
 # -------------------------------------------------------------
 print ("*** 開始 ***")
-db_name = "/var/tmp/gdbm/cities.pag";
-dd = anydbm.open (db_name,"c")
+db_name = sys.argv[1]
+print (db_name)
+dd = dbm.open (db_name,"c")
 #
-dbm_disp_proc (dd)
+dict_aa = dbm_to_dict_proc (dd)
+#
 dd.close ()
+#
+dict_display_proc (dict_aa)
 #
 print ("*** 終了 ***")
 # -------------------------------------------------------------

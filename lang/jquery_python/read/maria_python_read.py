@@ -1,9 +1,9 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	maria_python_read.py
 #
-#						Nov/14/2014
+#						Jun/24/2015
 #
 # ----------------------------------------------------------------
 import sys
@@ -12,14 +12,13 @@ import mysql.connector
 #
 sys.path.append ("/var/www/data_base/common/python_common")
 from sql_manipulate import sql_to_dict_proc
-#from mysql_utf8 import mysql_utf8_proc
+#
 #
 conn = mysql.connector.connect (host="localhost", \
 	user="scott", passwd="tiger", \
 	db="city")
 #
-cursor = conn.cursor ()
-#mysql_utf8_proc (cursor)
+cursor = conn.cursor (dictionary=True)
 #
 dict_aa = sql_to_dict_proc (cursor)
 #

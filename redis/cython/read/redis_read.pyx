@@ -2,27 +2,30 @@
 #
 #	redis_read.pyx
 #
-#					May/31/2012
+#					Jul/03/2015
 #
 # --------------------------------------------------------------
 import sys
 import json
 import redis
 sys.path.append ('/var/www/data_base/common/python_common')
-from mcache_manipulate import mcache_display_proc
-from mcache_manipulate import mcache_to_dict_proc
 from text_manipulate import dict_display_proc
 
 # --------------------------------------------------------------
 print ("*** 開始 ***")
 
-#rr = redis.Redis(host='localhost', port=6379, db=0)
 rr = redis.Redis(host='host_dbase', port=6379, db=0)
 
 keys = rr.keys ('t*')
 
-dict_aa = mcache_to_dict_proc (rr,keys)
-dict_display_proc (dict_aa)
+for key in sorted (keys):
+	str_json = rr.get(key).decode ()
+	unit_aa = json.loads (str_json)
+	str_out = key.decode ()+"\t"+ unit_aa['name']
+	str_out += "\t"+ str (unit_aa['population'])
+	str_out += "\t"+ unit_aa['date_mod']
+	print (str_out)
+#
 #
 print ("*** 終了 ***")
 

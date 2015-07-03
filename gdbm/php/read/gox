@@ -1,1 +1,1 @@
-./gdbm_read.php /var/tmp/gdbm/cities
+./gdbm_read.php /var/tmp/gdbm/cities.db

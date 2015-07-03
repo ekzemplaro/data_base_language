@@ -1,0 +1,4 @@
+#
+#./gdbm_create cities.db
+#
+./gdbm_create /var/tmp/gdbm/cities.db

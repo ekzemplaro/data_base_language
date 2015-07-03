@@ -11,7 +11,8 @@ static void main (args)
 {
 	println ("*** 開始 ***")
 
-	def url_base = "http://localhost:8098/riak/shimane"
+//	def url_base = "http://host_ubuntu1:8098/riak/shimane"
+	def url_base = "http://172.17.0.1:8098/riak/shimane"
 
 	def url_in = url_base + "?keys=true"
 

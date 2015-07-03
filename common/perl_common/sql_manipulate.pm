@@ -2,7 +2,7 @@
 #
 #	sql_manipulate.pm
 #
-#					May/30/2012
+#					Jun/08/2015
 #
 # -----------------------------------------------------------------------
 package	sql_manipulate;
@@ -89,6 +89,7 @@ sub dbi_delete_proc
 # -----------------------------------------------------------------------
 sub sql_to_dict_proc
 {
+#	print ("*** check *** sql_to_dict_proc *** start ***\n");
 	my $db = $_[0];
 
 	my $sth = $db->prepare("SELECT * FROM cities");
@@ -97,11 +98,28 @@ sub sql_to_dict_proc
 
 	my %dict_aa;
 
+#	print ("*** check *** sql_to_dict_proc *** ccc ***\n");
+
 	for (my $it=0; $it<$num_rows; $it++)
 		{
 		my @aa = $sth->fetchrow_array;
 		my $key = $aa[0];
-		my $name =  decode ('utf-8',$aa[1]);
+		my $flag = utf8::is_utf8($aa[1]);
+
+#		print "flag = ", $flag , "\n";
+#
+
+		my $name = "";
+		if ($flag != 0)
+			{
+#		print ("*** check *** sql_to_dict_proc *** not 0 ***\n");
+		$name =  $aa[1];
+			}
+		else
+			{
+#		print ("*** check *** sql_to_dict_proc *** 0 ***\n");
+		$name =  decode ('utf-8',$aa[1]);
+			}
 		my $population = $aa[2];
 		my $date_mod = $aa[3];
 

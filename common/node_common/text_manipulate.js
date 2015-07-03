@@ -1,7 +1,7 @@
 // ---------------------------------------------------------------
 //	text_manipulate.js
 //
-//					Oct/31/2012
+//					Jun/29/2015
 //
 // ---------------------------------------------------------------
 var fs = require("fs");
@@ -192,6 +192,26 @@ exports.get_current_date_proc = function ()
 	ddx += "-" + today.getDate ()
 
 	return ddx;
+}
+
+// ---------------------------------------------------------------
+exports.array_to_dict_proc = function (array_aa)
+{
+	var dict_aa = new Object ();
+
+	for (var it in array_aa)
+	{
+	var key = array_aa[it][0];
+	var name = array_aa[it][1];
+	var population = array_aa[it][2];
+	var date_mod = array_aa[it][3];
+
+	dict_aa[key] = {"name": name,"population": population,
+			"date_mod": date_mod};
+//	console.log (key,name,population,date_mod);
+	}
+
+	return	dict_aa;
 }
 
 // ---------------------------------------------------------------

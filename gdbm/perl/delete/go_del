@@ -1,1 +1,1 @@
-./gdbm_delete.pl t2160
+./gdbm_delete.pl /var/tmp/gdbm/cities t2160

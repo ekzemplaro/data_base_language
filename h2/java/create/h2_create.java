@@ -2,7 +2,7 @@
 /*
 	create/h2_create.java
 
-					Jan/07/2015
+					Jun/12/2015
 
 */
 // ---------------------------------------------------------------------
@@ -21,7 +21,10 @@ public static void main (String args [])
 {
 	System.out.println ("*** 開始 ***");
 
-	String database = "file:/var/tmp/h2/cities";
+	String db_file = args[0];
+	System.out.println (db_file);
+
+	String database = "file:" + db_file;
 
 	Connection conn =
 	DriverManager.getConnection("jdbc:h2:" + database, "SA","");
@@ -45,7 +48,7 @@ public static void main (String args [])
 static void insert_data_proc (Statement ss)
 	throws SQLException
 {
-	rdb_common.insert_record_proc (ss,"t4561","宮崎",71278,"2008-8-24");
+	rdb_common.insert_record_proc (ss,"t4561","宮崎",71378,"2008-8-24");
 	rdb_common.insert_record_proc (ss,"t4562","日南",49261,"2008-1-15");
 	rdb_common.insert_record_proc (ss,"t4563","延岡",62795,"2008-2-21");
 	rdb_common.insert_record_proc (ss,"t4564","都城",71435,"2008-8-23");

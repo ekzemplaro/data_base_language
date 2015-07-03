@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>ubuntu May/26/2015</title>
+<title>ubuntu Jul/03/2015</title>
 </head>
 <body>
 <h2>ubuntu</h2><p />
@@ -93,6 +93,7 @@ DHCP の設定<br />
 		network 172.20.0.0<br />
 		gateway 172.20.208.1<br />
 		dns-nameservers 172.20.248.8<br />
+		dns-search example.com<br />
 		</blockquote>
 	</blockquote>
 
@@ -100,7 +101,33 @@ DHCP の設定<br />
 <a href="environment/">environment for Ubuntu</a><br />
 <a href="environment/installed_target.txt">installed on Ubuntu</a><br />
 <hr />
-<a href="/data_base/">Return</a><p />
-May/26/2015 AM 08:15<p />
+ロケールの設定<p />
+<blockquote>
+# apt-get install language-pack-ja<p />
+# update-locale LANG=ja_JP.UTF-8<p />
+</blockquote>
+
+<hr />
+サーバー版に GUI を追加<p />
+<blockquote>
+	# tasksel<p />
+
+	または<p />
+	<blockquote>
+		# apt-get install xinit<p />
+		# apt-get install gnome<p />
+	</blockquote>
+
+</blockquote>
+
+<hr />
+ブート時<p />
+A start job is running for dev-disk-by****.device<p />
+<blockquote>
+/etc/fstab の　ディスク UUID が間違っている。<p /> 
+</blockquote>
+<hr />
+<a href="../">Return</a><p />
+Jul/03/2015 AM 08:15<p />
 </body>
 </html>

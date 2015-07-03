@@ -8,7 +8,7 @@ text_manipulate.o:text_manipulate.cpp
 	clang++ -c text_manipulate.cpp
 xml_manipulate.o:xml_manipulate.cpp
 	clang++ -c xml_manipulate.cpp \
-		-I/usr/include/libxml2 -lxml2
+		-I/usr/include/libxml2
 json_manipulate.o:json_manipulate.cpp
 	clang++ -c json_manipulate.cpp
 mcached_socket.o:mcached_socket.cpp

@@ -4,7 +4,7 @@
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
-<script src="/js/jquery-2.1.3.min.js"></script>
+<script src="/js/jquery-2.1.4.min.js"></script>
 <meta content="Program Language Examples to connect to PostgreSQL" name="description">
 <meta content="PostgreSQL,クライアント,接続,言語,サンプル" name="keyword">
 <meta content="Uchida Masatomo" name="author">
@@ -204,10 +204,35 @@ $ psql -h nlf132 -U scott city<p />
 $ psql -h localhost -U scott city<p />
 
 <hr />
+Arch Linux<br />
+<blockquote>
 # pacman -S postgresql<p />
+# passwd postgres<br />
+<blockquote>
+/etc/locale.gen<p />
+# locale-gen<br />
+</blockquote>
 $ su postgres<p />
-# initdb --locale en_US.UTF-8 -E UTF8 -D '/var/lib/postgres/data'<p />
+$ initdb --locale en_US.UTF-8 -E UTF8 -D '/var/lib/postgres/data'<p />
 # systemctl start postgresql<p />
+</blockquote>
+
+<hr />
+Export<br />
+<blockquote>
+pg_dump -U USERNAME DBNAME > dbexport.pgsql<br />
+<br />
+pg_dump -U scott city > dbexport.pgsql<br />
+</blockquote>
+
+Import<br />
+<blockquote>
+psql -U USERNAME DBNAME < dbexport.pgsql<br />
+<br />
+createdb city<br />
+psql -U scott city < dbexport.pgsql<br />
+</blockquote>
+<hr />
 <div id="result_aa">result_aa</div>
 <hr />
 <div id="outarea_aa">outarea_aa</div>
@@ -220,6 +245,6 @@ $ su postgres<p />
 <div id="outarea_hh">outarea_hh</div>
 <hr />
 <a href="/data_base/">Return</a><p />
-Jan/16/2015 AM 08:15<p />
+Jun/01/2015 AM 08:15<p />
 </body>
 </html>

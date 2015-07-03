@@ -3,7 +3,7 @@
 #
 #	jquery_sqlite3_read.py
 #
-#						Sep/09/20124
+#						Jun/23/2015
 #
 # ---------------------------------------------------------------------
 #
@@ -15,7 +15,8 @@ sys.path.append ("/var/www/data_base/common/python_common")
 from sql_manipulate import sql_to_dict_proc
 #
 conn = sqlite3.connect ("/var/tmp/sqlite3/cities.db")
-conn.text_factory=str
+#conn.text_factory=str
+conn.row_factory = sqlite3.Row
 #
 cursor = conn.cursor ()
 #

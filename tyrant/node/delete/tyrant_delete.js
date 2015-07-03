@@ -2,7 +2,7 @@
 // -------------------------------------------------------------
 //	tyrant_delete.js
 //
-//					Apr/24/2013
+//					Jun/01/2015
 // -------------------------------------------------------------
 var memcache = require('memcache');
 
@@ -24,7 +24,7 @@ var key_in=process.argv[2];
 
 console.log (key_in);
 
-var client = new memcache.Client (1978,'localhost');
+var client = new memcache.Client (1978,'host_ubuntu1');
 client.connect();
 client.addHandler(onConnect);
 

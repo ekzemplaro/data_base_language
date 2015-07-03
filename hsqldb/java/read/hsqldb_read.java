@@ -2,7 +2,7 @@
 /*
 	hsqldb/java/read/hsqldb_read.java
 
-					Jan/25/2011
+					Jun/12/2015
 
 */
 // ---------------------------------------------------------------------
@@ -23,7 +23,9 @@ public static void main (String args [])
 
 	Class.forName ("org.hsqldb.jdbcDriver");
 
-	String database = "file:/var/tmp/hsqldb/cities;shutdown=true";
+	String db_file = args[0];
+	System.out.println (db_file);
+	String database = "file:" + db_file + ";shutdown=true";
 
 	Connection conn =
 		DriverManager.getConnection("jdbc:hsqldb:" + database, "SA","");
@@ -31,7 +33,6 @@ public static void main (String args [])
 	Statement ss = conn.createStatement ();
 
 	rdb_common.display_proc (conn);
-	System.out.println ("*** ffff ***");
 
 	ss.close ();
 

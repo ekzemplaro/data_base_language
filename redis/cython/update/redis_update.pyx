@@ -1,9 +1,8 @@
-#! /usr/bin/python
 # -*- coding: utf-8 -*-
 #
 #	redis_update.pyx
 #
-#					May/31/2012
+#					Jul/03/2015
 #
 import	sys
 import	string
@@ -13,25 +12,23 @@ import	datetime
 import	redis
 #
 sys.path.append ('/var/www/data_base/common/python_common')
-from mcache_manipulate import mcache_update_proc,mcache_display_proc
 # ------------------------------------------------------------
 print ("*** 開始 ***")
 #
-id_in = sys.argv[1]
-population_in = string.atoi (sys.argv[2])
-print ("%s\t%d" % (id_in, population_in))
+key_in = sys.argv[1]
+population_in = int (sys.argv[2])
+print ("%s\t%d" % (key_in, population_in))
 #
-#rr = redis.Redis(host='localhost', port=6379, db=0)
 rr = redis.Redis(host='host_dbase', port=6379, db=0)
 #
-mcache_update_proc (rr,id_in,population_in)
+str_json = rr.get(key_in).decode ()
+unit_aa = json.loads (str_json)
+now = datetime.datetime.now ()
+unit_aa['population'] = population_in
+unit_aa['date_mod'] =  '%s' % now
+json_str = json.dumps (unit_aa)
+rr.set(key_in, json_str)
 #
-keys = {'t1851','t1852','t1853',
-	't1854','t1855','t1856',
-	't1857','t1858','t1859'}
-#
-for key in keys:
-	mcache_display_proc (rr,key)
 #
 print ("*** 終了 ***")
 #

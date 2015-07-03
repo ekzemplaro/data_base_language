@@ -4,14 +4,14 @@
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
-<script src="/js/jquery-2.1.3.min.js"></script>
+<script src="/js/jquery-2.1.4.min.js"></script>
 <title>CouchDB</title>
 </head>
 <body>
 <h1><a href="http://couchdb.apache.org/">CouchDB</a></h1>
 <blockquote>
 <pre>
-ii  couchdb   1.5.0-0ubuntu1    all    RESTful document oriented database - system-wide instance
+ii  couchdb   1.6.0-0ubuntu5    all    RESTful document oriented database - system-wide instance
 </pre>
 </blockquote>
 Configuration<br />
@@ -131,7 +131,7 @@ couchapp<p />
 <hr />
 <pre>
 $ curl --noproxy localhost http://localhost:5984
-{"couchdb":"Welcome","uuid":"4c3f5c7752103d0653aeb1afb91f8621","version":"1.5.0","vendor":{"version":"14.04","name":"Ubuntu"}}
+{"couchdb":"Welcome","uuid":"583ff8276ddb111f07d1c15f8353fcee","version":"1.6.1","vendor":{"version":"1.6.1","name":"The Apache Software Foundation"}}
 </pre>
 <hr />
 View の作成方法<br />
@@ -165,8 +165,13 @@ curl -X GET http://localhost:5984/albums/_design/ex06/_view/ex06?key=\"Chopin\"<
 <hr />
 Replication<p />
 <blockquote>
-$ curl --noproxy server_remote -X PUT http://cdea022:5984/nagano<p />
+$ curl --noproxy server_remote -X PUT http://server_remote:5984/nagano<p />
 $ curl  --noproxy server_remote -H "Content-Type: application/json" -X POST 'http://localhost:5984/_replicate' -d'{"source":"nagano","target":"http://server_remote:5984/nagano"}'<p />
+</blockquote>
+<hr />
+Ubuntu 15.04<br />
+<blockquote>
+	# couchdb -b<p />
 </blockquote>
 <div id="result_aa">result_aa</div>
 <hr />
@@ -180,6 +185,6 @@ $ curl  --noproxy server_remote -H "Content-Type: application/json" -X POST 'htt
 <div id="outarea_hh">outarea_hh</div>
 <hr />
 <a href="/data_base/">Return</a><p />
-Jan/16/2015 AM 08:15<p />
+Jun/01/2015 AM 08:15<p />
 </body>
 </html>

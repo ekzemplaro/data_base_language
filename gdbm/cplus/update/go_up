@@ -1,0 +1,2 @@
+#
+./gdbm_update /var/tmp/gdbm/cities.db t2152 41569800

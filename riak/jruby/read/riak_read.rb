@@ -3,7 +3,7 @@
 #
 #	riak_read.rb
 #
-#					Mar/18/2013
+#					Jun/25/2015
 #
 require 'rubygems'
 require 'open-uri'
@@ -13,7 +13,8 @@ require 'json'
 #
 puts	"*** 開始 ***"
 #
-url_base = 'http://localhost:8098/riak/shimane'
+#url_base = 'http://host_ubuntu1:8098/riak/shimane'
+url_base = 'http://172.17.0.1:8098/riak/shimane'
 url_in = url_base + '?keys=true'
 
 response= open(url_in,:proxy=>nil)

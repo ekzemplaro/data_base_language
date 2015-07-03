@@ -2,7 +2,7 @@
 #
 #	perl/delete/sqlite3_delete.pl
 #
-#				May/19/2011
+#				Jun/08/2015
 #
 # ---------------------------------------------------------
 use	strict;
@@ -30,10 +30,6 @@ my $dbi = DBI->connect  ("dbi:SQLite:$db_in_aa")
 #
 sql_manipulate::dbi_delete_proc ($id_in,$dbi);
 $dbi->disconnect;
-#
-my %dict_aa = sqlite3_manipulate::sqlite3_to_dict_proc ($db_in_aa);
-text_manipulate::dict_display_proc (%dict_aa);
-#
 #
 print	(encode ('utf-8',"*** 終了 ***\n"));
 # ---------------------------------------------------------

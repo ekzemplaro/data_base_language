@@ -1,0 +1,9 @@
+#!/bin/bash
+#
+#	one_shot.sh
+#
+LOG_FILE="/tmp/one_shot.log"
+date >> $LOG_FILE
+echo "one_shot" >> $LOG_FILE
+date >> $LOG_FILE
+#

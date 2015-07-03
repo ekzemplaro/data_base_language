@@ -20,7 +20,7 @@ from jython_get_uri import get_uri_proc
 # ----------------------------------------------------------------
 print ("*** 開始 ***")
 #
-host = "localhost:8098"
+host = "host_ubuntu1:8098"
 path = "/riak/shimane" + "?keys=true"
 json_str = get_uri_proc (host,path)
 #

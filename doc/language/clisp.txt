@@ -39,3 +39,9 @@ common-lisp-controller</a><p />
 
 <a href="http://www.gigamonkeys.com/book/">
 Practical Common Lisp</a><p />
+
+<a href="http://netprophetblog.blogspot.jp/2014/02/tool-posting-quicklisp-with.html">Tool Posting: Quicklisp with an Authenticating Proxy</a><p />
+
+(load "quicklisp.lisp")<p />
+(quicklisp-quickstart:install :proxy "http://localhost:8091")<p />
+

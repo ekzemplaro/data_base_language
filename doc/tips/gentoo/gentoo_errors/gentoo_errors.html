@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+<title>Gentoo errors Jul/03/2015</title>
+</head>
+<body>
+
+<h2>Gentoo errors></h2>
+
+# emerge --sync<p />
+<blockquote>
+<pre>
+# emerge --sync
+>>> Syncing repository 'gentoo' into '/usr/portage'...
+!!! getaddrinfo failed for 'rsync.gentoo.org': [Errno -5] No address associated with hostname
+>>> Starting rsync with rsync://rsync.gentoo.org/gentoo-portage...
+>>> Checking server timestamp ...
+rsync: getaddrinfo: rsync.gentoo.org 873: No address associated with hostname
+rsync error: error in socket IO (code 10) at clientserver.c(128) [Receiver=3.1.1]
+>>> Retrying...
+!!! Exhausted addresses for rsync.gentoo.org
+
+ * IMPORTANT: 2 config files in '/etc' need updating.
+ * See the CONFIGURATION FILES section of the emerge
+ * man page to learn how to update config files.
+
+ * IMPORTANT: 11 news items need reading for repository 'gentoo'.
+ * Use eselect news read to view new items.
+</pre>
+</blockquote>
+
+<blockquote>
+</blockquote>
+
+<hr />
+<a href="../">Return</a><p />
+Jul/03/2015 AM 08:15<p />
+</body>
+</html>

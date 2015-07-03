@@ -3,34 +3,25 @@
 #
 #	mcached_update.py
 #
-#					Jun/08/2011
+#					Jun/02/2015
 #
 import	sys
 import	string
-import json
 #
-import datetime
 import memcache
 #
 sys.path.append ('/var/www/data_base/common/python_common')
-from mcache_manipulate import mcache_update_proc,mcache_display_proc
+from mcache_manipulate import mcache_update_proc
 # ------------------------------------------------------------
 print ("*** 開始 ***")
 #
-id_in = sys.argv[1]
-population_in = string.atoi (sys.argv[2])
-print ("%s\t%d" % (id_in, population_in))
+key_in = sys.argv[1]
+population_in = int (sys.argv[2])
+print ("%s\t%d" % (key_in, population_in))
 #
 mc = memcache.Client(['localhost:11211'])
 #
-mcache_update_proc (mc,id_in,population_in)
-#
-keys = {'t1731','t1732','t1733',
-	't1734','t1735','t1736',
-	't1737','t1738','t1739'}
-#
-for key in keys:
-	mcache_display_proc (mc,key)
+mcache_update_proc (mc,key_in,population_in)
 #
 print ("*** 終了 ***")
 #

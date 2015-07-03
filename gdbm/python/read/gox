@@ -1,1 +1,1 @@
-./gdbm_read.py
+./gdbm_read.py /var/tmp/gdbm/cities.db

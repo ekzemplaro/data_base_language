@@ -2,4 +2,4 @@
 #
 echo "import berkeley_update" > tmp_execute.py
 #
-python ./tmp_execute.py t2456 75836900
+python ./tmp_execute.py /var/tmp/berkeley/cities.db t2456 75836900

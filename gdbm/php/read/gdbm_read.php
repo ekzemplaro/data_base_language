@@ -1,27 +1,41 @@
 #! /usr/bin/php
-<?
+<?php
 // ------------------------------------------------------------------
 //	gdbm_read.php
 //
-//					Mar/27/2013
+//					Jun/11/2015
 //
+// ------------------------------------------------------------------
+$path="/var/www/data_base/common/php_common";
+set_include_path (get_include_path() . PATH_SEPARATOR . $path);
+
+include "text_manipulate.php";
 // ------------------------------------------------------------------
 print "*** 開始 ***\n";
 $file_gdbm=$argv[1];
-#
+echo $file_gdbm . "\n";
+
 $dbh = dba_open($file_gdbm,"r","gdbm");
-#
-#
-for($key = dba_firstkey($dbh); $key != false; $key = dba_nextkey($dbh)) {
+
+$dict_aa = array ();
+
+for($key = dba_firstkey($dbh); $key != false; $key = dba_nextkey($dbh))
+	{
 	$json_string = dba_fetch($key, $dbh);
 	$city = json_decode ($json_string);
-	echo $key . "\t";
-	echo $city->name . "\t";
-	echo $city->population . "\t";
-	echo $city->date_mod;
-	echo "\n";
 
-}
+	$dict_unit = array ();
+	$dict_unit['name'] = $city->name;
+	$dict_unit['population'] = $city->population;
+	$dict_unit['date_mod'] = $city->date_mod;
+	$dict_aa[$key]= $dict_unit;
+	}
+
 dba_close ($dbh);
-print "*** 終了 ***\n";
+
+dict_display_proc ($dict_aa);
+
+
+print "*** 終了 ***";
+// ------------------------------------------------------------------
 ?> 

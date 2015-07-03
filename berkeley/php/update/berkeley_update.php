@@ -24,7 +24,9 @@ echo "\n";
 
 
 $city->population = $population_in;
-$city->date_mod = date ("Y-m-d");
+date_default_timezone_set('Asia/Tokyo');
+$today = date ("Y-m-d");
+$city->date_mod = $today;
 
 $encode = json_encode ($city);
 

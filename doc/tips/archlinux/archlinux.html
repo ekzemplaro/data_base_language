@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>ArchLinux May/28/2015</title>
+<title>ArchLinux Jul/02/2015</title>
 </head>
 <body>
 参考になるページ<p />
@@ -53,21 +53,7 @@
 
 </blockquote>
 
-X のインストール<p />
-<blockquote>
-# pacman -S xorg-server xorg-server-utils xorg-xinit xorg-xclock<br />
-</blockquote>
-
-ドライバのインストール<p />
-<blockquote>
-何をインストールするか決めて、例えば<p />
-# pacman -S xf86-video-intel<p />
-</blockquote>
-
-gnome のインストール<p />
-<blockquote>
-# pacman -S gnome gnome-extra<br />
-</blockquote>
+<a href="xwindow">X のインストール</a><p />
 
 最新に保つ方法<p />
 <blockquote>
@@ -83,177 +69,18 @@ sshd の設定<p />
 	# systemctl enable sshd<p />
 </blockquote>
 
-デバイス名の取得<p />
-<blockquote>
-$ ls /sys/class/net<p />
-</blockquote>
-
-固定アドレスの設定<p />
-<blockquote>
-# cp /etc/netctl/examples/ethernet-static /etc/netctl/profile<p />
-/etc/netctl/profile の編集<br />
-<blockquote>
-<pre>
-Description='A basic static ethernet connection'
-Interface=enp2s0
-Connection=ethernet
-IP=static
-Address=('172.20.208.216/21')
-Gateway='172.20.208.224'
-DNS=('172.20.248.233')
-</pre>
-<blockquote>
-Address=('172.20.208.216/16')<br />
-<blockquote>
-	netmask 255.255.0.0<br />
-	broadcast 172.20.255.255<br />
-</blockquote>
-Address=('172.20.208.216/21')<br />
-<blockquote>
-	netmask 255.255.248.0<br />
-	broadcast 172.20.215.255<br />
-</blockquote>
-Address=('172.20.208.216/24')<br />
-<blockquote>
-	netmask 255.255.255.0<br />
-	broadcast 172.20.208.255<br />
-</blockquote>
-</blockquote>
-</blockquote>
-結果の反映<br />
-	<blockquote>
-	# netctl start profile<p />
-	</blockquote>
-dhcpd を止める<br />
-	<blockquote>
-	# systemctl disable dhcpcd.service<p />
-	</blockquote>
-起動時に固定アドレスを設定<br />
-	<blockquote>
-	# netctl enable profile<p />
-	</blockquote>
-</blockquote>
+<a href="arch_fixed_address.html">固定アドレスの設定</a><p />
 
 <a href="arch_nginx.html">nginx の設定</a><p />
 
+<a href="arch_ftp.html">ftp サーバーの設定</a><p />
 
-ftp サーバーの設定<p />
-<blockquote>
-	インストール<br />
-		<blockquote>
-		# pacman -S vsftpd<p />
-		</blockquote>
-	起動<br />
-		<blockquote>
-		# systemctl start vsftpd.service<p />
-		</blockquote>
-	ブート時に自動で起動<br />
-		<blockquote>
-		# systemctl enable vsftpd.service<p />
-		</blockquote>
-	設定<br />
-		<blockquote>
-		/etc/vsftpd.conf<p />
-			<blockquote>
-			local_enable=YES<p />
-			</blockquote>
-		</blockquote>
-	</blockquote>
+<a href="arch_nfs.html">nfs の設定</a><p />
 
-nfs サーバーの設定<p />
-<blockquote>
-	インストール<p />
-	<blockquote>
-	# pacman -S nfs-utils<p />
-	</blockquote>
-/etc/exports の設定<br />
-	<blockquote>
-	<pre>
-	# /etc/exports: NFS file systems being exported.  See exports(5).
-	/tmp    host_aa(async,rw,no_subtree_check) host_bb(async,rw,no_subtree_check)
-	/home/uchida    host_aa(async,rw,no_subtree_check) host_bb(async,rw,no_subtree_check)
-	/var/www   host_aa(async,rw,no_subtree_check) host_bb(async,rw,no_subtree_check)
-	#
-	</pre>
-	</blockquote>
+<a href="arch_samba.html">samba サーバーの設定</a><p />
 
-nfs の起動<br />
-	<blockquote>
-	# systemctl start nfs-server.service<br />
-	</blockquote>
-自動的に起動させる。<br />
-	<blockquote>
-	# systemctl enable nfs-server.service<br />
-	</blockquote>
+<a href="arch_couchdb.html">couchdb サーバーの設定</a><p />
 
-状態の表示<br />
-	<blockquote>
-	# systemctl status nfs-server.service<br />
-	</blockquote>
-</blockquote>
-
-NFS クライアント<br />
-	<blockquote>
-	# systemctl start nfs-client.target<p />
-	# systemctl start rpcbind.service<p />
-	</blockquote>
-
-samba サーバーの設定<p />
-<blockquote>
-	インストール<p />
-	<blockquote>
-	# pacman -S samba<p />
-	# pacman -S smbclient<p />
-	</blockquote>
-	/etc/samba/smb.conf の設定<br />
-	<blockquote>
-	# cp /etc/samba/smb.conf.default /etc/samba/smb.conf<br />
-	<pre>
-	[tmp]
-	   comment = Temporary file space
-	   path = /tmp
-	   read only = no
-	   public = yes
-	</pre>
-	</blockquote>
-	ユーザーの設定<br />
-	<blockquote>
-		# pdbedit -a -u uchida<p />
-	</blockquote>
-	起動<br />
-		<blockquote>
-		# systemctl start nmbd<p />
-		# systemctl start smbd<p />
-		</blockquote>
-
-</blockquote>
-
-
-
-couch サーバーの設定<p />
-<blockquote>
-	インストール<br />
-		<blockquote>
-		# pacman -S erlang couchdb<p />
-		</blockquote>
-	起動<br />
-		<blockquote>
-		# systemctl start couchdb<p />
-		</blockquote>
-
-	設定<br />
-	<blockquote>
-	/etc/couchdb/default.ini<br />
-		<blockquote>
-		bind_address = 0.0.0.0<br />
-		allow_jsonp = true<br />
-		</blockquote>
-	/etc/couchdb/local.ini<br />
-		<blockquote>
-		bind_address = 0.0.0.0<br />
-		</blockquote>
-	</blockquote>
-</blockquote>
 
 sudo の設定< p />
 	<blockquote>
@@ -281,6 +108,7 @@ grub2<p />
 	# systemctl start cronie<br />
 	# systemctl enable cronie<br />
 	</blockquote>
+<a href="service">service の作成</a><p />
 <hr />
 既にインストールしたパッケージの情報を得る<p />
 	<blockquote>
@@ -302,6 +130,11 @@ grub2<p />
 		$ paccache -r<br />
 		</blockquote>
 	</blockquote>
+パッケージの削除<br />
+	<blockquote>
+	# pacman -R  postgresql<br />
+	</blockquote>
+
 ホストネームの設定<br />
 	<blockquote>
 	# hostnamectl set-hostname my-pretty-cow.domain.or.jp<p />
@@ -322,6 +155,10 @@ grub2<p />
 タイムゾーンを変更<br />
 	<blockquote>
 	# timedatectl set-timezone Asia/Tokyo<p />
+	タイムゾーンの確認<br />
+		<blockquote>
+		$ timedatectl status<p />
+		</blockquote>
 	</blockquote>
 
 ユーザーの作成<br />
@@ -348,7 +185,9 @@ yaourt を使ってインストール<br />
 # pacman -S xorg-fonts-100dpi<br />
 # pacman -S xorg-fonts-75dpi<br />
 <hr />
+<a href="update_error.html"># pacman -Syu でエラー</a><p />
+<hr />
 <a href="/data_base/">Return</a><p />
-May/28/2015 AM 08:15<p />
+Jul/02/2015 AM 08:15<p />
 </body>
 </html>

@@ -20,7 +20,6 @@ puts key_in,population_in
 dict_aa = cdb_read_proc(file_cdb)
 
 dict_aa = dict_update_proc(dict_aa,key_in,population_in)
-dict_display_proc(dict_aa)
 #
 cdb_write_proc(file_cdb,dict_aa)
 puts "*** 終了 ***"

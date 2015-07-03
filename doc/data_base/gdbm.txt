@@ -2,14 +2,21 @@
 </head>
 <body>
 <h1>GNU dbm</h1>
+
+Bash<p />
 <blockquote>
-</blockquote>
-<pre>
-</pre>
-<blockquote>
+	# pacman -S dbm<p />
 </blockquote>
 
 <blockquote>
+</blockquote>
+
+PHP<p />
+<blockquote>
+	/etc/php.ini<p />
+	<blockquote>
+	extension=dba.so<br />
+	</blockquote>
 </blockquote>
 
 Python<p />
@@ -34,15 +41,20 @@ Ruby<p />
 </blockquote>
 
 gauche<p />
-<blockqoute>
+<blockquote>
 	<pre>
 	ii  gauche-gdbm    0.9.3.3-8    amd64    gdbm binding for Gauche
 	</pre>
-</blockqoute>
+</blockquote>
+
+C++<p />
+<blockquote>
+<a href="http://linuxjm.osdn.jp/html/GNU_gdbm/man3/gdbm.3.html">GDBM</a><p />
+</blockquote>
 
 
 Java<p />
-<blockqoute>
+<blockquote>
 <pre>
 </pre>
-</blockqoute>
+</blockquote>

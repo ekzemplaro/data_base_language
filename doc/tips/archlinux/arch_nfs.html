@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+<title>ArchLinux nfs Jun/09/2015</title>
+</head>
+<body>
+
+nfs サーバーの設定<p />
+<blockquote>
+	インストール<p />
+	<blockquote>
+	# pacman -S nfs-utils<p />
+	</blockquote>
+/etc/exports の設定<br />
+	<blockquote>
+	<pre>
+	# /etc/exports: NFS file systems being exported.  See exports(5).
+	/tmp    host_aa(async,rw,no_subtree_check,fsid=0) host_bb(async,rw,no_subtree_check,fsid=0)
+	/home/uchida    host_aa(async,rw,no_subtree_check) host_bb(async,rw,no_subtree_check)
+	/var/www   host_aa(async,rw,no_subtree_check) host_bb(async,rw,no_subtree_check)
+	#
+	</pre>
+	</blockquote>
+
+nfs の起動<br />
+	<blockquote>
+	# systemctl start nfs-server.service<br />
+	</blockquote>
+自動的に起動させる。<br />
+	<blockquote>
+	# systemctl enable nfs-server.service<br />
+	</blockquote>
+
+状態の表示<br />
+	<blockquote>
+	# systemctl status nfs-server.service<br />
+	</blockquote>
+</blockquote>
+
+NFS クライアント<br />
+	<blockquote>
+	# systemctl start nfs-client.target<p />
+	# systemctl start rpcbind.service<p />
+	</blockquote>
+
+<hr />
+<a href="./">Return</a><p />
+Jun/09/2015 AM 08:15<p />
+</body>
+</html>

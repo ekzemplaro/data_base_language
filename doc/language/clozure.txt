@@ -1,4 +1,4 @@
-<title>clozure Jan/05/2015</title>
+<title>clozure Jun/19/2015</title>
 </head>
 <body>
 <h2><a href="http://ccl.clozure.com/">Clozure Common Lisp</a></h2><p />
@@ -17,13 +17,18 @@ wget ftp://ftp.clozure.com/pub/release/1.9/ccl-1.9-linuxx86.tar.gz<p />
 
 <pre>
 $ ccl64
-Welcome to Clozure Common Lisp Version 1.9-r15757   (LinuxX8664)!
+Welcome to Clozure Common Lisp Version 1.10-r16196  (LinuxX8664)!
+
+CCL is developed and maintained by Clozure Associates. For more information
+about CCL visit http://ccl.clozure.com.  To enquire about Clozure's Common Lisp
+consulting services e-mail info@clozure.com or visit http://www.clozure.com.
+
 ? (require :asdf)
 :ASDF
-("ASDF")
+("uiop" "UIOP" "asdf" "ASDF")
 ? (asdf:asdf-version)
-"2.32"
-? (quit)
+"3.1.3"
+?  (quit)
 </pre>
 
 <hr />

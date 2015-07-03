@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>Mount Jan/13/2015</title>
+<title>Mount Jun/29/2015</title>
 </head>
 <body>
 <h2>Mount</h2><p />
@@ -24,6 +24,8 @@ NFS マウント<p />
 Arch Linux<br />
 	<blockquote>
 	# pacman -S nfs-utils<p />
+	# systemctl start nfs-client.target<p />
+	# systemctl start rpcbind.service<p />
 	</blockquote>
 </blockquote>
 
@@ -32,6 +34,25 @@ cifs マウント<p />
 	# mount -t cifs //server_aa/tmp /mnt/server_aa/tmp -o guest<p />
 	option="iocharset=utf8,username=scott,passwd=tiger,workgroup=TOCHIGI,uid=uchida,gid=wheel,file_mode=0775,dir_mode=0775"<p />
 	# mount -t cifs -o $option //server_bb/test /mnt/server_bb/test<p />
+</blockquote>
+
+
+<blockquote>
+エラー<p />
+	<blockquote>
+	mount: failed to parse mount options<p />
+	</blockquote>
+
+原因<p />
+	<blockquote>
+	option="iocharset=utf8,username=dnc,passwd=dnc0,uid=uchida,gid=uchida"<p />
+	もし、gid　にuchida がないと発生する。<p />
+	</blockquote>
+
+対策<p />
+	<blockquote>
+	# groupadd uchida<p />
+	</blockquote>
 </blockquote>
 
 ftp マウント<p />
@@ -75,7 +96,7 @@ GPT (GUID Partition Table)<br />
 </blockquote>
 # parted -l<p />
 <hr />
-<a href="/data_base/">Return</a><p />
-Jan/13/2015 AM 08:15<p />
+<a href="../">Return</a><p />
+Jun/29/2015 AM 08:15<p />
 </body>
 </html>

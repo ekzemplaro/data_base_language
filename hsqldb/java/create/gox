@@ -4,4 +4,4 @@ JAVA_COMMON=$COMMON/java_common
 JAR=$COMMON/jar
 #
 export CLASSPATH=.:$JAVA_COMMON:$JAR/hsqldb/hsqldb-2.3.2.jar
-java hsqldb_create
+java hsqldb_create /var/tmp/hsqldb/cities

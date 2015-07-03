@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 #	mcached_update.py
-#					Apr/15/2013
+#					Jun/01/2015
 #
 # --------------------------------------------------------
 import	sys
@@ -15,10 +15,10 @@ from jython_mcache_manipulate import mcached_update_proc
 print ("*** 開始 ***")
 
 key_in = sys.argv[1]
-population_in = string.atoi (sys.argv[2])
+population_in = int (sys.argv[2])
 print ("%s\t%d" % (key_in, population_in))
 
-host = 'localhost'
+host = 'host_ubuntu1'
 port = 21201
 print(host)
 print(port)

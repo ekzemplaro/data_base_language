@@ -35,6 +35,8 @@ Python<p />
 Perl<p />
 <blockquote>
 	libclass-dbi-sqlite-perl<p />
+
+	# pacman -S perl-dbd-sqlite<p />
 </blockquote>
 
 Ruby<p />
@@ -93,6 +95,12 @@ ii  libsqlite3-ocaml-dev  1.5.6-3build1	Embeddable SQL Database for OCaml Progra
 Tcl<p />
 <blockquote>
 	libsqlite3-tcl<p />
+</blockquote>
+
+go<p />
+<blockquote>
+	export GOPATH=/home/uchida/gocode<br />
+	go get github.com/mattn/go-sqlite3<br />
 </blockquote>
 
 node.js<p />

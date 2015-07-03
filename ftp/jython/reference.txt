@@ -1,2 +1,3 @@
 jython_file_io.py
 jython_ftp_manipulate.py
+jython_text_manipulate.py

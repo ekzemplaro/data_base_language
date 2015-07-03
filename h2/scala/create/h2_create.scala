@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------
 //	create/h2_create.scala
 //
-//						Aug/01/2011
+//						Jun/12/2015
 // -----------------------------------------------------------------
 import scala.io.Source
 import java.sql._
@@ -14,7 +14,9 @@ def main (args: scala.Array[String])
 {
 	println	("*** 開始 ***")
 
-	val database = "file:/var/tmp/h2/cities"
+	val db_file = args(0)
+
+	val database = "file:" + db_file
 
 	val str_connect= "jdbc:h2:" + database
 
@@ -27,8 +29,6 @@ def main (args: scala.Array[String])
 
 	insert_data_proc (sss)
 
-	sql_manipulate.display_proc (conn)
-
 	sss.close
 	conn.close
 
@@ -38,7 +38,7 @@ def main (args: scala.Array[String])
 // -----------------------------------------------------------------
 def insert_data_proc (sss:Statement)
 {
-	sql_manipulate.insert_record_proc (sss,"t4561","宮崎",51236,"1998-9-14")
+	sql_manipulate.insert_record_proc (sss,"t4561","宮崎",57236,"1998-7-14")
 	sql_manipulate.insert_record_proc (sss,"t4562","日南",98247,"1998-3-25")
 	sql_manipulate.insert_record_proc (sss,"t4563","延岡",19748,"1998-1-21")
 	sql_manipulate.insert_record_proc (sss,"t4564","都城",76439,"1998-8-23")

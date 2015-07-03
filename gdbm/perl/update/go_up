@@ -1,1 +1,1 @@
-./gdbm_update.pl t2157 81472000
+./gdbm_update.pl /var/tmp/gdbm/cities t2157 815472000

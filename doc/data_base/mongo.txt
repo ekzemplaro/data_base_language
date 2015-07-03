@@ -130,8 +130,10 @@ bye
 Arch Linux<br />
 <blockquote>
 # pacman -S mongodb<p />
+# pacman -S mongodb-tools<p />
 # pacman -S php-mongo<p />
 # pacman -S python-pymongo<p />
+
 $ yaourt -Sb ruby-mongo<p />
 $ yaourt -Sb ruby-bson_ext<p />
 </blockquote>

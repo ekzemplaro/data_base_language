@@ -38,17 +38,18 @@ all: text_manipulate.class \
 	xml_manipulate.class \
 	sql_manipulate.class \
 	ftp_manipulate.class \
-	xlsx_manipulate.class \
 	mcached_manipulate.class \
 	redis_manipulate.class \
 	json_manipulate.class \
 	get_uri.class \
 	mongo_manipulate.class \
 	tcbn_manipulate.class \
+	xlsx_manipulate.class \
 	cassandra_manipulate.class \
 	hbase_manipulate.class \
 	voldemort_manipulate.class \
-	excel_manipulate.class
+	excel_manipulate.class \
+	cdb_manipulate.class
 text_manipulate.class: text_manipulate.scala
 	scalac text_manipulate.scala
 file_io.class: file_io.scala
@@ -59,12 +60,12 @@ excel_manipulate.class: excel_manipulate.scala
 	scalac -cp $(CPP) excel_manipulate.scala
 ftp_manipulate.class: ftp_manipulate.scala
 	scalac -cp $(CPP) ftp_manipulate.scala
+mongo_manipulate.class: mongo_manipulate.scala
+	scalac -cp $(CPP) mongo_manipulate.scala
 hbase_manipulate.class: hbase_manipulate.scala
 	scalac -cp $(CPP_HBASE) -deprecation  hbase_manipulate.scala
 xlsx_manipulate.class: xlsx_manipulate.scala
 	scalac -cp $(CPP_XLSX) xlsx_manipulate.scala
-mongo_manipulate.class: mongo_manipulate.scala
-	scalac -cp $(CPP) mongo_manipulate.scala
 mcached_manipulate.class: mcached_manipulate.scala
 	scalac -cp $(CPP_MCACHED) mcached_manipulate.scala
 get_uri.class: get_uri.scala
@@ -81,6 +82,8 @@ tcbn_manipulate.class: tcbn_manipulate.scala
 	scalac -cp $(CPP) tcbn_manipulate.scala
 voldemort_manipulate.class: voldemort_manipulate.scala
 	scalac -cp $(CPP) voldemort_manipulate.scala
+cdb_manipulate.class: cdb_manipulate.scala
+	scalac -cp $(CPP) cdb_manipulate.scala
 html:
 	cd html_src;make html
 clean:

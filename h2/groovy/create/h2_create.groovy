@@ -2,7 +2,7 @@
 /*
 	create/h2_create.groovy
 
-					Nov/22/2013
+					Jun/12/2015
 
 */
 // ---------------------------------------------------------------------
@@ -16,10 +16,10 @@ public static void main (args)
 {
 	println ("*** 開始 ***")
 
-	def database = "/var/tmp/h2/cities"
+	def db_file=args[0]
 
 	def sql = Sql.newInstance \
-		("jdbc:h2:file:" + database, "sa", "", "org.h2.Driver")
+		("jdbc:h2:file:" + db_file, "sa", "", "org.h2.Driver")
 
 	sql_manipulate.drop_table_proc (sql)
 	sql_manipulate.create_table_proc (sql)
@@ -38,7 +38,7 @@ public static void main (args)
 // ---------------------------------------------------------------------
 static void insert_data_proc (sql)
 {
-	sql_manipulate.insert_record_proc (sql,"t4561","宮崎",18932,"1999-9-8")
+	sql_manipulate.insert_record_proc (sql,"t4561","宮崎",14932,"1999-9-8")
 	sql_manipulate.insert_record_proc (sql,"t4562","日南",86571,"1999-2-25")
 	sql_manipulate.insert_record_proc (sql,"t4563","延岡",43145,"1999-5-11")
 	sql_manipulate.insert_record_proc (sql,"t4564","都城",28735,"1999-8-15")

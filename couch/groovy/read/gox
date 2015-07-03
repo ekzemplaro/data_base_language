@@ -6,7 +6,7 @@ GROOVY_COMMON=$COMMON/groovy_common
 JAR=$COMMON/jar
 #
 HTTPCLIENT=$JAR/commons-httpclient
-HTTPCLIENT_JAR=.:$HTTPCLIENT/commons-httpclient-3.1.jar:$HTTPCLIENT/commons-logging-1.2.jar:$HTTPCLIENT/commons-codec-1.10.jar
+HTTPCLIENT_JAR=$HTTPCLIENT/commons-httpclient-3.1.jar:$HTTPCLIENT/commons-logging-1.2.jar:$HTTPCLIENT/commons-codec-1.10.jar
 #
 #
 GROOVY_ALL_JAR=/usr/share/groovy/embeddable/groovy-all.jar

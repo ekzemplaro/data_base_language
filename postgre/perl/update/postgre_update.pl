@@ -2,7 +2,7 @@
 #
 #	update/postgre_update.pl
 #
-#					May/19/2011
+#					Jun/08/2015
 #
 # -----------------------------------------------------------------------
 use	strict;
@@ -29,7 +29,6 @@ my $dbi = DBI->connect($constr, $user, $passwd);
 #
 sql_manipulate::dbi_update_proc ($id_in,$population_in,$dbi);
 #
-sql_manipulate::sql_show_proc ($dbi);
 $dbi->disconnect;
 #
 print (encode ('utf-8',"*** 終了 ***\n"));

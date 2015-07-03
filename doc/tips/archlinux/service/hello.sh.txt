@@ -1,0 +1,10 @@
+#!/bin/bash
+#
+#	hello.sh
+#
+while true
+do
+	echo hello world >> /tmp/hello.log
+	date >> /tmp/hello.log
+	sleep 1
+done

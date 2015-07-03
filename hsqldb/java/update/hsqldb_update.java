@@ -2,7 +2,7 @@
 /*
 	java/update/hsqldb_update.java
 
-					May/26/2015
+					Jun/12/2015
 
 */
 // ----------------------------------------------------------------------
@@ -22,24 +22,25 @@ public static void main (String[] args)
 {
 	System.out.println ("*** 開始 ***");
 
-	String	id = args[0];
-	int	population = Integer.parseInt (args[1]);
-	System.out.print ("\tid = " + id);
+	String db_file = args[0];
+	System.out.println (db_file);
+	String database = "file:" + db_file + ";shutdown=true";
+
+	String	key = args[1];
+	int	population = Integer.parseInt (args[2]);
+	System.out.print ("\tkey = " + key);
 	System.out.println ("\tpopulation = " + population);
 
 	String driver = "org.hsqldb.jdbcDriver";
 
 	Class.forName (driver).newInstance ();
 
-	String database = "file:/var/tmp/hsqldb/cities;shutdown=true";
-
-
 	Connection conn =
 		DriverManager.getConnection("jdbc:hsqldb:" + database, "SA","");
 
 	Statement ss = conn.createStatement ();
 
-	rdb_common.update_proc	(conn,id,population);
+	rdb_common.update_proc	(conn,key,population);
 
 	conn.close ();
 

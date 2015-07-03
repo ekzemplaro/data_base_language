@@ -3,7 +3,7 @@
 #
 #	mcached_create.rb
 #
-#						Aug/20/2013
+#						Jun/01/2015
 #
 require 'rubygems'
 require 'socket'

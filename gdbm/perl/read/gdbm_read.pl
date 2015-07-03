@@ -1,8 +1,8 @@
 #! /usr/bin/perl
 #
-#		gdbm_read.pl
+#	gdbm_read.pl
 #
-#					Oct/21/2010
+#					Jun/11/2015
 #
 # ----------------------------------------------------------
 use	strict;
@@ -13,7 +13,7 @@ use kvalue_manipulate;
 #
 #
 # ----------------------------------------------------------
-my $db_file="/var/tmp/gdbm/cities";
+my $db_file=$ARGV[0];
 #
 print	"*** 開始 ***\n";
 #

@@ -2,7 +2,7 @@
 /*
 	delete/h2_delete.java
 
-				Sep/26/2012
+				Jun/12/2015
 
 */
 // ----------------------------------------------------------------------
@@ -22,17 +22,20 @@ public static void main (String[] args)
 {
 	System.out.println ("*** 開始 ***");
 
-	String	id = args[0];
-	System.out.println ("\tid = " + id);
+	String db_file = args[0];
+	System.out.println (db_file);
 
-	String database = "file:/var/tmp/h2/cities";
+	String database = "file:" + db_file;
+
+	String	key = args[1];
+	System.out.println ("\tkey = " + key);
 
 	Connection conn =
 		DriverManager.getConnection("jdbc:h2:" + database, "SA","");
 
 	Statement ss = conn.createStatement ();
 
-	rdb_common.delete_proc	(conn,id);
+	rdb_common.delete_proc	(conn,key);
 
 	rdb_common.display_proc	(conn);
 

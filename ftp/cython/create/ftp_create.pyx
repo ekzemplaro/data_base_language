@@ -2,13 +2,11 @@
 #
 #	create/ftp_create.pyx
 #
-#					Mar/29/2013
+#					Jul/03/2015
 # ----------------------------------------------------------------
 #
 import os
 import sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
 import pycurl
 import json
 #
@@ -23,15 +21,15 @@ from curl_get import file_upload_proc
 def	data_prepare_proc ():
 	dict_aa = {}
 #
-	dict_aa = dict_append_proc (dict_aa,'t0361',u'盛岡',41795,'1949-8-12')
-	dict_aa = dict_append_proc (dict_aa,'t0362',u'久慈',38724,'1949-5-15')
-	dict_aa = dict_append_proc (dict_aa,'t0363',u'二戸',78236,'1949-6-12')
-	dict_aa = dict_append_proc (dict_aa,'t0364',u'宮古',51438,'1949-7-21')
-	dict_aa = dict_append_proc (dict_aa,'t0365',u'遠野',79682,'1949-4-19')
-	dict_aa = dict_append_proc (dict_aa,'t0366',u'八幡平',89537,'1949-10-14')
-	dict_aa = dict_append_proc (dict_aa,'t0367',u'大船渡',96174,'1949-5-24')
-	dict_aa = dict_append_proc (dict_aa,'t0368',u'一関',53921,'1949-2-12')
-	dict_aa = dict_append_proc (dict_aa,'t0369',u'花巻',64736,'1949-11-14')
+	dict_aa = dict_append_proc (dict_aa,'t0361','盛岡',41795,'1949-8-12')
+	dict_aa = dict_append_proc (dict_aa,'t0362','久慈',38624,'1949-5-15')
+	dict_aa = dict_append_proc (dict_aa,'t0363','二戸',78136,'1949-6-12')
+	dict_aa = dict_append_proc (dict_aa,'t0364','宮古',51438,'1949-7-21')
+	dict_aa = dict_append_proc (dict_aa,'t0365','遠野',79682,'1949-4-19')
+	dict_aa = dict_append_proc (dict_aa,'t0366','八幡平',82537,'1949-10-14')
+	dict_aa = dict_append_proc (dict_aa,'t0367','大船渡',96174,'1949-5-24')
+	dict_aa = dict_append_proc (dict_aa,'t0368','一関',53921,'1949-2-12')
+	dict_aa = dict_append_proc (dict_aa,'t0369','花巻',64716,'1949-11-14')
 #
 	return	dict_aa
 

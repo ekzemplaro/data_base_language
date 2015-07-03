@@ -1,0 +1,10 @@
+[Unit]
+Description = hello daemon
+
+[Service]
+ExecStart = /opt/hello.sh
+Restart = always
+Type = simple
+
+[Install]
+WantedBy = multi-user.target

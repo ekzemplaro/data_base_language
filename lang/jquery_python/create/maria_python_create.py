@@ -1,9 +1,9 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 # -------------------------------------------------------------------------
 #	maria_python_create.py
 #
-#						Nov/14/2014
+#						Jun/24/2015
 # -------------------------------------------------------------------------
 import	sys
 import	string
@@ -12,7 +12,7 @@ sys.path.append ('/var/www/data_base/common/python_common')
 #
 from file_io import file_write_proc
 from sql_manipulate import table_insert_proc,sql_insert_proc,create_table_proc,drop_table_proc
-#from mysql_utf8 import mysql_utf8_proc
+#
 from text_manipulate import dict_append_proc
 #
 #

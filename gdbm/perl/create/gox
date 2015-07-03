@@ -1,1 +1,1 @@
-./gdbm_create.pl
+./gdbm_create.pl /var/tmp/gdbm/cities

@@ -3,11 +3,11 @@
 #
 #	create/tyrant_create.py
 #
-#					Apr/16/2013
+#					Jun/01/2015
 #
 import sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
+# reload(sys)
+# sys.setdefaultencoding('utf-8')
 import	json
 import	socket
 #
@@ -35,7 +35,7 @@ print ("*** 開始 ***")
 #
 dict_aa = data_prepare_proc ()
 #
-host = 'localhost'
+host = 'host_ubuntu1'
 port = 1978
 addr = (host,port)
 ss = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

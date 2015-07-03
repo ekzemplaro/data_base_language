@@ -1,2 +1,3 @@
 #
-./gdbm_read.scm /var/tmp/gdbm/cities.dir
+# ./gdbm_read.scm /var/tmp/gdbm/cities.dir
+./gdbm_read.scm /var/tmp/gdbm/cities.pag

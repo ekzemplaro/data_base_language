@@ -2,4 +2,4 @@
 #
 echo "import berkeley_delete" > tmp_execute.py
 #
-python ./tmp_execute.py t2452
+python ./tmp_execute.py /var/tmp/berkeley/cities.db t2452

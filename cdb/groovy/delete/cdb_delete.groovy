@@ -2,7 +2,7 @@
 /*
 	cdb_delete.groovy
 
-					May/30/2013
+					Jun/12/2015
 
 */
 // ----------------------------------------------------------------
@@ -22,8 +22,6 @@ public static void main(String[] args)
 	def ff = new text_manipulate ()
 
 	def dict_bb = ff.dict_delete_proc (dict_aa,key_in)
-
-	ff.dict_display_proc (dict_bb)
 
 	gg.dict_to_cdb_proc (dict_bb,file_cdb)
 		

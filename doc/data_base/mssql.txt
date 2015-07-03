@@ -99,6 +99,14 @@ Arch Linux<br />
 Python<p />
 <blockquote>
 	python-pymssql<p />
+
+Ubuntu 15.04<br />
+	<blockquote>
+	# apt-get install python3-pip<p />
+	# apt-get install freetds-dev<p />
+	# pip3 install pymssql<p />
+	</blockquote>
+
 Arch Linux<br />
 	<blockquote>
 	# pacman -S python-pip<p />

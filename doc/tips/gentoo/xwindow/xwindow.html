@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+<title>Gentoo X Jul/03/2015</title>
+</head>
+<body>
+
+<h2>X のインストール</h2><p />
+
+ドライバのインストール<p />
+<blockquote>
+何をインストールするか決めて、例えば<p />
+	<blockquote>
+	# lspci | grep VGA<br />
+	00:02.0 VGA compatible controller: Intel Corporation 3rd Gen Core processor Graphics Controller (rev 09)<br />
+	</blockquote>
+# emerge xf86-video-intel<p />
+</blockquote>
+
+/etc/portage/make.conf<p />
+<blockquote>
+VIDEO_CARDS="intel"<p />
+</blockquote>
+
+x11 のインストール<p />
+<blockquote>
+# emerge xorg-x11<p />
+</blockquote>
+
+fvwm-crystal のインストール<p />
+<blockquote>
+# emerge fvwm-crystal<p />
+</blockquote>
+
+
+<blockquote>
+<pre>
+# emerge fvwm-crystal
+
+ * IMPORTANT: 11 news items need reading for repository 'gentoo'.
+ * Use eselect news read to view new items.
+
+ * Last emerge --sync was 43d 12h 46m 11s ago.
+Calculating dependencies... done!
+[ebuild  N     ] virtual/awk-1 
+[ebuild  N     ] media-libs/imlib2-1.4.6-r2  USE="X bzip2 nls zlib -doc -gif -jpeg -mp3 -png -static-libs -tiff" ABI_X86="(64) -32 (-x32)" CPU_FLAGS_X86="(-mmx)" 
+[ebuild  N     ] x11-misc/stalonetray-0.8.1  USE="graceful-exit -debug -kde" 
+[ebuild  N     ] x11-wm/fvwm-2.6.5  USE="nls png readline vanilla -bidi -debug -doc -gtk2-perl -lock -netpbm -perl -rplay -stroke -svg -tk -truetype -xinerama" 
+[ebuild  N     ] x11-misc/hsetroot-1.0.2 
+[ebuild  N     ] media-gfx/imagemagick-6.9.0.3  USE="bzip2 cxx openmp zlib -X -autotrace -corefonts -djvu -fftw -fontconfig -fpx -graphviz -hdri -jbig -jpeg -jpeg2k -lcms -lqr -lzma (-opencl) -openexr -pango -perl -png -postscript -q32 -q64 -q8 -raw -static-libs -svg {-test} -tiff -truetype -webp -wmf -xml" 
+[ebuild  N     ] x11-themes/fvwm-crystal-3.2.3  PYTHON_TARGETS="python2_7" 
+
+The following USE changes are necessary to proceed:
+ (see "package.use" in the portage(5) man page for more details)
+# required by x11-misc/hsetroot-1.0.2::gentoo
+# required by x11-themes/fvwm-crystal-3.2.3::gentoo
+# required by fvwm-crystal (argument)
+>=media-libs/imlib2-1.4.6-r2 X
+# required by x11-themes/fvwm-crystal-3.2.3::gentoo
+# required by fvwm-crystal (argument)
+>=x11-wm/fvwm-2.6.5 png
+
+Use --autounmask-write to write changes to config files (honoring
+CONFIG_PROTECT). Carefully examine the list of proposed changes,
+paying special attention to mask or keyword changes that may expose
+experimental or unstable packages.
+</pre>
+</blockquote>
+
+.xinitrc<br />
+<blockquote>
+<pre>
+#! /bin/sh
+#
+# ~/.xinitrc
+#
+# Executed by startx (run your window manager from here)
+
+if [ -d /etc/X11/xinit/xinitrc.d ]; then
+  for f in /etc/X11/xinit/xinitrc.d/*; do
+    [ -x "$f" ] && . "$f"
+  done
+  unset f
+fi
+
+#
+exec gnome-session
+#
+# ...or the Window Manager of your choice
+#
+# exec cinnamon
+# exec awesome
+# exec startkde
+# exec startxfce4
+</pre>
+</blockquote>
+
+<hr />
+<a href="../">Return</a><p />
+Jul/03/2015 AM 08:15<p />
+</body>
+</html>

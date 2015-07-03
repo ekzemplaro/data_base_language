@@ -3,7 +3,7 @@
 #
 #	gdbm_create.py
 #
-#					Jul/30/2014
+#					Jun/11/2015
 # -------------------------------------------------------------
 import	os
 import	sys
@@ -37,7 +37,7 @@ print ("*** 開始 ***")
 #
 dict_aa = data_prepare_proc ()
 #
-db_name = "/var/tmp/gdbm/cities.pag";
+db_name = sys.argv[1]
 if os.path.exists (db_name):
 	os.remove (db_name)
 #

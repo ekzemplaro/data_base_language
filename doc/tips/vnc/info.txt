@@ -1,0 +1,44 @@
+# pacman -S tigervnc
+
+
+# systemctl start vncserver
+
+vncserver: The HOME environment variable is not set.
+
+$ vncserver
+
+$ vncserver -kill :1
+
+# pacman -S gtk-vnc
+
+
+gvncviewer dfx035:1
+
+
+
+$ vncserver
+
+New 'dfx035.eg.jp.honda.com:1 (uchida)' desktop is dfx035.eg.jp.honda.com:1
+
+Starting applications specified in /home/uchida/.vnc/xstartup
+Log file is /home/uchida/.vnc/dfx035.eg.jp.honda.com:1.log
+
+[uchida@dfx035 ~]$ vncserver -kill :1
+Killing Xvnc process ID 24814
+
+
+-----------------------------------------------------
+
+# pacman -S printproto
+# pacman -S xorg-util-macros
+# pacman -S go
+# pacman -S mercurial
+# pacman -S imake
+# pacman -S libxp
+# pacman -S setconf
+
+go-2:1.4.2-2  mercurial-3.4.1-1
+imake-1.0.7-1  libxp-1.0.3-1  setconf-0.6.7-1
+
+
+$ yaourt -Sb tightvnc

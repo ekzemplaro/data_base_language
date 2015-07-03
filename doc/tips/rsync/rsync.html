@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>rsync May/25/2015</title>
+<title>rsync Jul/01/2015</title>
 </head>
 <body>
 <h2>rsync</h2><p />
@@ -65,6 +65,13 @@ rsync -avz --delete rsync://host_rsync/var_tmp/json/ /var/tmp/json<p />
 rsync -avz --delete rsync://host_rsync/var_tmp/xml_file/ /var/tmp/xml_file<p />
 rsync -avz --delete --no-perms rsync://host_rsync/var_tmp/xml_file/ /var/tmp/xml_file<p />
 </blockquote>
+
+別な表記方法<br />
+<blockquote>
+rsync -avz --delete host_rsync::ftp/ /tmp/ftp<p />
+rsync -avz --delete host_rsync::var_tmp/json/ /var/tmp/json<p />
+</blockquote>
+
 <hr />
 Ubuntu での設定<br />
 <blockquote>
@@ -73,10 +80,7 @@ Ubuntu での設定<br />
 	<blockquote>
 	RSYNC_ENABLE=true<p />
 	</blockquote>
-# service rsync start<br />
-<pre>
- * Starting rsync daemon rsync                                           [ OK ] 
-</pre>
+# systemctl start rsync<p />
 
 </blockquote>
 
@@ -87,7 +91,23 @@ Ubuntu での設定<br />
 rsync error: error starting client-server protocol (code 5) at main.c(1635) [Receiver=3.1.1]<br />
 </blockquote>
 <hr />
+リモートで、rsyncd が動いているかの確認<p />
+<blockquote>
+<pre>
+$ nmap -p 873 host_aa
+
+Starting Nmap 6.47 ( http://nmap.org ) at 2015-07-01 13:41 JST
+Nmap scan report for host_aa (172.20.0.30)
+Host is up (0.00036s latency).
+rDNS record for 172.20.0.30: host_aa.example.com
+PORT    STATE SERVICE
+873/tcp open  rsync
+
+Nmap done: 1 IP address (1 host up) scanned in 0.05 seconds
+</pre>
+</blockquote>
+<hr />
 <a href="/data_base/">Return</a><p />
-May/25/2015 AM 08:15<p />
+Jul/01/2015 AM 08:15<p />
 </body>
 </html>

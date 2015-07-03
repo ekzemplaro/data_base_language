@@ -1,0 +1,9 @@
+export COMMON=/var/www/data_base/common
+export JAVA_COMMON=$COMMON/java_common
+export JAR=$COMMON/jar
+#
+export CLASSPATH=./:$JAR/sg-cdb-1.0.4.jar:$JAR/jsonic-1.1.2.jar:$JAVA_COMMON
+#
+scala cdb_delete /var/tmp/cdb/cities.cdb t2762
+#
+

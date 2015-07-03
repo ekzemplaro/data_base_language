@@ -2,31 +2,36 @@
 // ---------------------------------------------------------------
 //	csv_read.js
 //
-//					Jan/13/2015
+//					Jun/29/2015
 //
 // ---------------------------------------------------------------
 var fs = require("fs");
+var csv = require('csv');
 var text_manipulate=require ("/var/www/data_base/common/node_common/text_manipulate");
 
 // ---------------------------------------------------------------
 console.log ("*** 開始 ***");
 //
 
-var file_in=process.argv[2];
+var file_csv=process.argv[2];
 
-console.log (file_in);
+console.log (file_csv);
 
-if (fs.existsSync(file_in))
+fs.readFile(file_csv, function(err, buf)
 	{
-	var dict_aa = text_manipulate.csv_read_proc (file_in);
+	csv.parse(buf.toString(),{comment:'#'}, function(err, array_aa)
+		{
+		if (err != null)
+			{
+			console.log ("*** error ***");
+			console.log (err);
+			}
 
-	text_manipulate.dict_display_proc (dict_aa);
-	}
-else
-	{
-	console.log ("*** error *** " + file_in + " doesn't exist. ***");
-	}
+		var dict_aa = text_manipulate.array_to_dict_proc (array_aa);
 
-console.log ("*** 終了 ***");
+		text_manipulate.dict_display_proc (dict_aa);
+		console.log ("*** 終了 ***");
+		});
+	});
 // ---------------------------------------------------------------
 

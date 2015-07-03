@@ -1,0 +1,10 @@
+JAVA_CLASSPATH="/usr/share/java/js.jar:/usr/share/java/jline.jar"
+export COMMON=/var/www/data_base/common
+export JAVA_COMMON=$COMMON/java_common
+export JAR=$COMMON/jar
+CPX=$JAR/sg-cdb-1.0.4.jar
+export CLASSPATH=./:$CPX:$JAVA_COMMON:$JAVA_CLASSPATH
+#
+#
+./cdb_delete.js /var/tmp/cdb/cities.cdb t2766
+#

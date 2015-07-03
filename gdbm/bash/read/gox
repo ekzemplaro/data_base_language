@@ -1,0 +1,4 @@
+#
+#./gdbm_read.sh /var/tmp/gdbm/cities.pag
+#
+./gdbm_read.sh /var/tmp/gdbm/cities.db

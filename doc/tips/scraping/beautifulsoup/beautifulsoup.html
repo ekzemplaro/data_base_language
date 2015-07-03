@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+<title>beautifulsoup Jun/26/2015</title>
+</head>
+<body>
+<h2>beautifulsoup</h2><p />
+
+インストール方法<p />
+<blockquote>
+	# pacman -S python-beautifulsoup4<p />
+</blockquote>
+
+サンプル<p />
+<blockquote>
+	<a href="./pick_up.py.txt">pick_up.py</a><p />
+</blockquote>
+
+実行コマンド<p />
+<blockquote>
+./pick_up.py list_inp1763_1.html list_1763.json<p />
+</blockquote>
+
+エラーになる例<p />
+<blockquote>
+<pre>
+$ ./pick_up.py list_inp112_1.html list_112.json
+*** 開始 ***
+Traceback (most recent call last):
+  File "./pick_up.py", line 21, in <module>
+    soup = BeautifulSoup(open (file_in))
+  File "/usr/lib/python3.4/site-packages/bs4/__init__.py", line 161, in __init__
+    markup = markup.read()
+  File "/usr/lib/python3.4/codecs.py", line 319, in decode
+    (result, consumed) = self._buffer_decode(data, self.errors, final)
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xba in position 21: invalid start byte
+</pre>
+</blockquote>
+
+<hr />
+<a href="../">Return</a><p />
+Jun/26/2015 AM 08:15<p />
+</body>
+</html>

@@ -35,8 +35,10 @@ def dbm_to_dict_proc (dd):
 #
 	dict_aa = {}
 	for id in dd.keys ():
-		unit_aa = json.loads (dd[id])
-		dict_aa[id] = unit_aa
+		key = id.decode("utf-8")
+#		print (str (dd[id]))
+		unit_aa = json.loads (dd[id].decode("utf-8"))
+		dict_aa[key] = unit_aa
 #
 	return dict_aa
 # -------------------------------------------------------------

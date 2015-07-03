@@ -1,9 +1,9 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	mongo_python_read.py
 #
-#					May/12/2015
+#					Jun/24/2015
 #
 # ----------------------------------------------------------------
 import	sys

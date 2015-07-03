@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+<title>ArchLinux samba Jun/09/2015</title>
+</head>
+<body>
+
+samba サーバーの設定<p />
+<blockquote>
+	インストール<p />
+	<blockquote>
+	# pacman -S samba<p />
+	# pacman -S smbclient<p />
+	</blockquote>
+	/etc/samba/smb.conf の設定<br />
+	<blockquote>
+	# cp /etc/samba/smb.conf.default /etc/samba/smb.conf<br />
+	<pre>
+	[tmp]
+	   comment = Temporary file space
+	   path = /tmp
+	   read only = no
+	   public = yes
+	</pre>
+	</blockquote>
+	ユーザーの設定<br />
+	<blockquote>
+		# pdbedit -a -u uchida<p />
+	</blockquote>
+	起動<br />
+		<blockquote>
+		# systemctl start nmbd<p />
+		# systemctl start smbd<p />
+		</blockquote>
+
+</blockquote>
+
+<hr />
+<a href="./">Return</a><p />
+Jun/09/2015 AM 08:15<p />
+</body>
+</html>

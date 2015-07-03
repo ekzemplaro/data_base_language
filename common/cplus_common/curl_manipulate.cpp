@@ -2,7 +2,7 @@
 /*
 	curl_manipulate.cpp
 
-					Feb/10/2015
+					Jun/19/2015
 */
 // --------------------------------------------------------------------
 #include	<cstdio>
@@ -138,6 +138,11 @@ void curl_put_proc (const char url_target[],string str_in)
 	CURL *curl;
 	CURLcode res;
 
+//	cerr << "*** curl_put_proc *** start ***\n";
+
+//	cerr << "url_target = " << url_target << endl;
+//	cerr << "str_in = " << str_in << endl;
+
 	curl = curl_easy_init();
 
 	if (curl)
@@ -163,9 +168,15 @@ void curl_put_proc (const char url_target[],string str_in)
 
 // cerr << "*** curl_put_proc *** hhh\n";
 	res = curl_easy_perform (curl);
+
+	if (res != 0)
+		{
+		cerr << "*** res = " << res << endl;
+		}
+
 // cerr << "*** curl_put_proc *** iii\n";
 
-	curl_slist_free_all(headers);
+	curl_slist_free_all (headers);
 	}
 
 	curl_easy_cleanup(curl);

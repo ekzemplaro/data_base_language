@@ -2,7 +2,7 @@
 #
 #	sqlite3_create.pl
 #
-#				May/30/2012
+#				Jun/08/2015
 #
 #
 # ----------------------------------------------------------------
@@ -43,23 +43,23 @@ sub data_prepare_proc
 {
 	my %dict_aa;
 	%dict_aa = text_manipulate::dict_append_proc
-		('t0711','郡山',75842,'2005-9-12',%dict_aa);
+		('t0711','郡山',75842,'2005-8-12',%dict_aa);
 	%dict_aa = text_manipulate::dict_append_proc
-		('t0712','会津若松',14278,'2005-3-15',%dict_aa);
+		('t0712','会津若松',14258,'2005-2-15',%dict_aa);
 	%dict_aa = text_manipulate::dict_append_proc
-		('t0713','白河',58641,'2005-6-17',%dict_aa);
+		('t0713','白河',58641,'2005-5-17',%dict_aa);
 	%dict_aa = text_manipulate::dict_append_proc
-		('t0714','福島',46432,'2005-8-22',%dict_aa);
+		('t0714','福島',46732,'2005-7-22',%dict_aa);
 	%dict_aa = text_manipulate::dict_append_proc
-		('t0715','喜多方',27149,'2005-2-28',%dict_aa);
+		('t0715','喜多方',27189,'2005-1-28',%dict_aa);
 	%dict_aa = text_manipulate::dict_append_proc
-		('t0716','二本松',92139,'2005-5-9',%dict_aa);
+		('t0716','二本松',92139,'2005-4-9',%dict_aa);
 	%dict_aa = text_manipulate::dict_append_proc
-		('t0717','いわき',35147,'2005-4-10',%dict_aa);
+		('t0717','いわき',35647,'2005-12-10',%dict_aa);
 	%dict_aa = text_manipulate::dict_append_proc
-		('t0718','相馬',85146,'2005-10-8',%dict_aa);
+		('t0718','相馬',82146,'2005-10-8',%dict_aa);
 	%dict_aa = text_manipulate::dict_append_proc
-		('t0719','須賀川',64827,'2005-5-21',%dict_aa);
+		('t0719','須賀川',64817,'2005-9-21',%dict_aa);
 
 	return	%dict_aa;
 }

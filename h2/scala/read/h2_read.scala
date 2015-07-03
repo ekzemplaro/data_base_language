@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------
 //	read/h2_read.scala
 //
-//						Aug/01/2011
+//						Jun/12/2015
 // -----------------------------------------------------------------
 import scala.io.Source
 import java.sql._
@@ -14,7 +14,9 @@ def main (args: scala.Array[String])
 {
 	println	("*** 開始 ***")
 
-	val database = "file:/var/tmp/h2/cities"
+	val db_file = args(0)
+
+	val database = "file:" + db_file
 
 	val str_connect= "jdbc:h2:" + database
 

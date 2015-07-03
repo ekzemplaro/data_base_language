@@ -2,7 +2,7 @@
 /*
 	couch_delete.cpp
 
-					Mar/04/2014
+					Jun/19/2015
 
 */
 // --------------------------------------------------------------------
@@ -12,15 +12,46 @@
 #include	<cstring>
 #include	<stdlib.h>
 
-using namespace std;
-typedef map<string,string> Unit;
 
-extern map <string,Unit> json_to_dict_proc (string str_json);
-extern	void dict_display_proc (map <string,Unit> dict_aa);
-extern string dict_to_json_proc (map <string,Unit> dict_aa);
+#include "/var/www/data_base/common/cplus_common/include/picojson.h"
+
+using namespace std;
+using namespace picojson;
+
+
 extern string url_get_proc (const char url[]);
-extern void curl_put_proc (const char *url_target,string str_in);
 extern void curl_delete_proc (const char url[]);
+// --------------------------------------------------------------------
+object json_record_parser (string json_str)
+{
+	char* data_xx;
+	data_xx = (char*) malloc(4096);
+	size_t size_xx = json_str.size ();
+
+	strcpy (data_xx,json_str.c_str ());
+
+	value vv;
+	string err;
+
+	parse (vv, data_xx, data_xx + size_xx, &err);
+
+	object obj;
+
+	if (err.empty())
+		{
+		obj = vv.get<object>();
+		}
+	else
+		{
+		cerr << err << endl;
+		}
+
+
+	free (data_xx);
+
+	return	obj;
+}
+
 // --------------------------------------------------------------------
 int main (int argc,char *argv[])
 {
@@ -29,28 +60,29 @@ int main (int argc,char *argv[])
 	char key_in[10];
 	strcpy (key_in,argv[1]);
 
-	cout << key_in << endl;
+	cerr << key_in << endl;
 
-//	char url_collection[] = "http://host_dbase:5984/city";
-	char url_collection[] = "http://cddn007:5984/city";
+	char url_collection[] = "http://localhost:5984/nagano/";
 	char url_target[160];
+	char url_delete[160];
 
 	strcpy (url_target,url_collection);
-	strcat (url_target,"/cities");
+	strcat (url_target,key_in);
 
-	string str_json = url_get_proc (url_target);
+	string json_str = url_get_proc (url_target);
 
-	map <string,Unit> dict_aa = json_to_dict_proc (str_json);
+	object obj = json_record_parser (json_str);
 
-	dict_aa.erase (key_in);
+	string rev = obj["_rev"].to_str ();
 
-//	dict_display_proc (dict_aa);
+	cerr << obj["_rev"].to_str () << endl;
+	cerr << obj["name"].to_str () << endl;
 
-	str_json = dict_to_json_proc (dict_aa);
+	strcpy (url_delete,url_target);
+	strcat (url_delete,"?rev=");
+	strcat (url_delete,rev.c_str ());
 
-	curl_delete_proc (url_collection);
-	curl_put_proc (url_collection,"");
-	curl_put_proc (url_target,str_json);
+	curl_delete_proc (url_delete);
 
 	cerr << "*** 終了 ***\n";
 

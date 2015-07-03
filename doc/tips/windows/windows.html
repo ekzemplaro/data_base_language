@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>Windows コマンド の使い方 Jan/20/2015</title>
+<title>Windows コマンド の使い方 Jun/25/2015</title>
 </head>
 <body>
 <h2>Windows コマンド の使い方</h2><p />
@@ -33,8 +33,29 @@ chcp 932<p />
 chcp<p />
 </blockquote>
 
+ネットワークのリセット<p />
+<blockquote>
+ipconfig /release<br />
+ipconfig /renew<br />
+</blockquote>
+
 <hr />
-<a href="/data_base/">Return</a><p />
-Jan/20/2015 AM 08:15<p />
+
+エラーへの対応<p />
+<blockquote>
+現在、指定されたネットワーク フォルダは異なるユーザー名とパスワードを
+使って割り当てられています。
+異なるユーザー名とパスワードを使って接続するには、
+最初に現在のネットワーク共有の割り当てをすべて切断してください<p />
+<blockquote>
+net use ¥¥192.168.0.200 /delete<p />
+net use<p />
+</blockquote>
+</blockquote>
+
+<hr />
+
+<a href="../">Return</a><p />
+Jun/25/2015 AM 08:15<p />
 </body>
 </html>

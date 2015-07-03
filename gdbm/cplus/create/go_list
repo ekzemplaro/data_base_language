@@ -1,0 +1,2 @@
+dbm list /var/tmp/gdbm/cities.db 0
+echo

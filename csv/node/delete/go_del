@@ -1,1 +1,3 @@
+export NODE_PATH=/home/uchida/node_modules
+#
 ./csv_delete.js /var/tmp/csv/cities.csv t1276

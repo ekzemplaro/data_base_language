@@ -1,0 +1,9 @@
+#
+DB=/var/tmp/gdbm/cities.db
+#
+for key in t2151 t2152 t2153 t2154 t2155 t2156
+do
+	dbm get $DB $key
+	echo
+done
+#

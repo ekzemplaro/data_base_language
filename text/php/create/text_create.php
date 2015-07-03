@@ -3,7 +3,7 @@
 //
 //	text_create.php
 //
-//					Mar/27/2013
+//					Jun/24/2015
 //
 // ----------------------------------------------------------------
 $path="/var/www/data_base/common/php_common";
@@ -35,6 +35,8 @@ print	"*** 開始 ***\n";
 $file_out = $argv[1];
 
 print	$file_out . "\n";
+
+folder_create_proc ($file_out);
 
 $dict_aa = data_prepare_proc ();
 

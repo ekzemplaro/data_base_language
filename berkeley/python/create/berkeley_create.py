@@ -43,7 +43,8 @@ if os.path.exists (db_name):
 	os.remove (db_name)
 #
 adb = db.DB ()
-adb.open (db_name,dbtype=db.DB_HASH,flags=db.DB_CREATE)
+# adb.open (db_name,dbtype=db.DB_HASH,flags=db.DB_CREATE)
+adb.open (db_name,dbtype=db.DB_BTREE,flags=db.DB_CREATE)
 #
 for key in dict_aa.keys():
 	unit_aa = dict_aa[key]

@@ -9,6 +9,12 @@ ii  libcommons-httpclient-java     3.1-10.2  all    A Java(TM) library for creat
 </pre>
 </blockquote>
 
+Ubuntu<br />
+<blockquote>
+	# apt-get install openjdk-8-jdk<br />
+</blockquote>
+
+Arch Linux<br />
 <blockquote>
 	# pacman -S jre8-openjdk<br />
 	# pacman -S jdk8-openjdk<br />

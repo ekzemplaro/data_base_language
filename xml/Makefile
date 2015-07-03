@@ -2,6 +2,7 @@ clean:
 	cd kaya; make clean;
 	cd pascal; make clean;
 	cd ocaml; make clean;
+	cd ada; make clean;
 	cd go; make clean;
 	cd cplus; make clean;
 	cd vala; make clean;

@@ -1,2 +1,2 @@
 #
-./gdbm_create.py
+./gdbm_create.py /var/tmp/gdbm/cities.db

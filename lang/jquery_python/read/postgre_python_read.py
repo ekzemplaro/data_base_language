@@ -1,9 +1,9 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	postgre_python_read.py
 #
-#						May/30/2012
+#						Jun/24/2015
 #
 # ----------------------------------------------------------------------
 import sys

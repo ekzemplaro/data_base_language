@@ -1,2 +1,2 @@
 #
-./gdbm_delete.py t2155
+./gdbm_delete.py /var/tmp/gdbm/cities.db t2155

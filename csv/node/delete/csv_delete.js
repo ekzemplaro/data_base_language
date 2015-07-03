@@ -2,10 +2,11 @@
 // ---------------------------------------------------------------
 //	csv_delete.js
 //
-//					Jan/13/2015
+//					Jun/29/2015
 //
 // ---------------------------------------------------------------
 var fs = require("fs");
+var csv = require("csv");
 var text_manipulate=require ("/var/www/data_base/common/node_common/text_manipulate");
 
 
@@ -19,9 +20,17 @@ var key_in=process.argv[3];
 console.log (file_csv);
 console.log (key_in);
 
-if (fs.existsSync(file_csv))
+fs.readFile(file_csv, function(err, buf)
 	{
-	var dict_aa = text_manipulate.csv_read_proc (file_csv);
+	csv.parse(buf.toString(),{comment:'#'}, function(err, array_aa)
+		{
+		if (err != null)
+			{
+			console.log ("*** error ***");
+			console.log (err);
+			}
+
+		var dict_aa = text_manipulate.array_to_dict_proc (array_aa);
 
 	if (key_in in dict_aa)
 		{
@@ -29,13 +38,10 @@ if (fs.existsSync(file_csv))
 
 		text_manipulate.csv_write_proc (file_csv,dict_aa);
 		}
-	}
-else
-	{
-	console.log ("*** error *** " + file_csv + " doesn't exist. ***");
-	}
+	console.log ("*** 終了 ***");
+		});
+	});
 
-console.log ("*** 終了 ***");
 
 
 // ---------------------------------------------------------------

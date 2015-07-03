@@ -1,3 +1,2 @@
-jython_file_io.py
 jython_get_uri.py
 jython_text_manipulate.py

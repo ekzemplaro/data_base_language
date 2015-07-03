@@ -37,8 +37,7 @@ func main () {
 	fmt.Printf ("id_in = %d\t" , id_in)
 	fmt.Printf ("population_in = %d\n" , population_in)
 
-	db, err := couch.NewDatabase ("cdbd026", "5984", "city")
-//	db, err := couch.NewDatabase ("localhost", "5984", "city")
+	db, err := couch.NewDatabase ("localhost", "5984", "city")
 
 	id_doc := "cities"
 	rr := new (completerecord)

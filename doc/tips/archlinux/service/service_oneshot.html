@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+<title>ArchLinux service oneshot Jun/30/2015</title>
+</head>
+<body>
+
+ワンショットサービスの作成<p />
+<blockquote>
+	<a href="one_shot.sh.txt">/opt/one_shot.sh</a><p />
+		<blockquote>
+		<pre>
+#!/bin/bash
+#
+#	one_shot.sh
+#
+LOG_FILE="/tmp/one_shot.log"
+date >> $LOG_FILE
+echo "one_shot" >> $LOG_FILE
+date >> $LOG_FILE
+#
+		</pre>
+		</blockquote>
+
+	<a href="one_shot.service.txt">/etc/systemd/system/one_shot.service</a><p />
+		<blockquote>
+		ネットワークが立ち上がってから実行する<p />
+		<pre>
+[Unit]
+Description=one_shot shell
+After=netctl@profile.service
+
+[Service]
+ExecStart=/bin/bash /opt/one_shot.sh
+Type=simple
+
+[Install]
+WantedBy=multi-user.target
+		</pre>
+		</blockquote>
+
+	起動<br />
+		<blockquote>
+		# systemctl start one_shot<p />
+		</blockquote>
+
+</blockquote>
+
+<a href="./">Return</a><p />
+Jun/29/2015 AM 08:15<p />
+</body>
+</html>

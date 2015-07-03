@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 #	tyrant_read.py
-#					Jun/21/2012
+#					Jun/01/2015
 #
 # --------------------------------------------------------
 import	sys
@@ -13,7 +13,7 @@ from jython_mcache_manipulate import get_record_proc
 # --------------------------------------------------------
 print ("*** 開始 ***")
 
-host = 'localhost'
+host = 'host_ubuntu1'
 port = 1978
 print(host)
 print(port)

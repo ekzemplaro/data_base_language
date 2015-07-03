@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+<title>ArchLinux service Jun/29/2015</title>
+</head>
+<body>
+
+デーモンサービス の作成<p />
+<blockquote>
+	<a href="hello.sh.txt">/opt/hello.sh</a><p />
+		<blockquote>
+		<pre>
+#!/bin/bash
+#
+#	hello.sh
+#
+while true
+do
+	echo hello world >> /tmp/hello.log
+	date >> /tmp/hello.log
+	sleep 1
+done
+		</pre>
+		</blockquote>
+
+	<a href="hello.service.txt">/etc/systemd/system/hello.service</a><p />
+		<blockquote>
+		<pre>
+[Unit]
+Description = hello daemon
+
+[Service]
+ExecStart = /opt/hello.sh
+Restart = always
+Type = simple
+
+[Install]
+WantedBy = multi-user.target
+		</pre>
+		</blockquote>
+
+	起動<br />
+		<blockquote>
+		# systemctl start hello<p />
+		</blockquote>
+
+</blockquote>
+
+<a href="./">Return</a><p />
+Jun/29/2015 AM 08:15<p />
+</body>
+</html>

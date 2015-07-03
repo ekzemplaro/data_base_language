@@ -1,1 +1,3 @@
-./csv_update.js /var/tmp/csv/cities.csv t1272 4958900
+export NODE_PATH=/home/uchida/node_modules
+#
+./csv_update.js /var/tmp/csv/cities.csv t1272 4158200

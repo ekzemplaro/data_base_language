@@ -1,7 +1,7 @@
 // --------------------------------------------------------------
 //	delete/riak_delete.java
 //
-//					Mar/12/2013
+//					Jun/25/2015
 // --------------------------------------------------------------
 import	java.util.HashMap;
 
@@ -18,7 +18,7 @@ public static void main (String[] args) throws Exception
 
 	System.out.println ("\tkey_in = " + key_in);
 
-	String url_target= "http://localhost:8098/riak/shimane/" + key_in;
+	String url_target= "http://host_ubuntu1:8098/riak/shimane/" + key_in;
 
 	get_uri.rest_delete_proc (url_target);
 

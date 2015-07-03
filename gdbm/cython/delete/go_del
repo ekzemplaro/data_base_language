@@ -2,4 +2,4 @@
 #
 echo "import gdbm_delete" > tmp_execute.py
 #
-python ./tmp_execute.py t2152
+python ./tmp_execute.py /var/tmp/gdbm/cities.db t2152

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+<title>ArchLinux Fixed Address Jun/11/2015</title>
+</head>
+<body>
+デバイス名の取得<p />
+<blockquote>
+$ ls /sys/class/net<p />
+</blockquote>
+
+固定アドレスの設定<p />
+<blockquote>
+# cp /etc/netctl/examples/ethernet-static /etc/netctl/profile<p />
+/etc/netctl/profile の編集<br />
+<blockquote>
+<pre>
+Description='A basic static ethernet connection'
+Interface=enp2s0
+Connection=ethernet
+IP=static
+Address=('172.20.208.216/21')
+Gateway='172.20.208.224'
+DNS=('172.20.248.233')
+</pre>
+<blockquote>
+Address=('172.20.208.216/16')<br />
+<blockquote>
+	netmask 255.255.0.0<br />
+	broadcast 172.20.255.255<br />
+</blockquote>
+Address=('172.20.208.216/21')<br />
+<blockquote>
+	netmask 255.255.248.0<br />
+	broadcast 172.20.215.255<br />
+</blockquote>
+Address=('172.20.208.216/24')<br />
+<blockquote>
+	netmask 255.255.255.0<br />
+	broadcast 172.20.208.255<br />
+</blockquote>
+</blockquote>
+</blockquote>
+結果の反映<br />
+	<blockquote>
+	# netctl start profile<p />
+	</blockquote>
+dhcpd を止める<br />
+	<blockquote>
+	# systemctl disable dhcpcd.service<p />
+	</blockquote>
+起動時に固定アドレスを設定<br />
+	<blockquote>
+	# netctl enable profile<p />
+	</blockquote>
+</blockquote>
+
+<hr />
+<a href="./">Return</a><p />
+Jun/11/2015 AM 08:15<p />
+</body>
+</html>

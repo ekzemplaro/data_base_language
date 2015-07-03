@@ -92,6 +92,12 @@ Tcl<p />
 $ yaourt -Sb mysqltcl<p />
 </blockquote>
 
+go<p />
+<blockquote>
+	export GOPATH=/home/uchida/gocode<br />
+	go get github.com/go-sql-driver/mysql<br />
+</blockquote>
+
 node.js<p />
 <blockquote>
 	npm install mysql<p />

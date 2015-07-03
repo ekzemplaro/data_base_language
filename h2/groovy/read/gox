@@ -5,5 +5,5 @@ export GROOVY_COMMON=$COMMON/groovy_common
 H2_JAR=/usr/share/java/h2/h2.jar
 export CLASSPATH=.:$GROOVY_COMMON:$H2_JAR:$GROOVY_ALL_JAR
 #
-java h2_read
+java h2_read /var/tmp/h2/cities
 #

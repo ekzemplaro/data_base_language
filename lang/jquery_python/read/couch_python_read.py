@@ -3,7 +3,7 @@
 #
 #	couch_python_read.py
 #
-#						May/06/2015
+#						Jun/24/2015
 #
 # ---------------------------------------------------------------------
 import	os
@@ -16,7 +16,7 @@ sys.path.append ('/var/www/data_base/common/python_common')
 from couch_manipulate import couch_to_dict_proc
 #
 # ---------------------------------------------------------------------
-print ("Content-type: text/json\n\n")
+print ("Content-type: text/json; charset=UTF-8\n\n")
 
 os.environ["http_proxy"]=''
 url_json = 'http://localhost:5984/nagano'

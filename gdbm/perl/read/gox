@@ -1,2 +1,2 @@
 #
-./gdbm_read.pl
+./gdbm_read.pl /var/tmp/gdbm/cities

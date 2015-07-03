@@ -1,2 +1,2 @@
 #
-./gdbm_create.scm /var/tmp/gdbm/cities.dir
+./gdbm_create.scm /var/tmp/gdbm/cities.pag

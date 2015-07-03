@@ -2,14 +2,14 @@
 #
 #	maria_read.pl
 #
-#					Dec/26/2013
+#					Jun/08/2015
 #
 # -----------------------------------------------------------------------
 use	strict;
 use	warnings;
 use	utf8;
 use	Encode;
-use DBI;
+use	DBI;
 #
 use lib '/var/www/data_base/common/perl_common';
 use sql_manipulate;
@@ -24,7 +24,6 @@ my $passwd = 'tiger';
 #
 my $dbi=DBI->connect($constr, $user, $passwd);
 #
-sql_manipulate::mysql_utf8_proc ($dbi);
 my %dict_aa = sql_manipulate::sql_to_dict_proc ($dbi);
 #
 $dbi->disconnect;

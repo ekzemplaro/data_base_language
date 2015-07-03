@@ -3,7 +3,7 @@
 #
 #	gdbm_delete.py
 #
-#					Jul/30/2014
+#					Jun/11/2015
 import	sys
 import	string
 import	dbm
@@ -14,10 +14,10 @@ from dbm_manipulate import dbm_delete_proc
 # -------------------------------------------------------------
 print ("*** 開始 ***")
 #
-key_in = sys.argv[1]
+db_name = sys.argv[1]
+key_in = sys.argv[2]
 print ("%s" % key_in)
 #
-db_name = "/var/tmp/gdbm/cities.pag";
 dd = dbm.open (db_name,"c")
 dbm_delete_proc	(dd,key_in)
 #

@@ -6,6 +6,13 @@
 <body>
 <h1><a href="http://www.firebirdsql.org/">Firebird</a></h1>
 
+Ubuntu 15.04<br/>
+<blockquote>
+<pre>
+ii  firebird2.5-super     2.5.3.26778.ds4-5  amd64   Firebird Super Server - an RDBMS based on InterBase 6.0 code
+</pre>
+</blockquote>
+
 インストール直後の設定<br />
 <blockquote>
 sudo dpkg-reconfigure firebird2.5-super<p />
@@ -17,6 +24,8 @@ sudo dpkg-reconfigure firebird2.5-super<p />
 
 データベースの作成<p />
 <blockquote>
+$ mkdir /var/tmp/firebird<br />
+$ chmod 777 /var/tmp/firebird<p />
 $ isql-fb<p />
 SQL> create database '/var/tmp/firebird/cities.fdb' page_size 8192 user 'sysdba' password 'tiger';<p />
 SQL> show database;<p />
@@ -75,4 +84,13 @@ NETProvider-2.6.5-MONO_LINUX.7z<p />
 
 $ 7z e NETProvider-2.6.5-MONO_LINUX.7z<p />
 
+</blockquote>
+
+<hr />
+リモートからのアクセス<br />
+<blockquote>
+/etc/firebird/2.5/firebird.conf<br />
+	<blockquote>
+	RemoteBindAddress =
+	</blockquote>
 </blockquote>

@@ -1,3 +1,2 @@
 jython_cassandra_manipulate.py
-jython_rdb_manipulate.py
 jython_text_manipulate.py

@@ -1,0 +1,15 @@
+{"total_rows":13,"offset":0,"rows":[
+{"id":"t2021","key":"t2021","value":{"rev":"1-74d6c67fda1ce2a0233d67f58e514fe3"},"doc":{"_id":"t2021","_rev":"1-74d6c67fda1ce2a0233d67f58e514fe3","name":"長野","population":92300,"date_mod":"2003-6-12"}},
+{"id":"t2022","key":"t2022","value":{"rev":"1-a822917241cfe68f4cafde7a043337a8"},"doc":{"_id":"t2022","_rev":"1-a822917241cfe68f4cafde7a043337a8","name":"松本","population":73100,"date_mod":"2003-3-15"}},
+{"id":"t2023","key":"t2023","value":{"rev":"1-c6687220b28e1027f8855f8cdc22159c"},"doc":{"_id":"t2023","_rev":"1-c6687220b28e1027f8855f8cdc22159c","name":"上田","population":75100,"date_mod":"2003-9-12"}},
+{"id":"t2024","key":"t2024","value":{"rev":"1-2c0aabb96cd9008bf0de7ecdabe91f08"},"doc":{"_id":"t2024","_rev":"1-2c0aabb96cd9008bf0de7ecdabe91f08","name":"小諸","population":51800,"date_mod":"2003-2-21"}},
+{"id":"t2025","key":"t2025","value":{"rev":"1-36d04fa3b76f34f9aed2607857a281c6"},"doc":{"_id":"t2025","_rev":"1-36d04fa3b76f34f9aed2607857a281c6","name":"岡谷","population":72600,"date_mod":"2003-4-19"}},
+{"id":"t2026","key":"t2026","value":{"rev":"1-7c43d3be4dee75ed3819d9e69bfd7bab"},"doc":{"_id":"t2026","_rev":"1-7c43d3be4dee75ed3819d9e69bfd7bab","name":"塩尻","population":84300,"date_mod":"2003-10-14"}},
+{"id":"t2028","key":"t2028","value":{"rev":"1-771a278713f4fc4cd138037bad8b8360"},"doc":{"_id":"t2028","_rev":"1-771a278713f4fc4cd138037bad8b8360","name":"飯田","population":53600,"date_mod":"2003-8-12"}},
+{"id":"t2029","key":"t2029","value":{"rev":"1-a8cedeb540457ddcd0db34e3182d1df1"},"doc":{"_id":"t2029","_rev":"1-a8cedeb540457ddcd0db34e3182d1df1","name":"中野","population":64200,"date_mod":"2003-11-14"}},
+{"id":"t2030","key":"t2030","value":{"rev":"1-8695d029032fc91539e44515e15591bd"},"doc":{"_id":"t2030","_rev":"1-8695d029032fc91539e44515e15591bd","name":"諏訪","population":82100,"date_mod":"2003-7-04"}},
+{"id":"t2031","key":"t2031","value":{"rev":"1-d8110841a35a1b631a2688bd709081fd"},"doc":{"_id":"t2031","_rev":"1-d8110841a35a1b631a2688bd709081fd","name":"駒ヶ根","population":47800,"date_mod":"2003-9-17"}},
+{"id":"t2032","key":"t2032","value":{"rev":"1-c7eabb92c08601d9f1cd4b2c9bcbb784"},"doc":{"_id":"t2032","_rev":"1-c7eabb92c08601d9f1cd4b2c9bcbb784","name":"佐久","population":25300,"date_mod":"2003-7-20"}},
+{"id":"t2033","key":"t2033","value":{"rev":"1-1d498b646939b929dc53b2c318afbc90"},"doc":{"_id":"t2033","_rev":"1-1d498b646939b929dc53b2c318afbc90","name":"伊那","population":12700,"date_mod":"2003-3-12"}},
+{"id":"t2034","key":"t2034","value":{"rev":"1-3804e1e31e93f264c6717a49bc74a14d"},"doc":{"_id":"t2034","_rev":"1-3804e1e31e93f264c6717a49bc74a14d","name":"千曲","population":63400,"date_mod":"2003-1-14"}}
+]}

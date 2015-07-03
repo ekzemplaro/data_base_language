@@ -2,4 +2,4 @@
 #
 echo "import gdbm_update" > tmp_execute.py
 #
-python ./tmp_execute.py t2157 1435900
+python ./tmp_execute.py /var/tmp/gdbm/cities.db t2157 1435900

@@ -2,26 +2,33 @@
 </head>
 <body>
 <h1>CSV</a></h1>
-<ol>
+<blockquote>
 	'Comma Separated Values'（カンマ区切り）<p />
 	実体はテキストファイルである。<br />
-</ol>
+</blockquote>
+
 <pre>
 </pre>
-<ol>
-</ol>
 
-<ol>
-</ol>
+<blockquote>
+</blockquote>
+
+<blockquote>
+</blockquote>
 
 Python<p />
 <pre>
 </pre>
 
+node.js<p />
+<blockquote>
+$ npm install csv<p />
+</blockquote>
+
 Java<p />
-<ol>
-</ol>
+<blockquote>
+</blockquote>
 
 C#<p />
-<ol>
-</ol>
+<blockquote>
+</blockquote>

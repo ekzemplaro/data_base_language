@@ -1,7 +1,7 @@
 // ---------------------------------------------------------------------
 //	h2/groovy/read/h2_read.groovy
 //
-//					Aug/27/2010
+//					Jun/12/2015
 //
 // ---------------------------------------------------------------------
 import groovy.sql.Sql
@@ -15,10 +15,10 @@ static void main (args)
 {
 	println ("*** 開始 ***")
 
-	def database = "/var/tmp/h2/cities"
+	def db_file=args[0]
 
 	def sql = Sql.newInstance \
-		("jdbc:h2:file:" + database, "sa", "", "org.h2.Driver")
+		("jdbc:h2:file:" + db_file, "sa", "", "org.h2.Driver")
 
 	sql_manipulate.display_proc (sql)
 
