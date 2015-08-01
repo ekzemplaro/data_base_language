@@ -7,7 +7,7 @@
 # --------------------------------------------------------------------------
 echo "*** 開始 ***"
 #
-SERVER="host_ubuntu1"
+SERVER="ubuntu_1504"
 PORT=1978
 cd /tmp
 work_file="/tmp/tmp00529.txt"

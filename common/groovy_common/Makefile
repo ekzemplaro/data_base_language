@@ -10,7 +10,7 @@ TIKA=$(JAR)/tika-app-1.0.jar
 EPUB=$(JAR)/epubgen-0.5.0.jar
 HGDB_JAR=/home/uchida/dbm/hgdb/hypergraphdb-1.1/hypergraphdb.jar
 SG_CDB=$(JAR)/sg-cdb-1.0.4.jar
-POI39=/var/www/data_base/common/jar/poi-3.9
+POI312=/var/www/data_base/common/jar/poi-3.12
 MONGO_JAR=$(JAR)/mongo-2.8.0.jar
 HTTPCLIENT=$(JAR)/commons-httpclient
 HTTPCLIENT_JAR=$(HTTPCLIENT)/commons-httpclient-3.1.jar:$(HTTPCLIENT)/commons-logging-1.2.jar:$(HTTPCLIENT)/commons-codec-1.10.jar
@@ -30,7 +30,7 @@ CPP_TIKA=./:$(TIKA):$(JAVA_COMMON)
 CPP_EPUB=./:$(EPUB):$(JAVA_COMMON)
 CPP_HGDB=./:$(HGDB_JAR):$(JAVA_COMMON)
 CPP_CDB=./:$(SG_CDB):$(JAVA_COMMON):$(JAR)/jsonic-1.1.2.jar
-CPP_XLSX=.:$(POI39)/poi-3.9-20121203.jar:$(POI39)/poi-ooxml-3.9-20121203.jar:$(POI39)/poi-ooxml-schemas-3.9-20121203.jar:$(POI39)/ooxml-lib/xmlbeans-2.3.0.jar
+CPP_XLSX=.:$(POI312)/poi-3.12-20150511.jar:$(POI312)/poi-ooxml-3.12-20150511.jar:$(POI312)/poi-ooxml-schemas-3.12-20150511.jar:$(POI312)/ooxml-lib/xmlbeans-2.3.0.jar
 CPP_HBASE=`hbase classpath`
 CPP_NET=./:$(HTTPCLIENT_JAR)
 #

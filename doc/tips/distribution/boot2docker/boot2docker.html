@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+<title>boot2docker Jul/29/2015</title>
+</head>
+<body>
+<h2><a href="http://boot2docker.io/">boot2docker</a></h2><p />
+
+カーネル<p/>
+<blockquote>
+$ uname -a<br />
+Linux ***** 4.0.7-boot2docker #1 SMP Wed Jul 15 00:01:41 UTC 2015 x86_64 GNU/Linux<br />
+</blockquote>
+
+ISO<br />
+<blockquote>
+boot2docker.iso<p />
+</blockquote>
+
+バージョン確認方法<br />
+<blockquote>
+$ cat /etc/os-release<p />
+</blockquote>
+
+パッケージの追加<br />
+<blockquote>
+</blockquote>
+
+環境の構築<br />
+<blockquote>
+</blockquote>
+
+参考<br />
+<blockquote>
+<a href="http://www.asu.ac.jp/hachi/v3/tinycoreInstall.html">
+Tiny Core Linux 日本語版のインストール</a><p />
+</blockquote>
+
+固定アドレス<br />
+/opt/eth0.sh<p />
+<blockquote>
+<pre>
+#!/bin/sh
+ifconfig eth0 192.168.208.249 netmask 255.255.248.0 broadcast 192.168.208.255 up
+route add default gw 192.168.208.254
+echo nameserver 192.168.248.243 > /etc/resolv.conf
+</pre>
+</blockquote>
+
+$ sudo su<p />
+# passwd core<p />
+
+インストール<p />
+<blockquote>
+</blockquote>
+
+ユーザーの作成<p />
+<blockquote>
+# adduser uchida<p />
+</blockquote>
+
+ホスト名の設定<p />
+<blockquote>
+# hostnamectl set-hostname host-aa.example.com<p />
+</blockquote>
+
+sshd<p />
+<blockquote>
+# tce-load -wi openssh.tcz<p />
+# /usr/local/etc/init.d/openssh start<p />
+</blockquote>
+
+<hr />
+<a href="../">Return</a><p />
+Jul/29/2015 AM 08:15<p />
+</body>
+</html>

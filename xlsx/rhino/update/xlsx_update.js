@@ -2,7 +2,7 @@
 // ----------------------------------------------------------------
 /*
 	xlsx_update.js
-					Aug/05/2013
+					Jul/20/2015
 
 */
 // ----------------------------------------------------------------
@@ -23,7 +23,6 @@ var dict_aa = xlsx_read_proc (xlsx_file);
 if (key in dict_aa)
 	{
 	var dict_bb = dict_update_proc (dict_aa,key,population_in);
-	dict_display_proc (dict_bb);
 	xlsx_write_proc (xlsx_file,dict_bb);
 	}
 

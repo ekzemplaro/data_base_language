@@ -22,7 +22,7 @@ jQuery (function ()
 <meta content="Program Language Examples in R" name="description">
 <meta content="R,クライアント,接続,言語,サンプル" name="keyword">
 <meta content="Uchida Masatomo" name="author">
-<title>R Nov/27/2014</title>
+<title>R Jun/24/2015</title>
 </head>
 <body>
 <h2><a href="http://www.r-project.org">R</a></h2><p />
@@ -43,15 +43,52 @@ ii  r-cran-rmysql  0.9-3-2       amd64   GNU R package providing a DBI-compliant
 </pre>
 
 
-</pre>
 	<blockquote>
-	> library(RMySQL)<br />
-	要求されたパッケージ DBI をロード中です<br />
-	> m <- dbDriver("MySQL")<br />
-	> dbconnector <- dbConnect(m, dbname="city",user="scott",password="tiger",host="host_mysql")<br />
-	> query.result <- dbSendQuery(dbconnector, "select * from (cities)")<br />
-	> test.table <- fetch(query.result)<br />
-	> dbDisconnect(dbconnector)<br />
+<pre>
+$ R
+
+R version 3.2.0 (2015-04-16) -- "Full of Ingredients"
+Copyright (C) 2015 The R Foundation for Statistical Computing
+Platform: x86_64-unknown-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> library (RMySQL)
+Loading required package: DBI
+> mm <- dbDriver ("MySQL")
+> conn <- dbConnect (mm, dbname="city",user="scott",password="tiger",host="localhost")
+> query.result <- dbSendQuery (conn, "select * from (cities)")
+> test.table <- fetch (query.result)
+> dbDisconnect (conn)
+[1] TRUE
+> test.table
+     ID NAME POPULATION  DATE_MOD
+1 t3321 岡山     975842 2005-6-24
+2 t3322 倉敷     314278  2005-8-8
+3 t3323 津山     758641 2005-9-17
+4 t3324 玉野     516432 2005-7-22
+5 t3325 笠岡     327159 2005-2-28
+6 t3326 井原     792581  2005-5-9
+7 t3327 総社     635197 2005-4-10
+8 t3328 高梁     485136 2005-10-8
+9 t3329 新見     164827 2005-5-21
+> q ()
+Save workspace image? [y/n/c]: n
+
+</pre>
+
 	</blockquote>
 </blockquote>
 
@@ -76,6 +113,6 @@ $ yaourt -Sb r-mysql<br />
 <div id="outarea_hh">outarea_hh</div>
 <hr />
 <a href="/data_base/">Return</a><p />
-Jun/01/2015 AM 08:15<p />
+Jul/03/2015 AM 08:15<p />
 </body>
 </html>

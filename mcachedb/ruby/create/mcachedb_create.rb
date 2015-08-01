@@ -3,9 +3,9 @@
 #
 #	mcachedb_create.rb
 #
-#						Jun/13/2013
+#						Jul/08/2015
 #
-require 'memcache'
+require 'dalli'
 require 'json'
 #
 load '/var/www/data_base/common/ruby_common/json_manipulate.rb'
@@ -13,7 +13,7 @@ load '/var/www/data_base/common/ruby_common/mcache_manipulate.rb'
 # ------------------------------------------------------------
 puts "*** 開始 ***"
 #
-cache = MemCache.new 'localhost:21201'
+dc = Dalli::Client.new('ubuntu_1504:21201')
 #
 #
 cache["t1521"] = json_gen_proc("新潟",98271,"2006-4-27")
@@ -28,13 +28,6 @@ cache["t1529"] = json_gen_proc("柏崎",54628,"2006-5-22")
 cache["t1530"] = json_gen_proc("村上",71385,"2006-9-17")
 cache["t1531"] = json_gen_proc("十日町",85312,"2006-8-26")
 cache["t1532"] = json_gen_proc("五泉",76348,"2006-7-18")
-#
-keys=["t1521","t1522","t1523","t1524",
-	"t1525","t1526","t1527","t1528",
-	"t1529","t1530","t1531","t1532"]
-keys.each {|key|
-	display_record_proc(cache,key)
-	}
 #
 #
 puts "*** 終了 ***"

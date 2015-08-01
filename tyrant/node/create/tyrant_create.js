@@ -2,7 +2,7 @@
 // ---------------------------------------------------------------
 //	tyrant_create.js
 //
-//					Jun/01/2015
+//					Jul/09/2015
 //
 // ---------------------------------------------------------------
 var memcache = require("memcache");
@@ -54,7 +54,7 @@ var onConnect = function()
 };
 
 // ---------------------------------------------------------------
-var client = new memcache.Client (1978,'host_ubuntu1');
+var client = new memcache.Client (1978,'ubuntu_1504');
 client.connect();
 client.addHandler(onConnect);
 

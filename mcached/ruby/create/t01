@@ -1,0 +1,47 @@
+#! /usr/bin/ruby
+# -*- coding: utf-8 -*-
+#
+#	mcached_create.rb
+#
+#						Feb/26/2015
+#
+require 'dalli'
+require 'json'
+#
+load '/var/www/data_base/common/ruby_common/text_manipulate.rb'
+load '/var/www/data_base/common/ruby_common/json_manipulate.rb'
+load '/var/www/data_base/common/ruby_common/mcache_manipulate.rb'
+# ------------------------------------------------------------
+def data_prepare_proc ()
+	dict_aa = {}
+	dict_aa=dict_append_proc(dict_aa,"t1731","金沢",41726,"2006-3-25")
+	dict_aa=dict_append_proc(dict_aa,"t1732","輪島",29813,"2006-7-27")
+	dict_aa=dict_append_proc(dict_aa,"t1733","小松",51872,"2006-2-8")
+	dict_aa=dict_append_proc(dict_aa,"t1734","七尾",27945,"2006-1-15")
+	dict_aa=dict_append_proc(dict_aa,"t1735","珠洲",87163,"2006-5-24")
+	dict_aa=dict_append_proc(dict_aa,"t1736","加賀",21589,"2006-8-7")
+	dict_aa=dict_append_proc(dict_aa,"t1737","羽咋",42693,"2006-4-21")
+	dict_aa=dict_append_proc(dict_aa,"t1738","かほく",54187,"2006-8-12")
+	dict_aa=dict_append_proc(dict_aa,"t1739","白山",79326,"2006-10-28")
+#
+	return	dict_aa
+end
+# ------------------------------------------------------------
+puts "*** 開始 ***"
+#
+dc = Dalli::Client.new('localhost:11211')
+#
+#
+dc.set("t1731",json_gen_proc("金沢",21384,"2006-10-27"))
+dc.set("t1732",json_gen_proc("輪島",34576,"2006-4-21"))
+dc.set("t1733",json_gen_proc("小松",64158,"2006-3-14"))
+dc.set("t1734",json_gen_proc("七尾",86531,"2006-11-3"))
+dc.set("t1735",json_gen_proc("珠洲",49725,"2006-8-9"))
+dc.set("t1736",json_gen_proc("加賀",25134,"2006-7-18"))
+dc.set("t1737",json_gen_proc("羽咋",34678,"2006-6-21"))
+dc.set("t1738",json_gen_proc("かほく",45172,"2006-3-14"))
+dc.set("t1739",json_gen_proc("白山",98651,"2006-5-2"))
+#
+puts "*** 終了 ***"
+# ------------------------------------------------------------
+

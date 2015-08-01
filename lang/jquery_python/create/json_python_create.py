@@ -21,18 +21,18 @@ def	data_prepare_proc ():
 #
 	dict_aa = dict_append_proc (dict_aa,'t0922','小山',31500,'2003-5-15')
 #
-	dict_aa = dict_append_proc (dict_aa,'t0923','佐野',56400,'2003-6-12')
+	dict_aa = dict_append_proc (dict_aa,'t0923','佐野',26400,'2003-6-12')
 	dict_aa = dict_append_proc (dict_aa,'t0924','足利',57800,'2003-7-21')
 	dict_aa = dict_append_proc (dict_aa,'t0925','日光',72100,'2003-4-19')
 	dict_aa = dict_append_proc (dict_aa,'t0926','下野',84900,'2003-10-14')
 	dict_aa = dict_append_proc (dict_aa,'t0927','さくら',26500,'2003-5-24')
-	dict_aa = dict_append_proc (dict_aa,'t0928','矢板',53700,'2003-2-12')
+	dict_aa = dict_append_proc (dict_aa,'t0928','矢板',93700,'2003-2-12')
 	dict_aa = dict_append_proc (dict_aa,'t0929','真岡',64800,'2003-11-14')
 	dict_aa = dict_append_proc (dict_aa,'t0930','栃木',82400,'2003-7-04')
 	dict_aa = dict_append_proc (dict_aa,'t0931','大田原',72600,'2003-9-17')
-	dict_aa = dict_append_proc (dict_aa,'t0932','鹿沼',25700,'2003-7-20')
-	dict_aa = dict_append_proc (dict_aa,'t0933','那須塩原',12900,'2003-3-12')
-	dict_aa = dict_append_proc (dict_aa,'t0934','那須烏山',62800,'2003-8-17')
+	dict_aa = dict_append_proc (dict_aa,'t0932','鹿沼',15700,'2003-7-20')
+	dict_aa = dict_append_proc (dict_aa,'t0933','那須塩原',32900,'2003-3-12')
+	dict_aa = dict_append_proc (dict_aa,'t0934','那須烏山',64800,'2003-8-17')
 #
 	return	dict_aa
 

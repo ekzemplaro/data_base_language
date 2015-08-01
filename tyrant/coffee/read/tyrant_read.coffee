@@ -31,7 +31,7 @@ onConnect = () ->
 
 
 # -------------------------------------------------------------
-client = new memcache.Client(1978,'localhost');
+client = new memcache.Client(1978,'ubuntu_1504');
 client.connect();
 client.addHandler(onConnect);
 

@@ -17,7 +17,7 @@ print ("*** 開始 ***")
 id_in = sys.argv[1]
 print ("%s" % id_in)
 #
-mc = memcache.Client(['host_ubuntu1:1978'])
+mc = memcache.Client(['ubuntu_1504:1978'])
 #
 mcache_delete_proc (mc,id_in)
 #

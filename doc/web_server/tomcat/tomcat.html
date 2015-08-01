@@ -4,7 +4,7 @@
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
-<title>Tomcat (Apr/07/2015)</title>
+<title>Tomcat (Jul/06/2015)</title>
 </head>
 <body>
 Tomcat (Port 8080)<p />
@@ -12,17 +12,20 @@ Tomcat (Port 8080)<p />
 	openjdk-7-jdk<p />
 	tomcat7<p />
 	<pre>
-	ii  tomcat7           7.0.42-1   all    Servlet and JSP engine
+	ii  tomcat7           7.0.56-2ubuntu0.1     all     Servlet and JSP engine
 	</pre>
 	tomcat7-examples<p />
 	<pre>
-	ii  tomcat7-examples  7.0.42-1   all    Servlet and JSP engine -- example web applications
+	ii  tomcat7-examples  7.0.56-2ubuntu0.1     all     Servlet and JSP engine -- example web applications
 	</pre>
 </blockquote>
 
+ディフォールトのページ<p />
 <blockquote>
 /var/lib/tomcat7/webapps/ROOT/index.html<p />
+</blockquote>
 
+<blockquote>
 cd /var/lib/tomcat7/webapps/ROOT<br />
 sudo ln -s /var/www/data_base .<br />
 sudo ln -s /var/www/js .<p />
@@ -43,8 +46,8 @@ WEB-INF/lib/<p />
 
 再起動<br />
 <blockquote>
-sudo service tomcat7 stop<br />
-sudo service tomcat7 start<p />
+# systemctl stop tomcat7<br />
+# systemctl start tomcat7<p />
 </blockquote>
 
 ログの出力場所<br />
@@ -87,6 +90,6 @@ Arch Linux<p />
 	</blockquote>
 <hr />
 <a href="/data_base/data_base.html">Return</a><p />
-Apr/07/2015 AM 08:15<p />
+Jul/06/2015 AM 08:15<p />
 </body>
 </html>

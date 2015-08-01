@@ -3,15 +3,17 @@
 #
 #	delete/text_delete.py
 #
-#					May/27/2015
+#					Jul/20/2015
 import	sys
 import	string
 #
 # ---------------------------------------------------------------
+sys.path.append ('/var/www/data_base/common/python_common')
 sys.path.append ('/var/www/data_base/common/jython_common')
 from jython_text_manipulate import text_read_proc
 from jython_text_manipulate import text_write_proc
-from jython_text_manipulate import dict_delete_proc
+#
+from text_manipulate import dict_delete_proc
 # ---------------------------------------------------------------
 #
 print ("*** 開始 ***")

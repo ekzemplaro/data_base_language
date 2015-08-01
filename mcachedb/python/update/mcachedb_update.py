@@ -18,7 +18,7 @@ key_in = sys.argv[1]
 population_in = int (sys.argv[2])
 print ("%s\t%d" % (key_in, population_in))
 #
-mc = memcache.Client(['host_ubuntu1:21201'])
+mc = memcache.Client(['ubuntu_1504:21201'])
 #
 mcache_update_proc (mc,key_in,population_in)
 #

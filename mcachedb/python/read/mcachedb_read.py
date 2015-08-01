@@ -6,14 +6,14 @@
 #					Feb/02/2015
 #
 import	sys
-import memcache
+import	memcache
 #
 sys.path.append ('/var/www/data_base/common/python_common')
 from mcache_manipulate import mcache_to_dict_proc
 from text_manipulate import dict_display_proc
 # ------------------------------------------------------------
 print ("*** 開始 ***")
-mc = memcache.Client(['host_ubuntu1:21201'])
+mc = memcache.Client(['ubuntu_1504:21201'])
 #
 keys = {'t1521','t1522','t1523',
 	't1524','t1525','t1526',

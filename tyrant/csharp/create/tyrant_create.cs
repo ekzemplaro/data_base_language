@@ -19,7 +19,8 @@ public static void Main(string[] args)
 {
 	Console.WriteLine  ("*** 開始 ***");
 
-	String[] serverlist = { "host_ubuntu1:1978" };
+//	String[] serverlist = { "ubuntu_1504:1978" };
+	String[] serverlist = { "172.20.208.233:1978" };
 
 	SockIOPool pool = SockIOPool.GetInstance();
 	pool.SetServers(serverlist);

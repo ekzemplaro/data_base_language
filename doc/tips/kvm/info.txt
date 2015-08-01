@@ -1,0 +1,12 @@
+
+
+http://lazy-dog.hatenablog.com/entry/2014/07/13/015538
+
+#  pacman -S qemu libvirt
+
+# pacman -S virt-manager ebtables
+
+
+# systemctl start libvirtd
+
+# virsh

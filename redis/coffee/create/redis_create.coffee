@@ -2,8 +2,26 @@
 # ---------------------------------------------------------------
 #	redis_create.coffee
 #
-#					Jun/05/2014
+#					Jul/09/2015
 #
+# ---------------------------------------------------------------
+text_manipulate= require ('/var/www/data_base/common/coffee_common/text_manipulate')
+# ---------------------------------------------------------------
+data_prepare_proc = () ->
+	dict_aa = new Object
+
+	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t1851','福井',61724,'1954-5-18')
+	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t1852','敦賀',52938,'1954-4-16')
+	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t1853','小浜',28741,'1954-10-7')
+	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t1854','大野',39764,'1954-6-21')
+	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t1855','勝山',43872,'1954-8-19')
+	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t1856','鯖江',61793,'1954-9-23')
+	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t1857','あわら',34851,'1954-3-21')
+	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t1858','越前',52486,'1954-7-26')
+	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t1859','坂井',76157,'1954-10-2')
+
+	return dict_aa
+
 # ---------------------------------------------------------------
 console.log "*** 開始 ***"
 #
@@ -11,24 +29,13 @@ redis = require("redis")
 client = redis.createClient(6379,'host_dbase')
 
 
-client.set('t1851', '{"name":"福井","population":41537,"date_mod":"1954-3-14"}', redis.print)
-client.set('t1852', '{"name":"敦賀","population":72915,"date_mod":"1954-5-17"}', redis.print)
-client.set('t1853', '{"name":"小浜","population":15753,"date_mod":"1954-8-9"}', redis.print)
-client.set('t1854', '{"name":"大野","population":28346,"date_mod":"1954-10-12"}', redis.print)
-client.set('t1855', '{"name":"勝山","population":62158,"date_mod":"1954-11-15"}' , redis.print)
-client.set('t1856', '{"name":"鯖江","population":42975,"date_mod":"1954-5-12"}'
- , redis.print)
-client.set('t1857', '{"name":"あわら","population":51826,"date_mod":"1954-2-14"}'
-, redis.print)
-client.set('t1858', '{"name":"越前","population":37254,"date_mod":"1954-1-19"}', redis.print)
-client.set('t1859', '{"name":"坂井","population":62457,"date_mod":"1954-7-11"}'
-, redis.print)
+dict_aa = data_prepare_proc()
 
-
-keys=["t1851","t1852","t1853"]
-for key in keys
-	client.get(key, redis.print)
-
+for key,value of dict_aa
+	str_json = JSON.stringify(value)
+	console.log(str_json)
+	client.set(key,str_json,redis.print)
+#
 client.quit()
 console.log "*** 終了 ***"
 

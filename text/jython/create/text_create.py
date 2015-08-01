@@ -3,21 +3,20 @@
 #
 #	text_create.py
 #
-#					May/27/2015
+#					Jul/20/2015
 #
 import	sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
 #
+sys.path.append ('/var/www/data_base/common/python_common')
 sys.path.append ('/var/www/data_base/common/jython_common')
 from jython_text_manipulate import text_write_proc
-from jython_text_manipulate import dict_append_proc
+from text_manipulate import dict_append_proc
 #
 # -------------------------------------------------------------------------
 def	data_prepare_proc ():
 	dict_aa = {} 
 #
-	dict_aa = dict_append_proc (dict_aa,'t2381','名古屋',39174,'2004-4-21')
+	dict_aa = dict_append_proc (dict_aa,'t2381','名古屋',32174,'2004-4-21')
 	dict_aa = dict_append_proc (dict_aa,'t2382','豊橋',17825,'2004-5-12')
 	dict_aa = dict_append_proc (dict_aa,'t2383','岡崎',72614,'2004-6-17')
 	dict_aa = dict_append_proc (dict_aa,'t2384','一宮',69482,'2004-9-9')
@@ -37,7 +36,6 @@ file_out = sys.argv[1]
 print	file_out
 #
 dict_aa = data_prepare_proc ()
-#dict_display_proc (dict_aa)
 #
 text_write_proc (file_out,dict_aa)
 #

@@ -3,7 +3,7 @@
 #
 #	create/mcachedb_create.py
 #
-#					Feb/02/2015
+#					Jul/08/2015
 #
 import memcache
 #
@@ -11,7 +11,7 @@ import memcache
 print ("*** 開始 ***")
 #
 # mc = memcache.Client(['127.0.0.1:21201'])
-mc = memcache.Client(['host_ubuntu1:21201'])
+mc = memcache.Client(['ubuntu_1504:21201'])
 mc.flush_all()
 #
 mc.set('t1521', '{"name":"新潟","population":98561,"date_mod":"2003-4-24"}')

@@ -46,3 +46,8 @@ javac -encoding UTF-8 source.java
 <blockquote>
 java -Dfile.encoding=UTF-8 source
 </blockquote>
+
+インストールされている Java 互換環境を表示<p />
+<blockquote>
+	$ archlinux-java status<p />
+</blockquote>

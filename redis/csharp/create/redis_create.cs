@@ -39,7 +39,7 @@ static void redis_set_proc
 
 	Console.WriteLine (json_new);
 
-	rd.Set (key, json_new);
+//	rd.Set (key, json_new);
 }
 
 // -------------------------------------------------------------

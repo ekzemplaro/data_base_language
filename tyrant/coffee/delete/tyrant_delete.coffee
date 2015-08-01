@@ -2,13 +2,12 @@
 # -------------------------------------------------------------
 #	tyrant_delete.coffee
 #
-#					Aug/09/2013
+#					Jul/09/2015
 # -------------------------------------------------------------
 memcache = require('memcache');
 
 # -------------------------------------------------------------
 onConnect = () ->
-	console.log("*** 開始 ***")
 
 	client.delete(key_in,(error, result) ->{ })
 
@@ -19,9 +18,10 @@ onConnect = () ->
 # -------------------------------------------------------------
 key_in=process.argv[2]
 
+console.log("*** 開始 ***")
 console.log(key_in)
 
-client = new memcache.Client(1978,'localhost')
+client = new memcache.Client(1978,'ubuntu_1504')
 client.connect()
 client.addHandler(onConnect)
 

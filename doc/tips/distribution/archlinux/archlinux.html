@@ -5,16 +5,37 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>ArchLinux Jul/02/2015</title>
+<title>ArchLinux Jul/29/2015</title>
 </head>
 <body>
+<h2>ArchLinux</h2><p />
+カーネル<p/>
+<blockquote>
+$ uname -a<br />
+Linux ***** 4.1.2-2-ARCH #1 SMP PREEMPT Wed Jul 15 08:30:32 UTC 2015 x86_64 GNU/Linux<br />
+</blockquote>
+
+バージョン確認方法<br />
+<blockquote>
+<pre>
+$ cat /etc/os-release 
+NAME="Arch Linux"
+ID=arch
+PRETTY_NAME="Arch Linux"
+ANSI_COLOR="0;36"
+HOME_URL="https://www.archlinux.org/"
+SUPPORT_URL="https://bbs.archlinux.org/"
+BUG_REPORT_URL="https://bugs.archlinux.org/"
+</pre>
+</blockquote>
+
 参考になるページ<p />
 <blockquote>
 	<a href="http://qiita.com/macchaberrycream/items/1dfabe8b710dc638e3f9">
 	Arch Linux インストール から Xfce 快適環境を構築するまで</a><p />
-	</blockquote>
+</blockquote>
 
-<h2>ArchLinux のインストール</h2><p />
+インストール<p />
 <blockquote>
 	パーティションの作成<br />
 	<blockquote>
@@ -32,12 +53,28 @@
 
 	インストール時にサーバーにアクセスするので、必要ならプロキシーの設定<br />
 	<blockquote>
-	# export http_proxy="http://host_proxy:80"<p />
+	# export http_proxy="http://user:passwd@host_proxy:80"<p />
 	</blockquote>
+	DHCP でアドレスが取得できない時は、手動で固定アドレスを設定<p />
+	<blockquote>
+		# cd /etc/netctl<p />
+		# cd examples/ethernet-static profile<p />
+		# netctl start profile<p />
+	</blockquote>
+
 	# mount /dev/sda1 /mnt<p />
 	# pacstrap /mnt base base-devel<p />
 	# genfstab -U -p /mnt >> /mnt/etc/fstab<p />
 	# arch-chroot /mnt<p />
+Grub のインストール<br />
+<blockquote>
+	# pacman -S grub<br />
+	# pacman -S os-prober<p />
+
+	# grub-install --target=i386-pc --recheck --debug /dev/sda<br />
+	# grub-mkconfig -o /boot/grub/grub.cfg<p />
+</blockquote>
+
 </blockquote>
 
 <h2>ArchLinux の設定</h2><p />
@@ -46,11 +83,10 @@
 # pacman -S openssh<br />
 # pacman -S net-tools<br />
 # pacman -S traceroute<br />
-# pacman -S dnsutils<br />
+# pacman -S bind-tools<br />
 # pacman -S sudo<br />
 # pacman -S rsync<br />
 # pacman -S nfs-utils<br />
-
 </blockquote>
 
 <a href="xwindow">X のインストール</a><p />
@@ -93,13 +129,7 @@ sudo の設定< p />
 	</blockquote>
 Java のインストール<p />
 	<blockquote>
-	# pacman -S jre7-openjdk jdk7-openjdk<br />
-	</blockquote>
-
-grub2<p />
-	<blockquote>
-	/etc/default/grub<p />
-	# grub-mkconfig -o /boot/grub/grub.cfg<p />
+	# pacman -S jre8-openjdk jdk8-openjdk<br />
 	</blockquote>
 
 クローンの設定<p />
@@ -164,6 +194,7 @@ grub2<p />
 ユーザーの作成<br />
 	<blockquote>
 	# useradd -m -g wheel uchida<p />
+	# useradd -u 1200 -m -g wheel uchida<p />
 	</blockquote>
 
 yaourt のインストール<br />
@@ -187,7 +218,7 @@ yaourt を使ってインストール<br />
 <hr />
 <a href="update_error.html"># pacman -Syu でエラー</a><p />
 <hr />
-<a href="/data_base/">Return</a><p />
-Jul/02/2015 AM 08:15<p />
+<a href="../">Return</a><p />
+Jul/23/2015 AM 08:15<p />
 </body>
 </html>

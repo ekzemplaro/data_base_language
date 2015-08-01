@@ -2,13 +2,12 @@
 // ---------------------------------------------------------------
 //	redis_read.js
 //
-//					Dec/17/2014
+//					Jul/09/2015
 //
 // ---------------------------------------------------------------
 console.log ("*** 開始 ***");
 //
 var redis = require("redis"),
-// client = redis.createClient();
 client = redis.createClient(6379,'host_dbase');
 
 client.on ("error", function (err)

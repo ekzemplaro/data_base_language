@@ -14,12 +14,12 @@ from mcache_manipulate import mcache_delete_proc
 # ------------------------------------------------------------
 print ("*** 開始 ***")
 #
-id_in = sys.argv[1]
-print ("%s" % id_in)
+key_in = sys.argv[1]
+print ("%s" % key_in)
 #
-mc = memcache.Client(['host_ubuntu1:21201'])
+mc = memcache.Client(['ubuntu_1504:21201'])
 #
-mcache_delete_proc (mc,id_in)
+mcache_delete_proc (mc,key_in)
 #
 print ("*** 終了 ***")
 #

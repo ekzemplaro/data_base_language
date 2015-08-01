@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 #	xlsx_update.rb
-#					Aug/07/2013
+#					Jul/20/2015
 #
 # --------------------------------------------------------
 load '/var/www/data_base/common/ruby_common/text_manipulate.rb'
@@ -19,7 +19,6 @@ dict_aa = xlsx_read_proc(xlsx_file)
 if (dict_aa.key?(key))
 	dict_aa[key]["population"] = population_in
 	dict_aa[key]["date_mod"] = Date.today.to_s
-	dict_display_proc(dict_aa)
 	xlsx_write_proc(xlsx_file,dict_aa)
 end
 #

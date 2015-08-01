@@ -1,7 +1,7 @@
 // ---------------------------------------------------------------
 //	text_read.ts
 //
-//					Jul/14/2014
+//					Jul/17/2015
 //
 // ---------------------------------------------------------------
 import fs = require("fs");
@@ -31,7 +31,7 @@ function text_read_proc (file_in)
 // ---------------------------------------------------------------
 function dict_display_proc (dict_aa)
 {
-	for (var key: string in dict_aa)
+	for (var key in dict_aa)
 		{
 		if (key)
 			{

@@ -1,7 +1,7 @@
 // ----------------------------------------------------------------
 /*
 	xlsx_delete.java
-					Jul/30/2013
+					Jul/20/2015
 
 */
 // ----------------------------------------------------------------
@@ -26,8 +26,6 @@ public static void main (String[] args) throws IOException
 	text_manipulate.dict_delete_proc (dict_aa,key);
 
 	xlsx_manipulate.xlsx_write_proc (excel_file,dict_aa); 
-
-	text_manipulate.dict_display_proc (dict_aa);
 
 	System.out.println ("*** 終了 ***");  
   

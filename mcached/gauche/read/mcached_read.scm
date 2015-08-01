@@ -7,16 +7,16 @@
 ;;
 ;; ----------------------------------------------------------------------
 (use memcache)
-(use text.json)
+;; (use text.json)
 (use slib)
 
 ;; ----------------------------------------------------------------------
 (define (display_exec_proc list)
-	(format #t "~a\t" (list-ref list 0))
-	(format #t "~a\t" (list-ref list 3))
-	(format #t "~a\t" (list-ref list 5))
-	(format #t "~a\n" (list-ref list 8))
-;;	(print list)
+;;	(format #t "~a\t" (list-ref list 0))
+;;	(format #t "~a\t" (list-ref list 3))
+;;	(format #t "~a\t" (list-ref list 5))
+;;	(format #t "~a\n" (list-ref list 8))
+	(print list)
 )
 
 ;; ----------------------------------------------------------------------
@@ -24,6 +24,7 @@
 	(define json_str (get conn key))
 	(if (not (null? json_str))
 		(print json_str)
+		(display_exec_proc json_str)
 ;;		(display_exec_proc (car json_str))
 	)
 )

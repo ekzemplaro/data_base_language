@@ -2,7 +2,7 @@
 # -------------------------------------------------------------
 #	tyrant_update.coffee
 #
-#					Aug/09/2013
+#					Jul/09/2015
 # -------------------------------------------------------------
 memcache = require('memcache');
 
@@ -41,7 +41,7 @@ population_in=process.argv[3]
 
 console.log (key_in + "\t" + population_in)
 
-client = new memcache.Client(1978,'localhost')
+client = new memcache.Client(1978,'ubuntu_1504')
 client.connect()
 client.addHandler(onConnect)
 

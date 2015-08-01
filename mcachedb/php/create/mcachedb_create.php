@@ -16,7 +16,7 @@ function data_prepare_proc ()
 {
 $dict_aa = array ();
 
-$dict_aa = dict_append_proc ($dict_aa,'t1521','新潟',78214,'2002-4-14');
+$dict_aa = dict_append_proc ($dict_aa,'t1521','新潟',73214,'2002-4-18');
 $dict_aa = dict_append_proc ($dict_aa,'t1522','長岡',92173,'2002-7-12');
 $dict_aa = dict_append_proc ($dict_aa,'t1523','新発田',58291,'2002-8-1');
 $dict_aa = dict_append_proc ($dict_aa,'t1524','上越',63729,'2002-11-29');
@@ -38,7 +38,8 @@ print "*** 開始 ***\n";
 $dict_aa = data_prepare_proc ();
 
 $mc = new Memcached();
-$mc->addServer ("host_ubuntu1",21201);
+// $mc->addServer ("host_ubuntu1",21201);
+$mc->addServer ("ubuntu_1504",21201);
 
 foreach ($dict_aa as $key => $value)
 	{

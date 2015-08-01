@@ -1,7 +1,7 @@
 // ----------------------------------------------------------------
 /*
 	xlsx_delete.scala
-					Aug/05/2013
+					Jul/20/2015
 
 */
 // ----------------------------------------------------------------
@@ -24,10 +24,7 @@ def main (args: Array[String])
 
 	xlsx_manipulate.xlsx_write_proc (xlsx_file,dict_bb) 
 
-	text_manipulate.dict_display_proc (dict_bb)
-
 	println ("*** 終了 ***")  
-  
 }
 
 // ----------------------------------------------------------------

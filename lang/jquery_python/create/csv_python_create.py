@@ -3,10 +3,11 @@
 # -------------------------------------------------------------------------
 #	csv_python_create.py
 #
-#						Jul/25/2014
+#						Jul/20/2015
 # -------------------------------------------------------------------------
 import	sys
 import	json
+import	os
 sys.path.append ('/var/www/data_base/common/python_common')
 #
 from text_manipulate import csv_write_proc
@@ -33,7 +34,11 @@ file_out = "/var/tmp/csv/cities.csv"
 #
 dict_aa = data_prepare_proc ()
 #
+if os.path.isfile(file_out):
+	os.remove (file_out)
+#
 csv_write_proc (file_out,dict_aa)
+os.chmod (file_out,0o666)
 #
 print ("Content-type: text/html\n\n")
 #

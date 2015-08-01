@@ -5,10 +5,33 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>ubuntu Jul/03/2015</title>
+<title>ubuntu Jul/29/2015</title>
 </head>
 <body>
-<h2>ubuntu</h2><p />
+<h2><a href="http://www.ubuntu.com/index_roadshow">ubuntu</a></h2><p />
+カーネル<br/>
+<blockquote>
+$ uname -a<br />
+Linux ***** 3.19.0-25-generic #26-Ubuntu SMP Fri Jul 24 21:17:31 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux<br />
+</blockquote>
+
+バージョン確認方法<br />
+<blockquote>
+<pre>
+$ cat /etc/os-release 
+NAME="Ubuntu"
+VERSION="15.04 (Vivid Vervet)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 15.04"
+VERSION_ID="15.04"
+HOME_URL="http://www.ubuntu.com/"
+SUPPORT_URL="http://help.ubuntu.com/"
+BUG_REPORT_URL="http://bugs.launchpad.net/ubuntu/"
+</pre>
+</blockquote>
+
+
 ファイルが含まれているパッケージを探す<p />
 <blockquote>
 インストール<p />
@@ -97,6 +120,15 @@ DHCP の設定<br />
 		</blockquote>
 	</blockquote>
 
+resolv.conf の設定<p />
+	<blockquote>
+	/etc/resolvconf/resolv.conf/base<p />
+		<blockquote>
+		search example.com<br />
+		</blockquote>
+	# resolvconf -u<p />
+	</blockquote>
+
 <hr />
 <a href="environment/">environment for Ubuntu</a><br />
 <a href="environment/installed_target.txt">installed on Ubuntu</a><br />
@@ -127,7 +159,30 @@ A start job is running for dev-disk-by****.device<p />
 /etc/fstab の　ディスク UUID が間違っている。<p /> 
 </blockquote>
 <hr />
+# apt-get install traceroute<p />
+# apt-get install nmap<p />
+<hr />
+ユーザーの作成<p />
+<blockquote>
+# adduser --uid 1200 user_aa<p />
+# gpasswd -a user_aa sudo<p />
+</blockquote>
+ユーザーの削除<p />
+<blockquote>
+# deluser user_aa --remove-home<p />
+</blockquote>
+
+サーバー版への追加インストール<p />
+<blockquote>
+# apt-get install traceroute<p />
+</blockquote>
+<hr />
+hostname の変更<p />
+<blockquote>
+/etc/hostname<p />
+</blockquote>
+<hr />
 <a href="../">Return</a><p />
-Jul/03/2015 AM 08:15<p />
+Jul/29/2015 AM 08:15<p />
 </body>
 </html>

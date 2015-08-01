@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+<title>Fedora Jul/29/2015</title>
+</head>
+<body>
+<h2><a href="https://getfedora.org/ja/">Fedora</a></h2><p />
+カーネル<p/>
+<blockquote>
+$ uname -a<br />
+Linux ***** 4.0.8-300.fc22.x86_64 #1 SMP Fri Jul 10 21:04:56 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux<br />
+</blockquote>
+
+バージョン確認方法<br />
+<blockquote>
+$ cat /etc/redhat-release<br />
+Fedora release 22 (Twenty Two)<br />
+</blockquote>
+
+ネットワークの確認<p />
+<blockquote>
+$ ip addr show<p />
+$ nmcli d<p />
+$ nmcli d show<p />
+</blockquote>
+
+固定アドレスの設定<p />
+<blockquote>
+# nmcli c modify ens160 ipv4.addresses 192.168.248.187/24<p />
+# nmcli c modify ens160 ipv4.gateway 192.168.248.254<p />
+# nmcli c modify ens160 ipv4.dns 192.168.249.150<p />
+# nmcli c modify ens160 ipv4.method manual<p />
+# nmcli c down ens160<p />
+# nmcli c up ens160<p />
+</blockquote>
+
+パッケージの更新<br />
+<blockquote>
+# dnf update -y<p />
+</blockquote>
+
+環境の構築<br />
+<blockquote>
+</blockquote>
+<hr />
+<a href="../">Return</a><p />
+Jul/24/2015 AM 08:15<p />
+</body>
+</html>

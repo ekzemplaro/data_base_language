@@ -5,10 +5,10 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>Gentoo Jul/03/2015</title>
+<title>Gentoo Jul/30/2015</title>
 </head>
 <body>
-<h2>Gentoo のインストール</h2><p />
+<h2><a href="https://www.gentoo.org/">Gentoo</a> のインストール</h2><p />
 <blockquote>
 # fdisk /dev/sda<p />
 # mkfs.ext4 /dev/sda1<br />
@@ -19,11 +19,23 @@
 # mkdir /mnt/gentoo/proc<br />
 # mount -t proc none /mnt/gentoo/proc<p />
 
-# cd /mnt/gentoo<br />
-# wget http://server/tmp/stage3-amd64-20140403.tar.bz2<br />
-# tar xvfj stage3-amd64-20140403.tar.bz2<p />
+固定アドレス<p />
+<blockquote>
+# ifconfig eth0 192.168.208.249 netmask 255.255.248.0 broadcast 192.168.208.255 up<br />
+# route add default gw 192.168.208.254<br />
+# echo nameserver 192.168.248.243 > /etc/resolv.conf<br />
+</blockquote>
 
-# tar -xvjf portage-20140507.tar.bz2 -C /mnt/gentoo/usr<p />
+アドレスが設定できれば、scp が使えるようになる。<p />
+<blockquote>
+# cd /mnt/gentoo<br />
+# scp uchida@hostaname:tmp/stage3-amd64-20150723.tar.bz2 .<br />
+# scp uchida@hostaname:tmp/portage-latest.tar.bz2 .<br />
+</blockquote>
+
+# cd /mnt/gentoo<br />
+# tar xvfj stage3-amd64-20140403.tar.bz2<p />
+# tar xvjf portage-20140507.tar.bz2 -C /mnt/gentoo/usr<p />
 </blockquote>
 
 <h2>Gentoo の設定</h2><p />
@@ -242,6 +254,6 @@ LDAP クライアント<br />
 <a href="./gentoo_errors">Errors</a><p />
 <hr />
 <a href="../">Return</a><p />
-Jul/03/2015 AM 08:15<p />
+Jul/30/2015 AM 08:15<p />
 </body>
 </html>

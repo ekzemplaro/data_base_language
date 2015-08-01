@@ -14,7 +14,8 @@ include "text_manipulate.php";
 
 // ------------------------------------------------------------------
 $mc = new Memcached ();
-$mc->addServer ("host_ubuntu1",21201);
+// $mc->addServer ("host_ubuntu1",21201);
+$mc->addServer ("ubuntu_1504",21201);
 
 print "*** 開始 ***\n";
 

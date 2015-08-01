@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>Mount Jun/29/2015</title>
+<title>Mount Jul/10/2015</title>
 </head>
 <body>
 <h2>Mount</h2><p />
@@ -34,8 +34,12 @@ cifs マウント<p />
 	# mount -t cifs //server_aa/tmp /mnt/server_aa/tmp -o guest<p />
 	option="iocharset=utf8,username=scott,passwd=tiger,workgroup=TOCHIGI,uid=uchida,gid=wheel,file_mode=0775,dir_mode=0775"<p />
 	# mount -t cifs -o $option //server_bb/test /mnt/server_bb/test<p />
-</blockquote>
 
+	シェアネームの調べ方<p />
+	<blockquote>
+	$ smbclient -L 1p-nas01 -U%
+	</blockquote>
+</blockquote>
 
 <blockquote>
 エラー<p />
@@ -97,6 +101,6 @@ GPT (GUID Partition Table)<br />
 # parted -l<p />
 <hr />
 <a href="../">Return</a><p />
-Jun/29/2015 AM 08:15<p />
+Jul/10/2015 AM 08:15<p />
 </body>
 </html>

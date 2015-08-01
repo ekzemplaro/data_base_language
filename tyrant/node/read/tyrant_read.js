@@ -43,7 +43,7 @@ var onConnect = function()
 
 
 // -------------------------------------------------------------
-var client = new memcache.Client (1978,'host_ubuntu1');
+var client = new memcache.Client (1978,'ubuntu_1504');
 client.connect();
 client.addHandler(onConnect);
 

@@ -1,7 +1,7 @@
 // ----------------------------------------------------------------
 /*
 	xlsx_update.scala
-					Aug/05/2013
+					Jul/20/2015
 
 */
 // ----------------------------------------------------------------
@@ -26,8 +26,6 @@ def main (args: Array[String])
 	dict_aa = text_manipulate.dict_update_proc (dict_aa,id_in,population_in)
 
 	xlsx_manipulate.xlsx_write_proc (xlsx_file,dict_aa) 
-
-	text_manipulate.dict_display_proc (dict_aa)
 
 	println ("*** 終了 ***")  
   

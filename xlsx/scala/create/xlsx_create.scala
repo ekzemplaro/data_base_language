@@ -1,7 +1,7 @@
 // ----------------------------------------------------------------
 /*
 	xlsx_create.scala
-					Aug/05/2013
+					Jul/20/2015
 
 */
 // ----------------------------------------------------------------
@@ -20,8 +20,6 @@ def main (args: Array[String])
  
 	var dict_aa = data_prepare_proc ()
 
-	text_manipulate.dict_display_proc (dict_aa)
-
 	xlsx_manipulate.xlsx_write_proc (xlsx_file,dict_aa)
 
 	println ("*** 終了 ***")
@@ -32,7 +30,7 @@ def data_prepare_proc ():(mutable.Map[String,Object]) = {
 
 	var dict_aa = mutable.Map[String,Object] ()
 
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t2971","奈良",27389,"1998-9-25")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t2971","奈良",21389,"1998-9-25")
 
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t2972","大和高田",49153,"1998-4-23")
 
@@ -48,7 +46,7 @@ def data_prepare_proc ():(mutable.Map[String,Object]) = {
 
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t2978","御所",73621,"1998-11-15")
 
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t2979","生駒",68729,"1998-10-24")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t2979","生駒",65729,"1998-10-24")
 
 	return	dict_aa
 }

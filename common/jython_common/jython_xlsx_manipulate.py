@@ -18,7 +18,7 @@ from 	org.apache.poi.ss.usermodel import Row
 sys.path.append ('/var/www/data_base/common/python_common')
 sys.path.append ('/var/www/data_base/common/jython_common')
 from text_manipulate import dict_append_proc
-from jython_text_manipulate import jython_dict_display_proc
+# from jython_text_manipulate import jython_dict_display_proc
 # ----------------------------------------------------------------
 def jython_xlsx_read_proc (xlsx_file):
 	print ("*** xlsx_read_proc ***")

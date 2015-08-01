@@ -23,7 +23,7 @@ static void Main (string[] args)
 
 	Console.WriteLine (id_in + "\t" + population_in);
 
-	String[] serverlist = { "127.0.0.1:1978" };
+	String[] serverlist = { "172.20.208.233:1978" };
 
 	SockIOPool pool = SockIOPool.GetInstance();
 	pool.SetServers(serverlist);

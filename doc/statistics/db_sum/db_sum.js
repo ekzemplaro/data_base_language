@@ -133,7 +133,7 @@ function show_console_sum_proc (url_json)
 		{
 		var success_all = 0;
 		var total_all = 0;
-		var total_language = 70;
+		var total_language = 71;
 		var nn_lang = total_language * 4;
 		var out_str = table_head_proc ();
 

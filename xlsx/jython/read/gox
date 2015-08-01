@@ -1,10 +1,10 @@
 #
 #
 COMMON=/var/www/data_base/common
-POI311=$COMMON/jar/poi-3.11
-OOXML_LIB=$POI311/ooxml-lib
+POI312=$COMMON/jar/poi-3.12
+OOXML_LIB=$POI312/ooxml-lib
 CPX=$OOXML_LIB/xmlbeans-2.6.0.jar
-export CLASSPATH=./:$JAVA_COMMON:$POI311/poi-3.11-20141221.jar:$POI311/poi-ooxml-3.11-20141221.jar:$POI311/poi-ooxml-schemas-3.11-20141221.jar:$CPX
+export CLASSPATH=./:$JAVA_COMMON:$POI312/poi-3.12-20150511.jar:$POI312/poi-ooxml-3.12-20150511.jar:$POI312/poi-ooxml-schemas-3.12-20150511.jar:$CPX
 #
 #
 ./xlsx_read.py /var/tmp/xlsx/cities.xlsx

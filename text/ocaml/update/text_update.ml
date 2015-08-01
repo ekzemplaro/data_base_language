@@ -2,7 +2,7 @@
 (*
 	text_update.ml
 
-					Aug/23/2011
+					Jul/09/2015
 
 *)
 (* ------------------------------------------------------------------- *)
@@ -22,7 +22,6 @@ let _ = text_read_proc file_text dict_aa
 
 let _ = dict_update_proc dict_aa key population_in
 
-let _ =	dict_display_proc dict_aa
 let _ = text_write_proc file_text dict_aa
 let _ = print_endline "*** 終了 ***"
 

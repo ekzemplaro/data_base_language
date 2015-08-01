@@ -14,13 +14,13 @@ from mcache_manipulate import mcache_update_proc
 # ------------------------------------------------------------
 print ("*** 開始 ***")
 #
-id_in = sys.argv[1]
+key_in = sys.argv[1]
 population_in = int (sys.argv[2])
-print ("%s\t%d" % (id_in, population_in))
+print ("%s\t%d" % (key_in, population_in))
 #
-mc = memcache.Client(['host_ubuntu1:1978'])
+mc = memcache.Client(['ubuntu_1504:1978'])
 #
-mcache_update_proc (mc,id_in,population_in)
+mcache_update_proc (mc,key_in,population_in)
 #
 print ("*** 終了 ***")
 #

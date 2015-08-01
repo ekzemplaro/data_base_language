@@ -9,7 +9,8 @@ BASH_COMMON=/var/www/data_base/common/bash_common
 #
 echo "*** 開始 ***"
 #
-SERVER=host_ubuntu1
+#SERVER=host_ubuntu1
+SERVER=ubuntu_1504
 PORT=21201
 #
 work_file_aa="/tmp/tmp0049155.txt"

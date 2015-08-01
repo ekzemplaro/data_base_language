@@ -2,11 +2,11 @@
 # -------------------------------------------------------------
 #	mcached_update.coffee
 #
-#					Aug/09/2013
+#					Jul/09/2015
 # -------------------------------------------------------------
-memcache = require('memcache');
+memcache = require('memcache')
 
-text_manipulate=require ("/var/www/data_base/common/coffee_common/text_manipulate");
+text_manipulate=require ("/var/www/data_base/common/coffee_common/text_manipulate")
 json_manipulate=require ("/var/www/data_base/common/coffee_common/json_manipulate")
 
 # -------------------------------------------------------------
@@ -30,7 +30,6 @@ update_proc = (client,key,population) ->
 
 # -------------------------------------------------------------
 onConnect = () ->
-	console.log("*** 開始 ***")
 
 	update_proc(client,key_in,population_in)
 
@@ -39,6 +38,7 @@ onConnect = () ->
 key_in=process.argv[2]
 population_in=process.argv[3]
 
+console.log("*** 開始 ***")
 console.log (key_in + "\t" + population_in)
 
 client = new memcache.Client(11211,'localhost')

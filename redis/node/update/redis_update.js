@@ -2,7 +2,7 @@
 // ---------------------------------------------------------------
 //	redis_update.js
 //
-//					Dec/17/2014
+//					Jul/09/2015
 //
 // ---------------------------------------------------------------
 var node_common = '/var/www/data_base/common/node_common';
@@ -18,7 +18,6 @@ console.log (key_in + "\t" + population_in);
 
 //
 var redis = require("redis"),
-//client = redis.createClient();
 client = redis.createClient(6379,'host_dbase');
 
 client.on("error", function (err)
@@ -26,7 +25,6 @@ client.on("error", function (err)
 	console.log("Redis connection error to "
 		+ client.host + ":" + client.port + " - " + err);
 	});
-
 
 redis_update_proc (client,key_in,population_in);
 

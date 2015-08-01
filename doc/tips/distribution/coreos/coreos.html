@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+<title>CoreOS Jul/29/2015</title>
+</head>
+<body>
+<h2><a href="https://coreos.com/">CoreOS</a></h2><p />
+
+カーネル<p/>
+<blockquote>
+$ uname -a<br />
+Linux ***** 4.0.5 #2 SMP Fri Jul 10 06:25:01 UTC 2015 x86_64 Intel(R) Xeon(R) CPU X5260 @ 3.33GHz GenuineIntel GNU/Linux<br />
+</blockquote>
+
+ISO<p />
+<blockquote>
+<a href="https://coreos.com/os/docs/latest/booting-with-iso.html">ISO</a><p />
+</blockquote>
+
+バージョン確認方法<br />
+<blockquote>
+	$ cat /etc/os-release<p />
+</blockquote>
+
+パッケージの追加<br />
+<blockquote>
+</blockquote>
+
+環境の構築<br />
+<blockquote>
+</blockquote>
+
+参考<br />
+<blockquote>
+<a href="http://qiita.com/inTheRye/items/fea3c595cbc4f6f482b2">さくらVPSサーバ</a><p />
+</blockquote>
+
+固定アドレス<br />
+/etc/systemd/network/static.network<p />
+<blockquote>
+<pre>
+[Match]
+Name=eno16780032
+
+[Network]
+Address=192.168.208.15/24
+Gateway=192.168.208.254
+DNS=192.168.248.243
+</pre>
+# systemctl restart systemd-networkd<p />
+</blockquote>
+
+$ sudo su<p />
+# passwd core<p />
+
+インストール<p />
+<blockquote>
+# export http_proxy=http://user:password@host_proxy:80<p />
+# coreos-install -d /dev/sda -C stable -c <a href="./config.txt">config</a><p />
+<blockquote>
+<pre>
+Checking availability of "local-file"
+Fetching user-data from datasource of type "local-file"
+Downloading the signature for http://stable.release.core-os.net/amd64-usr/717.3.0/coreos_production_image.bin.bz2...
+2015-07-28 05:44:01 URL:http://stable.release.core-os.net/amd64-usr/717.3.0/coreos_production_image.bin.bz2.sig [543/543] -> "/tmp/coreos-install.ThnpPZyM1I/coreos_production_image.bin.bz2.sig" [1]
+Downloading, writing and verifying coreos_production_image.bin.bz2...
+2015-07-28 05:46:42 URL:http://stable.release.core-os.net/amd64-usr/717.3.0/coreos_production_image.bin.bz2 [202660353/202660353] -> "-" [1]
+gpg: Signature made Fri Jul 10 06:39:49 2015 UTC using RSA key ID E5676EFC
+gpg: key 93D2DCB4 marked as ultimately trusted
+gpg: checking the trustdb
+gpg: 3 marginal(s) needed, 1 complete(s) needed, PGP trust model
+gpg: depth: 0  valid:   1  signed:   0  trust: 0-, 0q, 0n, 0m, 0f, 1u
+gpg: Good signature from "CoreOS Buildbot (Offical Builds) <buildbot@coreos.com>" [ultimate]
+Installing cloud-config...
+Success! CoreOS stable 717.3.0 is installed on /dev/sda
+</pre>
+</blockquote>
+</blockquote>
+
+ユーザーの作成<p />
+<blockquote>
+# useradd -m -g wheel uchida<p />
+# usermod -G wheel uchida<p />
+</blockquote>
+
+ホスト名の設定<p />
+<blockquote>
+# hostnamectl set-hostname host-aa.example.com<p />
+</blockquote>
+
+<a href="./docker/">Docker</a><p />
+<hr />
+<a href="../">Return</a><p />
+Jul/28/2015 AM 08:15<p />
+</body>
+</html>

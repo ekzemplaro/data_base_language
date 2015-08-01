@@ -1,11 +1,11 @@
 <script src="db_sum.js"></script>
 <link href="../statistics.css" rel="stylesheet">
-<title>Console ordered by Data Base Jul/03/2015</title>
+<title>Console ordered by Data Base Jul/24/2015</title>
 </head>
 <body>
 <h2>Console ordered by Data Base</h2>
 <blockquote>
-	There're 70 languages.<br /> 
+	There're 71 languages.<br /> 
 	Each data base has Create, Read, Update and Delete.<br />
-	So Total Number is 4 * 70 = 280.<p />
+	So Total Number is 4 * 71 = 284.<p />
 </blockquote>

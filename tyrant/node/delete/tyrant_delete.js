@@ -2,15 +2,13 @@
 // -------------------------------------------------------------
 //	tyrant_delete.js
 //
-//					Jun/01/2015
+//					Jul/09/2015
 // -------------------------------------------------------------
 var memcache = require('memcache');
 
 // -------------------------------------------------------------
 var onConnect = function()
 {
-	console.log("*** 開始 ***");
-
 	client.delete (key_in,function(error, result){ });
 
 	client.close();
@@ -22,9 +20,11 @@ var onConnect = function()
 // -------------------------------------------------------------
 var key_in=process.argv[2];
 
+console.log("*** 開始 ***");
+
 console.log (key_in);
 
-var client = new memcache.Client (1978,'host_ubuntu1');
+var client = new memcache.Client (1978,'ubuntu_1504');
 client.connect();
 client.addHandler(onConnect);
 

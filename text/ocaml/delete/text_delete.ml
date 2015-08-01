@@ -2,7 +2,7 @@
 (*
 	text_delete.ml
 
-					Aug/23/2011
+					Jul/09/2015
 
 *)
 (* ------------------------------------------------------------------- *)
@@ -26,12 +26,8 @@ with Not_found ->
 let _ = record_display_proc key unit_aa
 
 
-let _ = print_endline "*** ppp ***"
-
 let _ = Hashtbl.remove dict_aa key
 
-
-let _ =	dict_display_proc dict_aa
 let _ = text_write_proc file_text dict_aa
 let _ = print_endline "*** 終了 ***"
 

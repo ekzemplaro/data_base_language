@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+<title>CoreOS docker Jul/28/2015</title>
+</head>
+<body>
+<h2>Docker</h2>
+
+<blockquote>
+</blockquote>
+
+バージョン確認方法<br />
+<blockquote>
+$ docker -v<br />
+<blockquote>
+	Docker version 1.6.2, build 7c8fca2-dirty<p />
+</blockquote>
+
+$ docker version<br />
+<blockquote>
+<pre>
+Client version: 1.6.2
+Client API version: 1.18
+Go version (client): go1.4.2
+Git commit (client): 7c8fca2-dirty
+OS/Arch (client): linux/amd64
+Server version: 1.6.2
+Server API version: 1.18
+Go version (server): go1.4.2
+Git commit (server): 7c8fca2-dirty
+OS/Arch (server): linux/amd64
+</pre>
+</blockquote>
+</blockquote>
+
+<blockquote>
+$ docker info<p />
+<blockquote>
+<pre>
+Containers: 0
+Images: 0
+Storage Driver: overlay
+ Backing Filesystem: extfs
+Execution Driver: native-0.2
+Kernel Version: 4.0.5
+Operating System: CoreOS 717.3.0
+CPUs: 1
+Total Memory: 997.9 MiB
+Name: cdea022-ff.eg.jp.honda.com
+ID: CP37:UA3T:FHNT:EYGR:2Q34:3D5D:J4U6:DPMM:E6B3:HF7R:ZFOC:VVWP
+</pre>
+</blockquote>
+
+$ docker pull ubuntu:latest<p />
+<blockquote>
+<pre>
+Pulling repository ubuntu
+FATA[0025] Get https://index.docker.io/v1/repositories/library/ubuntu/images:
+ dial tcp: lookup index.docker.io: Temporary failure in name resolution
+</pre>
+</blockquote>
+
+</blockquote>
+
+環境の構築<br />
+<blockquote>
+</blockquote>
+
+参考<br />
+<blockquote>
+</blockquote>
+
+
+<hr />
+<a href="../">Return</a><p />
+Jul/28/2015 AM 08:15<p />
+</body>
+</html>

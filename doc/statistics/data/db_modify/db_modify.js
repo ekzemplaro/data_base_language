@@ -39,8 +39,9 @@ function convert_proc (data_aa)
 
 	data_aa['dbase']['julia']['Create']['Code'] = '2013';
 */
-	data_aa['dbase']['rust']['Create']['Code'] = '1956';
-	data_aa['dbase']['dart']['Create']['Code'] = '1957';
+	data_aa['dbase']['kotlin']['Create']['Code'] = '1958';
+	data_aa['dbase']['vb']['Create']['Code'] = '1959';
+	data_aa['dbase']['elixir']['Create']['Code'] = '1910';
 /*
 	data_aa['dbase']['jQuery']['Only']['couch'] = '8';
 	data_aa['dbase']['jQuery']['Only']['ftp'] = '8';

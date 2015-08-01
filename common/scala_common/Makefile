@@ -11,7 +11,7 @@ REDIS_JAR=$(JAR)/jedis-2.1.0.jar
 LIB_HBASE=$(HBASE)/lib
 LIB_CASSANDRA=$(JAR)/cassandra
 VOLDEMORT=/home/uchida/dbm/voldemort/voldemort-1.3.0
-POI39=/var/www/data_base/common/jar/poi-3.9
+POI312=/var/www/data_base/common/jar/poi-3.12
 JSON4S=$(COMMON)/jar/json4s
 #
 CPP_A=./:$(HTTPCLIENT):$(MEMCACHED_JAR):$(MONGO_JAR):$(REDIS_JAR):/usr/share/java/jxl.jar
@@ -25,7 +25,7 @@ CPP_K=$(CPP_J):$(LIB_CASSANDRA)/log4j-1.2.16.jar:$(LIB_CASSANDRA)/slf4j-api-1.6.
 CPP_L=$(CPP_K):/usr/local/lib/tokyocabinet.jar
 CPP_M=$(CPP_L):$(VOLDEMORT)/dist/voldemort-1.3.0.jar
 CPP=$(CPP_M)
-CPP_XLSX=.:$(POI39)/poi-3.9-20121203.jar:$(POI39)/poi-ooxml-3.9-20121203.jar:$(POI39)/poi-ooxml-schemas-3.9-20121203.jar:$(POI39)/ooxml-lib/xmlbeans-2.3.0.jar
+CPP_XLSX=.:$(POI312)/poi-3.12-20150511.jar:$(POI312)/poi-ooxml-3.12-20150511.jar:$(POI312)/poi-ooxml-schemas-3.12-20150511.jar:$(POI312)/ooxml-lib/xmlbeans-2.6.0.jar
 CPP_HBASE=`hbase classpath`
 JSON4S_JAR=$(JSON4S)/json4s-core_2.11-3.2.11.jar:$(JSON4S)/json4s-native_2.11-3.2.11.jar:$(JSON4S)/json4s-ast_2.11-3.2.11.jar
 CPP_MCACHED=.:$(JSON4S_JAR)
@@ -42,14 +42,14 @@ all: text_manipulate.class \
 	redis_manipulate.class \
 	json_manipulate.class \
 	get_uri.class \
+	xlsx_manipulate.class \
+	cdb_manipulate.class \
 	mongo_manipulate.class \
 	tcbn_manipulate.class \
-	xlsx_manipulate.class \
 	cassandra_manipulate.class \
 	hbase_manipulate.class \
 	voldemort_manipulate.class \
-	excel_manipulate.class \
-	cdb_manipulate.class
+	excel_manipulate.class
 text_manipulate.class: text_manipulate.scala
 	scalac text_manipulate.scala
 file_io.class: file_io.scala

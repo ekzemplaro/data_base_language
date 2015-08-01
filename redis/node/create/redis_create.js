@@ -2,15 +2,14 @@
 // ---------------------------------------------------------------
 //	redis_create.js
 //
-//					Dec/17/2014
+//					Jul/09/2015
 //
 // ---------------------------------------------------------------
-var fs = require("fs");
 var text_manipulate=require ("/var/www/data_base/common/node_common/text_manipulate");
 // ---------------------------------------------------------------
 function data_prepare_proc ()
 {
-		var dict_aa = new Object ();
+	var dict_aa = new Object ();
 
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1851','福井',95714,'1950-9-12');
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1852','敦賀',28157,'1950-3-15');
@@ -30,7 +29,6 @@ console.log ("*** 開始 ***");
 var dict_aa = data_prepare_proc ();
 
 var redis = require("redis"),
-//client = redis.createClient();
 client = redis.createClient(6379,'host_dbase');
 
 client.on("error", function (err) {

@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------
 //	target_define.js
 //
-//					Apr/06/2015
+//					Jul/24/2015
 // -----------------------------------------------------------------------
 function target_define_proc (lang_mod,dbase,crud)
 {
@@ -232,6 +232,7 @@ function suffix_define_proc ()
 	suffix["dart"] = "dart";
 	suffix["kotlin"] = "kt";
 	suffix["vb"] = "vb";
+	suffix["elixir"] = "exs";
 
 	return	suffix;
 }

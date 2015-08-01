@@ -2,7 +2,7 @@
 // ----------------------------------------------------------------
 /*
 	xlsx_delete.js
-					Aug/05/2013
+					Jul/20/2015
 
 */
 // ----------------------------------------------------------------
@@ -22,7 +22,6 @@ var dict_aa = xlsx_read_proc (xlsx_file);
 if (key in dict_aa)
 	{
 	delete dict_aa[key];
-	dict_display_proc (dict_aa);
 	xlsx_write_proc (xlsx_file,dict_aa);
 	}
 

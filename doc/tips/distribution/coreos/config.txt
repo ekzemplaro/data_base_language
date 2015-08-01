@@ -1,0 +1,16 @@
+#cloud-config
+
+coreos:
+  units:
+    - name: static.network
+      content: |
+        [Match]
+        Name=eno16780032
+
+        [Network]
+        Address=192.168.208.248/21
+        Gateway=192.168.208.254
+        DNS=192.168.248.243
+
+  ssh_authorized_keys:
+    - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDPkEVIXxmuTuc7suAr8Aq7AQQXWZ4aH7HTtyzb1Nm0ov3NKMdJVSCg1JstqHnTmUBK92ZoHNiwNF4SRroiaPOZnI0EgPhmAmRHlQ4zHy3L+GbrS5XX1huVXNgDQjBiVav/80BBZLvPkZI/OwBadSHae3Tq/fy9hSSZudTqA3/5eqtfaTmicQy6XT6qnId7BPdPyPGH6iBB2V0qGvl9AdrqfCHybFnjcRO5bh49L/yBvemQpjqLcvIIa57TqZaiu/uWtmN0Seesq4cU9R+0Yi3qMKTMgB0MvTGsHtOKGfEpaqri9dTMuGTs/kQoTyBms14Wky/592Hrpcz9yE4wJYjl uchida@aaa.example.com

@@ -7,13 +7,12 @@
 #
 #
 import	sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
 import	json
 #
+sys.path.append ('/var/www/data_base/common/python_common')
 sys.path.append ('/var/www/data_base/common/jython_common')
-from jython_text_manipulate import dict_display_proc
 from jython_file_io import file_to_str_proc
+from text_manipulate import dict_display_proc
 # -------------------------------------------------------------
 print	("*** 開始 ***")
 #

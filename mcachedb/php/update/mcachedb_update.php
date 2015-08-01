@@ -21,7 +21,7 @@ print	$population_in . "\n";
 
 
 $mc = new Memcached();
-$mc->addServer ("host_ubuntu1",21201);
+$mc->addServer ("ubuntu_1504",21201);
 
 kvalue_update_proc ($mc,$key_in,$population_in);
 

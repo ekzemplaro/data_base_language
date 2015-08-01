@@ -81,3 +81,4 @@ cat $DOC/head_common.txt rust.txt $DOC/tail_common.txt > rust.html
 cat $DOC/head_common.txt dart.txt $DOC/tail_common.txt > dart.html
 cat $DOC/head_common.txt kotlin.txt $DOC/tail_common.txt > kotlin.html
 cat $DOC/head_common.txt vb.txt $DOC/tail_common.txt > vb.html
+cat $DOC/head_common.txt elixir.txt $DOC/tail_common.txt > elixir.html
