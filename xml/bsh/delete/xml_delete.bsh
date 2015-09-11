@@ -1,7 +1,7 @@
 //
 //	xml_delete.bsh
 //
-//					Jan/28/2015
+//					Aug/28/2015
 //
 // --------------------------------------------------------------
 source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
@@ -19,8 +19,6 @@ String str_xml = file_to_str_proc (fname_update);
 Map dict_aa = xml_to_dict_proc (str_xml);
 
 dict_aa = dict_delete_proc (dict_aa,key);
-
-dict_display_proc (dict_aa);
 
 str_xml = dict_to_xml_proc (dict_aa);
 

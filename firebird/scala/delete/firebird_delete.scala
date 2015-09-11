@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------
 //	delete/firebird_delete.scala
 //
-//						Aug/03/2011
+//						Aug/25/2015
 // -----------------------------------------------------------------
 import scala.io.Source
 import java.sql._
@@ -27,15 +27,14 @@ def main (args: scala.Array[String])
 def firebird_delete_proc (id_in:String)
 {
 	val database = "/var/tmp/firebird/cities.fdb"
-	val str_connect= "jdbc:firebirdsql:localhost/3050:" + database
-
+//	val str_connect= "jdbc:firebirdsql:localhost/3050:" + database
+	val str_connect= "jdbc:firebirdsql:cddn007-ee:" + database
 
 	Class.forName ("org.firebirdsql.jdbc.FBDriver")
 
 	val conn = DriverManager.getConnection (str_connect,"sysdba","tiger")
 
 	sql_manipulate.delete_proc (conn,id_in)
-	sql_manipulate.display_proc (conn)
 
 	conn.close
 }

@@ -1,7 +1,7 @@
 //
 //	text_manipulate.bsh
 //
-//					Jan/28/2015
+//					Sep/02/2015
 //
 // --------------------------------------------------------------
 import	java.text.DateFormat;
@@ -57,9 +57,9 @@ void dict_display_proc (Map dict_aa)
 
 		if ((!key.equals ("_id")) && (!key.equals ("_rev")))
 			{
-			dict_unit = dict_aa.get (key_aa);
+			Map dict_unit = dict_aa.get (key_aa);
 
-			str_out = unit_to_string_proc (delimit,key_aa,dict_unit);
+			String str_out = unit_to_string_proc (delimit,key_aa,dict_unit);
 			System.out.println (str_out);
 			}
 		}
@@ -107,7 +107,7 @@ dict_to_text_proc_exec (file_out,dict_aa,delimit)
 		{
 		dict_unit = dict_aa.get (key_aa);
 
-		str_out = unit_to_string_proc (delimit,key_aa,dict_unit);
+		String str_out = unit_to_string_proc (delimit,key_aa,dict_unit);
 
 		pw.println (str_out);
 		}
@@ -133,16 +133,16 @@ Map dict_update_proc (dict_aa,String key_aa,int population)
 	String str_population = Integer.toString (population);
 
 	if (dict_aa.containsKey (key_aa))
-	{
-	String today = get_current_date_proc ();
+		{
+		String today = get_current_date_proc ();
 
-	Map dict_unit = dict_aa.get (key_aa);
+		Map dict_unit = dict_aa.get (key_aa);
 
-	dict_unit.put ("population",str_population);
-	dict_unit.put ("date_mod",today);
+		dict_unit.put ("population",str_population);
+		dict_unit.put ("date_mod",today);
 
-	dict_aa.put (key_aa,dict_unit);
-	}
+		dict_aa.put (key_aa,dict_unit);
+		}
 
 	return	dict_aa;
 }

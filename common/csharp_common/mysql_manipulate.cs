@@ -2,9 +2,8 @@
 /*
 	mysql_manipulate.cs
 
-					Sep/17/2013
+					Aug/25/2015
 
-	csc mysql_command.cs -r:System.Data -r:MySql.Data.dll
 
 */
 // -------------------------------------------------------------------
@@ -38,7 +37,9 @@ public static void mysql_update_proc
 	(MySqlConnection connection,string id_a,int population_a)
 {
 	DateTime dateNow = DateTime.Now;
-	string str_date = dateNow.ToString ();
+
+	string str_date = dateNow.ToString("yyyy-MM-dd HH:mm:ss");
+	Console.WriteLine (str_date);
 
 	StringBuilder sb_sql = new StringBuilder
 			("UPDATE cities SET population = "

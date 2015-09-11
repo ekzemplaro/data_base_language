@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 #	firebird_delete.py
-#					Jun/01/2011
+#					Aug/28/2015
 #
 # ----------------------------------------------------------------
 #
@@ -15,7 +15,7 @@ from java.sql import	DriverManager
 #
 # ----------------------------------------------------------------
 sys.path.append ('/var/www/data_base/common/jython_common')
-from jython_rdb_manipulate import display_proc,delete_proc
+from jython_rdb_manipulate import delete_proc
 # ----------------------------------------------------------------
 System.out.println ("*** start ***")
 print ("*** 開始 ***")
@@ -24,15 +24,14 @@ print ("%s" % id_in)
 #
 java.lang.Class.forName("org.firebirdsql.jdbc.FBDriver")
 #
-database = "/var/tmp/firebird/cities.fdb"
-url="jdbc:firebirdsql:localhost/3050:" + database
 user = "sysdba"
 password = "tiger"
+database = "/var/tmp/firebird/cities.fdb"
+
+url="jdbc:firebirdsql:host_firebird:" + database
 
 conn = DriverManager.getConnection (url,user, password)
 delete_proc	(conn,id_in)
-#
-display_proc (conn)
 #
 conn.close()
 print ("*** 終了 ***")

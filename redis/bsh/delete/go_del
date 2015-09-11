@@ -1,0 +1,11 @@
+#
+COMMON=/var/www/data_base/common
+JAR=$COMMON/jar
+#
+JEDIS_JAR=$JAR/jedis-2.1.0.jar
+#
+export CLASSPATH=./:$JEDIS_JAR
+#
+export CLASSPATH=$CLASSPATH:/usr/share/java/bsh.jar
+#
+java bsh.Interpreter redis_delete.bsh t1855

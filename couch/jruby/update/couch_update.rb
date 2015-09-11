@@ -3,10 +3,11 @@
 #
 #	couch_update.rb
 #
-#					Jun/24/2014
+#					Sep/03/2015
 #
 require 'rubygems'
 require 'json'
+require 'date'
 #
 load '/var/www/data_base/common/ruby_common/couch_module.rb'
 #
@@ -29,9 +30,11 @@ begin
 	unit_aa['date_mod'] = Date.today
 	json_new=JSON.generate(unit_aa)
 	puts json_new
-#	server.put(target,json_new)
+	target_new = target + "?rev=" + unit_aa["_rev"]
+	puts target_new
+	server.put(target_new,json_new)
 rescue
-	puts "*** not exist ***"
+	puts "*** error ***"
 end
 #
 puts	"*** 終了 ***"

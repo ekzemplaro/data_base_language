@@ -1,0 +1,23 @@
+//
+//	oracle_read.bsh
+//
+//						Aug/28/2015
+//
+// ---------------------------------------------------------------------
+source ("/var/www/data_base/common/bsh_common/sql_manipulate.bsh");
+// ---------------------------------------------------------------------
+System.out.println ("*** 開始 ***");
+
+String host = "host_oracle";
+String user = "scott";
+String password = "tiger";
+
+String str_connect="jdbc:oracl:thin:@" + host + ":1521/xe";
+
+Connection conn = DriverManager.getConnection (str_connect,user,password);
+
+sql_display_proc (conn);
+
+conn.close ();
+System.out.println ("*** 終了 ***");
+// ---------------------------------------------------------------------

@@ -3,7 +3,7 @@
 #
 #	firebird_create.py
 #
-#					Oct/28/2013
+#					Aug/25/2015
 #
 # --------------------------------------------------------
 import	sys
@@ -21,9 +21,9 @@ def	data_prepare_proc ():
 #
 	dict_aa = {} 
 #
-	dict_aa = dict_append_proc (dict_aa,'t3821','松山',59761,'2003-8-30')
-	dict_aa = dict_append_proc (dict_aa,'t3822','今治',47235,'2003-5-10')
-	dict_aa = dict_append_proc (dict_aa,'t3823','宇和島',21654,'2003-6-14')
+	dict_aa = dict_append_proc (dict_aa,'t3821','松山',52761,'2003-8-30')
+	dict_aa = dict_append_proc (dict_aa,'t3822','今治',41235,'2003-5-10')
+	dict_aa = dict_append_proc (dict_aa,'t3823','宇和島',29654,'2003-6-14')
 	dict_aa = dict_append_proc (dict_aa,'t3824','八幡浜',83672,'2003-9-9')
 	dict_aa = dict_append_proc (dict_aa,'t3825','新居浜',42391,'2003-8-4')
 	dict_aa = dict_append_proc (dict_aa,'t3826','西条',35187,'2003-1-21')
@@ -52,8 +52,6 @@ conn.commit ()
 table_insert_proc (cursor,dict_aa)
 #
 conn.commit ()
-#
-sql_display_proc (cursor)
 #
 cursor.close ()
 conn.close ()

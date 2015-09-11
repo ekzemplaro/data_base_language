@@ -3,7 +3,7 @@
 //
 //	oracle_delete.js
 //
-//						Feb/09/2011
+//						Aug/05/2015
 //
 // ------------------------------------------------------------------
 importPackage(java.lang);
@@ -14,9 +14,9 @@ print	("*** 開始 ***");
 
 var id_in=arguments[0];
 
-Class.forName ("oracle.jdbc.driver.OracleDriver");
+var host = "host_oracle";
 
-var url = "jdbc:oracl:thin:@spn109:1521/xe";
+var url = "jdbc:oracl:thin:@" + host + ":1521/xe";
 var user = "scott";
 var passwd = "tiger";
 

@@ -1,0 +1,24 @@
+//
+//	cdb_update.bsh
+//
+//					Sep/01/2015
+//
+// --------------------------------------------------------------
+source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
+source ("/var/www/data_base/common/bsh_common/cdb_manipulate.bsh");
+
+// --------------------------------------------------------------
+System.out.println ("*** 開始 ***");
+file_cdb =  bsh.args[0];
+key = bsh.args[1];
+int	population = Integer.parseInt (bsh.args[2]);
+
+System.out.print (key + "\t");
+System.out.println (population);
+
+dict_aa = cdb_to_dict_proc (file_cdb);
+dict_aa = dict_update_proc (dict_aa,key,population);
+dict_to_cdb_proc (file_cdb,dict_aa);
+
+System.out.println ("*** 終了 ***");
+// --------------------------------------------------------------

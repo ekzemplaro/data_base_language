@@ -2,7 +2,7 @@
 /*
 	read/oracle_read.cs
 
-					Dec/13/2010
+					Aug/17/2015
 
 export ORACLE_HOME=/usr/lib/oracle/xe/app/oracle/product/10.2.0/client
 export PATH=$ORACLE_HOME/bin:$PATH
@@ -26,8 +26,7 @@ public static void Main (string[] args)
 	Console.WriteLine ("*** 開始 ***");
 
 	string str_connect =
-		"User Id=scott;Password=tiger;Data Source=spn109:1521/xe";
-//		"User Id=scott;Password=tiger;Data Source=spn109:1521/orcl";
+		"User Id=scott;Password=tiger;Data Source=host_oracle:1521/xe";
 
 	string str_com = "select * from cities";
 

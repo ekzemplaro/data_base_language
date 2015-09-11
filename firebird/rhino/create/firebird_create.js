@@ -3,7 +3,7 @@
 //
 //	firebird_create.js
 //
-//						Jul/05/2011
+//						Aug/25/2011
 //
 // ------------------------------------------------------------------
 importPackage(java.lang);
@@ -13,37 +13,40 @@ load ("/var/www/data_base/common/rhino_common/text_manipulate.js");
 
 print	("*** 開始 ***");
 
+var dict_aa = data_prepare_proc ()
+
 Class.forName ("org.firebirdsql.jdbc.FBDriver");
 
 var user = "sysdba";
 var passwd = "tiger";
 var database = "/var/tmp/firebird/cities.fdb";
 
-var url = "jdbc:firebirdsql:localhost:" + database;
+var url = "jdbc:firebirdsql:host_firebird:" + database;
 
 var conn = DriverManager.getConnection (url,user,passwd);
 
 drop_table_proc (conn);
 create_table_proc (conn);
-insert_data_proc (conn);
-
-
+dict_to_db_proc (conn,dict_aa);
 
 conn.close();
 
 print	("*** 終了 ***");
 // ------------------------------------------------------------------
-function insert_data_proc (conn)
+function data_prepare_proc ()
 {
-	insert_record_proc (conn,"t3821","松山",58423,"1951-2-21");
-	insert_record_proc (conn,"t3822","今治",24176,"1951-5-14");
-	insert_record_proc (conn,"t3823","宇和島", 45297,"1951-5-27");
-	insert_record_proc (conn,"t3824","八幡浜",25421,"1951-9-29");
-	insert_record_proc (conn,"t3825","新居浜",15374,"1951-10-16");
-	insert_record_proc (conn,"t3826","西条",98463,"1951-11-24");
-	insert_record_proc (conn,"t3827","大洲",18392,"1951-12-30");
-	insert_record_proc (conn,"t3828","伊予",49321,"1951-11-18");
-	insert_record_proc (conn,"t3829","西予",56478,"1951-7-12");
+	var dict_aa = new Object ()
 
+	dict_aa = dict_append_proc (dict_aa,'t3821','松山',57163,'1951-7-25')
+	dict_aa = dict_append_proc (dict_aa,'t3822','今治',29357,'1951-2-8')
+	dict_aa = dict_append_proc (dict_aa,'t3823','宇和島',52641,'1951-5-2')
+	dict_aa = dict_append_proc (dict_aa,'t3824','八幡浜',31724,'1951-6-12')
+	dict_aa = dict_append_proc (dict_aa,'t3825','新居浜',43952,'1951-8-14')
+	dict_aa = dict_append_proc (dict_aa,'t3826','西条',61579,'1951-10-19')
+	dict_aa = dict_append_proc (dict_aa,'t3827','大洲',37481,'1951-3-21')
+	dict_aa = dict_append_proc (dict_aa,'t3828','伊予',52816,'1951-7-26')
+	dict_aa = dict_append_proc (dict_aa,'t3829','西予',74152,'1951-11-8')
+
+	return	dict_aa
 }
 // ------------------------------------------------------------------

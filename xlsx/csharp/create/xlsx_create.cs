@@ -2,7 +2,7 @@
 /*
 	xlsx_create.cs
 
-					Apr/21/2015
+					Aug/19/2015
 
 
 */
@@ -10,11 +10,8 @@
 using	System;
 using	System.IO;
 using	System.Collections.Generic;
-using	System.Linq;
 using	System.Text;
 
-using	OfficeOpenXml;
-using	OfficeOpenXml.Style;
 // --------------------------------------------------------
 class	xlsx_create
 {

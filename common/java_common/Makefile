@@ -32,7 +32,7 @@ CPP_J=$(CPP_I):$(LIB_CASSANDRA)/log4j-1.2.16.jar:$(LIB_CASSANDRA)/slf4j-api-1.7.
 CPP_K=$(CPP_J):$(MEMCACHED)/java_memcached-release_2.5.1.jar
 CPP_L=$(CPP_K):$(JAR)/mongo-2.6.3.jar:$(REDIS_JAR)
 CPP_M=$(CPP_L):/usr/share/java/jxl.jar
-CPP_N=$(CPP_M):$(JAR)/commons-net-3.0.1.jar
+CPP_N=$(CPP_M):$(JAR)/commons-net-3.3.jar
 #
 CPP_P=$(CPP_N):$(VOLDEMORT)/dist/voldemort-0.90.1.jar
 CPP=$(CPP_P):$(JAVA_COMMON)
@@ -61,6 +61,7 @@ all: json_manipulate.class \
 	couch_manipulate.class \
 	rdb_common.class \
 	sql_to_json.class \
+	oracle_manipulate.class \
 	ftp_manipulate.class \
 	cassandra_manipulate.class \
 	tika_manipulate.class \
@@ -122,6 +123,8 @@ pdf_manipulate.class: pdf_manipulate.java
 	javac -cp $(CPP_ITEXT) pdf_manipulate.java
 hgdb_manipulate.class: hgdb_manipulate.java
 	javac -cp $(CPP_HGDB) hgdb_manipulate.java
+oracle_manipulate.class: oracle_manipulate.java
+	javac oracle_manipulate.java
 html:
 	cd html_src;make html
 clean:

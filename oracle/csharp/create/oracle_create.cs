@@ -2,7 +2,7 @@
 /*
 	oracle_create.cs
 
-					May/23/2011
+					Aug/17/2015
 
 
 */
@@ -20,10 +20,8 @@ static void Main (string[] args)
 {
 	Console.WriteLine ("*** 開始 ***");
 
-
 	string str_connect =
-		"User Id=scott;Password=tiger;Data Source=spn109:1521/xe";
-//		"User Id=scott;Password=tiger;Data Source=cpt003:1521/orcl";
+		"User Id=scott;Password=tiger;Data Source=oracle_home:1521/xe";
 
 	OracleConnection connection = new OracleConnection (str_connect);
 

@@ -13,10 +13,13 @@ ii  bsh-gcj 2.0b4-12build1     Java scripting environment (BeanShell) Version 2 
 </pre>
 </blockquote>
 
-<blockquote>
-</blockquote>
-
 Arch Linux<p />
 <blockquote>
 # pacman -S beanshell2<p />
 </blockquote>
+
+ローカル変数<p />
+<blockquote>
+So declaring a variable with a type is a way to limit its scope or make a local variable.<p />
+</blockquote>
+

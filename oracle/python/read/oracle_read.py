@@ -3,19 +3,24 @@
 #
 #	oracle_read.py
 #
-#					Dec/13/2010
+#					Aug/07/2015
 # --------------------------------------------------------------
 import	sys
-#sys.path.append ("/mnt/sdb2/usr/lib/oracle/xe/app/oracle/product/10.2.0/client/lib")
-#
+import	locale
 import	cx_Oracle
 #
 sys.path.append ('/var/www/data_base/common/python_common')
 from sql_manipulate import	sql_display_proc
 #
 print ("*** 開始 ***")
+locale.setlocale(locale.LC_ALL,('ja_JP','utf-8'))
 #
-conn = cx_Oracle.connect (u"scott/tiger@spn109:1521/xe")
+host = "host_oracle"
+user = "scott"
+password = "tiger"
+
+str_connect = user + "/" + password + "@" + host + ":1521/xe"
+conn = cx_Oracle.connect (str_connect)
 #
 cursor = conn.cursor ()
 

@@ -1,0 +1,72 @@
+//
+//	redis_create.bsh
+//
+//					Aug/31/2015
+//
+// --------------------------------------------------------------
+source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
+
+import redis.clients.jedis.Jedis;
+import	net.arnx.jsonic.JSON;
+
+// --------------------------------------------------------------
+void dict_to_redis_proc (dict_aa,jedis)
+{
+	Set set_aaa = dict_aa.keySet ();
+
+	for (Object key_aa: set_aaa)
+		{
+		String key = (String)key_aa;
+		HashMap dict_unit = dict_aa.get (key_aa);
+
+		String str_json = JSON.encode (dict_unit);
+		jedis.set (key,str_json);
+		}
+}
+
+// --------------------------------------------------------------
+Map data_prepare_proc ()
+{
+	Map dict_aa = new HashMap ();
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t1851","福井",58971,"2000-7-15");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t1852","敦賀",36492,"2000-2-23");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t1853","小浜",21358,"2000-9-24");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t1854","大野",84619,"2000-3-14");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t1855","勝山",72586,"2000-4-12");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t1856","鯖江",21593,"2000-7-28");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t1857","あわら",36257,"2000-6-19");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t1858","越前",65184,"2000-10-15");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t1859","坂井",74392,"2000-11-24");
+
+	return	dict_aa;
+}
+
+// --------------------------------------------------------------
+System.out.println ("*** 開始 ***");
+
+Jedis jedis = new Jedis("host_dbase");
+
+Map dict_aa = data_prepare_proc ();
+
+dict_to_redis_proc (dict_aa,jedis);
+
+System.out.println ("*** 終了 ***");
+// --------------------------------------------------------------

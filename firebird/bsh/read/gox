@@ -2,7 +2,9 @@
 COMMON=/var/www/data_base/common
 JAR=$COMMON/jar
 #
-FIREBIRD_JAR=$JAR/Jaybird/jaybird-full-2.1.6.jar
+JAYBIRD_JAR=$JAR/Jaybird/jaybird-full-2.1.6.jar
 export CLASSPATH=.:$JAYBIRD_JAR
 #
-./firebird_read.bsh
+export CLASSPATH=$CLASSPATH:/usr/share/java/bsh.jar
+#
+java bsh.Interpreter firebird_read.bsh

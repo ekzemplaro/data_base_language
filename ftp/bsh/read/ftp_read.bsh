@@ -1,0 +1,28 @@
+//
+//	ftp_read.bsh
+//
+//					Sep/03/2015
+//
+// --------------------------------------------------------------
+source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
+source ("/var/www/data_base/common/bsh_common/ftp_manipulate.bsh");
+
+import	net.arnx.jsonic.JSON;
+// --------------------------------------------------------------
+System.out.println ("*** 開始 ***");
+
+final String hostname = "host_dbase";
+final String user = "scott";
+final String passwd = "tiger";
+final String path_file = "city/iwate.json";
+
+
+String json_str = ftp_get_proc (hostname,user,passwd,path_file);
+
+Map dict_aa = JSON.decode (json_str);
+
+dict_display_proc (dict_aa);
+
+System.out.println ("*** 終了 ***");
+
+// --------------------------------------------------------------

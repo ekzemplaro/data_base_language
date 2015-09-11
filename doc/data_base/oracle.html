@@ -73,7 +73,14 @@ python setup.py build<br />
 
 Ruby<p />
 <blockquote>
-# gem install ruby-oci8-2.0.4.gem<p />
+$ gem install ruby-oci8<p />
+<blockquote>
+<pre>
+Error Message:
+  '/usr/lib/sdk/include/oci.h' does not exist.
+  Install 'Instant Client SDK'.
+</pre>
+</blockquote>
 </blockquote>
 
 Java<p />
@@ -102,6 +109,42 @@ Arch Linux<p />
 	export LD_LIBRARY_PATH=/usr/lib/mono/4.0/System.Data.OracleClient.dll<p />
 </blockquote>
 
+
+Fedora へのサーバーのインストール<p />
+<blockquote>
+	# rpm -i oracle-xe-11.2.0-1.0.x86_64.rpm<p />
+	# /etc/init.d/oracle-xe configure<p />
+	<blockquote>
+	<pre>
+	Specify a password to be used for database accounts.  Note that the same
+	password will be used for SYS and SYSTEM.  Oracle recommends the use of 
+	different passwords for each database account.  This can be done after 
+	initial configuration:
+	</pre>
+	</blockquote>
+Client<p />
+	<blockquote>
+	$ . /u01/app/oracle/product/11.2.0/xe/bin/oracle_env.sh<p />
+	$ sqlplus system<p />
+	</blockquote>
+
+ユーザーの作成<p />
+	<blockquote>
+	SQL> CREATE USER scott  IDENTIFIED BY "tiger"<p /> 
+		DEFAULT TABLESPACE users<p />
+		TEMPORARY TABLESPACE temp;<p />
+	SQL> grant DBA to scott;<p />
+	SQL> grant UNLIMITED TABLESPACE TO scott;<p />
+	</blockquote>
+
+ユーザーの削除<p />
+	<blockquote>
+	SQL> drop user scott cascade;<p />
+	</blockquote>
+</blockquote>
+
+
+
 <div id="result_aa">result_aa</div>
 <hr />
 <div id="outarea_aa">outarea_aa</div>
@@ -114,6 +157,6 @@ Arch Linux<p />
 <div id="outarea_hh">outarea_hh</div>
 <hr />
 <a href="/data_base/">Return</a><p />
-Jun/01/2015 AM 08:15<p />
+Jul/31/2015 AM 08:15<p />
 </body>
 </html>

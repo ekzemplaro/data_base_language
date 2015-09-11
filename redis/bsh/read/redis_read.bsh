@@ -1,0 +1,36 @@
+//
+//	redis_read.bsh
+//
+//					Aug/31/2015
+//
+// --------------------------------------------------------------
+source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
+
+import redis.clients.jedis.Jedis;
+import	net.arnx.jsonic.JSON;
+// --------------------------------------------------------------
+System.out.println ("*** 開始 ***");
+
+Map dict_aa = new HashMap ();
+Jedis jedis = new Jedis("host_dbase");
+
+Set set_keys = jedis.keys("*");
+
+for (Object obj : set_keys)
+	{
+	String key = obj.toString ();
+	String str_json = jedis.get(key);
+
+	if (str_json != null)
+		{
+		Map dict_unit = JSON.decode (str_json);
+		dict_aa.put (key,dict_unit);
+		}
+	}
+
+dict_display_proc (dict_aa);
+
+System.out.println ("*** 終了 ***");
+
+// --------------------------------------------------------------
+// --------------------------------------------------------------

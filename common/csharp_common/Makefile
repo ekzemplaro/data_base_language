@@ -47,7 +47,7 @@ table_manipulate.dll: table_manipulate.cs \
 			-r:System.Data \
 			-r:System.Web \
 			-r:System.Data.OracleClient \
-			-r:Npgsql
+			-r:/usr/lib/mono/2.0/Npgsql.dll
 html:
 	cd html_src;make html
 clean:

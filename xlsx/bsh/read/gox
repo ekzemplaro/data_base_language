@@ -1,0 +1,14 @@
+#
+COMMON=/var/www/data_base/common
+JAVA_COMMON=$COMMON/java_common
+POI312=$COMMON/jar/poi-3.12
+OOXML_LIB=$POI312/ooxml-lib
+CPX=$OOXML_LIB/xmlbeans-2.6.0.jar
+export CLASSPATH=./:$JAVA_COMMON:$POI312/poi-3.12-20150511.jar:$POI312/poi-ooxml-3.12-20150511.jar:$POI312/poi-ooxml-schemas-3.12-20150511.jar:$CPX
+#
+#
+#
+export CLASSPATH=$CLASSPATH:/usr/share/java/bsh.jar
+#
+java bsh.Interpreter xlsx_read.bsh /var/tmp/xlsx/cities.xlsx
+#

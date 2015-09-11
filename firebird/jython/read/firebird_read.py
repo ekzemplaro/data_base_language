@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 #	firebird_read.py
-#					Jan/17/2011
+#					Aug/28/2015
 #
 # ----------------------------------------------------------------
 #
@@ -22,10 +22,11 @@ print ("*** 開始 ***")
 
 java.lang.Class.forName("org.firebirdsql.jdbc.FBDriver")
 #
-database = "/var/tmp/firebird/cities.fdb"
-url="jdbc:firebirdsql:localhost/3050:" + database
 user = "sysdba"
 password = "tiger"
+database = "/var/tmp/firebird/cities.fdb"
+
+url="jdbc:firebirdsql:host_firebird:" + database
 
 conn = DriverManager.getConnection (url,user, password)
 

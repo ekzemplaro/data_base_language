@@ -1,0 +1,22 @@
+//
+//	cdb_read.bsh
+//
+//					Sep/01/2015
+//
+// --------------------------------------------------------------
+source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
+source ("/var/www/data_base/common/bsh_common/cdb_manipulate.bsh");
+
+// --------------------------------------------------------------
+System.out.println ("*** 開始 ***");
+
+file_cdb =  bsh.args[0];
+
+dict_aa = cdb_to_dict_proc (file_cdb);
+
+dict_display_proc (dict_aa);
+
+
+System.out.println ("*** 終了 ***");
+
+// --------------------------------------------------------------

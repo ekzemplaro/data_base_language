@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 #	oracle_read.py
-#					Jan/14/2011
+#					Aug/06/2015
 #
 # ----------------------------------------------------------------
 #
@@ -15,17 +15,15 @@ from java.sql import DriverManager
 sys.path.append ('/var/www/data_base/common/jython_common')
 from jython_rdb_manipulate import display_proc
 # ----------------------------------------------------------------
-System.out.println ("*** start ***")
 print ("*** 開始 ***")
 
-java.lang.Class.forName("oracle.jdbc.driver.OracleDriver")
-
-#
-url="jdbc:oracl:thin:@spn109:1521/xe"
+host = "host_oracle"
 user = "scott"
 password = "tiger"
 
-conn = DriverManager.getConnection (url,user,password)
+str_connect = "jdbc:oracl:thin:@" + host + ":1521/xe"
+#
+conn = DriverManager.getConnection (str_connect,user,password)
 
 display_proc (conn)
 

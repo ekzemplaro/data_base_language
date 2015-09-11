@@ -1,14 +1,14 @@
 //
 //	mcached_delete.bsh
 //
-//					Feb/05/2015
+//					Sep/01/2015
 //
 // --------------------------------------------------------------
 source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
 source ("/var/www/data_base/common/bsh_common/mcached_manipulate.bsh");
 // --------------------------------------------------------------
 System.out.println ("*** 開始 ***");
-String	key = bsh.args[0];
+key = bsh.args[0];
 
 System.out.println (key);
 

@@ -1,6 +1,6 @@
-export COMMON=/var/www/data_base/common
+COMMON=/var/www/data_base/common
 export JAVA_COMMON=$(COMMON)/java_common
-export JAR=$(COMMON)/jar
+JAR=$(COMMON)/jar
 SHARE=/usr/share/java
 HTTPCLIENT=$(JAR)/commons-httpclient
 HTTPCLIENT_JAR=.:$(HTTPCLIENT)/commons-httpclient-3.1.jar:$(HTTPCLIENT)/commons-logging-1.2.jar:$(HTTPCLIENT)/commons-codec-1.10.jar
@@ -32,6 +32,7 @@ CPP_MCACHED=.:$(JSON4S_JAR)
 CPP_REDIS=.:$(JSON4S_JAR):$(REDIS_JAR)
 CPP_JSON=.:$(JSON4S_JAR)
 CPP_URI=.:$(HTTPCLIENT_JAR)
+CPP_CDB=.:$(JAR)/sg-cdb-1.0.4.jar:$(JAR)/jsonic-1.1.2.jar
 #
 all: text_manipulate.class \
 	file_io.class \
@@ -83,7 +84,7 @@ tcbn_manipulate.class: tcbn_manipulate.scala
 voldemort_manipulate.class: voldemort_manipulate.scala
 	scalac -cp $(CPP) voldemort_manipulate.scala
 cdb_manipulate.class: cdb_manipulate.scala
-	scalac -cp $(CPP) cdb_manipulate.scala
+	scalac -cp $(CPP_CDB) cdb_manipulate.scala
 html:
 	cd html_src;make html
 clean:

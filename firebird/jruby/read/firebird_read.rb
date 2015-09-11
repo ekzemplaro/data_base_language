@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 #	firebird_read.rb
-#					May/21/2012
+#					Aug/25/2015
 #
 # --------------------------------------------------------
 include Java
@@ -13,9 +13,14 @@ import java.lang.System
 load '/var/www/data_base/common/jruby_common/jruby_sql_manipulate.rb'
 # --------------------------------------------------------
 puts "*** 開始 ***"
-str_connect = "jdbc:firebirdsql:localhost/3050:/var/tmp/firebird/cities.fdb"
+#
+user = "sysdba"
+passwd = "tiger"
+database = "/var/tmp/firebird/cities.fdb"
 
-conn = DriverManager.getConnection(str_connect,"sysdba", "tiger")
+str_connect = "jdbc:firebirdsql:host_firebird:" + database
+
+conn = DriverManager.getConnection(str_connect,user,passwd)
 
 sql_read_proc(conn)
 

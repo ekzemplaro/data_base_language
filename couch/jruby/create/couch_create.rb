@@ -17,8 +17,8 @@ load '/var/www/data_base/common/ruby_common/couch_module.rb'
 def prepare_data_proc ()
 dict_aa={}
 
-dict_aa=dict_append_proc(dict_aa,"t2021","長野",52718,"2007-2-25")
-dict_aa=dict_append_proc(dict_aa,"t2022","松本",21357,"2007-7-17")
+dict_aa=dict_append_proc(dict_aa,"t2021","長野",32718,"2007-2-25")
+dict_aa=dict_append_proc(dict_aa,"t2022","松本",91357,"2007-7-17")
 dict_aa=dict_append_proc(dict_aa,"t2023","上田",47295,"2007-9-8")
 dict_aa=dict_append_proc(dict_aa,"t2024","小諸",78613,"2007-1-22")
 dict_aa=dict_append_proc(dict_aa,"t2025","岡谷",41739,"2007-5-11")

@@ -1,0 +1,55 @@
+//
+//	xlsx_create.bsh
+//
+//					Sep/02/2015
+//
+// --------------------------------------------------------------
+source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
+source ("/var/www/data_base/common/bsh_common/xlsx_manipulate.bsh");
+
+// --------------------------------------------------------------
+Map data_prepare_proc ()
+{
+	dict_aa = new HashMap ();
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t2971","奈良",72519,"2000-4-22");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t2972","大和高田",31492,"2000-5-18");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t2973","大和郡山",15326,"2000-9-11");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t2974","天理",57614,"2000-3-2");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t2975","橿原",72531,"2000-4-12");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t2976","桜井",28529,"2000-7-28");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t2977","五條",39457,"2000-6-19");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t2978","御所",65284,"2000-10-15");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t2979","生駒",74391,"2000-11-24");
+
+	return	dict_aa;
+}
+
+// --------------------------------------------------------------
+System.out.println ("*** 開始 ***");
+
+xlsx_file =  bsh.args[0];
+
+dict_aa = data_prepare_proc ();
+
+dict_to_xlsx_proc (xlsx_file,dict_aa);
+
+System.out.println ("*** 終了 ***");
+// --------------------------------------------------------------

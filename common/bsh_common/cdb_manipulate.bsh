@@ -1,0 +1,58 @@
+//
+//	cdb_manipulate.bsh
+//
+//					Sep/01/2015
+//
+// --------------------------------------------------------------
+
+import	net.arnx.jsonic.JSON;
+
+import	com.strangegizmo.cdb.CdbElement;
+import	com.strangegizmo.cdb.Cdb;
+import	com.strangegizmo.cdb.CdbMake;
+// --------------------------------------------------------------
+cdb_to_dict_proc (file_cdb)
+{
+	dict_aa = new HashMap ();
+
+	ee = Cdb.elements (file_cdb);
+
+	while (ee.hasMoreElements())
+		{
+		element = (CdbElement)ee.nextElement();
+		byte[] key = element.getKey();
+		byte[] data = element.getData();
+		str_key = new String(key, "UTF-8");
+		str_json  = new String (data);
+		unit_aa = new HashMap ();
+
+		unit_aa = JSON.decode (str_json);
+		dict_aa.put (str_key,unit_aa);
+		}
+
+	return	dict_aa;
+}
+
+// --------------------------------------------------------------
+dict_to_cdb_proc (file_cdb,dict_aa)
+{
+	CdbMake maker = new CdbMake();
+
+	Set set_aaa = dict_aa.keySet ();
+
+	maker.start (file_cdb);
+
+	for (Object key_aa: set_aaa)
+		{
+		key = (String)key_aa;
+		dict_unit = dict_aa.get (key_aa);
+
+		json_str = JSON.encode (dict_unit);
+
+		maker.add (key.getBytes(), json_str.getBytes());
+		}
+
+	maker.finish();
+}
+
+// --------------------------------------------------------------

@@ -1,0 +1,22 @@
+//
+//	xlsx_delete.bsh
+//
+//					Sep/02/2015
+//
+// --------------------------------------------------------------
+source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
+source ("/var/www/data_base/common/bsh_common/xlsx_manipulate.bsh");
+
+// --------------------------------------------------------------
+System.out.println ("*** 開始 ***");
+xlsx_file =  bsh.args[0];
+key = bsh.args[1];
+
+System.out.println (key);
+
+dict_aa = xlsx_to_dict_proc (xlsx_file);
+dict_aa = dict_delete_proc (dict_aa,key);
+dict_to_xlsx_proc (xlsx_file,dict_aa);
+
+System.out.println ("*** 終了 ***");
+// --------------------------------------------------------------

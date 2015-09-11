@@ -3,7 +3,7 @@
 #
 #	oracle_delete.rb
 #
-#				Jun/09/2011
+#				Aug/06/2015
 #
 include Java
 import java.sql.DriverManager
@@ -18,13 +18,16 @@ id_in = ARGV[0]
 #
 puts id_in
 #
-Java::JavaClass.for_name("oracle.jdbc.driver.OracleDriver")
-str_connect = "jdbc:oracl:thin:@spn109:1521/xe"
-conn = DriverManager.getConnection(str_connect,"scott", "tiger")
+host = "host_oracle"
+user = "scott"
+password = "tiger"
+
+str_connect = "jdbc:oracl:thin:@" + host + ":1521/xe"
+
+conn = DriverManager.getConnection(str_connect,user,password)
 #
 sql_delete_proc(conn,id_in)
-sql_read_proc(conn)
-
+#
 conn.close()
 #
 puts "*** 終了 ***"

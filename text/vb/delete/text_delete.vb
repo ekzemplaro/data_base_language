@@ -1,7 +1,7 @@
 '------------------------------------------------------------------------
 '	text_delete.vb
 '
-'						Apr/07/2015
+'						Aug/25/2015
 '
 '------------------------------------------------------------------------
 Imports System.IO
@@ -23,7 +23,6 @@ Sub Main()
 
 	if  dict_aa.ContainsKey (key_in) then
 		dict_aa.Remove (key_in)
-		dict_display_proc (dict_aa)
 		dict_to_file_proc (dict_aa,file_text,vbTab)
 	end if
 

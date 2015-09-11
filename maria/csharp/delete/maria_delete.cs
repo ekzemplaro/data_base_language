@@ -2,14 +2,12 @@
 /*
 	delete/maria_delete.cs
 
-					Sep/17/2013
+					Aug/24/2015
 
 
 */
 // -------------------------------------------------------------------
 using	System;
-using	System.Data;
-using	System.Text;
 using	MySql.Data.MySqlClient;
 
 // -------------------------------------------------------------------

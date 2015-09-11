@@ -6,7 +6,7 @@ JAR=$COMMON/jar
 #
 FIREBIRD_JAR=$JAR/Jaybird/jaybird-full-2.1.6.jar
 #
-GROOVY_JAR=/usr/share/java/groovy-all.jar:/usr/share/java/groovy.jar
-export CLASSPATH=.:$GROOVY_COMMON:$FIREBIRD_JAR:$GROOVY_JAR
+GROOVY_ALL_JAR=/usr/share/groovy/embeddable/groovy-all.jar
+export CLASSPATH=.:$GROOVY_COMMON:$FIREBIRD_JAR:$GROOVY_ALL_JAR
 #
-java firebird_update t3827 81234000
+java firebird_update t3827 8123400

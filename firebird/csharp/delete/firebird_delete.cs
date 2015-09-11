@@ -2,7 +2,7 @@
 /*
 	firebird_delete.cs
 
-					Oct/25/2011
+					Aug/25/2015
 
 */
 // ----------------------------------------------------------------
@@ -17,9 +17,9 @@ public static void Main (string[] args)
 {
 	Console.WriteLine ("*** 開始 ***");
 
-	string	id_in = args[0];
+	string	key_in = args[0];
 
-	Console.WriteLine (id_in);
+	Console.WriteLine (key_in);
 
 	string user = "sysdba";
 	string passwd = "tiger";
@@ -27,12 +27,13 @@ public static void Main (string[] args)
 
         string ConnectionString = "User ID=" + user + ";Password="
 		+ passwd + ";Database=" + dbname
-		+ ";DataSource=localhost;Charset=NONE;";
+		+ ";DataSource=host_firebird;Charset=NONE;";
+//		+ ";DataSource=localhost;Charset=NONE;";
 
 	FbConnection conn = new FbConnection(ConnectionString);
 	conn.Open(); 
 
-	fbd_manipulate.delete_proc (conn,id_in);
+	fbd_manipulate.delete_proc (conn,key_in);
 
 	conn.Close(); 
 

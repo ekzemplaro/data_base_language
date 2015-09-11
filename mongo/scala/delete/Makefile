@@ -1,9 +1,7 @@
 COMMON=/var/www/data_base/common
 JAR=$(COMMON)/jar
-SCALA_COMMON=$(COMMON)/scala_common
-CPP_A=$(JAR)/mongo-2.8.0.jar
-CPP_B=$(CPP_A):$(SCALA_COMMON)
+CPP_A=$(JAR)/mongo-java-driver-3.0.3.jar
 mongo_delete.class: mongo_delete.scala
-	scalac -cp $(CPP_B) mongo_delete.scala -deprecation
+	scalac -cp $(CPP_A) mongo_delete.scala
 clean:
 	rm -f *.class

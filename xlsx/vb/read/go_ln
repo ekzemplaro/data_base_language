@@ -1,7 +1,7 @@
 #
-NET20=/home/uchida/c_sharp/excel/ExcelDataReader-develop/output/net20
+NET45=/home/uchida/c_sharp/excel/ExcelDataReader-develop/output/net45
 #
-ln -s $NET20/ICSharpCode.SharpZipLib.dll .
-ln -s $NET20/Excel.dll .
+ln -s $NET45/ICSharpCode.SharpZipLib.dll .
+ln -s $NET45/Excel.4.5.dll .
 #
 

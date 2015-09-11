@@ -22,6 +22,12 @@ sudo dpkg-reconfigure firebird2.5-super<p />
 /etc/firebird/2.5/SYSDBA.password<p />
 </blockquote>
 
+パスワードの確認<br />
+<blockquote>
+$ gsec -user sysdba -password "de83a094"<br />
+GSEC> quit<br />
+</blockquote>
+
 データベースの作成<p />
 <blockquote>
 $ mkdir /var/tmp/firebird<br />

@@ -1,7 +1,10 @@
 #
 #
-ORACLE_JAR=/mnt/sdb2/usr/lib/oracle/xe/app/oracle/product/10.2.0/client/jdbc/lib/ojdbc14.jar
+COMMON=/var/www/data_base/common
+JAR=$COMMON/jar
+ORACLE_JAR=$JAR/oracle/ojdbc6.jar
 export CLASSPATH=.:$ORACLE_JAR
 #
-./oracle_delete.py t0137
+./oracle_delete.py t0135
+#
 #

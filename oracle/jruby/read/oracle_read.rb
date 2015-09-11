@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 #	oracle_read.rb
-#					Jun/09/2011
+#					Aug/06/2015
 #
 # --------------------------------------------------------
 include Java
@@ -14,15 +14,17 @@ load '/var/www/data_base/common/jruby_common/jruby_sql_manipulate.rb'
 # --------------------------------------------------------
 puts "*** 開始 ***"
 
-#Class.forName("oracle.jdbc.driver.OracleDriver")
-Java::JavaClass.for_name("oracle.jdbc.driver.OracleDriver")
+host = "host_oracle"
+user = "scott"
+password = "tiger"
 
-str_connect = "jdbc:oracl:thin:@spn109:1521/xe"
+str_connect = "jdbc:oracl:thin:@" + host + ":1521/xe"
 
-conn = DriverManager.getConnection(str_connect,"scott", "tiger")
+conn = DriverManager.getConnection(str_connect,user,password)
 
 sql_read_proc(conn)
 
 conn.close()
+
 puts "*** 終了 ***"
 # --------------------------------------------------------

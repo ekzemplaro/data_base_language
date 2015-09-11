@@ -1,7 +1,8 @@
 #
-export GROOVY_JAR=/usr/share/java/groovy-all.jar:/usr/share/java/groovy.jar
-export GROOVY_COMMON=/var/www/data_base/common/groovy_common
-export ORACLE_JAR=/mnt/sdb2/usr/lib/oracle/xe/app/oracle/product/10.2.0/client/jdbc/lib/ojdbc14.jar
-export CLASSPATH=./:$ORACLE_JAR:$GROOVY_JAR:$GROOVY_COMMON
+export GROOVY_ALL_JAR=/usr/share/groovy/embeddable/groovy-all.jar
+COMMON=/var/www/data_base/common
+GROOVY_COMMON=$COMMON/groovy_common
+ORACLE_JAR=$COMMON/jar/oracle/ojdbc6.jar
+export CLASSPATH=./:$ORACLE_JAR:$GROOVY_ALL_JAR:$GROOVY_COMMON
 #
 java oracle_read

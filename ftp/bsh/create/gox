@@ -1,0 +1,6 @@
+export COMMON=/var/www/data_base/common
+export JAR=$COMMON/jar
+CPX=./:$JAR/commons-net-3.3.jar:$JAR/jsonic-1.1.2.jar
+export CLASSPATH=$CPX:/usr/share/java/bsh.jar
+#
+java bsh.Interpreter ftp_create.bsh

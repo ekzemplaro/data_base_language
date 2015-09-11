@@ -2,7 +2,7 @@
 /*
 	text_manipulate.cs
 
-					Feb/09/2015
+					Aug/24/2015
 
 */
 // --------------------------------------------------------------------
@@ -10,7 +10,6 @@ using	System;
 using	System.IO;
 using	System.Collections.Generic;
 
-//using	Newtonsoft.Json;
 
 // --------------------------------------------------------------------
 public class	text_manipulate
@@ -183,69 +182,6 @@ public static void csv_write_proc (String file_out,
 	text_write_proc_exec (file_out,dict_aa,delimit);
 }
 
-// --------------------------------------------------------------------
-/*
-public static void data_prepare_unit (ref Cities cities_aa,
-	String id_in,String name_in,int population_in,String date_mod_in)
-{
-
-	City city_ff = new City();
-	city_ff.set (id_in,name_in,population_in,date_mod_in);
-
-	cities_aa.set (city_ff);
-}
-*/
-// --------------------------------------------------------------------
-/*
-public static string to_string_proc (Cities cities_aa)
-{
-	string out_str = "";
-
-	foreach (City city_ff in cities_aa.list_aa)
-		{
-		Console.Write (city_ff.id + "\t");
-		Console.Write (city_ff.name + "\t");
-		Console.Write (city_ff.population + "\t");
-		Console.WriteLine (city_ff.date_mod);
-
-		out_str += (city_ff.id + "\t");
-		out_str += (city_ff.name + "\t");
-		out_str += (city_ff.population + "\t");
-		out_str += (city_ff.date_mod + "\n");
-		}
-
-	return	out_str;
-}
-*/
-
-// --------------------------------------------------------------------
-/*
-public static string to_json_string_proc (Cities cities_aa)
-{
-	string out_str = "{\"cities\":[";
-
-	int nnx = cities_aa.list_aa.Count;
-
-	for (int it=0; it < cities_aa.list_aa.Count; it++)
-		{
-	string str_out_bb = JsonConvert.SerializeObject (cities_aa.list_aa[it]);
-		out_str += str_out_bb;
-
-		if (it < (nnx - 1))
-			{
-			out_str += ",";
-			}
-		else
-			{
-			out_str += "]";
-			}
-		}
-
-	out_str += "}";
-
-	return	out_str;
-}
-*/
 // --------------------------------------------------------------------
 }
 

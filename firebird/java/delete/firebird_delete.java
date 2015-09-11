@@ -2,7 +2,7 @@
 /*
 	java/delete/firebird_delete.java
 
-				Jun/01/2011
+				Aug/25/2015
 
 
 */
@@ -30,13 +30,11 @@ public static void main (String[] args) throws Exception
 	String database = "/var/tmp/firebird/cities.fdb";
 
 	Connection conn = DriverManager.getConnection
-		("jdbc:firebirdsql:localhost/3050:" +
+//		("jdbc:firebirdsql:localhost/3050:" +
+		("jdbc:firebirdsql:host_firebird:" +
 		database, user, password);
 
-
 	rdb_common.delete_proc	(conn,id);
-
-	rdb_common.display_proc	(conn);
 
 	conn.close ();
 

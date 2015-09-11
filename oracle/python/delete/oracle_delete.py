@@ -3,7 +3,7 @@
 #
 #	oracle_delete.py
 #
-#					May/31/2011
+#					Aug/06/2015
 #
 # --------------------------------------------------------
 import	sys
@@ -11,7 +11,7 @@ import	cx_Oracle
 import	string
 #
 sys.path.append ('/var/www/data_base/common/python_common')
-from sql_manipulate import sql_display_proc,sql_delete_proc
+from sql_manipulate import sql_delete_proc
 #
 # --------------------------------------------------------
 print ("*** 開始 ***")
@@ -19,18 +19,21 @@ print ("*** 開始 ***")
 id_in = sys.argv[1]
 print ("%s" % id_in)
 #
-#conn = cx_Oracle.connect ("system/hello9@spn109:1521/orcl")
-conn = cx_Oracle.connect (u"scott/tiger@spn109:1521/xe")
+host = "host_oracle"
+user = "scott"
+password = "tiger"
+
+str_connect = user + "/" + password + "@" + host + ":1521/xe"
+conn = cx_Oracle.connect (str_connect)
 #
 cursor = conn.cursor ()
 #
 sql_delete_proc	(cursor,id_in)
-conn.commit ()
-#
-sql_display_proc (cursor)
 #
 cursor.close ()
+conn.commit ()
 conn.close ()
+#
 print ("*** 終了 ***")
 #
 # --------------------------------------------------------

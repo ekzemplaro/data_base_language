@@ -2,7 +2,7 @@
 /*
 	oracle_update.groovy
 
-				May/23/2010
+					Aug/05/2015
 
 
 */
@@ -18,28 +18,37 @@ public class oracle_update
 // ----------------------------------------------------------------------
 public static void main (String[] args)
 {
-	System.out.println ("*** 開始 *** oracle_update ***");
+	System.out.println ("*** 開始 ***")
 
-	String	id = args[0];
-	int	population = Integer.parseInt (args[1]);
-	print ("\tid = " + id);
-	println ("\tpopulation = " + population);
+	String	id = args[0]
+	int	population = Integer.parseInt (args[1])
+	print ("\tid = " + id)
+	println ("\tpopulation = " + population)
 
-	String driver = "oracle.jdbc.driver.OracleDriver"
+	String host = "host_oracle"
 	String user     = "scott"
 	String password = "tiger"
 
-	def protocol = "jdbc:oracl:thin:@spn109:1521/xe"
+	def protocol = "jdbc:oracl:thin:@" + host + ":1521/xe"
 
-	def sql = Sql.newInstance (protocol,user,password,driver)
+	def sql = Sql.newInstance (protocol,user,password)
 
+	oracle_update_proc	(sql,id,population)
 
-	sql_manipulate.update_proc	(sql,id,population);
+	sql.close ()
 
+	System.out.println ("*** 終了 ***")
+}
 
-	sql.close ();
+// ----------------------------------------------------------------------
+static oracle_update_proc (sql,id_in,population_in)
+{
+	def today = new Date ().format ("dd-MMM-yyyy")
 
-	System.out.println ("*** 終了 ***");
+	def sql_str = "update cities set POPULATION = " + population_in +
+		",DATE_MOD='" + today +  "'  where ID= '" + id_in + "'"
+
+	sql.executeUpdate (sql_str)
 }
 
 // ----------------------------------------------------------------------

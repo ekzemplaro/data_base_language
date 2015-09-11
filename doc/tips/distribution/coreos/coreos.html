@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>CoreOS Jul/29/2015</title>
+<title>CoreOS Aug/18/2015</title>
 </head>
 <body>
 <h2><a href="https://coreos.com/">CoreOS</a></h2><p />
@@ -57,9 +57,11 @@ DNS=192.168.248.243
 $ sudo su<p />
 # passwd core<p />
 
+
 インストール<p />
 <blockquote>
 # export http_proxy=http://user:password@host_proxy:80<p />
+クライアントのpublic-key を　config に入れる。<p />
 # coreos-install -d /dev/sda -C stable -c <a href="./config.txt">config</a><p />
 <blockquote>
 <pre>
@@ -89,12 +91,12 @@ Success! CoreOS stable 717.3.0 is installed on /dev/sda
 
 ホスト名の設定<p />
 <blockquote>
-# hostnamectl set-hostname host-aa.example.com<p />
+	# hostnamectl set-hostname host-aa.example.com<p />
 </blockquote>
 
 <a href="./docker/">Docker</a><p />
 <hr />
 <a href="../">Return</a><p />
-Jul/28/2015 AM 08:15<p />
+Aug/18/2015 AM 08:15<p />
 </body>
 </html>

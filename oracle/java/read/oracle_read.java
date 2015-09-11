@@ -2,7 +2,7 @@
 /*
 		oracle/java/read/oracle_read.java
 
-					Jan/25/2011
+					Aug/05/2015
 
 */
 // --------------------------------------------------------------------
@@ -18,12 +18,15 @@ public static void main(String[] args)
 {
 	System.out.println ("*** 開始 ***");
 
-	try {
-		Class.forName("oracle.jdbc.driver.OracleDriver");
+	String host = "host_oracle";
+	String user = "scott";
+	String password = "tiger";
 
+	String str_connect = "jdbc:oracl:thin:@" + host + ":1521/xe";
+
+	try {
 		Connection conn =
-		DriverManager.getConnection
-			("jdbc:oracl:thin:@spn109:1521/xe","scott","tiger");
+		DriverManager.getConnection (str_connect,user,password);
 
 		rdb_common.display_proc (conn);
 

@@ -1,0 +1,5 @@
+#
+JDBC=/home/uchida/data_base/oracle/jdbc
+#
+cp -p $JDBC/ojdbc6.jar .
+#

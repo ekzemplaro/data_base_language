@@ -3,7 +3,7 @@
 #
 #	firebird_delete.rb
 #
-#					May/21/2012
+#					Aug/25/2015
 #
 # ------------------------------------------------------------
 include Java
@@ -16,16 +16,19 @@ load '/var/www/data_base/common/jruby_common/jruby_sql_manipulate.rb'
 # ------------------------------------------------------------
 puts "*** 開始 ***"
 #
-id_in = ARGV[0]
+key_in = ARGV[0]
 #
-puts id_in
+puts key_in
 #
-str_connect = "jdbc:firebirdsql:localhost/3050:/var/tmp/firebird/cities.fdb"
-#
-conn = DriverManager.getConnection(str_connect,"sysdba", "tiger")
+user = "sysdba"
+passwd = "tiger"
+database = "/var/tmp/firebird/cities.fdb"
 
-sql_delete_proc(conn,id_in)
-sql_read_proc(conn)
+str_connect = "jdbc:firebirdsql:host_firebird:" + database
+
+conn = DriverManager.getConnection(str_connect,user,passwd)
+#
+sql_delete_proc(conn,key_in)
 
 conn.close()
 #

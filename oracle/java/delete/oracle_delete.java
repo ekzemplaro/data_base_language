@@ -2,7 +2,7 @@
 /*
 	oracle_delete.java
 
-				May/23/2011
+				Aug/05/2015
 
 
 */
@@ -17,20 +17,21 @@ public class oracle_delete
 // ----------------------------------------------------------------------
 public static void main (String[] args) throws Exception
 {
-	Class.forName ("oracle.jdbc.driver.OracleDriver");
-
-	System.out.println ("*** 開始 *** oracle_update ***");
+	System.out.println ("*** 開始 ***");
 
 	String	id = args[0];
 	System.out.println ("\tid = " + id);
 
+	String host = "host_oracle";
+	String user = "scott";
+	String password = "tiger";
+
+	String str_connect = "jdbc:oracl:thin:@" + host + ":1521/xe";
+
 	Connection conn =
-		DriverManager.getConnection
-			("jdbc:oracl:thin:@spn109:1521:xe","scott","tiger");
+		DriverManager.getConnection (str_connect,user,password);
 
 	rdb_common.delete_proc	(conn,id);
-
-	rdb_common.display_proc	(conn);
 
 	conn.close ();
 

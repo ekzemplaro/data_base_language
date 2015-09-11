@@ -2,7 +2,7 @@
 /*
 	java/update/firebird_update.java
 
-				Jun/01/2011
+				Aug/25/2015
 
 
 */
@@ -32,14 +32,13 @@ public static void main (String[] args) throws Exception
 	String database = "/var/tmp/firebird/cities.fdb";
 
 	Connection conn =
-	DriverManager.getConnection("jdbc:firebirdsql:localhost/3050:" +
+//	DriverManager.getConnection("jdbc:firebirdsql:localhost/3050:" +
+	DriverManager.getConnection("jdbc:firebirdsql:host_firebird:" +
 	database, user, password);
 
 	System.out.println ("connected.");
 
 	rdb_common.update_proc	(conn,id,population);
-
-	rdb_common.display_proc	(conn);
 
 	conn.close ();
 

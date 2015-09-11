@@ -1,7 +1,7 @@
 // --------------------------------------------------------------
 /*
 	ftp_delete.java
-					Mar/12/2013
+					Sep/03/2015
 
 */
 // --------------------------------------------------------------
@@ -34,8 +34,6 @@ public static void main (String[] args) throws Exception
 	if (dict_aa.containsKey (key_in))
 		{
 		text_manipulate.dict_delete_proc (dict_aa,key_in);
-
-		text_manipulate.dict_display_proc (dict_aa);
 
 		json_str = json_manipulate.dict_to_json_proc (dict_aa);
 

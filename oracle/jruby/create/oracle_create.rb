@@ -3,11 +3,16 @@
 #
 #	oracle_create.rb
 #
-#					Jun/09/2011
+#					Aug/06/2015
 # ---------------------------------------------------------------------
 include Java
 import java.sql.DriverManager
 import java.lang.System
+import java.util.Locale
+
+import java.util.Date
+import java.text.DateFormat
+import java.text.SimpleDateFormat
 #
 #
 load '/var/www/data_base/common/ruby_common/text_manipulate.rb'
@@ -29,9 +34,15 @@ end
 # ---------------------------------------------------------------------
 puts	"*** 開始 ***"
 #
+host = "host_oracle"
+user = "scott"
+password = "tiger"
+
+str_connect = "jdbc:oracl:thin:@" + host + ":1521/xe"
+
 Java::JavaClass.for_name("oracle.jdbc.driver.OracleDriver")
-str_connect = "jdbc:oracl:thin:@spn109:1521/xe"
-conn = DriverManager.getConnection(str_connect,"scott", "tiger")
+
+conn = DriverManager.getConnection(str_connect,user,password)
 #
 dict_aa=prepare_data_proc()
 #
@@ -40,8 +51,15 @@ sql_create_table_proc(conn)
 #
 dict_aa.each {|key,value|
 #	puts "key=",key
+
+	str_date = value['date_mod']
+	sdf = java.text.SimpleDateFormat("yyyy-MM-dd")
+	date_aa = sdf.parse (str_date)
+#	date_aa = SimpleDateFormat("yyyy-MM-dd").parse (str_date)
+	str_ee = SimpleDateFormat(DATE_PATTERN,Locale.ENGLISH).format(date_aa).new
+	
 	sql_insert_record_proc(conn,key,value['name'], \
-		value['population'],value['date_mod'])
+		value['population'],str_ee)
 	}
 #
 sql_read_proc(conn)

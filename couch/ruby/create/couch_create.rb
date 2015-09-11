@@ -16,7 +16,7 @@ def prepare_data_proc ()
 dict_aa={}
 
 dict_aa=dict_append_proc(dict_aa,'t2021',"長野",71843,"2006-4-19")
-dict_aa=dict_append_proc(dict_aa,'t2022',"松本",21789,"2006-7-27")
+dict_aa=dict_append_proc(dict_aa,'t2022',"松本",23789,"2006-7-27")
 dict_aa=dict_append_proc(dict_aa,'t2023',"上田",47251,"2006-2-8")
 dict_aa=dict_append_proc(dict_aa,'t2024',"小諸",78623,"2006-1-22")
 dict_aa=dict_append_proc(dict_aa,'t2025',"岡谷",91489,"2006-5-11")

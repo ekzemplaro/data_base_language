@@ -2,7 +2,7 @@
 /*
 	read/firebird_read.cs
 
-					Oct/25/2011
+					Aug/25/2015
 
 */
 // ----------------------------------------------------------------
@@ -23,7 +23,8 @@ public static void Main (string[] args)
 
         string ConnectionString = "User ID=" + user + ";Password="
 		+ passwd + ";Database=" + dbname
-		+ ";DataSource=localhost;Charset=NONE;";
+		+ ";DataSource=host_firebird;Charset=NONE;";
+//		+ ";DataSource=localhost;Charset=NONE;";
 
 	FbConnection conn = new FbConnection(ConnectionString);
 	conn.Open(); 

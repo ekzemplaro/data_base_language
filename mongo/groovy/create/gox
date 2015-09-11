@@ -5,7 +5,7 @@ if  [ -e /etc/arch-release ]; then
 GROOVY_ALL_JAR=/usr/share/groovy/embeddable/groovy-all.jar
 fi
 #
-MONGO_JAR=$JAR/mongo-2.8.0.jar
+MONGO_JAR=$JAR/mongo-java-driver-3.0.3.jar
 export CLASSPATH=./:$MONGO_JAR:$GROOVY_ALL_JAR
 #
 java mongo_create

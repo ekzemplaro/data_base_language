@@ -96,6 +96,7 @@ function main_proc ()
 	lang_gen ("dart","dart");
 	lang_gen ("kotlin","kt");
 	lang_gen ("vb","vb");
+	lang_gen ("elixir","exs");
 
 	print	("</ol>");
 	print	("</div>");

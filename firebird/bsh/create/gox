@@ -1,6 +1,10 @@
 #
-export COMMON=/var/www/data_base/common
-export JAR=$COMMON/jar
-export CLASSPATH=.:/usr/share/java/mysql-connector-java.jar
+COMMON=/var/www/data_base/common
+JAR=$COMMON/jar
 #
-./mysql_create.bsh
+JAYBIRD_JAR=$JAR/Jaybird/jaybird-full-2.1.6.jar
+export CLASSPATH=.:$JAYBIRD_JAR
+#
+export CLASSPATH=$CLASSPATH:/usr/share/java/bsh.jar
+#
+java bsh.Interpreter firebird_create.bsh

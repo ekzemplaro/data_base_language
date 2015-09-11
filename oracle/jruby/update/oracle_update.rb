@@ -3,7 +3,7 @@
 #
 #	oracle_update.rb
 #
-#				Jun/09/2011
+#				Aug/06/2015
 #
 include Java
 import java.sql.DriverManager
@@ -22,12 +22,15 @@ population_in = ARGV[1].to_i
 #
 puts id_in,population_in
 #
-Java::JavaClass.for_name("oracle.jdbc.driver.OracleDriver")
-str_connect = "jdbc:oracl:thin:@spn109:1521/xe"
-conn = DriverManager.getConnection(str_connect,"scott", "tiger")
+host = "host_oracle"
+user = "scott"
+password = "tiger"
+
+str_connect = "jdbc:oracl:thin:@" + host + ":1521/xe"
+
+conn = DriverManager.getConnection(str_connect,user,password)
 #
 sql_update_proc(conn,id_in,population_in)
-sql_read_proc(conn)
 
 conn.close()
 #

@@ -1,0 +1,33 @@
+#! /usr/bin/bsh
+//
+//	firebird_update.bsh
+//
+//						Sep/01/2015
+//
+// ---------------------------------------------------------------------
+source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
+source ("/var/www/data_base/common/bsh_common/sql_manipulate.bsh");
+// ---------------------------------------------------------------------
+System.out.println ("*** 開始 ***");
+key = bsh.args[0];
+population = Integer.parseInt (bsh.args[1]);
+
+System.out.println (key);
+System.out.println (population);
+
+DriverManager.registerDriver(new org.firebirdsql.jdbc.FBDriver());
+
+user     = "sysdba";
+password = "tiger";
+database = "/var/tmp/firebird/cities.fdb";
+
+url = "jdbc:firebirdsql:host_firebird:" + database;
+
+conn = DriverManager.getConnection (url, user, password);
+
+sql_update_proc (conn,key,population);
+
+conn.close ();
+
+System.out.println ("*** 終了 ***");
+// ---------------------------------------------------------------------

@@ -6,3 +6,4 @@ clean:
 	cd boo; make clean;	
 	cd fsharp; make clean;	
 	cd csharp; make clean;	
+	cd vb; make clean;	

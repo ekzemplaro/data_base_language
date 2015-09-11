@@ -6,6 +6,6 @@ JAR=$COMMON/jar
 JAYBIRD_JAR=$JAR/Jaybird/jaybird-full-2.1.6.jar
 export CLASSPATH=.:$JAVA_COMMON:$JAYBIRD_JAR
 #
-java firebird_update t3829 93210080
+java firebird_update t3829 9321780
 #
 

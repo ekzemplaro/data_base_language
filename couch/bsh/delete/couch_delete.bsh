@@ -1,0 +1,50 @@
+//
+//	couch_delete.bsh
+//
+//					Sep/02/2015
+//
+// --------------------------------------------------------------
+source ("/var/www/data_base/common/bsh_common/get_uri.bsh");
+
+import  net.arnx.jsonic.JSON;
+// --------------------------------------------------------------
+couch_delete_proc (String url_collection,String key)
+{
+	String url_target = url_collection + "/" + key;
+
+	String str_json = get_uri_proc (url_target);
+
+//	System.out.println (str_json);
+
+	Map unit_aa = JSON.decode (str_json);
+
+	if (unit_aa.containsKey ("error"))
+		{
+		System.out.println ("*** not exist ***");
+		}
+	else
+		{
+		String name = unit_aa.get ("name").toString ();
+
+		System.out.println (name);
+
+		String rev = unit_aa.get ("_rev").toString ();
+
+		String url_del = url_target + "?rev=" + rev;
+
+		rest_delete_proc (url_del);
+		}
+}
+
+// --------------------------------------------------------------
+System.out.println ("*** 開始 ***");
+String	key = bsh.args[0];
+
+System.out.println (key);
+
+final String url_collection = "http://localhost:5984/nagano";
+
+couch_delete_proc (url_collection,key);
+
+System.out.println ("*** 終了 ***");
+// --------------------------------------------------------------

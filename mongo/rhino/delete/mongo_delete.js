@@ -2,10 +2,12 @@
 // --------------------------------------------------------------
 //	mongo_delete.js
 //
-//					Sep/02/2013
+//					Sep/10/2015
 // --------------------------------------------------------------
 importPackage (java.util);
 importPackage (com.mongodb);
+importPackage (org.bson);
+
 
 // --------------------------------------------------------------
 	print ("*** 開始 ***");
@@ -13,30 +15,20 @@ importPackage (com.mongodb);
 	var	key_in = arguments[0];
 	print ("\tkey_in = " + key_in);
 
-	var mm = new Mongo ("localhost" ,27017);
+	var mm = new MongoClient ("localhost" ,27017);
 
-	var db = mm.getDB ("city_db");
+	var db = mm.getDatabase ("city_db");
 
 	var col_name = "saitama";
 
 	var coll = db.getCollection (col_name);
-	print ("\tcoll.getCount ()  = " + coll.getCount ());
 
-	print(coll.getCount());
+	print ("\tcoll.count ()  = " + coll.count ());
 
-	mongo_delete_proc (coll,key_in);
+	coll.deleteMany (new Document("key", key_in))
+
+	print ("\tcoll.count ()  = " + coll.count ());
 
 	print ("*** 終了 ***");
-
-// --------------------------------------------------------------
-function mongo_delete_proc (coll,key_in)
-{
-	print ("*** mongo_delete_proc ***");
-
-	var query = new BasicDBObject();
-	query.put("key",key_in);
-
-	coll.remove(query);
-}
 
 // --------------------------------------------------------------

@@ -2,14 +2,14 @@
 //
 //	mongo_delete.groovy
 //
-//					Sep/02/2013
+//					Sep/10/2015
 //
 // -------------------------------------------------------------------
-import com.mongodb.Mongo
-import com.mongodb.DB
-import com.mongodb.DBCollection
+import com.mongodb.MongoClient
+import com.mongodb.client.MongoDatabase
+import com.mongodb.client.MongoCollection
 
-import	mongo_manipulate
+import org.bson.Document
 // -------------------------------------------------------------------
 class mongo_delete
 {
@@ -22,15 +22,18 @@ static void main (args)
 
 	println (key_in)
 
-	Mongo mm = new Mongo ("localhost",27017)
+	MongoClient mm = new MongoClient ("localhost" ,27017)
 
-	DB db = mm.getDB ("city_db" )
+	MongoDatabase db = mm.getDatabase ("city_db")
 
 	String col_name = "saitama"
 
-	DBCollection coll = db.getCollection(col_name)
+	MongoCollection coll = db.getCollection (col_name)
+	println ("\tcoll.count ()  = " + coll.count ())
 
-	mongo_manipulate.mongo_delete_proc (coll,key_in)
+	coll.deleteMany (new Document("key", key_in))
+
+	println ("\tcoll.count ()  = " + coll.count ())
 
 	println ("*** 終了 ***")
 }

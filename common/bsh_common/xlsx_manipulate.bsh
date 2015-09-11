@@ -1,0 +1,92 @@
+//
+//	xlsx_manipulate.bsh
+//
+//					Sep/02/2015
+//
+// --------------------------------------------------------------
+
+import	org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import	org.apache.poi.xssf.usermodel.XSSFSheet;
+import	org.apache.poi.ss.usermodel.Sheet;
+import	org.apache.poi.ss.usermodel.Row;
+import	org.apache.poi.ss.usermodel.Cell;
+// --------------------------------------------------------------
+xlsx_to_dict_proc (xlsx_file)
+{
+	Map dict_aa = new HashMap ();
+
+	fi=new FileInputStream (xlsx_file);
+	book =new XSSFWorkbook(fi);
+	fi.close();
+
+	for(Sheet sheet:book)
+		{
+		sheet.setForceFormulaRecalculation(true);// 数式解決
+		System.out.println("--- "+sheet.getSheetName()+" ---");
+		for(Row row:sheet)
+			{ // 全行をなめる
+			String key = row.getCell (0).getStringCellValue ();
+			String name = row.getCell (1).getStringCellValue ();
+			dd_population = row.getCell (2).getNumericCellValue ();
+			String date_mod = row.getCell (3).getStringCellValue ();
+
+			int population = (int) dd_population;
+
+
+		dict_aa = dict_append_proc
+				(dict_aa,key,name,population,date_mod);
+
+		}
+	}
+
+	return	dict_aa;
+}
+
+// --------------------------------------------------------------
+xlsx_create_row_proc (sheet,row,key,name,population,date_mod)
+{
+	Row row_a = sheet.createRow (row);
+
+	Cell cell_0 = row_a.createCell(0);
+	Cell cell_1 = row_a.createCell(1);
+	Cell cell_2 = row_a.createCell(2);
+	Cell cell_3 = row_a.createCell(3);
+
+	cell_0.setCellValue (key);
+	cell_1.setCellValue (name);
+	cell_2.setCellValue (population);
+	cell_3.setCellValue (date_mod);
+}
+
+// --------------------------------------------------------------
+dict_to_xlsx_proc (xlsx_file,dict_aa)
+{
+	wb = new XSSFWorkbook();
+	FileOutputStream fos = null;
+
+	Sheet sheet1 = wb.createSheet();
+
+	set_aaa = dict_aa.keySet ();
+
+	int row = 0;
+	for (Object key_aa: set_aaa)
+		{
+		Map dict_unit = dict_aa.get (key_aa);
+
+		String str_id = "" + key_aa;
+		String name = dict_unit.get ("name");
+		String str_population = dict_unit.get ("population");
+		int population = Integer.parseInt (str_population);
+		date_mod = dict_unit.get ("date_mod");
+		xlsx_create_row_proc
+			 (sheet1,row,str_id,name,population,date_mod);
+		row++;
+		}
+
+	fos = new FileOutputStream (xlsx_file);
+
+	wb.write (fos);
+	fos.close();
+}
+
+// --------------------------------------------------------------

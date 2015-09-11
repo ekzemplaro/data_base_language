@@ -1,7 +1,7 @@
 //
 //	mcached_update.bsh
 //
-//					Feb/05/2015
+//					Sep/01/2015
 //
 // --------------------------------------------------------------
 source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
@@ -9,14 +9,14 @@ source ("/var/www/data_base/common/bsh_common/mcached_manipulate.bsh");
 
 // --------------------------------------------------------------
 System.out.println ("*** 開始 ***");
-String	key = bsh.args[0];
-int	population = Integer.parseInt (bsh.args[1]);
+key = bsh.args[0];
+population = Integer.parseInt (bsh.args[1]);
 
-System.out.print (key + "t");
+System.out.print (key + "\t");
 System.out.println (population);
 
-String server = "localhost";
-int port = 11211;
+final String server = "localhost";
+final int port = 11211;
 
 mcached_update_proc (server,port,key,population);
 

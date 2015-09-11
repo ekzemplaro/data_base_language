@@ -1,0 +1,63 @@
+//
+//	ftp_create.bsh
+//
+//					Sep/03/2015
+//
+// --------------------------------------------------------------
+source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
+source ("/var/www/data_base/common/bsh_common/ftp_manipulate.bsh");
+
+import	net.arnx.jsonic.JSON;
+
+// --------------------------------------------------------------
+Map data_prepare_proc ()
+{
+	Map dict_aa = new HashMap ();
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t0361","盛岡",28519,"2000-7-15");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t0362","久慈",75492,"2000-5-23");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t0363","二戸",91876,"2000-9-24");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t0364","宮古",87324,"2000-3-14");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t0365","遠野",72831,"2000-4-12");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t0366","八幡平",24519,"2000-10-28");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t0367","大船渡",39457,"2000-6-19");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t0368","一関",65284,"2000-12-15");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t0369","花巻",54392,"2000-11-24");
+
+
+	return	dict_aa;
+}
+
+// --------------------------------------------------------------
+System.out.println ("*** 開始 ***");
+
+final String hostname = "host_dbase";
+final String user = "scott";
+final String passwd = "tiger";
+final String path_file = "city/iwate.json";
+
+Map dict_aa = data_prepare_proc ();
+
+String str_json = JSON.encode (dict_aa);
+
+ftp_put_proc (hostname,user,passwd,path_file,str_json);
+
+System.out.println ("*** 終了 ***");
+// --------------------------------------------------------------

@@ -1,20 +1,47 @@
 // --------------------------------------------------------------
 //	update/mongo_update.java
 //
-//					Sep/02/2013
+//					Sep/11/2015
 // --------------------------------------------------------------
 import	java.util.HashMap;
 
-import com.mongodb.Mongo;
-import com.mongodb.DB;
-import com.mongodb.DBCollection;
+import com.mongodb.MongoClient;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.FindIterable;
+import com.mongodb.Block;
+
 import com.mongodb.BasicDBObject;
-import com.mongodb.DBObject;
-import com.mongodb.DBCursor;
+
+import org.bson.Document;
 
 // --------------------------------------------------------------
 public class mongo_update
 {
+// --------------------------------------------------------------
+public static void mongo_update_proc
+	(MongoCollection coll,String key_in,int population)
+{
+	String  today = text_manipulate.get_current_date_proc ();
+
+	BasicDBObject query = new BasicDBObject("key", key_in);
+	FindIterable iterable = coll.find(query);
+
+	iterable.forEach(new Block <Document> ()
+		{
+		@Override
+		public void apply(final Document doc) {
+		final String name_aa = doc.get ("name").toString ();
+
+		Document doc_aa = new Document("key",key_in)
+		.append ("name",name_aa)
+		.append ("population",population)
+		.append ("date_mod",today);
+
+		coll.replaceOne (new Document("key", key_in),doc_aa);
+			}
+		});
+}
 
 // --------------------------------------------------------------
 public static void main (String[] args)
@@ -28,23 +55,18 @@ public static void main (String[] args)
 
 	try
 	{
-System.out.println (" *** aaaa ***");
-Mongo mm = new Mongo ("localhost" ,27017);
+	MongoClient client = new MongoClient ("localhost",27017);
 
-	DB db = mm.getDB ("city_db");
+	MongoDatabase db = client.getDatabase ("city_db");
 
 	String col_name = "saitama";
 
-	DBCollection coll = db.getCollection (col_name);
-	System.out.println ("\tcoll.getCount ()  = " + coll.getCount ());
+	MongoCollection coll = db.getCollection (col_name);
+	System.out.println ("\tcoll.count ()  = " + coll.count ());
 
+	mongo_update_proc (coll,key_in,population);
 
-	System.out.println(coll.getCount());
-
-
-	mongo_manipulate.mongo_update_proc (coll,key_in,population);
-
-	mongo_manipulate.mongo_display_proc (coll);
+	client.close ();
 	}
 	catch (Exception ee)
 	{

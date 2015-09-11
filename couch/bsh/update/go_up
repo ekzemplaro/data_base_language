@@ -1,0 +1,14 @@
+#
+export COMMON=/var/www/data_base/common
+export JAR=$COMMON/jar
+HTTPCLIENT=$JAR/commons-httpclient
+#
+export CPX=.:$HTTPCLIENT/commons-httpclient-3.1.jar
+export CPX=$CPX:$HTTPCLIENT/commons-logging-1.2.jar
+export CPX=$CPX:$HTTPCLIENT/commons-codec-1.10.jar
+#
+export CLASSPATH=$CPX:$JAR/jsonic-1.1.2.jar:/usr/share/java/bsh.jar
+#
+#
+java bsh.Interpreter couch_update.bsh t2024 98437200
+#

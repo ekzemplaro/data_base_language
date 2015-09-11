@@ -1,10 +1,9 @@
 #
 #
 SHARE=/usr/share/java
-export COMMON=/var/www/data_base/common
-export JAR=$COMMON/jar
-SCALA_COMMON=$COMMON/scala_common
-MONGO_JAR=$JAR/mongo-2.8.0.jar
-export CPX=.:$SHARE:$SCALA_COMMON:$MONGO_JAR
+COMMON=/var/www/data_base/common
+JAR=$COMMON/jar
+MONGO_JAR=$JAR/mongo-java-driver-3.0.3.jar
+export CLASSPATH=.:$SHARE:$MONGO_JAR
 #
-scala -cp $CPX mongo_delete t1163
+scala mongo_delete t1163

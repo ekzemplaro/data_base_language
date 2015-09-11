@@ -15,32 +15,36 @@ load ("/var/www/data_base/common/rhino_common/text_manipulate.js")
 // --------------------------------------------------------------
 print ("*** 開始 ***")
 
-file_cdb=arguments[0]
+var file_cdb=arguments[0]
 
 print (file_cdb)
 
-
 var dict_aa = data_prepare_proc ()
 
-maker = new CdbMake()
+
+var maker = new CdbMake()
 
 for (var key in dict_aa)
 	{
 
+	var key_str =  key.toString ();
 	print (key)
 	var str_json = JSON.stringify (dict_aa[key])
 	print (str_json)
 
-	key_str = new java.lang.String (key)
-	data_str = new java.lang.String (str_json)
+//	key_str = new java.lang.String (key)
+//	data_str = new java.lang.String (str_json)
 
-	key_byte = get_byte (key)
-	data_byte = get_byte (str_json)
+//	var key_byte = get_byte (key)
+	var key_byte = get_byte (key_str)
+	var data_byte = get_byte (str_json.toString ())
 
-	print (data_byte)
+//	print (data_byte)
 
-	maker.add (key_str.getBytes(), data_str.getBytes())
-//	maker.add (key_byte,data_byte)
+//	maker.add (key_str.getBytes(), str_json.getBytes())
+
+//	maker.add (key.getBytes(),data_byte)
+	maker.add (key_byte,data_byte)
 //	maker.add (key_byte,str_json)
 //	maker.add (get_byte (key), get_byte (str_json))
 	}

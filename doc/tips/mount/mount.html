@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>Mount Jul/10/2015</title>
+<title>Mount Sep/04/2015</title>
 </head>
 <body>
 <h2>Mount</h2><p />
@@ -19,14 +19,17 @@ iso イメージのマウント<p />
 
 NFS マウント<p />
 <blockquote>
-# apt-get install nfs-common<p />
-# mount server_aa:/var/www /mnt/server_aa/www<p />
+Ubuntu<br />
+	<blockquote>
+	# apt-get install nfs-common<p />
+	</blockquote>
 Arch Linux<br />
 	<blockquote>
 	# pacman -S nfs-utils<p />
 	# systemctl start nfs-client.target<p />
 	# systemctl start rpcbind.service<p />
 	</blockquote>
+# mount server_aa:/var/www /mnt/server_aa/www<p />
 </blockquote>
 
 cifs マウント<p />
@@ -101,6 +104,6 @@ GPT (GUID Partition Table)<br />
 # parted -l<p />
 <hr />
 <a href="../">Return</a><p />
-Jul/10/2015 AM 08:15<p />
+Sep/04/2015 AM 08:15<p />
 </body>
 </html>

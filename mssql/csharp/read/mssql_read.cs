@@ -1,51 +1,68 @@
-// -------------------------------------------------------------------
+// ---------------------------------------------------------------
 /*
 	read/mssql_read.cs
 
-					Oct/22/2014
+				Aug/24/2015
 */
-// -------------------------------------------------------------------
-using	System;
-using	System.Data;
-using	System.Data.SqlClient;
+// ---------------------------------------------------------------
+using System;
+using System.Text;
+using System.Data.SqlClient;
 
+// ---------------------------------------------------------------
 class mssql_read
 {
-// -------------------------------------------------------------------
-static void Main (string[] args)
+// ---------------------------------------------------------------
+static void Main (string [] args)
 {
+	SqlConnection cnn;
+	SqlCommand cmd;
+
 	Console.WriteLine ("*** 開始 ***");
 
-	string str_connect =
-		@"server=host_mssql;"
-		+ "uid=sa;" + "pwd=scott_tiger;" + "database=city;";
- 
-	string command = "select ID,Name,Population,date_mod from cities";
 
-	SqlDataAdapter da_adapter
-			= new SqlDataAdapter (command,str_connect);
+//	string str_connect = @"server=host_mssql\SQLEXPRESS;"
+	string str_connect = @"server=host_mssql;"
+			+ "uid=sa;"
+			+ "pwd=scott_tiger;"
+			+ "database=city";
 
-	DataTable dtable = new DataTable ();
+	cnn = new SqlConnection (str_connect);
+	cnn.Open ();
 
-	try
-	{
+	string str_sql = "Select id,name,population,date_mod From cities";
 
-	da_adapter.Fill (dtable);
+	cmd = new SqlCommand (str_sql, cnn);
 
-	table_manipulate.display_proc (dtable);
-	}
-	catch (NotSupportedException ex)
-		{
-		Console.WriteLine ("*** NotSupportedException ***");
-		Console.WriteLine ("*** message ***");
-		Console.WriteLine (ex);
-		Console.WriteLine ("*** message ***");
-		}
+	command_exec (ref cmd);
+	cnn.Close ();
 
 	Console.WriteLine ("*** 終了 ***");
 }
- 
-// -------------------------------------------------------------------
+
+// ---------------------------------------------------------------
+static void command_exec (ref SqlCommand cmd)
+{
+	SqlDataReader dr_sql;
+	dr_sql = cmd.ExecuteReader();
+
+	while (dr_sql.Read ())
+	{
+	StringBuilder str_ss = new StringBuilder ();
+
+	for (int it = 0; it < dr_sql.FieldCount; it++)
+		{
+		str_ss.Append (dr_sql.GetValue(it).ToString ());
+		str_ss.Append ("\t");
+		}
+
+	Console.WriteLine (str_ss);
+	}
+
+	dr_sql.Close();
 }
 
-// -------------------------------------------------------------------
+// ---------------------------------------------------------------
+}
+
+// ---------------------------------------------------------------

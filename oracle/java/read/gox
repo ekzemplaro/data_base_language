@@ -1,6 +1,8 @@
 #
-JAVA_COMMON=/var/www/data_base/common/java_common
-ORACLE_JAR=/mnt/sdb2/usr/lib/oracle/xe/app/oracle/product/10.2.0/client/jdbc/lib/ojdbc14.jar
+COMMON=/var/www/data_base/common
+JAVA_COMMON=$COMMON/java_common
+JAR=$COMMON/jar
+ORACLE_JAR=$JAR/oracle/ojdbc6.jar
 CPX=./:$JAVA_COMMON:$ORACLE_JAR
 #
 java -cp $CPX oracle_read

@@ -1,0 +1,13 @@
+#
+COMMON=/var/www/data_base/common
+JAR=$COMMON/jar
+#
+JSONIC=$JAR/jsonic-1.1.2.jar
+JEDIS_JAR=$JAR/jedis-2.1.0.jar
+#
+export CLASSPATH=./:$JSONIC:$JEDIS_JAR
+#
+export CLASSPATH=$CLASSPATH:/usr/share/java/bsh.jar
+#
+java bsh.Interpreter redis_update.bsh t1857 58439200
+#

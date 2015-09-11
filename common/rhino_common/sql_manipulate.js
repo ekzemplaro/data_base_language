@@ -2,7 +2,7 @@
 //
 //	sql_manipulate.js
 //
-//						May/23/2011
+//						Aug/25/2015
 //
 // ------------------------------------------------------------------
 function disp_proc (conn)
@@ -47,6 +47,16 @@ function delete_proc (conn,id_in)
 
 	var rs   = stmt.executeUpdate(sql);
 
+}
+
+// ------------------------------------------------------------------
+function dict_to_db_proc (conn,dict_aa)
+{
+	for (var key in dict_aa)
+		{
+		var unit_aa = dict_aa[key]
+	insert_record_proc (conn,key,unit_aa["name"],unit_aa["population"],unit_aa["date_mod"])
+		}
 }
 
 // ------------------------------------------------------------------

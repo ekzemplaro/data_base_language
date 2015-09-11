@@ -2,7 +2,7 @@
 /*
 	java/create/firebird_create.java
 
-					Jun/01/2011
+					Aug/25/2015
 
 */
 // ---------------------------------------------------------------------
@@ -30,7 +30,8 @@ public static void main (String args [])
 	String database = "/var/tmp/firebird/cities.fdb";
 
 	Connection conn =
-	DriverManager.getConnection("jdbc:firebirdsql:localhost/3050:" +
+//	DriverManager.getConnection("jdbc:firebirdsql:localhost/3050:" +
+	DriverManager.getConnection("jdbc:firebirdsql:host_firebird:" +
 	database, user, password);
 
 	Statement ss = conn.createStatement ();
@@ -38,8 +39,6 @@ public static void main (String args [])
 	rdb_common.drop_table_proc (ss);
 	rdb_common.create_table_proc (ss);
 	insert_data_proc (ss);
-
-	rdb_common.display_proc (conn);
 
 	ss.close ();
 
@@ -50,7 +49,6 @@ public static void main (String args [])
 		ee.printStackTrace();
 		}
 
-
 	System.out.println ("*** 終了 ***");
 }
 
@@ -60,12 +58,12 @@ static void insert_data_proc (Statement ss) throws SQLException
 	rdb_common.insert_record_proc (ss,"t3821","松山",36587,"2008-4-21");
 	rdb_common.insert_record_proc (ss,"t3822","今治",26491,"2008-5-14");
 	rdb_common.insert_record_proc (ss,"t3823","宇和島", 45278,"2008-5-27");
-	rdb_common.insert_record_proc (ss,"t3824","八幡浜",24264,"2008-9-29");
+	rdb_common.insert_record_proc (ss,"t3824","八幡浜",71264,"2008-9-29");
 	rdb_common.insert_record_proc (ss,"t3825","新居浜",19375,"2008-10-16");
 	rdb_common.insert_record_proc (ss,"t3826","西条",19846,"2008-11-24");
-	rdb_common.insert_record_proc (ss,"t3827","大洲",18197,"2008-12-30");
-	rdb_common.insert_record_proc (ss,"t3828","伊予",47184,"2008-11-18");
-	rdb_common.insert_record_proc (ss,"t3829","西予",52472,"2008-6-12");
+	rdb_common.insert_record_proc (ss,"t3827","大洲",18597,"2008-12-30");
+	rdb_common.insert_record_proc (ss,"t3828","伊予",47186,"2008-11-18");
+	rdb_common.insert_record_proc (ss,"t3829","西予",53472,"2008-6-12");
 }
 
 // ---------------------------------------------------------------------

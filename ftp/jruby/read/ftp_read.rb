@@ -3,7 +3,7 @@
 #
 #	ftp_read.rb
 #
-#					Feb/25/2013
+#					Sep/03/2015
 #
 require 'rubygems'
 require 'open-uri'
@@ -14,7 +14,7 @@ load '/var/www/data_base/common/ruby_common/text_manipulate.rb'
 #
 puts	"*** 開始 ***"
 #
-url='ftp://scott:tiger@cddn007/city/iwate.json'
+url='ftp://scott:tiger@host_dbase/city/iwate.json'
 response= open(url,:proxy=>nil)
 str_json=response.read
 #

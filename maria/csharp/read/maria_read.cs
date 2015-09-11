@@ -2,12 +2,11 @@
 /*
 	read/maria_read.cs
 
-					Sep/17/2013
+					Aug/24/2015
 
 */
 // ----------------------------------------------------------------
 using System;
-using System.Data;
 using MySql.Data.MySqlClient;
 
 // ----------------------------------------------------------------
@@ -15,25 +14,36 @@ public static class maria_read
 {
 public static void Main (string[] args)
 {
-	Console.WriteLine ("*** 開始 ***");
-
 	string server="localhost";
 	string str_db="city";
 
 	string str_connect = "Server=" + server + 
-	";User Id=scott;Password=tiger;" +
-		"Database=" + str_db + ";";
+	";User Id=scott;Password=tiger;Database=" + str_db + ";";
 
-	MySqlConnection connection = new MySqlConnection (str_connect);
-	connection.Open ();
+	MySqlConnection conn = new MySqlConnection (str_connect);
 
-	DataTable dtable = mysql_manipulate.mysql_data_fetch_proc (connection);
+	Console.WriteLine ("*** 開始 ***");
 
-	connection.Close ();
+	conn.Open();
+    
 
-	table_manipulate.display_proc (dtable);
+	MySqlCommand command = new MySqlCommand("select * from cities", conn);
 
-	Console.WriteLine("*** 終了 ***");
+	MySqlDataReader dr = command.ExecuteReader();
+
+
+	while(dr.Read())
+		{
+		for (int it = 0; it < dr.FieldCount; it++)
+			{
+			Console.Write("{0} \t", dr[it]);
+			}
+		Console.WriteLine();
+		}
+
+	conn.Close();
+
+	Console.WriteLine ("*** 終了 ***");
 }
 
 // ----------------------------------------------------------------

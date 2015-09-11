@@ -2,7 +2,7 @@
 /*
 	oracle_delete.groovy
 
-				May/23/2011
+				Aug/05/2015
 
 
 */
@@ -21,17 +21,15 @@ public static void main (String[] args) throws Exception
 	String	id = args[0]
 	println ("\tid = " + id)
 
-	String driver = "oracle.jdbc.driver.OracleDriver"
+	String host = "host_oracle"
 	String user     = "scott"
 	String password = "tiger"
 
-	def protocol = "jdbc:oracl:thin:@spn109:1521/xe"
+	def protocol = "jdbc:oracl:thin:@" + host + ":1521/xe"
 
-	def sql = Sql.newInstance (protocol,user,password,driver)
+	def sql = Sql.newInstance (protocol,user,password)
 
 	sql_manipulate.delete_proc	(sql,id)
-
-	sql_manipulate.display_proc	(sql)
 
 	sql.close ()
 

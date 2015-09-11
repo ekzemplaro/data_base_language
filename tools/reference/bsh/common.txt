@@ -1,4 +1,8 @@
+cdb_manipulate.bsh
+ftp_manipulate.bsh
+get_uri.bsh
 mcached_manipulate.bsh
 sql_manipulate.bsh
 text_manipulate.bsh
+xlsx_manipulate.bsh
 xml_manipulate.bsh

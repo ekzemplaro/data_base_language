@@ -3,7 +3,7 @@
 #
 #	firebird_update.rb
 #
-#				May/21/2012
+#				Aug/25/2015
 #
 # ------------------------------------------------------------
 include Java
@@ -24,12 +24,16 @@ population_in = ARGV[1].to_i
 #
 puts id_in,population_in
 #
-str_connect = "jdbc:firebirdsql:localhost/3050:/var/tmp/firebird/cities.fdb"
+user = "sysdba"
+passwd = "tiger"
+database = "/var/tmp/firebird/cities.fdb"
+
+str_connect = "jdbc:firebirdsql:host_firebird:" + database
+
+conn = DriverManager.getConnection(str_connect,user,passwd)
 #
-conn = DriverManager.getConnection(str_connect,"sysdba", "tiger")
 
 sql_update_proc(conn,id_in,population_in)
-sql_read_proc(conn)
 
 conn.close()
 #

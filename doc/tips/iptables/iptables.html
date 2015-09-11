@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+<title>iptables Aug/04/2015</title>
+</head>
+<body>
+<h2>iptables</h2><p />
+
+<blockquote>
+Iptables は Linux カーネルに組み込まれている強力なファイアウォールです。<br />
+</blockquote>
+
+インストール<br />
+<blockquote>
+</blockquote>
+
+使用例<p />
+
+ルールは存在せず、何もブロックされない。<p />
+Arch Linux, Ubuntu, Debian のデフォールト<p /> 
+<blockquote>
+<pre>
+# iptables -nvL
+Chain INPUT (policy ACCEPT 2288 packets, 294K bytes)
+ pkts bytes target     prot opt in     out     source               destination         
+
+Chain FORWARD (policy ACCEPT 0 packets, 0 bytes)
+ pkts bytes target     prot opt in     out     source               destination         
+
+Chain OUTPUT (policy ACCEPT 1240 packets, 165K bytes)
+ pkts bytes target     prot opt in     out     source               destination         
+
+</pre>
+</blockquote>
+
+<a href="../">Return</a><p />
+Aug/04/2015 AM 08:15<p />
+</body>
+</html>

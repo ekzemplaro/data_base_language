@@ -1,18 +1,48 @@
 // --------------------------------------------------------------
 //	read/mongo_read.java
 //
-//					Sep/02/2013
+//					Sep/11/2015
 // --------------------------------------------------------------
-import com.mongodb.Mongo;
-import com.mongodb.DB;
-import com.mongodb.DBCollection;
-import com.mongodb.BasicDBObject;
-import com.mongodb.DBObject;
-import com.mongodb.DBCursor;
+import com.mongodb.MongoClient;
+// import com.mongodb.client.MongoIterator;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.FindIterable;
+import com.mongodb.Block;
 
+
+import org.bson.Document;
 // --------------------------------------------------------------
 public class mongo_read
 {
+
+// --------------------------------------------------------------
+public static void mongo_display_proc (MongoCollection coll)
+{
+	System.out.println(coll.count());
+
+	FindIterable iterable = coll.find();
+
+	iterable.forEach(new Block<Document>()
+		{
+    @Override
+    public void apply(final Document doc) {
+	System.out.print (doc.get ("key") + "\t");
+	System.out.print (doc.get ("name") + "\t");
+	System.out.print (doc.get ("population") + "\t");
+	System.out.println (doc.get ("date_mod"));
+			}	
+		});
+
+/*
+	MongoIterator<Document> iter = coll.find ();
+
+	while (iter.hasNext ())
+		{
+		System.out.println (iter.next ());
+		}
+*/
+}
 
 // --------------------------------------------------------------
 public static void main (String[] args)
@@ -21,16 +51,18 @@ public static void main (String[] args)
 
 	try
 	{
-	Mongo mm = new Mongo ("localhost" ,27017 );
+	MongoClient client = new MongoClient ("localhost",27017);
 
-	DB db = mm.getDB ("city_db" );
+	MongoDatabase db = client.getDatabase ("city_db");
 
 	String col_name = "saitama";
-//	String col_name = "cities";
  
-	DBCollection coll = db.getCollection (col_name);
+	MongoCollection coll = db.getCollection (col_name);
 
-	mongo_manipulate.mongo_display_proc (coll);
+//	mongo_manipulate.mongo_display_proc (coll);
+	mongo_display_proc (coll);
+
+	client.close ();
 	}
 	catch (Exception ee)
 	{

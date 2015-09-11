@@ -1,17 +1,17 @@
 // -----------------------------------------------------------------------
 //	distribution.js
 //
-//					Jul/30/2015
+//					Aug/18/2015
 //
 // -----------------------------------------------------------------------
 jQuery (function ()
 {
 	jQuery("#outarea_aa").html
-		("*** distribution *** start *** Jun/30/2015 ***");
+		("*** distribution *** start *** Aug/18/2015 ***");
 
 	var data_text = "";
 
-	var file_in = "./data.json";
+	var file_in = "./data_distro.json";
 
 	jQuery.getJSON (file_in,function (data_aa)
 		{
@@ -32,7 +32,7 @@ jQuery (function ()
 		});
 
 	jQuery("#outarea_hh").html
-		("*** distribution *** end *** Jul/30/2015 ***");
+		("*** distribution *** end *** Aug/18/2015 ***");
 
 });
 

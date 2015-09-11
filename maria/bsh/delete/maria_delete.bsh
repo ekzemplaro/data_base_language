@@ -1,7 +1,7 @@
 //
-//	mysql_delete.bsh
+//	maria_delete.bsh
 //
-//						Sep/26/2012
+//						Aug/25/2015
 //
 // ---------------------------------------------------------------------
 source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
@@ -16,9 +16,6 @@ String url="jdbc:mysql://localhost/city";
 Connection conn = DriverManager.getConnection (url,"scott","tiger");
 
 sql_delete_proc (conn,key);
-
-sql_display_proc (conn);
-
 
 conn.close ();
 System.out.println ("*** 終了 ***");

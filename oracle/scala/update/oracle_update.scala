@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------
 //	oracle_update.scala
 //
-//						May/23/2011
+//						Aug/05/2015
 // -----------------------------------------------------------------
 import scala.io.Source
 import java.sql._
@@ -20,24 +20,19 @@ def main (args: scala.Array[String])
 	println (id_in)
 	println (population_in)
 
-	oracle_update_proc (id_in,population_in)
+	var host = "host_oracle";
+	var user = "scott";
+	var password = "tiger";
+
+	var str_connect = "jdbc:oracl:thin:@" + host + ":1521/xe";
+
+	var conn = DriverManager.getConnection (str_connect,user,password)
+
+	oracle_manipulate.oracle_update_proc (conn,id_in,population_in)
+
+	conn.close ();
 
 	println	("*** 終了 ***")
-}
-
-// -----------------------------------------------------------------
-def oracle_update_proc (id_in:String,population_in:Int)
-{
-	val str_connect= "jdbc:oracl:thin:@spn109:1521/xe"
-
-	Class.forName ("oracle.jdbc.driver.OracleDriver")
-
-	val conn = DriverManager.getConnection (str_connect,"scott","tiger")
-
-	rdb_common.update_proc (conn,id_in,population_in)
-	rdb_common.display_proc (conn)
-
-	conn.close
 }
 
 // -----------------------------------------------------------------

@@ -1,0 +1,55 @@
+//
+//	couch_update.bsh
+//
+//					Sep/02/2015
+//
+// --------------------------------------------------------------
+source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
+source ("/var/www/data_base/common/bsh_common/get_uri.bsh");
+
+import  net.arnx.jsonic.JSON;
+// --------------------------------------------------------------
+couch_update_proc (String url_collection,String key,int population)
+{
+	String url_target = url_collection + "/" + key;
+
+	String str_json = get_uri_proc (url_target);
+
+	Map unit_aa = JSON.decode (str_json);
+
+	if (unit_aa.containsKey ("error"))
+		{
+		System.out.println ("*** not exist ***");
+		}
+	else
+		{
+		String name = unit_aa.get ("name").toString ();
+
+		System.out.println (name);
+
+		unit_aa.put ("population",population);
+
+		String today = get_current_date_proc ();
+		unit_aa.put ("date_mod",today);
+
+		String str_json_new = JSON.encode (unit_aa);
+		System.out.println (str_json_new);
+
+		rest_put_proc (url_target,str_json_new,"text/json");
+		}
+}
+
+// --------------------------------------------------------------
+System.out.println ("*** 開始 ***");
+String	key = bsh.args[0];
+int population = Integer.parseInt (bsh.args[1]);
+
+System.out.print (key + "\t");
+System.out.println (population);
+
+final String url_collection = "http://localhost:5984/nagano";
+
+couch_update_proc (url_collection,key,population);
+
+System.out.println ("*** 終了 ***");
+// --------------------------------------------------------------

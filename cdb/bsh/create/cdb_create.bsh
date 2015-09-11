@@ -1,0 +1,55 @@
+//
+//	cdb_create.bsh
+//
+//					Sep/01/2015
+//
+// --------------------------------------------------------------
+source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
+source ("/var/www/data_base/common/bsh_common/cdb_manipulate.bsh");
+
+// --------------------------------------------------------------
+Map data_prepare_proc ()
+{
+	dict_aa = new HashMap ();
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t2761","豊中",52971,"2000-9-15");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t2762","池田",38195,"2000-2-23");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t2763","高槻",21578,"2000-8-24");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t2764","吹田",84329,"2000-3-14");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t2765","茨木",72936,"2000-4-12");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t2766","摂津",21563,"2000-7-28");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t2767","泉大津",38257,"2000-6-19");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t2768","和泉",65182,"2000-10-15");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t2769","高石",74351,"2000-11-24");
+
+	return	dict_aa;
+}
+
+// --------------------------------------------------------------
+System.out.println ("*** 開始 ***");
+
+file_cdb =  bsh.args[0];
+
+dict_aa = data_prepare_proc ();
+
+dict_to_cdb_proc (file_cdb,dict_aa);
+
+System.out.println ("*** 終了 ***");
+// --------------------------------------------------------------

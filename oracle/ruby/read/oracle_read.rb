@@ -10,7 +10,7 @@ require 'oci8'
 #
 puts 	"*** 開始 ***"
 #
-dbi=OCI8.new('scott', 'tiger', '//spn109:1521/xe')
+dbi=OCI8.new('scott', 'tiger', '//host_oracle:1521/xe')
 #
 cur = dbi.exec('select * from cities')
 #

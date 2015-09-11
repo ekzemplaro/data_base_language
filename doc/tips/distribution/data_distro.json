@@ -1,0 +1,26 @@
+{
+"archlinux": 
+	{"name": "ArchLinux","kernel": "4.1.5-1-ARCH","bash": "4.3.39"},
+"boot2docker": 
+	{"name": "boot2docker","kernel": "4.0.7-boot2docker","bash": ""},
+"centos": 
+	{"name": "CentOS","kernel": "3.10.0-229.el7.x86_64","bash": "4.2.46"},
+"coreos": 
+	{"name": "CoreOS","kernel": "4.0.5","bash": "4.2.53"},
+"debian": 
+	{"name": "Debian","kernel": "3.16.0-4-amd64","bash": "4.3.30"},
+"fedora": 
+	{"name": "Fedora","kernel": "4.0.8-300.fc22.x86_64","bash": "4.3.39"},
+"gentoo": 
+	{"name": "Gentoo","kernel": "4.0.5-gentoo","bash": "4.3.33"},
+"opensuse": 
+	{"name": "openSUSE","kernel": "3.16.7-21-desktop","bash": "4.2.53"},
+"redhat": 
+	{"name": "RedHat","kernel": "","bash": ""},
+"tinycore": 
+	{"name": "Tiny Core Linux","kernel": "3.16.6-tinycore","bash": "4.3.39"},
+"ubuntu": 
+	{"name": "Ubuntu","kernel": "3.19.0-26-generic","bash": "4.3.30"},
+"xenserver": 
+	{"name": "XenServer","kernel": "3.10.0+2","bash": "3.2.25"}
+}

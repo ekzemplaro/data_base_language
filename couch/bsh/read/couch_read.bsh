@@ -1,0 +1,54 @@
+//
+//	couch_read.bsh
+//
+//					Sep/02/2015
+//
+// --------------------------------------------------------------
+source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
+source ("/var/www/data_base/common/bsh_common/get_uri.bsh");
+
+import org.apache.commons.httpclient.HttpClient;
+import org.apache.commons.httpclient.HttpStatus;
+import org.apache.commons.httpclient.methods.GetMethod;
+
+
+import	net.arnx.jsonic.JSON;
+// --------------------------------------------------------------
+Map couch_to_dict_proc (String url_collection)
+{
+	Map dict_aa = new HashMap ();
+
+	String url_all_docs = url_collection + "/_all_docs?include_docs=true";
+
+	String str_json = get_uri_proc (url_all_docs);
+
+	Map data = JSON.decode (str_json);
+
+	List list_rows = data.get ("rows");
+
+	for (Map row: list_rows)
+		{
+		String key = row.get ("key").toString ();
+		Object doc = row.get ("doc");
+		Map unit_aa = HashMap.class.cast (doc);
+
+		dict_aa.put (key,unit_aa);
+		}
+
+	return	dict_aa;
+}
+
+// --------------------------------------------------------------
+System.out.println ("*** 開始 ***");
+
+
+final String url_collection = "http://localhost:5984/nagano";
+
+Map dict_aa = couch_to_dict_proc (url_collection);
+
+dict_display_proc (dict_aa);
+
+
+System.out.println ("*** 終了 ***");
+
+// --------------------------------------------------------------

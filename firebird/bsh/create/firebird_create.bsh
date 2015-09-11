@@ -1,0 +1,63 @@
+//
+//	firebird_create.bsh
+//
+//						Sep/01/2015
+//
+// ---------------------------------------------------------------------
+source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
+source ("/var/www/data_base/common/bsh_common/sql_manipulate.bsh");
+// ---------------------------------------------------------------------
+Map data_prepare_proc ()
+{
+	dict_aa = new HashMap ();
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t3821","松山",59137,"2000-5-5");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t3822","今治",97526,"2000-6-23");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t3823","宇和島",45318,"2000-7-14");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t3824","八幡浜",81694,"2000-9-14");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t3825","新居浜",72539,"2000-10-12");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t3826","西条",28579,"2000-7-28");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t3827","大洲",39457,"2000-6-19");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t3828","伊予",65274,"2000-10-15");
+
+	dict_aa = dict_append_proc
+		(dict_aa,"t3829","西予",74381,"2000-11-24");
+
+	return	dict_aa;
+}
+
+// ---------------------------------------------------------------------
+System.out.println ("*** 開始 ***");
+
+dict_aa = data_prepare_proc ();
+
+DriverManager.registerDriver(new org.firebirdsql.jdbc.FBDriver());
+
+user     = "sysdba";
+password = "tiger";
+database = "/var/tmp/firebird/cities.fdb";
+
+url = "jdbc:firebirdsql:host_firebird:" + database;
+
+conn = DriverManager.getConnection (url, user, password);
+
+sql_dict_to_db_proc (conn,dict_aa);
+
+conn.close ();
+System.out.println ("*** 終了 ***");
+// ---------------------------------------------------------------------

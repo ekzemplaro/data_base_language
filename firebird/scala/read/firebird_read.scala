@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------
 //	read/firebird_read.scala
 //
-//						Aug/03/2011
+//						Aug/25/2015
 // -----------------------------------------------------------------
 import scala.io.Source
 import java.sql._
@@ -18,7 +18,8 @@ def main (args: scala.Array[String])
 
 	val database = "/var/tmp/firebird/cities.fdb"
 //	val str_connect= "jdbc:firebirdsql:localhost/3050:" + database
-	val str_connect= "jdbc:firebirdsql:localhost:" + database
+//	val str_connect= "jdbc:firebirdsql:host_dbase:" + database
+	val str_connect= "jdbc:firebirdsql:cddn007-ee:" + database
 
 	Class.forName ("org.firebirdsql.jdbc.FBDriver")
 

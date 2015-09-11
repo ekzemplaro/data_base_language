@@ -4,7 +4,7 @@ SHARE=/usr/share/java
 JAVA_CLASSPATH=$SHARE/js.jar:$SHARE/jline.jar
 export COMMON=/var/www/data_base/common
 export JAR=$COMMON/jar
-MONGO_JAR=$JAR/mongo-2.8.0.jar
+MONGO_JAR=$JAR/mongo-java-driver-3.0.3.jar
 export CLASSPATH=.:$SHARE:$JAVA_CLASSPATH:$MONGO_JAR
 #
 ./mongo_create.js

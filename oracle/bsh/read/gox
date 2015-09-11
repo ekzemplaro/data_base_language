@@ -1,0 +1,8 @@
+#
+COMMON=/var/www/data_base/common
+JAR=$COMMON/jar
+ORACLE_JAR=$JAR/oracle/ojdbc6.jar
+#
+export CLASSPATH=.:$ORACLE_JAR:/usr/share/java/bsh.jar
+#
+java bsh.Interpreter oracle_read.bsh

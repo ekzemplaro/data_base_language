@@ -2,7 +2,7 @@
 // --------------------------------------------------------------
 //	update/mongo_update.js
 //
-//					Sep/02/2013
+//					Sep/10/2015
 // --------------------------------------------------------------
 importPackage (java.util);
 importPackage (com.mongodb);
@@ -16,18 +16,17 @@ load ("/var/www/data_base/common/rhino_common/text_manipulate.js");
 	print ("\tkey_in = " + key_in);
 	print ("\tpopulation = " + population);
 
-	var mm = new Mongo ("localhost" ,27017);
+	var mm = new MongoClient ("localhost" ,27017);
 
-	var db = mm.getDB ("city_db");
+	var db = mm.getDatabase ("city_db");
 
 	var col_name = "saitama";
 
 	var coll = db.getCollection (col_name);
-	print ("\tcoll.getCount ()  = " + coll.getCount ());
+	print ("\tcoll.count ()  = " + coll.count ());
 
-	print(coll.getCount());
-
-	mongo_update_proc (coll,key_in,population);
+//	mongo_update_proc (coll,key_in,population);
+	print ("\tcoll.count ()  = " + coll.count ());
 
 	print ("*** 終了 ***");
 

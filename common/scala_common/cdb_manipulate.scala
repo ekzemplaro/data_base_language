@@ -2,10 +2,12 @@
 /*
 	cdb_manipulate.scala
 
-					Jul/08/2015
+					Sep/03/2015
 
 */
 // ----------------------------------------------------------------
+import scala.collection.mutable
+
 import	java.io.IOException
 import	java.util.HashMap
 import	java.util.Set
@@ -18,9 +20,9 @@ import	com.strangegizmo.cdb.CdbMake
 
 import  net.arnx.jsonic.JSON
 
-import org.json4s._
-import org.json4s.JsonDSL._
-import org.json4s.native.JsonMethods._
+// import org.json4s._
+// import org.json4s.JsonDSL._
+// import org.json4s.native.JsonMethods._
 // ----------------------------------------------------------------
 object cdb_manipulate
 {
@@ -44,9 +46,9 @@ def	cdb_to_dict_proc (file_cdb: String):(mutable.Map[String,Object]) = {
 		String str_json  = new String (data)
 		HashMap <String,String>  unit_aa = new HashMap <String,String> ()
 */
-//		unit_aa = (HashMap <String,String>)JSON.decode (str_json)
+		unit_aa = (HashMap <String,String>)JSON.decode (str_json)
 
-		val json = parse (str_json)
+//		val json = parse (str_json)
 
 //		dict_aa.put (str_key,unit_aa)
 		}

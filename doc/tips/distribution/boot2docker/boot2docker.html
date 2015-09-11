@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>boot2docker Jul/29/2015</title>
+<title>boot2docker Aug/21/2015</title>
 </head>
 <body>
 <h2><a href="http://boot2docker.io/">boot2docker</a></h2><p />
@@ -56,6 +56,19 @@ $ sudo su<p />
 
 インストール<p />
 <blockquote>
+	パーテーションの作成・フォーマット<p />
+	<blockquote>
+	# fdisk /dev/xvda<p />
+	# mkfs.ext4 /dev/xvda1<p />
+	# mkswap /dev/xvda2<p />
+	# swapon /dev/xvda2<p />
+	# rebuildfstab<p />
+	</blockquote>
+	<p />
+	# mount /mnt/xvda1<p />
+	# mount /mnt/sr0<p />
+	# mkdir /mnt/xvda1/boot<p />
+	
 </blockquote>
 
 ユーザーの作成<p />
@@ -76,6 +89,6 @@ sshd<p />
 
 <hr />
 <a href="../">Return</a><p />
-Jul/29/2015 AM 08:15<p />
+Aug/21/2015 AM 08:15<p />
 </body>
 </html>

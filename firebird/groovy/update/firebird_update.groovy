@@ -1,7 +1,7 @@
 // ---------------------------------------------------------------------
 //	firebird/groovy/update/firebird_update.groovy
 //
-//					Nov/24/2010
+//					Aug/25/2015
 //
 // ---------------------------------------------------------------------
 import groovy.sql.Sql
@@ -27,14 +27,12 @@ static void main (args)
 	String password = "tiger"
 	String database = "/var/tmp/firebird/cities.fdb"
 
-	def protocol = "jdbc:firebirdsql:localhost/3050:" + database
-
+//	def protocol = "jdbc:firebirdsql:localhost/3050:" + database
+	def protocol = "jdbc:firebirdsql:host_firebird:" + database
 
 	def sql = Sql.newInstance (protocol,user,password,driver)
 
 	sql_manipulate.update_proc (sql,id_in,population_in)
-
-	sql_manipulate.display_proc (sql)
 
 	sql.close ()
 

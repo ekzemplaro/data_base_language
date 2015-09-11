@@ -1,54 +1,50 @@
-socket_delete_record_proc (String key,
-	DataInputStream rr,DataOutputStream output) throws Exception
+// --------------------------------------------------------------
+ftp_put_proc (String hostname,String user,String passwd,
+	String path_file,String str_in)
 {
-	String command = "delete " + key + "\r\n";
-	output.writeBytes (command);
-	output.flush ();
+	String file_src = "/tmp/tmp_042917.txt";
+	file_write_proc (file_src,str_in);
 
-	byte[] buffer = new byte[1024];
-	StringBuffer sb = new StringBuffer ();
+	FTPClient fp = new FTPClient();
+	FileInputStream is = null;
 
-	int len;
+	try {
 
-	while (0 <= (len = rr.read (buffer)))
-		{
-		sb.append (new String (buffer,0, len));
-		String [] lines = sb.toString ().split ("[\n]",-1);
-		boolean flag_break = false;
-		for (int it=0; it < lines.length; it++)
+		fp.connect (hostname);
+
+		if (!FTPReply.isPositiveCompletion(fp.getReplyCode()))
 			{
-			if (lines[it].startsWith("DELETED"))
-				{
-				flag_break = true;
-				}
-			else if (lines[it].startsWith("NOT_FOUND"))
-				{
-				flag_break = true;
-				}
+			System.out.println("connection failed");
+			System.exit(1);
 			}
 
-	System.out.println (sb.toString ());
-
-		if (flag_break)
+		if (fp.login(user, passwd) == false)
 			{
-			break;
+			System.out.println("login failed");
+			System.exit(1);
 			}
+
+	is = new FileInputStream(file_src);
+		fp.storeFile(path_file, is);
+		is.close();
+
+		System.out.print("FTP PUT COMPLETED\t");
+		System.out.print(file_src + "\t");
+		System.out.println(path_file);
+
 		}
+	 catch (Exception e)
+	{
+	e.printStackTrace();
+	}
+	finally
+	{
+	fp.disconnect();
+	is.close();
+	}
+
+	File fileA = new File (file_src);
+	fileA.delete();
 }
 
 // --------------------------------------------------------------
-mcached_delete_proc (String server,int port,String key)
-{
-	Socket sock = new Socket (server,port);
-
-	output = new DataOutputStream (sock.getOutputStream ());
-
-	rr = new DataInputStream (sock.getInputStream ());
-
-	socket_delete_record_proc (key,rr,output);
-
-	rr.close ();
-	output.close ();
-	sock.close ();
-}
-

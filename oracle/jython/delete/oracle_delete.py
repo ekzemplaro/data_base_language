@@ -3,7 +3,7 @@
 #
 #	oracle_delete.py
 #
-#				Jun/01/2011
+#				Aug/05/2015
 #
 # --------------------------------------------------------
 import sys
@@ -21,17 +21,15 @@ print ("*** 開始 ***")
 id_in = sys.argv[1]
 print ("%s" % id_in)
 #
-java.lang.Class.forName("oracle.jdbc.driver.OracleDriver")
-#
-url="jdbc:oracl:thin:@spn109:1521/xe"
+host = "host_oracle"
 user = "scott"
 password = "tiger"
 
-conn = DriverManager.getConnection (url,user, password)
+str_connect = "jdbc:oracl:thin:@" + host + ":1521/xe"
+#
+conn = DriverManager.getConnection (str_connect,user,password)
 #
 delete_proc	(conn,id_in)
-#
-display_proc (conn)
 #
 conn.close ()
 print ("*** 終了 ***")

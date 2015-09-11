@@ -2,14 +2,12 @@
 /*
 	maria_create.cs
 
-					Sep/17/2013
+					Aug/24/2015
 
 */
 // -------------------------------------------------------------------
 using	System;
 using	System.Collections.Generic;
-using	System.Data;
-using	System.Text;
 using	MySql.Data.MySqlClient;
 
 // -------------------------------------------------------------------
@@ -50,7 +48,7 @@ static Dictionary <string,Object> data_prepare_proc ()
 	Dictionary <string,Object> dict_aa
 			= new Dictionary <string,Object> ();
 
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t3321","岡山",497125,"2009-8-4");
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t3321","岡山",437125,"2009-8-4");
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t3322","倉敷",219687,"2009-9-2");
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t3323","津山",871392,"2009-10-8");
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t3324","玉野",923187,"2009-5-9");

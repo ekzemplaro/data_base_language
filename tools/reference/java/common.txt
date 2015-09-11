@@ -13,6 +13,7 @@ json_manipulate.java
 mcached_manipulate.java
 mcached_socket.java
 mongo_manipulate.java
+oracle_manipulate.java
 pdf_manipulate.java
 rdb_common.java
 redis_manipulate.java

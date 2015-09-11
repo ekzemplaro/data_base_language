@@ -2,7 +2,7 @@
 /*
 	firebird_create.cs
 
-					Oct/25/2011
+					Aug/25/2015
 
 */
 // ----------------------------------------------------------------
@@ -27,7 +27,8 @@ public static void Main (string[] args)
 
         string ConnectionString = "User ID=" + user + ";Password="
 		+ passwd + ";Database=" + dbname
-		+ ";DataSource=localhost;Charset=NONE;";
+		+ ";DataSource=host_firebird;Charset=NONE;";
+//		+ ";DataSource=localhost;Charset=NONE;";
 
 	FbConnection conn = new FbConnection(ConnectionString);
 	conn.Open(); 
@@ -37,8 +38,6 @@ public static void Main (string[] args)
 	fbd_manipulate.table_create_proc (conn);
 
 	fbd_manipulate.table_insert_proc (conn,dict_aa);
-
-	fbd_manipulate.firebird_display_proc (conn);
 
 	conn.Close(); 
 

@@ -1,14 +1,13 @@
 // --------------------------------------------------------------
 //	mongo_delete.scala
 //
-//					Sep/02/2013
+//					Sep/11/2015
 // --------------------------------------------------------------
-import com.mongodb.Mongo
-import com.mongodb.DB
-import com.mongodb.DBCollection
-import com.mongodb.BasicDBObject
-import com.mongodb.DBObject
-import com.mongodb.DBCursor
+import com.mongodb.MongoClient
+import com.mongodb.client.MongoDatabase
+import com.mongodb.client.MongoCollection
+
+import org.bson.Document
 
 // --------------------------------------------------------------
 object mongo_delete
@@ -23,17 +22,21 @@ def main (args: Array[String])
 
 	println ("\tkey_in = " + key_in)
 
-	val mm = new Mongo ("localhost" ,27017)
+	val client = new MongoClient ("localhost",27017)
 
-	val db = mm.getDB ("city_db")
+	val db = client.getDatabase ("city_db")
 
 	val col_name = "saitama";
 
 	val coll = db.getCollection (col_name)
 
-	mongo_manipulate.mongo_delete_proc (coll,key_in)
+	println (coll.count ())
 
-	mongo_manipulate.mongo_display_proc (coll)
+	coll.deleteMany (new Document("key", key_in))
+
+	println (coll.count ())
+
+	client.close ()
 
 	println ("*** 終了 ***")
 }

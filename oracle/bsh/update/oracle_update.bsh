@@ -1,0 +1,60 @@
+//
+//	oracle_update.bsh
+//
+//						Aug/25/2015
+//
+// ---------------------------------------------------------------------
+source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
+source ("/var/www/data_base/common/bsh_common/sql_manipulate.bsh");
+// ---------------------------------------------------------------------
+oracle_update_sql_gen_proc (String id_in,int population)
+{
+	Date ddx = new Date ();
+	DateFormat dfm = new SimpleDateFormat ("dd-MMM-yyyy",Locale.ENGLISH);
+	String	str_ddx = dfm.format (ddx);
+	System.out.println ("str_ddx = " + str_ddx);
+
+	String str_sql = "update cities set POPULATION=" + population
+		+ ",DATE_MOD='" + str_ddx +  "'  where ID= '" + id_in + "'";
+
+	System.out.println ("str_sql = " + str_sql);
+
+	return	str_sql;
+}
+
+// ---------------------------------------------------------------------
+oracle_update_proc (conn,String id_in,int population)
+{
+	Statement stmt = conn.createStatement ();
+
+	String str_sql;
+	int result;
+
+	str_sql = oracle_update_sql_gen_proc (id_in,population);
+
+	result = stmt.executeUpdate (str_sql);
+
+	stmt.close ();
+}
+// ---------------------------------------------------------------------
+System.out.println ("*** 開始 ***");
+String	key = bsh.args[0];
+int	population = Integer.parseInt (bsh.args[1]);
+
+System.out.println (key);
+System.out.println (population);
+
+String host = "host_oracle";
+String user = "scott";
+String password = "tiger";
+
+String str_connect="jdbc:oracl:thin:@" + host + ":1521/xe";
+
+Connection conn = DriverManager.getConnection (str_connect,user,password);
+
+oracle_update_proc (conn,key,population);
+
+
+conn.close ();
+System.out.println ("*** 終了 ***");
+// ---------------------------------------------------------------------

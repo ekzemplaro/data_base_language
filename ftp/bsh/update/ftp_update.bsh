@@ -1,0 +1,35 @@
+//
+//	ftp_update.bsh
+//
+//					Sep/03/2015
+//
+// --------------------------------------------------------------
+source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
+source ("/var/www/data_base/common/bsh_common/ftp_manipulate.bsh");
+
+import	net.arnx.jsonic.JSON;
+// --------------------------------------------------------------
+System.out.println ("*** 開始 ***");
+key = bsh.args[0];
+population = Integer.parseInt (bsh.args[1]);
+
+System.out.print (key + "\t");
+System.out.println (population);
+
+
+final String hostname = "host_dbase";
+final String user = "scott";
+final String passwd = "tiger";
+final String path_file = "city/iwate.json";
+
+String json_str = ftp_get_proc (hostname,user,passwd,path_file);
+
+Map dict_aa = JSON.decode (json_str);
+dict_aa = dict_update_proc (dict_aa,key,population);
+
+String json_str_new = JSON.encode (dict_aa);
+
+ftp_put_proc (hostname,user,passwd,path_file,json_str_new);
+
+System.out.println ("*** 終了 ***");
+// --------------------------------------------------------------

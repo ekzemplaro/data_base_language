@@ -3,7 +3,7 @@
 //
 //	firebird_delete.js
 //
-//						May/28/2012
+//						Aug/25/2015
 //
 // ------------------------------------------------------------------
 importPackage(java.lang);
@@ -20,7 +20,7 @@ var user = "sysdba";
 var passwd = "tiger";
 var database = "/var/tmp/firebird/cities.fdb";
 
-var url = "jdbc:firebirdsql:localhost:" + database;
+var url = "jdbc:firebirdsql:host_firebird:" + database;
 
 var conn = DriverManager.getConnection (url,user,passwd);
 

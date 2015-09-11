@@ -2,7 +2,7 @@
 /*
 	cdb_update.scala
 
-					Jun/12/2015
+					Sep/03/2015
 
 */
 // ----------------------------------------------------------------
@@ -26,8 +26,6 @@ def main (args: Array[String])
 	var dict_aa = cdb_manipulate.cdb_to_dict_proc (file_cdb)
 
 	text_manipulate.dict_update_proc (dict_aa,key,population_in)
-
-	text_manipulate.dict_display_proc (dict_aa)
 
 	cdb_manipulate.dict_to_cdb_proc (dict_aa,file_cdb)
 

@@ -1,7 +1,7 @@
 // --------------------------------------------------------------
 /*
 	ftp_create.groovy
-					Mar/12/2013
+					Sep/03/2015
 
 */
 // --------------------------------------------------------------
@@ -49,15 +49,15 @@ data_prepare_proc ()
 
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0362","久慈",69742,"1999-4-23")
 
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0363","二戸",96873,"1999-5-24")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0363","二戸",14873,"1999-5-24")
 
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0364","宮古",89524,"1999-9-14")
 
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0365","遠野",72931,"1999-8-12")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0365","遠野",52931,"1999-8-12")
 
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0366","八幡平",28529,"1999-7-28")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0366","八幡平",78529,"1999-7-28")
 
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0367","大船渡",39457,"1999-6-19")
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0367","大船渡",29457,"1999-6-19")
 
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0368","一関",47362,"1999-11-15")
 

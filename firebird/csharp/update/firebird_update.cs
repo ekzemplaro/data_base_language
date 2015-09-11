@@ -2,7 +2,7 @@
 /*
 	firebird_update.cs
 
-					Oct/25/2011
+					Aug/25/2015
 
 */
 // ----------------------------------------------------------------
@@ -18,10 +18,10 @@ public static void Main (string[] args)
 {
 	Console.WriteLine ("*** 開始 ***");
 
-	string	id_in = args[0];
+	string	key_in = args[0];
 	int	population_in = int.Parse (args[1]);
 
-	Console.Write (id_in + "\t");
+	Console.Write (key_in + "\t");
 	Console.WriteLine (population_in);
 
 	string user = "sysdba";
@@ -30,12 +30,13 @@ public static void Main (string[] args)
 
         string ConnectionString = "User ID=" + user + ";Password="
 		+ passwd + ";Database=" + dbname
-		+ ";DataSource=localhost;Charset=NONE;";
+		+ ";DataSource=host_firebird;Charset=NONE;";
+//		+ ";DataSource=localhost;Charset=NONE;";
 
 	FbConnection conn = new FbConnection(ConnectionString);
 	conn.Open(); 
 
-	fbd_manipulate.update_proc (conn,id_in,population_in);
+	fbd_manipulate.update_proc (conn,key_in,population_in);
 
 	conn.Close ();
 

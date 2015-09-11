@@ -2,7 +2,7 @@
 /*
 	xlsx_update.cs
 
-				Apr/21/2015
+				Aug/19/2015
 
 
 */
@@ -10,11 +10,7 @@
 using	System;
 using	System.IO;
 using	System.Collections.Generic;
-using	System.Linq;
 using	System.Text;
-
-using	OfficeOpenXml;
-using	OfficeOpenXml.Style;
 // --------------------------------------------------------
 class	xlsx_read
 {
@@ -35,8 +31,6 @@ static void Main (string [] args)
 
 	dict_aa = text_manipulate.dict_update_proc
 		(dict_aa,key_in,population_in);
-
-	text_manipulate.dict_display_proc (dict_aa);
 
 	xlsx_manipulate.dict_to_xlsx_proc (dict_aa,file_xlsx);
 

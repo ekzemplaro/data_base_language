@@ -1,15 +1,13 @@
 // --------------------------------------------------------------
 //	mongo_delete.java
 //
-//					Sep/02/2013
+//					Sep/11/2015
 // --------------------------------------------------------------
-import com.mongodb.Mongo;
-import com.mongodb.DB;
-import com.mongodb.DBCollection;
-import com.mongodb.BasicDBObject;
-import com.mongodb.DBObject;
-import com.mongodb.DBCursor;
+import com.mongodb.MongoClient;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.MongoCollection;
 
+import org.bson.Document;
 // --------------------------------------------------------------
 public class mongo_delete
 {
@@ -24,18 +22,20 @@ public static void main (String[] args)
 
 	try
 	{
-	Mongo mm = new Mongo ("localhost" ,27017);
+	MongoClient client = new MongoClient ("localhost",27017);
 
-	DB db = mm.getDB ("city_db");
+	MongoDatabase db = client.getDatabase ("city_db");
 
 	String col_name = "saitama";
 
-	DBCollection coll = db.getCollection (col_name);
-	System.out.println ("\tcoll.getCount ()  = " + coll.getCount ());
+	MongoCollection coll = db.getCollection (col_name);
+	System.out.println ("\tcoll.count ()  = " + coll.count ());
 
-	mongo_manipulate.mongo_delete_proc (coll,key_in);
+	coll.deleteMany (new Document("key", key_in));
 
-	mongo_manipulate.mongo_display_proc (coll);
+	System.out.println ("\tcoll.count ()  = " + coll.count ());
+
+	client.close ();
 	}
 	catch (Exception ee)
 	{

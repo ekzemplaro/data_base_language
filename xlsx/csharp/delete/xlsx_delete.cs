@@ -2,7 +2,7 @@
 /*
 	xlsx_delete.cs
 
-				Apr/21/2015
+				Aug/19/2015
 
 
 */
@@ -10,11 +10,8 @@
 using	System;
 using	System.IO;
 using	System.Collections.Generic;
-using	System.Linq;
 using	System.Text;
 
-using	OfficeOpenXml;
-using	OfficeOpenXml.Style;
 // --------------------------------------------------------
 class	xlsx_read
 {
@@ -36,7 +33,6 @@ static void Main (string [] args)
 		{
 		dict_aa.Remove (key_in);
 
-		text_manipulate.dict_display_proc (dict_aa);
 		xlsx_manipulate.dict_to_xlsx_proc (dict_aa,file_xlsx);
 		}
 

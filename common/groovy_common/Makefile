@@ -40,7 +40,7 @@ all: sql_manipulate.class xml_manipulate.class \
 	ftp_manipulate.class \
 	tika_manipulate.class \
 	net_manipulate.class \
-	excel_manipulate.class \
+	xlsx_manipulate.class \
 	epub_manipulate.class \
 	mongo_manipulate.class \
 	cassandra_manipulate.class \
@@ -48,7 +48,7 @@ all: sql_manipulate.class xml_manipulate.class \
 	cdb_manipulate.class \
 	hbase_manipulate.class \
 	tcbn_manipulate.class \
-	xlsx_manipulate.class \
+	excel_manipulate.class \
 	hgdb_manipulate.class
 sql_manipulate.class: sql_manipulate.groovy
 	groovyc sql_manipulate.groovy

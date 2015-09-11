@@ -2,43 +2,44 @@
 # -*- coding: utf-8 -*-
 #
 #	mongo_read.py
-#					Sep/02/2013
+#					Sep/10/2015
 #
 # ----------------------------------------------------------------
 #
 import sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
 #
 from java.lang import	System
 from java.lang import	String
 #
 import java
 #
-from com.mongodb import Mongo
+from com.mongodb import MongoClient
 #
 # ----------------------------------------------------------------
 print ("*** 開始 ***")
 #
-mm = Mongo ("localhost",27017)
-db = mm.getDB ("city_db" )
+mm = MongoClient ("localhost",27017)
+db = mm.getDatabase ("city_db" )
 
 col_name = "saitama"
 
 coll = db.getCollection(col_name)
 
 
-print coll.getCount()
+print coll.count()
 
-cursor = coll.find()
+iterable = coll.find()
 
-while(cursor.hasNext()):
-	obj = cursor.next ()
-	out_str = obj.get ("key") + "\t"
-	out_str += obj.get ("name") + "\t"
-	out_str += str (obj.get ("population")) + "\t"
-	out_str += obj.get ("date_mod")
-	print out_str
+iterable.forEach(Block<Document>()
+#	@Override
+#	public void apply(final Document doc):
+	apply(final Document doc):
+		key = doc.get ("key")
+		name = doc.get ("name")
+		population = doc.get ("population")
+		date_mod = doc.get ("date_mod")
+		dict_aa = text_manipulate.dict_append_proc (dict_aa,key,name,population,date_mod)
+
 #
 print ("*** 終了 ***")
 # ----------------------------------------------------------------

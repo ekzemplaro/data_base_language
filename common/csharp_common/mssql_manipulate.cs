@@ -2,11 +2,7 @@
 /*
 	mssql_manipulate.cs
 
-					Oct/01/2013
-
-	csc mssql_command.cs -r:System.Data
-
-		Run on Ubuntu & Windows
+					Aug/24/2015
 
 */
 // -------------------------------------------------------------------
@@ -112,22 +108,17 @@ public static void mssql_delete_proc
 }
 
 // -------------------------------------------------------------------
-public static void table_drop_proc (string str_connect)
+public static void table_drop_proc (SqlConnection conn)
 {
 	string sql_str_drop = "drop table cities";
 
-	SqlConnection connection = new SqlConnection (str_connect);
+	SqlCommand command = new SqlCommand (sql_str_drop,conn);
 
-	SqlCommand command = new SqlCommand (sql_str_drop,connection);
-
-	connection.Open ();
 	command.ExecuteNonQuery ();
-	connection.Close ();
-
 }
 
-/* ------------------------------------------------------------------- */
-public static void table_create_proc (string str_connect)
+// -------------------------------------------------------------------
+public static void table_create_proc (SqlConnection conn)
 {
 
 	string sql_str_create = "create TABLE cities ("
@@ -137,18 +128,14 @@ public static void table_create_proc (string str_connect)
 			+ "DATE_MOD datetime)";
 
 
-	SqlConnection connection = new SqlConnection (str_connect);
-
-	SqlCommand command = new SqlCommand (sql_str_create,connection);
-	connection.Open ();
+	SqlCommand command = new SqlCommand (sql_str_create,conn);
 	command.ExecuteNonQuery ();
 
-	connection.Close ();
 }
 
 // -------------------------------------------------------------------
 public static void mssql_insert_proc
-	(string str_connect,string id_a,string name,int population_a,string str_date)
+	(SqlConnection conn,string id_a,string name,int population_a,string str_date)
 {
 	StringBuilder sb_sql = new StringBuilder
 	("insert into cities (id, Name, Population, date_mod) values ('"
@@ -161,17 +148,14 @@ public static void mssql_insert_proc
 
 //	Console.WriteLine (str_sql);
 
-	SqlConnection connection = new SqlConnection (str_connect);
-	SqlCommand command = new SqlCommand (str_sql,connection);
-	connection.Open ();
+	SqlCommand command = new SqlCommand (str_sql,conn);
+
 	int rowsAffected = command.ExecuteNonQuery ();
 
 	if (rowsAffected < 1)
 		{
 		Console.WriteLine ("rowsAffected = " + rowsAffected);
 		}
-
-	connection.Close ();
 }
 
 // -------------------------------------------------------------------

@@ -1,0 +1,20 @@
+//
+//	redis_delete.bsh
+//
+//					Aug/31/2015
+//
+// --------------------------------------------------------------
+import	redis.clients.jedis.Jedis;
+// --------------------------------------------------------------
+System.out.println ("*** 開始 ***");
+String	key = bsh.args[0];
+
+System.out.println (key);
+
+Jedis jedis = new Jedis("host_dbase");
+
+jedis.del (key);
+
+
+System.out.println ("*** 終了 ***");
+// --------------------------------------------------------------

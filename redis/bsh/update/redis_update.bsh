@@ -1,0 +1,47 @@
+//
+//	redis_update.bsh
+//
+//					Aug/31/2015
+//
+// --------------------------------------------------------------
+source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
+
+import	redis.clients.jedis.Jedis;
+import	net.arnx.jsonic.JSON;
+// --------------------------------------------------------------
+static void redis_update_proc
+	(Jedis jedis,String key,int population_in) throws Exception
+{
+	String str_json = jedis.get(key);
+
+	if (str_json != null)
+		{
+		Map  unit_aa = JSON.decode (str_json);
+
+		System.out.println (unit_aa.get ("name"));
+
+		String str_population = Integer.toString (population_in);
+		String today = get_current_date_proc ();
+
+		unit_aa.put ("population",str_population);
+		unit_aa.put ("date_mod",today);
+
+		String json_new = JSON.encode (unit_aa);
+
+		jedis.set (key,json_new);
+		}
+}
+// --------------------------------------------------------------
+System.out.println ("*** 開始 ***");
+String	key = bsh.args[0];
+int	population = Integer.parseInt (bsh.args[1]);
+
+System.out.print (key + "\t");
+System.out.println (population);
+
+Jedis jedis = new Jedis("host_dbase");
+
+redis_update_proc (jedis,key,population);
+
+System.out.println ("*** 終了 ***");
+// --------------------------------------------------------------

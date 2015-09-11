@@ -2,7 +2,7 @@
 /*
 	csharp/update/mssql_update.cs
 
-					Jan/16/2013
+					Apr/24/2015
 
 
 */
@@ -43,8 +43,6 @@ static void Main (string[] args)
 			(connection,ref dtable,id_in,population_in);
 
 	connection.Close ();
-
-	table_manipulate.display_proc (dtable);
 
 	Console.WriteLine ("*** 終了 ***");
 }

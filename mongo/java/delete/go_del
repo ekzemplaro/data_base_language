@@ -1,9 +1,8 @@
 #
 #
-SHARE=/usr/share/java
-export COMMON=/var/www/data_base/common
-export JAVA_COMMON=$COMMON/java_common
-export JAR=$COMMON/jar
-export CPX=.:$SHARE:$JAVA_COMMON:$JAR/mongo-2.8.0.jar
+COMMON=/var/www/data_base/common
+JAVA_COMMON=$COMMON/java_common
+JAR=$COMMON/jar
+export CPX=.:$JAVA_COMMON:$JAR/mongo-java-driver-3.0.3.jar
 #
 java -cp $CPX mongo_delete t1167

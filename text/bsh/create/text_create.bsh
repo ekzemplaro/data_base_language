@@ -27,13 +27,13 @@ Map data_prepare_proc ()
 		(dict_aa,"t2385","蒲郡",72531,"2000-4-12");
 
 	dict_aa = dict_append_proc
-		(dict_aa,"t2386","常滑",28529,"2000-7-28");
+		(dict_aa,"t2386","常滑",38529,"2000-7-28");
 
 	dict_aa = dict_append_proc
-		(dict_aa,"t2387","大府",39457,"2000-6-19");
+		(dict_aa,"t2387","大府",69457,"2000-6-19");
 
 	dict_aa = dict_append_proc
-		(dict_aa,"t2388","瀬戸",65284,"2000-10-15");
+		(dict_aa,"t2388","瀬戸",15284,"2000-10-15");
 
 	dict_aa = dict_append_proc
 		(dict_aa,"t2389","犬山",74391,"2000-11-24");

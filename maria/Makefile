@@ -7,3 +7,4 @@ clean:
 	cd java; make clean;	
 	cd boo; make clean;	
 	cd csharp; make clean;	
+	cd vb; make clean;	

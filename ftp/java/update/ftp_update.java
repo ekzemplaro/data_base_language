@@ -1,7 +1,7 @@
 // --------------------------------------------------------------
 /*
 	ftp_update.java
-					Oct/02/2012
+					Sep/03/2015
 
 */
 // --------------------------------------------------------------
@@ -16,9 +16,9 @@ public static void main (String[] args) throws Exception
 {
 	System.out.println ("*** 開始 ***");
 
-	String	id = args[0];
+	String	key = args[0];
 	int	population = Integer.parseInt (args[1]);
-	System.out.print ("\tid = " + id);
+	System.out.print ("\tid = " + key);
 	System.out.println ("\tpopulation = " + population);
 
 	String hostname = "host_dbase";
@@ -33,9 +33,7 @@ public static void main (String[] args) throws Exception
 	HashMap <String, HashMap<String,String>> dict_aa
 			= json_manipulate.json_to_dict_proc (json_str);
 
-	text_manipulate.dict_update_proc (dict_aa,id,population);
-
-	text_manipulate.dict_display_proc (dict_aa);
+	text_manipulate.dict_update_proc (dict_aa,key,population);
 
 	json_str = json_manipulate.dict_to_json_proc (dict_aa);
 

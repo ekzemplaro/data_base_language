@@ -2,15 +2,17 @@
 # -*- coding: utf-8 -*-
 #
 #	mongo_delete.rb
-#					Sep/02/2013
+#					Sep/11/2015
 #
 # --------------------------------------------------------
 include Java
-import com.mongodb.DB
-import com.mongodb.Mongo
-import com.mongodb.DBCollection
-import com.mongodb.DBCursor
-import com.mongodb.BasicDBObject
+
+import com.mongodb.MongoClient
+import com.mongodb.client.MongoDatabase
+import com.mongodb.client.MongoCollection
+
+import org.bson.Document
+
 
 # --------------------------------------------------------
 puts	"*** 開始 ***"
@@ -19,20 +21,18 @@ key_in = ARGV[0]
 #
 puts key_in
 #
-mm = Mongo.new("localhost",27017)
-db = mm.getDB("city_db" )
+mm = MongoClient("localhost",27017)
+db = mm.getDatabase("city_db")
 
 col_name = "saitama"
 
 coll = db.getCollection(col_name)
 
+puts coll.count()
 
-puts coll.getCount()
+coll.deleteMany(Document("key", key_in))
 
-
-query = BasicDBObject.new()
-query.put("key", key_in)
-coll.remove(query)
+puts coll.count()
 
 puts "*** 終了 ***"
 # --------------------------------------------------------

@@ -1,7 +1,7 @@
 //
 //	mcached_create.bsh
 //
-//					Feb/05/2015
+//					Sep/01/2015
 //
 // --------------------------------------------------------------
 source ("/var/www/data_base/common/bsh_common/text_manipulate.bsh");
@@ -10,7 +10,7 @@ source ("/var/www/data_base/common/bsh_common/mcached_manipulate.bsh");
 // --------------------------------------------------------------
 Map data_prepare_proc ()
 {
-	Map dict_aa = new HashMap ();
+	dict_aa = new HashMap ();
 
 	dict_aa = dict_append_proc
 		(dict_aa,"t1731","金沢",52971,"2000-4-15");
@@ -45,10 +45,10 @@ Map data_prepare_proc ()
 // --------------------------------------------------------------
 System.out.println ("*** 開始 ***");
 
-String server = "localhost";
-int port = 11211;
+final String server = "localhost";
+final int port = 11211;
 
-Map dict_aa = data_prepare_proc ();
+dict_aa = data_prepare_proc ();
 
 dict_to_mcached_proc (server,port,dict_aa);
 
