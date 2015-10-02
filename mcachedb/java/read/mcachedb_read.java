@@ -14,7 +14,7 @@ public static void main(String[] args)
 {
 	System.out.println ("*** 開始 ***");
 
-	final String server = "host_ubuntu1";
+	final String server = "host_ubuntu";
 	final int port = 21201;
 
 	String [] keys = {"t1521","t1522","t1523","t1524","t1525","t1526",

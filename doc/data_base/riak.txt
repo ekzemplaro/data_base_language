@@ -4,17 +4,20 @@
 <h1><a href="http://basho.com/">Riak</a></h1>
 <a href="http://docs.basho.com/riak/latest/downloads/">downloads</a><p />
 <blockquote>
-riak_2.0.4-1_amd64.deb<p />
+riak_2.1.1-1_amd64.deb<p />
 </blockquote>
 
 起動方法<br />
 <blockquote>
-sudo service riak start<p />
+# systemctl start riak<p />
 </blockquote>
 
 設定ファイル<br />
 <blockquote>
 /etc/riak/riak.conf<p />
+	<blockquote>
+	listener.http.internal = 0.0.0.0:8098<p />
+	</blockquote>
 </blockquote>
 
 <blockquote>

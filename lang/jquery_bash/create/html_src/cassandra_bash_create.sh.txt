@@ -1,1 +1,0 @@
-../cassandra_bash_create.sh

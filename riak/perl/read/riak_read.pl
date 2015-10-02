@@ -2,7 +2,7 @@
 #
 #	read/riak_read.pl
 #
-#					Mar/14/2013
+#					Sep/22/2015
 # -------------------------------------------------------
 use	strict;
 use	JSON;
@@ -17,7 +17,7 @@ use uri_get;
 # -------------------------------------------------------
 print	(encode ('utf-8',"*** 開始 ***\n"));
 #
-my $url_base = 'http://localhost:8098/riak/shimane';
+my $url_base = 'http://host_ubuntu:8098/riak/shimane';
 my $url_in = $url_base . '?keys=true';
 #
 my $str_json = uri_get::uri_get_proc ($url_in);

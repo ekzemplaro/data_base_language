@@ -2,7 +2,7 @@
 #
 #	ruby_common/text_manipualate.rb
 #
-#					Sep/12/2014
+#					Oct/02/2015
 #
 # -------------------------------------------------------------
 require	"date"
@@ -31,7 +31,7 @@ end
 
 # -------------------------------------------------------------
 def dict_display_proc (dict_aa)
-	dict_aa.each {|key, value|
+	dict_aa.sort.each {|key, value|
 		if (key.to_s != '_id') && (key.to_s != '_rev')
 			print(key,"\t",value['name'],"\t")
 			print(value['population'],"\t")

@@ -1,1 +1,0 @@
-../mongo_python_delete.py

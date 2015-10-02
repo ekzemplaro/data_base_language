@@ -1,3 +1,0 @@
-<script src="example_json.js"></script>
-<title>example_json (Jul/30/2015)</title>
-</head>

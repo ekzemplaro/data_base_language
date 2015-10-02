@@ -2,7 +2,7 @@
 // ---------------------------------------------------------------
 //	riak_delete.js
 //
-//					Feb/09/2015
+//					Sep/22/2015
 // ---------------------------------------------------------------
 var http_manipulate = require('/var/www/data_base/common/node_common/http_manipulate');
 // ---------------------------------------------------------------
@@ -14,7 +14,7 @@ var key_in=process.argv[2];
 
 console.log (key_in);
 
-var host_in = 'host_ubuntu1';
+var host_in = 'host_ubuntu';
 var port_in = 8098;
 var path_target = '/riak/shimane/'+ key_in;
 

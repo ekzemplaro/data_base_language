@@ -3,7 +3,7 @@
 #
 #	create/memcached_create.py
 #
-#					Oct/07/2014
+#					Sep/14/2015
 #
 # ----------------------------------------------------------------
 import	sys
@@ -34,7 +34,6 @@ def	data_prepare_proc ():
 print ("*** 開始 ***")
 #
 dict_aa = data_prepare_proc ()
-dict_display_proc (dict_aa)
 #
 mc = memcache.Client(['127.0.0.1:11211'])
 mc.flush_all()

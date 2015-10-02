@@ -14,7 +14,7 @@ key_in=arg[1]
 
 print (key_in)
 
-local server_host = "host_ubuntu1"
+local server_host = "host_ubuntu"
 local server_port = 1978
 mcached_delete_proc (server_host,server_port,key_in)
 

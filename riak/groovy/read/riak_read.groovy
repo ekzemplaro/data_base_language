@@ -1,7 +1,7 @@
 // ---------------------------------------------------------------------
 //	read/riak_read.groovy
 //
-//					May/30/2013
+//					Sep/22/2015
 //
 // ---------------------------------------------------------------------
 import groovy.json.*
@@ -11,12 +11,14 @@ static void main (args)
 {
 	println ("*** 開始 ***")
 
-//	def url_base = "http://host_ubuntu1:8098/riak/shimane"
-	def url_base = "http://172.17.0.1:8098/riak/shimane"
+//	def url_base = "http://host_ubuntu:8098/riak/shimane"
+	def url_base = "http://cddn007-ee:8098/riak/shimane"
 
 	def url_in = url_base + "?keys=true"
 
 	def str_json = net_manipulate.get_uri_proc (url_in,"application/json")
+
+	println (str_json)
 
 	def slurper = new JsonSlurper()
 	def data_aa = slurper.parseText (str_json)

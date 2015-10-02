@@ -1,1 +1,0 @@
-../mcachedb_ruby_update.rb

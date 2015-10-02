@@ -1,1 +1,0 @@
-../derby_python_delete.py

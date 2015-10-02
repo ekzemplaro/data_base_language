@@ -19,7 +19,7 @@ print ("*** 開始 ***")
 key_in = sys.argv[1]
 print ("%s" % key_in)
 #
-url_target = 'http://host_ubuntu1:8098/riak/shimane/' + key_in
+url_target = 'http://host_ubuntu:8098/riak/shimane/' + key_in
 #
 rest_delete_proc (url_target)
 #

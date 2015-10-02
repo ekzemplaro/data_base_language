@@ -11,7 +11,9 @@ REDIS_JAR=$(JAR)/jedis-2.1.0.jar
 LIB_HBASE=$(HBASE)/lib
 LIB_CASSANDRA=$(JAR)/cassandra
 VOLDEMORT=/home/uchida/dbm/voldemort/voldemort-1.3.0
-POI312=/var/www/data_base/common/jar/poi-3.12
+POI313=/var/www/data_base/common/jar/poi-3.13
+POI_LIB=$(POI313)/poi-3.13-20150929.jar:$(POI313)/poi-ooxml-3.13-20150929.jar:$(POI313)/poi-ooxml-schemas-3.13-20150929.jar:$(POI313)/ooxml-lib/xmlbeans-2.6.0.jar
+#
 JSON4S=$(COMMON)/jar/json4s
 #
 CPP_A=./:$(HTTPCLIENT):$(MEMCACHED_JAR):$(MONGO_JAR):$(REDIS_JAR):/usr/share/java/jxl.jar
@@ -25,7 +27,7 @@ CPP_K=$(CPP_J):$(LIB_CASSANDRA)/log4j-1.2.16.jar:$(LIB_CASSANDRA)/slf4j-api-1.6.
 CPP_L=$(CPP_K):/usr/local/lib/tokyocabinet.jar
 CPP_M=$(CPP_L):$(VOLDEMORT)/dist/voldemort-1.3.0.jar
 CPP=$(CPP_M)
-CPP_XLSX=.:$(POI312)/poi-3.12-20150511.jar:$(POI312)/poi-ooxml-3.12-20150511.jar:$(POI312)/poi-ooxml-schemas-3.12-20150511.jar:$(POI312)/ooxml-lib/xmlbeans-2.6.0.jar
+CPP_XLSX=.:$(POI_LIB)
 CPP_HBASE=`hbase classpath`
 JSON4S_JAR=$(JSON4S)/json4s-core_2.11-3.2.11.jar:$(JSON4S)/json4s-native_2.11-3.2.11.jar:$(JSON4S)/json4s-ast_2.11-3.2.11.jar
 CPP_MCACHED=.:$(JSON4S_JAR)

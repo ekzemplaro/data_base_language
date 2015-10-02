@@ -3,14 +3,14 @@
 //
 //	riak_read.js
 //
-//						Apr/08/2013
+//						Sep/22/2015
 //
 // ------------------------------------------------------------------
 load ("/var/www/data_base/common/rhino_common/text_manipulate.js");
 // ------------------------------------------------------------------
 print	("*** 開始 ***");
 
-var url_base="http://host_ubuntu1:8098/riak/shimane";
+var url_base="http://host_ubuntu:8098/riak/shimane";
 
 dict_aa = riak_to_dict_proc (url_base);
 

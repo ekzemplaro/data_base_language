@@ -13,4 +13,4 @@ HTTPCLIENT_JAR=.:$HTTPCLIENT/commons-httpclient-3.1.jar:$HTTPCLIENT/commons-logg
 #
 export CLASSPATH=.:$JAVA_CLASSPATH:$JAVA_COMMON:$HTTPCLIENT_JAR
 #
-./riak_delete.js t3253
+./riak_delete.js t3257

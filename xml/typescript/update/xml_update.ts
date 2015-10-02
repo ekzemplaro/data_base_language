@@ -2,15 +2,18 @@
 //
 //	xml_update.ts
 //
-//						Jul/17/2014
+//						Sep/16/2015
 //
 // ------------------------------------------------------------------
+declare function require(x: string): any;
+declare var process:any;
+
 var fs = require('fs'),
     xml2js = require('xml2js');
 var text_manipulate =
-	require('/var/www/data_base/common/node_common/text_manipulate');
+	require('/var/www/data_base/common/typescript_common/text_manipulate');
 var xml_manipulate =
-	require ("/var/www/data_base/common/node_common/xml_manipulate");
+	require ("/var/www/data_base/common/typescript_common/xml_manipulate");
 
 // ------------------------------------------------------------------
 console.log	("*** 開始 ***");
@@ -34,7 +37,6 @@ parser.on('end', function(result) {
 			(result,id_in,population_in);
 
 	var out_str = xml_manipulate.dict_to_xml_proc (dict_aa);
-	text_manipulate.dict_display_proc (dict_aa);
 
 	fs.writeFile(file_xml,out_str);
 

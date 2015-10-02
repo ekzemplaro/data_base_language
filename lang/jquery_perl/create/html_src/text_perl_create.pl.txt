@@ -1,1 +1,0 @@
-../text_perl_create.pl

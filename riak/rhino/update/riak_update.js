@@ -3,7 +3,7 @@
 //
 //	update/riak_update.js
 //
-//					Feb/09/2015
+//					Sep/22/2015
 //
 //
 // --------------------------------------------------------------
@@ -22,7 +22,9 @@ var population_in=arguments[1];
 
 print	("key_in = " + key_in + "\tpopulation_in = " + population_in);
 
-var url_base = 'http://host_ubuntu1:8098/riak/shimane';
+// var url_base = 'http://host_ubuntu:8098/riak/shimane';
+var url_base = 'http://cddn007-ee:8098/riak/shimane';
+
 var url_target = url_base + '/' + key_in;
 
 var 	json_city = rest_get_proc (url_target,"text/json");

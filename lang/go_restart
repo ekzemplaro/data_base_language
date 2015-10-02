@@ -1,11 +1,11 @@
 #
-#sudo service php-fastcgi stop
-sudo service php5-fpm stop
-sudo service fcgiwrap stop
-sudo service nginx stop
+#sudo systemctl stop php5-fpm
+sudo systemctl stop php-fpm
+sudo systemctl stop fcgiwrap.socket
+sudo systemctl stop nginx
 #
-#sudo service php-fastcgi start
-sudo service php5-fpm start
-sudo service fcgiwrap start
-sudo service nginx start
+#sudo systemctl start php5-fpm
+#sudo systemctl start php-fpm
+sudo systemctl start fcgiwrap
+sudo systemctl start nginx
 #

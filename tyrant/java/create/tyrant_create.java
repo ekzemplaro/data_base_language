@@ -1,7 +1,7 @@
 // --------------------------------------------------------------
 //	tyrant_create.java
 //
-//					Feb/16/2015
+//					Sep/14/2015
 // --------------------------------------------------------------
 import	java.util.HashMap;
 import	java.util.Set;
@@ -18,7 +18,7 @@ public static void main(String[] args) throws Exception
 	HashMap <String, HashMap <String,String>>
 		dict_aa = data_prepare_proc ();
 
-	final String server = "host_ubuntu1";
+	final String server = "host_ubuntu";
 	final int port = 1978;
 
 	mcached_socket.dict_to_mcached_proc (server,port,dict_aa);

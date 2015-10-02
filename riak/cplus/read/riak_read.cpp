@@ -2,7 +2,7 @@
 /*
 	riak_read.cpp
 
-					Feb/10/2015
+					Sep/22/2015
 */
 // --------------------------------------------------------------------
 #include	<iostream>
@@ -28,7 +28,7 @@ int main (int argc,char *argv[])
 {
 	cerr << "*** 開始 ***\n";
 
-	const string url_shimane = "http://host_ubuntu1:8098/riak/shimane";
+	const string url_shimane = "http://host_ubuntu:8098/riak/shimane";
 	string url_aa = url_shimane + "?keys=true";
 
 
@@ -41,13 +41,12 @@ int main (int argc,char *argv[])
 
 	for (int it=0; it < nn_keys; it++)
 		{
-		string url_cc = url_shimane + "/" +   keys[it];
+		string key = keys[it];
+		string url_cc = url_shimane + "/" +   key;
 		string str_json_cc = url_get_proc (url_cc.c_str());
 
 		if (3 < str_json_cc.length ())
 			{
-
-			string key = keys[it];
 			dict_aa[key] = json_to_unit_proc (str_json_cc);
 			}
 		}

@@ -1,1 +1,0 @@
-../xindice_python_create.py

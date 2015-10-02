@@ -1,1 +1,0 @@
-../postgre_ruby_read.rb

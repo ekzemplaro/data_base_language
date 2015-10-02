@@ -14,7 +14,7 @@ public static void main(String[] args) throws Exception
 	String	key = args[0];
 	System.out.println ("\tkey = " + key);
 
-	final String server = "host_ubuntu1";
+	final String server = "host_ubuntu";
 	final int port = 21201;
 
 	mcached_socket.mcached_delete_proc (server,port,key);

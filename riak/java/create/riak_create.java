@@ -2,7 +2,7 @@
 /*
 	create/riak_create.java
 
-				Jun/25/2015
+				Sep/22/2015
 
 */
 // --------------------------------------------------------------
@@ -23,8 +23,8 @@ public static void main(String[] args) throws Exception
 		dict_aa = data_prepare_proc ();
 
 
-//	final String url_base = "http://host_ubuntu1:8098/riak/shimane";
-	final String url_base = "http://172.17.0.1:8098/riak/shimane";
+//	final String url_base = "http://host_ubuntu:8098/riak/shimane";
+	final String url_base = "http://cddn007-ee:8098/riak/shimane";
 
 	Set set_aaa = dict_aa.keySet ();
 

@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 #	tyrant_read.rb
-#					Apr/15/2013
+#					Sep/14/2015
 #
 # --------------------------------------------------------
 # Echo client program
@@ -13,7 +13,7 @@ require 'json'
 load '/var/www/data_base/common/jruby_common/mcached_manipulate.rb'
 # --------------------------------------------------------
 puts "*** 開始 ***"
-HOST = 'localhost'
+HOST = 'host_ubuntu'
 PORT = 1978
 #
 ss = TCPSocket::open(HOST,PORT)

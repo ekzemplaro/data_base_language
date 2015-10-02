@@ -3,7 +3,7 @@
 #
 #	delete/riak_delete.py
 #
-#					Feb/09/2015
+#					Sep/22/2015
 # ----------------------------------------------------------------
 import sys
 #
@@ -15,7 +15,7 @@ print ("*** 開始 ***")
 key_in = sys.argv[1]
 print ("%s" % key_in)
 #
-url_base = 'http://host_ubuntu1:8098/riak/shimane'
+url_base = 'http://host_ubuntu:8098/riak/shimane'
 url_target = url_base + '/' + key_in
 #
 curl_delete_proc (url_target)

@@ -1,0 +1,5 @@
+export http_proxy=""
+#
+echo "import riak_update" > tmp_execute.py
+#
+python ./tmp_execute.py t3252 37491200

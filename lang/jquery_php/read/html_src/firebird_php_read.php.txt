@@ -1,1 +1,0 @@
-../firebird_php_read.php

@@ -2,7 +2,7 @@
 # ---------------------------------------------------------------
 #	riak_create.coffee
 #
-#					Feb/09/2015
+#					Sep/22/2015
 #
 # ---------------------------------------------------------------
 http = require('http')
@@ -12,8 +12,8 @@ http_manipulate = require('/var/www/data_base/common/coffee_common/http_manipula
 data_prepare_proc = () ->
 	dict_aa = new Object
 
-	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t3251','松江',85214,'1954-5-12')
-	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t3252','出雲',53427,'1954-4-11')
+	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t3251','松江',35214,'1954-5-12')
+	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t3252','出雲',53497,'1954-4-11')
 	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t3253','大田',48271,'1954-10-2')
 	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t3254','雲南',69314,'1954-2-22')
 	dict_aa = text_manipulate.dict_append_proc(dict_aa,'t3255','江津',56138,'1954-7-14')
@@ -30,7 +30,7 @@ console.log "*** 開始 ***"
 dict_aa = data_prepare_proc()
 console.log "*** bbb ***"
 
-server = 'host_ubuntu1'
+server = 'host_ubuntu'
 port = 8098
 #
 for key,value of dict_aa

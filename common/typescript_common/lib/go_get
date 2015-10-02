@@ -1,3 +1,0 @@
-#
-TCBN_NODE=/home/uchida/lang/node/edvakf-node-tokyocabinet-bcff730
-cp -p $TCBN_NODE/build/default/tokyocabinet.node .

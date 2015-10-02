@@ -1,7 +1,7 @@
 // ------------------------------------------------------------------
 //	riak_delete.cs
 //
-//					Feb/09/2015
+//					Sep/22/2015
 //
 // ------------------------------------------------------------------
 using System;
@@ -22,7 +22,7 @@ static void Main (string[] args)
 
 	Console.WriteLine (key_in);
 
-	String url_base = "http://host_ubuntu1:8098/riak/shimane";
+	String url_base = "http://host_ubuntu:8098/riak/shimane";
 
 	String user = "";
 	String password = "";

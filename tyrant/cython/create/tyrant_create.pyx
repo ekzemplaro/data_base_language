@@ -2,14 +2,13 @@
 #
 #	tyrant_create.pyx
 #
-#					Nov/17/2011
+#					Sep/14/2015
 #
 import sys
 import memcache
 import json
 #
 sys.path.append ('/var/www/data_base/common/python_common')
-from mcache_manipulate import mcache_display_proc
 from text_manipulate import dict_append_proc
 # ----------------------------------------------------------------
 def	data_prepare_proc ():
@@ -30,7 +29,7 @@ def	data_prepare_proc ():
 # ----------------------------------------------------------------
 print ("*** 開始 ***")
 #
-mc = memcache.Client(['127.0.0.1:1978'])
+mc = memcache.Client(['host_ubuntu:1978'])
 mc.flush_all()
 #
 dict_aa = data_prepare_proc ()
@@ -38,13 +37,6 @@ for key in dict_aa.keys():
 	unit = dict_aa[key]
 	str_json = json.dumps (unit)
 	mc.set(key, str_json)
-#
-keys = {'t4761','t4762','t4763',
-	't4764','t4765','t4766',
-	't4767','t4768','t4769'}
-#
-for key in keys:
-	mcache_display_proc (mc,key)
 #
 print ("*** 終了 ***")
 # ----------------------------------------------------------------

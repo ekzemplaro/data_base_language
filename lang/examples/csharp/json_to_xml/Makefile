@@ -5,4 +5,4 @@ json_to_xml.dll: json_to_xml.cs
 			-r:Newtonsoft.Json.Net20.dll \
 			-r:System.Data
 clean:
-	rm -f ta*.dll *.json
+	rm -f *.exe ta*.dll *.json

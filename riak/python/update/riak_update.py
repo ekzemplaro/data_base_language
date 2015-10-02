@@ -3,7 +3,7 @@
 #
 #	update/riak_update.py
 #
-#					Feb/09/2015
+#					Sep/22/2015
 #
 # ----------------------------------------------------------------
 import sys
@@ -18,7 +18,7 @@ key_in = sys.argv[1]
 population_in = int (sys.argv[2])
 print ("%s\t%d" % (key_in, population_in))
 #
-url_base = 'http://host_ubuntu1:8098/riak/shimane'
+url_base = 'http://host_ubuntu:8098/riak/shimane'
 #
 riak_update_proc (url_base,key_in,population_in)
 #

@@ -1,7 +1,7 @@
 // --------------------------------------------------------------
 //	tyrant_read.java
 //
-//					Feb/05/2015
+//					Sep/14/2015
 // --------------------------------------------------------------
 import java.util.HashMap;
 
@@ -14,7 +14,7 @@ public static void main(String[] args)
 {
 	System.out.println ("*** 開始 ***");
  
-	final String server = "host_ubuntu1";
+	final String server = "host_ubuntu";
 	final int port = 1978;
 	System.out.print (server + "\t");
 	System.out.println (port);

@@ -126,6 +126,7 @@ libnewtonsoft-json5.0-cil<p />
 
 # apt-get install libmono-system-runtime-serialization4.0-cil<br />
 # apt-get install libmono-system-numerics4.0-cil<p />
+# apt-get install libnewtonsoft-json5.0-cil<p />
 
 arch linux<br />
 	<blockquote>

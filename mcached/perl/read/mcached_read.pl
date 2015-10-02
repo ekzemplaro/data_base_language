@@ -2,7 +2,7 @@
 #
 #	mcached_read.pl
 #
-#					Jun/17/2011
+#					Sep/14/2015
 #
 # ----------------------------------------------------------------
 use	strict;
@@ -13,9 +13,6 @@ use	Encode;
 use Cache::Memcached;
 use JSON;
 use Data::Dumper;
-#
-#use Encode::Guess qw/ shiftjis euc-jp 7bit-jis /;
-#use Encode qw/ decode /;
 #
 use lib '/var/www/data_base/common/perl_common';
 #

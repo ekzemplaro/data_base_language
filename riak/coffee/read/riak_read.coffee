@@ -2,7 +2,7 @@
 # ---------------------------------------------------------------
 #	riak_read.coffee
 #
-#					Dec/24/2013
+#					Sep/22/2013
 #
 # ---------------------------------------------------------------
 http = require('http')
@@ -45,7 +45,8 @@ console.log "*** 開始 ***"
 
 
 options = {
-	host: 'localhost',
+#	host: 'host_ubuntu',
+	host: 'cddn007-ee',
 	port: 8098,
 	path: "/riak/shimane?keys=true"}
 

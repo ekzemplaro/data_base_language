@@ -2,24 +2,25 @@
 #
 #	tyrant_read.pyx
 #
-#					Nov/17/2011
+#					Sep/14/2015
 #
 import	sys
 import	json
 #
 import memcache
 sys.path.append ('/var/www/data_base/common/python_common')
-from mcache_manipulate import mcache_display_proc
+from mcache_manipulate import mcache_to_dict_proc
+from text_manipulate import dict_display_proc
 # ------------------------------------------------------------
 print ("*** 開始 ***")
-mc = memcache.Client(['localhost:1978'])
+mc = memcache.Client(['host_ubuntu:1978'])
 #
 keys = {'t4761','t4762','t4763',
 	't4764','t4765','t4766',
 	't4767','t4768','t4769'}
 #
-for key in keys:
-	mcache_display_proc (mc,key)
+dict_aa = mcache_to_dict_proc (mc,keys)
+dict_display_proc (dict_aa)
 #
 print ("*** 終了 ***")
 #

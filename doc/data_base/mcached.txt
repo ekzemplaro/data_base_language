@@ -117,6 +117,7 @@ Perl<p />
 ii  libcache-memcached-managed-perl     0.20-1      API for managing cached information
 ii  libcache-memcached-perl             1.29-1      Perl module for using memcached servers
 </pre>
+# pacman -S perl-cache-memcached<p />
 </blockquote>
 
 Ruby<p />

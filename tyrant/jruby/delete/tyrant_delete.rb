@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 #	tyrant_delete.rb
-#					Apr/15/2013
+#					Sep/14/2015
 #
 # --------------------------------------------------------
 require 'socket'
@@ -13,7 +13,7 @@ puts "*** 開始 ***"
 key_in = ARGV[0]
 puts key_in
 #
-HOST = 'localhost'
+HOST = 'host_ubuntu'
 PORT = 1978
 ss = TCPSocket::open(HOST,PORT)
 #

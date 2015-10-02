@@ -1,1 +1,0 @@
-../berkeley_python_read.py

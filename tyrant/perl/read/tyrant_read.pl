@@ -2,7 +2,7 @@
 #
 #	tyrant_read.pl
 #
-#					Jun/21/2011
+#					Sep/14/2015
 #
 # ----------------------------------------------------------------
 use	strict;
@@ -14,8 +14,6 @@ use Cache::Memcached;
 use JSON;
 use Data::Dumper;
 #
-#use Encode::Guess qw/ shiftjis euc-jp 7bit-jis /;
-#use Encode qw/ decode /;
 #
 use lib '/var/www/data_base/common/perl_common';
 #
@@ -26,7 +24,7 @@ use kvalue_manipulate;
 print	(encode ('utf-8',"*** 開始 ***\n"));
 #
 my $mem = Cache::Memcached->new({
-    servers => ["127.0.0.1:1978"]
+    servers => ["host_ubuntu:1978"]
 });
 #
 my @keys = ('t4761','t4762','t4763',

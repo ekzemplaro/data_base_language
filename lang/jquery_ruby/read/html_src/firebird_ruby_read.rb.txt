@@ -1,1 +1,0 @@
-../firebird_ruby_read.rb

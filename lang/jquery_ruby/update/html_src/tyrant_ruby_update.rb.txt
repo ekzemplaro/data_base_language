@@ -1,1 +1,0 @@
-../tyrant_ruby_update.rb

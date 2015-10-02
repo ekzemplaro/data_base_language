@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 #	mcachedb_read.rb
-#					Apr/15/2013
+#					Sep/14/2015
 #
 # --------------------------------------------------------
 require 'rubygems'
@@ -13,7 +13,7 @@ load '/var/www/data_base/common/jruby_common/mcached_manipulate.rb'
 # --------------------------------------------------------
 puts "*** 開始 ***"
 
-HOST = 'localhost'
+HOST = 'host_ubuntu'
 PORT = 21201
 
 ss = TCPSocket::open(HOST,PORT)

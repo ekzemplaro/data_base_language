@@ -1,1 +1,0 @@
-../drizzle_bash_create.sh

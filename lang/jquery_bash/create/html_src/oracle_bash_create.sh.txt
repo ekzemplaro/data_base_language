@@ -1,1 +1,0 @@
-../oracle_bash_create.sh

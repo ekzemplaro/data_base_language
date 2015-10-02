@@ -2,7 +2,7 @@
 /*
 	riak_update.cpp
 
-					Feb/10/2015
+					Sep/22/2015
 
 */
 // --------------------------------------------------------------------
@@ -28,7 +28,7 @@ int main (int argc,char *argv[])
 	cout << key_in << endl;
 	cout << population_in << endl;
 
-	const string url_shimane = "http://host_ubuntu1:8098/riak/shimane";
+	const string url_shimane = "http://host_ubuntu:8098/riak/shimane";
 	string url_aa = url_shimane + "/" + key_in;
 
 	string str_json = url_get_proc (url_aa.c_str ());

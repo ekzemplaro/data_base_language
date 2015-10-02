@@ -1,7 +1,7 @@
 // ----------------------------------------------------------------
 /*
 	xlsx_create.groovy
-					Aug/07/2015
+					Sep/30/2015
 
 */
 // ----------------------------------------------------------------
@@ -18,9 +18,6 @@ static void main (args)
 	def	xlsx_file = args[0]  
  
 	def	dict_aa = data_prepare_proc ()
-
-	def ff = new text_manipulate ()
-	ff.dict_display_proc (dict_aa)
 
 	def gg = new xlsx_manipulate ()
 	gg.xlsx_write_proc (xlsx_file,dict_aa) 

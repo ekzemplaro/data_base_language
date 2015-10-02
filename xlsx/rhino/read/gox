@@ -1,8 +1,7 @@
 #
 COMMON=/var/www/data_base/common
-POI39=$COMMON/jar/poi-3.12
-POI_LIB=$POI39/poi-3.12-20150511.jar:$POI39/poi-ooxml-3.12-20150511.jar:$POI39/poi-ooxml-schemas-3.12-20150511.jar:$POI39/ooxml-lib/xmlbeans-2.6.0.jar
-#
+POI313=$COMMON/jar/poi-3.13
+POI_LIB=$POI313/poi-3.13-20150929.jar:$POI313/poi-ooxml-3.13-20150929.jar:$POI313/poi-ooxml-schemas-3.13-20150929.jar:$POI313/ooxml-lib/xmlbeans-2.6.0.jar
 #
 SHARE=/usr/share/java
 JAVA_CLASSPATH=$SHARE/js.jar:$SHARE/jline.jar

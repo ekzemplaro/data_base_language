@@ -2,15 +2,18 @@
 //
 //	xml_read.ts
 //
-//						Jul/17/2014
+//						Sep/16/2015
 //
 // ------------------------------------------------------------------
-import fs = require('fs');
+declare function require(x: string): any;
+declare var process:any;
+
+var fs = require('fs');
 
 console.log(process.env.NODE_PATH);
 var xml2js = require('xml2js');
 
-var text_manipulate = require('/var/www/data_base/common/node_common/text_manipulate');
+var text_manipulate = require('/var/www/data_base/common/typescript_common/text_manipulate');
 // ------------------------------------------------------------------
 console.log ("*** 開始 ***");
 //

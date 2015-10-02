@@ -12,4 +12,5 @@ HTTPCLIENT_JAR=.:$HTTPCLIENT/commons-httpclient-3.1.jar:$HTTPCLIENT/commons-logg
 GROOVY_ALL_JAR=/usr/share/groovy/embeddable/groovy-all.jar
 export CLASSPATH=.:$GROOVY_ALL_JAR:$GROOVY_COMMON:$HTTPCLIENT_JAR
 #
+http_proxy=""
 java riak_read

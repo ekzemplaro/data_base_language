@@ -2,7 +2,7 @@
 #
 #	mcachedb_read.pl
 #
-#					Jun/16/2011
+#					Sep/14/2015
 #
 # ----------------------------------------------------------------
 use	strict;
@@ -21,7 +21,7 @@ use kvalue_manipulate;
 print "*** 開始 ***\n";
 #
 my $mem = Cache::Memcached->new({
-    servers => ["localhost:21201"]
+    servers => ["host_ubuntu:21201"]
 });
 #
 my @keys = ('t1521','t1522','t1523',

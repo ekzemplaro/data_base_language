@@ -28,10 +28,9 @@ end
 -- ----------------------------------------------------
 print ("*** 開始 ***")
 
-
 dict_aa = data_prepare_proc ()
 
-local server_host = "host_ubuntu1"
+local server_host = "host_ubuntu"
 local server_port = 1978
 
 dict_to_mcached_proc (server_host,server_port,dict_aa)

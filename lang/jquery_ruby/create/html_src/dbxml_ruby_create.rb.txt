@@ -1,1 +1,0 @@
-../dbxml_ruby_create.rb

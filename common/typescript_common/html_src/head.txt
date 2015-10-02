@@ -1,5 +1,5 @@
 </head>
-<title>node_common Aug/09/2013</title>
+<title>typescript_common Sep/16/2015</title>
 <body>
-<h2>node_common</h2>
+<h2>typescript_common</h2>
 <blockquote>

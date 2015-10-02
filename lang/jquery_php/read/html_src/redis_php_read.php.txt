@@ -1,1 +1,0 @@
-../redis_php_read.php

@@ -1,11 +1,14 @@
 // ---------------------------------------------------------------
 //	text_update.ts
 //
-//					Jul/14/2014
+//					Sep/16/2015
 //
 // ---------------------------------------------------------------
+declare function require(x: string): any;
+declare var process:any;
+
 import fs = require("fs");
-var text_manipulate=require ("/var/www/data_base/common/node_common/text_manipulate");
+var text_manipulate=require ("/var/www/data_base/common/typescript_common/text_manipulate");
 
 // ---------------------------------------------------------------
 console.log ("*** 開始 ***");
@@ -23,7 +26,6 @@ var dict_aa = text_manipulate.text_read_proc (file_txt);
 if (key in dict_aa)
 	{
 	var dict_aa = text_manipulate.dict_update_proc (dict_aa,key,population_in);
-	text_manipulate.dict_display_proc (dict_aa);
 	text_manipulate.text_write_proc (file_txt,dict_aa);
 	}
 

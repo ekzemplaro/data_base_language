@@ -1,1 +1,0 @@
-../mysql_php_read.php

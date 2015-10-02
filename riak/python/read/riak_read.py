@@ -15,7 +15,7 @@ from riak_manipulate import riak_to_dict_proc
 # ----------------------------------------------------------------
 print ("*** 開始 ***")
 #
-url_shimane = 'http://host_ubuntu1:8098/riak/shimane'
+url_shimane = 'http://host_ubuntu:8098/riak/shimane'
 #
 dict_aa = riak_to_dict_proc (url_shimane)
 #

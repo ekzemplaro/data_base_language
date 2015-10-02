@@ -16,7 +16,7 @@ public static void main(String[] args) throws Exception
 	HashMap <String, HashMap <String,String>>
 			dict_aa = data_prepare_proc (); 
 
-	final String server = "host_ubuntu1";
+	final String server = "host_ubuntu";
 	final int port = 21201;
 
 	mcached_socket.dict_to_mcached_proc (server,port,dict_aa);

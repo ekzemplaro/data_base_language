@@ -1,1 +1,0 @@
-../derby_bash_read.sh

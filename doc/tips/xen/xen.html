@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+<title>xen Sep/15/2015</title>
+</head>
+<body>
+<h2>xen</h2><p />
+
+Ubuntu 15.04 に Xen Server をインストールする。 <p />
+
+参考<p />
+<blockquote>
+	<a href="https://help.ubuntu.com/community/Xen">Xen</a><p />
+	<a href="http://www.fd.ise.shibaura-it.ac.jp/blog/?p=931">xenをインストールし，準仮想化</a><p />
+</blockquote>
+
+インストール<p />
+<blockquote>
+# apt-get install xen-hypervisor-amd64<p />
+# reboot<p />
+</blockquote>
+
+起動後の確認<p />
+<blockquote>
+<pre>
+# xl list
+Name                                        ID   Mem VCPUs	State	Time(s)
+Domain-0                                     0  7950     2     r-----      31.1
+#
+</pre>
+
+</blockquote>
+
+ネットワークの設定<p />
+<blockquote>
+/etc/network/interfaces<p />
+ifdown eth0<p />
+ifup xenbr0<p />
+	<blockquote>
+	# route del -net 172.20.208.0 netmask 255.255.248.0<p />
+	</blockquote>
+</blockquote>
+
+論理ボリュームの作成<p />
+<blockquote>
+<ol>
+<li>論理ボリュームグループを確認</li>
+<blockquote>
+<pre>
+# vgs
+  VG         #PV #LV #SN Attr   VSize   VFree  
+  hostname-vg   1   2   0 wz--n- 148.81g 126.46g
+#
+</pre>
+</blockquote>
+
+<li>論理ボリュームをlv_vm_ubuntuという名前で作成</li>
+<blockquote>
+# lvcreate -L 30G -n lv_vm_ubuntu /dev/hostname-vg<p />
+
+/dev/hostname-vg/lv_vm_ubuntu というシンボリックリンクが作成される。<p />
+</blockquote>
+
+<li>作成された論理ボリュームを確認</li>
+<blockquote>
+<pre>
+# lvs
+  LV           VG         Attr       LSize  Pool Origin Data%  Meta%  Move Log Cpy%Sync Convert
+  lv_vm_ubuntu hostname-vg -wi-a----- 30.00g
+  root         hostname-vg -wi-ao---- 14.35g
+  swap_1       hostname-vg -wi-ao----  8.00g
+#
+</pre>
+</blockquote>
+
+</ol>
+</blockquote>
+
+ISO からのインストール<p />
+<blockquote>
+/etc/xen/debian-hvm.cfg<p />
+	<blockquote>
+<pre>
+builder = "hvm"
+name = "debian-hvm"
+memory = "512"
+vcpus = 1
+vif = ['']
+disk = ['phy:/dev/hostname-vg/lv_vm_debian,hda,w','file:/root/debian-8.1.0-amd64-netinst.iso,hdc:cdrom,r']
+vnc = 1
+boot="dc"
+</pre>
+	</blockquote>
+# xl create /etc/xen/debian-hvm.cfg<p />
+</blockquote>
+
+<blockquote>
+<pre>
+# xl list
+Name                                        ID   Mem VCPUs	State	Time(s)
+Domain-0                                     0  7319     2     r-----      78.7
+debian-hvm                                   3   512     1     -b----       5.3
+#
+</pre>
+</blockquote>
+
+<blockquote>
+# apt-get install xen-tools<p />
+</blockquote>
+
+<blockquote>
+</blockquote>
+<hr />
+<a href="../">Return</a><p />
+Jun/24/2014 AM 08:15<p />
+</body>
+</html>

@@ -25,7 +25,7 @@ key = sys.argv[1]
 population_in = string.atoi (sys.argv[2])
 print ("%s\t%d" % (key, population_in))
 #
-host = "localhost:8098"
+host = "host_ubuntu:8098"
 path = "/riak/shimane" + "/" + key
 json_str = get_uri_proc (host,path)
 #

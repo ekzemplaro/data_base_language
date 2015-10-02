@@ -1,1 +1,0 @@
-../basex_python_update.py

@@ -1,10 +1,12 @@
 // ---------------------------------------------------------------
 //	json_delete.ts
 //
-//					Jul/15/2014
+//					Sep/15/2015
 //
 // ---------------------------------------------------------------
-//
+declare function require(x: string): any;
+declare var process:any;
+
 var fs = require("fs");
 
 console.log ("*** 開始 ***");

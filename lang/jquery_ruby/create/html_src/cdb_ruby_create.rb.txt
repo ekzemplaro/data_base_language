@@ -1,1 +1,0 @@
-../cdb_ruby_create.rb

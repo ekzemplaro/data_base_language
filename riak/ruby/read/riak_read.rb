@@ -3,7 +3,7 @@
 # ------------------------------------------------------------------
 #	riak_read.rb
 #
-#					Feb/24/2015
+#					Sep/22/2015
 #
 # ------------------------------------------------------------------
 require 'restclient'
@@ -13,7 +13,7 @@ load '/var/www/data_base/common/ruby_common/text_manipulate.rb'
 # ------------------------------------------------------------------
 puts	"*** 開始 ***\n"
 
-url_base = 'http://host_ubuntu1:8098/riak/shimane'
+url_base = 'http://host_ubuntu:8098/riak/shimane'
 url_in = url_base + '?keys=true'
 
 json_string = RestClient.get url_in

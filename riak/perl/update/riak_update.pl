@@ -2,7 +2,7 @@
 #
 #	riak_update.pl
 #
-#					Mar/18/2013
+#					Sep/22/2015
 # -------------------------------------------------------
 use	strict;
 use	warnings;
@@ -21,7 +21,7 @@ my $key_in = $ARGV[0];
 my $population_in = $ARGV[1];
 print ("$key_in\t$population_in\n");
 #
-my $url_target = 'http://localhost:8098/riak/shimane/' . $key_in;
+my $url_target = 'http://host_ubuntu:8098/riak/shimane/' . $key_in;
 #
 my $str_json = uri_get::uri_get_proc ($url_target);
 #

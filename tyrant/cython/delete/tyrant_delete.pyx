@@ -2,7 +2,7 @@
 #
 #	tyrant_delete.pyx
 #
-#					Nov/17/2011
+#					Sep/14/2015
 #
 import	sys
 import	string
@@ -11,23 +11,16 @@ import	json
 import memcache
 #
 sys.path.append ('/var/www/data_base/common/python_common')
-from mcache_manipulate import mcache_delete_proc,mcache_display_proc
+from mcache_manipulate import mcache_delete_proc
 # ------------------------------------------------------------
 print ("*** 開始 ***")
 #
 id_in = sys.argv[1]
 print ("%s" % id_in)
 #
-mc = memcache.Client(['localhost:1978'])
+mc = memcache.Client(['host_ubuntu:1978'])
 #
 mcache_delete_proc (mc,id_in)
-#
-keys = {'t4761','t4762','t4763',
-	't4764','t4765','t4766',
-	't4767','t4768','t4769'}
-#
-for key in keys:
-	mcache_display_proc (mc,key)
 #
 print ("*** 終了 ***")
 #

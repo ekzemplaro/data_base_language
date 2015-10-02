@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <title>
-Environment for Ubuntu (Dec/13/2013)
+Environment for Ubuntu (Sep/17/2015)
 </title>
 </head>
 </head>
@@ -32,19 +32,6 @@ Ubuntu のパッケージのソフトをインストールする。<p />
 </blockquote>
 bash ./go_install を実行する。<p />
 <hr />
-不具合の修正<p />
-<ol>
-Rhino の　不具合<p />
-	rhino1_7R2.zip をダウンロードして、解凍する。<p />
-	<ol>
-	そこに含まれる、<br />
-	871260 2009-03-22 14:32 rhino1_7R2/js.jar<br />	
-	を、/usr/share/java/js.jar と置き換える。<br />
-	</ol>
-	<p />
-Can be fixed by replacing /usr/share/java/js.jar<br />
-</ol>
-<hr />
 
 subversionの設定:<p />
 <blockquote>
@@ -67,7 +54,7 @@ tar xvfj acl82express-linux-x86.bz2<p />
 <hr />
 Samba の設定<p />
 <pre>
-ii  samba     2:3.6.6-3ubuntu5      amd64   SMB/CIFS file, print, and login server for Unix
+ii  samba     2:4.1.13+dfsg-4ubuntu3    amd64        SMB/CIFS file, print, and login server for Unix
 </pre>
 /etc/samba/smb.conf<p />
 
@@ -86,10 +73,10 @@ guest only = yes
 
 サーバーの停止と起動<br />
 <blockquote>
-sudo stop nmbd<br />
-sudo stop smbd<p />
-sudo start nmbd<br />
-sudo start smbd<br />
+# systemctl stop nmbd<br />
+# systemctl stop smbd<p />
+# systemctl start nmbd<br />
+# systemctl start smbd<br />
 </blockquote>
 
 Windows の コマンド プロンプトでの確認<br />
@@ -98,6 +85,6 @@ Windows の コマンド プロンプトでの確認<br />
 </blockquote>
 <hr />
 <a href="/data_base/data_base.html">Return</a><p />
-Dec/13/2013 AM 08:15<p />
+Sep/17/2015 AM 08:15<p />
 </body>
 </html>

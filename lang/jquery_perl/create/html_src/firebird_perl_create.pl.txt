@@ -1,1 +1,0 @@
-../firebird_perl_create.pl

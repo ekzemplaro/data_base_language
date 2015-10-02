@@ -1,1 +1,0 @@
-../riak_python_create.py

@@ -2,7 +2,7 @@
 #
 #	riak_create.pl
 #
-#					Mar/18/2013
+#					Sep/22/2015
 # -------------------------------------------------------
 use	strict;
 use	warnings;
@@ -19,7 +19,7 @@ use file_io;
 print (encode ('utf-8',"*** 開始 ***\n"));
 #
 #
-my $url_base = 'http://localhost:8098/riak/shimane';
+my $url_base = 'http://host_ubuntu:8098/riak/shimane';
 #
 
 my %dict_aa = data_prepare_proc ();
@@ -27,16 +27,10 @@ my %dict_aa = data_prepare_proc ();
 #
 foreach my $key (sort keys %dict_aa)
 	{
-	print $key . "\n";
 	my $json_str = encode_json ($dict_aa{$key});
-	print $json_str . "\n";
 	my $url_target = $url_base . "/" . $key;
 	uri_get::uri_put_proc ($url_target,$json_str);
 	}
-#
-#
-#
-#
 #
 print (encode ('utf-8',"*** 終了 ***\n"));
 #
@@ -46,11 +40,11 @@ sub data_prepare_proc
 	my %dict_aa;
 
 	%dict_aa = text_manipulate::dict_append_proc
-		('t3251','松江',71842,'2005-9-22',%dict_aa);
+		('t3251','松江',71842,'2005-6-22',%dict_aa);
 	%dict_aa = text_manipulate::dict_append_proc
 		('t3252','出雲',14378,'2005-3-5',%dict_aa);
 	%dict_aa = text_manipulate::dict_append_proc
-		('t3253','大田',58641,'2005-6-7',%dict_aa);
+		('t3253','大田',58641,'2005-9-7',%dict_aa);
 	%dict_aa = text_manipulate::dict_append_proc
 		('t3254','雲南',46832,'2005-8-22',%dict_aa);
 	%dict_aa = text_manipulate::dict_append_proc

@@ -17,7 +17,7 @@ population_in=arg[2]
 print (key_in)
 print (population_in)
 
-local server_host = "host_ubuntu1"
+local server_host = "host_ubuntu"
 local server_port = 1978
 
 mcached_update_proc (server_host,server_port,key_in,population_in)

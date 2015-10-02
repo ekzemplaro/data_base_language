@@ -1,1 +1,0 @@
-../tcbn_python_read.py

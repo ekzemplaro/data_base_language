@@ -3,7 +3,7 @@
 #
 #	riak_update.rb
 #
-#					Mar/18/2013
+#					Oct/02/2015
 #
 require 'rubygems'
 require 'json'
@@ -19,7 +19,7 @@ population_in = ARGV[1].to_i
 #
 puts key_in,population_in
 #
-server = Couch::Server.new("localhost","8098")
+server = Couch::Server.new("host_ubuntu","8098")
 res = server.get("/riak/shimane/?keys=true")
 #
 data_aa=JSON.parse(res.body)

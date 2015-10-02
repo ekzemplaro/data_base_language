@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 #	mcachedb_delete.rb
-#					Apr/15/2013
+#					Sep/14/2015
 #
 # --------------------------------------------------------
 require 'socket'
@@ -14,7 +14,7 @@ key_in = ARGV[0]
 #
 puts key_in
 
-HOST = 'localhost'
+HOST = 'host_ubuntu'
 PORT = 21201
 ss = TCPSocket::open(HOST,PORT)
 #

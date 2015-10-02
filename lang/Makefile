@@ -20,3 +20,4 @@ clean:
 	cd jquery_lua; make clean;
 	cd jquery_tcl; make clean;
 	cd jquery_haskell; make clean;
+	cd examples; make clean;

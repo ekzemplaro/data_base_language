@@ -1,1 +1,0 @@
-../db2_php_delete.php

@@ -3,7 +3,7 @@
 #
 #	riak_delete.rb
 #
-#					Mar/18/2013
+#					Oct/02/2015
 #
 require 'rubygems'
 require 'json'
@@ -17,7 +17,7 @@ key_in = ARGV[0]
 #
 puts key_in
 #
-server = Couch::Server.new("localhost","8098")
+server = Couch::Server.new("host_ubuntu","8098")
 res = server.get("/riak/shimane/?keys=true")
 #
 data_aa=JSON.parse(res.body)

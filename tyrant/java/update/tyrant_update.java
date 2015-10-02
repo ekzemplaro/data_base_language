@@ -20,7 +20,7 @@ public static void main (String[] args) throws Exception
 	System.out.print ("\tkey_in = " + key_in);
 	System.out.println ("\tpopulation = " + population);
 
-	final String server = "host_ubuntu1";
+	final String server = "host_ubuntu";
 	final int port = 1978;
 
 	mcached_socket.mcached_update_proc (server,port,key_in,population);

@@ -1,7 +1,7 @@
 // ------------------------------------------------------------------
 //	riak_create.cs
 //
-//					Feb/09/2015
+//					Sep/22/2015
 //
 // ------------------------------------------------------------------
 using System;
@@ -19,7 +19,7 @@ static void Main (string[] args)
 {
 	Console.WriteLine ("*** 開始 ***");
 
-	String url_base = "http://host_ubuntu1:8098/riak/shimane";
+	String url_base = "http://host_ubuntu:8098/riak/shimane";
 
 	String user = "";
 	String password = "";
@@ -28,12 +28,12 @@ static void Main (string[] args)
 
 	foreach (KeyValuePair<string, Object> kv in dict_aa)
 		{
-		Console.Write (kv.Key + "\n");
+//		Console.Write (kv.Key + "\n");
 		String json_city = JsonConvert.SerializeObject (kv.Value);
-		Console.Write (json_city + "\n");
+//		Console.Write (json_city + "\n");
 		String uri_target = url_base + "/" + kv.Key;
 		String res = get_uri.put_uri_string_proc (uri_target,json_city,user,password);
-		Console.WriteLine (res);
+//		Console.WriteLine (res);
 		}
 
 	Console.WriteLine ("*** 終了 ***");
@@ -45,8 +45,8 @@ static Dictionary <string,Object> data_prepare_proc ()
 	Dictionary <string,Object> dict_aa
 			= new Dictionary <string,Object> ();
 
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t3251","松江",78512,"2009-6-12");
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t3252","出雲",17954,"2009-3-19");
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t3251","松江",76512,"2009-6-12");
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t3252","出雲",12954,"2009-3-19");
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t3253","大田",76928,"2009-8-28");
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,"t3254","雲南",45197,"2009-19-21");
 

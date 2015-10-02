@@ -35,9 +35,9 @@ print	(encode ('utf-8',"*** 終了 ***\n"));
 sub data_set_proc
 {
 $memcached->set('t1731','{"name":"金沢","population":92314,"date_mod":"2005-4-24"}');
-$memcached->set('t1732','{"name":"輪島","population":47548,"date_mod":"2005-6-11"}');
+$memcached->set('t1732','{"name":"輪島","population":47598,"date_mod":"2005-6-11"}');
 $memcached->set('t1733','{"name":"小松","population":53972,"date_mod":"2005-7-2"}');
-$memcached->set('t1734','{"name":"七尾","population":15471,"date_mod":"2005-8-14"}');
+$memcached->set('t1734','{"name":"七尾","population":15473,"date_mod":"2005-8-14"}');
 $memcached->set('t1735','{"name":"珠洲","population":32578,"date_mod":"2005-9-4"}');
 $memcached->set('t1736','{"name":"加賀","population":91273,"date_mod":"2005-10-7"}');
 $memcached->set('t1737','{"name":"羽咋","population":58376,"date_mod":"2005-11-9"}');

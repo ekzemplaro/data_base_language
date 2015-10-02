@@ -13,3 +13,4 @@ clean:
 	cd java_common; make clean;
 	cd fsharp_common; make clean;
 	cd csharp_common; make clean;
+	cd typescript_common; make clean;

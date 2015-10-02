@@ -1,1 +1,0 @@
-../basex_bash_read.sh

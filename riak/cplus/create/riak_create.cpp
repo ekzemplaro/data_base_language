@@ -2,7 +2,7 @@
 /*
 	riak_create.cpp
 
-				Feb/10/2015
+				Sep/22/2015
 */
 // --------------------------------------------------------------------
 #include	<iostream>
@@ -44,7 +44,7 @@ int main (int argc,char *argv[])
 {
 	cerr << "*** 開始 ***\n";
 
-	const string url_shimane = "http://host_ubuntu1:8098/riak/shimane";
+	const string url_shimane = "http://host_ubuntu:8098/riak/shimane";
 
 	map <string,Unit> dict_aa = data_prepare_proc ();
 

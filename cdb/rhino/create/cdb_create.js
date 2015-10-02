@@ -38,13 +38,18 @@ for (var key in dict_aa)
 //	var key_byte = get_byte (key)
 	var key_byte = get_byte (key_str)
 	var data_byte = get_byte (str_json.toString ())
+//	var data_byte = (str_json.toString ()).toArray();
 
 //	print (data_byte)
 
 //	maker.add (key_str.getBytes(), str_json.getBytes())
 
 //	maker.add (key.getBytes(),data_byte)
+	print ("*** dddd ***")
+
+
 	maker.add (key_byte,data_byte)
+	print ("*** eeee ***")
 //	maker.add (key_byte,str_json)
 //	maker.add (get_byte (key), get_byte (str_json))
 	}
@@ -85,4 +90,5 @@ function data_prepare_proc ()
 
 	return	dict_aa
 }
+
 // --------------------------------------------------------------

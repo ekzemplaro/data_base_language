@@ -1,7 +1,7 @@
 // ------------------------------------------------------------------
 //	read/riak_read.cs
 //
-//					Feb/09/2015
+//					Sep/22/2015
 //
 // ------------------------------------------------------------------
 using System;
@@ -20,7 +20,7 @@ static void Main (string[] args)
 {
 	Console.WriteLine ("*** 開始 ***");
 
-	String url_base = "http://host_ubuntu1:8098/riak/shimane";
+	String url_base = "http://host_ubuntu:8098/riak/shimane";
 
 	String url_in = url_base + "?keys=true";
 

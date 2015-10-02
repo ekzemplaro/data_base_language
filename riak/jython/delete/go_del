@@ -10,4 +10,4 @@ export CPX=$CPX:$HTTPCLIENT/commons-codec-1.10.jar
 #
 export CLASSPATH=./:$CPX
 #
-./riak_delete.py t3255
+./riak_delete.py t3257

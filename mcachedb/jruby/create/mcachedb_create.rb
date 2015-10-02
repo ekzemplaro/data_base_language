@@ -35,7 +35,7 @@ puts "*** 開始 ***"
 dict_aa = prepare_data_proc()
 #
 #
-HOST = 'localhost'
+HOST = 'host_ubuntu'
 PORT = 21201
 #
 ss = TCPSocket::open(HOST,PORT)

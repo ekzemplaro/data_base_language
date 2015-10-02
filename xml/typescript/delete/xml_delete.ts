@@ -2,23 +2,24 @@
 //
 //	xml_delete.ts
 //
-//						Jul/17/2014
+//						Sep/16/2015
 //
 // ------------------------------------------------------------------
+declare function require(x: string): any;
+declare var process:any;
+
 var fs = require('fs'),
     xml2js = require('xml2js');
-var text_manipulate =
-	require('/var/www/data_base/common/node_common/text_manipulate');
 var xml_manipulate =
-	require ("/var/www/data_base/common/node_common/xml_manipulate");
+	require ("/var/www/data_base/common/typescript_common/xml_manipulate");
 
 // ------------------------------------------------------------------
 console.log	("*** 開始 ***");
 
 var file_xml:string = process.argv[2];
-var id_in:string = process.argv[3];
+var key_in:string = process.argv[3];
 
-console.log (id_in);
+console.log (key_in);
 
 var parser = new xml2js.Parser();
 
@@ -29,11 +30,9 @@ fs.readFile(file_xml, function(err, data) {
 
 parser.on('end', function(result) {
 
-	delete result[id_in];
+	delete result[key_in];
 
 	var out_str = xml_manipulate.dict_to_xml_proc (result);
-
-	text_manipulate.dict_display_proc (result);
 
 	fs.writeFile(file_xml,out_str);
 

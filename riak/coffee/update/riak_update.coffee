@@ -2,7 +2,7 @@
 # ---------------------------------------------------------------
 #	riak_update.coffee
 #
-#					Feb/09/2015
+#					Sep/22/2015
 # ---------------------------------------------------------------
 http = require('http')
 text_manipulate = require('/var/www/data_base/common/coffee_common/text_manipulate')
@@ -12,7 +12,7 @@ riak_update_proc = (key_in,population_in) ->
 	path_target = '/riak/shimane/' + key_in
 
 	options = {
-		host: 'host_ubuntu1',
+		host: 'host_ubuntu',
 		port: 8098,
 		path: path_target
 	}

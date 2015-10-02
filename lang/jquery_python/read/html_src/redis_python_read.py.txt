@@ -1,1 +1,0 @@
-../redis_python_read.py

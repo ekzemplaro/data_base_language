@@ -14,7 +14,8 @@ EPUB=$(JAR)/epubgen-0.5.0.jar
 ITEXT=$(JAR)/iText-5.0.5.jar
 HGDB_JAR=/home/uchida/dbm/hgdb/hypergraphdb-1.1/hypergraphdb.jar
 SG_CDB=$(JAR)/sg-cdb-1.0.4.jar
-POI311=/var/www/data_base/common/jar/poi-3.11
+POI313=/var/www/data_base/common/jar/poi-3.13
+POI_LIB=$(POI313)/poi-3.13-20150929.jar:$(POI313)/poi-ooxml-3.13-20150929.jar:$(POI313)/poi-ooxml-schemas-3.13-20150929.jar:$(POI313)/ooxml-lib/xmlbeans-2.6.0.jar
 #
 HTTPCLIENT=$(COMMON)/jar/commons-httpclient
 HTTPCLIENT_JAR=.:$(HTTPCLIENT)/commons-httpclient-3.1.jar:$(HTTPCLIENT)/commons-logging-1.2.jar:$(HTTPCLIENT)/commons-codec-1.10.jar
@@ -43,7 +44,7 @@ CPP_ITEXT=./:$(ITEXT):$(JAVA_COMMON)
 CPP_HGDB=./:$(HGDB_JAR):$(JAVA_COMMON)
 CPP_CDB=./:$(SG_CDB):$(JAVA_COMMON):$(JAR)/jsonic-1.1.2.jar
 CPP_URI=.:$(HTTPCLIENT_JAR)
-CPP_XLSX=.:$(POI311)/poi-3.11-20141221.jar:$(POI311)/poi-ooxml-3.11-20141221.jar
+CPP_XLSX=.:$(POI_LIB)
 CPP_HBASE=`hbase classpath`
 #
 all: json_manipulate.class \

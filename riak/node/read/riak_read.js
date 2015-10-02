@@ -2,7 +2,7 @@
 // ---------------------------------------------------------------
 //	riak_read.js
 //
-//					Dec/24/2013
+//					Sep/22/2015
 //
 // ---------------------------------------------------------------
 function record_fetch_proc_s4 (options_in,key_in)
@@ -55,7 +55,7 @@ console.log ("*** 開始 ***");
 var http = require('http');
 
 var options = {
-	host: 'host_ubuntu1',
+	host: 'host_ubuntu',
 	port: 8098,
 	path: '/riak/shimane?keys=true',
 };

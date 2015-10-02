@@ -2,7 +2,7 @@
 #
 #	riak_delete.pl
 #
-#					Mar/14/2013
+#					Sep/22/2015
 # -------------------------------------------------------
 use	strict;
 use	warnings;
@@ -20,7 +20,7 @@ print "*** 開始 ***\n";
 my $key_in = $ARGV[0];
 print ("$key_in\n");
 #
-my $url_target = 'http://localhost:8098/riak/shimane/' . $key_in;
+my $url_target = 'http://host_ubuntu:8098/riak/shimane/' . $key_in;
 #
 print $url_target . "\n";
 #

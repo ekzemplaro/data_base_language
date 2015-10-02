@@ -1,11 +1,14 @@
 // ---------------------------------------------------------------
 //	json_read.ts
 //
-//					Jul/15/2014
+//					Sep/16/2015
 //
 // ---------------------------------------------------------------
+declare function require(x: string): any;
+declare var process:any;
+
 import fs = require("fs");
-var text_manipulate = require('/var/www/data_base/common/node_common/text_manipulate');
+var text_manipulate = require('/var/www/data_base/common/typescript_common/text_manipulate');
 // ---------------------------------------------------------------
 console.log ("*** 開始 ***");
 

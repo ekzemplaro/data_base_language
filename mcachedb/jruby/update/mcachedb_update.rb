@@ -19,7 +19,7 @@ population_in = ARGV[1].to_i
 #
 puts key_in,population_in
 #
-HOST = 'localhost'
+HOST = 'host_ubuntu'
 PORT = 21201
 #
 ss = TCPSocket::open(HOST,PORT)

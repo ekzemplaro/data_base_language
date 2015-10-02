@@ -3,7 +3,7 @@
 //
 //	riak_create.js
 //
-//					Feb/09/2015
+//					Sep/22/2015
 //
 //
 // --------------------------------------------------------------
@@ -17,7 +17,8 @@ load ("/var/www/data_base/common/rhino_common/net_manipulate.js");
 // --------------------------------------------------------------
 print ("*** 開始 ***");
 
-var url_base = 'http://host_ubuntu1:8098/riak/shimane';
+// var url_base = 'http://host_ubuntu:8098/riak/shimane';
+var url_base = 'http://cddn007-ee:8098/riak/shimane';
 
 	var url_in=url_base + '?keys=true';
 

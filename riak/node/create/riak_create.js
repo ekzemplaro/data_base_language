@@ -2,7 +2,7 @@
 // ---------------------------------------------------------------
 //	riak_create.js
 //
-//					Feb/09/2015
+//					Sep/22/2015
 //
 // ---------------------------------------------------------------
 var text_manipulate = require('/var/www/data_base/common/node_common/text_manipulate');
@@ -20,7 +20,7 @@ for (var key in dict_aa)
 	var json_str = JSON.stringify (dict_aa[key]);
 
 	http_manipulate.put_proc
-		('host_ubuntu1',8098,'/riak/shimane/' + key,json_str);
+		('host_ubuntu',8098,'/riak/shimane/' + key,json_str);
 	}
 
 console.log ("*** 終了 ***");

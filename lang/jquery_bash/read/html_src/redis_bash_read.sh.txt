@@ -1,1 +1,0 @@
-../redis_bash_read.sh
