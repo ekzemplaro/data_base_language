@@ -1,2 +1,7 @@
 #
-./text_update.gambas /var/tmp/plain_text/cities.txt t2382 45723100
+#
+GAMBAS_COMMON=/var/www/data_base/common/gambas_common
+cat text_update.gambas $GAMBAS_COMMON/text_manipulate.gambas > tmp001.gambas
+chmod +x tmp001.gambas
+#
+./tmp001.gambas /var/tmp/plain_text/cities.txt t2382 45723100

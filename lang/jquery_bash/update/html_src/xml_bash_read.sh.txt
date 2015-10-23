@@ -1,0 +1,1 @@
+../xml_bash_read.sh

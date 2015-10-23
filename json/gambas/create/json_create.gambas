@@ -2,7 +2,7 @@
 '
 '	json_create.gambas
 '
-'					Nov/27/2014
+'					Oct/06/2015
 '
 ' ------------------------------------------------------------------
 sub	row_gen_proc (key as string,name as string,population as integer,date_mod as string) as string
@@ -13,7 +13,7 @@ sub	row_gen_proc (key as string,name as string,population as integer,date_mod as
 	return str_out
 end
 ' ------------------------------------------------------------------
-sub	data_prepare_proc () as string
+sub	data_prepare_procxx () as string
 	dim str_out as string
 	str_out = "{\n"
 	str_out &= row_gen_proc ("t0921","宇都宮",56872,"1969-1-8")
@@ -34,18 +34,34 @@ sub	data_prepare_proc () as string
 	return str_out
 end
 ' ------------------------------------------------------------------
+sub data_prepare_proc () as Collection
+	Dim dict_aa as New Collection
+	dict_aa = dict_append_proc (dict_aa,"t2381","名古屋",59871,"1969-10-8")
+	dict_aa = dict_append_proc (dict_aa,"t2382","豊橋",92156,"1969-2-12")
+	dict_aa = dict_append_proc (dict_aa,"t2383","岡崎",28479,"1969-3-28")
+	dict_aa = dict_append_proc (dict_aa,"t2384","一宮",51982,"1969-2-21")
+	dict_aa = dict_append_proc (dict_aa,"t2385","蒲郡",82671,"1969-1-5")
+	dict_aa = dict_append_proc (dict_aa,"t2386","常滑",73942,"1969-5-22")
+	dict_aa = dict_append_proc (dict_aa,"t2387","大府",46785,"1969-7-17")
+	dict_aa = dict_append_proc (dict_aa,"t2388","瀬戸",54617,"1969-3-04")
+	dict_aa = dict_append_proc (dict_aa,"t2389","犬山",73826,"1969-5-9")
+'
+	return	dict_aa
+end
+' ------------------------------------------------------------------
 Public Sub Main()
 DIM path as string
 DIM str_out as string
 DIM str_out_bb as string
+dim dict_aa as Collection
+dim json_str as string
 print "*** 開始 ***"
 '
 path = Application.Args[1]
 print path
-str_out = data_prepare_proc ()
-print len (str_out)
-str_out_bb = mid$(str_out,1,-2) & "}"
-TRY File.Save (path,str_out_bb)
+dict_aa = data_prepare_proc ()
+json_str = JSON.Encode (dict_aa)
+'TRY File.Save (path,json_str)
 print "*** 終了 ***"
 End
 ' ------------------------------------------------------------------

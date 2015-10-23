@@ -1,0 +1,41 @@
+#! /usr/bin/gbs3
+'
+'	csv_update.gambas
+'
+'					Oct/07/2015
+'
+' ------------------------------------------------------------------
+public sub Main()
+	dim file_txt as string
+	dim key_in as string
+	dim population_in as integer
+	Dim dict_aa as New Collection
+	dim result as string
+	dim str_out as string
+	dim date_mod as string
+'
+	print "*** 開始 ***"
+'
+	file_txt = Application.Args[1]
+	key_in = Application.Args[2]
+	population_in = Val (Application.Args[3])
+	print file_txt
+	print key_in,population_in
+'
+	TRY result = file.Load (file_txt)
+	dict_aa = string_to_dict_proc (result,",")
+'
+	print dict_aa.Exist (key_in)
+	if dict_aa.Exist (key_in) then
+		print "*** exist ***"
+		date_mod = Year (Now) & "-" & Month (Now) & "-" & Day (Now)
+		print date_mod
+		dict_aa[key_in]["population"] = population_in
+		dict_aa[key_in]["date_mod"] = date_mod
+		str_out = dict_to_str_proc (dict_aa,",")
+		TRY File.Save (file_txt,str_out)
+	end if
+'
+	print "*** 終了 ***"
+end
+' ------------------------------------------------------------------

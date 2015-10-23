@@ -1,0 +1,35 @@
+#! /usr/bin/gbs3
+'
+'	csv_delete.gambas
+'
+'					Oct/07/2015
+'
+' ------------------------------------------------------------------
+public sub Main()
+	dim file_txt as string
+	dim key_in as string
+	Dim dict_aa as New Collection
+	dim result as string
+	dim str_out as string
+'
+	print "*** 開始 ***"
+'
+	file_txt = Application.Args[1]
+	key_in = Application.Args[2]
+	print file_txt
+	print key_in
+'
+	TRY result = file.Load (file_txt)
+	dict_aa = string_to_dict_proc (result,",")
+
+	if (dict_aa.Exist (key_in))
+		dict_aa.Remove (key_in)
+'
+		str_out = dict_to_str_proc (dict_aa,",")
+'
+		TRY File.Save (file_txt,str_out)
+	endif
+'
+	print "*** 終了 ***"
+end
+' ------------------------------------------------------------------

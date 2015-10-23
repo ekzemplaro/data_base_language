@@ -2,7 +2,7 @@
 '
 '	xml_create.gambas
 '
-'					Nov/27/2014
+'					Oct/06/2015
 '
 ' ------------------------------------------------------------------
 sub	tag_gen_proc (tag as string,value as string) as string
@@ -19,41 +19,56 @@ sub	row_gen_proc (key as string,name as string,population as integer,date_mod as
 	dim str_out as string
 	str_out = "<" & key & ">"
 	str_out &= tag_gen_proc ("name",name)
-	str_out &= tag_gen_proc ("population",population)
+	str_out &= tag_gen_proc ("population",Cstr (population))
 	str_out &= tag_gen_proc ("date_mod",date_mod)
 
 	str_out &= "</" & key & ">\n"
 	return str_out
 end
 ' ------------------------------------------------------------------
-sub	data_prepare_proc () as string
+sub	dict_to_xml_proc (dict_aa as Collection) as string
 	dim str_out as string
+	dim unit_aa as Collection
 	str_out = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
 	str_out &= "<root>\n"
-	str_out &= row_gen_proc ("t2261","静岡",34561,"1969-5-8")
-	str_out &= row_gen_proc ("t2262","浜松",17982,"1969-7-12")
-	str_out &= row_gen_proc ("t2263","沼津",26427,"1969-3-28")
-	str_out &= row_gen_proc ("t2264","三島",28519,"1969-2-21")
-	str_out &= row_gen_proc ("t2265","富士",84371,"1969-1-5")
-	str_out &= row_gen_proc ("t2266","熱海",72948,"1969-5-22")
-	str_out &= row_gen_proc ("t2267","富士宮",46785,"1969-7-17")
-	str_out &= row_gen_proc ("t2268","藤枝",54614,"1969-3-04")
-	str_out &= row_gen_proc ("t2269","御殿場",74823,"1969-5-9")
-	str_out &= row_gen_proc ("t2270","島田",82351,"1969-7-12")
+'
+	for each unit_aa in dict_aa
+		print dict_aa.key
+		str_out &= row_gen_proc (dict_aa.key,unit_aa["name"],unit_aa["population"],unit_aa["date_mod"])
+	next
+
 	str_out &= "</root>"
 
 	return str_out
 end
 ' ------------------------------------------------------------------
-Public Sub Main()
-DIM path as string
-DIM str_out as string
-print "*** 開始 ***"
+sub data_prepare_proc () as Collection
+	Dim dict_aa as New Collection
+	dict_aa = dict_append_proc (dict_aa,"t2261","静岡",59271,"1969-11-7")
+	dict_aa = dict_append_proc (dict_aa,"t2262","浜松",92856,"1969-9-12")
+	dict_aa = dict_append_proc (dict_aa,"t2263","沼津",28179,"1969-6-28")
+	dict_aa = dict_append_proc (dict_aa,"t2264","三島",51382,"1969-2-21")
+	dict_aa = dict_append_proc (dict_aa,"t2265","富士",82571,"1969-1-5")
+	dict_aa = dict_append_proc (dict_aa,"t2266","熱海",73642,"1969-5-22")
+	dict_aa = dict_append_proc (dict_aa,"t2267","富士宮",41785,"1969-7-17")
+	dict_aa = dict_append_proc (dict_aa,"t2268","藤枝",54617,"1969-3-04")
+	dict_aa = dict_append_proc (dict_aa,"t2269","御殿場",73826,"1969-5-9")
+	dict_aa = dict_append_proc (dict_aa,"t2270","島田",84639,"1969-2-7")
 '
-path = Application.Args[1]
-print path
-str_out = data_prepare_proc ()
-TRY File.Save (path,str_out)
-print "*** 終了 ***"
+	return	dict_aa
+end
+' ------------------------------------------------------------------
+Public Sub Main()
+	DIM path as string
+	DIM str_out as string
+	Dim dict_aa as Collection
+	print "*** 開始 ***"
+'
+	path = Application.Args[1]
+	print path
+	dict_aa = data_prepare_proc ()
+	str_out = dict_to_xml_proc (dict_aa)
+	TRY File.Save (path,str_out)
+	print "*** 終了 ***"
 End
 ' ------------------------------------------------------------------

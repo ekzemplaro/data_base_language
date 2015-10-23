@@ -1,0 +1,23 @@
+#! /usr/bin/gbs3
+'
+'	csv_read.gambas
+'
+'					Oct/07/2015
+'
+' ------------------------------------------------------------------
+public sub Main()
+	dim file_txt as string
+	Dim dict_aa as New Collection
+	dim result as string
+'
+	print "*** 開始 ***"
+'
+	file_txt = Application.Args[1]
+	print file_txt
+'
+	TRY result = file.Load (file_txt)
+	dict_aa = string_to_dict_proc (result,",")
+	dict_display_proc (dict_aa)
+	print "*** 終了 ***"
+end
+' ------------------------------------------------------------------

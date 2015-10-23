@@ -1,0 +1,1 @@
+../basex_python_delete.py

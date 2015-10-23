@@ -1,0 +1,19 @@
+?- between(1,5,X),write(X),nl,fail.
+1
+2
+3
+4
+5
+false.
+
+?- between(1,5,_),write("a_"),nl,fail.
+a_
+a_
+a_
+a_
+a_
+false.
+
+?- between(1,5,_),write("a_"),fail.
+a_a_a_a_a_
+false.

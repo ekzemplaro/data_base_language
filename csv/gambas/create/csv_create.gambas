@@ -1,0 +1,38 @@
+#! /usr/bin/gbs3
+'
+'	csv_create.gambas
+'
+'					Oct/07/2015
+'
+' ------------------------------------------------------------------
+sub data_prepare_proc () as Collection
+	Dim dict_aa as New Collection
+	dict_aa = dict_append_proc (dict_aa,"t1271","千葉",52841,"1969-8-14")
+	dict_aa = dict_append_proc (dict_aa,"t1272","勝浦",92156,"1969-3-15")
+	dict_aa = dict_append_proc (dict_aa,"t1273","市原",26479,"1969-9-28")
+	dict_aa = dict_append_proc (dict_aa,"t1274","流山",51982,"1969-5-21")
+	dict_aa = dict_append_proc (dict_aa,"t1275","八千代",84631,"1969-1-5")
+	dict_aa = dict_append_proc (dict_aa,"t1276","我孫子",71942,"1969-5-22")
+	dict_aa = dict_append_proc (dict_aa,"t1277","鴨川",42785,"1969-7-17")
+	dict_aa = dict_append_proc (dict_aa,"t1278","銚子",53617,"1969-3-8")
+	dict_aa = dict_append_proc (dict_aa,"t1279","市川",91826,"1969-11-9")
+'
+	return	dict_aa
+end
+' ------------------------------------------------------------------
+Public Sub Main()
+	DIM path as string
+	DIM str_out as string
+	Dim dict_aa as Collection
+	print "*** 開始 ***"
+'
+	path = Application.Args[1]
+	print path
+'
+	dict_aa = data_prepare_proc ()
+'
+	str_out = dict_to_str_proc (dict_aa,",")
+	TRY File.Save (path,str_out)
+	print "*** 終了 ***"
+End
+' ------------------------------------------------------------------

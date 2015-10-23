@@ -1,0 +1,5 @@
+</head>
+<title>gambas_common Oct/06/2015</title>
+<body>
+<h2>gambas_common</h2>
+<blockquote>

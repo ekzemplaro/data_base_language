@@ -1,0 +1,1 @@
+../postgre_bash_read.sh

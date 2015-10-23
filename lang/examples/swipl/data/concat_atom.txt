@@ -1,0 +1,8 @@
+?- concat_atom(["AA","BB","CC","DD"],X).
+X = 'AABBCCDD'.
+
+?- concat_atom(["AA","BB","CC","DD"],"-",X).
+X = 'AA-BB-CC-DD'.
+
+?- concat_atom(["AA","BB","CC","DD"],"--",X).
+X = 'AA--BB--CC--DD'.

@@ -1,2 +1,7 @@
 #
-./json_create.gambas /var/tmp/json/cities.json
+#
+GAMBAS_COMMON=/var/www/data_base/common/gambas_common
+cat json_create.gambas $GAMBAS_COMMON/text_manipulate.gambas > tmp001.gambas
+chmod +x tmp001.gambas
+#
+./tmp001.gambas /var/tmp/json/cities.json

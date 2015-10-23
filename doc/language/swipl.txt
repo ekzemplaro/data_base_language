@@ -1,7 +1,7 @@
 <meta content="Program Language Examples in swipl" name="description">
 <meta content="swipl,クライアント,接続,言語,サンプル" name="keyword">
 <meta content="Uchida Masatomo" name="author">
-<title>swipl Oct/30/2014</title>
+<title>swipl Oct/20/2015</title>
 </head>
 <body>
 <h2><a href="http://www.swi-prolog.org">SWI-Prolog</a></h2><p />
@@ -44,4 +44,60 @@ use_module(library(http/json_convert)).<br />
 Arch Linux<br />
 <blockquote>
 # pacman -S swi-prolog<p />
+</blockquote>
+
+Example<p />
+<blockquote>
+<pre>
+$ swipl
+Welcome to SWI-Prolog (Multi-threaded, 64 bits, Version 7.2.3)
+Copyright (c) 1990-2015 University of Amsterdam, VU Amsterdam
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software,
+and you are welcome to redistribute it under certain conditions.
+Please visit http://www.swi-prolog.org for details.
+
+For help, use ?- help(Topic). or ?- apropos(Word).
+
+?- 10 == 10.
+true.
+
+?- 20 == 0.
+false.
+
+?- 20 == 20.
+true.
+
+?- halt.
+$
+</pre>
+</blockquote>
+
+Compile<p />
+<blockquote>
+	swipl -o couch_read -g couch_read -c couch_read.pl<p />
+</blockquote>
+
+<blockquote>
+<pre>
+$ swipl
+Welcome to SWI-Prolog (Multi-threaded, 64 bits, Version 7.2.3)
+Copyright (c) 1990-2015 University of Amsterdam, VU Amsterdam
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software,
+and you are welcome to redistribute it under certain conditions.
+Please visit http://www.swi-prolog.org for details.
+
+For help, use ?- help(Topic). or ?- apropos(Word).
+
+?- X is div(12,3).
+X = 4.
+
+?- X is mod(10,3).
+X = 1.
+
+?- X is abs(3 - 8).
+X = 5.
+
+?- halt.
+$
+</pre>
 </blockquote>

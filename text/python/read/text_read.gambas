@@ -1,0 +1,50 @@
+#! /usr/bin/gbs3
+'
+'	text_read.gambas
+'
+'					Oct/05/2015
+'
+' ------------------------------------------------------------------
+sub	dict_append_proc (dict_aa as Collection,key as string,name as string,population as integer,date_mod as string) as Collection
+	Dim unit_aa as New Collection
+	unit_aa["name"]=name
+	unit_aa["population"]=population
+	unit_aa["date_mod"]=date_mod
+
+	dict_aa[key] = unit_aa
+	return	dict_aa
+end
+' -----------------------------------------------------------
+sub dict_display_proc (dict_aa as Collection)
+	dim unit_aa as Collection
+	for each unit_aa in dict_aa
+		print dict_aa.key,unit_aa["name"],unit_aa["population"],unit_aa["date_mod"]
+	next
+
+end
+' ------------------------------------------------------------------
+public sub Main()
+	dim file_txt as string
+	dim result as string
+	dim lines as String[]
+	dim ll as String
+	dim cols as string[]
+	Dim dict_aa as New Collection
+'
+	print "*** 開始 ***"
+'
+	file_txt = Application.Args[1]
+	print file_txt
+	TRY result = file.Load (file_txt)
+	lines = Split (result,"\r\n")
+	for each ll in lines
+		if 0 < len (ll) then
+			cols = Split (ll,"\t")
+			dict_aa = dict_append_proc (dict_aa,cols[0],cols[1],cols[2],cols[3])
+		endif
+	next
+'
+	dict_display_proc (dict_aa)
+	print "*** 終了 ***"
+end
+' ------------------------------------------------------------------

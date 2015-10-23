@@ -2,52 +2,33 @@
 '
 '	text_delete.gambas
 '
-'					Nov/27/2014
+'					Oct/07/2015
 '
 ' ------------------------------------------------------------------
-sub	row_gen_proc (key as string,name as string,population as integer,date_mod as string) as string
-	dim str_out as string
-	str_out = key & "\t" & name & "\t"
-	str_out &= population & "\t" & date_mod & "\n"
-	return str_out
-end
-' ------------------------------------------------------------------
-public sub Main ()
+public sub Main()
 	dim file_txt as string
-	dim id_in as string
+	dim key_in as string
+	Dim dict_aa as New Collection
 	dim result as string
-	dim lines as string[]
-	dim ll as string
-	dim items as string[]
 	dim str_out as string
-	dim date_mod as string
+'
 	print "*** 開始 ***"
-	date_mod = Year (Now) & "-" & Month (Now) & "-" & Day (Now)
-	print date_mod
 '
 	file_txt = Application.Args[1]
-	id_in = Application.Args[2]
+	key_in = Application.Args[2]
 	print file_txt
-	print id_in
+	print key_in
 '
 	TRY result = file.Load (file_txt)
-	lines = split (result,"\r\n")
-	str_out = ""
-	for each ll in lines
-		if 0 < len (ll) then
-			items = split (ll,"\t")
-			if items[0] = id_in then
-				print items[0] & "\n";
-			else
-				str_out &= ll & "\n"
-			end if
-'		print ll & "\n";
-		endif
-	next
+	dict_aa = string_to_dict_proc (result,"\t")
 '
-	print str_out
+	if (dict_aa.Exist (key_in))
+		dict_aa.Remove (key_in)
 '
-	TRY File.Save (file_txt,str_out)
+		str_out = dict_to_str_proc (dict_aa,"\t")
+'
+		TRY File.Save (file_txt,str_out)
+	endif
 '
 	print "*** 終了 ***"
 end

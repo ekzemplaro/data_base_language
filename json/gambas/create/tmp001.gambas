@@ -1,0 +1,123 @@
+#! /usr/bin/gbs3
+'
+'	json_create.gambas
+'
+'					Oct/06/2015
+'
+' ------------------------------------------------------------------
+sub	row_gen_proc (key as string,name as string,population as integer,date_mod as string) as string
+	dim str_out as string
+	str_out = "\"" & key & "\": {\"name\": \"" & name & "\","
+	str_out &= "\"population\": \"" & population & "\","
+	str_out &= "\"date_mod\": \"" & date_mod & "\"},\n"
+	return str_out
+end
+' ------------------------------------------------------------------
+sub	data_prepare_procxx () as string
+	dim str_out as string
+	str_out = "{\n"
+	str_out &= row_gen_proc ("t0921","宇都宮",56872,"1969-1-8")
+	str_out &= row_gen_proc ("t0922","小山",17984,"1969-10-12")
+	str_out &= row_gen_proc ("t0923","佐野",28425,"1969-3-28")
+	str_out &= row_gen_proc ("t0924","足利",27519,"1969-2-21")
+	str_out &= row_gen_proc ("t0925","日光",86971,"1969-1-5")
+	str_out &= row_gen_proc ("t0926","下野",75943,"1969-5-22")
+	str_out &= row_gen_proc ("t0927","さくら",46785,"1969-7-17")
+	str_out &= row_gen_proc ("t0928","矢板",54614,"1969-3-04")
+	str_out &= row_gen_proc ("t0929","真岡",74823,"1969-5-9")
+	str_out &= row_gen_proc ("t0930","栃木",82471,"1969-7-12")
+	str_out &= row_gen_proc ("t0931","大田原",24715,"1969-9-20")
+	str_out &= row_gen_proc ("t0932","鹿沼",71375,"1969-3-8")
+	str_out &= row_gen_proc ("t0933","那須塩原",75782,"1969-5-15")
+	str_out &= row_gen_proc ("t0934","那須烏山",48218,"1969-4-22")
+
+	return str_out
+end
+' ------------------------------------------------------------------
+sub data_prepare_proc () as Collection
+	Dim dict_aa as New Collection
+	dict_aa = dict_append_proc (dict_aa,"t2381","名古屋",59871,"1969-10-8")
+	dict_aa = dict_append_proc (dict_aa,"t2382","豊橋",92156,"1969-2-12")
+	dict_aa = dict_append_proc (dict_aa,"t2383","岡崎",28479,"1969-3-28")
+	dict_aa = dict_append_proc (dict_aa,"t2384","一宮",51982,"1969-2-21")
+	dict_aa = dict_append_proc (dict_aa,"t2385","蒲郡",82671,"1969-1-5")
+	dict_aa = dict_append_proc (dict_aa,"t2386","常滑",73942,"1969-5-22")
+	dict_aa = dict_append_proc (dict_aa,"t2387","大府",46785,"1969-7-17")
+	dict_aa = dict_append_proc (dict_aa,"t2388","瀬戸",54617,"1969-3-04")
+	dict_aa = dict_append_proc (dict_aa,"t2389","犬山",73826,"1969-5-9")
+'
+	return	dict_aa
+end
+' ------------------------------------------------------------------
+Public Sub Main()
+DIM path as string
+DIM str_out as string
+DIM str_out_bb as string
+dim dict_aa as Collection
+dim json_str as string
+print "*** 開始 ***"
+'
+path = Application.Args[1]
+print path
+dict_aa = data_prepare_proc ()
+json_str = JSON.Encode (dict_aa)
+'TRY File.Save (path,json_str)
+print "*** 終了 ***"
+End
+' ------------------------------------------------------------------
+' ------------------------------------------------------------------
+'
+'	text_manipulate.gambas
+'
+'					Oct/06/2015
+'
+' ------------------------------------------------------------------
+sub	dict_append_proc (dict_aa as Collection,key as string,name as string,population as integer,date_mod as string) as Collection
+	Dim unit_aa as New Collection
+	unit_aa["name"]=name
+	unit_aa["population"]=population
+	unit_aa["date_mod"]=date_mod
+
+	dict_aa[key] = unit_aa
+	return	dict_aa
+end
+' -----------------------------------------------------------
+sub	dict_to_str_proc (dict_aa as Collection) as string
+	dim str_out as string
+	dim unit_aa as Collection
+	str_out = ""
+	for each unit_aa in dict_aa
+		str_out &= dict_aa.key & "\t"
+		str_out &= unit_aa["name"] & "\t"
+		str_out &= unit_aa["population"] & "\t"
+		str_out &= unit_aa["date_mod"] & "\n"
+	next
+'
+	return str_out
+end
+' ------------------------------------------------------------------
+sub dict_display_proc (dict_aa as Collection)
+	dim unit_aa as Collection
+	for each unit_aa in dict_aa
+		print dict_aa.key,unit_aa["name"],unit_aa["population"],unit_aa["date_mod"]
+	next
+
+end
+' ------------------------------------------------------------------
+sub string_to_dict_proc (result as string) as Collection
+	Dim dict_aa as New Collection
+	dim lines as String[]
+	dim ll as String
+	dim cols as string[]
+'
+	lines = Split (result,"\r\n")
+	for each ll in lines
+		if 0 < len (ll) then
+			cols = Split (ll,"\t")
+			dict_aa = dict_append_proc (dict_aa,cols[0],cols[1],val (cols[2]),cols[3])
+		endif
+	next
+'
+	return	dict_aa
+end
+' ------------------------------------------------------------------

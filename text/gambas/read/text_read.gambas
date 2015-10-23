@@ -2,28 +2,22 @@
 '
 '	text_read.gambas
 '
-'					Nov/27/2014
+'					Oct/07/2015
 '
-' ------------------------------------------------------------------
 ' ------------------------------------------------------------------
 public sub Main()
 	dim file_txt as string
+	Dim dict_aa as New Collection
 	dim result as string
-	dim Elt as String[]
-	dim Sb as String
 '
 	print "*** 開始 ***"
 '
 	file_txt = Application.Args[1]
 	print file_txt
-	TRY result = file.Load (file_txt)
-	Elt = Split (result,"\n")
-	for each Sb in Elt
-		if 0 < len (Sb) then
-			print Sb
-		endif
-	next
 '
+	TRY result = file.Load (file_txt)
+	dict_aa = string_to_dict_proc (result,"\t")
+	dict_display_proc (dict_aa)
 	print "*** 終了 ***"
 end
 ' ------------------------------------------------------------------

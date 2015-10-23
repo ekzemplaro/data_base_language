@@ -1,5 +1,4 @@
 clean:
-	cd swipl; make clean;
 	cd ocaml; make clean;
 	cd go; make clean;
 	cd cplus; make clean;

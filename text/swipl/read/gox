@@ -1,1 +1,1 @@
-./text_read
+./text_read.pl /var/tmp/plain_text/cities.txt

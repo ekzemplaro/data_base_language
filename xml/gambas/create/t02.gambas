@@ -1,0 +1,41 @@
+#! /usr/bin/gbs3
+'
+'	xml_create.gambas
+'
+'					Oct/06/2015
+'
+' ------------------------------------------------------------------
+sub	tag_gen_proc (tag as string,value as string) as string
+	dim str_out as string
+
+	str_out = "<" & tag & ">"
+	str_out &= value
+	str_out &= "</" & tag & ">" & "\n"
+
+	return str_out
+end
+' ------------------------------------------------------------------
+sub	row_gen_proc (key as string,name as string,population as integer,date_mod as string) as string
+	dim str_out as string
+	str_out = "<" & key & ">"
+	str_out &= tag_gen_proc ("name",name)
+	str_out &= tag_gen_proc ("population",population)
+	str_out &= tag_gen_proc ("date_mod",date_mod)
+
+	str_out &= "</" & key & ">\n"
+	return str_out
+end
+' ------------------------------------------------------------------
+Public Sub Main()
+DIM path as string
+DIM str_out as string
+print "*** 開始 ***"
+'
+path = Application.Args[1]
+print path
+'dict_aa = data_prepare_proc ()
+'str_out = data_prepare_proc ()
+'TRY File.Save (path,str_out)
+print "*** 終了 ***"
+End
+' ------------------------------------------------------------------

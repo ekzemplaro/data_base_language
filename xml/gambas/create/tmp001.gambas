@@ -1,0 +1,130 @@
+#! /usr/bin/gbs3
+'
+'	xml_create.gambas
+'
+'					Oct/06/2015
+'
+' ------------------------------------------------------------------
+sub	tag_gen_proc (tag as string,value as string) as string
+	dim str_out as string
+
+	str_out = "<" & tag & ">"
+	str_out &= value
+	str_out &= "</" & tag & ">" & "\n"
+
+	return str_out
+end
+' ------------------------------------------------------------------
+sub	row_gen_proc (key as string,name as string,population as integer,date_mod as string) as string
+	dim str_out as string
+	str_out = "<" & key & ">"
+	str_out &= tag_gen_proc ("name",name)
+	str_out &= tag_gen_proc ("population",Cstr (population))
+	str_out &= tag_gen_proc ("date_mod",date_mod)
+
+	str_out &= "</" & key & ">\n"
+	return str_out
+end
+' ------------------------------------------------------------------
+sub	dict_to_xml_proc (dict_aa as Collection) as string
+	dim str_out as string
+	dim unit_aa as Collection
+	str_out = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
+	str_out &= "<root>\n"
+'
+	for each unit_aa in dict_aa
+		print dict_aa.key
+'		str_out &= row_gen_proc (dict_aa.key,unit_aa["name"],unit_aa["population"],unit_aa["date_mod"])
+	next
+
+	str_out &= "</root>"
+
+	return str_out
+end
+' ------------------------------------------------------------------
+sub data_prepare_proc () as Collection
+	Dim dict_aa as New Collection
+	dict_aa = dict_append_proc (dict_aa,"t2261","静岡",59271,"1969-11-7")
+	dict_aa = dict_append_proc (dict_aa,"t2262","浜松",92856,"1969-9-12")
+	dict_aa = dict_append_proc (dict_aa,"t2263","沼津",28179,"1969-6-28")
+	dict_aa = dict_append_proc (dict_aa,"t2264","三島",51382,"1969-2-21")
+	dict_aa = dict_append_proc (dict_aa,"t2265","富士",82571,"1969-1-5")
+	dict_aa = dict_append_proc (dict_aa,"t2266","熱海",73642,"1969-5-22")
+	dict_aa = dict_append_proc (dict_aa,"t2267","富士宮",41785,"1969-7-17")
+	dict_aa = dict_append_proc (dict_aa,"t2268","藤枝",54617,"1969-3-04")
+	dict_aa = dict_append_proc (dict_aa,"t2269","御殿場",73826,"1969-5-9")
+	dict_aa = dict_append_proc (dict_aa,"t2270","島田",84639,"1969-2-7")
+'
+	return	dict_aa
+end
+' ------------------------------------------------------------------
+Public Sub Main()
+	DIM path as string
+	DIM str_out as string
+	Dim dict_aa as Collection
+	print "*** 開始 ***"
+'
+	path = Application.Args[1]
+	print path
+dict_aa = data_prepare_proc ()
+str_out = dict_to_xml_proc (dict_aa)
+'TRY File.Save (path,str_out)
+	print "*** 終了 ***"
+End
+' ------------------------------------------------------------------
+' ------------------------------------------------------------------
+'
+'	text_manipulate.gambas
+'
+'					Oct/06/2015
+'
+' ------------------------------------------------------------------
+sub	dict_append_proc (dict_aa as Collection,key as string,name as string,population as integer,date_mod as string) as Collection
+	Dim unit_aa as New Collection
+	unit_aa["name"]=name
+	unit_aa["population"]=population
+	unit_aa["date_mod"]=date_mod
+
+	dict_aa[key] = unit_aa
+	return	dict_aa
+end
+' -----------------------------------------------------------
+sub	dict_to_str_proc (dict_aa as Collection) as string
+	dim str_out as string
+	dim unit_aa as Collection
+	str_out = ""
+	for each unit_aa in dict_aa
+		str_out &= dict_aa.key & "\t"
+		str_out &= unit_aa["name"] & "\t"
+		str_out &= unit_aa["population"] & "\t"
+		str_out &= unit_aa["date_mod"] & "\n"
+	next
+'
+	return str_out
+end
+' ------------------------------------------------------------------
+sub dict_display_proc (dict_aa as Collection)
+	dim unit_aa as Collection
+	for each unit_aa in dict_aa
+		print dict_aa.key,unit_aa["name"],unit_aa["population"],unit_aa["date_mod"]
+	next
+
+end
+' ------------------------------------------------------------------
+sub string_to_dict_proc (result as string) as Collection
+	Dim dict_aa as New Collection
+	dim lines as String[]
+	dim ll as String
+	dim cols as string[]
+'
+	lines = Split (result,"\r\n")
+	for each ll in lines
+		if 0 < len (ll) then
+			cols = Split (ll,"\t")
+			dict_aa = dict_append_proc (dict_aa,cols[0],cols[1],val (cols[2]),cols[3])
+		endif
+	next
+'
+	return	dict_aa
+end
+' ------------------------------------------------------------------

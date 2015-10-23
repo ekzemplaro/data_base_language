@@ -5,14 +5,14 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>ubuntu Sep/21/2015</title>
+<title>ubuntu Oct/23/2015</title>
 </head>
 <body>
 <h2><a href="http://www.ubuntu.com/index_roadshow">ubuntu</a></h2><p />
 カーネル<br/>
 <blockquote>
 $ uname -a<br />
-Linux ***** 3.19.0-25-generic #26-Ubuntu SMP Fri Jul 24 21:17:31 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux<br />
+Linux ****** 4.2.0-16-generic #19-Ubuntu SMP Thu Oct 8 15:35:06 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
 </blockquote>
 
 バージョン確認方法<br />
@@ -20,11 +20,11 @@ Linux ***** 3.19.0-25-generic #26-Ubuntu SMP Fri Jul 24 21:17:31 UTC 2015 x86_64
 <pre>
 $ cat /etc/os-release 
 NAME="Ubuntu"
-VERSION="15.04 (Vivid Vervet)"
+VERSION="15.10 (Wily Werewolf)"
 ID=ubuntu
 ID_LIKE=debian
-PRETTY_NAME="Ubuntu 15.04"
-VERSION_ID="15.04"
+PRETTY_NAME="Ubuntu 15.10"
+VERSION_ID="15.10"
 HOME_URL="http://www.ubuntu.com/"
 SUPPORT_URL="http://help.ubuntu.com/"
 BUG_REPORT_URL="http://bugs.launchpad.net/ubuntu/"
@@ -189,8 +189,14 @@ hostname の変更<p />
 <hr />
 <a href="https://launchpad.net/ubuntu/vivid/amd64?text=cifs-utils">
 deb ファイルの検索</a><p />
+from 15.04 to 15.10<p />
+<blockquote>
+# sed -i 's/vivid/wily/g' /etc/apt/sources.list<p />
+# apt-get update<p />
+</blockquote>
+
 <hr />
 <a href="../">Return</a><p />
-Sep/17/2015 AM 08:15<p />
+Oct/23/2015 AM 08:15<p />
 </body>
 </html>

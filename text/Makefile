@@ -1,6 +1,5 @@
 clean:
 	cd gst; make clean;
-	cd swipl; make clean;
 	cd kaya; make clean;
 	cd pascal; make clean;
 	cd boo; make clean;
@@ -14,6 +13,7 @@ clean:
 	cd cplus; make clean;
 	cd vala; make clean;
 	cd D; make clean;
+	cd gambas; make clean;
 	cd cython; make clean;
 	cd csharp; make clean;
 	cd haxe; make clean;

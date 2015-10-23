@@ -37,3 +37,10 @@ Arch Linux<br />
 <blockquote>
 	# pacman -S libreoffice libreoffice-ja<p />
 </blockquote>
+
+<hr />
+<blockquote>
+	<a href="http://api.libreoffice.org/">
+	LibreOffice 5.0 API Documentation</a><p />
+	# pacman -S libreoffice-fresh-sdk<p />
+</blockquote>
