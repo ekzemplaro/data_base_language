@@ -11,7 +11,8 @@ set_include_path (get_include_path() . PATH_SEPARATOR . $path);
 include ("text_manipulate.php");
 
 // ---------------------------------------------------------------------
-$file_in = "/var/tmp/plain_text/cities.txt";
+// $file_in = "/var/tmp/plain_text/cities.txt";
+$file_in = "tmp/plain_text/cities.txt";
 
 $dict_aa = text_read_proc ($file_in);
 

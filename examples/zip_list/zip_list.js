@@ -1,19 +1,25 @@
 // -----------------------------------------------------------------------
-//	file_upload_multi.js
+//	zip_list.js
 //
-//					Sep/01/2014
+//					Nov/03/2015
 //
 // -----------------------------------------------------------------------
 jQuery (function ()
 {
 	jQuery("#outarea_aa").html
-		("*** file_upload_multi *** start *** Sep/01/2014 ***");
+		("*** zip_list *** start *** Nov/03/2015 ***");
 
-	upload_click_monitor ("./data_work");
+	var url_in="list_file.py";
 
+	var folder_in = "work_area";
+
+	jQuery.getJSON (url_in,function (data_aa)
+		{
+		list_file_proc (folder_in,data_aa);
+		});
 
 	jQuery("#outarea_hh").html
-		("*** file_upload_multi *** end *** Sep/01/2014 ***");
+		("*** zip_list *** end *** Nov/03/2015 ***");
 
 });
 
