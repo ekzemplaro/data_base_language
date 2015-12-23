@@ -2,7 +2,7 @@
 # ---------------------------------------------------------------
 #	mssql_read.coffee
 #
-#					Jul/03/2014
+#					Nov/19/2015
 #
 # ---------------------------------------------------------------
 mssql = require('mssql') 
@@ -11,8 +11,8 @@ console.log "*** 開始 ***"
 
 config = {
 	user: 'sa',
-	password: 'scott_tiger',
-	server: 'host_mssql',
+	password: 'Tiger123',
+	server: 'host_mssql\EG',
 	database: 'city',
 }
 

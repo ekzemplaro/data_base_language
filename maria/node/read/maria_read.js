@@ -2,36 +2,44 @@
 // ---------------------------------------------------------------
 //	maria_read.js
 //
-//					Sep/16/2014
+//					Dec/11/2015
 //
 // ---------------------------------------------------------------
-console.log ("*** 開始 ***");
+var text_manipulate=require ("/var/www/data_base/common/node_common/text_manipulate")
 
-var mysql = require('mysql');
+// ---------------------------------------------------------------
+console.log ("*** 開始 ***")
+
+var mysql = require('mysql')
 
 var connection = mysql.createConnection ({
 	host: 'localhost',
 	user: 'scott',
 	password: 'tiger'
-	});
+	})
 
-connection.query ('Use city');
+connection.query ('Use city')
 
-connection.query("select * from cities;", function (err, rows)
+connection.query("select * from cities", function (err, rows)
 	{
-  	if (err) throw err;
-  	console.log (rows.length);
+  	if (err) throw err
+  	console.log (rows.length)
+
+	var dict_aa = new Object ()
+
 	for (var it in rows)
 		{
-		var str_out = rows[it].id + "\t" + rows[it].name;
-		str_out += "\t" + rows[it].population;
-		str_out += "\t" + rows[it].date_mod;
-  		console.log (str_out);
+		dict_aa[rows[it].id] = {"name": rows[it].name,
+			"population": rows[it].population,
+			"date_mod": rows[it].date_mod}
 		}
-console.log ("*** 終了 ***");
-	});
 
-connection.end();
+	text_manipulate.dict_display_proc (dict_aa)
 
-console.log ("*** ppp ***");
+console.log ("*** 終了 ***")
+	})
+
+connection.end()
+
+console.log ("*** ppp ***")
 // ---------------------------------------------------------------

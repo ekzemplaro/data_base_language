@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------
-//	upload_click_monitor.js
+//	upload_python_multi/upload_click_monitor.js
 //
-//					Nov/03/2015
+//					Nov/20/2015
 //
 // -----------------------------------------------------------------------
 function upload_click_monitor (upload_dir)
@@ -16,16 +16,31 @@ function upload_click_monitor (upload_dir)
 			{
 			var vvx = jQuery("#file").prop("files");
 
-			var length = vvx.length;
+			var str_out = "";
 
-			var file_aa = jQuery("#file").prop("files")[0];
+			var files=jQuery("#file").prop("files");
 
-			fd.append ("file_aa",file_aa);
+			str_out += JSON.stringify (vvx) + '<br />';
 
-			if (1 < length)
+			for (var it in files)
 				{
-				var file_bb = jQuery("#file").prop("files")[1];
-				fd.append ("file_bb",file_bb);
+				str_out += JSON.stringify (files[it]) + '<br />';
+				}
+			str_out += '------<br />';
+			str_out += "" + jQuery("#file").prop("files")[0] + '<br />';
+			str_out += jQuery("#file").prop("files")[1] + '<br />';
+			str_out += 'vvx.length = ' + vvx.length + '------<br />';
+			jQuery ("#outarea_cc").html (str_out);
+
+			var array_fname = ["file_aa","file_bb","file_cc",
+				"file_dd","file_ee","file_ff","file_gg",
+				"file_hh","file_ii","file_jj"];
+
+
+			for (var it=0; it< vvx.length; it += 1)
+				{
+			var file_aa = jQuery("#file").prop("files")[it];
+			fd.append (array_fname[it],file_aa);
 				}
 			}
 

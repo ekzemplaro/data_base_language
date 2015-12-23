@@ -3,7 +3,7 @@
 #
 #	mssql_delete.py
 #
-#					Mar/10/2015
+#					Nov/18/2015
 #
 #
 # --------------------------------------------------------
@@ -18,9 +18,12 @@ print ("*** 開始 ***")
 key_in = sys.argv[1]
 print ("%s" % key_in)
 #
+server_mssql = 'host_mssql\EG'
+user_mssql = 'sa'
+password_mssql = 'Tiger123'
 #
 conn = pymssql.connect \
-	(host='host_mssql',user='sa',password='scott_tiger',database='city')
+	(host=server_mssql,user=user_mssql,password=password_mssql,database='city')
 #
 cursor = conn.cursor ()
 #

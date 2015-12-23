@@ -3,7 +3,7 @@
 # -------------------------------------------------------------------------
 #	mssql_python_create.py
 #
-#						Mar/10/2015
+#						Nov/19/2015
 # -------------------------------------------------------------------------
 import	sys
 import	pymssql
@@ -19,13 +19,13 @@ def	data_prepare_proc ():
 #
 	dict_aa = dict_append_proc (dict_aa,'t1071','前橋',78200,'2003-9-21')
 	dict_aa = dict_append_proc (dict_aa,'t1072','高崎',49500,'2003-2-15')
-	dict_aa = dict_append_proc (dict_aa,'t1073','桐生',95400,'2003-5-18')
+	dict_aa = dict_append_proc (dict_aa,'t1073','桐生',91400,'2003-5-18')
 	dict_aa = dict_append_proc (dict_aa,'t1074','沼田',87200,'2003-1-2')
 	dict_aa = dict_append_proc (dict_aa,'t1075','伊勢崎',43100,'2003-8-4')
 	dict_aa = dict_append_proc (dict_aa,'t1076','水上',35200,'2003-10-21')
-	dict_aa = dict_append_proc (dict_aa,'t1077','太田',84300,'2003-7-23')
-	dict_aa = dict_append_proc (dict_aa,'t1078','安中',25400,'2003-12-26')
-	dict_aa = dict_append_proc (dict_aa,'t1079','みどり',67300,'2003-4-21')
+	dict_aa = dict_append_proc (dict_aa,'t1077','太田',87300,'2003-7-23')
+	dict_aa = dict_append_proc (dict_aa,'t1078','安中',25100,'2003-12-26')
+	dict_aa = dict_append_proc (dict_aa,'t1079','みどり',69300,'2003-4-21')
 #
 	return	dict_aa
 #
@@ -33,8 +33,12 @@ def	data_prepare_proc ():
 #
 dict_aa = data_prepare_proc ()
 #
+server_mssql = 'host_mssql\EG'
+user_mssql = 'sa'
+password_mssql = 'Tiger123'
+#
 conn = pymssql.connect \
-	(host='host_mssql',user='sa', password='scott_tiger',database='city')
+	(host=server_mssql,user=user_mssql,password=password_mssql,database='city')
 #
 cursor = conn.cursor ()
 #

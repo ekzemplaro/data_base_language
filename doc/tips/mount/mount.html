@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>Mount Sep/04/2015</title>
+<title>Mount Nov/20/2015</title>
 </head>
 <body>
 <h2>Mount</h2><p />
@@ -47,18 +47,23 @@ cifs マウント<p />
 <blockquote>
 エラー<p />
 	<blockquote>
-	mount: failed to parse mount options<p />
+	<ul>
+	<li>mount: failed to parse mount options</li>
+
+	<blockquote>
+	原因<p />
+		<blockquote>
+		option="iocharset=utf8,username=scott,passwd=tiger,uid=uchida,gid=uchida"<p />
+		もし、gid　にuchida がないと発生する。<p />
+		</blockquote>
+
+	対策<p />
+		<blockquote>
+		# groupadd uchida<p />
+		</blockquote>
 	</blockquote>
 
-原因<p />
-	<blockquote>
-	option="iocharset=utf8,username=dnc,passwd=dnc0,uid=uchida,gid=uchida"<p />
-	もし、gid　にuchida がないと発生する。<p />
-	</blockquote>
-
-対策<p />
-	<blockquote>
-	# groupadd uchida<p />
+	</ul>
 	</blockquote>
 </blockquote>
 
@@ -102,8 +107,24 @@ GPT (GUID Partition Table)<br />
 	</blockquote>
 </blockquote>
 # parted -l<p />
+
+/etc/fstab の例<br />
+	<blockquote>
+	<pre>
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+UUID=d4d8715b-7b2b-4807-9ba3-e6c8db0c1477 /    	ext4   	rw,relatime,data=ordered	0 1
+#
+UUID=9478d137-7426-4ea1-99f9-42d5288cbf32 /home    ext4    defaults    0     2
+#
+UUID=E41C0C2C1C0BF7F6 /mnt/sdb2       auto    defaults        0       2
+#
+UUID=29bd4e15-6b7d-439a-95b2-be921e00a1e8	none     swap    defaults 0 0
+#
+	</pre>
+	</blockquote>
+
 <hr />
 <a href="../">Return</a><p />
-Sep/04/2015 AM 08:15<p />
+Nov/20/2015 AM 08:15<p />
 </body>
 </html>

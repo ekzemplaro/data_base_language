@@ -5,14 +5,21 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>openldap Apr/09/2015</title>
+<title>openldap Dec/18/2015</title>
 </head>
 <body>
 <h2>openldap</h2><p />
 
-<a href="https://wiki.archlinux.org/index.php/LDAP_authentication">LDAP authentication</a><p />
-<a href="https://wiki.archlinux.org/index.php/OpenLDAP">OpenLDAP</a><p />
-<a href="http://www.geocities.jp/sugachan1973/doc/funto90.html">OpenLdap 入門</a><p />
+参考情報<p />
+<blockquote>
+<a href="https://wiki.archlinux.org/index.php/LDAP_authentication">
+LDAP authentication</a><p />
+<a href="https://wiki.archlinux.org/index.php/OpenLDAP">
+OpenLDAP</a><p />
+<a href="http://www.geocities.jp/sugachan1973/doc/funto90.html">
+OpenLdap 入門</a><p />
+</blockquote>
+<a href="./client/">Client の設定<p />
 <hr />
 install<p />
 <blockquote>
@@ -26,7 +33,6 @@ Arch Linux<br />
 For Client<br />
 	<blockquote>
 	# pacman -S nss-pam-ldapd<p />
-	<a href="./ldap_ninsyo.html">LDAP 認証</a><p />
 	<a href="./samba_ldap.html">Samba LDAP 認証</a><p />
 	</blockquote>
 </blockquote>
@@ -91,7 +97,7 @@ rootpw          {SSHA}idXpCPakhhdw/rDcn3oLGDtZrexUwUN5
 
 <hr />
 
-Client<br />
+Client からの設定の確認<br />
 <blockquote>
 <pre>
 $ ldapsearch -x -b '' -s base '(objectclass=*)' namingContexts
@@ -266,7 +272,7 @@ ldifの例<br />
 <hr />
 <a href="client_trouble.html">Client Trouble Shooting</a><p />
 <hr />
-<a href="/data_base/">Return</a><p />
-Apr/09/2015 AM 08:15<p />
+<a href="../">Return</a><p />
+Dec/18/2015 AM 08:15<p />
 </body>
 </html>

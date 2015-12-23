@@ -2,36 +2,36 @@
 // ---------------------------------------------------------------
 //	maria_delete.js
 //
-//					Sep/16/2014
+//					Dec/11/2015
 //
 // ---------------------------------------------------------------
-var mysql = require('mysql');
-var sql_manipulate= require ('/var/www/data_base/common/node_common/sql_manipulate');
+var mysql = require('mysql')
+var sql_manipulate= require ('/var/www/data_base/common/node_common/sql_manipulate')
 
 // ---------------------------------------------------------------
-console.log ("*** 開始 ***");
+console.log ("*** 開始 ***")
 
-var id_in = process.argv[2];
+var id_in = process.argv[2]
 
-console.log (id_in);
+console.log (id_in)
 
 var connection = mysql.createConnection ({
 	host: 'localhost',
 	user: 'scott',
 	password: 'tiger'
-	});
+	})
 
-connection.query ('Use city');
+connection.query ('Use city')
 
-var command = sql_manipulate.delete_command_gen (id_in);
+var command = sql_manipulate.delete_command_gen (id_in)
 
 connection.query(command, function (err, rows)
 	{
-  	if (err) throw err;
-	console.log ("*** 終了 ***");
-	});
+  	if (err) throw err
+	console.log ("*** 終了 ***")
+	})
 
-connection.end();
+connection.end()
 
-console.log ("*** ppp ***");
+console.log ("*** ppp ***")
 // ---------------------------------------------------------------

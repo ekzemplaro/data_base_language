@@ -3,7 +3,7 @@
 #
 #	mssql_update.py
 #
-#					Mar/10/2015
+#					Nov/18/2015
 #
 #
 # --------------------------------------------------------
@@ -20,9 +20,12 @@ key_in = sys.argv[1]
 population_in = int (sys.argv[2])
 print ("%s\t%d" % (key_in, population_in))
 #
+server_mssql = 'host_mssql\EG'
+user_mssql = 'sa'
+password_mssql = 'Tiger123'
 #
 conn = pymssql.connect \
-	(host='host_mssql',user='sa',password='scott_tiger',database='city')
+	(host=server_mssql,user=user_mssql,password=password_mssql,database='city')
 #
 cursor = conn.cursor ()
 #

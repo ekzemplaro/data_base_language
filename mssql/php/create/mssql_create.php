@@ -3,7 +3,7 @@
 /*
 	mssql_create.php
 
-					Mar/25/2015
+					Nov/18/2015
 
 */
 // --------------------------------------------------------------------
@@ -37,9 +37,9 @@ $dict_aa = data_prepare_proc ();
 
 ini_set('display_errors', 1);
 
-$server = 'host_mssql:1433';
+$server = 'host_mssql\EG';
 $user = 'sa';
-$password = 'scott_tiger';
+$password = 'Tiger123';
 
 $link = mssql_connect ($server,$user,$password);
 

@@ -5,20 +5,20 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>centos Sep/25/2015</title>
+<title>centos Dec/21/2015</title>
 </head>
 <body>
 <h2><a href="https://www.centos.org/">centos</a></h2>
 カーネル<p/>
 <blockquote>
 $ uname -a<br />
-Linux ***** 3.10.0-229.el7.x86_64 #1 SMP Fri Mar 6 11:36:42 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux<br />
+Linux ***** 3.10.0-327.3.1.el7.x86_64 #1 SMP Wed Dec 9 14:09:15 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux<br />
 </blockquote>
 
 バージョン確認方法<br />
 <blockquote>
 $ cat /etc/redhat-release<br />
-CentOS Linux release 7.1.1503 (Core)<br />
+CentOS Linux release 7.2.1511 (Core)<br />
 </blockquote>
 
 ネットワークの確認<p />
@@ -47,12 +47,18 @@ $ nmcli d show<p />
 	</blockquote>
 </blockquote>
 
-環境の構築<br />
+パッケージの更新<br />
+<blockquote>
+# yum update<p />
+</blockquote>
+ 
+ユーザーの追加<br />
 <blockquote>
 # useradd uchida<p />
 </blockquote>
+
 <hr />
 <a href="../">Return</a><p />
-Sep/25/2015 AM 08:15<p />
+Dec/22/2015 AM 08:15<p />
 </body>
 </html>

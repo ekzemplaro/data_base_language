@@ -3,28 +3,34 @@
 //
 //	mssql_read.js
 //
-//						Jan/17/2013
+//						Dec/23/2015
 //
 // ------------------------------------------------------------------
-importPackage(java.lang);
-importPackage(java.sql);
+importPackage(java.lang)
+importPackage(java.sql)
 
-load ("/var/www/data_base/common/rhino_common/sql_manipulate.js");
+load ("/var/www/data_base/common/rhino_common/sql_manipulate.js")
 
-print	("*** 開始 ***");
+print	("*** 開始 ***")
 
-// var url = "jdbc:sqlserver://host_mssql\\SQLEXPRESS;";
-var url = "jdbc:sqlserver://host_mssql;";
-	url += "databaseName=city;";
+var url = "jdbc:sqlserver://host_mssql\\EG;"
+url += "databaseName=city";
 
-var user = "sa";
-var passwd = "scott_tiger";
+var user = "sa"
+var passwd = "Tiger123"
 
-var conn = DriverManager.getConnection( url, user, passwd );
+var conn = DriverManager.getConnection( url, user, passwd )
 
-disp_proc (conn);
+try	{
+	disp_proc (conn)
+	}
+catch(ee)
+	{
+	print ("*** error ***")
+	print (ee)
+	}
 
-conn.close();
+conn.close()
 
-print	("*** 終了 ***");
+print	("*** 終了 ***")
 // ------------------------------------------------------------------

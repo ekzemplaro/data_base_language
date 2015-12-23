@@ -2,7 +2,7 @@
 // ---------------------------------------------------------------
 //	mssql_update.js
 //
-//					Jul/03/2014
+//					Nov/18/2015
 //
 // ---------------------------------------------------------------
 var mssql = require('mssql'); 
@@ -18,8 +18,8 @@ console.log (id_in + "\t" + population_in);
 
 var config = {
 	user: 'sa',
-	password: 'scott_tiger',
-	server: 'host_mssql',
+	password: 'Tiger123',
+	server: 'host_mssql\\EG',
 	database: 'city',
 }
 

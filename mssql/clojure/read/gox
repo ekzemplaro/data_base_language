@@ -1,11 +1,12 @@
 SHARE=/usr/share/java
 JDBC=$SHARE/java.jdbc.jar
+CLOJURE=/usr/share/clojure/clojure.jar
 #
 COMMON=/var/www/data_base/common
 JAR=$COMMON/jar
 #
 export MSSQL_JAR=$JAR/mssql/sqljdbc4.jar
 #
-export CLASSPATH=.:$JDBC:$SHARE/clojure.jar:$MSSQL_JAR
+export CLASSPATH=.:$JDBC:$CLOJURE:$MSSQL_JAR
 #
 java clojure.main mssql_read.clj 

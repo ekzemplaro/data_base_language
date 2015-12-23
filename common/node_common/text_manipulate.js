@@ -1,86 +1,85 @@
 // ---------------------------------------------------------------
 //	text_manipulate.js
 //
-//					Jun/29/2015
+//					Dec/10/2015
 //
 // ---------------------------------------------------------------
-var fs = require("fs");
-var text_manipulate=require ("./text_manipulate");
+var fs = require("fs")
+var text_manipulate=require ("./text_manipulate")
 // ---------------------------------------------------------------
 exports.text_read_proc = function (file_in)
 {
-	var dict_aa = new Object ();
+	var dict_aa = new Object ()
 
-	var data = fs.readFileSync (file_in,'utf8');
+	var data = fs.readFileSync (file_in,'utf8')
 
-	var lines_in = ("" + data).split ("\n");
+	var lines_in = ("" + data).split ("\n")
 
 	for (var it=0; it< lines_in.length; it++)
 		{
-		var rr = lines_in[it].split ("\t");
+		var rr = lines_in[it].split ("\t")
 
 		dict_aa[rr[0]] = {"name": rr[1],"population": rr[2],
-			"date_mod": rr[3]};
+			"date_mod": rr[3]}
 		}
 
-	return	dict_aa;
+	return	dict_aa
 }
 
 // ---------------------------------------------------------------
 exports.dict_display_proc = function (dict_aa)
 {
-	var array_aa = sort_proc (dict_aa);
+	var array_aa = sort_key_proc (dict_aa)
 
 	for (var it in array_aa)
 		{
-		var key = array_aa[it].key;
-		var value = array_aa[it].value;
+		var key = array_aa[it].key
+		var value = array_aa[it].value
 
-		if ((key != '_id') && (key != '_rev'))
+		if ((key != '_id') && (key != '_rev')
+			&& (1 < key.length))
 			{
-			var out_str = key + "\t";
-			out_str += value["name"] + "\t";
-			out_str += value["population"] + "\t";
-			out_str += value["date_mod"];
-			console.log (out_str);
+			var out_str = key + "\t"
+			out_str += value["name"] + "\t"
+			out_str += value["population"] + "\t"
+			out_str += value["date_mod"]
+			console.log (out_str)
 			}
 		}	
-
-// console.log ("*** dict_display_proc ppp ***");
 }
 
 // ---------------------------------------------------------------
-function sort_proc (dict_aa)
+function sort_key_proc (dict_aa)
 {
 	var array = new Array();
 	for(var it in dict_aa)
 		{
-		array.push({'key':String (it), 'value':dict_aa[it]});
+		array.push({'key':String (it), 'value':dict_aa[it]})
 		}
 
-	array.sort (sort_by_key_proc);
+	array.sort (compare_by_key_proc)
 
-	return array;
+	return array
 }
 
 // ---------------------------------------------------------------
-function sort_by_key_proc (left,right)
+function compare_by_key_proc (left,right)
 {
-	var aa = left.key;
-	var bb = right.key;
+	var aa = left.key
+	var bb = right.key
 
-	var rvalue = 0;
+	var rvalue = 0
 
 	if (aa < bb)
 		{
-		rvalue = -1;
+		rvalue = -1
 		}
 	else if (aa > bb)
 		{
-		rvalue = 1;
+		rvalue = 1
 		}
 
-	return	rvalue;
+	return	rvalue
 }
 
 // ---------------------------------------------------------------

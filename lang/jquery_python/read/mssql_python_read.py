@@ -3,7 +3,7 @@
 #
 #	mssql_python_read.py
 #
-#						Jun/23/2015
+#						Nov/19/2015
 #
 #
 # ---------------------------------------------------------------------
@@ -17,8 +17,13 @@ from sql_manipulate import sql_to_dict_proc
 #
 #
 # ---------------------------------------------------------------------
+server_mssql = 'host_mssql\EG'
+user_mssql = 'sa'
+password_mssql = 'Tiger123'
+#
 conn = pymssql.connect \
-	(host='host_mssql',user='sa',password='scott_tiger',database='city')
+	(host=server_mssql,user=user_mssql,password=password_mssql,database='city')
+#
 cursor = conn.cursor(as_dict=True)
 #
 dict_aa = sql_to_dict_proc (cursor);

@@ -3,16 +3,21 @@
 /*
 	mssql_read.php
 
-					Oct/02/2013
+					Nov/18/2015
 
 */
+// --------------------------------------------------------------------
+$path="/var/www/data_base/common/php_common";
+set_include_path (get_include_path() . PATH_SEPARATOR . $path);
+
+include "text_manipulate.php";
 // --------------------------------------------------------------------
 print "*** 開始 ***\n";
 ini_set('display_errors', 1);
 
-$server = 'host_mssql:1433';
+$server = 'host_mssql\EG';
 $user = 'sa';
-$password = 'scott_tiger';
+$password = 'Tiger123';
 
 $link = mssql_connect ($server,$user,$password);
 
@@ -29,18 +34,23 @@ else
     
 	$result = mssql_query ("select * from cities");
 
+	$dict_aa = array ();
+
 	while($row = mssql_fetch_array($result))
 		{
-		echo $row["id"] . "\t";
-//		$name = mb_convert_encoding ($row["name"],"UTF-8","SJIS");
 		$name = $row["name"];
-		echo $name ."\t";
-		echo $row["population"] . "\t";
-		echo $row["date_mod"] . "\n";
+		$key=$row["id"];
+		$dict_unit = array ();
+		$dict_unit['name'] = $row["name"];
+		$dict_unit['population'] = $row["population"];
+		$dict_unit['date_mod'] = $row["date_mod"];
+		$dict_aa[$key]= $dict_unit;
 		}
 	}
 
 mssql_close();
+
+dict_display_proc ($dict_aa);
 
 print "*** 終了 ***\n";
 // --------------------------------------------------------------------

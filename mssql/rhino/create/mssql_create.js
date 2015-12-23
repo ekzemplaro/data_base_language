@@ -18,11 +18,12 @@ print	("*** 開始 ***");
 var id_in=arguments[0];
 var population_in=arguments[1];
 
-var url = "jdbc:sqlserver://host_mssql;";
+var url = "jdbc:sqlserver://host_mssql\\EG;";
 	url += "databaseName=city;";
 
 var user = "sa";
-var passwd = "scott_tiger";
+// var passwd = "scott_tiger";
+var passwd = "Tiger123";
 
 var conn = DriverManager.getConnection( url, user, passwd );
 

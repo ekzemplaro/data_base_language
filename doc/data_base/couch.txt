@@ -12,13 +12,10 @@ Configuration<br />
 /etc/couchdb/default.ini<br />
 bind_address = 0.0.0.0<br />
 allow_jsonp = true<p />
-/etc/couchdb/local.ini<p />
-bind_address = 0.0.0.0<p />
 </blockquote>
 How to restart server<br />
 <blockquote>
-sudo service couchdb stop<br />
-sudo service couchdb start<br />
+# systemctl restart couchdb<br />
 </blockquote>
 
 Client<br />

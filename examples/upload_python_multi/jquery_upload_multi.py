@@ -1,9 +1,9 @@
 #! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
-#	jquery_upload_multi.py
+#	upload_python_multi/jquery_upload_multi.py
 #
-#					Aug/27/2014
+#					Nov/20/2015
 #
 # --------------------------------------------------------------------
 import	os
@@ -35,10 +35,11 @@ message.append (str (form["upload_dir"]))
 upload_dir = form["upload_dir"].value
 message.append ("upload_dir = " + upload_dir)
 #
-if "file_aa" in form:
-	message += file_process ("file_aa",form)
-if "file_bb" in form:
-	message += file_process ("file_bb",form)
+array_fname = ["file_aa","file_bb","file_cc","file_dd","file_ee", \
+	"file_ff","file_gg","file_hh","file_ii","file_jj"]
+for fname in array_fname:
+	if fname in form:
+		message += file_process (fname,form)
 #
 #
 message.append ("*** end *** jquery_upload_multi.py ***")

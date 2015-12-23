@@ -3,7 +3,7 @@
 //
 //	mssql_delete.js
 //
-//						Jan/17/2013
+//						Nov/06/2015
 //
 // ------------------------------------------------------------------
 importPackage(java.lang);
@@ -13,19 +13,20 @@ load ("/var/www/data_base/common/rhino_common/sql_manipulate.js");
 
 print	("*** 開始 ***");
 
-var id_in=arguments[0];
+var key_in=arguments[0];
 
-print	("id_in = " + id_in);
+print	("key_in = " + key_in);
 
-var url = "jdbc:sqlserver://host_mssql;";
+var url = "jdbc:sqlserver://host_mssql\\EG;";
 	url += "databaseName=city;";
 
 var user = "sa";
-var passwd = "scott_tiger";
+// var passwd = "scott_tiger";
+var passwd = "Tiger123";
 
-var conn = DriverManager.getConnection( url, user, passwd );
+var conn = DriverManager.getConnection (url,user,passwd);
 
-delete_proc (conn,id_in);
+delete_proc (conn,key_in);
 
 conn.close();
 

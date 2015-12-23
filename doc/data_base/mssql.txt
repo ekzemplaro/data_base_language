@@ -60,6 +60,7 @@ netstat -a で、1433 を、Listening していることを確認<p />
 ファイアウォールを無効にする<p />
 
 SQLEXPRESS の TCP/IP を有効にする。<p />
+SQL Server Browser を開始する。<p />
 </blockquote>
 
 Linux からのアクセス<p />
@@ -138,9 +139,17 @@ java.security.AccessControlException:
 	backup database city to disk='c:\tmp\city.bak'<br />
 	go<br />
 	</blockquote>
+	<blockquote>
+	backup database city to disk='\\host_aa\samba\city.bak'<br />
+	go<br />
+	</blockquote>
 データのリストア<br />
 	<blockquote>
 	restore database city from disk='c:\tmp\city.bak'<br />
+	go<br />
+	</blockquote>
+	<blockquote>
+	restore database city from disk='\\host_aa\samba\city.bak'<br />
 	go<br />
 	</blockquote>
 
@@ -171,4 +180,29 @@ using DB-Library (such as ISQL) or ODBC version 3.7 or earlier.<p />
 ;tds version = 4.2<br />
 tds version = 8.0<br />
 client charset = UTF-8<br />
+</blockquote>
+
+<hr>
+# pip3 install pymssql<p />
+<blockquote>
+<pre>
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -g -fstack-protector-strong -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -fPIC -I/usr/local/include -I/usr/include/python3.5m -c _mssql.c -o build/temp.linux-x86_64-3.5/_mssql.o -DMSDBLIB
+
+_mssql.c:8:22: fatal error: pyconfig.h: No such file or directory
+
+compilation terminated.
+</pre>
+</blockquote>
+
+
+pyconfig.h は存在する。<p />
+<blockquote>
+$ dpkg -L libpython3.4-dev | grep pyconfig.h<p />
+/usr/include/python3.4m/pyconfig.h<br />
+/usr/include/x86_64-linux-gnu/python3.4m/pyconfig.h<br />
+</blockquote>
+
+解決策<p />
+<blockquote>
+# apt-get install libpython3.5-dev<p />
 </blockquote>

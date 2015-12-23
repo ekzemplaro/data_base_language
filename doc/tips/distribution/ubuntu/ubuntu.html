@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>ubuntu Oct/23/2015</title>
+<title>ubuntu Dec/21/2015</title>
 </head>
 <body>
 <h2><a href="http://www.ubuntu.com/index_roadshow">ubuntu</a></h2><p />
@@ -102,7 +102,7 @@ Ubuntu 15.04 へのアップグレード<br />
 
 DHCP の設定<br />
 	<blockquote>
-	/etc/network/interface<br />
+	/etc/network/interfaces<br />
 		<blockquote>
 		auto eth0<br />
 		iface eth0 inet dhcp<br />
@@ -112,7 +112,7 @@ DHCP の設定<br />
 
 固定アドレス<br />
 	<blockquote>
-	/etc/network/interface<br />
+	/etc/network/interfaces<br />
 		<blockquote>
 		auto eth0<br />
 		iface eth0 inet static<br />
@@ -196,7 +196,17 @@ from 15.04 to 15.10<p />
 </blockquote>
 
 <hr />
+時刻が９時間ずれていたら<p />
+<blockquote>
+/etc/default/rcS<p />
+	<blockquote>
+	UTC=no<p />
+	</blockquote>
+
+</blockquote>
+
+<hr />
 <a href="../">Return</a><p />
-Oct/23/2015 AM 08:15<p />
+Dec/21/2015 AM 08:15<p />
 </body>
 </html>

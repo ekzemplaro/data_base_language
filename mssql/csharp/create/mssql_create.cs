@@ -2,7 +2,7 @@
 /*
 	mssql_create.cs
 
-						Aug/24/2015
+						Nov/18/2015
 
 
 */
@@ -20,15 +20,15 @@ static void Main (string[] args)
 {
 	Console.WriteLine ("*** 開始 ***");
 
-	string str_connect =
-		@"server=host_mssql;"
-		+ "uid=sa;" + "pwd=scott_tiger;" + "database=city;";
+	string server_mssql = @"server=host_mssql\EG;";
 
-
+	string str_connect = server_mssql
+			+ "uid=sa;"
+			+ "pwd=Tiger123;"
+			+ "database=city";
 
 	try
 		{
-
 		SqlConnection conn = new SqlConnection (str_connect);
 
 		conn.Open ();

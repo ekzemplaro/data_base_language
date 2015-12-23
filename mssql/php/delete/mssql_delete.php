@@ -3,7 +3,7 @@
 /*
 	mssql_delete.php
 
-					Oct/29/2013
+					Nov/18/2015
 
 */
 // --------------------------------------------------------------------
@@ -19,9 +19,9 @@ print $id_in . "\n";
 
 ini_set ('display_errors',1);
 
-$server = 'host_mssql:1433';
+$server = 'host_mssql\EG';
 $user = 'sa';
-$password = 'scott_tiger';
+$password = 'Tiger123';
 
 $link = mssql_connect ($server,$user,$password);
 

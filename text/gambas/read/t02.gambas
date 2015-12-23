@@ -1,0 +1,81 @@
+#! /usr/bin/gbs3
+'
+'	text_read.gambas
+'
+'					Oct/07/2015
+'
+' ------------------------------------------------------------------
+public sub Main()
+	dim file_txt as string
+	Dim dict_aa as New Collection
+	dim result as string
+'
+	print "*** 開始 ***"
+'
+	file_txt = Application.Args[1]
+	print file_txt
+'
+'	TRY result = file.Load (file_txt)
+'	dict_aa = string_to_dict_proc (result,"\t")
+'	dict_display_proc (dict_aa)
+	print "*** 終了 ***"
+end
+' ------------------------------------------------------------------
+' ------------------------------------------------------------------
+'
+'	text_manipulate.gambas
+'
+'					Oct/07/2015
+'
+' ------------------------------------------------------------------
+sub	dict_append_proc (dict_aa as Collection,key as string,name as string,population as integer,date_mod as string) as Collection
+	Dim unit_aa as New Collection
+	unit_aa["name"]=name
+	unit_aa["population"]=population
+	unit_aa["date_mod"]=date_mod
+
+	dict_aa[key] = unit_aa
+	return	dict_aa
+end
+' -----------------------------------------------------------
+sub	dict_to_str_proc (dict_aa as Collection,delim as string) as string
+	dim str_out as string
+	dim unit_aa as Collection
+	str_out = ""
+	for each unit_aa in dict_aa
+		str_out &= dict_aa.key & delim
+		str_out &= unit_aa["name"] & delim
+		str_out &= unit_aa["population"] & delim
+		str_out &= unit_aa["date_mod"] & "\n"
+	next
+'
+	return str_out
+end
+' ------------------------------------------------------------------
+sub dict_display_proc (dict_aa as Collection)
+	dim unit_aa as Collection
+	for each unit_aa in dict_aa
+		print dict_aa.key,unit_aa["name"],unit_aa["population"],unit_aa["date_mod"]
+	next
+
+end
+' ------------------------------------------------------------------
+sub string_to_dict_proc (result as string,delim as string) as Collection
+	Dim dict_aa as New Collection
+	dim lines as String[]
+	dim ll as String
+	dim cols as string[]
+'
+'	lines = Split (result,"\r\n")
+'	lines = Split (result,"\n")
+'	lines = Split (result)
+'	for each ll in lines
+'		if 0 < len (ll) then
+'			cols = Split (ll,delim)
+'			dict_aa = dict_append_proc (dict_aa,cols[0],cols[1],val (cols[2]),cols[3])
+'		endif
+'	next
+'
+	return	dict_aa
+end
+' ------------------------------------------------------------------

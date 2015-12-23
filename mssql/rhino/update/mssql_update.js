@@ -3,7 +3,7 @@
 //
 //	mssql_update.js
 //
-//						Jan/17/2013
+//						Nov/06/2015
 //
 // ------------------------------------------------------------------
 importPackage(java.lang);
@@ -19,11 +19,12 @@ var population_in=arguments[1];
 
 print	("id_in = " + id_in + "\tpopulation_in = " + population_in);
 
-var url = "jdbc:sqlserver://host_mssql;";
+var url = "jdbc:sqlserver://host_mssql\\EG;";
 	url += "databaseName=city;";
 
 var user = "sa";
-var passwd = "scott_tiger";
+// var passwd = "scott_tiger";
+var passwd = "Tiger123";
 
 var conn = DriverManager.getConnection( url, user, passwd );
 

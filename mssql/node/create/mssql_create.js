@@ -34,8 +34,8 @@ var dict_aa = data_prepare_proc ();
 
 var config = {
 	user: 'sa',
-	password: 'scott_tiger',
-	server: 'host_mssql',
+	password: 'Tiger123',
+	server: 'host_mssql\\EG',
 	database: 'city',
 }
 

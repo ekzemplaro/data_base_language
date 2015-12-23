@@ -2,7 +2,7 @@
 #
 #	xlsx_manipulate.py
 #
-#						Sep/08/2014
+#						Nov/03/2015
 #
 # -------------------------------------------------------------------
 import sys
@@ -13,7 +13,7 @@ from openpyxl import load_workbook
 # -------------------------------------------------------------------
 def xlsx_read_proc (xlsx_file):
 	dict_aa = {}
-	wb = load_workbook (filename = xlsx_file);
+	wb = load_workbook (filename = xlsx_file)
 	ws = wb.get_active_sheet()
 
 	print (ws.get_highest_column())

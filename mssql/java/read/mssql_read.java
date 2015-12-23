@@ -2,7 +2,7 @@
 /*
 	mssql/java/read/mssql_read.java
 
-					Jan/11/2013
+					Nov/18/2015
 
 */
 // --------------------------------------------------------------------
@@ -21,11 +21,11 @@ public static void main(String[] args)
 	try
 		{
 //		String url = "jdbc:sqlserver://host_mssql\\SQLEXPRESS;";
-		String url = "jdbc:sqlserver://host_mssql;";
+		String url = "jdbc:sqlserver://host_mssql\\EG;";
 		url += "databaseName=city;";
 
 		String user="sa";
-		String passwd="scott_tiger";
+		String passwd="Tiger123";
 
 		Connection conn = DriverManager.getConnection (url,user,passwd);
 

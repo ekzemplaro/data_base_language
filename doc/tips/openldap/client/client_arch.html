@@ -5,12 +5,10 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>ldap_ninsyo May/15/2015</title>
+<title>Client Arch Dec/18/2015</title>
 </head>
 <body>
-<h2>ldap 認証</h2><p />
-
-Arch Linux のクライアント設定<p />
+<h2>Arch Linux のクライアント設定</h2>
 
 /etc/openldap/ldap.conf<p />
 <blockquote>
@@ -95,45 +93,7 @@ Create home folders at login<p />
 </blockquote>
 
 <hr />
-Ubuntu のクライアント設定<p>
-<blockquote>
-# apt-get install libpam-ldap nscd<p />
-	<blockquote>
-	<ol>
-	<li>LDAPサーバーのURIを指定</li>
-		base dc=example,dc=com<p />
-	<li>識別名を指定</li>
-		rootbinddn cn=Manager,dc=example,dc=com<p />
-	<li>LDAPバージョンを指定</li>
-		ldap_version 3<p />
-	</ol>
-	/etc/ldap.conf に入力したデータが入る<p />
-	</blockquote>
-/etc/nsswitch.conf<br />
-	<blockquote>
-	passwd:         compat ldap<br />
-	group:          compat ldap<br />
-	shadow:         compat ldap<br />
-	<p />
-	netgroup:       ldap<br />
-	</blockquote>
-/etc/pam.d/common-session<br />
-	<blockquote>
-	session required    pam_mkhomedir.so skel=/etc/skel umask=0022<br />
-	</blockquote>
-
-/etc/init.d/nscd restart<p />
-</blockquote>
-
-<hr />
-ユーザーの確認<br />
-<blockquote>
-$ getent passwd scott<br />
-scott:x:1001:1001:スコット:/home/scott:/bin/bash<br />
-$<br />
-</blockquote>
-<hr />
-<a href="/data_base/">Return</a><p />
-May/15/2015 AM 08:15<p />
+<a href="./">Return</a><p />
+Dec/18/2015 AM 08:15<p />
 </body>
 </html>

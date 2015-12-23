@@ -2,7 +2,7 @@
 /*
 	csharp/delete/mssql_delete.cs
 
-					Jan/16/2013
+					Nov/18/2015
 
 
 */
@@ -24,9 +24,12 @@ static void Main (string[] args)
 
 	Console.WriteLine (id_in);
 
-	string str_connect =
-		@"server=host_mssql;"
-		+ "uid=sa;" + "pwd=scott_tiger;" + "database=city;";
+	string server_mssql = @"server=host_mssql\EG;";
+
+	string str_connect = server_mssql
+			+ "uid=sa;"
+			+ "pwd=Tiger123;"
+			+ "database=city";
 
 	SqlConnection connection = new SqlConnection (str_connect);
 
@@ -41,8 +44,6 @@ static void Main (string[] args)
 	dtable = mssql_manipulate.row_delete_proc (connection,dtable,id_in);
 
 	connection.Close ();
-
-	table_manipulate.display_proc (dtable);
 
 	Console.WriteLine ("*** 終了 ***");
 }

@@ -1,7 +1,7 @@
 // ----------------------------------------------------------------
 /*
 	xlsx_manipulate.js
-					Oct/23/2015
+					Nov/09/2015
 
 */
 // ----------------------------------------------------------------
@@ -18,9 +18,16 @@ function xlsx_read_proc (xlsx_file)
 
 	var dict_aa = new Object ()
 
+	try
+		{
 	var fi=new FileInputStream (xlsx_file)
 	var wb =new XSSFWorkbook(fi)
 	fi.close()
+		}
+	catch (ee) {
+		print ("*** error *** xlsx_read_proc ***")
+		print (ee)
+		}
 
 	var sheet = wb.getSheetAt(0)
 

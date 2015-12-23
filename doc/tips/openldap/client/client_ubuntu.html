@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+<title>Client Ubuntu Dec/18/2015</title>
+</head>
+<body>
+<h2>Ubuntu のクライアント設定</h2>
+<blockquote>
+# apt-get install ldap-utils<p />
+# apt-get install libpam-ldap nscd<p />
+	<blockquote>
+	<ol>
+	<li>LDAPサーバーのURIを指定</li>
+		base dc=example,dc=com<p />
+	<li>識別名を指定</li>
+		rootbinddn cn=Manager,dc=example,dc=com<p />
+	<li>LDAPバージョンを指定</li>
+		ldap_version 3<p />
+	</ol>
+	/etc/ldap.conf に入力したデータが入る<p />
+	</blockquote>
+/etc/nsswitch.conf<br />
+	<blockquote>
+	passwd:         compat ldap<br />
+	group:          compat ldap<br />
+	shadow:         compat ldap<br />
+	<p />
+	netgroup:       ldap<br />
+	</blockquote>
+/etc/pam.d/common-session<br />
+	<blockquote>
+	session required    pam_mkhomedir.so skel=/etc/skel umask=0022<br />
+	</blockquote>
+
+# systemctl restart nscd<p />
+</blockquote>
+
+<hr />
+<a href="./">Return</a><p />
+Dec/18/2015 AM 08:15<p />
+</body>
+</html>

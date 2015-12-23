@@ -2,7 +2,7 @@
 /*
 	csharp/update/mssql_update.cs
 
-					Apr/24/2015
+					Nov/18/2015
 
 
 */
@@ -25,9 +25,12 @@ static void Main (string[] args)
 
 	Console.WriteLine (id_in + "\t" + population_in);
 
-	string str_connect =
-		@"server=host_mssql;"
-		+ "uid=sa;" + "pwd=scott_tiger;" + "database=city;";
+	string server_mssql = @"server=host_mssql\EG;";
+
+	string str_connect = server_mssql
+			+ "uid=sa;"
+			+ "pwd=Tiger123;"
+			+ "database=city";
 
 	SqlConnection connection = new SqlConnection (str_connect);
 

@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------
 //	zip_list.js
 //
-//					Nov/03/2015
+//					Nov/04/2015
 //
 // -----------------------------------------------------------------------
 jQuery (function ()
@@ -13,7 +13,9 @@ jQuery (function ()
 
 	var folder_in = "work_area";
 
-	jQuery.getJSON (url_in,function (data_aa)
+	var data = {"folder_in": folder_in};
+
+	jQuery.getJSON (url_in,data,function (data_aa)
 		{
 		list_file_proc (folder_in,data_aa);
 		});

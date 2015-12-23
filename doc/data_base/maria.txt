@@ -127,4 +127,9 @@ $ mysqldump -u root city > city.sql<p />
 <blockquote>
 $ mysql-u root -p < dump.sql<p />
 $ mysql-u root city < city.sql<p />
+<hr />
+Arch Linux<p />
+# pacman -S mariadb<p />
+# mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql<p />
+# systemctl start mysqld.service<p />
 </blockquote>

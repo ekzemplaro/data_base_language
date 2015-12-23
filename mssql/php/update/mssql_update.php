@@ -3,7 +3,7 @@
 /*
 	mssql_update.php
 
-					Feb/19/2015
+					Nov/18/2015
 
 */
 // --------------------------------------------------------------------
@@ -20,9 +20,9 @@ print $id_in . "\t" . $population_in . "\n";
 
 ini_set ('display_errors',1);
 
-$server = 'host_mssql:1433';
+$server = 'host_mssql\EG';
 $user = 'sa';
-$password = 'scott_tiger';
+$password = 'Tiger123';
 
 $link = mssql_connect ($server,$user,$password);
 

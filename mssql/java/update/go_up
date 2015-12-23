@@ -6,4 +6,4 @@ JAR=$COMMON/jar
 export MSSQL_JAR=$JAR/mssql/sqljdbc4.jar
 export CLASSPATH=./:$JAVA_COMMON:$MSSQL_JAR
 #
-java mssql_update t1077 48523100
+java mssql_update t1078 48523100
