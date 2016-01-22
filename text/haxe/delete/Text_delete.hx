@@ -2,7 +2,7 @@
 //
 //	Text_delete.hx
 //
-//						Feb/25/2014
+//						Jan/12/2016
 // ----------------------------------------------------------------
 class Text_delete
 {
@@ -21,11 +21,9 @@ static function main()
 		{
 		Sys.println ("*** key exists ***");
 		dict_aa.remove (key);
+		Text_manipulate.dict_to_text_proc (fname,dict_aa);
 		}
 
-	Text_manipulate.dict_display_proc (dict_aa);
-
-	Text_manipulate.dict_to_text_proc (fname,dict_aa);
 
 	Sys.println ("*** 終了 ***");
 }

@@ -2,7 +2,7 @@
 //
 //	Sqlite3_create.hx
 //
-//					Feb/24/2014
+//					Jan/12/2016
 //
 // --------------------------------------------------------------
 class Sqlite3_create
@@ -21,13 +21,12 @@ static function main()
 	dict_aa = Text_manipulate.dict_append_proc (dict_aa,"t0711","郡山",89251,"1955-2-5");
 	dict_aa = Text_manipulate.dict_append_proc (dict_aa,"t0712","会津若松",69714,"1955-8-8");
 	dict_aa = Text_manipulate.dict_append_proc (dict_aa,"t0713","白河",28356,"1955-10-9");
-	dict_aa = Text_manipulate.dict_append_proc (dict_aa,"t0714","福島",56128,"1955-7-15");
+	dict_aa = Text_manipulate.dict_append_proc (dict_aa,"t0714","福島",96128,"1955-7-15");
 	dict_aa = Text_manipulate.dict_append_proc (dict_aa,"t0715","喜多方",81725,"1955-8-3");
 	dict_aa = Text_manipulate.dict_append_proc (dict_aa,"t0716","二本松",93756,"1955-9-21");
 	dict_aa = Text_manipulate.dict_append_proc (dict_aa,"t0717","いわき",21497,"1955-2-12");
 	dict_aa = Text_manipulate.dict_append_proc (dict_aa,"t0718","相馬",58316,"1955-4-8");
-	dict_aa = Text_manipulate.dict_append_proc (dict_aa,"t0719","須賀川",53127,"1955-12-19");
-	Text_manipulate.dict_display_proc (dict_aa);
+	dict_aa = Text_manipulate.dict_append_proc (dict_aa,"t0719","須賀川",43127,"1955-12-19");
 
 	dict_to_sqlite3_proc (file_sqlite3,dict_aa);
 

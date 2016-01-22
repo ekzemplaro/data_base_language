@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>ntpd Jan/22/2015</title>
+<title>ntpd Jan/13/2016</title>
 </head>
 <body>
 <h2>ntpd</h2><p />
@@ -29,7 +29,41 @@ Arch Linux<p />
 </blockquote>
 
 <hr />
+Ubuntu<p />
+<blockquote>
+# apt-get install ntp<p /> 
+/etc/ntp.conf<p />
+</blockquote>
+
+<blockquote>
+<pre>
+$ systemctl status ntp
+● ntp.service - LSB: Start NTP daemon
+   Loaded: loaded (/etc/init.d/ntp)
+   Active: active (running) since 水 2016-01-13 08:13:25 JST; 2min 30s ago
+     Docs: man:systemd-sysv-generator(8)
+  Process: 17950 ExecStop=/etc/init.d/ntp stop (code=exited, status=0/SUCCESS)
+  Process: 17970 ExecStart=/etc/init.d/ntp start (code=exited, status=0/SUCCESS)
+   CGroup: /system.slice/ntp.service
+           └─17979 /usr/sbin/ntpd -p /var/run/ntpd.pid -g -u 112:120
+
+ 1月 13 08:13:25 EG-swl67 ntpd[17979]: ntp_io: estimated max descriptors: 1...6
+ 1月 13 08:13:25 EG-swl67 ntpd[17979]: Listen and drop on 0 v4wildcard 0.0....3
+ 1月 13 08:13:25 EG-swl67 ntpd[17979]: Listen and drop on 1 v6wildcard :: U...3
+ 1月 13 08:13:25 EG-swl67 ntpd[17979]: Listen normally on 2 lo 127.0.0.1 UD...3
+ 1月 13 08:13:25 EG-swl67 ntpd[17979]: Listen normally on 3 ens32 172.20.24...3
+ 1月 13 08:13:25 EG-swl67 ntpd[17979]: Listen normally on 4 lo ::1 UDP 123
+ 1月 13 08:13:25 EG-swl67 ntpd[17979]: Listen normally on 5 ens32 fe80::250...3
+ 1月 13 08:13:25 EG-swl67 ntpd[17979]: peers refreshed
+ 1月 13 08:13:25 EG-swl67 ntpd[17979]: Listening on routing socket on fd #2...s
+ 1月 13 08:13:25 EG-swl67 ntp[17970]: ...done.
+Hint: Some lines were ellipsized, use -l to show in full.
+</pre>
+</blockquote>
+
+
+<hr />
 <a href="../">Return</a><p />
-Jan/22/2015 AM 08:15<p />
+Jan/13/2016 AM 08:15<p />
 </body>
 </html>

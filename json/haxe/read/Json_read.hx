@@ -2,7 +2,7 @@
 //
 //	Json_read.hx
 //
-//						Feb/24/2014
+//					Jan/12/2016
 // --------------------------------------------------------------
 import haxe.Json;
 // --------------------------------------------------------------
@@ -17,33 +17,11 @@ public static function main()
 
 	var json_str = sys.io.File.getContent (json_file);	
 
-	var cities = Json.parse(json_str);
-//	var cities : Map <String,Map<String,String>> = Json.parse(json_str);
-//	var cities : Map <String,Dynamic> = Json.parse(json_str);
+	var dict_aa = Json_manipulate.json_to_dict_proc (json_str);
 
-/*
-	for (key in cities)
-		{
-		Sys.println (key);
-		}
-*/
-//	record_display_proc ("t0921",cities.get ("t0921"));
-	record_display_proc ("t0921",cities.t0921);
-	record_display_proc ("t0922",cities.t0922);
-	record_display_proc ("t0923",cities.t0923);
-	record_display_proc ("t0924",cities.t0924);
-	record_display_proc ("t0925",cities.t0925);
+	Text_manipulate.dict_display_proc (dict_aa);
 
 	Sys.println ("*** 終了 ***");
-}
-
-// --------------------------------------------------------------
-static function record_display_proc (key,unit_aa)
-{
-	Sys.print (key + "\t");
-	Sys.print (unit_aa.name + "\t");
-	Sys.print (unit_aa.population + "\t");
-	Sys.println (unit_aa.date_mod);
 }
 
 // --------------------------------------------------------------

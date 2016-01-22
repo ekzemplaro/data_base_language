@@ -1,0 +1,19 @@
+dn: uid=suzuki,ou=development,dc=it,dc=eg,dc=jp,dc=honda,dc=com
+cn: Osamu Suzuki
+gidnumber: 500
+givenname: Ichiro
+homedirectory: /home/developers/suzuki
+loginshell: /bin/bash
+mail: suzuki@it.co.jp
+objectclass: inetOrgPerson
+objectclass: posixAccount
+objectclass: shadowAccount
+shadowlastchange: 13081
+shadowmax: 99999
+shadowwarning: 7
+sn: Suzuki
+uid: suzuki
+uidnumber: 5003
+
+
+

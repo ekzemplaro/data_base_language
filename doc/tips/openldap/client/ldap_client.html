@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>ldap client Dec/18/2015</title>
+<title>ldap client Jan/21/2016</title>
 </head>
 <body>
 <h2>ldap 認証</h2><p />
@@ -21,7 +21,13 @@ scott:x:1001:1001:スコット:/home/scott:/bin/bash<br />
 $<br />
 </blockquote>
 <hr />
+$ ldapsearch -H ldap://host_server  -D "cn=admin,dc=eg,dc=jp,dc=honda,dc=com" -w password uid=john -d 7<p />
+$ ldapsearch -x -b 'dc=eg,dc=jp,dc=honda,dc=com' 'uid=mary'<p />
+$ ldapsearch -D "cn=admin,dc=eg,dc=jp,dc=honda,dc=com" -w password uid=john<p />
+$ ldapsearch -H ldap://localhost -D "cn=admin,dc=eg,dc=jp,dc=honda,dc=com" -w password cn=mary<p />
+$ ldapsearch -H ldap://host_server -x -b 'dc=eg,dc=jp,dc=honda,dc=com' 'uid=tom'<p />
+<hr />
 <a href="../">Return</a><p />
-Dec/18/2015 AM 08:15<p />
+Jan/21/2016 AM 08:15<p />
 </body>
 </html>

@@ -4,7 +4,7 @@
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
-<script src="/js/jquery-2.1.4.min.js"></script>
+<script src="/js/jquery-2.2.0.min.js"></script>
 <meta content="Program Language Examples to connect to MS SQLServer" name="description">
 <meta content="MS SQLServer,クライアント,接続,言語,サンプル" name="keyword">
 <meta content="Uchida Masatomo" name="author">
@@ -67,6 +67,7 @@ netstat -a で、1433 を、Listening していることを確認<p />
 ファイアウォールを無効にする<p />
 
 SQLEXPRESS の TCP/IP を有効にする。<p />
+SQL Server Browser を開始する。<p />
 </blockquote>
 
 Linux からのアクセス<p />
@@ -145,9 +146,17 @@ java.security.AccessControlException:
 	backup database city to disk='c:\tmp\city.bak'<br />
 	go<br />
 	</blockquote>
+	<blockquote>
+	backup database city to disk='\\host_aa\samba\city.bak'<br />
+	go<br />
+	</blockquote>
 データのリストア<br />
 	<blockquote>
 	restore database city from disk='c:\tmp\city.bak'<br />
+	go<br />
+	</blockquote>
+	<blockquote>
+	restore database city from disk='\\host_aa\samba\city.bak'<br />
 	go<br />
 	</blockquote>
 
@@ -179,6 +188,31 @@ using DB-Library (such as ISQL) or ODBC version 3.7 or earlier.<p />
 tds version = 8.0<br />
 client charset = UTF-8<br />
 </blockquote>
+
+<hr>
+# pip3 install pymssql<p />
+<blockquote>
+<pre>
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -g -fstack-protector-strong -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -fPIC -I/usr/local/include -I/usr/include/python3.5m -c _mssql.c -o build/temp.linux-x86_64-3.5/_mssql.o -DMSDBLIB
+
+_mssql.c:8:22: fatal error: pyconfig.h: No such file or directory
+
+compilation terminated.
+</pre>
+</blockquote>
+
+
+pyconfig.h は存在する。<p />
+<blockquote>
+$ dpkg -L libpython3.4-dev | grep pyconfig.h<p />
+/usr/include/python3.4m/pyconfig.h<br />
+/usr/include/x86_64-linux-gnu/python3.4m/pyconfig.h<br />
+</blockquote>
+
+解決策<p />
+<blockquote>
+# apt-get install libpython3.5-dev<p />
+</blockquote>
 <div id="result_aa">result_aa</div>
 <hr />
 <div id="outarea_aa">outarea_aa</div>
@@ -191,6 +225,6 @@ client charset = UTF-8<br />
 <div id="outarea_hh">outarea_hh</div>
 <hr />
 <a href="/data_base/">Return</a><p />
-Jul/31/2015 AM 08:15<p />
+Nov/25/2015 AM 08:15<p />
 </body>
 </html>

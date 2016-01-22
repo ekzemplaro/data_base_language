@@ -2,7 +2,7 @@
 //
 //	Mcachedb_update.hx
 //
-//						Feb/25/2014
+//						Jan/12/2016
 //
 // --------------------------------------------------------------
 import haxe.Json;
@@ -21,7 +21,7 @@ static function main ()
 	Sys.println (population);
 
 	var ss = new sys.net.Socket();
-        ss.connect (new sys.net.Host("localhost"),21201);
+        ss.connect (new sys.net.Host("host_ubuntu"),21201);
 
 	Mcached_manipulate.mcached_update_proc (ss,key,population);
 

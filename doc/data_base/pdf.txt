@@ -58,11 +58,13 @@ node.js<p />
 Java<p />
 <blockquote>
 	iText-5.0.5.jar<br />
-	iTextAsian-5.0.1.jar<br />
+	iTextAsian-5.0.1.jar<p />
+	<a href="https://github.com/itext">itext</a><br />
 </blockquote>
 
 C#<p />
 <blockquote>
 	itextsharp.dll<br />
-	iTextAsian.dll<br />
+	iTextAsian.dll<p />
+	<a href="https://github.com/itext">itext</a><br />
 </blockquote>

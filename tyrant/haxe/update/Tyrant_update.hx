@@ -2,7 +2,7 @@
 //
 //	Tyrant_update.hx
 //
-//						Feb/25/2014
+//					Jan/13/2016
 //
 // --------------------------------------------------------------
 import haxe.Json;
@@ -22,7 +22,7 @@ static function main ()
 
 	var port:Int = 1978;
 	var ss = new sys.net.Socket();
-        ss.connect (new sys.net.Host("localhost"),port);
+        ss.connect (new sys.net.Host("host_ubuntu"),port);
 
 	Mcached_manipulate.mcached_update_proc (ss,key,population);
 

@@ -1,0 +1,19 @@
+dn: uid=tanaka,ou=development,dc=it,dc=eg,dc=jp,dc=honda,dc=com
+cn: Osamu Tanaka
+gidnumber: 500
+givenname: Ichiro
+homedirectory: /home/developers/tanaka
+loginshell: /bin/bash
+mail: tanaka@it.co.jp
+objectclass: inetOrgPerson
+objectclass: posixAccount
+objectclass: shadowAccount
+shadowlastchange: 13081
+shadowmax: 99999
+shadowwarning: 7
+sn: Tanaka
+uid: tanaka
+uidnumber: 5004
+userPassword: {SSHA}0IBfkSHm6eDVouPuwRlvEBBBofDUNul6
+
+

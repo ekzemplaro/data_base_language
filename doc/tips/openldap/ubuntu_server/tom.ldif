@@ -1,0 +1,12 @@
+dn: cn=tom,dc=eg,dc=jp,dc=honda,dc=com
+cn: tom
+givenName: Tom
+sn: Sawyer
+uid: tom
+mail: tom@example.com
+manager: cn=admin,dc=eg,dc=jp,dc=honda,dc=com
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+userPassword: {SSHA}XTSbkAjkpEjfaVOu3Y8JhV6TQ45gIthQ

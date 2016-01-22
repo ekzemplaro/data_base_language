@@ -4,7 +4,7 @@
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
-<script src="/js/jquery-2.1.4.min.js"></script>
+<script src="/js/jquery-2.2.0.min.js"></script>
 <meta content="Program Language Examples to connect to Memcached" name="description">
 <meta content="Memcached,クライアント,接続,言語,サンプル" name="keyword">
 <meta content="Uchida Masatomo" name="author">
@@ -124,6 +124,7 @@ Perl<p />
 ii  libcache-memcached-managed-perl     0.20-1      API for managing cached information
 ii  libcache-memcached-perl             1.29-1      Perl module for using memcached servers
 </pre>
+# pacman -S perl-cache-memcached<p />
 </blockquote>
 
 Ruby<p />
@@ -182,9 +183,22 @@ C#<p />
 </blockquote>
 
 <hr />
+Arch Linux<p />
 <blockquote>
-pacman -S memcached<p />
-pacman -S php-memcached<p />
+# pacman -S memcached<p />
+# pacman -S php-memcached<p />
+</blockquote>
+<blockquote>
+<pre>
+$ systemctl status memcached
+● memcached.service - Memcached Daemon
+   Loaded: loaded (/usr/lib/systemd/system/memcached.service; disabled; vendor preset: disabled)
+   Active: active (running) since 火 2016-01-12 11:57:16 JST; 1h 43min ago
+ Main PID: 19175 (memcached)
+    Tasks: 6 (limit: 512)
+   CGroup: /system.slice/memcached.service
+           └─19175 /usr/bin/memcached -l 127.0.0.1
+</pre>
 </blockquote>
 <div id="result_aa">result_aa</div>
 <hr />
@@ -198,6 +212,6 @@ pacman -S php-memcached<p />
 <div id="outarea_hh">outarea_hh</div>
 <hr />
 <a href="/data_base/">Return</a><p />
-Jul/31/2015 AM 08:15<p />
+Nov/25/2015 AM 08:15<p />
 </body>
 </html>

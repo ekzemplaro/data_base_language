@@ -1,3 +1,4 @@
+Json_manipulate.hx
 Mcached_manipulate.hx
 Redis_manipulate.hx
 Sql_manipulate.hx

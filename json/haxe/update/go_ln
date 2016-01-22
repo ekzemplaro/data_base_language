@@ -1,1 +1,5 @@
-ln -s /var/www/data_base/common/haxe_common/Text_manipulate.hx Text_manipulate.hx
+#
+HAXE_COMMON=/var/www/data_base/common/haxe_common
+#
+ln -s $HAXE_COMMON/Text_manipulate.hx .
+ln -s $HAXE_COMMON/Json_manipulate.hx .

@@ -2,7 +2,7 @@
 //
 //	Csv_update.hx
 //
-//						Feb/24/2014
+//						Jan/12/2016
 // ----------------------------------------------------------------
 import haxe.io.Eof;
 
@@ -25,15 +25,10 @@ static function main()
 	if (dict_aa.exists (key))
 		{
 		Sys.println ("*** key exists ***");
-		var today = Date.now().toString ();
-		var unit_aa = dict_aa.get (key);
-		unit_aa.set ("population",Std.string (population));
-		unit_aa.set ("date_mod",today);
+		dict_aa = Text_manipulate.dict_update_proc (dict_aa,key,population);
+
+		Text_manipulate.dict_to_csv_proc (fname,dict_aa);
 		}
-
-	Text_manipulate.dict_display_proc (dict_aa);
-
-	Text_manipulate.dict_to_csv_proc (fname,dict_aa);
 
 	Sys.println ("*** 終了 ***");
 }

@@ -4,7 +4,7 @@
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
-<script src="/js/jquery-2.1.4.min.js"></script>
+<script src="/js/jquery-2.2.0.min.js"></script>
 <title>CouchDB</title>
 </head>
 <body>
@@ -19,13 +19,10 @@ Configuration<br />
 /etc/couchdb/default.ini<br />
 bind_address = 0.0.0.0<br />
 allow_jsonp = true<p />
-/etc/couchdb/local.ini<p />
-bind_address = 0.0.0.0<p />
 </blockquote>
 How to restart server<br />
 <blockquote>
-sudo service couchdb stop<br />
-sudo service couchdb start<br />
+# systemctl restart couchdb<br />
 </blockquote>
 
 Client<br />
@@ -173,6 +170,14 @@ Ubuntu 15.04<br />
 <blockquote>
 	# couchdb -b<p />
 </blockquote>
+
+圧縮<p />
+<blockquote>
+#<br />
+curl --noproxy localhost -H "Content-Type: application/json" -X POST http://localhost:5984/my_database/_compact<br />
+#<br />
+curl --noproxy localhost -H "Content-Type: application/json" -X POST http://localhost:5984/my_database/_view_cleanup<br />
+</blockquote>
 <div id="result_aa">result_aa</div>
 <hr />
 <div id="outarea_aa">outarea_aa</div>
@@ -185,6 +190,6 @@ Ubuntu 15.04<br />
 <div id="outarea_hh">outarea_hh</div>
 <hr />
 <a href="/data_base/">Return</a><p />
-Jul/31/2015 AM 08:15<p />
+Nov/25/2015 AM 08:15<p />
 </body>
 </html>

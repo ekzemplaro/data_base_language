@@ -2,7 +2,7 @@
 //
 //	Mcached_create.hx
 //
-//					Feb/25/2014
+//					Jan/12/2016
 //
 // --------------------------------------------------------------
 import haxe.Json;
@@ -14,7 +14,7 @@ static function data_prepare_proc () :  Map <String,Map<String,String>>
 {
 	var dict_aa = new Map ();
 
-	dict_aa = Text_manipulate.dict_append_proc (dict_aa,"t1731","金沢",98251,"1955-9-12");
+	dict_aa = Text_manipulate.dict_append_proc (dict_aa,"t1731","金沢",68251,"1955-9-12");
 	dict_aa = Text_manipulate.dict_append_proc (dict_aa,"t1732","輪島",73514,"1955-6-8");
 	dict_aa = Text_manipulate.dict_append_proc (dict_aa,"t1733","小松",35946,"1955-5-19");
 	dict_aa = Text_manipulate.dict_append_proc (dict_aa,"t1734","七尾",23918,"1955-7-15");
@@ -34,8 +34,6 @@ static function main()
 	var dict_aa = new Map ();
 
 	dict_aa = data_prepare_proc ();
-
-	Text_manipulate.dict_display_proc (dict_aa);
 
 	var port:Int = 11211;
 	var ss = new sys.net.Socket();

@@ -2,12 +2,12 @@
 //
 //	Json_manipulate.hx
 //
-//						Feb/26/2014
+//					Jan/12/2016
 //
 // --------------------------------------------------------------
 import haxe.Json;
 // --------------------------------------------------------------
-class Jaon_manipulate
+class Json_manipulate
 {
 // --------------------------------------------------------------
 public static function json_parser (key:String,json_str:String)
@@ -35,6 +35,26 @@ public static function json_update_proc (json_str:String ,population_in:Int)
 		}
 
 	return	json_str;
+}
+
+// --------------------------------------------------------------
+public static function json_to_dict_proc (json_str:String)
+	: Map <String,Map<String,String>>
+{
+	var cities = Json.parse(json_str);
+
+	var dict_aa = new Map ();
+
+	for(key in Reflect.fields(cities) )
+	{
+	var unit_aa = Reflect.field(cities, key);
+
+	var population = Std.parseInt (unit_aa.population);
+	dict_aa = Text_manipulate.dict_append_proc (dict_aa,key,unit_aa.name,
+		population,unit_aa.date_mod);
+	}
+
+	return	dict_aa;
 }
 
 // --------------------------------------------------------------

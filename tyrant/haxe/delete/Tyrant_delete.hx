@@ -2,7 +2,7 @@
 //
 //	Tyrant_delete.hx
 //
-//						Feb/25/2014
+//					Jan/13/2016
 //
 // --------------------------------------------------------------
 class Tyrant_delete
@@ -20,7 +20,7 @@ static function main ()
 	var port:Int = 1978;
 
 	var ss = new sys.net.Socket();
-        ss.connect (new sys.net.Host("localhost"),port);
+        ss.connect (new sys.net.Host("host_ubuntu"),port);
 
 	Mcached_manipulate.mcached_delete_proc (ss,key);
 

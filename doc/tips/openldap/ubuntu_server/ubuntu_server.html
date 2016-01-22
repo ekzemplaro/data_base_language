@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+<title>ubntu_server Jan/21/2016</title>
+</head>
+<body>
+<h2>Ubuntu Server 15.10</h2><p />
+
+# apt-get install slapd ldap-utils<p />
+
+
+# slaptest<br />
+	<blockquote>
+	config file testing succeeded<br />
+	</blockquote>
+
+
+$ systemctl status slapd<br />
+	<blockquote>
+	<pre>
+● slapd.service - LSB: OpenLDAP standalone server (Lightweight Directory Access Protocol)
+   Loaded: loaded (/etc/init.d/slapd)
+   Active: active (running) since Fri 2016-01-15 08:48:55 JST; 4min 28s ago
+     Docs: man:systemd-sysv-generator(8)
+   CGroup: /system.slice/slapd.service
+           └─4674 /usr/sbin/slapd -h ldap:/// ldapi:/// -g openldap -u openld...
+
+Jan 15 08:48:52 cdea022 systemd[1]: Starting LSB: OpenLDAP standalone serve.....
+Jan 15 08:48:52 cdea022 slapd[4665]: * Starting OpenLDAP slapd
+Jan 15 08:48:53 cdea022 slapd[4669]: @(#) $OpenLDAP: slapd  (Ubuntu) (Sep 1... $
+                                             buildd@lgw01-05:/build/openlda...pd
+Jan 15 08:48:55 cdea022 slapd[4674]: slapd starting
+Jan 15 08:48:55 cdea022 slapd[4665]: ...done.
+Jan 15 08:48:55 cdea022 systemd[1]: Started LSB: OpenLDAP standalone server...).
+Hint: Some lines were ellipsized, use -l to show in full.
+	</pre>
+	</blockquote>
+
+$ ldapsearch -H ldap://localhost -x -b '' -s base '(objectclass=*)' namingContexts<br />
+	<blockquote>
+	<pre>
+# extended LDIF
+#
+# LDAPv3
+# base <> with scope baseObject
+# filter: (objectclass=*)
+# requesting: namingContexts 
+#
+
+#
+dn:
+namingContexts: dc=nodomain
+
+# search result
+search: 2
+result: 0 Success
+
+# numResponses: 2
+# numEntries: 1
+	</pre>
+	</blockquote>
+
+# slapcat<br />
+	<blockquote>
+	<pre>
+dn: dc=nodomain
+objectClass: top
+objectClass: dcObject
+objectClass: organization
+o: nodomain
+dc: nodomain
+structuralObjectClass: organization
+entryUUID: 1c272b02-4f65-1035-94f9-dde91a847de7
+creatorsName: cn=admin,dc=nodomain
+createTimestamp: 20160114234852Z
+entryCSN: 20160114234852.328428Z#000000#000#000000
+modifiersName: cn=admin,dc=nodomain
+modifyTimestamp: 20160114234852Z
+
+dn: cn=admin,dc=nodomain
+objectClass: simpleSecurityObject
+objectClass: organizationalRole
+cn: admin
+description: LDAP administrator
+userPassword:: e1NTSEF9QTR3ZDBmeFNLYkxwYkNKT2xpUjExbW9wcnRQM0k4KzI=
+structuralObjectClass: organizationalRole
+entryUUID: 1c2def96-4f65-1035-94fa-dde91a847de7
+creatorsName: cn=admin,dc=nodomain
+createTimestamp: 20160114234852Z
+entryCSN: 20160114234852.372842Z#000000#000#000000
+modifiersName: cn=admin,dc=nodomain
+modifyTimestamp: 20160114234852Z
+	</pre>
+	</blockquote>
+
+# dpkg-reconfigure slapd<p />
+
+
+# ldapsearch -x<br />
+	<blockquote>
+	<pre>
+# extended LDIF
+#
+# LDAPv3
+# base <dc=eg,dc=jp,dc=honda,dc=com> (default) with scope subtree
+# filter: (objectclass=*)
+# requesting: ALL
+#
+
+# eg.jp.honda.com
+dn: dc=eg,dc=jp,dc=honda,dc=com
+objectClass: top
+objectClass: dcObject
+objectClass: organization
+o: egj
+dc: eg
+
+# admin, eg.jp.honda.com
+dn: cn=admin,dc=eg,dc=jp,dc=honda,dc=com
+objectClass: simpleSecurityObject
+objectClass: organizationalRole
+cn: admin
+description: LDAP administrator
+
+# search result
+search: 2
+result: 0 Success
+
+# numResponses: 3
+# numEntries: 2
+	</pre>
+	</blockquote>
+<hr />
+# apt-get install phpldapadmin<br />
+	<blockquote>
+	# cd /var/www<p />
+	# ln -s /usr/share/phpldapadmin .<p />
+	</blockquote>
+
+
+	<blockquote>
+	<pre>
+	dc=example,dc=com
+	This base cannot be created with PLA.
+	</pre>
+	<blockquote>
+		/etc/phpldapadmin/config.php<p />
+
+$servers->setValue('server','base',array('dc=ramuda,dc=co,dc=jp'));<p />
+$servers->setValue('login','bind_id','cn=xxxxxx,dc=ramuda,dc=co,dc=jp');<p />
+	</blockquote>
+	</blockquote>
+<hr />
+ldifの例<br />
+<blockquote>
+<a href="./ex01.ldif.txt">ex01.ldif</a><p />
+<a href="./ex02.ldif.txt">ex02.ldif</a><p />
+<a href="./ex03.ldif.txt">ex03.ldif</a><p />
+<a href="./ex04.ldif.txt">ex04.ldif</a><p />
+<a href="./john.ldif.txt">john.ldif</a><p />
+<a href="./mary.ldif.txt">mary.ldif</a><p />
+<a href="./tom.ldif.txt">tom.ldif</a><p />
+</blockquote>
+<hr />
+<a href="../">Return</a><p />
+Jan/21/2016 AM 08:15<p />
+</body>
+</html>

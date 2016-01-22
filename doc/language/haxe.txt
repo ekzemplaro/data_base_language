@@ -1,7 +1,7 @@
 <meta content="Program Language Examples in Ada" name="description">
 <meta content="Ada,クライアント,接続,言語,サンプル" name="keyword">
 <meta content="Uchida Masatomo" name="author">
-<title>Haxe Feb/24/2014</title>
+<title>Haxe Jan/12/2016</title>
 </head>
 <body>
 <h2><a href="http://haxe.org">Haxe</a></h2><p />
@@ -35,3 +35,18 @@ ii  neko      2.0.0-3           amd64   Lightweight virtual machine - compiler a
 ii  libneko0  2.0.0-3           amd64   Lightweight virtual machine - shared library
 </pre>
 </blockquote>
+
+Arch Linux<p />
+<blockquote>
+# pacman -S haxe<p />
+
+<pre>
+export HAXE_STD_PATH=/usr/share/haxe/std:.
+export HAXEPATH=/usr/share/haxe
+#
+export LD_LIBRARY_PATH=/usr/lib/neko
+export NEKOPATH=/usr/lib/neko
+export PATH=$PATH:$HAXEPATH:$NEKOPATH
+</pre>
+</blockquote>
+ 

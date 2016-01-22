@@ -1,0 +1,11 @@
+dn: dc=it,dc=eg,dc=jp,dc=honda,dc=com
+dc: it
+o: it
+objectclass: dcObject
+objectclass: organization
+objectclass: top
+
+dn: ou=development,dc=it,dc=eg,dc=jp,dc=honda,dc=com
+objectclass: organizationalUnit
+objectclass: top
+ou: development

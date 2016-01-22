@@ -176,7 +176,20 @@ C#<p />
 </blockquote>
 
 <hr />
+Arch Linux<p />
 <blockquote>
-pacman -S memcached<p />
-pacman -S php-memcached<p />
+# pacman -S memcached<p />
+# pacman -S php-memcached<p />
+</blockquote>
+<blockquote>
+<pre>
+$ systemctl status memcached
+● memcached.service - Memcached Daemon
+   Loaded: loaded (/usr/lib/systemd/system/memcached.service; disabled; vendor preset: disabled)
+   Active: active (running) since 火 2016-01-12 11:57:16 JST; 1h 43min ago
+ Main PID: 19175 (memcached)
+    Tasks: 6 (limit: 512)
+   CGroup: /system.slice/memcached.service
+           └─19175 /usr/bin/memcached -l 127.0.0.1
+</pre>
 </blockquote>

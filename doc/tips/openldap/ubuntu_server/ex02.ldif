@@ -1,0 +1,36 @@
+
+dn: uid=kitada,ou=development,dc=it,dc=eg,dc=jp,dc=honda,dc=com
+cn: Osamu Kitada
+gidnumber: 500
+givenname: Osamu
+homedirectory: /home/developers/kitada
+loginshell: /bin/bash
+mail: kitada@it.co.jp
+objectclass: inetOrgPerson
+objectclass: posixAccount
+objectclass: shadowAccount
+shadowlastchange: 13081
+shadowmax: 99999
+shadowwarning: 7
+sn: Kitada
+uid: kitada
+uidnumber: 5001
+
+dn: uid=iwasa,ou=development,dc=it,dc=eg,dc=jp,dc=honda,dc=com
+cn: Osamu Iwasa
+gidnumber: 500
+givenname: Osamu
+homedirectory: /home/developers/iwasa
+loginshell: /bin/bash
+mail: iwasa@it.co.jp
+objectclass: inetOrgPerson
+objectclass: posixAccount
+objectclass: shadowAccount
+shadowlastchange: 13081
+shadowmax: 99999
+shadowwarning: 7
+sn: Iwasa
+uid: iwasa
+uidnumber: 5002
+
+

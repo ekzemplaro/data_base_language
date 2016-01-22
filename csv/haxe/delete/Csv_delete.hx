@@ -2,7 +2,7 @@
 //
 //	Csv_delete.hx
 //
-//						Feb/24/2014
+//						Jan/12/2016
 // ----------------------------------------------------------------
 import haxe.io.Eof;
 
@@ -24,11 +24,8 @@ static function main()
 		{
 		Sys.println ("*** key exists ***");
 		dict_aa.remove (key);
+		Text_manipulate.dict_to_csv_proc (fname,dict_aa);
 		}
-
-	Text_manipulate.dict_display_proc (dict_aa);
-
-	Text_manipulate.dict_to_csv_proc (fname,dict_aa);
 
 	Sys.println ("*** 終了 ***");
 }

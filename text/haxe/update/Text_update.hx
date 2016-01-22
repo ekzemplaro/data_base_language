@@ -2,7 +2,7 @@
 //
 //	Text_update.hx
 //
-//						Feb/25/2014
+//						Jan/12/2016
 // ----------------------------------------------------------------
 class Text_update
 {
@@ -21,16 +21,11 @@ static function main()
 
 	if (dict_aa.exists (key))
 		{
-		neko.Lib.println ("*** key exists ***");
-		var today = Date.now().toString ();
-		var unit_aa = dict_aa.get (key);
-		unit_aa.set ("population",Std.string (population));
-		unit_aa.set ("date_mod",today);
+		dict_aa = Text_manipulate.dict_update_proc (dict_aa,key,population);
+		Sys.println ("*** key exists ***");
+
+		Text_manipulate.dict_to_text_proc (fname,dict_aa);
 		}
-
-	Text_manipulate.dict_display_proc (dict_aa);
-
-	Text_manipulate.dict_to_text_proc (fname,dict_aa);
 
 	Sys.println ("*** 終了 ***");
 }

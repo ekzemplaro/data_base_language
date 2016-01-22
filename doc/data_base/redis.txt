@@ -3,11 +3,28 @@
 <body>
 <h1><a href="http://redis.io">Redis</a></h1>
 
+Ubuntu<p />
 <blockquote>
 <pre>
-ii  redis-server   2:2.6.7-1   amd64   Persistent key-value database with network interface
+ii  redis-server   2:3.0.3-3  amd64  Persistent key-value database with network interface
+ii  redis-tools    2:3.0.3-3  amd64  Persistent key-value database with network interface (client)
 </pre>
 	/etc/redis/redis.conf<p />
+</blockquote>
+<blockquote>
+<pre>
+$ systemctl status redis-server
+● redis-server.service - Advanced key-value store
+   Loaded: loaded (/lib/systemd/system/redis-server.service; enabled; vendor preset: enabled)
+   Active: active (running) since Wed 2016-01-13 08:45:44 JST; 36s ago
+  Process: 8114 ExecStart=/usr/bin/redis-server /etc/redis/redis.conf (code=exited, status=0/SUCCESS)
+ Main PID: 8115 (redis-server)
+   CGroup: /system.slice/redis-server.service
+           └─8115 /usr/bin/redis-server *:6379
+
+Jan 13 08:45:44 cdea022 systemd[1]: Starting Advanced key-value store...
+Jan 13 08:45:44 cdea022 systemd[1]: Started Advanced key-value store.
+</pre>
 </blockquote>
 
 Arch Linux<p />

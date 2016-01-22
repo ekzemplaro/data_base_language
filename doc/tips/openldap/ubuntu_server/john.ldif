@@ -1,0 +1,12 @@
+dn: cn=John Smith,dc=eg,dc=jp,dc=honda,dc=com
+cn: John Smith
+givenName: John
+sn: Smith
+uid: john
+mail: john@example.com
+manager: cn=admin,dc=eg,dc=jp,dc=honda,dc=com
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+userPassword: {SSHA}v0jzS39EOxOQTddUzv/qFLQFGIdFUQdU

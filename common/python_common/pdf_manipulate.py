@@ -2,16 +2,15 @@
 #
 #	pdf_manipulate.py
 #
-#						Sep/09/2014
+#						Jan/21/2016
 #
+# ------------------------------------------------------------------
 import	os
 from subprocess import Popen, PIPE
 import	shlex
 import	string
 
 import	sys
-#reload(sys)
-#sys.setdefaultencoding('utf-8')
 #
 from reportlab.pdfbase.cidfonts import UnicodeCIDFont
 from reportlab.pdfbase import pdfmetrics
@@ -42,7 +41,6 @@ def pdf_to_dict_proc (file_pdf):
 #
 	return	dict_aa
 # ------------------------------------------------------------------
-#
 def dict_to_pdf_proc (file_pdf,dict_aa):
 	from reportlab.pdfgen import canvas
 	fontname_g = "HeiseiKakuGo-W5"
@@ -59,7 +57,6 @@ def dict_to_pdf_proc (file_pdf,dict_aa):
 		canvas.drawString (285,ypos,str (unit['population']))
 		canvas.drawString (400,ypos,unit['date_mod'])
 		ypos = ypos - 25
-
 #
 	canvas.save ()
 # ------------------------------------------------------------------

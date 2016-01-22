@@ -1,7 +1,7 @@
 // --------------------------------------------------------------
 //	Riak_read.hx
 //
-//						Feb/26/2014
+//					Jan/13/2016
 //
 // --------------------------------------------------------------
 import haxe.Json;
@@ -14,7 +14,7 @@ static function main()
 {
 	Sys.println ("*** 開始 ***");
 
-	var url_shimane="http://localhost:8098/riak/shimane";
+	var url_shimane="http://host_ubuntu:8098/riak/shimane";
 	var url_in = url_shimane + "?keys=true";
 	var str_aa = haxe.Http.requestUrl(url_in);
 
@@ -27,7 +27,7 @@ static function main()
 		{
 		var url = url_shimane + "/" + key;
 		var str_json = haxe.Http.requestUrl(url);
-		Mcached_manipulate.json_parser (key,str_json);
+		Json_manipulate.json_parser (key,str_json);
 		}
 
 	Sys.println ("*** 終了 ***");

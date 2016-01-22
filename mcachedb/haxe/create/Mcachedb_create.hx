@@ -2,7 +2,7 @@
 //
 //	Mcachedb_create.hx
 //
-//					Feb/25/2014
+//					Jan/12/2016
 //
 // --------------------------------------------------------------
 import haxe.Json;
@@ -41,7 +41,7 @@ static function main()
 	Text_manipulate.dict_display_proc (dict_aa);
 
 	var ss = new sys.net.Socket();
-        ss.connect (new sys.net.Host("localhost"),21201);
+        ss.connect (new sys.net.Host("host_ubuntu"),21201);
 
 	Mcached_manipulate.dict_to_mcached_proc (ss,dict_aa);
 

@@ -2,7 +2,7 @@
 //
 //	Text_manipulate.hx
 //
-//					Feb/24/2014
+//					Jan/12/2016
 //
 // --------------------------------------------------------------
 class Text_manipulate
@@ -90,13 +90,27 @@ public static function dict_display_proc (dict_aa : Map <String,Map<String,Strin
 {
 	var delimit = "\t";
 
+	var array: Array <String> = [];
 	for (key in dict_aa.keys ())
+		{
+		array.push (key);
+		}
+
+	array.sort (
+		function(a:String, b:String):Int
+			{
+			if (a < b) return -1;
+			if (a > b) return 1;
+			return 0;
+			}
+		);
+
+	for (key in array)
 		{
 		var unit_bb = dict_aa.get (key);
 		var str_out = unit_to_string_proc (delimit,key,unit_bb);
        		Sys.println (str_out);
 		}
-
 }
 
 // --------------------------------------------------------------
@@ -135,6 +149,19 @@ public static function dict_to_csv_proc
 		}
 
 	fout.close();
+}
+
+// --------------------------------------------------------------
+public static function dict_update_proc
+	 (dict_aa: Map <String,Map<String,String>>,key:String,population:Int)
+		: Map <String,Map<String,String>>
+{
+	var today = Date.now().toString ();
+	var unit_aa = dict_aa.get (key);
+	unit_aa.set ("population",Std.string (population));
+	unit_aa.set ("date_mod",today);
+
+	return	dict_aa;
 }
 
 // --------------------------------------------------------------

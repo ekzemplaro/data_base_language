@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>docker Mar/30/2015</title>
+<title>docker Jan/14/2016</title>
 </head>
 <body>
 <h2>Docker</h2><p />
@@ -103,10 +103,50 @@ Dockerのインストールと主なコマンドの使い方</a><p />
 <blockquote>
 # apt-get install docker.io<p />
 # update-rc.d docker.io defaults<p />
-# docker.io info<p />
-# ln -sf /usr/bin/docker.io /usr/local/bin/docker<p />
+# docker info<p />
+<blockquote>
+<pre>
+Containers: 0
+Images: 0
+Storage Driver: aufs
+ Root Dir: /var/lib/docker/aufs
+ Backing Filesystem: extfs
+ Dirs: 0
+ Dirperm1 Supported: true
+Execution Driver: native-0.2
+Kernel Version: 4.2.0-23-generic
+Operating System: Ubuntu 15.10
+CPUs: 2
+Total Memory: 7.529 GiB
+Name: cdea022
+ID: OU72:QOKN:FKAB:VZME:B2OI:CLMA:STE7:7LLE:Z7NM:EN7S:TQBD:YPOZ
+WARNING: No swap limit support
+</pre>
+</blockquote>
+
+# docker version<p />
+<blockquote>
+<pre>
+Client version: 1.6.2
+Client API version: 1.18
+Go version (client): go1.5.1
+Git commit (client): 7c8fca2
+OS/Arch (client): linux/amd64
+Server version: 1.6.2
+Server API version: 1.18
+Go version (server): go1.5.1
+Git commit (server): 7c8fca2
+OS/Arch (server): linux/amd64
+</pre>
+</blockquote>
+
 # gpasswd -a uchida docker<p />
 
+/etc/default/docker<p />
+	<blockquote>
+	export http_proxy="http://user:password@server_proxy:80"<p />
+	export https_proxy="http://user:password@server_proxy:80"<p />
+	</blockquote>
 </blockquote>
 
 <hr />
@@ -132,6 +172,6 @@ Install<br />
 </blockquote>
 <hr />
 <a href="/data_base/">Return</a><p />
-Mar/30/2015 AM 08:15<p />
+Jan/14/2016 AM 08:15<p />
 </body>
 </html>

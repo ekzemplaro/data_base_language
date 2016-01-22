@@ -1,1 +1,1 @@
-neko Text_delete.n /var/tmp/plain_text/cities.txt t2386
+neko Json_delete.n /var/tmp/json/cities.json t0925
