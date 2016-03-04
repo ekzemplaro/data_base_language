@@ -2,7 +2,7 @@
 //
 //	mssql_read.fs
 //
-//					Jan/17/2013
+//					Feb/08/2016
 //
 // -------------------------------------------------------------------
 #light "on"
@@ -15,13 +15,13 @@ open System.Data.SqlClient
 let main (args : string[] ) =
   printfn "*** 開始 ***"
 
-  let str_connect = "server=host_mssql;uid=sa;pwd=scott_tiger;database=city;"
+  let str_connect = "server=host_mssql\EG;uid=sa;pwd=Tiger123;database=city;"
 
   let conn = new SqlConnection (str_connect)
   conn.Open()
 
-  let cmd = new SqlCommand( "SELECT * FROM cities", conn )
-  let reader = cmd.ExecuteReader()
+  let cmd = new SqlCommand ("SELECT * FROM cities", conn)
+  let reader = cmd.ExecuteReader ()
 
   while reader.Read()
     do System.Console.Write (reader.GetString 0 )

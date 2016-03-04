@@ -1,7 +1,7 @@
 // ----------------------------------------------------------------
 //	json_delete.fs
 //
-//						Aug/22/2013
+//						Feb/08/2016
 //
 // ----------------------------------------------------------------
 open System
@@ -27,8 +27,6 @@ let main (args : string[] ) =
 
 //  if dict_aa.ContainsKey (key) then
   let _ = dict_aa.Remove (key)
-
-  let _ = text_manipulate.dict_display_proc (dict_aa)
 
   let str_json_out = JsonConvert.SerializeObject (dict_aa)
 

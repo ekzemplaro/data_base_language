@@ -2,32 +2,32 @@
 // -------------------------------------------------------------
 //	mcachedb_delete.js
 //
-//					Feb/02/2015
+//					Feb/15/2016
 // -------------------------------------------------------------
-var memcache = require('memcache');
+var memcache = require('memcache')
 
 // -------------------------------------------------------------
 var onConnect = function()
 {
-	console.log("*** 開始 ***");
+	console.log("*** 開始 ***")
 
-	client.delete (key_in,function(error, result){ });
+	client.delete (key_in,function(error, result){ })
 
-	client.close();
+	client.close()
 
-	console.log("*** 終了 ***");
-};
+	console.log("*** 終了 ***")
+}
 
 
 // -------------------------------------------------------------
-var key_in=process.argv[2];
+var key_in=process.argv[2]
 
-console.log (key_in);
+console.log (key_in)
 
-var hostname = 'host_ubuntu1';
-var client = new memcache.Client (21201,hostname);
-client.connect();
-client.addHandler(onConnect);
+var hostname = 'host_ubuntu'
+var client = new memcache.Client (21201,hostname)
+client.connect()
+client.addHandler(onConnect)
 
 // -------------------------------------------------------------
 

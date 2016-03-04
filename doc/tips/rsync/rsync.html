@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>rsync Oct/22/2015</title>
+<title>rsync Feb/25/2016</title>
 </head>
 <body>
 <h2>rsync</h2><p />
@@ -72,6 +72,14 @@ rsync -avz --delete host_rsync::ftp/ /tmp/ftp<p />
 rsync -avz --delete host_rsync::var_tmp/json/ /var/tmp/json<p />
 </blockquote>
 
+アップロード<p />
+<blockquote>
+$ rsync -avz --delete /home/uchida/bin/ host_rsync::uchida/bin<p />
+	<blockquote>
+	サーバー側で、SELinux を無効にする必要がある。<p />
+	</blockquote>
+</blockquote>
+
 <hr />
 Ubuntu での設定<br />
 <blockquote>
@@ -111,8 +119,34 @@ rsync: chgrp ***** failed: Permission denied (13)<p />
 <blockquote>
 rsync -rlptD dir/ remote:/dir/<p />
 </blockquote>
+
+アップデートを許可する /etc/rsyncd.conf<p />
+<blockquote>
+<pre>
+uid = root
+gid = root
+use chroot = yes
+pid file = /var/run/rsyncd.pid
+log file = /var/log/rsyncd.log
+#
+[uchida]
+	path = /home/uchida
+	comment = /home/uchida
+	read only = no
+</pre>
+</blockquote>
+
+エラー<p />
+<blockquote>
+rsync: chgrp "/tmp/.AAA_Aug20_2014.zip.55BDKM" (in BBBB) failed: Permission denied (13)<p />
+	<blockquote>
+	-rltzuv --delete でエラーは消える。<p />
+	</blockquote>
+
+</blockquote>
+
 <hr />
 <a href="/data_base/">Return</a><p />
-Oct/22/2015 AM 08:15<p />
+Feb/25/2016 AM 08:15<p />
 </body>
 </html>

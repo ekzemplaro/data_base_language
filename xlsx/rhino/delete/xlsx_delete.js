@@ -2,7 +2,7 @@
 // ----------------------------------------------------------------
 /*
 	xlsx_delete.js
-					Oct/09/2015
+					Jan/26/2016
 
 */
 // ----------------------------------------------------------------
@@ -17,12 +17,21 @@ var key=arguments[1]
 
 print	("key = " + key)
 
-var dict_aa = xlsx_read_proc (xlsx_file)
+file = new File (xlsx_file)
 
-if (key in dict_aa)
+if (file.exists ())
 	{
-	delete dict_aa[key]
-	xlsx_write_proc (xlsx_file,dict_aa)
+	var dict_aa = xlsx_read_proc (xlsx_file)
+
+	if (key in dict_aa)
+		{
+		delete dict_aa[key]
+		xlsx_write_proc (xlsx_file,dict_aa)
+		}
+	}
+else
+	{
+	System.err.println	(xlsx_file + " doesn't exist ***")
 	}
 
 print ("*** 終了 ***")  

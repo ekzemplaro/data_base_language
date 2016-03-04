@@ -1,7 +1,7 @@
 // ------------------------------------------------------------
 //	json_create.boo
 //
-//					Jul/04/2014
+//					Feb/29/2016
 //
 // ------------------------------------------------------------
 import System
@@ -10,14 +10,14 @@ import Newtonsoft.Json
 // ------------------------------------------------------------
 def data_prepare_proc ():
 	dict_aa = {}
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t0921','宇都宮','79436','1968-7-21')
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t0922','小山','58157','1968-10-27')
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t0923','佐野','34593','1968-5-16')
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t0924','足利','52492','1968-9-23')
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t0925','日光','41851','1968-3-9')
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t0921','宇都宮','71436','1968-7-21')
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t0922','小山','28157','1968-10-27')
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t0923','佐野','74593','1968-5-16')
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t0924','足利','58492','1968-9-23')
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t0925','日光','49851','1968-3-9')
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t0926','下野','82763','1968-5-19')
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t0927','さくら','51748','1968-9-12')
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t0928','矢板','94795','1968-8-18')
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t0928','矢板','94725','1968-8-18')
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t0929','真岡','57863','1968-2-11')
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t0930','栃木','89613','1968-7-14')
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t0931','大田原','57863','1968-9-25')

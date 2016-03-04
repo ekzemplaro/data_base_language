@@ -1,1 +1,1 @@
-./csv_delete.exe /var/tmp/csv/cities.csv t1279
+mono ./csv_delete.exe /var/tmp/csv/cities.csv t1279

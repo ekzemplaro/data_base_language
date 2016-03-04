@@ -14,3 +14,7 @@ export PATH=$PATH:/home/uchida/lang/groovy/groovy-2.1.6/bin<p />
 $ groovy --version<br />
 Groovy Version: 2.1.6 JVM: 1.7.0_25 Vendor: Oracle Corporation OS: Linux<br />
 
+Arch Linux<p />
+	<blockquote>
+	# pacman -S groovy<p />
+	</blockquote>

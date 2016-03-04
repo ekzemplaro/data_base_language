@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>ArchLinux Jan/06/2016</title>
+<title>ArchLinux Feb/23/2016</title>
 </head>
 <body>
 <h2>ArchLinux</h2><p />
@@ -196,6 +196,11 @@ Java のインストール<p />
 	# useradd -u 1200 -m -g wheel uchida<p />
 	</blockquote>
 
+グループの作成<br />
+	<blockquote>
+	# groupadd -g 1200 uchida<p />
+	</blockquote>
+
 yaourt のインストール<br />
 	<blockquote>
 	/etc/pacman.conf<br />
@@ -242,7 +247,12 @@ base グループ以外の全てのパッケージを削除する<p />
 	</blockquote>
 
 <hr />
+多言語の表示<br />
+<blockquote>
+	# pacman -S adobe-source-han-sans-otc-fonts<p />
+</blockquote>
+<hr />
 <a href="../">Return</a><p />
-Jan/06/2016 AM 08:15<p />
+Feb/23/2016 AM 08:15<p />
 </body>
 </html>

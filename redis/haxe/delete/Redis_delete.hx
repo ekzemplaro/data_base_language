@@ -2,7 +2,7 @@
 //
 //	Redis_delete.hx
 //
-//						Feb/26/2014
+//						Feb/11/2016
 //
 // --------------------------------------------------------------
 import haxe.Json;
@@ -14,12 +14,12 @@ static function main ()
 {
 	Sys.println ("*** 開始 ***");
 
-	var key = Sys.args ()[0];
+	var key: String = Sys.args ()[0];
 
 	Sys.println (key);
 
 	var port:Int = 6379;
-	var hostname:String = "host_dbase";
+	var hostname: String = "host_dbase";
 	var ss = new sys.net.Socket();
         ss.connect (new sys.net.Host(hostname),port);
 

@@ -3,16 +3,17 @@
 #
 #	ruby/create/postgre_create.rb
 #
-#					May/16/2011
+#					Feb/15/2016
 # ---------------------------------------------------------------------
-require 'dbi'
+require 'rdbi'
+require 'rdbi-driver-postgresql'
 #
 load '/var/www/data_base/common/ruby_common/text_manipulate.rb'
 load '/var/www/data_base/common/ruby_common/sql_manipulate.rb'
 # ---------------------------------------------------------------------
 def prepare_data_proc ()
 dict_aa={}
-dict_aa=dict_append_proc(dict_aa,'t3461',"広島",41962,"2006-3-12")
+dict_aa=dict_append_proc(dict_aa,'t3461',"広島",43962,"2006-3-12")
 dict_aa=dict_append_proc(dict_aa,'t3462',"福山",27385,"2006-4-27")
 dict_aa=dict_append_proc(dict_aa,'t3463',"東広島",58724,"2006-5-8")
 dict_aa=dict_append_proc(dict_aa,'t3464',"呉",25914,"2006-1-15")
@@ -26,22 +27,21 @@ end
 # ---------------------------------------------------------------------
 puts	"*** 開始 ***"
 #
-dbi=DBI.connect("dbi:Pg:city:localhost","scott","tiger")
+dbh = RDBI.connect(:PostgreSQL, :dbname=>"city", :port=>5432,
+	:user=>"scott", :password=>"tiger")
 #
 dict_aa=prepare_data_proc()
 #
 sss = Sql_manipulate.new
-sss.drop_proc(dbi)
-sss.create_proc(dbi)
+sss.drop_proc(dbh)
+sss.create_proc(dbh)
 #
 dict_aa.each {|key,value |
-	sss.insert_proc(dbi,key,value['name'], \
+	sss.insert_proc(dbh,key,value['name'], \
 		value['population'],value['date_mod'])
 	}
 #
-sss.disp_proc(dbi)
-#
-dbi.disconnect
+dbh.disconnect
 #
 puts	"*** 終了 ***"
 #

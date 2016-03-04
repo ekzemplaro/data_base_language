@@ -2,7 +2,7 @@
 //
 //	sqlite3_read.fs
 //
-//					Jul/13/2011
+//					Feb/08/2016
 //
 // -------------------------------------------------------------------
 open System
@@ -14,7 +14,8 @@ open Mono.Data.Sqlite
 let main (args : string[] ) =
   printfn "*** 開始 ***"
 
-  let file_sqlite3 = "/var/tmp/sqlite3/cities.db"
+  let file_sqlite3 = args.[0]
+  Console.WriteLine ("file_sqlite3 = " + file_sqlite3)
 
   let string_connect = "Data Source = " + file_sqlite3 + ";UTF8Encoding=True;Version=3"
   let conn = new SqliteConnection (string_connect)

@@ -1,7 +1,7 @@
 // ------------------------------------------------------------
 //	sqlite3_create.boo
 //
-//						Jul/30/2014
+//						Feb/29/2016
 //
 // ------------------------------------------------------------
 import System
@@ -17,7 +17,7 @@ def data_prepare_proc ():
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t0715','喜多方','43851','1968-3-9')
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t0716','二本松','82763','1968-5-19')
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t0717','いわき','51748','1968-9-12')
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t0718','相馬','94792','1968-8-18')
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t0718','相馬','34792','1968-8-18')
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t0719','須賀川','51864','1968-7-11')
 	return	dict_aa
 // ------------------------------------------------------------

@@ -2,7 +2,7 @@
 //
 //	Text_update.hx
 //
-//						Jan/12/2016
+//						Feb/11/2016
 // ----------------------------------------------------------------
 class Text_update
 {
@@ -10,9 +10,9 @@ class Text_update
 static function main()
 {
 	Sys.println ("*** 開始 ***");
-	var fname = Sys.args ()[0];
-	var key = Sys.args ()[1];
-	var population = Std.parseInt (Sys.args ()[2]);
+	var fname: String = Sys.args ()[0];
+	var key: String = Sys.args ()[1];
+	var population: Int = Std.parseInt (Sys.args ()[2]);
 	Sys.println (fname);
 	Sys.println (key);
 	Sys.println (population);

@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>centos Dec/21/2015</title>
+<title>centos Feb/25/2016</title>
 </head>
 <body>
 <h2><a href="https://www.centos.org/">centos</a></h2>
@@ -57,8 +57,25 @@ $ nmcli d show<p />
 # useradd uchida<p />
 </blockquote>
 
+rsyncd の設定<br />
+<blockquote>
+# yum install rsync<p />
+# systemctl start rsyncd<p />
+# systemctl enable rsyncd<p />
+# systemctl stop firewalld<p />
+/etc/selinux/config<p />
+	<blockquote>
+	SELINUX=disabled<p />
+	</blockquote>
+</blockquote>
+
+タイムゾーンの変更<p />
+<blockquote>
+# rm /etc/localtime<p />
+# ln -s /usr/share/zoneinfo/Japan /etc/localtime<p />
+</blockquote>
 <hr />
 <a href="../">Return</a><p />
-Dec/22/2015 AM 08:15<p />
+Feb/25/2016 AM 08:15<p />
 </body>
 </html>

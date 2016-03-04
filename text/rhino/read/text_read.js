@@ -7,17 +7,26 @@
 //
 // ------------------------------------------------------------------
 importPackage (java.io)
+importPackage (java.lang)
 
 load ("/var/www/data_base/common/rhino_common/file_io.js")
 load ("/var/www/data_base/common/rhino_common/text_manipulate.js")
 
-file_in=arguments[0]
-
 print	("*** 開始 ***")
 
-var dict_aa = text_read_proc (file_in)
+file_in=arguments[0]
 
-dict_display_proc (dict_aa)
+file = new File (file_in)
+
+if (file.exists ())
+	{
+	var dict_aa = text_read_proc (file_in)
+	dict_display_proc (dict_aa)
+	}
+else
+	{
+	System.err.println	(file_in + " doesn't exist ***")
+	}
 
 print	("*** 終了 ***")
 // ------------------------------------------------------------------

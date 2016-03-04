@@ -1,1 +1,1 @@
-./mssql_read.exe
+mono ./mssql_read.exe

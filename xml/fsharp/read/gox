@@ -1,1 +1,1 @@
-./xml_read.exe /var/tmp/xml_file/cities.xml
+mono ./xml_read.exe /var/tmp/xml_file/cities.xml

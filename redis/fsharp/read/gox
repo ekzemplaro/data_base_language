@@ -1,1 +1,1 @@
-./redis_read.exe
+mono ./redis_read.exe

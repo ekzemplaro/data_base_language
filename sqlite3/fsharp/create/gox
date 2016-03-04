@@ -1,1 +1,1 @@
-./sqlite3_create.exe /var/tmp/sqlite3/cities.db
+mono ./sqlite3_create.exe /var/tmp/sqlite3/cities.db

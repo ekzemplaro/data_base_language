@@ -2,7 +2,7 @@
 //
 //	json_create.fs
 //
-//					Aug/22/2013
+//						Feb/08/2016
 //
 // -------------------------------------------------------------------
 open System
@@ -17,7 +17,6 @@ open Newtonsoft.Json
 let data_prepare_proc () =
 
   let dict_aa = new Dictionary<string,Object>()
-
 
   let dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0921","宇都宮",25613,"1997-10-7")
   let dict_aa = text_manipulate.dict_append_proc (dict_aa,"t0922","小山",36879,"1997-5-12")
@@ -48,8 +47,6 @@ let main (args : string[] ) =
   printfn "\tfile_out = %s"  file_out
 
   let dict_aa = data_prepare_proc ()
-
-  let _ = text_manipulate.dict_display_proc (dict_aa)
 
   let str_json = JsonConvert.SerializeObject (dict_aa)
 

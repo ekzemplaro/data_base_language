@@ -2,7 +2,7 @@
 //
 //	redis_delete.fs
 //
-//					Nov/25/2010
+//					Feb/09/2016
 //
 // -------------------------------------------------------------------
 open System
@@ -15,14 +15,13 @@ open System.IO
 let main (args : string[] ) =
 
   printfn "*** 開始 ***"
-  let id_in = args.[0]
+  let key_in = args.[0]
 
-  printfn "%s" id_in
+  printfn "%s" key_in
 
   let rd = new Redis ("host_dbase",6379)
 
-  let _ = rd.Remove (id_in)
-
+  let _ = rd.Remove (key_in)
 
   printfn "*** 終了 ***"
   0

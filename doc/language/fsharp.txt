@@ -1,4 +1,4 @@
-<title>F# Aug/21/2013</title>
+<title>F# Feb/08/2016</title>
 </head>
 <body>
 <h2><a href="http://msdn.microsoft.com/en-us/vstudio/hh388569.aspx">F#</a></h2><p />
@@ -43,3 +43,7 @@ on 'How Mono Finds Assemblies' see http://www.mono-project.com/Gacutil
 </pre>
 </blockquote>
 
+Arch Linux<br />
+<blockquote>
+	$ yaourt -Sb fsharp<p />
+</blockquote>

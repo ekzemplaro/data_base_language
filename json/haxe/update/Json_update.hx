@@ -2,7 +2,7 @@
 //
 //	Json_update.hx
 //
-//					Jan/12/2016
+//					Feb/11/2016
 // --------------------------------------------------------------
 import haxe.Json;
 // --------------------------------------------------------------
@@ -13,14 +13,14 @@ public static function main()
 {
 	Sys.println ("*** 開始 ***");
 
-	var json_file = Sys.args ()[0];
+	var json_file: String = Sys.args ()[0];
 
-	var key = Sys.args ()[1];
-	var population = Std.parseInt (Sys.args ()[2]);
+	var key: String = Sys.args ()[1];
+	var population: Int = Std.parseInt (Sys.args ()[2]);
 	Sys.println (key);
 	Sys.println (population);
 
-	var json_str = sys.io.File.getContent (json_file);	
+	var json_str: String = sys.io.File.getContent (json_file);	
 
 	var dict_aa = Json_manipulate.json_to_dict_proc (json_str);
 
@@ -28,7 +28,7 @@ public static function main()
 		{
 		dict_aa = Text_manipulate.dict_update_proc (dict_aa,key,population);
 
-		var json_str = Json.stringify (dict_aa);
+		json_str = Json.stringify (dict_aa);
 
 		var fout = sys.io.File.write (json_file, false);
 

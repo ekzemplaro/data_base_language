@@ -1,1 +1,1 @@
-./mssql_create.exe
+mono ./mssql_create.exe

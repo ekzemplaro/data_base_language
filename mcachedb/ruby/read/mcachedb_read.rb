@@ -11,7 +11,8 @@ load '/var/www/data_base/common/ruby_common/mcache_manipulate.rb'
 # -------------------------------------------------------------------
 puts "*** 開始 ***"
 #
-dc = Dalli::Client.new('ubuntu_1504:21201')
+# dc = Dalli::Client.new('host_ubuntu:21201')
+dc = Dalli::Client.new('cddn007-ee:21201')
 #
 keys=["t1521","t1522","t1523","t1524",
 	"t1525","t1526","t1527","t1528",

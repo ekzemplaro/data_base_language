@@ -1,1 +1,1 @@
-./xml_create.exe /var/tmp/xml_file/cities.xml
+mono ./xml_create.exe /var/tmp/xml_file/cities.xml

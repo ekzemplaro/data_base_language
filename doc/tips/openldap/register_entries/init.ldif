@@ -1,0 +1,24 @@
+# dn: dc=eg,dc=jp,dc=honda,dc=com
+# objectclass: dcObject
+# objectclass: organization
+# o: VIRTUAL CORPORATION
+# dc: eg
+
+dn: cn=Manager,dc=eg,dc=jp,dc=honda,dc=com
+objectclass: organizationalRole
+cn: Manager
+
+# -----------------------------------------------
+dn: ou=Users,dc=eg,dc=jp,dc=honda,dc=com
+objectclass: organizationalUnit
+ou: Users
+
+dn: ou=Groups,dc=eg,dc=jp,dc=honda,dc=com
+objectclass: organizationalUnit
+ou: Groups
+
+dn: ou=Computers,dc=eg,dc=jp,dc=honda,dc=com
+objectclass: organizationalUnit
+ou: Computers
+
+# -----------------------------------------------

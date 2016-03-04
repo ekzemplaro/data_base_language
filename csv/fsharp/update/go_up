@@ -1,1 +1,1 @@
-./csv_update.exe /var/tmp/csv/cities.csv t1277 41765300
+mono ./csv_update.exe /var/tmp/csv/cities.csv t1277 41765300

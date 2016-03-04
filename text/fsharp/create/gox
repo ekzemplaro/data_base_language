@@ -1,1 +1,1 @@
-./text_create.exe /var/tmp/plain_text/cities.txt
+mono ./text_create.exe /var/tmp/plain_text/cities.txt

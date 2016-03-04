@@ -1,9 +1,9 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	maria_create.py
 #
-#					Nov/14/2014
+#					Feb/18/2016
 #
 # --------------------------------------------------------
 import	sys
@@ -29,7 +29,7 @@ def	data_prepare_proc ():
 	dict_aa = dict_append_proc (dict_aa,'t3326','井原',518397,'2003-5-21')
 	dict_aa = dict_append_proc (dict_aa,'t3327','総社',248156,'2003-7-23')
 	dict_aa = dict_append_proc (dict_aa,'t3328','高梁',478294,'2003-10-26')
-	dict_aa = dict_append_proc (dict_aa,'t3329','新見',823751,'2003-12-15')
+	dict_aa = dict_append_proc (dict_aa,'t3329','新見',863751,'2003-12-15')
 #
 	return	dict_aa
 #

@@ -9,13 +9,8 @@ class Text_create
 // --------------------------------------------------------------
 {
 // --------------------------------------------------------------
-static function main()
+static function data_prepare_proc (): Map <String,Map<String,String>>
 {
-        Sys.println ("*** 開始 ***");
-
-	var fname_out = Sys.args ()[0];
-	Sys.println (fname_out);
-
 	var dict_aa = new Map ();
 
 	dict_aa = Text_manipulate.dict_append_proc (dict_aa,"t2381","名古屋",69851,"1955-2-5");
@@ -27,6 +22,19 @@ static function main()
 	dict_aa = Text_manipulate.dict_append_proc (dict_aa,"t2387","大府",58497,"1955-2-12");
 	dict_aa = Text_manipulate.dict_append_proc (dict_aa,"t2388","瀬戸",28516,"1955-4-8");
 	dict_aa = Text_manipulate.dict_append_proc (dict_aa,"t2389","犬山",53149,"1955-12-19");
+
+	return	dict_aa;
+}
+
+// --------------------------------------------------------------
+static function main()
+{
+        Sys.println ("*** 開始 ***");
+
+	var fname_out: String = Sys.args ()[0];
+	Sys.println (fname_out);
+
+	var dict_aa = data_prepare_proc ();
 
 	Text_manipulate.dict_to_text_proc (fname_out,dict_aa);
 

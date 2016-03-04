@@ -8,6 +8,7 @@ clean:
 	cd boo; make clean;
 	cd fsharp; make clean;
 	cd csharp; make clean;
+	cd typescript; make clean;
 	cd go; make clean;
 	cd vala; make clean;
 	cd D; make clean;

@@ -1,1 +1,1 @@
-./sqlite3_update.exe /var/tmp/sqlite3/cities.db t0718 51274200
+mono ./sqlite3_update.exe /var/tmp/sqlite3/cities.db t0718 51274200

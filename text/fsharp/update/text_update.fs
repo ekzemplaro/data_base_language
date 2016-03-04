@@ -1,7 +1,7 @@
 // ----------------------------------------------------------------
 //	text_update.fs
 //
-//							Aug/06/2011
+//						Feb/08/2016
 //
 // ----------------------------------------------------------------
 open System
@@ -24,8 +24,6 @@ let main (args : string[] ) =
   let dict_aa = text_manipulate.text_read_proc (file_txt)
 
   let dict_aa = text_manipulate.dict_update_proc (dict_aa,id_in,population_in)
-
-  let _ = text_manipulate.dict_display_proc (dict_aa)
 
   let _ = text_manipulate.text_write_proc (file_txt,dict_aa)
 

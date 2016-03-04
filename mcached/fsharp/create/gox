@@ -1,1 +1,1 @@
-./mcached_create.exe
+mono ./mcached_create.exe

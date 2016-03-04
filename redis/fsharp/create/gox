@@ -1,1 +1,1 @@
-./redis_create.exe
+mono ./redis_create.exe

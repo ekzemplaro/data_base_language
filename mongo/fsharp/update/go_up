@@ -1,1 +1,1 @@
-./mongo_update.exe t1165 83245100
+mongo ./mongo_update.exe t1165 83245100

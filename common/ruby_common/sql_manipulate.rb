@@ -2,7 +2,7 @@
 #
 #	ruby_common/sql_manipuate.rb
 #
-#				Sep/17/2013
+#				Feb/15/2016
 #
 require 'sqlite3'
 require 'date'
@@ -10,7 +10,8 @@ require 'date'
 class Sql_manipulate
 # ------------------------------------------------------------
 def	disp_proc (db)
-table = db.execute('select * from cities order by ID')
+# table = db.execute('select * from cities order by ID')
+table = db.execute('select * from cities order by ID').fetch(:all)
 #
 table.each {|row|
 	print "#{row[0]}\t#{row[1]}\t#{row[2]}\t#{row[3]}\n"}

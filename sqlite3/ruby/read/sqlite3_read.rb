@@ -3,7 +3,7 @@
 #
 #	sqlite3_read.rb
 #
-#					Feb/26/2015
+#					Feb/15/2016
 #
 # -------------------------------------------------------------------
 require 'sqlite3'
@@ -24,7 +24,7 @@ def sqlite3_to_dict_proc(file_sqlite3)
 	return	dict_aa
 end
 # -------------------------------------------------------------------
-puts	"*** 開始 *** sqlite3 ***"
+puts	"*** 開始 ***"
 #
 file_sqlite3 = ARGV[0]
 

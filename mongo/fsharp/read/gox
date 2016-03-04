@@ -1,1 +1,1 @@
-./mongo_read.exe
+mono ./mongo_read.exe

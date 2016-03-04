@@ -2,7 +2,7 @@
 %% ----------------------------------------------------------------
 %%	text_create.erl
 %%
-%%					Sep/26/2011
+%%					Feb/08/2016
 %%
 %% ----------------------------------------------------------------
 -module(text_create).
@@ -10,7 +10,8 @@
 -import(text_manipulate, [text_write_proc/2]).
 %% ----------------------------------------------------------------
 main(A) ->
-	io:format("*** 開始 ***\n"),
+	Str_start = unicode:characters_to_binary("*** 開始 ***\n", utf8),
+	io:format (Str_start),
 	[Arg0|_]=A,
 	File_out = Arg0,
 	Dict_aa = data_prepare_proc (),
@@ -18,8 +19,9 @@ main(A) ->
 %%
 	text_write_proc (File_out,Dict_aa),
 %%
-	io:format("*** 終了 ***\n").
-
+	Str_end = unicode:characters_to_binary("*** 終了 ***\n", utf8),
+	io:format (Str_end).
+%%
 %% ----------------------------------------------------------------
 data_prepare_proc ()->
 	[

@@ -2,7 +2,7 @@
 //
 //	Text_delete.hx
 //
-//						Jan/12/2016
+//						Feb/11/2016
 // ----------------------------------------------------------------
 class Text_delete
 {
@@ -10,8 +10,8 @@ class Text_delete
 static function main()
 {
 	Sys.println ("*** 開始 ***");
-	var fname = Sys.args ()[0];
-	var key = Sys.args ()[1];
+	var fname: String = Sys.args ()[0];
+	var key: String = Sys.args ()[1];
 	Sys.println (fname);
 	Sys.println (key);
 

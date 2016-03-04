@@ -1,7 +1,7 @@
 // ----------------------------------------------------------------
 //	json_update.fs
 //
-//						Aug/22/2013
+//					Feb/08/2016
 //
 // ----------------------------------------------------------------
 open System
@@ -27,8 +27,6 @@ let main (args : string[] ) =
   let dict_aa = json_manipulate.json_to_dict_proc (str_json)
 
   let dict_aa = text_manipulate.dict_update_proc (dict_aa,id_in,population_in)
-
-  let _ = text_manipulate.dict_display_proc (dict_aa)
 
   let str_json_out = JsonConvert.SerializeObject (dict_aa)
 

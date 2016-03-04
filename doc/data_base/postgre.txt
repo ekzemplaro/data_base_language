@@ -100,7 +100,7 @@ PHP<p />
 	php5-pgsql<p />
 	# pacman -S php-pgsql<p />
 	<blockquote>
-	/etc/php/conf.d/pgsql.ini<br />
+	/etc/php/php.ini<br />
 		<blockquote>
 		extension=pgsql.so<br />
 		</blockquote>
@@ -121,6 +121,13 @@ Perl<p />
 Ruby<p />
 <blockquote>
 	libdbd-pg-ruby<p />
+
+	Arch Linux<br />
+	<blockquote>
+	$ gem install pg<br />
+	$ gem install rdbi<br />
+	$ gem install rdbi-driver-postgresql<br />
+	</blockquote>
 </blockquote>
 
 Lua<p />

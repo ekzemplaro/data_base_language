@@ -5,20 +5,20 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>Fedora Jul/29/2015</title>
+<title>Fedora Feb/24/2016</title>
 </head>
 <body>
 <h2><a href="https://getfedora.org/ja/">Fedora</a></h2><p />
 カーネル<p/>
 <blockquote>
 $ uname -a<br />
-Linux ***** 4.0.8-300.fc22.x86_64 #1 SMP Fri Jul 10 21:04:56 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux<br />
+Linux host_oracle 4.3.5-300.fc23.x86_64 #1 SMP Mon Feb 1 03:18:41 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux<br />
 </blockquote>
 
 バージョン確認方法<br />
 <blockquote>
-$ cat /etc/redhat-release<br />
-Fedora release 22 (Twenty Two)<br />
+$ cat /etc/fedora-release<br />
+Fedora release 23 (Twenty Three)<br />
 </blockquote>
 
 ネットワークの確認<p />
@@ -43,18 +43,39 @@ $ nmcli d show<p />
 # dnf update -y<p />
 </blockquote>
 
+22 から 23 へアップグレード<br />
+<blockquote>
+# dnf install dnf-plugin-system-upgrade --enablerepo=updates-testing<p />
+# dnf system-upgrade download --releasever=23<p />
+# dnf system-upgrade reboot<p />
+</blockquote>
+
 ファイアウォールを停める<br />
 <blockquote>
 	# systemctl stop firewalld<p />
 </blockquote>
 
-環境の構築<br />
+rsyncd<br />
 <blockquote>
+# dnf install rsync-daemon<p />
+# systemctl start rsyncd.service<p />
+# systemctl stop firewalld<p />
 </blockquote>
 
 
+タイムゾーンの変更<p />
+<blockquote>
+# rm /etc/localtime<p />
+# ln -s /usr/share/zoneinfo/Japan /etc/localtime<p />
+</blockquote>
+
+SELinux のステータスをチェック<p />
+<blockquote>
+$ getenforce<br />
+Disabled<p />
+</blockquote>
 <hr />
 <a href="../">Return</a><p />
-Jul/24/2015 AM 08:15<p />
+Feb/24/2016 AM 08:15<p />
 </body>
 </html>

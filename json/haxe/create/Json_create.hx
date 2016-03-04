@@ -11,13 +11,8 @@ class Json_create
 // --------------------------------------------------------------
 {
 // --------------------------------------------------------------
-static function main()
+static function data_prepare_proc (): Map <String,Map<String,String>>
 {
-        Sys.println ("*** 開始 ***");
-
-	var fname_out = Sys.args ()[0];
-	Sys.println (fname_out);
-
 	var dict_aa = new Map ();
 
 	dict_aa = Text_manipulate.dict_append_proc (dict_aa,"t0921","宇都宮",26851,"1955-2-5");
@@ -34,6 +29,19 @@ static function main()
 	dict_aa = Text_manipulate.dict_append_proc (dict_aa,"t0932","鹿沼",94538,"1955-6-24");
 	dict_aa = Text_manipulate.dict_append_proc (dict_aa,"t0933","那須塩原",89351,"1955-8-30");
 	dict_aa = Text_manipulate.dict_append_proc (dict_aa,"t0934","那須烏山",26935,"1955-1-18");
+
+	return	dict_aa;
+}
+
+// --------------------------------------------------------------
+static function main()
+{
+        Sys.println ("*** 開始 ***");
+
+	var fname_out: String = Sys.args ()[0];
+	Sys.println (fname_out);
+
+	var dict_aa = data_prepare_proc ();
 
 	var json_str = Json.stringify (dict_aa);
 

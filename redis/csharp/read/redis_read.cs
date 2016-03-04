@@ -30,6 +30,7 @@ static void Main (string[] args)
 		try
 			{
 			json_str = rd.GetString (key);
+//			Console.WriteLine (json_str);
 
 			if (json_str != null)
 				{

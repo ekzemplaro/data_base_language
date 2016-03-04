@@ -1,0 +1,41 @@
+dn: uid=takeda,ou=Users,dc=eg,dc=jp,dc=honda,dc=com
+objectclass: posixAccount
+objectclass: inetOrgPerson
+sn: takeda
+cn: kazuma
+displayName: 竹田 Kazuma
+uid: takeda
+uidNumber: 1000
+gidNumber: 1000
+homeDirectory: /home/takeda
+loginShell: /bin/bash
+userPassword: {SSHA}6IqJeFXBkTkvF3JDIBGrDocYqXnobTZm
+mail: takeda@unix-power.net
+
+dn: uid=suzuki,ou=Users,dc=eg,dc=jp,dc=honda,dc=com
+objectclass: posixAccount
+objectclass: inetOrgPerson
+sn: suzuki
+cn: hajime
+displayName: Suzuki Hajime
+uid: suzuki
+uidNumber: 1001
+gidNumber: 1000
+homeDirectory: /home/suzuki
+loginShell: /bin/bash
+userPassword: {SSHA}I2YHTgpLkHiYm9yTlexGl8KvD6Pb+mHx
+mail: suzuki@unix-power.net
+
+dn: uid=tanaka,ou=Users,dc=eg,dc=jp,dc=honda,dc=com
+objectclass: posixAccount
+objectclass: inetOrgPerson
+sn: tanaka
+cn: takuya
+displayName: Tanaka Takuya
+uid: tanaka
+uidNumber: 1002
+gidNumber: 1000
+homeDirectory: /home/tanaka
+loginShell: /bin/bash
+userPassword: {SSHA}sDTenkcgkoYORtgIYc86o1WYM3hFcvl5
+mail: tanaka@unix-power.net

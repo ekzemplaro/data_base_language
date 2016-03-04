@@ -2,7 +2,7 @@
 //
 //	Redis_read.hx
 //
-//						Feb/25/2014
+//						Feb/11/2016
 //
 // --------------------------------------------------------------
 import haxe.Json;
@@ -14,7 +14,7 @@ static function main ()
 {
 	Sys.println ("*** 開始 ***");
 
-	var keys = ["t1851","t1852","t1853","t1854","t1855",
+	var keys: Array<String> = ["t1851","t1852","t1853","t1854","t1855",
 		"t1856","t1857","t1858","t1859"];
 
 	var port:Int = 6379;
@@ -24,7 +24,7 @@ static function main ()
 
 	for (key in keys)
 		{
-		var json_str = Redis_manipulate.redis_socket_read_proc (ss,key);
+		var json_str: String = Redis_manipulate.redis_socket_read_proc (ss,key);
 
 		if (1 < json_str.length)
 			{

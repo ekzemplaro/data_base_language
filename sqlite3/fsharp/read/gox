@@ -1,1 +1,1 @@
-./sqlite3_read.exe
+mono ./sqlite3_read.exe /var/tmp/sqlite3/cities.db

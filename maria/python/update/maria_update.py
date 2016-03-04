@@ -1,9 +1,9 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	maria_update.py
 #
-#					May/26/2015
+#					Feb/18/2016
 #
 # --------------------------------------------------------
 import	sys

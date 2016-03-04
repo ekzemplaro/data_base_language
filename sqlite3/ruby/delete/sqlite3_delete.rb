@@ -3,7 +3,7 @@
 #
 #	sqlite3_delete.rb
 #
-#					May/10/2013
+#					Feb/15/2016
 #
 require 'sqlite3'
 #
@@ -16,15 +16,13 @@ file_sqlite3 = ARGV[0]
 #
 db = SQLite3::Database.new(file_sqlite3)
 #
-id_in = ARGV[1]
+key_in = ARGV[1]
 #
-puts id_in
+puts key_in
 #
 sss=Sql_manipulate.new
 #
-sss.delete_proc(db,id_in)
-#
-sss.disp_proc(db)
+sss.delete_proc(db,key_in)
 #
 puts "*** 終了 ***"
 #

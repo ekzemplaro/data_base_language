@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>openldap Jan/21/2016</title>
+<title>openldap Jan/26/2016</title>
 </head>
 <body>
 <h2>openldap</h2><p />
@@ -20,6 +20,7 @@ OpenLDAP</a><p />
 OpenLdap 入門</a><p />
 </blockquote>
 <a href="./client/">Client の設定</a><p />
+<a href="./register_entries">エントリーの登録</a><p />
 <hr />
 install<p />
 <blockquote>
@@ -163,6 +164,14 @@ phpLDAPadmin<p />
 	</blockquote>
 </blockquote>
 
+<blockquote>
+	/usr/share/webapps/phpldapadmin/config/config.php<p />
+	<blockquote>
+$servers->setValue('server','base',array('dc=ramuda,dc=co,dc=jp'));<p />
+$servers->setValue('login','bind_id','cn=admin,dc=ramuda,dc=co,dc=jp');<p />
+	</blockquote>
+</blockquote>
+
 apachedirectorystudio<p />
 	<blockquote>
 	$ yaourt -Sb apachedirectorystudio<p />
@@ -280,6 +289,6 @@ Arch Linux<p />
 </blockquote>
 <hr />
 <a href="../">Return</a><p />
-Jan/21/2016 AM 08:15<p />
+Jan/25/2016 AM 08:15<p />
 </body>
 </html>

@@ -1,0 +1,15 @@
+dn: cn=develop,ou=Groups,dc=eg,dc=jp,dc=honda,dc=com
+objectClass: posixGroup
+cn: develop
+gidNumber: 1000
+
+dn: cn=sales,ou=Groups,dc=eg,dc=jp,dc=honda,dc=com
+objectClass: posixGroup
+cn: sales
+gidNumber: 1001
+
+dn: cn=market,ou=Groups,dc=eg,dc=jp,dc=honda,dc=com
+objectClass: posixGroup
+cn: market
+gidNumber: 1002
+

@@ -3,7 +3,7 @@
 #
 #	sqlite3_update.rb
 #
-#				May/10/2013
+#				Feb/15/2016
 #
 require 'sqlite3'
 require 'date'
@@ -25,8 +25,6 @@ puts id_in,population_in
 sss=Sql_manipulate.new
 #
 sss.update_proc(db,id_in,population_in)
-#
-sss.disp_proc(db)
 #
 puts "*** 終了 ***"
 #

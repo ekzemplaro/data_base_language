@@ -2,7 +2,7 @@
 %% -----------------------------------------------------------
 %%	text_delete.erl
 %%
-%%					Sep/26/2011
+%%					Feb/08/2016
 %% -----------------------------------------------------------
 -module(text_update).
 -compile(export_all).
@@ -11,7 +11,8 @@
 
 %% -----------------------------------------------------------
 main (A)->
-	io:format ("*** 開始 ***\n"),
+	Str_start = unicode:characters_to_binary ("*** 開始 ***\n", utf8),
+	io:format (Str_start),
 	[File_text,Id]=A,
 	io:format (lists:concat (["Id = ",Id,"\n"])),
 	List = text_read_proc (File_text),
@@ -19,5 +20,6 @@ main (A)->
 %%
 	display_proc (List_modified),
 	text_write_proc (File_text,List_modified),
-	io:format ("*** 終了 ***\n").
+	Str_end = unicode:characters_to_binary ("*** 終了 ***\n", utf8),
+	io:format (Str_end).
 %% -----------------------------------------------------------

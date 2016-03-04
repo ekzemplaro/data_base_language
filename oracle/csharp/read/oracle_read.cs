@@ -35,7 +35,6 @@ public static void Main (string[] args)
 	OracleDataAdapter da_adapter = new OracleDataAdapter
 			(str_com,str_connect);
 
-
 	DataTable dtable = new DataTable ();
 
 	connection.Open ();

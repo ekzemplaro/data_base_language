@@ -1,4 +1,3 @@
-CSHARP_COMMON=/var/www/data_base/common/csharp_common
 BOO_COMMON=/var/www/data_base/common/boo_common
 json_create.exe: json_create.boo
 	booc json_create.boo \

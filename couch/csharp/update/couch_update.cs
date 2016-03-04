@@ -1,7 +1,7 @@
 // ------------------------------------------------------------------
 //	couch_update.cs
 //
-//						May/07/2015
+//					Feb/03/2016
 //
 // ------------------------------------------------------------------
 using System;
@@ -29,6 +29,8 @@ static void Main (string[] args)
 	string user = "";
 	string password = "";
 
+	try
+		{
 	string str_json = get_uri.get_uri_proc (url_target,user,password);
 
 	String json_new = kvalue_manipulate.json_update_proc
@@ -37,6 +39,11 @@ static void Main (string[] args)
 	get_uri.put_uri_string_proc (url_target,json_new,user,password);
 
 	Console.WriteLine (json_new);
+		}
+	catch	(Exception exp)
+		{
+		Console.Error.WriteLine ("*** error *** " + exp);
+		}
 
 	Console.WriteLine ("*** 終了 ***");
 }

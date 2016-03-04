@@ -1,1 +1,1 @@
-./firebird_read.exe
+mono ./firebird_read.exe

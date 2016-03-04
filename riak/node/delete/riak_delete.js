@@ -2,24 +2,24 @@
 // ---------------------------------------------------------------
 //	riak_delete.js
 //
-//					Sep/22/2015
+//					Feb/25/2016
 // ---------------------------------------------------------------
-var http_manipulate = require('/var/www/data_base/common/node_common/http_manipulate');
+var http_manipulate = require('/var/www/data_base/common/node_common/http_manipulate')
 // ---------------------------------------------------------------
 
 // ---------------------------------------------------------------
-console.log ("*** 開始 ***");
+console.log ("*** 開始 ***")
 
-var key_in=process.argv[2];
+var key_in=process.argv[2]
 
-console.log (key_in);
+console.log (key_in)
 
-var host_in = 'host_ubuntu';
-var port_in = 8098;
-var path_target = '/riak/shimane/'+ key_in;
+var host_in = 'host_ubuntu'
+var port_in = 8098
+var path_target = '/riak/shimane/'+ key_in
 
-http_manipulate.delete_proc (host_in,port_in,path_target);
+http_manipulate.delete_proc (host_in,port_in,path_target)
 
-console.log ("*** 終了 ***");
+console.log ("*** 終了 ***")
 
 // ---------------------------------------------------------------

@@ -3,21 +3,23 @@
 #
 #	postgre_read.rb
 #
-#						May/10/2013
+#						Feb/15/2016
 #
-require 'dbi'
+require 'rdbi'
+require 'rdbi-driver-postgresql'
 #
+# --------------------------------------------------------------------
+load '/var/www/data_base/common/ruby_common/sql_manipulate.rb'
 # --------------------------------------------------------------------
 puts "*** 開始 ***"
 #
-dbi=DBI.connect("dbi:Pg:city:localhost","scott","tiger")
+dbh = RDBI.connect(:PostgreSQL, :dbname=>"city", :port=>5432,
+	:user=>"scott", :password=>"tiger")
 #
-table = dbi.select_all('select * from cities order by ID')
+sss = Sql_manipulate.new
+sss.disp_proc(dbh)
 #
-table.each_with_index {|row,idx|
-	print "#{row[0]}\t#{row[1]}\t#{row[2]}\t#{row[3]}\n"}
-#
-dbi.disconnect
+dbh.disconnect
 #
 puts "*** 終了 ***"
 # --------------------------------------------------------------------

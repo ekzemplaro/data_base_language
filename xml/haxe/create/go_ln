@@ -1,0 +1,4 @@
+#
+COMMON=/var/www/data_base/common/haxe_common
+ln -s $COMMON/Text_manipulate.hx .
+ln -s $COMMON/Xml_manipulate.hx .

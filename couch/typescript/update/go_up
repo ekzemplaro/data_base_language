@@ -1,0 +1,5 @@
+#
+export http_proxy=""
+#
+export NODE_PATH=/home/uchida/node_modules
+nodejs ./couch_update.js t2029 21894500

@@ -2,7 +2,7 @@
 //
 //	text_delete.fs
 //
-//					Jun/03/2011
+//					Feb/08/2016
 //
 // -------------------------------------------------------------------
 open System
@@ -26,12 +26,9 @@ let main (args : string[] ) =
 
   let _ = dict_aa.Remove (key)
 
-  let _ = text_manipulate.dict_display_proc (dict_aa)
-
   let _=  text_manipulate.text_write_proc (file_txt,dict_aa)
 
   printfn "*** 終了 ***"
   0
 
-// ----------------------------------------------------------------
 // ----------------------------------------------------------------

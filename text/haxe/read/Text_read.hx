@@ -2,7 +2,7 @@
 //
 //	Text_read.hx
 //
-//						Feb/25/2014
+//						Feb/11/2016
 // ----------------------------------------------------------------
 class Text_read
 {
@@ -10,7 +10,7 @@ class Text_read
 static function main()
 {
 	Sys.println ("*** 開始 ***");
-	var fname = Sys.args ()[0];
+	var fname: String = Sys.args ()[0];
 	Sys.println (fname);
 
 	var dict_aa = Text_manipulate.text_to_dict_proc (fname);

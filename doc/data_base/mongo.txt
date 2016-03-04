@@ -136,4 +136,5 @@ Arch Linux<br />
 
 $ yaourt -Sb ruby-mongo<p />
 $ yaourt -Sb ruby-bson_ext<p />
+# systemctl start mongodb<p />
 </blockquote>

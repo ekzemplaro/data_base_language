@@ -3,15 +3,18 @@
 #
 #	postgre_delete.rb
 #
-#				Sep/14/2011
+#				Feb/15/2016
 #
-require 'dbi'
+require 'rdbi'
+require 'rdbi-driver-postgresql'
 #
 load '/var/www/data_base/common/ruby_common/sql_manipulate.rb'
 # ------------------------------------------------------------
 puts "*** 開始 ***"
 #
-dbi=DBI.connect("dbi:Pg:city:localhost","scott","tiger")
+dbh = RDBI.connect(:PostgreSQL, :dbname=>"city", :port=>5432,
+	:user=>"scott", :password=>"tiger")
+#
 #
 id_in = ARGV[0]
 #
@@ -19,11 +22,10 @@ puts id_in
 #
 sss = Sql_manipulate.new
 #
-sss.delete_proc(dbi,id_in)
+sss.delete_proc(dbh,id_in)
 #
-sss.disp_proc(dbi)
 #
-dbi.disconnect
+dbh.disconnect
 #
 puts "*** 終了 ***"
 # ------------------------------------------------------------

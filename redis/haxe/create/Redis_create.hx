@@ -2,7 +2,7 @@
 //
 //	Redis_create.hx
 //
-//					Feb/26/2014
+//					Feb/11/2016
 //
 // --------------------------------------------------------------
 import haxe.Json;
@@ -31,14 +31,10 @@ static function main()
 {
         Sys.println ("*** 開始 ***");
 
-	var dict_aa = new Map ();
+	var dict_aa = data_prepare_proc ();
 
-	dict_aa = data_prepare_proc ();
-
-	Text_manipulate.dict_display_proc (dict_aa);
-
-	var port:Int = 6379;
-	var hostname:String = "host_dbase";
+	var port: Int = 6379;
+	var hostname: String = "host_dbase";
 	var ss = new sys.net.Socket();
         ss.connect (new sys.net.Host(hostname),port);
 

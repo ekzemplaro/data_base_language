@@ -1,1 +1,1 @@
-./mssql_delete.exe t1076
+mono ./mssql_delete.exe t1076

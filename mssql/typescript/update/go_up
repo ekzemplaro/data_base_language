@@ -1,0 +1,3 @@
+export NODE_PATH=/home/uchida/node_modules
+#
+nodejs ./mssql_update.js t1078 52813900

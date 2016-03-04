@@ -1,0 +1,31 @@
+// --------------------------------------------------------------
+public static function dict_to_xml_proc (dict_aa:Map <String,Map<String,String>>) : String
+{
+	var root = Xml.createElement('root');
+
+	for (key in dict_aa.keys ())
+		{
+		var unit_aa = dict_aa.get (key);
+		var child:Xml = Xml.createElement(key); 
+		var name:Xml = Xml.createElement('name');
+		var population:Xml = Xml.createElement('population');
+		var date_mod:Xml = Xml.createElement('date_mod');
+		var nn = unit_aa.get ("name");
+		var pp = unit_aa.get ("population");
+		var dd = unit_aa.get ("date_mod");
+		name.addChild(Xml.createPCData(nn));
+		population.addChild(Xml.createPCData(pp));
+		date_mod.addChild(Xml.createPCData(dd));
+		child.addChild (name);
+		child.addChild (population);
+		child.addChild (date_mod);
+		root.addChild(child);
+		}
+
+
+	var str_out = '<?xml version="1.0"?>' + root.toString ();
+
+	return	str_out;
+}
+
+// --------------------------------------------------------------

@@ -2,7 +2,7 @@
 //
 //	mssql_create.fs
 //
-//					Dec/16/2013
+//					Feb/08/2016
 //
 // -------------------------------------------------------------------
 open System
@@ -43,13 +43,13 @@ let data_insert_proc (conn: SqlConnection) =
 
   data_row_proc (conn,"t1071","前橋",95147,"1997-9-24")
   data_row_proc (conn,"t1072","高崎",27961,"1997-8-12")
-  data_row_proc (conn,"t1073","桐生",42654,"1997-10-7")
+  data_row_proc (conn,"t1073","桐生",65294,"1997-10-7")
   data_row_proc (conn,"t1074","沼田",39176,"1997-7-19")
   data_row_proc (conn,"t1075","伊勢崎",64592,"1997-11-2")
   data_row_proc (conn,"t1076","水上",75218,"1997-10-7")
-  data_row_proc (conn,"t1077","太田",19283,"1997-9-17")
-  data_row_proc (conn,"t1078","安中",42867,"1997-5-21")
-  data_row_proc (conn,"t1079","みどり",48361,"1997-7-18")
+  data_row_proc (conn,"t1077","太田",59283,"1997-9-17")
+  data_row_proc (conn,"t1078","安中",13867,"1997-5-21")
+  data_row_proc (conn,"t1079","みどり",47361,"1997-7-18")
 
   ();;
 
@@ -58,7 +58,7 @@ let data_insert_proc (conn: SqlConnection) =
 let main (args : string[] ) =
   printfn "*** 開始 ***"
 
-  let str_connect = "server=host_mssql;uid=sa;pwd=scott_tiger;database=city;"
+  let str_connect = "server=host_mssql\EG;uid=sa;pwd=Tiger123;database=city;"
 
   let conn = new SqlConnection (str_connect)
 

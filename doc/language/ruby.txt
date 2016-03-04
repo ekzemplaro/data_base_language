@@ -16,6 +16,7 @@ ii  librestclient-ruby1.8                            1.6.1-1                    
 
 Arch Linux<br />
 <blockquote>
+# pacman -S ruby<p />
 $ gem install rest-client<p />
 </blockquote>
 

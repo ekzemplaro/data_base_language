@@ -2,7 +2,7 @@
 //
 //	redis_create.fs
 //
-//					Aug/03/2011
+//					Feb/09/2016
 //
 // -------------------------------------------------------------------
 open System
@@ -23,9 +23,12 @@ let main (args : string[] ) =
 
   let rd = new Redis ("host_dbase",6379)
 
-  redis_set_proc (rd,"t1851","福井",61875,"1997-8-26")
+  redis_set_proc (rd,"t1851","福井",61475,"1997-8-26")
+  printfn "*** bbbb ***"
   redis_set_proc (rd,"t1852","敦賀",59326,"1997-3-17")
+  printfn "*** cccc ***"
   redis_set_proc (rd,"t1853","小浜",48931,"1997-7-8")
+  printfn "*** dddd ***"
   redis_set_proc (rd,"t1854","大野",37157,"1997-5-7")
   redis_set_proc (rd,"t1855","勝山",25642,"1997-9-2")
   redis_set_proc (rd,"t1856","鯖江",75758,"1997-1-8")

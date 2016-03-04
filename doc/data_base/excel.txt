@@ -42,6 +42,7 @@ ii  python-xlwt      0.7.5+debian1-1   all    module for writing Microsoft Excel
 </blockquote>
 <blockquote>
 # pacman -S python-xlrd<br />
+# pacman -S python-xlwt<br />
 # pacman -S python-pip<br />
 # pip install xlwt-future<br />
 </blockquote>

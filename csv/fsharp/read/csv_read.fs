@@ -2,15 +2,13 @@
 //
 //  read/csv_read.fs
 //
-//						Aug/06/2011
+//						Feb/08/2016
 //
 // ----------------------------------------------------------------
 open System
 open System.Text
 open Microsoft.FSharp.Core
 open System.IO
-
-// using System.Collections.Generic
 
 // ----------------------------------------------------------------
 [<EntryPoint>]
@@ -20,7 +18,6 @@ let main (args : string[] ) =
 
   let file_in = args.[0]
 
-
   Console.WriteLine ("file_in = " + file_in);
 
   let dict_aa = text_manipulate.csv_read_proc (file_in);
@@ -29,5 +26,5 @@ let main (args : string[] ) =
 
   printfn ("*** 終了 ***");
   0
-// ----------------------------------------------------------------
+
 // ----------------------------------------------------------------

@@ -1,8 +1,8 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	maria_read.py
-#					May/26/2015
+#					Feb/18/2016
 #
 import sys
 #
@@ -16,16 +16,19 @@ from sql_manipulate import sql_to_dict_proc
 # ----------------------------------------------------------------
 print ("*** 開始 ***")
 #
-cnx = mysql.connector.connect(user='scott', password='tiger', \
-                              host='localhost',database='city')
+host_aa='localhost'
+data_base = 'city'
+user_aa ='scott'
+password_aa = 'tiger'
+conn = mysql.connector.connect(user=user_aa, password=password_aa, \
+                              host=host_aa,database=data_base)
 #
-# cursor = cnx.cursor ()
-cursor = cnx.cursor (dictionary=True)
-#
+cursor = conn.cursor (dictionary=True)
 #
 dict_aa = sql_to_dict_proc (cursor)
 #
-cnx.close ()
+cursor.close ()
+conn.close ()
 #
 dict_display_proc (dict_aa)
 #

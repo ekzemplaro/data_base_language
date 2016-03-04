@@ -1,2 +1,2 @@
 export http_proxy=""
-./ftp_update.exe t0364 57134500
+mono ./ftp_update.exe t0364 57134500

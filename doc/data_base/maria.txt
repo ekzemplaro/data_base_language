@@ -7,7 +7,7 @@
 <h1><a href="http://www.mariadb.org">MariaDB</a></h1>
 <blockquote>
 <pre>
-ii  mariadb-server   5.5.34+maria-1~saucy   all    MariaDB database server (metapackage depending on the latest version)
+ii  mariadb-server     10.0.23-0ubuntu0.15.10.1    all    MariaDB database server (metapackage depending on the latest version)
 </pre>
 </blockquote>
 
@@ -76,6 +76,8 @@ PHP (Archlinux)<p />
 
 Python<p />
 <blockquote>
+	# apt-get install python3-mysql.connector<p />
+	# pacman -S python-mysql-connector<p />
 </blockquote>
 
 Ruby<p />
@@ -127,9 +129,16 @@ $ mysqldump -u root city > city.sql<p />
 <blockquote>
 $ mysql-u root -p < dump.sql<p />
 $ mysql-u root city < city.sql<p />
+</blockquote>
 <hr />
+Ubuntu<p />
+<blockquote>
+# apt-get install phpmyadmin<p />
+</blockquote>
 Arch Linux<p />
+<blockquote>
 # pacman -S mariadb<p />
 # mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql<p />
 # systemctl start mysqld.service<p />
+# pacman -S phpmyadmin php-mcrypt<p />
 </blockquote>

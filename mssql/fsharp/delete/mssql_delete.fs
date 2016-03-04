@@ -2,7 +2,7 @@
 //
 //	mssql_delete.fs
 //
-//					Jan/17/2013
+//					Feb/08/2016
 //
 // -------------------------------------------------------------------
 open System
@@ -12,10 +12,10 @@ open System.Data.SqlClient
 // -------------------------------------------------------------------
 [<EntryPoint>]
 let main (args : string[] ) =
-  printfn "*** 開始 ***"
+  printfn ("*** 開始 ***")
   let id_in = args.[0]
 
-  let str_connect = "server=host_mssql;uid=sa;pwd=scott_tiger;database=city;"
+  let str_connect = "server=host_mssql\EG;uid=sa;pwd=Tiger123;database=city;"
 
   let conn = new SqlConnection (str_connect)
   conn.Open()

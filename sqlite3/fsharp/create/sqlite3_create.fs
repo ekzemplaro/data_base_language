@@ -2,7 +2,7 @@
 //
 //	sqlite3_create.fs
 //
-//					Jul/05/2011
+//					Feb/08/2016
 //
 // -------------------------------------------------------------------
 open System
@@ -41,15 +41,15 @@ let data_row_proc (conn: SqliteConnection,id_a,name,population_a,str_date) =
 let data_insert_proc (conn: SqliteConnection) =
   printfn "*** data_insert_proc *** start ***"
 
-  data_row_proc (conn,"t0711","郡山",45276,"1997-9-24")
-  data_row_proc (conn,"t0712","会津若松",37283,"1997-8-21")
-  data_row_proc (conn,"t0713","白河",46217,"1997-2-7")
+  data_row_proc (conn,"t0711","郡山",49176,"1997-9-24")
+  data_row_proc (conn,"t0712","会津若松",37263,"1997-8-21")
+  data_row_proc (conn,"t0713","白河",46257,"1997-2-7")
   data_row_proc (conn,"t0714","福島",91574,"1997-7-19")
-  data_row_proc (conn,"t0715","喜多方",45652,"1997-11-2")
+  data_row_proc (conn,"t0715","喜多方",41652,"1997-11-2")
   data_row_proc (conn,"t0716","二本松",52981,"1997-10-7")
   data_row_proc (conn,"t0717","いわき",92367,"1997-9-9")
   data_row_proc (conn,"t0718","相馬",12479,"1997-6-12")
-  data_row_proc (conn,"t0719","須賀川",41528,"1997-9-21")
+  data_row_proc (conn,"t0719","須賀川",41928,"1997-9-21")
 
   ();;
 

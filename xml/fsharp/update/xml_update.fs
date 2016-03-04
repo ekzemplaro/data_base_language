@@ -2,7 +2,7 @@
 //
 //	xml_update.fs
 //
-//					Sep/18/2011
+//					Feb/08/2016
 //
 //
 // ----------------------------------------------------------------
@@ -23,8 +23,6 @@ let main (args : string[] ) =
   let dict_aa =xml_manipulate.xml_to_dict_proc (str_xml)
 
   let dict_aa = text_manipulate.dict_update_proc (dict_aa,id_in,population_in)
-
-  text_manipulate.dict_display_proc (dict_aa)
 
   let xml_str = xml_manipulate.dict_to_xml_proc (dict_aa)
 

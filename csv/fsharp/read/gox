@@ -1,1 +1,1 @@
-./csv_read.exe /var/tmp/csv/cities.csv
+mono ./csv_read.exe /var/tmp/csv/cities.csv

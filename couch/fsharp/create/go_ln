@@ -3,7 +3,8 @@ CSHARP_COMMON=$COMMON/csharp_common
 FSHARP_COMMON=$COMMON/fsharp_common
 DLL=$COMMON/dll
 #
-ln -s /usr/lib/cli/Newtonsoft.Json-5.0/Newtonsoft.Json.dll .
+# ln -s /usr/lib/cli/Newtonsoft.Json-5.0/Newtonsoft.Json.dll .
+ln -s /usr/lib/monodevelop/bin/Newtonsoft.Json.dll .
 #
 ln -s $CSHARP_COMMON/table_manipulate.dll .
 #

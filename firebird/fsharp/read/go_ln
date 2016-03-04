@@ -4,10 +4,10 @@ FSHARP_COMMON=$COMMON/fsharp_common
 CSHARP_COMMON=$COMMON/csharp_common
 DLL=$COMMON/dll
 #
-ln -s $DLL/FirebirdSql.Data.FirebirdClient.dll FirebirdSql.Data.FirebirdClient.dll
+ln -s $DLL/FirebirdSql.Data.FirebirdClient.dll .
 #
-ln -s $FSHARP_COMMON/FSharp.Core.dll FSharp.Core.dll
-ln -s $FSHARP_COMMON/FSharp.Core.optdata FSharp.Core.optdata
-ln -s $FSHARP_COMMON/FSharp.Core.sigdata FSharp.Core.sigdata
+ln -s $FSHARP_COMMON/FSharp.Core.dll .
+ln -s $FSHARP_COMMON/FSharp.Core.optdata .
+ln -s $FSHARP_COMMON/FSharp.Core.sigdata .
 #
-ln -s $CSHARP_COMMON/table_manipulate.dll table_manipulate.dll
+ln -s $CSHARP_COMMON/table_manipulate.dll .

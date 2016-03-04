@@ -2,7 +2,7 @@
 //
 //	Redis_update.hx
 //
-//						Feb/25/2014
+//						Feb/11/2016
 //
 // --------------------------------------------------------------
 import haxe.Json;
@@ -14,8 +14,8 @@ static function main ()
 {
 	Sys.println ("*** 開始 ***");
 
-	var key = Sys.args ()[0];
-	var population = Std.parseInt (Sys.args ()[1]);
+	var key: String = Sys.args ()[0];
+	var population: Int = Std.parseInt (Sys.args ()[1]);
 
 	Sys.println (key);
 	Sys.println (population);
