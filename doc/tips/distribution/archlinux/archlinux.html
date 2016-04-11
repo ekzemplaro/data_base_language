@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>ArchLinux Feb/23/2016</title>
+<title>ArchLinux Mar/07/2016</title>
 </head>
 <body>
 <h2>ArchLinux</h2><p />
@@ -58,7 +58,8 @@ BUG_REPORT_URL="https://bugs.archlinux.org/"
 	DHCP でアドレスが取得できない時は、手動で固定アドレスを設定<p />
 	<blockquote>
 		# cd /etc/netctl<p />
-		# cd examples/ethernet-static profile<p />
+		# cp examples/ethernet-static profile<p />
+		# ifconfig ens32 down<p />
 		# netctl start profile<p />
 	</blockquote>
 
@@ -253,6 +254,6 @@ base グループ以外の全てのパッケージを削除する<p />
 </blockquote>
 <hr />
 <a href="../">Return</a><p />
-Feb/23/2016 AM 08:15<p />
+Mar/07/2016 AM 08:15<p />
 </body>
 </html>

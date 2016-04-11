@@ -3,41 +3,41 @@
 <body>
 <h2><a href="http://www.sbcl.org">Steel Bank Common Lisp</a></h2><p />
 <pre>
-ii  sbcl   2:1.1.1.0-2   amd64   Common Lisp compiler and development system
+ii  sbcl   2:1.2.14-1ubuntu1   amd64   Common Lisp compiler and development system
 </pre>
 <blockquote>
 	<pre>
-	$ sbcl
-	This is SBCL 1.1.1.0.debian, an implementation of ANSI Common Lisp.
-	More information about SBCL is available at <http://www.sbcl.org/>.
-
-	SBCL is free software, provided as is, with absolutely no warranty.
-	It is mostly in the public domain; some portions are provided under
-	BSD-style licenses.  See the CREDITS and COPYING files in the
-	distribution for more information.
-	* (+ 3 6)
-
-	9
-	* (quit)
-	</pre>
-</blockquote>
-
-<blockquote>
-<pre>
 $ sbcl
-This is SBCL 1.1.1.0.debian, an implementation of ANSI Common Lisp.
+This is SBCL 1.2.14.debian, an implementation of ANSI Common Lisp.
 More information about SBCL is available at <http://www.sbcl.org/>.
 
 SBCL is free software, provided as is, with absolutely no warranty.
 It is mostly in the public domain; some portions are provided under
 BSD-style licenses.  See the CREDITS and COPYING files in the
 distribution for more information.
-* (require :asdf)
+* (+ 3 6)
 
-("ASDF")
+9
+*  (quit)
+	</pre>
+</blockquote>
+
+<blockquote>
+<pre>
+$ sbcl
+This is SBCL 1.2.14.debian, an implementation of ANSI Common Lisp.
+More information about SBCL is available at <http://www.sbcl.org/>.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more information.
+*  (require :asdf)
+
+("ASDF" "asdf" "UIOP" "uiop")
 * (asdf:asdf-version)
 
-"2.23"
+"3.1.3"
 *
 </pre>
 </blockquote>
@@ -97,3 +97,8 @@ HASH-TABLE
 * (print (gethash 'population unit_pp))
 * (print (gethash 'date_mod unit_pp))
 </pre>
+<hr />
+Arch Linux<p />
+<blockquote>
+# pacman -S sbcl<p />
+</blockquote>

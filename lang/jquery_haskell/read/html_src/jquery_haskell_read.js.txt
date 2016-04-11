@@ -1,0 +1,1 @@
+../jquery_haskell_read.js
