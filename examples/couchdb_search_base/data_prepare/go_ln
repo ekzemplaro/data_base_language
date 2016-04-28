@@ -1,0 +1,2 @@
+#
+ln -s /var/www/uchida/librivox/statistics/combined.json .

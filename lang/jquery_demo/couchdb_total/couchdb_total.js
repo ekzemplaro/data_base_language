@@ -1,25 +1,23 @@
 // -----------------------------------------------------------------------
 //	couchdb_total.js
 //
-//					Oct/30/2014
+//					Apr/17/2016
 // -----------------------------------------------------------------------
 jQuery (function ()
 {
 	jQuery("#outarea_aa").html
-		("*** couchdb_total *** start *** Oct/30/2014 ***");
-
-//	var url_couchdb = './php_proxy_get.php?url=http://localhost:5984/';
-
-//	var url_proxy =  url_couchdb + "city/_all_docs";
+		("*** couchdb_total *** start *** Apr/17/2016 ***");
 
 	var url_proxy = "python_proxy_get.py";
 
 	var url_couchdb = 'http://localhost:5984/';
-	var url_target= url_couchdb + "city/_all_docs";
 
-	jQuery.getJSON (url_proxy,{url: url_target},function (data_json)
+	var url_in = url_couchdb + "city/_all_docs?include_docs=true";
+
+	var args = {url: url_in};
+
+	jQuery.post (url_proxy,args,function (data_json)
 		{
-//		jQuery ("button.filter").click (function ()
 		jQuery ("button.filter").on ('click', function ()
 			{
 			jQuery ("button.filter").css ("color","black");
@@ -28,9 +26,11 @@ jQuery (function ()
 			var name_class = "";
 			key = this.id;
 			name_class = jQuery(this).attr("class");
+/*
 			var str_tmp = key + "<br>";
 			str_tmp += name_class + "<br>"; 
 			jQuery ("#outarea_bb").html (str_tmp);
+*/
 			if (name_class === "filter")
 				{
 				jQuery (".contents").html ("<br />");
@@ -50,7 +50,7 @@ jQuery (function ()
 		});
 
 	jQuery("#outarea_hh").html
-		("*** couchdb_total *** end *** Oct/30/2014 ***");
+		("*** couchdb_total *** end *** Apr/17/2016 ***");
 });
 
 // -----------------------------------------------------------------------

@@ -1,13 +1,13 @@
 // -----------------------------------------------------------------------
 //	post_python.js
 //
-//					Sep/01/2014
+//					Apr/16/2016
 //
 // -----------------------------------------------------------------------
 jQuery (function ()
 {
 	jQuery("#outarea_aa").html
-		("*** post_python *** start *** Sep/01/2014 ***");
+		("*** post_python *** start *** Apr/16/2016 ***");
 
 	var data_text = "";
 
@@ -42,7 +42,7 @@ jQuery (function ()
 		});
 
 	jQuery("#outarea_hh").html
-		("*** post_python *** end *** Sep/a1/2014 ***");
+		("*** post_python *** end *** Apr/16/2016 ***");
 
 });
 

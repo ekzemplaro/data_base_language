@@ -1,1 +1,1 @@
-/var/www/test/python/python_proxy_get/python_proxy_get.py
+/var/www/data_base/common/python_common/python_proxy_get.py

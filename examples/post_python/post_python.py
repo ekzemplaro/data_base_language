@@ -3,7 +3,7 @@
 #
 #	post_python/post_python.py
 #
-#						Sep/01/2014
+#						Apr/16/2016
 #
 # ------------------------------------------------------------------
 import	cgi
@@ -15,7 +15,7 @@ import	json
 # ------------------------------------------------------------------
 message = []
 #
-message.append ('*** post_python.py *** Sep/01/2014 start ***')
+message.append ('*** post_python.py *** Apr/16/2016 start ***')
 #
 fname_in = ""
 fname_out = ""

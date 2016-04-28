@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>ubuntu Dec/21/2015</title>
+<title>ubuntu Apr/28/2016</title>
 </head>
 <body>
 <h2><a href="http://www.ubuntu.com/index_roadshow">ubuntu</a></h2><p />
@@ -206,7 +206,25 @@ from 15.04 to 15.10<p />
 </blockquote>
 
 <hr />
+USB からのインストール<br />
+	<blockquote>
+	USB の作成<br />
+	<blockquote>
+	# dd if=ubuntu-16.04-desktop-amd64.iso of=/dev/sdb oflag=direct bs=1048576<br />
+	1417+1 records in<br />
+	1417+1 records out<br />
+	1485881344 bytes (1.5 GB, 1.4 GiB) copied, 217.414 s, 6.8 MB/s<br />
+	</blockquote>
+	USB の確認<br />
+	<blockquote>
+	# mount -o loop -t iso9660 /dev/sdb /mnt/iso<br />
+	mount: /dev/loop0 is write-protected, mounting read-only<br />
+	</blockquote>
+
+	</blockquote>
+
+<hr />
 <a href="../">Return</a><p />
-Dec/21/2015 AM 08:15<p />
+Apr/28/2016 AM 08:15<p />
 </body>
 </html>

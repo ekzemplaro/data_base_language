@@ -20,7 +20,7 @@
 "tinycore": 
 	{"name": "Tiny Core Linux","kernel": "3.16.6-tinycore","bash": "4.3.39"},
 "ubuntu": 
-	{"name": "Ubuntu","kernel": "4.2.0-30-generic","bash": "4.3.42"},
+	{"name": "Ubuntu","kernel": "4.4.0-21-generic","bash": "4.3.42"},
 "xenserver": 
 	{"name": "XenServer","kernel": "3.10.0+2","bash": "3.2.25"}
 }

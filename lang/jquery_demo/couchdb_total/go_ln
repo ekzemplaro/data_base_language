@@ -1,1 +1,2 @@
-ln -s /var/www/test/python/python_proxy_get/python_proxy_get.py .
+#
+ln -s /var/www/data_base/common/python_common/python_proxy_get.py .

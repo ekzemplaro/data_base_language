@@ -11,7 +11,8 @@ jQuery (function ()
 	var str_tmp = "year selected : " + year_selected;
 	jQuery("#outarea_bb").text (str_tmp);
 
-	var url_json = "./latest_2000.json";
+//	var url_json = "./latest_2000.json";
+	var url_json = "./latest_on_going.json";
 
 	jQuery.getJSON (url_json,function (data_json)
 		{

@@ -1,4 +1,4 @@
 <hr />
 <button id="update">更新</button><br />
 <hr />
-<a href="html_src/">jquery_demo_update_src_html</a><p />
+<a href="html_src/">src</a><p />
