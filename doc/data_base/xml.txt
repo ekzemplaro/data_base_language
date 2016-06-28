@@ -12,6 +12,11 @@ Bash<p />
 # pacman -S xalan-c<p />
 </blockquote>
 
+PHP<p />
+<blockquote>
+	# apt-get install php7.0-xml<p />
+</blockquote>
+
 
 Python<p />
 <blockquote>

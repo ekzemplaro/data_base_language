@@ -2,7 +2,7 @@
 /*
 	json_delete.java
 
-				Jan/26/2012
+				Jun/27/2016
 */
 // -----------------------------------------------------------------------
 import	java.util.HashMap;
@@ -29,8 +29,6 @@ public	static void main (String [] args)
 	if (dict_aa.containsKey (key_in))
 		{
 		text_manipulate.dict_delete_proc (dict_aa,key_in);
-
-		text_manipulate.dict_display_proc (dict_aa);
 
 		str_json = json_manipulate.dict_to_json_proc (dict_aa);
 

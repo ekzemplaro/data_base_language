@@ -2,7 +2,7 @@
 /*
 	json_update.java
 
-				Jan/26/2012
+				Jun/27/2016
 */
 // -----------------------------------------------------------------------
 import	java.util.HashMap;
@@ -30,8 +30,6 @@ public	static void main (String [] args)
 	text_manipulate.dict_update_proc (dict_aa,key_in,population);
 
 	System.out.println ();
-
-	text_manipulate.dict_display_proc (dict_aa);
 
 	str_json = json_manipulate.dict_to_json_proc (dict_aa);
 
