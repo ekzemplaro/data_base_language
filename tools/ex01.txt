@@ -18,3 +18,4 @@
 *.swp
 *.node
 *.beam
+.git

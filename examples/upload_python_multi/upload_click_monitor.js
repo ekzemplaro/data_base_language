@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------
 //	upload_python_multi/upload_click_monitor.js
 //
-//					Nov/20/2015
+//					Jul/05/2016
 //
 // -----------------------------------------------------------------------
 function upload_click_monitor (upload_dir)
@@ -14,33 +14,16 @@ function upload_click_monitor (upload_dir)
 
 		if ( jQuery("#file").val() !== '' )
 			{
-			var vvx = jQuery("#file").prop("files");
-
-			var str_out = "";
-
 			var files=jQuery("#file").prop("files");
-
-			str_out += JSON.stringify (vvx) + '<br />';
-
-			for (var it in files)
-				{
-				str_out += JSON.stringify (files[it]) + '<br />';
-				}
-			str_out += '------<br />';
-			str_out += "" + jQuery("#file").prop("files")[0] + '<br />';
-			str_out += jQuery("#file").prop("files")[1] + '<br />';
-			str_out += 'vvx.length = ' + vvx.length + '------<br />';
-			jQuery ("#outarea_cc").html (str_out);
 
 			var array_fname = ["file_aa","file_bb","file_cc",
 				"file_dd","file_ee","file_ff","file_gg",
 				"file_hh","file_ii","file_jj"];
 
 
-			for (var it=0; it< vvx.length; it += 1)
+			for (var it=0; it< files.length; it += 1)
 				{
-			var file_aa = jQuery("#file").prop("files")[it];
-			fd.append (array_fname[it],file_aa);
+				fd.append (array_fname[it],files[it]);
 				}
 			}
 

@@ -16,7 +16,7 @@ public static class text_read
 // ----------------------------------------------------------------
 public static int Main (string[] args)
 {
-	Console.WriteLine ("*** 開始 ***");
+	Console.Error.WriteLine ("*** 開始 ***");
 
 	if (args.Length < 1)
 		{
@@ -33,7 +33,7 @@ public static int Main (string[] args)
 
 	text_manipulate.dict_display_proc (dict_aa);
 
-	Console.WriteLine ("*** 終了 ***");
+	Console.Error.WriteLine ("*** 終了 ***");
 
 	return	0;
 }

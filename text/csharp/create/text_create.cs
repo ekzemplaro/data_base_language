@@ -2,7 +2,7 @@
 /*
 	csharp/create/text_create.cs
 
-					Jun/13/2014
+					Jul/16/2016
 
 */
 // --------------------------------------------------------------------
@@ -15,24 +15,22 @@ class	text_create
 // --------------------------------------------------------------------
 static	int Main (string [] args)
 {
-	Console.WriteLine ("*** text_create *** 開始 ***");
+	Console.Error.WriteLine ("*** 開始 ***");
 
 	if (args.Length < 1)
 		{
-		Console.WriteLine ("*** error ***");
+		Console.Error.WriteLine ("*** error ***");
 		return 1;
 		}
 
 	string file_out = args[0];
-	Console.WriteLine ("\tfile_out = " + file_out + "\n");
+	Console.WriteLine ("\tfile_out = " + file_out);
 
 	Dictionary <string,Object> dict_aa = data_prepare_proc ();
 
-	text_manipulate.dict_display_proc (dict_aa);
-
 	text_manipulate.text_write_proc (file_out,dict_aa);
 
-	Console.WriteLine ("\n*** text_create *** 終了 ***");
+	Console.Error.WriteLine ("*** 終了 ***");
 
 	return	0;
 }

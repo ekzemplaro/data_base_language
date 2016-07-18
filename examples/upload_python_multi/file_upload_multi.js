@@ -1,19 +1,19 @@
 // -----------------------------------------------------------------------
 //	upload_python_multi/file_upload_multi.js
 //
-//					Nov/20/2015
+//					Jul/05/2016
 //
 // -----------------------------------------------------------------------
 jQuery (function ()
 {
 	jQuery("#outarea_aa").html
-		("*** file_upload_multi *** start *** Nov/20/2015 ***");
+		("*** file_upload_multi *** start *** Jul/05/2016 ***");
 
 	upload_click_monitor ("./data_work");
 
 
 	jQuery("#outarea_hh").html
-		("*** file_upload_multi *** end *** Nov/20/2015 ***");
+		("*** file_upload_multi *** end *** Jul/05/2016 ***");
 
 });
 

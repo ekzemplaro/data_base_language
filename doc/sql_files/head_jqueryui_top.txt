@@ -1,6 +1,6 @@
 
-<link rel="stylesheet" href="/css/jquery-ui-1.10.4.min.css"></>
-<script src="/js/jquery-ui-1.10.4.min.js"></script>
+<link rel="stylesheet" href="/css/jquery-ui.min.css"></>
+<script src="/js/jquery-ui.min.js"></script>
 
 <script>
 	jQuery(function() {

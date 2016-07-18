@@ -2,7 +2,7 @@
 /*
 	delete/text_delete.cs
 
-					Jun/13/2014
+					Jul/16/2016
 
 */
 // ----------------------------------------------------------------
@@ -15,11 +15,11 @@ public static class text_delete
 // ----------------------------------------------------------------
 public static int Main (string[] args)
 {
-	Console.WriteLine ("*** 開始 ***");
+	Console.Error.WriteLine ("*** 開始 ***");
 
 	if (args.Length < 2)
 		{
-		Console.WriteLine ("*** error ***");
+		Console.Error.WriteLine ("*** error ***");
 		return 1;
 		}
 
@@ -29,7 +29,6 @@ public static int Main (string[] args)
 
 	Console.WriteLine (key_in);
 
-//	Dictionary <string,Dictionary <string,string>> dict_aa
 	Dictionary <string,Object> dict_aa
 		= text_manipulate.text_read_proc (file_txt);
 
@@ -37,12 +36,10 @@ public static int Main (string[] args)
 		{
 		dict_aa.Remove (key_in);
 
-		text_manipulate.dict_display_proc (dict_aa);
-
 		text_manipulate.text_write_proc (file_txt,dict_aa);
 		}
 
-	Console.WriteLine ("*** 終了 ***");
+	Console.Error.WriteLine ("*** 終了 ***");
 
 	return	0;
 }

@@ -5,14 +5,14 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>ubuntu Apr/28/2016</title>
+<title>ubuntu Jul/15/2016</title>
 </head>
 <body>
 <h2><a href="http://www.ubuntu.com/index_roadshow">ubuntu</a></h2><p />
 カーネル<br/>
 <blockquote>
 $ uname -a<br />
-Linux ****** 4.2.0-16-generic #19-Ubuntu SMP Thu Oct 8 15:35:06 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+Linux ****** 4.4.0-28-generic #47-Ubuntu SMP Fri Jun 24 10:09:13 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux<br />
 </blockquote>
 
 バージョン確認方法<br />
@@ -20,14 +20,17 @@ Linux ****** 4.2.0-16-generic #19-Ubuntu SMP Thu Oct 8 15:35:06 UTC 2015 x86_64 
 <pre>
 $ cat /etc/os-release 
 NAME="Ubuntu"
-VERSION="15.10 (Wily Werewolf)"
+VERSION="16.04 LTS (Xenial Xerus)"
 ID=ubuntu
 ID_LIKE=debian
-PRETTY_NAME="Ubuntu 15.10"
-VERSION_ID="15.10"
+PRETTY_NAME="Ubuntu 16.04 LTS"
+VERSION_ID="16.04"
 HOME_URL="http://www.ubuntu.com/"
 SUPPORT_URL="http://help.ubuntu.com/"
 BUG_REPORT_URL="http://bugs.launchpad.net/ubuntu/"
+UBUNTU_CODENAME=xenial
+
+
 </pre>
 </blockquote>
 
@@ -36,7 +39,7 @@ BUG_REPORT_URL="http://bugs.launchpad.net/ubuntu/"
 <blockquote>
 インストール<p />
 <blockquote>
-	# apt-get install apt-file<p />
+	# apt install apt-file<p />
 	# apt-file update<p />
 </blockquote>
 検索<p />
@@ -57,7 +60,7 @@ LANGUAGE=en xdg-user-dirs-update --force<p />
 
 ssh server<p />
 <blockquote>
-# apt-get install openssh-server<p />
+# apt install openssh-server<p />
 # service ssh start<p />
 </blockquote>
 
@@ -73,11 +76,11 @@ Version<br />
 <hr />
 パッケージのインストール<br />
 	<blockquote>
-	# apt-get install rsync<p />
-	# apt-get install make<p />
+	# apt install rsync<p />
+	# apt install make<p />
 	</blockquote>
 <hr />
-# apt-get update<p />
+# apt update<p />
 <blockquote>
 E: いくつかのインデックスファイルのダウンロードに失敗しました。これらは無視されるか、古いものが代わりに使われます。<p />
 	<blockquote>
@@ -140,7 +143,7 @@ resolv.conf の設定<p />
 <hr />
 ロケールの設定<p />
 <blockquote>
-# apt-get install language-pack-ja<p />
+# apt install language-pack-ja<p />
 # update-locale LANG=ja_JP.UTF-8<p />
 </blockquote>
 
@@ -151,8 +154,8 @@ resolv.conf の設定<p />
 
 	または<p />
 	<blockquote>
-		# apt-get install xinit<p />
-		# apt-get install gnome<p />
+		# apt install xinit<p />
+		# apt install gnome<p />
 	</blockquote>
 
 </blockquote>
@@ -164,8 +167,8 @@ A start job is running for dev-disk-by****.device<p />
 /etc/fstab の　ディスク UUID が間違っている。<p /> 
 </blockquote>
 <hr />
-# apt-get install traceroute<p />
-# apt-get install nmap<p />
+# apt install traceroute<p />
+# apt install nmap<p />
 <hr />
 ユーザーの作成<p />
 <blockquote>
@@ -179,7 +182,7 @@ A start job is running for dev-disk-by****.device<p />
 
 サーバー版への追加インストール<p />
 <blockquote>
-# apt-get install traceroute<p />
+# apt install traceroute<p />
 </blockquote>
 <hr />
 hostname の変更<p />
@@ -192,7 +195,7 @@ deb ファイルの検索</a><p />
 from 15.04 to 15.10<p />
 <blockquote>
 # sed -i 's/vivid/wily/g' /etc/apt/sources.list<p />
-# apt-get update<p />
+# apt update<p />
 </blockquote>
 
 <hr />
@@ -225,6 +228,6 @@ USB からのインストール<br />
 
 <hr />
 <a href="../">Return</a><p />
-Apr/28/2016 AM 08:15<p />
+Jul/15/2016 AM 08:15<p />
 </body>
 </html>

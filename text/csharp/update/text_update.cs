@@ -2,7 +2,7 @@
 /*
 	update/text_update.cs
 
-					Oct/17/2011
+					Jul/16/2016
 
 */
 // ----------------------------------------------------------------
@@ -15,11 +15,11 @@ public static class text_update
 // ----------------------------------------------------------------
 public static int Main (string[] args)
 {
-	Console.WriteLine ("*** 開始 ***");
+	Console.Error.WriteLine ("*** 開始 ***");
 
 	if (args.Length < 2)
 		{
-		Console.WriteLine ("*** error ***");
+		Console.Error.WriteLine ("*** error ***");
 		return 1;
 		}
 
@@ -36,11 +36,9 @@ public static int Main (string[] args)
 	dict_aa = text_manipulate.dict_update_proc
 		(dict_aa,id_in,population_in);
 
-	text_manipulate.dict_display_proc (dict_aa);
-
 	text_manipulate.text_write_proc (file_txt,dict_aa);
 
-	Console.WriteLine ("*** 終了 ***");
+	Console.Error.WriteLine ("*** 終了 ***");
 
 	return	0;
 }

@@ -76,7 +76,7 @@ PHP (Archlinux)<p />
 
 Python<p />
 <blockquote>
-	# apt-get install python3-mysql.connector<p />
+	# apt install python3-mysql.connector<p />
 	# pacman -S python-mysql-connector<p />
 </blockquote>
 
@@ -141,4 +141,31 @@ Arch Linux<p />
 # mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql<p />
 # systemctl start mysqld.service<p />
 # pacman -S phpmyadmin php-mcrypt<p />
+</blockquote>
+
+root のパスワードの再設定<br />
+<blockquote>
+# systemctl stop mysqld<br />
+# mysqld_safe --skip-grant-tables<br />
+<p />
+<pre>
+$ mysql -u root
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 3
+Server version: 10.1.14-MariaDB MariaDB Server
+
+Copyright (c) 2000, 2016, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> UPDATE mysql.user SET Password=PASSWORD('newpassword') WHERE User='root';
+Query OK, 4 rows affected (0.04 sec)
+Rows matched: 4  Changed: 4  Warnings: 0
+
+MariaDB [(none)]> FLUSH PRIVILEGES;
+Query OK, 0 rows affected (0.00 sec)
+
+MariaDB [(none)]> exit;
+Bye
+</pre>
 </blockquote>

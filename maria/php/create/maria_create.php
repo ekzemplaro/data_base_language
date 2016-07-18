@@ -3,7 +3,7 @@
 //
 //	maria_create.php
 //
-//					Sep/17/2013
+//					Jul/05/2016
 //
 // ----------------------------------------------------------------
 $path="/var/www/data_base/common/php_common";
@@ -18,7 +18,7 @@ function data_prepare_proc ()
 {
 $dict_aa = array ();
 
-$dict_aa = dict_append_proc ($dict_aa,'t3321','岡山',725439,'2002-9-9');
+$dict_aa = dict_append_proc ($dict_aa,'t3321','岡山',725139,'2002-2-9');
 $dict_aa = dict_append_proc ($dict_aa,'t3322','倉敷',417328,'2002-5-15');
 $dict_aa = dict_append_proc ($dict_aa,'t3323','津山',891654,'2002-7-21');
 $dict_aa = dict_append_proc ($dict_aa,'t3324','玉野',265981,'2002-11-12');
@@ -48,7 +48,7 @@ create_table_proc ($dbcon);
 
 dict_to_db_proc ($dict_aa,$dbcon);
 
-disp_lower_proc ($dbcon);
+// disp_lower_proc ($dbcon);
 
 $dbcon = null;
 

@@ -2,7 +2,7 @@
 /*
 	update/csv_update.cs
 
-					Aug/02/2011
+					Jul/17/2016
 
 */
 // ----------------------------------------------------------------
@@ -29,8 +29,6 @@ public static void Main (string[] args)
 
 	dict_aa = text_manipulate.dict_update_proc
 		(dict_aa,id_in,population_in);
-
-	text_manipulate.dict_display_proc (dict_aa);
 
 	text_manipulate.csv_write_proc (file_txt,dict_aa);
 

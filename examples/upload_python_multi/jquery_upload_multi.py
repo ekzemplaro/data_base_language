@@ -3,10 +3,10 @@
 #
 #	upload_python_multi/jquery_upload_multi.py
 #
-#					Nov/20/2015
+#					Jul/05/2016
 #
 # --------------------------------------------------------------------
-import	os
+# import	os
 import	sys
 import	json
 import	cgi

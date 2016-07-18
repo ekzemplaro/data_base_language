@@ -1,6 +1,6 @@
 COMMON=/var/www/data_base/common/csharp_common
 text_update.exe : text_update.cs
 	mcs text_update.cs \
-		-r:$(COMMON)/table_manipulate.dll
+		$(COMMON)/text_manipulate.cs
 clean:
 	rm -f *.exe

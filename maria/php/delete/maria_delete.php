@@ -3,7 +3,7 @@
 /*
 	maria_delete.php
 
-					Sep/16/2013
+					Jul/05/2015
 
 */
 // --------------------------------------------------------------------
@@ -31,10 +31,6 @@ $dbcon = new PDO ($dsn, $user,$password);
 mysql_utf8_proc ($dbcon);
 
 sql_delete_proc ($dbcon,$id_in);
-
-print "--------------------------\n";
-
-disp_lower_proc ($dbcon);
 
 $dbcon = null;
 

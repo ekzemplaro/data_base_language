@@ -4,7 +4,7 @@
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
-<title>apache2 (Jan/07/2015)</title>
+<title>apache2 (Jul/07/2016)</title>
 </head>
 <body>
 
@@ -73,19 +73,22 @@ php でアップロードできるファイルサイズの大きさを変更す�
 Arch Linux<br />
 <blockquote>
 	<a href="https://wiki.archlinux.org/index.php/Apache_HTTP_Server">Apache HTTP Server</a><p />
-	# pacman -S apache<p />
+	# pacman -S apache<br />
+	# pacman -S php-apache<p />
+
 	# systemctl start httpd<p />
 	/etc/httpd/conf/httpd.conf<br />
 	<blockquote>
 	DocumentRoot "/var/www"<br />
 	&lt;Directory "/var/www"&gt;<br />
+	LoadModule php7_module modules/libphp7.so<br />
+	Include conf/extra/php7_module.conf<br />
 	</pre>
 	</blockquote>
-	# pacman -S php-apache<p />
 </blockquote>
 
 <hr />
 <a href="/data_base/">Return</a><p />
-Jan/07/2015 AM 08:25<p />
+Jul/07/2016 AM 08:25<p />
 </body>
 </html>

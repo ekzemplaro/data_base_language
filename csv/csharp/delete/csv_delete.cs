@@ -2,7 +2,7 @@
 /*
 	delete/csv_delete.cs
 
-					Aug/02/2011
+					Jul/16/2016
 
 */
 // ----------------------------------------------------------------
@@ -19,18 +19,19 @@ public static void Main (string[] args)
 
 	string	file_txt = args[0];
 
-	string	key = args[1];
+	string	key_in = args[1];
 
-	Console.WriteLine (key);
+	Console.WriteLine (key_in);
 
 	Dictionary <string,Object> dict_aa
 		= text_manipulate.csv_read_proc (file_txt);
 
-	dict_aa.Remove (key);
+	if (dict_aa.ContainsKey (key_in))
+		{
+		dict_aa.Remove (key_in);
 
-	text_manipulate.dict_display_proc (dict_aa);
-
-	text_manipulate.csv_write_proc (file_txt,dict_aa);
+		text_manipulate.csv_write_proc (file_txt,dict_aa);
+		}
 
 	Console.WriteLine ("*** 終了 ***");
 }
