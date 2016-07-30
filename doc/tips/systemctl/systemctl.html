@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>Systemctl Dec/21/2015</title>
+<title>Systemctl Jul/21/2016</title>
 </head>
 <body>
 Systemctl サービス<p />
@@ -15,9 +15,29 @@ Systemctl サービス<p />
 <a href="./service_oneshot.html">ワンショットサービス の作成</a><p />
 </blockquote>
 
+サンプル<p />
+<blockquote>
+<pre>
+[Unit]
+Description=teamspeak3 server
+After=netctl@profile.service
+
+[Service]
+# ExecStart=/opt/teamspeak3/teamspeak3.sh
+ExecStart=/opt/teamspeak3-server_linux_amd64/ts3server_startscript.sh start
+ExecStop=/opt/teamspeak3-server_linux_amd64/ts3server_startscript.sh stop
+Type=forking
+User=uchida
+Group=uchida
+
+[Install]
+WantedBy=multi-user.target
+</pre>
+</blockquote>
+
 
 
 <a href="../">Return</a><p />
-Dec/21/2015 AM 08:15<p />
+Jul/21/2016 AM 08:15<p />
 </body>
 </html>

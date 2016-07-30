@@ -169,3 +169,12 @@ MariaDB [(none)]> exit;
 Bye
 </pre>
 </blockquote>
+<hr />
+ユーザーの確認<br />
+<blockquote>
+select Host, User, Password from mysql.user;
+</blockquote>
+ユーザーの削除<br />
+<blockquote>
+drop user 'user'@'localhost';
+</blockquote>
