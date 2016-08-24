@@ -2,7 +2,7 @@
 //
 //	mongo_delete.js
 //
-//					Feb/18/2016
+//					Aug/07/2016
 // ----------------------------------------------------------------
 var MongoClient = require('mongodb').MongoClient
 
@@ -28,7 +28,7 @@ MongoClient.connect (str_connect, function(err, db)
 		{
 		db.close()
 
-		console.log (nn_deleted)
+//		console.log (nn_deleted)
 		console.log ("*** 終了 ***")
 		})
 })

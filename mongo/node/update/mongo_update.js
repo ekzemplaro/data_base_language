@@ -2,7 +2,7 @@
 //
 //	mongo_update.js
 //
-//					Feb/18/2016
+//					Aug/07/2016
 // ----------------------------------------------------------------
 var MongoClient = require('mongodb').MongoClient
 var text_manipulate=require ("/var/www/data_base/common/node_common/text_manipulate")
@@ -53,7 +53,7 @@ MongoClient.connect (str_connect, function(err, db)
 		{
 		db.close()
 
-		console.log (nn_updated)
+//		console.log (nn_updated)
 		console.log ("*** 終了 ***")
 		})
 			}

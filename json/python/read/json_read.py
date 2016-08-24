@@ -3,7 +3,7 @@
 #
 #	json_read.py
 #
-#					Sep/08/2014
+#					Aug/10/2016
 #
 # ------------------------------------------------------------------
 import	sys
@@ -13,10 +13,10 @@ sys.path.append ('/var/www/data_base/common/python_common')
 from text_manipulate import dict_display_proc
 from file_io import file_to_str_proc
 #
-print	("*** 開始 ***")
+sys.stderr.write ("*** 開始 ***\n")
 #
 file_in = sys.argv[1]
-print	(file_in)
+sys.stderr.write (file_in + "\n")
 #
 try:
 	json_str = file_to_str_proc (file_in)
@@ -28,5 +28,5 @@ dict_aa = json.loads (json_str)
 #
 dict_display_proc (dict_aa)
 #
-print	("*** 終了 ***")
+sys.stderr.write ("*** 終了 ***\n")
 # ------------------------------------------------------------------

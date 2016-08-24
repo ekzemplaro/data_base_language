@@ -1,16 +1,14 @@
 // ---------------------------------------------------------------
 //	csv_create.ts
 //
-//					Sep/16/2015
+//					Aug/24/2016
 //
 // ---------------------------------------------------------------
 declare function require(x: string): any;
 declare var process:any;
 declare var dict_aa:any;
 
-// import fs = require("fs");
 var text_manipulate=require ("/var/www/data_base/common/typescript_common/text_manipulate");
-//
 
 // ---------------------------------------------------------------
 function data_prepare_proc ()

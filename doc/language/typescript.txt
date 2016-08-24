@@ -1,7 +1,7 @@
 <meta content="Program Language Examples in racket" name="description">
 <meta content="Ada,クライアント,接続,言語,サンプル" name="keyword">
 <meta content="Uchida Masatomo" name="author">
-<title>typescript Jan/28/2015</title>
+<title>typescript Aug/24/2016</title>
 </head>
 <body>
 <h2><a href="http://www.typescriptlang.org/">TypeScript</a></h2><p />
@@ -15,5 +15,5 @@
 
 Arch Linux<br />
 <blockquote>
-$ yaourt -Sb  nodejs-typescript<p />
+# pacman -S typescript<p />
 </blockquote>

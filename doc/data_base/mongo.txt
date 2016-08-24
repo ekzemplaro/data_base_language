@@ -138,3 +138,21 @@ $ yaourt -Sb ruby-mongo<p />
 $ yaourt -Sb ruby-bson_ext<p />
 # systemctl start mongodb<p />
 </blockquote>
+<hr />
+バックアップ<br />
+<blockquote>
+$ mongodump --host localhost --db city_db<p />
+$ mongodump --gzip --db city_db<p />
+</blockquote>
+リストア<br />
+<blockquote>
+mongorestore --host localhost --db city_db ./dump/city_db<p />
+$ mongorestore --gzip --db city_db --dir dump/city_db/<p />
+</blockquote>
+<hr />
+HTTP Status Interface<p />
+/usr/lib/systemd/system/mongodb.service<br />
+<blockquote>
+ExecStart=/usr/bin/mongod --quiet --rest --config /etc/mongodb.conf<p />
+http://localhost:28017/<p />
+</blockquote>

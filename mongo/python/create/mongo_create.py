@@ -1,9 +1,9 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	mongo_create.py
 #
-#						May/12/2015
+#						Aug/09/2016
 #
 # -------------------------------------------------------------
 import	sys
@@ -30,11 +30,11 @@ def	data_prepare_proc ():
 	return	dict_aa
 #
 # -------------------------------------------------------------
-print ("*** 開始 ***")
+sys.stderr.write ("*** 開始 ***\n")
 #
 dict_aa = data_prepare_proc ()
 #
 dict_to_mongo_proc (dict_aa)
 #
-print ("*** 終了 ***")
+sys.stderr.write ("*** 終了 ***\n")
 # -------------------------------------------------------------

@@ -3,7 +3,7 @@
 #
 #	json_create.py
 #
-#					Jul/25/2014
+#					Aug/10/2016
 #
 import	sys
 import	os
@@ -38,15 +38,13 @@ def	data_prepare_proc ():
 	return	dict_aa
 #
 # -------------------------------------------------------------------------
-print	("*** 開始 ***")
+sys.stderr.write ("*** 開始 ***\n")
 #
 file_out = sys.argv[1]
 #
-print	(file_out)
+sys.stderr.write (file_out + "\n")
 #
 dict_aa = data_prepare_proc ()
-#
-dict_display_proc (dict_aa)
 #
 if os.path.isfile(file_out):
 	os.remove (file_out)
@@ -55,5 +53,5 @@ out_str = json.dumps (dict_aa)
 file_write_proc (file_out,out_str)
 os.chmod (file_out,0o666)
 #
-print	("*** 終了 ***")
+sys.stderr.write ("*** 終了 ***\n")
 # -------------------------------------------------------------------------

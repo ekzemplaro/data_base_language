@@ -1,0 +1,6 @@
+http://replication.hatenablog.com/entry/2014/06/30/005815
+
+
+create table db_user (id int NOT NULL PRIMARY KEY,name varchar(20), password varchar (100));
+
+password_hash関数
