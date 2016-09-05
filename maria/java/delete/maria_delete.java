@@ -2,7 +2,7 @@
 /*
 	java/delete/maria_delete.java
 
-				Sep/16/2013
+				Sep/05/2016
 
 
 */
@@ -17,22 +17,19 @@ public class maria_delete
 // ----------------------------------------------------------------------
 public static void main (String[] args) throws Exception
 {
-	System.out.println ("*** 開始 ***");
+	System.err.println ("*** 開始 ***");
 
-	String	id = args[0];
-	System.out.println ("\tid = " + id);
+	String	key_in = args[0];
+	System.out.println ("\tkey_in = " + key_in);
 
 	String url="jdbc:mysql://localhost/city";
 	Connection conn=DriverManager.getConnection (url,"scott","tiger");
 
-
-	rdb_common.delete_proc	(conn,id);
-
-	rdb_common.display_proc	(conn);
+	rdb_common.delete_proc	(conn,key_in);
 
 	conn.close ();
 
-	System.out.println ("*** 終了 ***");
+	System.err.println ("*** 終了 ***");
 }
 
 // ----------------------------------------------------------------------

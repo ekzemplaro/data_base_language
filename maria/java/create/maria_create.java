@@ -2,7 +2,7 @@
 /*
 	java/create/maria_create.java
 
-					Sep/16/2013
+					Sep/05/2016
 
 */
 // ---------------------------------------------------------------------
@@ -21,7 +21,7 @@ public static void main (String args [])
 	throws SQLException,
 	InstantiationException, IllegalAccessException
 {
-	System.out.println ("*** 開始 ***");
+	System.err.println ("*** 開始 ***");
 
 	HashMap <String, HashMap <String,String>> dict_aa
 			= data_prepare_proc ();
@@ -35,8 +35,6 @@ public static void main (String args [])
 	rdb_common.drop_table_proc (ss);
 	rdb_common.create_table_proc (ss);
 
-	rdb_common.display_proc (conn);
-
 	rdb_common.dict_to_db_proc (dict_aa,ss);
 
 	ss.close ();
@@ -48,8 +46,7 @@ public static void main (String args [])
 		ee.printStackTrace();
 		}
 
-
-	System.out.println ("*** 終了 ***");
+	System.err.println ("*** 終了 ***");
 }
 
 // ---------------------------------------------------------------------
@@ -84,7 +81,7 @@ data_prepare_proc ()
 		(dict_aa,"t3328","高梁",736415,"2008-11-15");
 
 	dict_aa = text_manipulate.dict_append_proc
-		(dict_aa,"t3329","新見",687924,"2008-10-24");
+		(dict_aa,"t3329","新見",617924,"2008-10-24");
 
 	return	dict_aa;
 }

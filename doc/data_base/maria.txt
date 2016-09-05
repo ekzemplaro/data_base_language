@@ -108,7 +108,7 @@ node.js<p />
 
 Java<p />
 <blockquote>
-	$ yaourt -Sb mysql-jdbc<p />
+	$ yaourt -Sb mariadb-jdbc<p />
 </blockquote>
 
 

@@ -3,7 +3,7 @@
 #
 #	pdf_create.py
 #
-#					Sep/09/2014
+#					Sep/04/2016
 # -------------------------------------------------------------------------
 #
 import	sys
@@ -25,21 +25,20 @@ def	data_prepare_proc ():
 	dict_aa = dict_append_proc (dict_aa,'t2536','甲賀',35287,'2003-1-21')
 	dict_aa = dict_append_proc (dict_aa,'t2537','湖南',82956,'2003-7-23')
 	dict_aa = dict_append_proc (dict_aa,'t2538','近江八幡',23784,'2003-10-26')
-	dict_aa = dict_append_proc (dict_aa,'t2539','彦根',79813,'2003-12-15')
+	dict_aa = dict_append_proc (dict_aa,'t2539','彦根',72813,'2003-12-15')
 #
 	return	dict_aa
 #
 # -------------------------------------------------------------------------
-print	("*** 開始 ***")
+sys.stderr.write ("*** 開始 ***\n")
 #
 file_pdf = sys.argv[1]
 print	(file_pdf)
 #
 dict_aa = data_prepare_proc ()
-dict_display_proc (dict_aa)
 #
 dict_to_pdf_proc (file_pdf,dict_aa)
 #
-print	("*** 終了 ***")
+sys.stderr.write ("*** 終了 ***\n")
 # -------------------------------------------------------------------------
 

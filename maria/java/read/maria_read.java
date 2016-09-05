@@ -2,7 +2,7 @@
 /*
 	maria_read.java
 
-					Sep/16/2013
+					Sep/05/2016
 
 */
 // ------------------------------------------------------------------
@@ -13,13 +13,12 @@ public class maria_read
 {
 public static void main(String[] args)
 {
-	System.out.println ("*** 開始 ***");
+	System.err.println ("*** 開始 ***");
 
 	try
 	{
 	String url="jdbc:mysql://localhost/city";
 	Connection conn = DriverManager.getConnection (url,"scott","tiger");
-
 
 	rdb_common.display_proc (conn);
 
@@ -30,7 +29,7 @@ public static void main(String[] args)
 		ee.printStackTrace();
 		}
 
-	System.out.println ("*** 終了 ***");
+	System.err.println ("*** 終了 ***");
 }
 
 // ------------------------------------------------------------------
