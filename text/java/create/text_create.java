@@ -3,7 +3,7 @@
 	text_create.java
 
 
-					Apr/11/2013
+					Sep/05/2016
 */
 // -----------------------------------------------------------------------
 import	java.util.HashMap;
@@ -15,19 +15,16 @@ public class text_create
 // -----------------------------------------------------------------------
 public	static void main (String [] args)
 {
-	System.out.println ("*** 開始 ***");
+	System.err.println ("*** 開始 ***");
 
 	String text_file = args[0];
 
 	HashMap <String, HashMap <String,String>>
 		dict_aa = data_prepare_proc ();
 
-	text_manipulate.dict_display_proc (dict_aa);
-
 	text_manipulate.text_write_proc (text_file,dict_aa);
 
-
-	System.out.println ("*** 終了 ***");
+	System.err.println ("*** 終了 ***");
 }
 
 // -----------------------------------------------------------------------

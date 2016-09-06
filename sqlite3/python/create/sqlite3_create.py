@@ -3,22 +3,21 @@
 #
 #	sqlite3_create.py
 #
-#					May/26/2015
+#					Sep/06/2016
 #
 # -------------------------------------------------------------------------
 import	sys
 import	sqlite3
 #
 sys.path.append ('/var/www/data_base/common/python_common')
-from file_io import file_write_proc
-from sql_manipulate import table_insert_proc,sql_insert_proc,create_table_proc,drop_table_proc
+from sql_manipulate import table_insert_proc,create_table_proc,drop_table_proc
 from text_manipulate import dict_append_proc
 #
 # -------------------------------------------------------------------------
 def	data_prepare_proc ():
 	dict_aa = {} 
 #
-	dict_aa = dict_append_proc (dict_aa,'t0711','郡山',72176,'2003-4-12')
+	dict_aa = dict_append_proc (dict_aa,'t0711','郡山',52176,'2003-4-12')
 	dict_aa = dict_append_proc (dict_aa,'t0712','会津若松',47935,'2003-5-10')
 	dict_aa = dict_append_proc (dict_aa,'t0713','白河',21654,'2003-6-14')
 	dict_aa = dict_append_proc (dict_aa,'t0714','福島',83672,'2003-9-9')
@@ -45,7 +44,7 @@ def	sqlite3_write_proc (file_out,dict_aa):
 	conn.close ()
 #
 # -------------------------------------------------------------------------
-print	("*** 開始 ***")
+sys.stderr.write ("*** 開始 ***\n")
 #
 file_out = sys.argv[1];
 #
@@ -55,5 +54,5 @@ dict_aa = data_prepare_proc ()
 #
 sqlite3_write_proc (file_out,dict_aa)
 #
-print	("*** 終了 ***")
+sys.stderr.write ("*** 終了 ***\n")
 # -------------------------------------------------------------------------

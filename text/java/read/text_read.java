@@ -2,7 +2,7 @@
 /*
 	read/text_read.java
 
-					Feb/07/2011
+					Sep/05/2016
 
 */
 // ----------------------------------------------------------------
@@ -14,7 +14,7 @@ public class text_read
 // ----------------------------------------------------------------
 public static void main (String[] args)
 {
-	System.out.println ("*** 開始 ***");
+	System.err.println ("*** 開始 ***");
 
 	String	fname_in = args[0];
 
@@ -23,7 +23,7 @@ public static void main (String[] args)
 
 	text_manipulate.dict_display_proc (dict_aa);
 
-	System.out.println ("*** 終了 ***");
+	System.err.println ("*** 終了 ***");
 }
 // ----------------------------------------------------------------
 }

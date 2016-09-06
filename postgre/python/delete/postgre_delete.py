@@ -3,30 +3,31 @@
 #
 #	delete/postgre_delete.py
 #
-#				Jul/29/2014
+#				Sep/06/2016
 #
 # --------------------------------------------------------
 import sys
-import postgresql
+import psycopg2
 #
 sys.path.append ('/var/www/data_base/common/python_common')
-from sql_manipulate import sql_delete_string_gen_proc
+from sql_manipulate import sql_delete_proc
 #
 # --------------------------------------------------------
-print ("*** 開始 ***")
+sys.stderr.write ("*** 開始 ***\n")
 key_in = sys.argv[1]
 print ("%s" % key_in)
 #
-db = postgresql.open("pq://scott:tiger@localhost/city")
+conn = psycopg2.connect("dbname=city user=scott password=tiger")
+cur = conn.cursor()
 #
-sql_str = sql_delete_string_gen_proc (key_in)
+sql_delete_proc	(cur,key_in)
 #
-ps = db.prepare(sql_str)
-print (ps ())
+conn.commit ()
 #
-ps.close ()
-db.close ()
+cur.close ()
+conn.close ()
 #
-print ("*** 終了 ***")
+#
+sys.stderr.write ("*** 終了 ***\n")
 #
 # --------------------------------------------------------

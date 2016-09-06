@@ -3,15 +3,16 @@
 #
 #	postgre_create.py
 #
-#					Jul/29/2014
+#					Sep/06/2016
 #
 # --------------------------------------------------------
 import	sys
-import	postgresql
+import	psycopg2
 #
 sys.path.append ('/var/www/data_base/common/python_common')
 #
 from text_manipulate import dict_append_proc
+from sql_manipulate import table_insert_proc,create_table_proc,drop_table_proc
 # --------------------------------------------------------
 def	data_prepare_proc ():
 #
@@ -30,33 +31,23 @@ def	data_prepare_proc ():
 	return	dict_aa
 #
 # --------------------------------------------------------
-print ("*** 開始 ***")
+sys.stderr.write ("*** 開始 ***\n")
 #
 #
 dict_aa = data_prepare_proc ()
 #
-db = postgresql.open("pq://scott:tiger@localhost/city")
-ps = db.prepare("drop table cities")
-print (ps ())
+conn = psycopg2.connect("dbname=city user=scott password=tiger")
+cur = conn.cursor()
+drop_table_proc (cur)
+create_table_proc (cur)
+table_insert_proc (cur,dict_aa)
 #
-sql_str="create table cities (id varchar(10), name varchar(20)," \
-		+ " population int, date_mod date)"
-ps = db.prepare(sql_str)
-print (ps ())
-#
-for key in dict_aa:
-	unit = dict_aa[key]
-	ft_aa="insert into cities (id,name,population,date_mod) values ("
-	ft_bb ="'%s','%s',%d,'%s')" % (key,unit['name'], \
-		unit['population'],unit['date_mod'])
-	sql_str=ft_aa + ft_bb
-	ps = db.prepare(sql_str)
-	print (ps ())
+conn.commit ()
 #
 #
+cur.close ()
+conn.close ()
 #
-ps.close ()
-db.close ()
-print ("*** 終了 ***")
+sys.stderr.write ("*** 終了 ***\n")
 #
 # --------------------------------------------------------

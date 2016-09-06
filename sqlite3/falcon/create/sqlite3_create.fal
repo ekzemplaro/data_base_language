@@ -2,7 +2,7 @@
 //
 //	sqlite3_create.fal
 //
-//					Feb/18/2014
+//					Sep/06/2016
 //
 // -------------------------------------------------------------------
 import from dbi
@@ -12,7 +12,7 @@ load "/var/www/data_base/common/falcon_common/text_manipulate.fal"
 function data_prepare_proc ()
 	dict_aa = [ => ]
 //
-	dict_aa = dict_append_proc (dict_aa,"t0711","郡山",34275,"2010-9-12")
+	dict_aa = dict_append_proc (dict_aa,"t0711","郡山",31275,"2010-9-12")
 	dict_aa = dict_append_proc (dict_aa,"t0712","会津若松",62851,"2010-10-5")
 	dict_aa = dict_append_proc (dict_aa,"t0713","白河",24917,"2010-8-18")
 	dict_aa = dict_append_proc (dict_aa,"t0714","福島",48572,"2010-7-21")
@@ -20,7 +20,7 @@ function data_prepare_proc ()
 	dict_aa = dict_append_proc (dict_aa,"t0716","二本松",19365,"2010-8-25")
 	dict_aa = dict_append_proc (dict_aa,"t0717","いわき",51746,"2010-1-9")
 	dict_aa = dict_append_proc (dict_aa,"t0718","相馬",94517,"2010-10-10")
-	dict_aa = dict_append_proc (dict_aa,"t0719","須賀川",38675,"2010-5-22")
+	dict_aa = dict_append_proc (dict_aa,"t0719","須賀川",28675,"2010-5-22")
 	return	dict_aa
 end
 // -------------------------------------------------------------------
@@ -61,12 +61,6 @@ dbh = dbi.connect ("sqlite3:db=" + sqlite3_file)
 drop_table_proc (dbh)
 create_table_proc (dbh)
 table_insert_proc (dbh,dict_aa)
-//
-dbr = dbh.query ("select * from cities")
-row = []
-while dbr.fetch( row )
-	> row[0],"\t",row[1],"\t",row[2],"\t",row[3]
-end
 //
 printl ("*** 終了 ***")
 // -------------------------------------------------------------------

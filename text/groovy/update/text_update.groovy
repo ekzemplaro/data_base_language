@@ -1,7 +1,7 @@
 // -------------------------------------------------------------------
 //	text_update.groovy
 //
-//					Aug/05/2014
+//					Sep/05/2016
 //
 // -------------------------------------------------------------------
 class text_update
@@ -10,7 +10,7 @@ class text_update
 // -------------------------------------------------------------------
 static void main (args)
 {
-	println ("*** 開始 ***")
+	System.err.println ("*** 開始 ***")
 
 	def file_in=args[0]
 	def id_in=args[1]
@@ -25,7 +25,7 @@ static void main (args)
 
 	ff.text_write_proc (file_in,dict_bb)
 
-	println ("*** 終了 ***")
+	System.err.println ("*** 終了 ***")
 }
 // -------------------------------------------------------------------
 }

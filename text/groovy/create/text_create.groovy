@@ -1,7 +1,7 @@
 // -------------------------------------------------------------------
 //	text_create.groovy
 //
-//					Aug/05/2014
+//					Sep/05/2016
 //
 // -------------------------------------------------------------------
 import	text_manipulate
@@ -13,7 +13,7 @@ class text_create
 // -------------------------------------------------------------------
 static void main (args)
 {
-	println ("*** 開始 ***")
+	System.err.println ("*** 開始 ***")
 
 	def file_out=args[0]
 
@@ -23,13 +23,11 @@ static void main (args)
 
 	ff.text_write_proc (file_out,dict_aa)
 
-	println ("*** 終了 ***")
+	System.err.println ("*** 終了 ***")
 }
 // -------------------------------------------------------------------
 static data_prepare_proc ()
 {
-	println "*** data_prepare_proc ***"
-
 	def dict_aa = new HashMap()
 	def ff = new text_manipulate ()
 
@@ -45,7 +43,6 @@ static data_prepare_proc ()
 
 	return	dict_aa
 }
-
 
 // -------------------------------------------------------------------
 }

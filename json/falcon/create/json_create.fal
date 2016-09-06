@@ -2,10 +2,11 @@
 //
 //	json_create.fal
 //
-//					Feb/20/2014
+//					Sep/06/2016
 //
 // -------------------------------------------------------------------
 import from json
+//
 load "/var/www/data_base/common/falcon_common/text_manipulate.fal"
 // -------------------------------------------------------------------
 function data_prepare_proc ()
@@ -33,7 +34,6 @@ file_json=args[0]
 printl (file_json)
 //
 dict_aa = data_prepare_proc ()
-dict_display_proc (dict_aa)
 //
 json_str = json.JSONencode (dict_aa)
 stream = OutputStream (file_json)

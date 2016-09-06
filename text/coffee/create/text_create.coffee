@@ -2,7 +2,7 @@
 #
 #	text_create.coffee
 #
-#					Oct/22/2014
+#					Sep/06/2016
 # -------------------------------------------------------------
 fs = require('fs')
 text_manipulate= require ('/var/www/data_base/common/coffee_common/text_manipulate')
@@ -23,7 +23,7 @@ data_prepare_proc = () ->
 	return dict_aa
 # -------------------------------------------------------------
 #
-console.log "*** 開始 ***\n"
+console.error "*** 開始 ***"
 file_out = process.argv[2]
 console.log file_out
 dict_aa = data_prepare_proc()
@@ -31,5 +31,5 @@ text_manipulate.dict_display_proc(dict_aa)
 out_str = text_manipulate.dict_to_str_proc(dict_aa,"\t")
 fs.writeFile(file_out, out_str)
 #
-console.log "*** 終了 ***\n"
+console.error "*** 終了 ***"
 # -------------------------------------------------------------

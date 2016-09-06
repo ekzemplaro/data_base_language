@@ -2,7 +2,7 @@
 //
 //	text_create.pike
 //
-//						Aug/27/2013
+//						Sep/06/2016
 //
 // ----------------------------------------------------------------
 import Stdio;
@@ -35,10 +35,7 @@ int main (int argc, array(string) argv)
 
 	write (file_out + "\n");
 
-
 	mapping(string:mapping(string:string)) dict_aa = data_prepare_proc ();
-
-	dict_display_proc (dict_aa);
 
 	text_write_proc (file_out,dict_aa);
 

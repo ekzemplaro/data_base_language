@@ -2,7 +2,7 @@
 /*
 	text_delete.java
 
-					Jan/26/2012
+					Sep/05/2016
 */
 // -----------------------------------------------------------------------
 import	java.util.HashMap;
@@ -14,7 +14,7 @@ public class text_delete
 // -----------------------------------------------------------------------
 public	static void main (String [] args)
 {
-	System.out.println ("*** 開始 ***");
+	System.err.println ("*** 開始 ***");
 
 	String text_file = args[0];
 
@@ -28,12 +28,10 @@ public	static void main (String [] args)
 		{
 		text_manipulate.dict_delete_proc (dict_aa,key_in);
 
-		text_manipulate.dict_display_proc (dict_aa);
-
 		text_manipulate.text_write_proc (text_file,dict_aa);
 		}
 
-	System.out.println ("*** 終了 ***");
+	System.err.println ("*** 終了 ***");
 }
 
 // -----------------------------------------------------------------------

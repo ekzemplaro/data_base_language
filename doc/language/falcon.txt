@@ -1,7 +1,7 @@
 <meta content="Program Language Examples in Falcon" name="description">
 <meta content="Ada,クライアント,接続,言語,サンプル" name="keyword">
 <meta content="Uchida Masatomo" name="author">
-<title>falcon Mar/14/2014</title>
+<title>falcon Sep/06/2016</title>
 </head>
 <body>
 <h2><a href="http://www.falconpl.org/">Falcon</a></h2><p />
@@ -18,5 +18,7 @@ ii  falconpl-dbi     0.9.6.9-git20120606-2    amd64      Database Abstraction La
 <a href="http://www.falconpl.org/project_docs/core/">Library Reference</a><p />
 </blockquote>
 
+Arch Linux<p />
 <blockquote>
+$ yaourt -Sb falcon<p />
 </blockquote>

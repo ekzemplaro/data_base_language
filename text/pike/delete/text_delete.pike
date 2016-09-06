@@ -2,7 +2,7 @@
 //
 //	text_delete.pike
 //
-//						Mar/10/2011
+//						Sep/06/2016
 //
 // ----------------------------------------------------------------
 import Stdio;
@@ -25,8 +25,6 @@ int main (int argc, array(string) argv)
 	m_delete (dict_aa, id_in);
 
 	text_write_proc (file_txt,dict_aa);
-
-	dict_display_proc (dict_aa);
 
 	write	("*** 終了 ***\n");
 

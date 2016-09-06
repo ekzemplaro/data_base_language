@@ -2,7 +2,7 @@
 /*
 	json_create.java
 
-					Jan/26/2012
+					Sep/05/2016
 */
 // -----------------------------------------------------------------------
 import	java.util.HashMap;
@@ -14,20 +14,18 @@ public class json_create
 // -----------------------------------------------------------------------
 public	static void main (String [] args)
 {
-	System.out.println ("*** 開始 ***");
+	System.err.println ("*** 開始 ***");
 
 	String json_file = args[0];
 
 	HashMap <String, HashMap <String,String>>
 		dict_aa = data_prepare_proc ();
 
-	text_manipulate.dict_display_proc (dict_aa);
-
 	String json_str = json_manipulate.dict_to_json_proc (dict_aa);
 
 	file_io.file_write_proc (json_file,json_str);
 
-	System.out.println ("*** 終了 ***");
+	System.err.println ("*** 終了 ***");
 }
 
 // -----------------------------------------------------------------------

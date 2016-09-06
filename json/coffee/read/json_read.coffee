@@ -2,13 +2,13 @@
 # ---------------------------------------------------------------
 #	json_read.coffee
 #
-#					Mar/12/2012
+#					Sep/06/2016
 #
 # ---------------------------------------------------------------
 fs = require("fs")
 text_manipulate = require('/var/www/data_base/common/coffee_common/text_manipulate')
 # ---------------------------------------------------------------
-console.log ("*** 開始 ***")
+console.error ("*** 開始 ***")
 
 filename=process.argv[2]
 
@@ -20,6 +20,6 @@ dict_aa = JSON.parse (json_str)
 
 text_manipulate.dict_display_proc (dict_aa)
 
-console.log ("*** 終了 ***")
+console.error ("*** 終了 ***")
 # ---------------------------------------------------------------
 

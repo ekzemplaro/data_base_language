@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------
 //	text_create.scala
 //
-//					Jun/10/2013
+//					Sep/05/2016
 //
 // -----------------------------------------------------------------
 import java.io._
@@ -13,7 +13,7 @@ object text_create
 {
 def main( args: Array[String])
 {
-	println	("*** 開始 ***")
+	System.err.println ("*** 開始 ***")
 
 	if (0 < args.length)
 		{
@@ -27,7 +27,7 @@ def main( args: Array[String])
 		scala.Console.err.println ("*** error ***")
 		}
 
-	println	("*** 終了 ***")
+	System.err.println ("*** 終了 ***")
 
 }
 // -----------------------------------------------------------------

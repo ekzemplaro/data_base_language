@@ -2,7 +2,7 @@
 //
 //	text_update.pike
 //
-//						Mar/10/2011
+//						Sep/06/2016
 //
 // ----------------------------------------------------------------
 import Stdio;
@@ -27,8 +27,6 @@ int main (int argc, array(string) argv)
 	dict_aa = dict_update_proc (dict_aa,id_in,population_in);
 
 	text_write_proc (file_txt,dict_aa);
-
-	dict_display_proc (dict_aa);
 
 	write	("*** 終了 ***\n");
 

@@ -2,17 +2,15 @@
 ;
 ;	text_create.lisp
 ;
-;					Oct/04/2013
+;					Sep/06/2016
 ;
 ; -------------------------------------------------------------------
 (load "/var/www/data_base/common/common_lisp/text_manipulate.lisp")
 
 ; -------------------------------------------------------------------
 (defun data_prepare_proc ()
-
-(defparameter dict_aa (make-hash-table))
 ;
-(format t "*** check *** cccc ***~%")
+(defparameter dict_aa (make-hash-table))
 ;
 (setf dict_aa (dict_append_proc dict_aa "t2381" '名古屋 '81245 '1979-9-14))
 (setf dict_aa (dict_append_proc dict_aa "t2382" '豊橋 '43176 '1979-11-21))
@@ -33,8 +31,7 @@ dict_aa)
 ;
 (setf dict_aa (data_prepare_proc))
 ;
-(dict_display_proc dict_aa)
 (text_write_proc file_out dict_aa)
-(format t "*** check ***~%")
-(format t "*** 終了 ***")
+;
+(format t "*** 終了 ***~%")
 ; -------------------------------------------------------------------

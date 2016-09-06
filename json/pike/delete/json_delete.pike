@@ -2,7 +2,7 @@
 //
 //	json_delete.pike
 //
-//						Aug/22/2013
+//						Sep/06/2016
 //
 // ----------------------------------------------------------------
 import Stdio;
@@ -25,8 +25,6 @@ int main (int argc, array(string) argv)
 			= Standards.JSON.decode (json_str);
 
 	m_delete (dict_aa, key);
-
-	dict_display_proc (dict_aa);
 
 	string json_str_out = Standards.JSON.encode(dict_aa);
 

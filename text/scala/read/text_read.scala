@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------
 //	text_read.scala
 //
-//						Jan/24/2011
+//						Sep/05/2016
 // -----------------------------------------------------------------
 import scala.io.Source
 import scala.collection.mutable
@@ -12,7 +12,7 @@ object text_read
 // -----------------------------------------------------------------
 def main (args: Array[String])
 {
-	println	("*** 開始 ***")
+	System.err.println ("*** 開始 ***")
 
 	if (0 < args.length)
 		{
@@ -26,7 +26,7 @@ def main (args: Array[String])
 		Console.err.println ("*** error ***")
 		}
 
-	println	("*** 終了 ***")
+	System.err.println ("*** 終了 ***")
 }
 
 // -----------------------------------------------------------------

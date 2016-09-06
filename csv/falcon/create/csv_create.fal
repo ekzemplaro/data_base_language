@@ -2,7 +2,7 @@
 //
 //	csv_create.fal
 //
-//					Feb/20/2014
+//					Sep/06/2016
 //
 // -------------------------------------------------------------------
 load "/var/www/data_base/common/falcon_common/text_manipulate.fal"
@@ -10,7 +10,7 @@ load "/var/www/data_base/common/falcon_common/text_manipulate.fal"
 function data_prepare_proc ()
 	dict_aa = [ => ]
 //
-	dict_aa = dict_append_proc (dict_aa,"t1271","千葉",31475,"2010-8-15")
+	dict_aa = dict_append_proc (dict_aa,"t1271","千葉",92475,"2010-8-15")
 	dict_aa = dict_append_proc (dict_aa,"t1272","勝浦",21598,"2010-7-9")
 	dict_aa = dict_append_proc (dict_aa,"t1273","市原",24397,"2010-4-22")
 	dict_aa = dict_append_proc (dict_aa,"t1274","流山",85762,"2010-6-14")
@@ -27,7 +27,6 @@ file_out=args[0]
 printl (file_out)
 //
 dict_aa = data_prepare_proc ()
-dict_display_proc (dict_aa)
 //
 csv_write_proc (file_out,dict_aa)
 //

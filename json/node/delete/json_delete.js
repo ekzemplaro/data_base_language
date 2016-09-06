@@ -2,12 +2,12 @@
 // ---------------------------------------------------------------
 //	delete/json_delete.js
 //
-//					Dec/11/2015
+//					Sep/06/2016
 //
 // ---------------------------------------------------------------
 var fs = require("fs")
 
-console.log ("*** 開始 ***")
+console.error ("*** 開始 ***")
 var filename=process.argv[2]
 var key_in=process.argv[3]
 
@@ -30,9 +30,9 @@ if (fs.existsSync(filename))
 	}
 else
 	{
-	console.log ("*** error *** " + filename + " doesn't exist. ***")
+	console.error ("*** error *** " + filename + " doesn't exist. ***")
 	}
 
-console.log ("*** 終了 ***")
+console.error ("*** 終了 ***")
 
 // ---------------------------------------------------------------

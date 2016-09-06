@@ -2,7 +2,7 @@
 //
 //	csv_delete.fal
 //
-//					Feb/20/2014
+//					Sep/06/2016
 //
 // -------------------------------------------------------------------
 load "/var/www/data_base/common/falcon_common/text_manipulate.fal"
@@ -17,8 +17,6 @@ printl (key_in)
 dict_aa = csv_read_proc (file_text)
 //
 dict_aa.remove (key_in)
-//
-dict_display_proc (dict_aa)
 //
 csv_write_proc (file_text,dict_aa)
 //

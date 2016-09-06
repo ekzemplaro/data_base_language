@@ -2,13 +2,13 @@
 // ---------------------------------------------------------------
 //	json_create.js
 //
-//					Dec/11/2015
+//					Sep/06/2016
 //
 // ---------------------------------------------------------------
 var fs = require("fs")
 var text_manipulate = require('/var/www/data_base/common/node_common/text_manipulate')
 // ---------------------------------------------------------------
-console.log ("*** 開始 ***")
+console.error ("*** 開始 ***")
 
 var file_json = process.argv[2]
 
@@ -19,12 +19,12 @@ var json_str = JSON.stringify(dict_aa)
 fs.writeFile (file_json,json_str,function (err)
 	{
 	if (err) {
-		console.log("Error on write: " + err)
+		console.error ("Error on write: " + err)
 		}
 	else {
 		fs.chmodSync (file_json,0666)
 		console.log("File written.")
-		console.log ("*** 終了 ***")
+		console.error ("*** 終了 ***")
 		}
 	})
 

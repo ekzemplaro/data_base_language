@@ -1,7 +1,7 @@
 <meta content="Program Language Examples in ecl" name="description">
 <meta content="ecl,クライアント,接続,言語,サンプル" name="keyword">
 <meta content="Uchida Masatomo" name="author">
-<title>ecl Sep/26/2013</title>
+<title>ecl Sep/06/2016</title>
 </head>
 <body>
 <h2><a href="http://ecls.sourceforge.net/">Embeddable Common-Lisp</a></h2><p />
@@ -38,3 +38,13 @@ Top level in: #<process TOP-LEVEL>.
 </pre>
 </blockquote>
 
+Arch Linux<p />
+<blockquote>
+# pacman -S ecl<p />
+</blockquote>
+
+<blockquote>
+</blockquote>
+
+<blockquote>
+</blockquote>

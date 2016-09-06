@@ -3,7 +3,7 @@
 #
 #	update/sqlite_delete.py
 #
-#					May/26/2015
+#					Sep/06/2016
 #
 # --------------------------------------------------------
 import	sys
@@ -13,7 +13,7 @@ sys.path.append ('/var/www/data_base/common/python_common')
 from sql_manipulate import sql_delete_proc
 #
 # --------------------------------------------------------
-print ("*** 開始 ***")
+sys.stderr.write ("*** 開始 ***\n")
 #
 file_in = sys.argv[1]
 key_in = sys.argv[2]
@@ -30,6 +30,7 @@ conn.commit ()
 #
 cursor.close ()
 conn.close ()
-print ("*** 終了 ***")
+#
+sys.stderr.write ("*** 終了 ***\n")
 #
 # --------------------------------------------------------

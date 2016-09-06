@@ -2,7 +2,7 @@
 # ---------------------------------------------------------------
 #	json_create.coffee
 #
-#					Oct/22/2014
+#					Sep/06/2016
 #
 # ---------------------------------------------------------------
 fs = require("fs")
@@ -29,18 +29,16 @@ data_prepare_proc = () ->
 	return	dict_aa
 
 # ---------------------------------------------------------------
-console.log "*** 開始 ***"
+console.error ("*** 開始 ***")
 
 filename=process.argv[2]
 
 dict_aa = data_prepare_proc()
 
-text_manipulate.dict_display_proc(dict_aa)
-
 json_str = JSON.stringify dict_aa
 
 fs.writeFile(filename,json_str)
 
-console.log "*** 終了 ***"
+console.error ("*** 終了 ***")
 
 # ---------------------------------------------------------------

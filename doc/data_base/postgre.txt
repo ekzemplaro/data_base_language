@@ -111,6 +111,7 @@ PHP<p />
 Python<p />
 <blockquote>
 	python-pygresql<p />
+	# pacman -S python-psycopg2<p />
 </blockquote>
 
 Perl<p />

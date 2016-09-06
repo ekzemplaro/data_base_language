@@ -2,7 +2,7 @@
 //
 //	text_create.fal
 //
-//					Feb/20/2014
+//					Sep/06/2016
 //
 // -------------------------------------------------------------------
 load "/var/www/data_base/common/falcon_common/text_manipulate.fal"
@@ -27,7 +27,6 @@ file_out=args[0]
 printl (file_out)
 //
 dict_aa = data_prepare_proc ()
-dict_display_proc (dict_aa)
 //
 text_write_proc (file_out,dict_aa)
 //

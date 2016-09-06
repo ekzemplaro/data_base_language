@@ -2,14 +2,14 @@
 // ---------------------------------------------------------------
 //	update/text_update.js
 //
-//					Dec/10/2015
+//					Sep/06/2016
 //
 // ---------------------------------------------------------------
 var fs = require("fs")
 var text_manipulate=require ("/var/www/data_base/common/node_common/text_manipulate")
 
 // ---------------------------------------------------------------
-console.log ("*** 開始 ***")
+console.error ("*** 開始 ***")
 
 var file_txt=process.argv[2]
 var key=process.argv[3]
@@ -30,9 +30,9 @@ if (fs.existsSync(file_txt))
 	}
 else
 	{
-	console.log ("*** error *** " + file_txt + " doesn't exist. ***")
+	console.error ("*** error *** " + file_txt + " doesn't exist. ***")
 	}
 
-console.log ("*** 終了 ***")
+console.error ("*** 終了 ***")
 
 // ---------------------------------------------------------------

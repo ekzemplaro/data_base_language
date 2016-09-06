@@ -3,14 +3,13 @@
 # -------------------------------------------------------------------------
 #	postgre_python_create.py
 #
-#						Jun/24/2015
+#						Sep/06/2016
 # -------------------------------------------------------------------------
 import	sys
-import	pgdb
+import	psycopg2
 sys.path.append ('/var/www/data_base/common/python_common')
 #
-from file_io import file_write_proc
-from sql_manipulate import table_insert_proc,sql_insert_proc,create_table_proc,drop_table_proc
+from sql_manipulate import table_insert_proc,create_table_proc,drop_table_proc
 from text_manipulate import dict_append_proc
 #
 #
@@ -18,7 +17,7 @@ from text_manipulate import dict_append_proc
 def	data_prepare_proc ():
 	dict_aa = {} 
 #
-	dict_aa = dict_append_proc (dict_aa,'t3461','広島',17600,'2003-5-20')
+	dict_aa = dict_append_proc (dict_aa,'t3461','広島',47800,'2003-5-20')
 	dict_aa = dict_append_proc (dict_aa,'t3462','福山',93500,'2003-6-12')
 	dict_aa = dict_append_proc (dict_aa,'t3463','東広島',21600,'2003-6-14')
 	dict_aa = dict_append_proc (dict_aa,'t3464','呉',83600,'2003-9-9')
@@ -34,23 +33,20 @@ def	data_prepare_proc ():
 #
 dict_aa = data_prepare_proc ()
 #
-hostname="localhost"
-conn = pgdb.connect (host=hostname,database="city", \
-			user="scott", password="tiger")
+conn = psycopg2.connect("dbname=city user=scott password=tiger")
+cur = conn.cursor()
 #
-cursor = conn.cursor ()
+drop_table_proc (cur)
+create_table_proc (cur)
 #
-drop_table_proc (cursor)
-create_table_proc (cursor)
-#
-table_insert_proc (cursor,dict_aa)
+table_insert_proc (cur,dict_aa)
 #
 conn.commit ()
-cursor.close ()
+cur.close ()
 conn.close ()
 #
 #
-print "Content-type: text/html\n\n"
+print ("Content-type: text/html\n\n")
 #
-print	"*** OK ***<p />"
+print	("*** OK ***<p />")
 # -------------------------------------------------------------------------

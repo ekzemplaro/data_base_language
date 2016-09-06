@@ -1,4 +1,4 @@
-<title>pike Feb/07/2011</title>
+<title>pike Sep/06/2016</title>
 </head>
 <body>
 <h2><a href="http://pike.ida.liu.se/">pike</a></h2><p />
@@ -22,6 +22,14 @@ ii  pike7.8-pcre  7.8.352-dfsg-3       PCRE module for Pike
 ii  pike7.8-pg    7.8.352-dfsg-3       PostgreSQL module for Pike
 ii  pike7.8-sqlite	7.8.352-dfsg-3	SQLite module for Pike
 </pre>
+</blockquote>
+
+Arch Linux<p />
+<blockquote>
+$ yaourt -Sb pike<p />
+</blockquote>
+
+<blockquote>
 </blockquote>
 
 <blockquote>

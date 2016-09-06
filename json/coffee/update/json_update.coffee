@@ -2,14 +2,14 @@
 # ---------------------------------------------------------------
 #	json_update.coffee
 #
-#					Mar/12/2012
+#					Sep/06/2016
 #
 # ---------------------------------------------------------------
 fs = require("fs")
 text_manipulate = require('/var/www/data_base/common/coffee_common/text_manipulate')
 # ---------------------------------------------------------------
 #
-console.log "*** 開始 ***"
+console.error ("*** 開始 ***")
 filename=process.argv[2]
 key_in=process.argv[3]
 population_in=process.argv[4]
@@ -25,6 +25,6 @@ if key_in of dict_aa
 	json_str = JSON.stringify(dict_bb)
 	fs.writeFile(filename,json_str)
 #
-console.log "*** 終了 ***"
+console.error ("*** 終了 ***")
 
 # ---------------------------------------------------------------

@@ -109,6 +109,8 @@ node.js<p />
 Java<p />
 <blockquote>
 	$ yaourt -Sb mariadb-jdbc<p />
+
+	# apt install libmysql-java<p />
 </blockquote>
 
 

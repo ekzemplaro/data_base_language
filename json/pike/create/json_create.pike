@@ -2,7 +2,7 @@
 //
 //	json_create.pike
 //
-//						Aug/22/2013
+//						Sep/06/2016
 //
 // ----------------------------------------------------------------
 import Stdio;
@@ -13,7 +13,7 @@ mapping(string:mapping(string:string)) data_prepare_proc ()
 {
 	mapping(string:mapping(string:string)) dict_aa = ([]);
 
-	dict_aa =  dict_append_proc (dict_aa,"t0921","宇都宮","58142","1920-9-17");
+	dict_aa =  dict_append_proc (dict_aa,"t0921","宇都宮","57149","1920-9-17");
 	dict_aa =  dict_append_proc (dict_aa,"t0922","小山","35627","1920-2-5");
 	dict_aa =  dict_append_proc (dict_aa,"t0923","佐野","19832","1920-7-4");
 	dict_aa =  dict_append_proc (dict_aa,"t0924","足利","57924","1920-6-9");
@@ -41,8 +41,6 @@ int main (int argc, array(string) argv)
 	write (file_out + "\n");
 
 	mapping(string:mapping(string:string)) dict_aa = data_prepare_proc ();
-
-	dict_display_proc (dict_aa);
 
 	string json_str = Standards.JSON.encode(dict_aa);
 

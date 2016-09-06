@@ -2,4 +2,4 @@
 export JAVA_COMMON=/var/www/data_base/common/java_common	
 export CLASSPATH=.:$JAVA_COMMON
 #
-java -Dfile.encoding=UTF-8 text_update  /var/tmp/plain_text/cities.txt t2381 32724900
+java -Dfile.encoding=UTF-8 text_update  /var/tmp/plain_text/cities.txt t2381 31724900

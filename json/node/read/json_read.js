@@ -2,13 +2,13 @@
 // ---------------------------------------------------------------
 //	read/json_read.js
 //
-//					Dec/11/2015
+//					Sep/06/2016
 //
 // ---------------------------------------------------------------
 var fs = require("fs")
 var text_manipulate = require('/var/www/data_base/common/node_common/text_manipulate')
 // ---------------------------------------------------------------
-console.log ("*** 開始 ***")
+console.error ("*** 開始 ***")
 
 var filename=process.argv[2]
 
@@ -25,16 +25,16 @@ if (fs.existsSync(filename))
 		}
 	catch (error)
 		{
-		console.log ("*** error *** from JSON.parse ***")
-		console.log (error)
+		console.error ("*** error *** from JSON.parse ***")
+		console.error (error)
 		}
 	}
 else
 	{
-	console.log ("*** error *** " + filename + " doesn't exist. ***")
+	console.error ("*** error *** " + filename + " doesn't exist. ***")
 	}
 
 
-console.log ("*** 終了 ***")
+console.error ("*** 終了 ***")
 // ---------------------------------------------------------------
 
