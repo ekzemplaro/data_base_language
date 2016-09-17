@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 #	maria_read.py
-#					Feb/18/2016
+#					Sep/15/2016
 #
 import sys
 #
@@ -14,7 +14,7 @@ from text_manipulate import dict_display_proc
 from sql_manipulate import sql_to_dict_proc
 #
 # ----------------------------------------------------------------
-print ("*** 開始 ***")
+sys.stderr.write ("*** 開始 ***\n")
 #
 host_aa='localhost'
 data_base = 'city'
@@ -32,6 +32,6 @@ conn.close ()
 #
 dict_display_proc (dict_aa)
 #
-print ("*** 終了 ***")
+sys.stderr.write ("*** 終了 ***\n")
 #
 # ----------------------------------------------------------------

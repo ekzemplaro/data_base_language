@@ -7,6 +7,13 @@ html:
 	cd ruby_common/html_src; make html;
 	cd jruby_common/html_src; make html;
 clean:
+	cd bash_common/html_src; make clean;
+	cd php_common/html_src; make clean;
+	cd python_common/html_src; make clean;
+	cd jython_common/html_src; make clean;
+	cd perl_common/html_src; make clean;
+	cd ruby_common/html_src; make clean;
+	cd jruby_common/html_src; make clean;
 	cd cplus_common; make clean;
 	cd scala_common; make clean;
 	cd groovy_common; make clean;

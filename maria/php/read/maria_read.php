@@ -3,7 +3,7 @@
 /*
 	maria_read.php
 
-					Sep/16/2013
+					Sep/15/2016
 
 */
 // --------------------------------------------------------------------
@@ -16,7 +16,7 @@ $dsn = 'mysql:dbname=city;host=localhost';
 $user = 'scott';
 $password = 'tiger';
 
-print "*** 開始 ***\n";
+fputs (STDERR,"*** 開始 ***\n");
 
 $dbcon = new PDO ($dsn, $user,$password);
 
@@ -26,6 +26,6 @@ disp_lower_proc ($dbcon);
 
 $dbcon = null;
 
-print "*** 終了 ***\n";
+fputs (STDERR,"*** 終了 ***\n");
 // --------------------------------------------------------------------
 ?>	

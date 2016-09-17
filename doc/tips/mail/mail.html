@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+<title>mail Sep/18/2016</title>
+</head>
+<body>
+<h2>mail</h2><p />
+
+pop3（110）ポートを使ったメールの受信方法<p />
+<blockquote>
+<pre>
+$ telnet pop.nifty.com 110
+Trying 210.131.2.37...
+Connected to pop.nifty.com.
+Escape character is '^]'.
++OK @nifty pop server at conuserg-09.nifty.com starting. <31455.1474151762@conuserg-09.nifty.com>
+user scott
++OK Password required for ekzemplaro.
+pass tiger
++OK ekzemplaro has 2 messages in 8438 octets.
+list
++OK 2 visible messages (8438 octets)
+1 7174
+2 1352
+.
+retr 2
++OK 1352 octets
+Return-Path: linux@hi-ho.ne.jp
+Received: by conbox-005 id 57ddc53b7c2226;
+	Sun, 18 Sep 2016 07:35:39 +0900
+.
+quit
++OK Pop server at conbox-005 signing off.
+Connection closed by foreign host.
+</pre>
+</blockquote>
+
+Dovecot のテスト<p />
+<blockquote>
+<pre>
+$ telnet localhost 110
+Trying ::1...
+Connected to localhost.
+Escape character is '^]'.
++OK Dovecot ready.
+user scott
++OK
+pass tiger
++OK Logged in.
+list
++OK 0 messages:
+.
+quit
++OK Logging out.
+Connection closed by foreign host.
+</pre>
+</blockquote>
+
+<blockquote>
+</blockquote>
+
+<a href="../">Return</a><p />
+Sep/16/2016 AM 08:15<p />
+</body>
+</html>

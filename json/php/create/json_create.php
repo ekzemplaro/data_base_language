@@ -3,7 +3,7 @@
 //
 //	json_create.php
 //
-//					Aug/04/2014
+//					Sep/15/2016
 //
 // ----------------------------------------------------------------
 $path="/var/www/data_base/common/php_common";
@@ -12,9 +12,9 @@ set_include_path (get_include_path() . PATH_SEPARATOR . $path);
 include "file_io.php";
 include "text_manipulate.php";
 // ----------------------------------------------------------------
-print	"*** 開始 ***\n";
-
-$dict_aa = array ();
+function data_prepare_proc ()
+{
+	$dict_aa = array ();
 
 $dict_aa = dict_append_proc ($dict_aa,"t0921",'宇都宮',78145,'2002-5-18');
 $dict_aa = dict_append_proc ($dict_aa,"t0922",'小山',69237,'2002-10-7');
@@ -31,17 +31,24 @@ $dict_aa = dict_append_proc ($dict_aa,"t0932",'鹿沼',28179,'2002-4-17');
 $dict_aa = dict_append_proc ($dict_aa,"t0933",'那須塩原',29136,'2002-3-11');
 $dict_aa = dict_append_proc ($dict_aa,"t0934",'那須烏山',83215,'2422-6-12');
 
+	return	$dict_aa;
+}
+
+// ----------------------------------------------------------------
+fputs (STDERR,"*** 開始 ***\n");
+
+$dict_aa = data_prepare_proc ();
 
 $str_json = json_encode ($dict_aa);
 
 $file_out = $argv[1];
 
-print	$file_out . "\n";
+echo	$file_out . "\n";
 
 file_write_proc ($str_json,$file_out);
 chmod ($file_out,0666);
 
-print	"*** 終了 ***\n";
+fputs (STDERR,"*** 終了 ***\n");
 // ----------------------------------------------------------------
 ?>
 

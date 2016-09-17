@@ -3,7 +3,7 @@
 /*
 	maria_delete.php
 
-					Jul/05/2015
+					Sep/15/2016
 
 */
 // --------------------------------------------------------------------
@@ -19,12 +19,11 @@ $dsn = 'mysql:dbname=city;host=localhost';
 $user = 'scott';
 $password = 'tiger';
 
-print "*** 開始 ***\n";
+fputs (STDERR,"*** 開始 ***\n");
 
 $id_in = $argv[1];
 
-print $id_in . "\n";
-
+echo $id_in . "\n";
 
 $dbcon = new PDO ($dsn, $user,$password);
 
@@ -34,6 +33,6 @@ sql_delete_proc ($dbcon,$id_in);
 
 $dbcon = null;
 
-print "*** 終了 ***\n";
+fputs (STDERR,"*** 終了 ***\n");
 // --------------------------------------------------------------------
 ?>	

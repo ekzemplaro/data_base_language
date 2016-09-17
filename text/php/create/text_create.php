@@ -3,7 +3,7 @@
 //
 //	text_create.php
 //
-//					Jun/24/2015
+//					Sep/15/2016
 //
 // ----------------------------------------------------------------
 $path="/var/www/data_base/common/php_common";
@@ -30,7 +30,7 @@ $dict_aa = dict_append_proc ($dict_aa,'t2389','犬山',79461,'2002-7-8');
 }
 
 // ----------------------------------------------------------------
-print	"*** 開始 ***\n";
+fputs (STDERR,"*** 開始 ***\n");
 
 $file_out = $argv[1];
 
@@ -42,5 +42,5 @@ $dict_aa = data_prepare_proc ();
 
 text_write_proc ($file_out,$dict_aa);
 
-print	"*** 終了 ***\n";
+fputs (STDERR,"*** 終了 ***\n");
 ?>

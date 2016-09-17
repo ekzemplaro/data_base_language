@@ -3,7 +3,7 @@
 //
 //	maria_create.php
 //
-//					Jul/05/2016
+//					Sep/15/2016
 //
 // ----------------------------------------------------------------
 $path="/var/www/data_base/common/php_common";
@@ -30,8 +30,9 @@ $dict_aa = dict_append_proc ($dict_aa,'t3329','新見',415892,'2002-1-15');
 
 	return	$dict_aa;
 }
+
 // ----------------------------------------------------------------
-print "*** 開始 ***\n";
+fputs (STDERR,"*** 開始 ***\n");
 
 $dict_aa = data_prepare_proc ();
 
@@ -48,10 +49,8 @@ create_table_proc ($dbcon);
 
 dict_to_db_proc ($dict_aa,$dbcon);
 
-// disp_lower_proc ($dbcon);
-
 $dbcon = null;
 
-print "*** 終了 ***\n";
+fputs (STDERR,"*** 終了 ***\n");
 ?>
 
