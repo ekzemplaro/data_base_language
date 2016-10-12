@@ -60,7 +60,39 @@ Connection closed by foreign host.
 </pre>
 </blockquote>
 
+Postfix のテスト<br />
 <blockquote>
+<pre>
+$ telnet ekzemplaro.org 25
+Trying 192.168.8.29...
+Connected to ekzemplaro.org.
+Escape character is '^]'.
+220 mail.ekzemplaro.org ESMTP Postfix
+helo ekzemplaro.org
+250 mail.ekzemplaro.org
+mail from: uchida
+250 2.1.0 Ok
+rcpt to: suzuki
+250 2.1.5 Ok
+data
+354 End data with <CR><LF>.<CR><LF>
+Good Afternoon
+.
+250 2.0.0 Ok: queued as 70ADF262581
+quit
+221 2.0.0 Bye
+Connection closed by foreign host.
+</pre>
+</blockquote>
+
+<blockquote>
+<pre>
+</pre>
+</blockquote>
+
+<blockquote>
+<pre>
+</pre>
 </blockquote>
 
 <a href="../">Return</a><p />

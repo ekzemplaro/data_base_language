@@ -1,9 +1,9 @@
-#! /usr/bin/jython  
+#! /opt/jython/bin/jython
 # -*- coding: utf-8 -*-
 #
 #	json_delete.py
 #
-#					May/27/2015
+#					Oct/12/2016
 #
 #
 import	sys
@@ -18,7 +18,7 @@ from jython_file_io import file_to_str_proc
 from jython_file_io import file_write_proc
 #
 # -------------------------------------------------------------------
-print ("*** 開始 ***")
+sys.stderr.write ("*** 開始 ***\n")
 #
 file_json = sys.argv[1]
 id_in = sys.argv[2]
@@ -34,5 +34,5 @@ out_str = json.dumps (dict_aa)
 #
 file_write_proc (file_json,out_str)
 #
-print ("*** 終了 ***")
+sys.stderr.write ("*** 終了 ***\n")
 # -------------------------------------------------------------------

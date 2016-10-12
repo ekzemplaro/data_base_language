@@ -3,7 +3,7 @@
 #
 #	xlsx_create.py
 #
-#						Sep/09/2014
+#						Sep/29/2016
 #
 # -------------------------------------------------------------------
 import sys
@@ -27,7 +27,7 @@ def data_prepare_proc ():
 #
 	return	dict_aa
 # -------------------------------------------------------------------
-print   ("*** 開始 ***")
+sys.stderr.write ("*** 開始 ***\n")
 
 xlsx_file = sys.argv[1]
 print (xlsx_file)
@@ -36,5 +36,5 @@ dict_aa = data_prepare_proc ()
 #
 xlsx_write_proc (xlsx_file,dict_aa)
 #
-print ("*** 終了 ***")
+sys.stderr.write ("*** 終了 ***\n")
 # -------------------------------------------------------------------

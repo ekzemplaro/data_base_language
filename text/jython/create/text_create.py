@@ -1,9 +1,9 @@
-#! /usr/bin/jython  
+#! /opt/jython/bin/jython
 # -*- coding: utf-8 -*-
 #
 #	text_create.py
 #
-#					Jul/20/2015
+#					Oct/12/2016
 #
 import	sys
 #
@@ -29,15 +29,15 @@ def	data_prepare_proc ():
 	return	dict_aa
 #
 # -------------------------------------------------------------------------
-print	("*** 開始 ***")
+sys.stderr.write ("*** 開始 ***\n")
 #
 file_out = sys.argv[1]
 #
-print	file_out
+print (file_out)
 #
 dict_aa = data_prepare_proc ()
 #
 text_write_proc (file_out,dict_aa)
 #
-print	("*** 終了 ***")
+sys.stderr.write ("*** 終了 ***\n")
 # -------------------------------------------------------------------------

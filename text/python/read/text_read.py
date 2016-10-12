@@ -3,7 +3,7 @@
 #
 #	text_read.py
 #
-#						Sep/29/2014
+#						Sep/22/2016
 #
 import	sys
 #
@@ -12,7 +12,7 @@ from text_manipulate import text_read_proc
 from text_manipulate import dict_display_proc
 
 # --------------------------------------------------------------------
-print ("*** 開始 ***")
+sys.stderr.write ("*** 開始 ***\n")
 file_in = sys.argv[1]
 #
 try:
@@ -23,5 +23,5 @@ except Exception as ee:
 	sys.stderr.write (str (ee))
 #
 #
-print ("*** 終了 ***")
+sys.stderr.write ("*** 終了 ***\n")
 # --------------------------------------------------------------------

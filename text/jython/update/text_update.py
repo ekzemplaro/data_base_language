@@ -1,9 +1,9 @@
-#! /usr/bin/jython
+#! /opt/jython/bin/jython
 # -*- coding: utf-8 -*-
 #
 #	update/text_update.py
 #
-#					Jul/20/2015
+#					Oct/12/2016
 import	sys
 import	string
 import	datetime
@@ -16,7 +16,7 @@ from jython_text_manipulate import text_write_proc
 from text_manipulate import dict_update_proc
 # ---------------------------------------------------------------
 #
-print ("*** 開始 ***")
+sys.stderr.write ("*** 開始 ***\n")
 #
 file_in = sys.argv[1]
 key_in = sys.argv[2]
@@ -29,5 +29,5 @@ dict_bb=dict_update_proc (dict_aa,key_in,population_in)
 
 text_write_proc (file_in,dict_bb)
 #
-print ("*** 終了 ***")
+sys.stderr.write ("*** 終了 ***\n")
 # ---------------------------------------------------------------

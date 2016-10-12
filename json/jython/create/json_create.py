@@ -1,9 +1,9 @@
-#! /usr/bin/jython  
+#! /opt/jython/bin/jython
 # -*- coding: utf-8 -*-
 #
 #	json_create.py
 #
-#					May/27/2015
+#					Oct/12/2016
 #
 # -------------------------------------------------------------------------
 import	sys
@@ -24,12 +24,12 @@ from jython_file_io import file_write_proc
 def	data_prepare_proc ():
 	dict_aa = {}
 #
-	dict_aa = dict_append_proc (dict_aa,'t0921','宇都宮',71532,'2004-5-20')
+	dict_aa = dict_append_proc (dict_aa,'t0921','宇都宮',71592,'2004-5-20')
 #
 	dict_aa = dict_append_proc (dict_aa,'t0922','小山',85746,'2004-4-15')
 #
 	dict_aa = dict_append_proc (dict_aa,'t0923','佐野',51294,'2004-6-12')
-	dict_aa = dict_append_proc (dict_aa,'t0924','足利',57938,'2004-7-21')
+	dict_aa = dict_append_proc (dict_aa,'t0924','足利',57928,'2004-7-21')
 	dict_aa = dict_append_proc (dict_aa,'t0925','日光',72681,'2004-4-19')
 	dict_aa = dict_append_proc (dict_aa,'t0926','下野',82957,'2004-10-14')
 	dict_aa = dict_append_proc (dict_aa,'t0927','さくら',96823,'2004-5-24')
@@ -39,7 +39,7 @@ def	data_prepare_proc ():
 	dict_aa = dict_append_proc (dict_aa,'t0931','大田原',26815,'2004-9-17')
 	dict_aa = dict_append_proc (dict_aa,'t0932','鹿沼',23749,'2004-7-20')
 	dict_aa = dict_append_proc (dict_aa,'t0933','那須塩原',12759,'2004-3-12')
-	dict_aa = dict_append_proc (dict_aa,'t0934','那須烏山',53687,'2003-8-17')
+	dict_aa = dict_append_proc (dict_aa,'t0934','那須烏山',53617,'2004-8-17')
 #
 	return	dict_aa
 #
@@ -48,7 +48,7 @@ System.out.println (String ("*** 開始 ***","utf-8"))
 #
 file_out = sys.argv[1]
 #
-print	file_out
+print (file_out)
 #
 dict_aa = data_prepare_proc ()
 #

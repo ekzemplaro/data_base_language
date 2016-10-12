@@ -103,7 +103,7 @@ C#<p />
 <blockquote>
 <pre>
 $ mongo
-MongoDB shell version: 2.4.9
+MongoDB shell version: 3.2.9
 connecting to: test
 > db
 test
@@ -137,6 +137,10 @@ Arch Linux<br />
 $ yaourt -Sb ruby-mongo<p />
 $ yaourt -Sb ruby-bson_ext<p />
 # systemctl start mongodb<p />
+</blockquote>
+設定ファイル<br />
+<blockquote>
+/etc/mongodb.conf<p />
 </blockquote>
 <hr />
 バックアップ<br />

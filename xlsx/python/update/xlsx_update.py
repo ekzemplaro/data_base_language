@@ -3,7 +3,7 @@
 #
 #	xlsx_update.py
 #
-#					Sep/08/2014
+#					Sep/29/2016
 import	sys
 import	string
 #
@@ -14,7 +14,7 @@ from xlsx_manipulate import xlsx_read_proc
 from xlsx_manipulate import xlsx_write_proc
 # ---------------------------------------------------------------
 #
-print ("*** 開始 ***")
+sys.stderr.write ("*** 開始 ***\n")
 #
 xlsx_file = sys.argv[1]
 key = sys.argv[2]
@@ -27,5 +27,5 @@ dict_bb = dict_update_proc (dict_aa,key,population_in)
 
 xlsx_write_proc (xlsx_file,dict_bb)
 #
-print ("*** 終了 ***")
+sys.stderr.write ("*** 終了 ***\n")
 # ---------------------------------------------------------------

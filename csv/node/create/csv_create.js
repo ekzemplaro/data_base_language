@@ -2,7 +2,7 @@
 // ---------------------------------------------------------------
 //	csv_create.js
 //
-//					Jan/12/2016
+//					Oct/06/2016
 //
 // ---------------------------------------------------------------
 var fs = require("fs")
@@ -28,18 +28,17 @@ function data_prepare_proc ()
 }
 
 // ---------------------------------------------------------------
-console.log ("*** 開始 ***")
+console.error ("*** 開始 ***")
 
 var file_out=process.argv[2]
 
 dict_aa = data_prepare_proc ()
-text_manipulate.dict_display_proc (dict_aa)
 
 text_manipulate.csv_write_proc (file_out,dict_aa)
 
 fs.chmodSync (file_out,0666)
 
-console.log ("*** 終了 ***")
+console.error ("*** 終了 ***")
 
 // ---------------------------------------------------------------
 

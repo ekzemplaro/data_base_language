@@ -36,7 +36,7 @@ MySQL の設定<p />
 	<blockquote>
 	MariaDB [(none)]> create user 'wordpress'@'localhost' identified by 'tiger';<p />
 	MariaDB [(none)]> create schema wordpress;<p />
-	MariaDB [(none)]> grant all on wordpress.* to wordpress identified by 'tiger';<p />
+	MariaDB [(none)]> grant all on wordpress.* to wordpress;<p />
 	</blockquote>
 	</blockquote>
 

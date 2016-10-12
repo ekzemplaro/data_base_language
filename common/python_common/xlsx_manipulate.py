@@ -2,7 +2,7 @@
 #
 #	xlsx_manipulate.py
 #
-#						Nov/03/2015
+#						Sep/29/2016
 #
 # -------------------------------------------------------------------
 import sys
@@ -14,10 +14,10 @@ from openpyxl import load_workbook
 def xlsx_read_proc (xlsx_file):
 	dict_aa = {}
 	wb = load_workbook (filename = xlsx_file)
-	ws = wb.get_active_sheet()
+	ws = wb.active
 
-	print (ws.get_highest_column())
-	max_row = ws.get_highest_row()
+	print (ws.max_row)
+	max_row = ws.max_row
 	for row in range (1,max_row + 1): 
 		unit_aa = {}
 		key = ws.cell('A%d' % row).value

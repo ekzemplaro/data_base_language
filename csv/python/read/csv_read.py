@@ -3,7 +3,7 @@
 #
 #	csv_read.py
 #
-#						Sep/29/2014
+#						Oct/07/2016
 #
 import	sys
 #
@@ -12,11 +12,11 @@ from text_manipulate import csv_read_proc
 from text_manipulate import dict_display_proc
 
 # --------------------------------------------------------------------
-print ("*** 開始 ***")
+sys.stderr.write ("*** 開始 ***\n")
 file_in = sys.argv[1]
 #
 dict_aa = csv_read_proc (file_in)
 #
 dict_display_proc (dict_aa)
-print ("*** 終了 ***")
+sys.stderr.write ("*** 終了 ***\n")
 # --------------------------------------------------------------------

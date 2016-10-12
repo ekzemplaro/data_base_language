@@ -3,7 +3,7 @@
 #
 #	update/text_update.py
 #
-#					Sep/29/2014
+#					Sep/22/2016
 import	sys
 #
 # ---------------------------------------------------------------
@@ -11,10 +11,9 @@ sys.path.append ('/var/www/data_base/common/python_common')
 from text_manipulate import text_read_proc
 from text_manipulate import text_write_proc
 from text_manipulate import dict_update_proc
-from text_manipulate import dict_display_proc
 # ---------------------------------------------------------------
 #
-print ("*** 開始 ***")
+sys.stderr.write ("*** 開始 ***\n")
 #
 file_in = sys.argv[1]
 id_in = sys.argv[2]
@@ -25,8 +24,7 @@ dict_aa = text_read_proc	(file_in)
 
 dict_bb=dict_update_proc (dict_aa,id_in,population_in)
 
-dict_display_proc	(dict_bb)
 text_write_proc (file_in,dict_bb)
 #
-print ("*** 終了 ***")
+sys.stderr.write ("*** 終了 ***\n")
 # ---------------------------------------------------------------
