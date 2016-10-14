@@ -1,9 +1,9 @@
-#! /usr/bin/python3
+#! /usr/bin/python
 # -*- coding: utf-8 -*-
 #
 #	maria_update.py
 #
-#					Feb/18/2016
+#					Oct/14/2016
 #
 # --------------------------------------------------------
 import	sys
@@ -14,7 +14,7 @@ sys.path.append ('/var/www/data_base/common/python_common')
 from sql_manipulate import sql_update_proc
 #
 # --------------------------------------------------------
-print ("*** 開始 ***")
+sys.stderr.write ("*** 開始 ***\n")
 #
 key_in = sys.argv[1]
 population_in = int (sys.argv[2])
@@ -31,6 +31,6 @@ conn.commit ()
 #
 cursor.close ()
 conn.close ()
-print ("*** 終了 ***")
+sys.stderr.write ("*** 終了 ***\n")
 #
 # --------------------------------------------------------

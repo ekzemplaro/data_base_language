@@ -1,9 +1,9 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
 #	xlsx_create.py
 #
-#						Sep/29/2016
+#						Oct/14/2016
 #
 # -------------------------------------------------------------------
 import sys
@@ -11,7 +11,6 @@ sys.path.append ('/var/www/data_base/common/python_common')
 from text_manipulate import dict_append_proc
 from xlsx_manipulate import xlsx_write_proc
 
-#from openpyxl import Workbook
 # -------------------------------------------------------------------
 def data_prepare_proc ():
 	dict_aa = {}

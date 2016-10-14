@@ -1,8 +1,8 @@
-#! /usr/bin/python3
+#! /usr/bin/python
 # -*- coding: utf-8 -*-
 #
 #	maria_read.py
-#					Sep/15/2016
+#					Oct/14/2016
 #
 import sys
 #

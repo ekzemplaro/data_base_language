@@ -1,9 +1,9 @@
-#! /usr/bin/python3
+#! /usr/bin/python
 # -*- coding: utf-8 -*-
 #
 #	json_read.py
 #
-#					Aug/10/2016
+#					Oct/14/2016
 #
 # ------------------------------------------------------------------
 import	sys
@@ -13,6 +13,7 @@ sys.path.append ('/var/www/data_base/common/python_common')
 from text_manipulate import dict_display_proc
 from file_io import file_to_str_proc
 #
+# ------------------------------------------------------------------
 sys.stderr.write ("*** 開始 ***\n")
 #
 file_in = sys.argv[1]

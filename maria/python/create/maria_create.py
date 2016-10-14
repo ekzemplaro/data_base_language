@@ -1,9 +1,9 @@
-#! /usr/bin/python3
+#! /usr/bin/python
 # -*- coding: utf-8 -*-
 #
 #	maria_create.py
 #
-#					Feb/18/2016
+#					Oct/14/2016
 #
 # --------------------------------------------------------
 import	sys
@@ -34,7 +34,7 @@ def	data_prepare_proc ():
 	return	dict_aa
 #
 # --------------------------------------------------------
-print ("*** 開始 ***")
+sys.stderr.write ("*** 開始 ***\n")
 #
 dict_aa = data_prepare_proc ()
 #
@@ -52,6 +52,6 @@ conn.commit ()
 #
 cursor.close ()
 conn.close ()
-print ("*** 終了 ***")
+sys.stderr.write ("*** 終了 ***\n")
 #
 # --------------------------------------------------------

@@ -1,9 +1,9 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
 #	xlsx_read.py
 #
-#						Sep/29/2016
+#						Oct/14/2016
 #
 # -------------------------------------------------------------------
 import sys
