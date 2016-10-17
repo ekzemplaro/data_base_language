@@ -3,7 +3,7 @@
 //
 //	excel_create.php
 //
-//					Jul/02/2011
+//					Oct/16/2016
 //
 // ----------------------------------------------------------------
 $path="/var/www/data_base/common/php_common";
@@ -17,7 +17,7 @@ include "excel_manipulate.php";
 // date_default_timezone_set('Europe/London');
 
 
-print "*** 開始 ***\n";
+fputs (STDERR,"*** 開始 ***\n");
 
 $file_out = $argv[1];
 #
@@ -28,15 +28,15 @@ excel_write_proc ($file_out,$dict_aa);
 // Echo memory peak usage
 echo date('H:i:s') . " Peak memory usage: " . (memory_get_peak_usage(true) / 1024 / 1024) . " MB\r\n";
 
-print "*** 終了 ***\n";
+fputs (STDERR,"*** 終了 ***\n");
 
 // ----------------------------------------------------------------
 function data_prepare_proc ()
 {
 $dict_aa = array ();
 
-$dict_aa = dict_append_proc ($dict_aa,'t2971','奈良',32514,'2002-2-14');
-$dict_aa = dict_append_proc ($dict_aa,'t2972','大和高田',63473,'2002-8-12');
+$dict_aa = dict_append_proc ($dict_aa,'t2971','奈良',32518,'2002-2-14');
+$dict_aa = dict_append_proc ($dict_aa,'t2972','大和高田',61473,'2002-8-12');
 $dict_aa = dict_append_proc ($dict_aa,'t2973','大和郡山',57182,'2002-9-01');
 $dict_aa = dict_append_proc ($dict_aa,'t2974','天理',46379,'2002-10-29');
 $dict_aa = dict_append_proc ($dict_aa,'t2975','橿原',35715,'2002-7-14');

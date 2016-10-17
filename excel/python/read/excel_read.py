@@ -1,9 +1,9 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
 #	excel_read.py
 #
-#						Sep/08/2014
+#						Oct/16/2016
 #
 # -------------------------------------------------------------------
 import sys
@@ -13,7 +13,7 @@ from excel_manipulate import excel_read_proc
 from text_manipulate import dict_display_proc
 
 # -------------------------------------------------------------------
-print   ("*** 開始 ***")
+sys.stderr.write ("*** 開始 ***\n")
 
 excel_file = sys.argv[1]
 print (excel_file)
@@ -26,5 +26,5 @@ except Exception as ee:
 	sys.stderr.write (str (ee))
 #
 #
-print ("*** 終了 ***")
+sys.stderr.write ("*** 終了 ***\n")
 # -------------------------------------------------------------------

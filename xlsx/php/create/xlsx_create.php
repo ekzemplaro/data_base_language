@@ -3,7 +3,7 @@
 //
 //	xlsx_create.php
 //
-//					Dec/17/2014
+//					Oct/16/2016
 //
 // ----------------------------------------------------------------
 $path="/var/www/data_base/common/php_common";
@@ -15,7 +15,7 @@ include "xlsx_manipulate.php";
 // ----------------------------------------------------------------
 error_reporting(E_ALL);
 
-print "*** 開始 ***\n";
+fputs (STDERR,"*** 開始 ***\n");
 date_default_timezone_set('Asia/Tokyo');
 
 $xlsx_file = $argv[1];
@@ -24,7 +24,7 @@ $dict_aa = data_prepare_proc ();
 
 xlsx_write_proc ($xlsx_file,$dict_aa);
 
-print "*** 終了 ***\n";
+fputs (STDERR,"*** 終了 ***\n");
 // ----------------------------------------------------------------
 function data_prepare_proc ()
 {

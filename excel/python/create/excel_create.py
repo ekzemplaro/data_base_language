@@ -1,9 +1,9 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
 #	excel_create.py
 #
-#						Sep/05/2014
+#						Oct/16/2016
 #
 # -------------------------------------------------------------------
 import	sys
@@ -36,5 +36,5 @@ print (excel_file)
 #
 excel_write_proc (excel_file,dict_aa)
 #
-print ("*** 終了 ***")
+sys.stderr.write ("*** 終了 ***\n")
 # -------------------------------------------------------------------

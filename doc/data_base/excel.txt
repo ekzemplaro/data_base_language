@@ -18,12 +18,13 @@ cities.xlsx: Microsoft Excel 2007+<br />
 
 PHP<p />
 <blockquote>
-	<a href="http://phpexcel.codeplex.com/">PHPExcel</a><p />
-	PHPExcel_1.7.9_doc.zip<p />
+	<a href="https://github.com/PHPOffice/PHPExcel">PHPExcel</a><p />
+	PHPExcel-1.8.zip<p />
 
 /var/www/Classes/PHPExcel.php<br />
 /var/www/Classes/PHPExcel/Calculation.php<br />
 /var/www/Classes/PHPExcel/Cell.php<br />
+
 </blockquote>
 
 <blockquote>
