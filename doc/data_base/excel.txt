@@ -20,6 +20,9 @@ PHP<p />
 <blockquote>
 	<a href="https://github.com/PHPOffice/PHPExcel">PHPExcel</a><p />
 	PHPExcel-1.8.zip<p />
+	<blockquote>
+		extension=zip.so<br />
+	</blockquote>
 
 /var/www/Classes/PHPExcel.php<br />
 /var/www/Classes/PHPExcel/Calculation.php<br />

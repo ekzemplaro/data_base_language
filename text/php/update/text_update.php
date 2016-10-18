@@ -5,7 +5,7 @@
 
 	php/update/text_update.php
 
-					Sep/15/2016
+					Oct/18/2016
 
 */
 // --------------------------------------------------------------------
@@ -18,13 +18,13 @@ include "file_io.php";
 // --------------------------------------------------------------------
 $file_in = $argv[1];
 $id_in = $argv[2];
-$population_in = $argv[3];
+$population_in = intval ($argv[3]);
 
 fputs (STDERR,"*** 開始 ***\n");
 
-print	$file_in . "\n";
-print	$id_in . "\t";
-print	$population_in . "\n";
+echo	$file_in . "\n";
+echo	$id_in . "\t";
+echo	$population_in . "\n";
 
 $dict_aa = text_read_proc ($file_in);
 $dict_bb = dict_update_proc ($dict_aa,$id_in,$population_in);

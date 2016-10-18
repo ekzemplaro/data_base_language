@@ -3,7 +3,7 @@
 /*
 	maria_update.php
 
-					Sep/15/2016
+					Oct/18/2016
 
 */
 // --------------------------------------------------------------------
@@ -22,7 +22,7 @@ $password = 'tiger';
 fputs (STDERR,"*** 開始 ***\n");
 
 $id_in = $argv[1];
-$population_in = $argv[2];
+$population_in = intval ($argv[2]);
 
 echo $id_in . "\t" . $population_in . "\n";
 

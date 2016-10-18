@@ -3,7 +3,7 @@
 // ------------------------------------------------------------------
 //	xml_update.php
 //
-//					Oct/13/2011
+//					Oct/18/2016
 //
 // ------------------------------------------------------------------
 $path="/var/www/data_base/common/php_common";
@@ -16,24 +16,23 @@ include "file_io.php";
 // ------------------------------------------------------------------
 $xml_file = $argv[1];
 $id_in = $argv[2];
-$population_in = $argv[3];
+$population_in = intval ($argv[3]);
 
-print	"*** 開始 ***\n";
-print	$xml_file . "\n";
-print	$id_in . "\t";
-print	$population_in . "\n";
+fputs (STDERR,"*** 開始 ***\n");
+echo	$xml_file . "\n";
+echo	$id_in . "\t";
+echo	$population_in . "\n";
 
 $xml_string = file_get_contents ($xml_file);
 
 $dict_aa = xml_to_dict_proc ($xml_string);
 
 $dict_bb = dict_update_proc ($dict_aa,$id_in,$population_in);
-dict_display_proc ($dict_bb);
 
 $str_xml = dict_to_xml_proc ($dict_bb);
 
 file_write_proc ($str_xml,$xml_file);
 
-print	"*** 終了 ***\n";
+fputs (STDERR,"*** 終了 ***\n");
 // ------------------------------------------------------------------
 ?>

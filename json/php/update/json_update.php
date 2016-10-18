@@ -3,7 +3,7 @@
 // ------------------------------------------------------------------
 //	update/json_update.php
 //
-//					Sep/15/2016
+//					Oct/18/2016
 //
 // ------------------------------------------------------------------
 $path = "/var/www/data_base/common/php_common";
@@ -17,7 +17,7 @@ fputs (STDERR,"*** 開始 ***\n");
 
 $json_filename = $argv[1];
 $id_in = $argv[2];
-$population_in = $argv[3];
+$population_in = intval ($argv[3]);
 
 echo	$json_filename . "\n";
 echo	$id_in . "\t";

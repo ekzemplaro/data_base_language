@@ -5,7 +5,7 @@
 
 	php/update/csv_update.php
 
-					Jun/02/2011
+					Oct/18/2016
 
 */
 // --------------------------------------------------------------------
@@ -18,21 +18,19 @@ include "file_io.php";
 // --------------------------------------------------------------------
 $file_in = $argv[1];
 $id_in = $argv[2];
-$population_in = $argv[3];
+$population_in = intval ($argv[3]);
 
-print	"*** 開始 ***\n";
+fputs (STDERR,"*** 開始 ***\n");
 
-print	$file_in . "\n";
-print	$id_in . "\t";
-print	$population_in . "\n";
+echo	$file_in . "\n";
+echo	$id_in . "\t";
+echo	$population_in . "\n";
 
 $dict_aa = csv_read_proc ($file_in);
 $dict_bb = dict_update_proc ($dict_aa,$id_in,$population_in);
-dict_display_proc ($dict_bb);
 
 csv_write_proc ($file_in,$dict_bb);
 
-
-print	"*** 終了 ***\n";
+fputs (STDERR,"*** 終了 ***\n");
 /* -------------------------------------------------------------------- */
 ?>
