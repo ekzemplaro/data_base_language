@@ -1,6 +1,6 @@
 {
 "archlinux": 
-	{"name": "ArchLinux","kernel": "4.7.0-1-ARCH","bash": "4.3.46"},
+	{"name": "ArchLinux","kernel": "4.8.2-1-ARCH","bash": "4.3.46"},
 "boot2docker": 
 	{"name": "boot2docker","kernel": "4.0.7-boot2docker","bash": ""},
 "centos": 

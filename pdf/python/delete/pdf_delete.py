@@ -1,9 +1,9 @@
-#! /usr/bin/python3
+#! /usr/bin/python
 # -*- coding: utf-8 -*-
 #
 #	pdf_delete.py
 #
-#						Sep/04/2016
+#						Oct/19/2016
 #
 import	sys
 import	string

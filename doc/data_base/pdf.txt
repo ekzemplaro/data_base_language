@@ -13,6 +13,7 @@ bash<p />
 <blockquote>
 	# pacman -S poppler<p />
 	# pacman -S poppler-data<p />
+	# pacman -S a2ps<p />
 </blockquote>
 
 PHP<p />
