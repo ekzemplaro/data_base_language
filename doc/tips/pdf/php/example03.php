@@ -1,13 +1,15 @@
 #! /usr/bin/php
 <?php
 // ----------------------------------------------------------------------
-require_once ('../../tcpdf/tcpdf.php');
+require_once ('/var/www/lib/php/tcpdf/tcpdf.php');
+date_default_timezone_set('Asia/Tokyo');
+
 $pdf = new TCPDF("L", "mm", "A4", true, "UTF-8" );
 $pdf->setPrintHeader(false);
 $pdf->setPrintFooter(false);
 $pdf->AddPage();
 
-$font_path = '../../IPAfont00303/ipag.ttf';
+$font_path = '/var/www/lib/php/IPAfont00303/ipag.ttf';
 if (file_exists($font_path)) {
 	$font = new TCPDF_FONTS();
 	$fontX = $font->addTTFfont($font_path);
@@ -31,8 +33,7 @@ $line_style = array ('width' => 0.5, 'color' => array(0xff, 0, 0) );
 $body_style = array ("all" => $line_style );
 $pdf->Rect (75,75, 100, 100, 'D', $body_style );
 
-// $pdf->Output("cd_cover_template.pdf", "I");
-
-$pdf->Output();
+// $pdf->Output();
+$pdf->Output ('/tmp/t03.pdf','F');
 // ----------------------------------------------------------------------
 ?>

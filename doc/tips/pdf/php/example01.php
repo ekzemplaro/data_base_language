@@ -4,7 +4,7 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-require_once ('../../tcpdf/tcpdf.php');
+require_once ('/var/www/lib/php/tcpdf/tcpdf.php');
 
 //=============================================================================
 //   main
@@ -23,7 +23,7 @@ function test() {
 
 	$pdf->AddPage();
 
-	$font_path = '../../IPAfont00303/ipag.ttf';
+	$font_path = '/var/www/lib/php/IPAfont00303/ipag.ttf';
 	if (file_exists($font_path)) {
 		$font = new TCPDF_FONTS();
 		$fontX = $font->addTTFfont($font_path);
@@ -66,11 +66,13 @@ $body_style = array ("all" => $line_style );
 	$pdf->Rect (5,5, 200, 285, 'D', $body_style );
 	$pdf->Rect (20,20, 170, 255, 'D', $body_style );
 
-	$pdf->Output ();
+//	$pdf->Output ();
+	$pdf->Output ('/tmp/t01.pdf','F');
 
 }
 
 // -----------------------------------------------------------------------
+date_default_timezone_set('Asia/Tokyo');
 test();
 // -----------------------------------------------------------------------
 ?>

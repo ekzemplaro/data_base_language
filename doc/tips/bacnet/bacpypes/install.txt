@@ -1,0 +1,5 @@
+https://github.com/JoelBender/bacpypes
+
+http://bacpypes.readthedocs.io/en/latest/
+
+cp BACpypes~.ini samples/BACpypes.ini

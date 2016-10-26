@@ -5,11 +5,10 @@
 //	pdf_create.php
 //
 //
-//						Oct/07/2011
+//						Oct/20/2016
 //
 // ----------------------------------------------------------------
-//require('../fpdf/mbfpdf.php');
-require('fpdf/fpdf.php');
+require_once ('/var/www/lib/php/tcpdf/tcpdf.php');
 
 // ----------------------------------------------------------------
 $path="/var/www/data_base/common/php_common";
@@ -19,9 +18,16 @@ include "text_manipulate.php";
 // ----------------------------------------------------------------
 function dict_to_pdf_proc ($pdf_file,$dict_aa)
 {
-$pdf=new FPDF();
+$pdf=new TCPDF();
 $pdf->AddPage();
-$pdf->SetFont('Arial','B',16);
+$font_path = '/var/www/lib/php/IPAfont00303/ipag.ttf';
+
+if (file_exists($font_path)) {
+	$font = new TCPDF_FONTS();
+	$fontX = $font->addTTFfont($font_path);
+	$pdf->SetFont($fontX , '', 10,'',true);
+	}
+
 
 	$width = 40;
 	$height = 10;
@@ -45,16 +51,15 @@ $pdf->SetFont('Arial','B',16);
 			}
 		}
 
-$pdf->Output($pdf_file);
+	$pdf->Output($pdf_file,'F');
 }
 
 // ----------------------------------------------------------------
-
-print	"*** 開始 ***\n";
+fputs (STDERR,"*** 開始 ***\n");
 
 $dict_aa = array ();
 
-$dict_aa = dict_append_proc ($dict_aa,'t2381','名古屋',72514,'2002-5-14');
+$dict_aa = dict_append_proc ($dict_aa,'t2381','名古屋',72534,'2002-5-14');
 $dict_aa = dict_append_proc ($dict_aa,'t2382','豊橋',63473,'2002-8-12');
 $dict_aa = dict_append_proc ($dict_aa,'t2383','岡崎',57982,'2002-9-01');
 $dict_aa = dict_append_proc ($dict_aa,'t2384','一宮',46329,'2002-10-29');
@@ -68,9 +73,7 @@ $dict_aa = dict_append_proc ($dict_aa,'t2389','犬山',79461,'2002-7-8');
 $pdf_file = $argv[1];
 dict_to_pdf_proc ($pdf_file,$dict_aa);
 
-
-
-
+fputs (STDERR,"*** 終了 ***\n");
+// ----------------------------------------------------------------
 ?>
 
-// ----------------------------------------------------------------

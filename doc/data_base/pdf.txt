@@ -18,6 +18,9 @@ bash<p />
 
 PHP<p />
 <blockquote>
+	git clone https://github.com/tecnickcom/tcpdf<p />
+
+	wget http://dl.ipafont.ipa.go.jp/IPAfont/IPAfont00303.zip<p />
 	<pre>
 	ii  php-fpdf   3:1.7.dfsg-1     PHP class to generate PDF files
 	</pre>

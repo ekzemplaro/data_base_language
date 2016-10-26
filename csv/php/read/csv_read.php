@@ -5,7 +5,7 @@
 
 	php/read/csv_read.php
 
-					Jan/20/2011
+					Oct/21/2016
 
 
 */
@@ -18,13 +18,13 @@ include "text_manipulate.php";
 // --------------------------------------------------------------------
 $file_in = $argv[1];
 
-print	"*** 開始 ***\n";
+fputs (STDERR,"*** 開始 ***\n");
 
 print	$file_in . "\n";
 
 $dict_aa = csv_read_proc ($file_in);
 dict_display_proc ($dict_aa);
 
-print	"*** 終了 ***\n";
+fputs (STDERR,"*** 終了 ***\n");
 // --------------------------------------------------------------------
 ?>

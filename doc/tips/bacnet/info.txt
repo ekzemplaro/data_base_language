@@ -1,0 +1,11 @@
+http://www.bacnet.org/Bibliography/ES-7-96/ES-7-96.htm
+
+ConfirmedCOVNotification
+
+	Tells subscribing devices of the COV that occurred in a property.
+
+UnconfirmedCOVNotification
+
+	Tells subscribing devices that a change has occurred to one or more properties of a particular object.
+
+

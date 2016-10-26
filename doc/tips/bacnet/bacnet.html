@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+<title>BACnet</title>
+</head>
+<body>
+<h2>BACnet</h2><p />
+<blockquote>
+BACnet は、UDPポート番号「47808」を使う。
+</blockquote>
+サーバーの立て方<p />
+<blockquote>
+	<a href="http://bacnet.sourceforge.net/">BACnet Stack</a><p />
+	bacnet-stack-0.8.3.tgz<p />
+</blockquote>
+
+<blockquote>
+Device ID 260001<p />
+<blockquote>
+	$ demo/server/bacserv<br />
+	BACnet Server Demo<br />
+	BACnet Stack Version 0.8.3<br />
+	BACnet Device ID: 260001<br />
+	Max APDU: 1476<br />
+</blockquote>
+
+Device ID 5123<p />
+<blockquote>
+$ demo/server/bacserv 5123<br />
+BACnet Server Demo<br />
+BACnet Stack Version 0.8.3<br />
+BACnet Device ID: 5123<br />
+Max APDU: 1476<br />
+</blockquote>
+</blockquote>
+
+サーバーが立っていることの確認<p />
+<blockquote>
+<pre>
+# nmap -sU localhost
+
+Starting Nmap 7.30 ( https://nmap.org ) at 2016-10-22 10:26 JST
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.0000040s latency).
+Other addresses for localhost (not scanned): ::1
+rDNS record for 127.0.0.1: localhost.localdomain
+Not shown: 997 closed ports
+PORT      STATE         SERVICE
+68/udp    open|filtered dhcpc
+5353/udp  open|filtered zeroconf
+47808/udp open|filtered bacnet
+
+Nmap done: 1 IP address (1 host up) scanned in 1.33 seconds
+</pre>
+</blockquote>
+
+クライアント<p />
+<blockquote>
+	git clone https://github.com/digitalbond/Redpoint<p />
+</blockquote>
+
+<blockquote>
+<pre>
+# nmap -sU -p 47808 --script BACnet-discover-enumerate --script-args full=yes localhost
+
+Starting Nmap 7.30 ( https://nmap.org ) at 2016-10-22 10:46 JST
+Nmap scan report for localhost (127.0.0.1)
+Host is up.
+Other addresses for localhost (not scanned): ::1
+rDNS record for 127.0.0.1: localhost.localdomain
+PORT      STATE SERVICE
+47808/udp open  BACNet -- Building Automation and Control Networks
+|_BACnet-discover-enumerate: ERROR: Script execution failed (use -d to debug)
+
+Nmap done: 1 IP address (1 host up) scanned in 2.30 seconds
+</pre>
+</blockquote>
+
+lsof<p />
+<blockquote>
+	<pre>
+	# lsof -i:47808
+	COMMAND  PID   USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+	bacserv 5334 uchida    3u  IPv4  68768      0t0  UDP *:bacnet
+	</pre>
+</blockquote>
+netstat<p />
+<blockquote>
+	<pre>
+	# netstat -antu | grep 47808
+	udp        0      0 0.0.0.0:47808           0.0.0.0:*
+	</pre>
+</blockquote>
+<hr />
+<a href="udp/">udp のテスト<p />
+<hr />
+<a href="/data_base/">Return</a><p />
+Oct/24/2016 AM 08:15<p />
+</body>
+</html>

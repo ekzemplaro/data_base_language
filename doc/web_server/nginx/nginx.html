@@ -4,12 +4,12 @@
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
-<title>nginx (May/13/2016)</title>
+<title>nginx</title>
 </head>
 <body>
 <a href="http://nginx.org/">ngnix</a> (Port 80)<p />
 <blockquote>
-	sudo apt-get install nginx-full<p />
+	# apt install nginx-full<p />
 <pre>
 ii  nginx-common   1.6.2-5ubuntu3     all     small, powerful, scalable web/proxy server - common files
 ii  nginx-full     1.6.2-5ubuntu3     amd64   nginx web/proxy server (standard version)
@@ -28,7 +28,7 @@ ii  nginx-full     1.6.2-5ubuntu3     amd64   nginx web/proxy server (standard v
 <a href="http://library.linode.com/web-servers/nginx/perl-fastcgi/ubuntu-11.04-natty">Perl-FastCGI on Ubuntu</a><p />
 
 PHPを使えるようにする。<p />
-php5-fpm (FastCGI Process Manager) を使う。<p />
+php7-fpm (FastCGI Process Manager) を使う。<p />
 参考になるページ<br />
 <blockquote>
 <a href="http://www.nginxtips.com/nginx-php5-php-fpm-mysql-ubuntu-13-04/">How to install Nginx, PHP5 / PHP-FPM, MySQL on Ubuntu 13.04</a><p />
@@ -36,7 +36,7 @@ php5-fpm (FastCGI Process Manager) を使う。<p />
 
 必要なパッケージのインストール<p />
 <blockquote>
-	sudo apt-get install php7.0-cli php7.0-fpm php7.0-json<p />
+	# apt install php7.0-cli php7.0-fpm php7.0-json<p />
 </blockquote>
 
 
@@ -51,7 +51,7 @@ php5-fpm (FastCGI Process Manager) を使う。<p />
 	location ~ \.php$ {
 	fastcgi_split_path_info ^(.+\.php)(/.+)$;
 #
-	fastcgi_pass unix:/var/run/php5-fpm.sock;
+	fastcgi_pass unix:/var/run/php7-fpm.sock;
 	fastcgi_index index.php;
 #	include fastcgi_params;
 	include fastcgi.conf;
@@ -61,9 +61,9 @@ php5-fpm (FastCGI Process Manager) を使う。<p />
 </pre>
 </blockquote>
 <hr />
-php5-fpm の再起動<p />
+php7-fpm の再起動<p />
 <blockquote>
-	# systemctl restart php5-fpm<p />
+	# systemctl restart php7-fpm<p />
 </blockquote>
 
 
@@ -84,7 +84,7 @@ PHPで、アップロードできるファイルのサイズの上限を 512M �
 	location ~ \.php$ {
 	fastcgi_split_path_info ^(.+\.php)(/.+)$;
 #
-	fastcgi_pass unix:/var/run/php5-fpm.sock;
+	fastcgi_pass unix:/var/run/php7-fpm.sock;
 
 	fastcgi_index index.php;
 	include fastcgi_params;
@@ -218,7 +218,7 @@ Shift-JIS で文字化けをするとき<br />
 	</blockquote>
 </blockquote>
 <hr />
-<a href="/data_base/">Return</a><p />
-May/13/2016 AM 08:15<p />
+<a href="../">Return</a><p />
+Oct/25/2016 AM 08:15<p />
 </body>
 </html>

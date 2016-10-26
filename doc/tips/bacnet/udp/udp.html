@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+<title>udp</title>
+</head>
+<body>
+<h2>udp のテスト</h2><p />
+ソフトのインストール<p />
+<blockquote>
+	# pacman -S gnu-netcat<p />
+	# apt install netcat<p />
+</blockquote>
+
+送信側<p />
+<blockquote>
+	$ echo "Good Afternoon" | nc -u pansy 24224<p />
+</blockquote>
+
+受信側<p />
+<blockquote>
+$ nc -l -u -p 24224<p />
+Good Afternoon<p />
+</blockquote>
+
+サンプルプログラム<p />
+<blockquote>
+	<a href="python/receive01.py.txt">receive01.py</a><p />
+	<a href="python/send01.py.txt">send01.py</a><p />
+</blockquote>
+
+<blockquote>
+</blockquote>
+
+<hr />
+<a href="../">Return</a><p />
+Oct/26/2016 AM 08:15<p />
+</body>
+</html>
