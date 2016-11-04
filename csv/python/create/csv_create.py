@@ -1,16 +1,15 @@
-#! /usr/bin/python3
+#! /usr/bin/python
 # -*- coding: utf-8 -*-
 #
 #	csv_create.py
 #
-#					Oct/07/2016
+#					Nov/04/2016
 #
 # -------------------------------------------------------------------------
 import	sys
 #
 sys.path.append ('/var/www/data_base/common/python_common')
 from text_manipulate import csv_write_proc
-from text_manipulate import dict_display_proc
 from text_manipulate import dict_append_proc
 #
 # -------------------------------------------------------------------------

@@ -1,9 +1,9 @@
-#! /usr/bin/python3
+#! /usr/bin/python
 # -*- coding: utf-8 -*-
 #
 #	update/csv_update.py
 #
-#					Oct/06/2016
+#					Nov/04/2016
 import	sys
 #
 # ---------------------------------------------------------------

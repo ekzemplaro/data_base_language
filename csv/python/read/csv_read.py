@@ -1,9 +1,9 @@
-#! /usr/bin/python3
+#! /usr/bin/python
 # -*- coding: utf-8 -*-
 #
 #	csv_read.py
 #
-#						Oct/07/2016
+#						Nov/04/2016
 #
 import	sys
 #
