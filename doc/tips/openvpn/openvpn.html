@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+<title>opevpn Nov/18/2016</title>
+</head>
+<body>
+<h2>openvpn</h2><p />
+
+インストール<p />
+<blockquote>
+# pacman -S openvpn<p />
+</blockquote>
+
+
+サーバーの設定<p />
+<blockquote>
+# cp /usr/share/openvpn/examples/server.conf /etc/openvpn/server.conf<p />
+</blockquote>
+
+クライアントの設定<p />
+<blockquote>
+# cp /usr/share/openvpn/examples/client.conf /etc/openvpn/client.conf<p />
+	<blockquote>
+	ca /etc/openvpn/ca.crt<br />
+	cert /etc/openvpn/servername.crt<br />
+	key /etc/openvpn/servername.key  # This file should be kept secret<br />
+	dh /etc/openvpn/dh.pem<br />
+	...<br />
+	tls-auth /etc/openvpn/ta.key 0<br />
+	...<br />
+	user nobody<br />
+	group nobody<br />
+	</blockquote>
+</blockquote>
+
+サーバーのテスト<p />
+<blockquote>
+	# openvpn /etc/openvpn/server.conf<p />
+</blockquote>
+
+<blockquote>
+</blockquote>
+
+<a href="../">Return</a><p />
+Nov/18/2016 AM 08:15<p />
+</body>
+</html>

@@ -73,6 +73,11 @@ PHP (Archlinux)<p />
 	# systemctl restart mysqld<p />
 </blockquote>
 
+PHP (Ubuntu)<p />
+<blockquote>
+	# apt install php7.0-mysql<p />
+</blockquote>
+
 
 Python<p />
 <blockquote>

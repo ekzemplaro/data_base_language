@@ -233,4 +233,32 @@ psql -U USERNAME DBNAME < dbexport.pgsql<br />
 createdb city<br />
 psql -U scott city < dbexport.pgsql<br />
 </blockquote>
+
+
+psql の使い方<p />
+<blockquote>
+<pre>
+$ psql -U postgres
+psql (9.5.4)
+Type "help" for help.
+
+postgres=# \c city;
+You are now connected to database "city" as user "postgres".
+city=# select * from cities;
+  id   |  name  | population |  date_mod  
+-------+--------+------------+------------
+ t3461 | 広島   |      47800 | 2003-05-20
+ t3468 | 大竹   |      78400 | 2003-10-26
+ t3467 | 三次   |      81200 | 2003-07-23
+ t3466 | 竹原   |      51800 | 2003-01-21
+ t3469 | 府中   |      23400 | 2003-12-15
+ t3465 | 尾道   |      39100 | 2003-08-04
+ t3463 | 東広島 |      21600 | 2003-06-14
+ t3464 | 呉     |      83600 | 2003-09-09
+ t3462 | 福山   |      93500 | 2003-06-12
+(9 rows)
+
+city=# \q
+</pre>
+</blockquote>
 <hr />
