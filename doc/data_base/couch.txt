@@ -62,6 +62,7 @@ PHP<p />
 Python<p />
 <blockquote>
 # pacman -S python-pycurl<p />
+# apt install python-pycurl<p />
 </blockquote>
 
 

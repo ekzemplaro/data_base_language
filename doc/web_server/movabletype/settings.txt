@@ -1,0 +1,11 @@
+<blockquote>
+localhost以外から投稿ができるようにする。<p />
+設定 --> 一般<p />
+<blockquote>
+<pre>
+WordPress アドレス (URL)	http://host_name/wordpress
+
+サイトアドレス (URL)		http://host_name/wordpress
+</pre>
+</blockquote>
+</blockquote>

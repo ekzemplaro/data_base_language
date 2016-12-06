@@ -2,11 +2,12 @@
 #
 #	python_common/file_io.py
 #
-#					Oct/14/2014
+#					Nov/30/2016
 #
 #
 import	sys
 import	string
+import	fcntl
 #
 # --------------------------------------------------------------------
 def	file_to_str_proc (file_in):
@@ -29,6 +30,7 @@ def	file_to_str_proc (file_in):
 def file_write_proc (file_name,str_out):
 #
 	fp_out = open (file_name,mode='w',encoding='utf-8')
+	fcntl.lockf(fp_out, fcntl.LOCK_EX)
 	fp_out.write (str_out)
 	fp_out.close ()
 #

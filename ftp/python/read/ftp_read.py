@@ -1,9 +1,9 @@
-#! /usr/bin/python3
+#! /usr/bin/python
 # -*- coding: utf-8 -*-
 #
 #	read/ftp_read.py
 #
-#					Sep/03/2015
+#					Nov/30/2016
 #
 # ----------------------------------------------------------------
 import os
@@ -18,8 +18,7 @@ from curl_get import curl_get_proc
 #
 #
 # ----------------------------------------------------------------
-print ("*** 開始 ***")
-#
+sys.stderr.write ("*** 開始 ***\n")
 #
 url_json = 'ftp://scott:tiger@host_dbase/city/iwate.json'
 str_tmp = curl_get_proc (url_json)
@@ -27,5 +26,5 @@ str_tmp = curl_get_proc (url_json)
 dict_aa = json.loads (str (str_tmp,'UTF-8'))
 dict_display_proc (dict_aa)
 #
-print ("*** 終了 ***")
+sys.stderr.write ("*** 終了 ***\n")
 # ----------------------------------------------------------------

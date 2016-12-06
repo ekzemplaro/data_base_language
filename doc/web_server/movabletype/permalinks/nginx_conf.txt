@@ -1,0 +1,6 @@
+# nginx configuration 
+location /uchida/wordpress/ {
+if (!-e $request_filename){
+rewrite ^/uchida/wordpress/(.*)$ /uchida/wordpress/uchida/wordpress/index.php break;
+}
+}

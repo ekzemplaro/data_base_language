@@ -25,6 +25,7 @@ ii  vsftpd    3.0.2-2ubuntu2   amd64    lightweight, efficient FTP server writte
 
 </blockquote>
 
+# pacman -S vsftpd<p />
 <hr />
 How to mount<br />
 <blockquote>

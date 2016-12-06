@@ -1,0 +1,55 @@
+<blockquote>
+	MT-6.3.2.zip をダウンロードする。<p />
+
+	必要なモジュールのインストール<p />
+
+	<blockquote>
+	Arch Linux<p />
+	# pacman -S perl-dbi<br />
+	# pacman -S perl-dbd-mysql<br />
+	# pacman -S perl-dbd-pg<br />
+	# pacman -S perl-dbd-sqlite<br />
+
+	# pacman -S perl-cache-memcached<br />
+
+	# pacman -S perl-archive-zip<br />
+
+	# pacman -S perl-xml-sax-expat<br />
+
+	</blockquote>
+
+	<blockquote>
+	</blockquote>
+</blockquote>
+
+MySQL の設定<p />
+
+
+	<blockquote>
+	コンソールでの作成<p />
+	<blockquote>
+	MariaDB [(none)]> create database mt character set utf8;<p />
+	MariaDB [(none)]> grant all on mt.* to mtuser@localhost identified by 'mtpasswd';
+	</blockquote>
+	</blockquote>
+
+	<blockquote>
+	MySQL の設定の確認方法
+	</blockquote>
+
+クライアントで、http://localhost/wordpress/ にアクセスして下さい。<p />
+	<ol>
+	<li>wp-config.php ファイルが存在しないようです。スタートするにはこのファイルが必要です。</li>
+		<blockquote>
+		cp wp-config-sample.php wp-config.php<p />
+		</blockquote>
+
+	<li>データベース接続確立エラー</li>
+		<blockquote>
+		wp-config.php を編集します。<p />
+		define(‘DB_NAME’, ‘wordpress’);<br />
+		define(‘DB_USER’, ‘wordpress’);<br />
+		define('DB_PASSWORD', 'tiger');<br />
+		</blockquote>
+	</ol>
+</blockquote>
