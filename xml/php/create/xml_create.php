@@ -3,7 +3,7 @@
 //
 //	xml_create.php
 //
-//					Oct/13/2011
+//					Dec/09/2016
 //
 // ----------------------------------------------------------------
 $path="/var/www/data_base/common/php_common";
@@ -35,6 +35,8 @@ print	"*** 開始 ***\n";
 
 $file_xml = $argv[1];
 print	$file_xml . "\n";
+
+folder_create_proc ($file_xml);
 
 $dict_aa = data_prepare_proc ();
 

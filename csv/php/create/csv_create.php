@@ -3,7 +3,7 @@
 //
 //	csv_create.php
 //
-//					Oct/21/2016
+//					Dec/09/2016
 //
 // ----------------------------------------------------------------
 $path="/var/www/data_base/common/php_common";
@@ -30,6 +30,8 @@ $dict_aa = dict_append_proc ($dict_aa,'t1279','市川',74256,'2002-11-12');
 $file_out = $argv[1];
 
 print	$file_out . "\n";
+
+folder_create_proc ($file_out);
 
 csv_write_proc ($file_out,$dict_aa);
 
