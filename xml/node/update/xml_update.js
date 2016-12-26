@@ -3,7 +3,7 @@
 //
 //	xml_update.js
 //
-//						Feb/11/2016
+//						Dec/26/2016
 //
 // ------------------------------------------------------------------
 var fs = require('fs')
@@ -16,9 +16,9 @@ var xml_manipulate =
 // ------------------------------------------------------------------
 console.log	("*** 開始 ***")
 
-var file_xml = process.argv[2]
-var key_in = process.argv[3]
-var population_in = process.argv[4]
+const file_xml = process.argv[2]
+const key_in = process.argv[3]
+const population_in = process.argv[4]
 
 console.log (key_in + "\t" + population_in)
 
@@ -34,9 +34,15 @@ parser.on('end', function(result) {
 	var dict_aa = text_manipulate.dict_update_proc
 			(result,key_in,population_in)
 
-	var out_str = xml_manipulate.dict_to_xml_proc (dict_aa)
+	const out_str = xml_manipulate.dict_to_xml_proc (dict_aa)
 
-	fs.writeFile(file_xml,out_str)
+	fs.writeFile(file_xml,out_str,function (err)
+		{
+		if (err)
+			{
+			console.log("Error on write: " + err)
+			}
+		})
 
 	console.log	("*** 終了 ***")
 })

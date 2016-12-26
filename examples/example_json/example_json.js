@@ -1,13 +1,13 @@
 // -----------------------------------------------------------------------
 //	example_json.js
 //
-//					Sep/13/2016
+//					Dec/21/2016
 //
 // -----------------------------------------------------------------------
 jQuery (function ()
 {
-	jQuery("#outarea_aa").html
-		("*** example_json *** start *** Sep/13/2016 ***")
+	jQuery("#outarea_aa").text
+		("*** example_json *** start *** Dec/21/2016 ***")
 
 	var data_text = ""
 
@@ -28,8 +28,8 @@ jQuery (function ()
 		jQuery(".contents").html (str_out)
 		})
 
-	jQuery("#outarea_hh").html
-		("*** example_json *** end *** Sep/13/2016 ***")
+	jQuery("#outarea_hh").text
+		("*** example_json *** end *** Dec/21/2016 ***")
 
 })
 

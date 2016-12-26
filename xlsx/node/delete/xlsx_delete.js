@@ -3,7 +3,7 @@
 //
 //	xlsx_delete.js
 //
-//					Feb/24/2016
+//					Dec/26/2016
 //
 // ---------------------------------------------------------------
 var fs = require('fs')
@@ -14,8 +14,8 @@ var xlsx_manipulate=require (node_common + '/xlsx_manipulate')
 // ---------------------------------------------------------------
 console.log ("*** 開始 ***")
 
-var xlsx_file = process.argv[2]
-var key=process.argv[3]
+const xlsx_file = process.argv[2]
+const key=process.argv[3]
 
 console.log (xlsx_file)
 console.log (key)

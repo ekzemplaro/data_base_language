@@ -2,7 +2,7 @@
 // ---------------------------------------------------------------
 //	json_create.js
 //
-//					Sep/06/2016
+//					Dec/26/2016
 //
 // ---------------------------------------------------------------
 var fs = require("fs")
@@ -10,11 +10,11 @@ var text_manipulate = require('/var/www/data_base/common/node_common/text_manipu
 // ---------------------------------------------------------------
 console.error ("*** 開始 ***")
 
-var file_json = process.argv[2]
+const file_json = process.argv[2]
 
-var dict_aa = data_prepare_proc ()
+const dict_aa = data_prepare_proc ()
 
-var json_str = JSON.stringify(dict_aa)
+const json_str = JSON.stringify(dict_aa)
 
 fs.writeFile (file_json,json_str,function (err)
 	{
@@ -44,7 +44,7 @@ function data_prepare_proc ()
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t0929','真岡',26857,'1950-10-2')
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t0930','栃木',48923,'1950-12-20')
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t0931','大田原',75284,'1950-2-7')
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t0932','鹿沼',92354,'1950-5-17')
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t0932','鹿沼',92351,'1950-5-17')
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t0933','那須塩原',81937,'1950-6-19')
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t0934','那須烏山',72158,'1950-8-14')
 

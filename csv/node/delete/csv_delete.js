@@ -2,7 +2,7 @@
 // ---------------------------------------------------------------
 //	csv_delete.js
 //
-//					Oct/07/2016
+//					Dec/26/2016
 //
 // ---------------------------------------------------------------
 var fs = require("fs")
@@ -14,8 +14,8 @@ var text_manipulate=require ("/var/www/data_base/common/node_common/text_manipul
 console.error ("*** 開始 ***")
 //
 
-var file_csv=process.argv[2]
-var key_in=process.argv[3]
+const file_csv=process.argv[2]
+const key_in=process.argv[3]
 
 console.log (file_csv)
 console.log (key_in)

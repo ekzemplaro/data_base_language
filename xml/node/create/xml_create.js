@@ -2,7 +2,7 @@
 // ---------------------------------------------------------------
 //	xml_create.js
 //
-//					Feb/11/2016
+//					Dec/26/2016
 //
 // ---------------------------------------------------------------
 var fs = require("fs")
@@ -12,22 +12,25 @@ var xml_manipulate=require ("/var/www/data_base/common/node_common/xml_manipulat
 // ---------------------------------------------------------------
 console.log ("*** 開始 ***")
 
-var file_xml=process.argv[2]
+const file_xml=process.argv[2]
 
-var dict_aa = data_prepare_proc ()
+const dict_aa = data_prepare_proc ()
 
-var out_str = xml_manipulate.dict_to_xml_proc (dict_aa)
+const out_str = xml_manipulate.dict_to_xml_proc (dict_aa)
 
-fs.writeFile (file_xml,out_str, function (err)
-{
-	if (err) {
+fs.writeFile (file_xml,out_str,function (err)
+	{
+	if (err)
+		{
 		console.log("Error on write: " + err)
-	} else {
+		}
+	else
+		{
 		fs.chmodSync (file_xml,0666)
 		console.log("File written.")
 		console.log ("*** 終了 ***")
 		}
-})
+	})
 
 
 // ---------------------------------------------------------------

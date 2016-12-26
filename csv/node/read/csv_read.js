@@ -2,7 +2,7 @@
 // ---------------------------------------------------------------
 //	csv_read.js
 //
-//					Oct/07/2016
+//					Dec/26/2016
 //
 // ---------------------------------------------------------------
 var fs = require("fs")
@@ -13,7 +13,7 @@ var text_manipulate=require ("/var/www/data_base/common/node_common/text_manipul
 console.error ("*** 開始 ***")
 //
 
-var file_csv=process.argv[2]
+const file_csv=process.argv[2]
 
 console.log (file_csv)
 
@@ -27,7 +27,7 @@ fs.readFile(file_csv, function(err, buf)
 			console.log (err)
 			}
 
-		var dict_aa = text_manipulate.array_to_dict_proc (array_aa)
+		const dict_aa = text_manipulate.array_to_dict_proc (array_aa)
 
 		text_manipulate.dict_display_proc (dict_aa)
 		console.error ("*** 終了 ***")

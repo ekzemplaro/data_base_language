@@ -2,7 +2,7 @@
 // ---------------------------------------------------------------
 //	maria_delete.js
 //
-//					Dec/11/2015
+//					Dec/16/2016
 //
 // ---------------------------------------------------------------
 var mysql = require('mysql')
@@ -11,7 +11,7 @@ var sql_manipulate= require ('/var/www/data_base/common/node_common/sql_manipula
 // ---------------------------------------------------------------
 console.log ("*** 開始 ***")
 
-var id_in = process.argv[2]
+const id_in = process.argv[2]
 
 console.log (id_in)
 
@@ -23,7 +23,7 @@ var connection = mysql.createConnection ({
 
 connection.query ('Use city')
 
-var command = sql_manipulate.delete_command_gen (id_in)
+const command = sql_manipulate.delete_command_gen (id_in)
 
 connection.query(command, function (err, rows)
 	{

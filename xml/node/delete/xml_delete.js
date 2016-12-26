@@ -3,7 +3,7 @@
 //
 //	xml_delete.js
 //
-//						Feb/11/2016
+//						Dec/26/2016
 //
 // ------------------------------------------------------------------
 var fs = require('fs')
@@ -16,8 +16,8 @@ var xml_manipulate =
 // ------------------------------------------------------------------
 console.log	("*** 開始 ***")
 
-var file_xml = process.argv[2]
-var key_in = process.argv[3]
+const file_xml = process.argv[2]
+const key_in = process.argv[3]
 
 console.log (key_in)
 
@@ -32,9 +32,15 @@ parser.on('end', function(result) {
 
 	delete result[key_in]
 
-	var out_str = xml_manipulate.dict_to_xml_proc (result)
+	const out_str = xml_manipulate.dict_to_xml_proc (result)
 
-	fs.writeFile(file_xml,out_str)
+	fs.writeFile (file_xml,out_str,function (err)
+		{
+		if (err)
+			{
+			console.log("Error on write: " + err)
+			}
+		})
 
 	console.log	("*** 終了 ***")
 })

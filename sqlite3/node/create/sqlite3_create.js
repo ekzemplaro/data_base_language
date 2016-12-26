@@ -2,7 +2,7 @@
 //
 //	sqlite3_create.js
 //
-//					Feb/09/2016
+//					Dec/26/2016
 //
 // ------------------------------------------------------------
 var sqlite3 = require("sqlite3")
@@ -52,12 +52,11 @@ function table_create_insert_proc (db,dict_aa)
 // ------------------------------------------------------------
 console.log ("*** 開始 ***")
 
-var file_sqlite3 = process.argv[2]
+const file_sqlite3 = process.argv[2]
 
 console.log (file_sqlite3)
 
-var dict_aa = data_prepare_proc ()
-text_manipulate.dict_display_proc (dict_aa)
+const dict_aa = data_prepare_proc ()
 
 var db = new sqlite3.Database (file_sqlite3)
 

@@ -3,7 +3,7 @@
 //
 //	xml_read.js
 //
-//						Feb/11/2016
+//						Dec/26/2016
 //
 // ------------------------------------------------------------------
 var fs = require('fs')
@@ -15,11 +15,12 @@ var text_manipulate = require('/var/www/data_base/common/node_common/text_manipu
 // ------------------------------------------------------------------
 console.log ("*** 開始 ***")
 //
-var file_in=process.argv[2]
+const file_in=process.argv[2]
 console.log (file_in)
 var parser = new xml2js.Parser()
 
-fs.readFile(file_in, function(err, data) {
+fs.readFile(file_in, function(err, data)
+{
     parser.parseString(data, function (err, result)
 	{
 	text_manipulate.dict_display_proc (result)

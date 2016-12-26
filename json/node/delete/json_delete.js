@@ -2,30 +2,35 @@
 // ---------------------------------------------------------------
 //	delete/json_delete.js
 //
-//					Sep/06/2016
+//					Sep/26/2016
 //
 // ---------------------------------------------------------------
 var fs = require("fs")
 
 console.error ("*** 開始 ***")
-var filename=process.argv[2]
-var key_in=process.argv[3]
+const filename=process.argv[2]
+const key_in=process.argv[3]
 
 console.log (filename)
 console.log (key_in)
 
 if (fs.existsSync(filename))
 	{
-	var json_str = fs.readFileSync(filename,'utf8')
+	const json_str = fs.readFileSync(filename,'utf8')
 	var dict_aa = JSON.parse (json_str)
 
 	if (key_in in dict_aa)
 		{ 
 		delete dict_aa[key_in]
 
-		var json_str_out = JSON.stringify(dict_aa)
+		const json_str_out = JSON.stringify(dict_aa)
 
-		fs.writeFile (filename,json_str_out)
+		fs.writeFile (filename,json_str_out,function (err)
+			{
+			if (err) {
+			console.error ("Error on write: " + err)
+			}
+			})
 		}
 	}
 else

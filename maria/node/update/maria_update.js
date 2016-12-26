@@ -2,7 +2,7 @@
 // ---------------------------------------------------------------
 //	maria_update.js
 //
-//					Dec/11/2015
+//					Dec/26/2016
 //
 // ---------------------------------------------------------------
 var mysql = require('mysql')
@@ -11,8 +11,8 @@ var sql_manipulate= require ('/var/www/data_base/common/node_common/sql_manipula
 // ---------------------------------------------------------------
 console.log ("*** 開始 ***")
 
-var id_in = process.argv[2]
-var population_in = process.argv[3]
+const id_in = process.argv[2]
+const population_in = process.argv[3]
 
 console.log (id_in + "\t" + population_in)
 
@@ -24,7 +24,7 @@ var connection = mysql.createConnection ({
 
 connection.query ('Use city')
 
-var command = sql_manipulate.update_command_gen (id_in,population_in)
+const command = sql_manipulate.update_command_gen (id_in,population_in)
 
 connection.query(command, function (err, rows)
 	{

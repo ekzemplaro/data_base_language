@@ -2,7 +2,7 @@
 // ---------------------------------------------------------------
 //	text_create.js
 //
-//					Sep/06/2016
+//					Dec/26/2016
 //
 // ---------------------------------------------------------------
 var fs = require("fs")
@@ -12,7 +12,7 @@ var text_manipulate=require ("/var/www/data_base/common/node_common/text_manipul
 // ---------------------------------------------------------------
 function data_prepare_proc ()
 {
-		var dict_aa = new Object ()
+	var dict_aa = new Object ()
 
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t2381','名古屋',93814,'1950-9-12')
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t2382','豊橋',23657,'1950-3-15')
@@ -30,9 +30,9 @@ function data_prepare_proc ()
 // ---------------------------------------------------------------
 console.error ("*** 開始 ***")
 
-var file_out=process.argv[2]
+const file_out=process.argv[2]
 
-dict_aa = data_prepare_proc ()
+const dict_aa = data_prepare_proc ()
 
 text_manipulate.text_write_proc (file_out,dict_aa)
 

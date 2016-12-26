@@ -2,7 +2,7 @@
 // ---------------------------------------------------------------
 //	text_update.js
 //
-//					Oct/07/2016
+//					Dec/26/2016
 //
 // ---------------------------------------------------------------
 var fs = require("fs")
@@ -13,9 +13,9 @@ var text_manipulate=require ("/var/www/data_base/common/node_common/text_manipul
 console.error ("*** 開始 ***")
 //
 
-var file_csv=process.argv[2]
-var key_in=process.argv[3]
-var population_in=process.argv[4]
+const file_csv=process.argv[2]
+const key_in=process.argv[3]
+const population_in=process.argv[4]
 
 console.log (file_csv)
 console.log (key_in + "\t" + population_in)
@@ -30,10 +30,10 @@ fs.readFile(file_csv, function(err, buf)
 			console.log (err)
 			}
 
-		var dict_aa = text_manipulate.array_to_dict_proc (array_aa)
+		const dict_aa = text_manipulate.array_to_dict_proc (array_aa)
 
 
-		var dict_bb = text_manipulate.dict_update_proc (dict_aa,key_in,population_in)
+		const dict_bb = text_manipulate.dict_update_proc (dict_aa,key_in,population_in)
 
 
 		text_manipulate.csv_write_proc (file_csv,dict_bb)

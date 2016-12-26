@@ -2,7 +2,7 @@
 // ---------------------------------------------------------------
 //	read/json_read.js
 //
-//					Sep/06/2016
+//					Dec/26/2016
 //
 // ---------------------------------------------------------------
 var fs = require("fs")
@@ -10,13 +10,13 @@ var text_manipulate = require('/var/www/data_base/common/node_common/text_manipu
 // ---------------------------------------------------------------
 console.error ("*** 開始 ***")
 
-var filename=process.argv[2]
+const filename=process.argv[2]
 
 console.log (filename)
 
 if (fs.existsSync(filename))
 	{
-	var json_str = fs.readFileSync (filename,'utf8')
+	const json_str = fs.readFileSync (filename,'utf8')
 
 	try
 		{

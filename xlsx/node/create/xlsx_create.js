@@ -3,7 +3,7 @@
 //
 //	xlsx_create.js
 //
-//					Feb/24/2016
+//					Dec/26/2016
 //
 // ---------------------------------------------------------------
 var fs = require("fs")
@@ -34,9 +34,9 @@ function data_prepare_proc ()
 // ---------------------------------------------------------------
 console.log ("*** 開始 ***")
 
-var xlsx_file = process.argv[2]
+const xlsx_file = process.argv[2]
 
-var dict_aa = data_prepare_proc ()
+const dict_aa = data_prepare_proc ()
 
 xlsx_manipulate.xlsx_write_proc (xlsx_file,dict_aa)
 

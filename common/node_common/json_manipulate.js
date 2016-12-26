@@ -1,30 +1,31 @@
 // ---------------------------------------------------------------
 //	json_manipulate.js
 //
-//					Feb/06/2015
+//					Dec/26/2016
 //
 // ---------------------------------------------------------------
-var text_manipulate=require ('./text_manipulate');
+var text_manipulate=require ('./text_manipulate')
 // ---------------------------------------------------------------
 exports.json_update_proc = function (json_str,population_in)
 {
-	var data = eval('('+json_str+')');
+	const data = JSON.parse (json_str)
 
-	var unit_aa = {};
-	unit_aa['name'] = data.name;
-	unit_aa['population'] = population_in;
-	unit_aa['date_mod'] = text_manipulate.get_current_date_proc ();
+	var unit_aa = {}
+	unit_aa['name'] = data.name
+	unit_aa['population'] = population_in
+	unit_aa['date_mod'] = text_manipulate.get_current_date_proc ()
 
-	var json_out = JSON.stringify (unit_aa);
+	const json_out = JSON.stringify (unit_aa)
 
-	return	json_out;
+	return	json_out
 }
 
 // ---------------------------------------------------------------
 exports.json_display_proc = function (key,json_str)
 {
 	var out_str = key + "\t"
-	var data = JSON.parse (json_str)
+	const data = JSON.parse (json_str)
+
 	out_str  += data.name + "\t"
 	out_str += data.population + "\t"
 	out_str += data.date_mod
