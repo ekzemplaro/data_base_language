@@ -1,0 +1,26 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<script src="/js/angular.min.js"></script>
+<script src="table.js"></script>
+</head>
+<body>
+<div ng-controller="myController as myCtrl">
+<table>
+<tr ng-repeat="member in myCtrl.members">
+	<td>{{$index + 1}}</td>
+	<td>{{member.name}}</td>
+	<td> {{member.age}}</td>
+</tr>
+</table>
+<p />
+<blockquote>
+	<div>{{myCtrl.members.length}} members</div>
+</blockquote>
+</div>
+<p />
+<a href="html_src/">src</a><p />
+Dec/30/2016<p />
+</body>
+</html>

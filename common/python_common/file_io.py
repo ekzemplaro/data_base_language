@@ -2,7 +2,7 @@
 #
 #	python_common/file_io.py
 #
-#					Nov/30/2016
+#					Dec/27/2016
 #
 #
 import	sys
@@ -11,19 +11,14 @@ import	fcntl
 #
 # --------------------------------------------------------------------
 def	file_to_str_proc (file_in):
-	lines = []
+	str_out = ""
 	try:
 		fp_in = open (file_in,encoding='utf-8')
-		lines = fp_in.readlines ()
+		str_out = fp_in.read ()
 		fp_in.close ()
 	except Exception as ee:
 		sys.stderr.write ("*** error *** file_to_str_proc ***\n")
 		sys.stderr.write (str (ee))
-#
-	str_out = ""
-	for line in lines:
-		str_out += line
-#
 #
 	return	str_out
 # --------------------------------------------------------------------

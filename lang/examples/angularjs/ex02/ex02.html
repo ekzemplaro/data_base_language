@@ -1,0 +1,18 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+<script src="/js/angular.min.js"></script>
+<script src="ex02.js"></script>
+</head>
+<body>
+ <div ng-controller="myController as myCtrl">
+  <ul>
+  <li ng-repeat="member in myCtrl.members |orderBy:'age'">{{member.name}} {{member.age}}</li>
+  </ul>
+  <div>{{myCtrl.members.length}} members</div>
+ </div>
+<p />
+<a href="html_src/">src</a><p />
+Dec/30/2016<p />
+</body>
+</html>
