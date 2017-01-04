@@ -30,7 +30,7 @@ for (var db in data_aa.info)
 	row_single[db] = '';
 	}
 
-data_lang['year'] = '1910';
+data_lang['year'] = '1911';
 data_lang['Create'] = row_single;
 data_lang['Read'] = row_single;
 data_lang['Update'] = row_single;

@@ -1,0 +1,2 @@
+#
+../bin/process_db.sh nashorn js common.txt

@@ -1,0 +1,10 @@
+function string_write_proc (file_out,str_out)
+{
+        var charset = 'utf-8'
+
+        var osw = new java.io.OutputStreamWriter(
+                new java.io.FileOutputStream(file_out),charset)
+
+        osw.write(str_out, 0, str_out.length)
+        osw.close()
+}

@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------
 //	target_define.js
 //
-//					Jul/24/2015
+//					Jan/04/2016
 // -----------------------------------------------------------------------
 function target_define_proc (lang_mod,dbase,crud)
 {
@@ -233,6 +233,7 @@ function suffix_define_proc ()
 	suffix["kotlin"] = "kt";
 	suffix["vb"] = "vb";
 	suffix["elixir"] = "exs";
+	suffix["nashorn"] = "js";
 
 	return	suffix;
 }

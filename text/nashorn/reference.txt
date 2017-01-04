@@ -1,0 +1,2 @@
+/data_base/common/nashorn_common/file_io.js
+/data_base/common/nashorn_common/text_manipulate.js
