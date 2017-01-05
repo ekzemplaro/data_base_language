@@ -1,0 +1,4 @@
+#
+#
+./json_create.js /var/tmp/json/cities.json
+#

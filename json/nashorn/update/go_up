@@ -1,0 +1,2 @@
+#
+./json_update.js /var/tmp/json/cities.json t0927 7149600

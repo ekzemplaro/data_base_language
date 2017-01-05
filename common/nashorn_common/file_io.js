@@ -17,39 +17,12 @@ function file_read_proc (file_in)
 }
 
 // ------------------------------------------------------------------
-function string_read_proc (file_in)
+function file_to_str_proc (file_in)
 {
-	var br=BufferedReader (InputStreamReader(FileInputStream (file_in)));
+	lines = file_read_proc (file_in)
 
-	var str_in = "";
-
-	while (line= br.readLine())
-	{
-		if (line==null )
-		{
-		break ;
-		}
-	str_in += line;
-	}
-
-	br.close();
-
-	return str_in;
+	return lines[0]
 }
-
-// ------------------------------------------------------------------
-function file_line_write_proc (file_out,out_lines)
-{
-	var data_out = "";
-	for (var it=0; it< out_lines.length; it++)
-		{
-		print (out_lines[it]);
-		data_out += (out_lines[it] + "\n");
-		}
-
-	string_write_proc (file_out,data_out);
-}
-
 // ------------------------------------------------------------------
 function string_write_proc (file_out,str_out)
 {
