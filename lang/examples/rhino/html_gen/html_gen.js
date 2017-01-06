@@ -160,6 +160,7 @@ function lang_gen (key_a)
 	crud_gen (key_a,"kotlin","kt");
 	crud_gen (key_a,"vb","vb");
 	crud_gen (key_a,"elixir","exs");
+	crud_gen (key_a,"nashorn","js");
 }
 
 // --------------------------------------------------------------------

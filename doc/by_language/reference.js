@@ -44,7 +44,8 @@ function reference (lang)
 		|| (lang == "rust")
 		|| (lang == "dart")
 		|| (lang == "kotlin")
-		|| (lang == "vb"))
+		|| (lang == "vb")
+		|| (lang == "nashorn"))
 		{
 		hantei = true;
 		}

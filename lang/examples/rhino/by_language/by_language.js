@@ -97,6 +97,7 @@ function main_proc ()
 	lang_gen ("kotlin","kt");
 	lang_gen ("vb","vb");
 	lang_gen ("elixir","exs");
+	lang_gen ("nashorn","js");
 
 	print	("</ol>");
 	print	("</div>");

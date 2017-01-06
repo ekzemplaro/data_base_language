@@ -1,27 +1,25 @@
-#! /usr/bin/java org.mozilla.javascript.tools.shell.Main
+#! /usr/bin/env jjs
 // ------------------------------------------------------------------
 //
-//	maria_delete.js
+//	maria_read.js
 //
 //						Jan/06/2017
 //
 // ------------------------------------------------------------------
-importPackage(java.sql)
+// importPackage(java.sql)
 load ("/var/www/data_base/common/rhino_common/sql_manipulate.js")
 
-print	("*** 開始 ***")
-
-var id_in=arguments[0]
+print ("*** 開始 ***")
 
 var url = "jdbc:mysql://localhost/city"
 var user = "scott"
 var passwd = "tiger"
 
-var conn = DriverManager.getConnection( url, user, passwd )
+var conn = DriverManager.getConnection (url,user,passwd)
 
-delete_proc (conn,id_in)
+disp_proc (conn)
 
-conn.close()
+conn.close ()
 
-print	("*** 終了 ***")
+print ("*** 終了 ***")
 // ------------------------------------------------------------------

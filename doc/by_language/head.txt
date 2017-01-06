@@ -9,6 +9,6 @@
 <script src="reference.js"></script>
 <script src="../js_common/sharp_convert.js"></script>
 <link href="by_language.css" rel="stylesheet" />
-<title>By Language jQuery (Oct/06/2015)
+<title>By Language jQuery (Jan/06/2017)
 </title>
 </head>

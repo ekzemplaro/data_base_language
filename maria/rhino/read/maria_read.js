@@ -3,24 +3,23 @@
 //
 //	maria_read.js
 //
-//						May/21/2014
+//						Jan/06/2017
 //
 // ------------------------------------------------------------------
-importPackage(java.lang);
-importPackage(java.sql);
-load ("/var/www/data_base/common/rhino_common/sql_manipulate.js");
+importPackage(java.sql)
+load ("/var/www/data_base/common/rhino_common/sql_manipulate.js")
 
-print ("*** 開始 ***");
+print ("*** 開始 ***")
 
-var url = "jdbc:mysql://localhost/city";
-var user = "scott";
-var passwd = "tiger";
+var url = "jdbc:mysql://localhost/city"
+var user = "scott"
+var passwd = "tiger"
 
-var conn = DriverManager.getConnection (url,user,passwd);
+var conn = DriverManager.getConnection (url,user,passwd)
 
-disp_proc (conn);
+disp_proc (conn)
 
-conn.close ();
+conn.close ()
 
-print ("*** 終了 ***");
+print ("*** 終了 ***")
 // ------------------------------------------------------------------
