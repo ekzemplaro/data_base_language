@@ -1,0 +1,67 @@
+{
+  "t0921": {
+    "name": "宇都宮",
+    "population": 36712,
+    "date_mod": "1911-7-21"
+  },
+  "t0922": {
+    "name": "小山",
+    "population": 15927,
+    "date_mod": "1911-11-15"
+  },
+  "t0923": {
+    "name": "佐野",
+    "population": 87541,
+    "date_mod": "1911-5-2"
+  },
+  "t0924": {
+    "name": "足利",
+    "population": 17846,
+    "date_mod": "1911-6-22"
+  },
+  "t0926": {
+    "name": "下野",
+    "population": 62518,
+    "date_mod": "1911-9-12"
+  },
+  "t0927": {
+    "name": "さくら",
+    "population": "7149",
+    "date_mod": "2017-1-5"
+  },
+  "t0928": {
+    "name": "矢板",
+    "population": 58146,
+    "date_mod": "1911-7-26"
+  },
+  "t0929": {
+    "name": "真岡",
+    "population": 29457,
+    "date_mod": "1911-10-2"
+  },
+  "t0930": {
+    "name": "栃木",
+    "population": 43873,
+    "date_mod": "1911-12-20"
+  },
+  "t0931": {
+    "name": "大田原",
+    "population": 51857,
+    "date_mod": "1911-2-7"
+  },
+  "t0932": {
+    "name": "鹿沼",
+    "population": 92314,
+    "date_mod": "1911-5-17"
+  },
+  "t0933": {
+    "name": "那須塩原",
+    "population": 81475,
+    "date_mod": "1911-6-19"
+  },
+  "t0934": {
+    "name": "那須烏山",
+    "population": 62748,
+    "date_mod": "1911-10-14"
+  }
+}
