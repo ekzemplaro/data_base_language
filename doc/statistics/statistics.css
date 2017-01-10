@@ -1,9 +1,11 @@
+
 table.main,td,th {
 table-layout:fixed;
 border:1.5px #ff00ff solid;
 width: 100px;
 height: 16px;
 }
+
 table.tag {
 border:0.5px green solid;
 }
@@ -11,10 +13,15 @@ border:0.5px green solid;
 td.no,th.no { width: 40px; }
 td.check,th.check { width: 50px; }
 td.code,th.code { width: 60px; }
-/*
-tr.cyan {
-	background-color: #e7e7f7;
-*/
 tr.cyan {
 	background-color: #c7d7c7;
 }
+
+
+table.sub,td,th {
+table-layout:fixed;
+border:1.5px #ff00ff solid;
+width: 250px;
+height: 16px;
+}
+

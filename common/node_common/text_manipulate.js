@@ -1,7 +1,7 @@
 // ---------------------------------------------------------------
 //	node_common/text_manipulate.js
 //
-//					Dec/26/2016
+//					Jan/10/2017
 //
 // ---------------------------------------------------------------
 var fs = require("fs")
@@ -49,7 +49,7 @@ exports.dict_display_proc = function (dict_aa)
 }
 
 // ---------------------------------------------------------------
-function sort_key_proc (dict_aa)
+exports.sort_key_proc = function (dict_aa)
 {
 	var array = new Array();
 	for(var it in dict_aa)

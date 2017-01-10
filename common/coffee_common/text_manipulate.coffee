@@ -2,7 +2,7 @@
 #
 #	text_manipulate.coffee
 #
-#					Sep/19/2012
+#					Jan/10/2017
 #
 # -------------------------------------------------------------
 fs = require('fs')
@@ -66,4 +66,27 @@ exports.dict_update_proc = (dict_in,id_in,population_in) ->
 exports.csv_read_proc = (file_in) ->
 	delimit = ","
 	dict_aa = text_read_proc_exec(file_in,delimit)
+# -------------------------------------------------------------
+exports.sort_key_proc = (dict_aa) ->
+	array = []
+	for key,value  of  dict_aa
+		array.push({'key':key, 'value':value})
+
+	array.sort(compare_by_key_proc)
+
+	return array
+
+# ---------------------------------------------------------------
+compare_by_key_proc = (left,right) ->
+	aa = left.key
+	bb = right.key
+
+	rvalue = 0
+
+	if (aa < bb)
+		rvalue = -1
+	else if (aa > bb)
+		rvalue = 1
+
+	return	rvalue
 # -------------------------------------------------------------

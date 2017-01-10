@@ -1,3 +1,1 @@
-export NODE_PATH=/home/uchida/node_modules
-#
-./pdf_create.coffee out01.pdf
+./pdf_create.coffee /var/tmp/pdf/cities.pdf
