@@ -1,18 +1,18 @@
 <blockquote>
 $ ruby -v<br />
-ruby 1.9.2p290 (2011-07-09 revision 32553) [x86_64-linux]<p />
+ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-linux-gnu]<p />
 
 $ gem -v<br />
-1.8.17<p />
+2.6.8<p />
 
 $ rails -v<br />
-Rails 3.2.2<p />
+Rails 5.0.1<p />
 
 
-$ node -v<br />
-v0.6.12<p />
+$ nodejs -v<br />
+v4.2.6<p />
 
 $ coffee -v<br />
-CoffeeScript version 1.2.0<p />
+CoffeeScript version 1.10.0<p />
 
 </blockquote>

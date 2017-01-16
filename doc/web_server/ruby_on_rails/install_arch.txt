@@ -1,0 +1,11 @@
+<blockquote>
+# pacman -S ruby<p />
+# pacman -S nodejs<p />
+# pacman -S coffee-script<p />
+<p />
+$ gem install rails<p >
+パスの設定<p />
+	<blockquote>
+	export PATH=$PATH:/home/uchida/bin:/home/uchida/.gem/ruby/2.4.0/bin<p />
+	</blockquote>
+</blockquote>

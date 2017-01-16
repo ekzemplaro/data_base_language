@@ -26,10 +26,10 @@ How to install<br />
 How to check version<br />
 <blockquote>
 	$ coffee --version<br />
-	CoffeeScript version 1.7.1<br />
+	CoffeeScript version 1.12.2<br />
 </blockquote>
 
 Arch Linux<br />
 <blockquote>
-$ yaourt -Sb coffee-script<p />
+	# pacman -S coffee-script<p />
 </blockquote>

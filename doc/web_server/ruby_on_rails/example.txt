@@ -32,10 +32,18 @@ rake db:migrate
 サーバーの起動<br />
 <blockquote>
 	$ rails s -p 3002<p />
+	外部からアクセスできるように起動<p />
+	<blockquote>
+	$ rails s -b 0.0.0.0<p />
+	$ rails server -b 0.0.0.0 -p 3002<p />
+	</blockquote>
 </blockquote>
 
 クライアント<br />
 <blockquote>
 	http://localhost:3002/<p />
+	<a href="png/rails_5.0.1.png">画面</a><p />
 </blockquote>
+
+
 </blockquote>

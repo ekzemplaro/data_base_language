@@ -1,5 +1,0 @@
-<script src="wordpress.js"></script>
-<link href="wordpress.css" rel="stylesheet" />
-	<title>wordpress
-	</title>
-</head>
