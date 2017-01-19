@@ -1,0 +1,26 @@
+VPN Server/DEFAULT>DhcpGet
+DhcpGet command - Get Virtual DHCP Server Function Setting of SecureNAT Function
+Item                           |Value
+-------------------------------+--------------
+Use Virtual DHCP Function      |Yes
+Start Distribution Address Band|192.168.30.10
+End Distribution Address Band  |192.168.30.200
+Subnet Mask                    |255.255.255.0
+Lease Limit (Seconds)          |7200
+Default Gateway Address        |192.168.30.1
+DNS Server Address 1           |192.168.30.1
+DNS Server Address 2           |None
+Domain Name                    |
+Save NAT and DHCP Operation Log|Yes
+Static Routing Table to Push   |
+The command completed successfully.
+
+VPN Server/DEFAULT>DhcpEnable
+DhcpEnable command - Enable Virtual DHCP Server Function of SecureNAT Function
+The command completed successfully.
+
+VPN Server/DEFAULT>SecureNatEnable
+SecureNatEnable command - Enable the Virtual NAT and DHCP Server Function (SecureNat Function)
+The command completed successfully.
+
+VPN Server/DEFAULT>

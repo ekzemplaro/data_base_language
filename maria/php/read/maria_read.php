@@ -3,7 +3,7 @@
 /*
 	maria_read.php
 
-					Sep/15/2016
+					Jan/19/2017
 
 */
 // --------------------------------------------------------------------
@@ -12,9 +12,11 @@ set_include_path (get_include_path() . PATH_SEPARATOR . $path);
 include "sql_display.php";
 include "mysql_utf8.php";
 // --------------------------------------------------------------------
-$dsn = 'mysql:dbname=city;host=localhost';
+$host = 'localhost';
 $user = 'scott';
 $password = 'tiger';
+
+$dsn = 'mysql:dbname=city;host=' . $host;
 
 fputs (STDERR,"*** 開始 ***\n");
 

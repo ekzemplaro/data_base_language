@@ -3,7 +3,7 @@
 #
 #	maria_delete.py
 #
-#					Oct/14/2016
+#					Jan/19/2017
 #
 # --------------------------------------------------------
 import	sys
@@ -18,8 +18,12 @@ sys.stderr.write ("*** 開始 ***\n")
 key_in = sys.argv[1]
 print ("%s" % key_in)
 #
-conn = mysql.connector.connect (host="localhost",db="city", \
-			user="scott", passwd="tiger")
+host_aa='localhost'
+data_base = 'city'
+user_aa ='scott'
+password_aa = 'tiger'
+conn = mysql.connector.connect(user=user_aa, password=password_aa, \
+                              host=host_aa,database=data_base)
 #
 cursor = conn.cursor ()
 #

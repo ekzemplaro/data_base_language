@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+<title>SoftEther</title>
+</head>
+<body>
+<h2>SoftEther</h2><p />
+
+サーバー<p />
+Arch Linux<p />
+<blockquote>
+	インストール<p />
+	<blockquote>
+	$ yaourt -Sb softethervpn<p />
+	次のコマンドがインストールされる<p />
+		<blockquote>
+		/usr/bin/vpnserver<p />
+		/usr/bin/vpncmd<p />
+		</blockquote>
+
+	サーバーのスタート<p />
+		<blockquote>
+		# systemctl start softethervpn-server<p />
+		# systemctl status softethervpn-server<p />
+		</blockquote>
+	サーバーの設定<p />
+		<blockquote>
+		$ vpncmd<p />
+		</blockquote>
+	</blockquote>
+</blockquote>
+
+CentOS<p />
+<blockquote>
+gcc が必要<p />
+softether-vpnserver-v4.20-9608-rtm-2016.04.17-linux-x64-64bit.tar.gz<p />
+解凍して、<p />
+<blockquote>
+	make<p />
+	<blockquote>
+	次のコマンドができる<p />
+	vpnserver<p />
+	vpncmd<p />
+	</blockquote>
+</blockquote>
+</blockquote>
+
+参考になるページ<p />
+<blockquote>
+	<a href="http://www.linuxmania.jp/softether-vpn.html#ser-set">
+	SoftEtherでVPN環境を作ろう</a><p />
+</blockquote>
+
+クライアント<p />
+<blockquote>
+	クライアントのスタート<p />
+		<blockquote>
+		# systemctl start softethervpn-client<p />
+		# systemctl status softethervpn-client<p />
+		</blockquote>
+	クライアントの設定<p />
+		<blockquote>
+		$ vpncmd<p />
+		</blockquote>
+</blockquote>
+
+<blockquote>
+</blockquote>
+
+<hr />
+<a href="../">Return</a><p />
+Jan/19/2017 AM 08:15<p />
+</body>
+</html>

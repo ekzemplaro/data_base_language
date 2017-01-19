@@ -3,14 +3,13 @@
 //
 //	maria_create.php
 //
-//					Sep/15/2016
+//					Jan/19/2017
 //
 // ----------------------------------------------------------------
 $path="/var/www/data_base/common/php_common";
 set_include_path (get_include_path() . PATH_SEPARATOR . $path);
 //
 include "text_manipulate.php";
-include "sql_display.php";
 include "sql_manipulate.php";
 include "mysql_utf8.php";
 // ----------------------------------------------------------------
@@ -36,9 +35,11 @@ fputs (STDERR,"*** 開始 ***\n");
 
 $dict_aa = data_prepare_proc ();
 
-$dsn = 'mysql:dbname=city;host=localhost';
+$host = 'localhost';
 $user = 'scott';
 $password = 'tiger';
+
+$dsn = 'mysql:dbname=city;host=' . $host;
 
 $dbcon = new PDO ($dsn, $user,$password);
 

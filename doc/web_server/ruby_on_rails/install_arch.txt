@@ -3,6 +3,10 @@
 # pacman -S nodejs<p />
 # pacman -S coffee-script<p />
 <p />
+sudoer であることの確認<p />
+	<blockquote>
+	$ sudo date<p />
+	</blockquote>
 $ gem install rails<p >
 パスの設定<p />
 	<blockquote>
