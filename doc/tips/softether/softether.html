@@ -47,6 +47,7 @@ softether-vpnserver-v4.20-9608-rtm-2016.04.17-linux-x64-64bit.tar.gz<p />
 	vpncmd<p />
 	</blockquote>
 </blockquote>
+$ sudo ./vpnserver start<p />
 </blockquote>
 
 参考になるページ<p />
@@ -56,6 +57,7 @@ softether-vpnserver-v4.20-9608-rtm-2016.04.17-linux-x64-64bit.tar.gz<p />
 </blockquote>
 
 クライアント<p />
+Arch Linux<p />
 <blockquote>
 	クライアントのスタート<p />
 		<blockquote>
@@ -68,7 +70,35 @@ softether-vpnserver-v4.20-9608-rtm-2016.04.17-linux-x64-64bit.tar.gz<p />
 		</blockquote>
 </blockquote>
 
+CentOS<p />
 <blockquote>
+softether-vpnclient-v4.20-9608-rtm-2016.04.17-linux-x64-64bit.tar.gz<p />
+ 解凍して、<p />
+
+	<blockquote>
+		make<p />
+		<blockquote>
+		次のコマンドができる<p />
+		vpnclient<p />
+		vpncmd<p />
+		</blockquote>
+	</blockquote>
+$ sudo ./vpnclient  start<p />
+</blockquote>
+
+<hr />
+サーバーの設定<p />
+<blockquote>
+	$ ./vpncmd  /server<p />
+
+	Hostname of IP Address of Destination: localhost:5555<p />
+
+	VPN Server>ServerPasswordSet<p />
+</blockquote>
+
+クライアントの設定<p />
+<blockquote>
+	$ ./vpncmd  /client<p />
 </blockquote>
 
 <hr />

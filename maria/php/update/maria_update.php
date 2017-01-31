@@ -3,7 +3,7 @@
 /*
 	maria_update.php
 
-					Jan/19/2017
+					Jan/27/2017
 
 */
 // --------------------------------------------------------------------
@@ -12,13 +12,14 @@ set_include_path (get_include_path() . PATH_SEPARATOR . $path);
 //
 include "sql_display.php";
 include "sql_manipulate.php";
-include "mysql_utf8.php";
 
 // --------------------------------------------------------------------
 $host = 'localhost';
 $user = 'scott';
 $password = 'tiger';
-$dsn = 'mysql:dbname=city;host=' . $host;
+$db = 'city';
+
+$dsn = 'mysql:dbname=' . $db . ';host=' . $host;
 
 fputs (STDERR,"*** 開始 ***\n");
 
@@ -28,8 +29,6 @@ $population_in = intval ($argv[2]);
 echo $id_in . "\t" . $population_in . "\n";
 
 $dbcon = new PDO ($dsn, $user,$password);
-
-mysql_utf8_proc ($dbcon);
 
 sql_update_proc ($dbcon,$id_in,$population_in);
 

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+<title>msmtp</title>
+</head>
+<body>
+<h2>msmtp</h2><p />
+
+msmtp を使ったメールの送信方法<p />
+<blockquote>
+	msmtp -C setting_gmail.txt -t < in01.txt<p />
+</blockquote>
+
+in01.txt<p />
+<blockquote>
+	<pre>
+	From: aaa@gmail.com
+	To: bbb@example.com
+	Subject: Test using msmtp from gmail on Jan/23/2017
+	Test
+	From Gmail
+	Good Morning
+	Bye
+	</pre>
+</blockquote>
+
+setting_gmail.txt<p />
+<blockquote>
+<pre>
+account default
+host	smtp.gmail.com
+port	587
+user	aaa
+password	*****
+#
+auth	on
+tls	on
+tls_certcheck	off
+#
+from	aaa@gmail.com
+#
+logfile	msmtp.log
+#
+</pre>
+</blockquote>
+
+yahoo.co.jp のセッティング<p />
+<blockquote>
+<pre>
+account default
+host	smtp.mail.yahoo.co.jp
+port	587
+user	aaa@yahoo.co.jp
+password	*****
+#
+auth	plain
+tls_certcheck	off
+#
+from	aaa@yahoo.co.jp
+#
+logfile	msmtp.log
+#
+</pre>
+</blockquote>
+
+Hi-ho のセッティング<p />
+<blockquote>
+<pre>
+account default
+host	hi-ho.mose-mail.jp
+port	587
+user	aaa@hi-ho.ne.jp
+password	*****
+#
+auth	plain
+tls	on
+tls_certcheck	off
+#
+from	aaa@hi-ho.ne.jp
+#
+logfile	msmtp.log
+#
+</pre>
+</blockquote>
+
+Nifty のセッティング<p />
+<blockquote>
+<pre>
+account default
+host           smtp.nifty.com
+port           587
+user           aaa@nifty.com
+password       *****
+#
+auth           plain
+tls_certcheck off
+#
+from           aaa@nifty.com
+#
+logfile ~/.msmtp.log
+#
+</pre>
+</blockquote>
+
+Plala のセッティング<p />
+<blockquote>
+<pre>
+account default
+host	sky.mail.plala.or.jp
+port	587
+user	aaa@sky.plala.or.jp
+password	*****
+#
+auth	plain
+tls_certcheck off
+#
+from	aaa@sky.plala.or.jp
+#
+logfile	msmtp.log
+#
+</pre>
+</blockquote>
+
+<a href="../">Return</a><p />
+Jan/23/2017 AM 08:15<p />
+</body>
+</html>
