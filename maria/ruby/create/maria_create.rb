@@ -3,18 +3,16 @@
 #
 #	ruby/create/maria_create.rb
 #
-#					Sep/16/2013
+#					Feb/03/2017
 # ---------------------------------------------------------------------
-require 'dbi'
+require 'mysql'
 #
 load '/var/www/data_base/common/ruby_common/text_manipulate.rb'
-load '/var/www/data_base/common/ruby_common/sql_manipulate.rb'
-load '/var/www/data_base/common/ruby_common/mysql_utf8.rb'
 # ---------------------------------------------------------------------
 def prepare_data_proc ()
 dict_aa = {}
-dict_aa=dict_append_proc(dict_aa,'t3321',"岡山",629138,"2006-9-14")
-dict_aa=dict_append_proc(dict_aa,'t3322',"倉敷",328475,"2006-2-27")
+dict_aa=dict_append_proc(dict_aa,'t3321',"岡山",729138,"2006-9-14")
+dict_aa=dict_append_proc(dict_aa,'t3322',"倉敷",318475,"2006-2-27")
 dict_aa=dict_append_proc(dict_aa,'t3323',"津山",182564,"2006-8-8")
 dict_aa=dict_append_proc(dict_aa,'t3324',"玉野",572148,"2006-11-15")
 dict_aa=dict_append_proc(dict_aa,'t3325',"笠岡",893157,"2006-7-21")
@@ -25,24 +23,45 @@ dict_aa=dict_append_proc(dict_aa,'t3329',"新見",519472,"2006-6-9")
 	return	dict_aa
 end
 # ---------------------------------------------------------------------
+def	create_proc (connection)
+	sql_str="create TABLE cities (" \
+		+ "id varchar(10) NOT NULL PRIMARY KEY," \
+		+ "name varchar(20)," \
+		+ "population int," \
+		+ "date_mod varchar(40))"
+	connection.query(sql_str)
+end
+# ------------------------------------------------------------
+def	drop_proc (connection)
+	sql_str="drop table cities"
+	connection.query(sql_str)
+end
+# ---------------------------------------------------------------------
+def	insert_proc (connection,id,name,population,date_mod)
+	sql_str="INSERT into cities " \
+		+ "(id, Name, Population, date_mod) values \
+		('#{id}', '#{name}',#{population},'#{date_mod}')"
+	connection.query(sql_str)
+end
+# ---------------------------------------------------------------------
 puts	"*** 開始 ***"
 #
-dbi=DBI.connect("dbi:Mysql:city:localhost","scott","tiger")
-#
-mysql_utf8_proc(dbi)
+host = "127.0.0.1"
+user = "scott"
+password = "tiger"
+data_base = 'city'
+connection = Mysql::new(host, user,password,data_base)
 #
 dict_aa=prepare_data_proc()
 #
-sss = Sql_manipulate.new
-sss.drop_proc(dbi)
-sss.create_proc(dbi)
-#
+drop_proc(connection)
+create_proc(connection)
 dict_aa.each {|key,value |
-	sss.insert_proc(dbi,key,value['name'], \
+	insert_proc(connection,key,value['name'], \
 		value['population'],value['date_mod'])
 	}
 #
-sss.disp_proc(dbi)
+connection.close
 #
 puts	"*** 終了 ***"
 #

@@ -3,27 +3,29 @@
 #
 #	maria_read.rb
 #
-#					Sep/16/2013
+#					Feb/03/2017
 #
 # ------------------------------------------------------------------
-require 'rdbi'
-# require 'rdbi-driver-mysql'
+require 'mysql'
 #
-load '/var/www/data_base/common/ruby_common/sql_manipulate.rb'
-load '/var/www/data_base/common/ruby_common/mysql_utf8.rb'
 # ------------------------------------------------------------------
 puts "*** 開始 ***"
 #
-#dbi=DBI.connect("dbi:Mysql:city:localhost","scott","tiger")
-dbh = RDBI.connect(:Mysql, :dbname=>"city",
-	:user=>"scott", :password=>"tiger")
+host = "127.0.0.1"
+user = "scott"
+password = "tiger"
+data_base = 'city'
+connection = Mysql::new(host, user,password,data_base)
+
+sql_str = "SELECT id,name,population,date_mod FROM cities order by ID"
+begin
+	result = connection.query(sql_str)
+	result.each do |row|
+		print "#{row[0]}\t#{row[1]}\t#{row[2]}\t#{row[3]}\n"
+	end
+end
 #
-mysql_utf8_proc(dbh)
-#
-sss=Sql_manipulate.new
-#
-sss.disp_proc(dbh)
-dbh.disconnect
+connection.close
 #
 puts "*** 終了 ***"
 # ------------------------------------------------------------------

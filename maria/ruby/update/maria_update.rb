@@ -3,13 +3,18 @@
 #
 #	maria_update.rb
 #
-#				Sep/16/2013
+#				Feb/03/2017
 #
-require 'dbi'
+require 'mysql'
 require 'date'
 #
 load '/var/www/data_base/common/ruby_common/sql_manipulate.rb'
-load '/var/www/data_base/common/ruby_common/mysql_utf8.rb'
+# ------------------------------------------------------------
+def	update_proc (connection,id,population)
+	date_mod=Date.today
+	sql_str="UPDATE cities SET population='#{population}', DATE_MOD='#{date_mod}' where ID = '#{id}'"
+	connection.query(sql_str)
+end
 # ------------------------------------------------------------
 puts "*** 開始 ***"
 #
@@ -18,17 +23,17 @@ population_in = ARGV[1].to_i
 #
 puts id_in,population_in
 #
-dbi=DBI.connect("dbi:Mysql:city:localhost","scott","tiger")
+host = "127.0.0.1"
+user = "scott"
+password = "tiger"
+data_base = 'city'
+connection = Mysql::new(host, user,password,data_base)
 #
-mysql_utf8_proc(dbi)
+update_proc(connection,id_in,population_in)
 #
-sss=Sql_manipulate.new
+connection.commit
+connection.close
 #
-sss.update_proc(dbi,id_in,population_in)
-#
-sss.disp_proc(dbi)
-#
-dbi.disconnect
 #
 puts "*** 終了 ***"
 # ------------------------------------------------------------

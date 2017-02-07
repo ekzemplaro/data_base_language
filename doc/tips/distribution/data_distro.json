@@ -1,6 +1,6 @@
 {
 "archlinux": 
-	{"name": "ArchLinux","kernel": "4.9.6-1-ARCH","bash": "4.4.11"},
+	{"name": "ArchLinux","kernel": "4.9.7-1-ARCH","bash": "4.4.11"},
 "boot2docker": 
 	{"name": "boot2docker","kernel": "4.0.7-boot2docker","bash": ""},
 "centos": 
@@ -20,7 +20,7 @@
 "tinycore": 
 	{"name": "Tiny Core Linux","kernel": "3.16.6-tinycore","bash": "4.3.39"},
 "ubuntu": 
-	{"name": "Ubuntu","kernel": "4.8.0-32-generic","bash": "4.3.46"},
+	{"name": "Ubuntu","kernel": "4.8.0-37-generic","bash": "4.3.46"},
 "xenserver": 
 	{"name": "XenServer","kernel": "3.10.0+2","bash": "3.2.25"}
 }

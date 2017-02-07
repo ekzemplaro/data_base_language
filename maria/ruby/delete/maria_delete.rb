@@ -3,12 +3,15 @@
 #
 #	maria_delete.rb
 #
-#				Sep/16/2013
+#				Feb/03/2017
 #
-require 'dbi'
+require 'mysql'
 #
-load '/var/www/data_base/common/ruby_common/sql_manipulate.rb'
-load '/var/www/data_base/common/ruby_common/mysql_utf8.rb'
+# ------------------------------------------------------------
+def	delete_proc (connection,id)
+	sql_str="DELETE from cities where ID = '#{id}'"
+	connection.query(sql_str)
+end
 # ------------------------------------------------------------
 puts "*** 開始 ***"
 #
@@ -16,17 +19,16 @@ id_in = ARGV[0]
 #
 puts id_in
 #
-dbi=DBI.connect("dbi:Mysql:city:localhost","scott","tiger")
+host = "127.0.0.1"
+user = "scott"
+password = "tiger"
+data_base = 'city'
+connection = Mysql::new(host, user,password,data_base)
 #
-mysql_utf8_proc(dbi)
+delete_proc(connection,id_in)
 #
-sss=Sql_manipulate.new
-#
-sss.delete_proc(dbi,id_in)
-#
-sss.disp_proc(dbi)
-#
-dbi.disconnect
+connection.commit
+connection.close
 #
 puts "*** 終了 ***"
 # ------------------------------------------------------------

@@ -87,6 +87,7 @@ Python<p />
 
 Ruby<p />
 <blockquote>
+	$ gem install ruby-mysql<p />
 </blockquote>
 
 Lua<p />

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+<title>bind-utils</title>
+</head>
+<body>
+<h2>bind-utils</h2><p />
+
+dig<p />
+<blockquote>
+<pre>
+$ dig ekzemplaro.org @8.8.8.8
+
+; <<>> DiG 9.11.0-P2 <<>> ekzemplaro.org @8.8.8.8
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 15074
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 512
+;; QUESTION SECTION:
+;ekzemplaro.org.			IN	A
+
+;; ANSWER SECTION:
+ekzemplaro.org.		3599	IN	A	133.130.98.29
+
+;; Query time: 175 msec
+;; SERVER: 8.8.8.8#53(8.8.8.8)
+;; WHEN: Sun Feb 05 19:02:10 JST 2017
+;; MSG SIZE  rcvd: 59
+</pre>
+</blockquote>
+
+host<p />
+<blockquote>
+<pre>
+$ host ekzemplaro.org 8.8.8.8
+Using domain server:
+Name: 8.8.8.8
+Address: 8.8.8.8#53
+Aliases: 
+
+ekzemplaro.org has address 133.130.98.29
+ekzemplaro.org mail is handled by 10 mail.ekzemplaro.org.
+</pre>
+</blockquote>
+
+
+<blockquote>
+</blockquote>
+
+
+<hr />
+
+<a href="../">Return</a><p />
+Feb/05/2015 AM 08:15<p />
+</body>
+</html>

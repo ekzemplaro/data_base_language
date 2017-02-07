@@ -97,7 +97,7 @@ psql book -U scott<br />
 
 PHP<p />
 <blockquote>
-	php5-pgsql<p />
+	# apt install php-pgsql<p />
 	# pacman -S php-pgsql<p />
 	<blockquote>
 	/etc/php/php.ini<br />
