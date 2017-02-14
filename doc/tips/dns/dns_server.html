@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+<title>dns_server</title>
+</head>
+<body>
+<h2>スレーブ　dns server の設定</h2><p />
+
+インストール<p />
+<blockquote>
+# pacman -S bind<p />
+</blockquote>
+
+
+/etc/named.conf の設定<p />
+<blockquote>
+	マスターサーバーが、100.100.151.25 で、定義しているドメインが、example_aa.com と ezample_bb.com の２つある場合。<p />
+<pre>
+zone "ezample_aa.com" IN {
+        type slave;
+        masters {100.100.151.25;};
+        file "slaves/example_aa.com.bak";
+};
+
+zone "ezample_bb.com" IN {
+        type slave;
+        masters {100.100.151.25;};
+        file "slaves/example_bb.com.bak";
+};
+
+</pre>
+</blockquote>
+
+フォルダーの作成<p />
+<blockquote>
+	# makedir /var/named/slaves<p />
+	# chown named:named /var/named/slaves<p />
+</blockquote>
+
+起動<p />
+<blockquote>
+# systemctl start named<p />
+</blockquote>
+
+確認<p />
+<blockquote>
+	$ dig @スレーブのip example_aa.com<p />
+	$ dig @スレーブのip example_bb.com<p />
+
+	スレーブのip が、100.100.155.36　とすると、<p />
+
+	<blockquote>
+	$ dig @100.100.155.36 example_aa.com<p />
+	$ dig @100.100.155.36 example_bb.com<p />
+	</blockquote>
+</blockquote>
+
+<hr />
+<a href="../">Return</a><p />
+Feb/11/2017 AM 08:15<p />
+</body>
+</html>
