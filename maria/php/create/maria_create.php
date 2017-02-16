@@ -3,7 +3,7 @@
 //
 //	maria_create.php
 //
-//					Jan/27/2017
+//					Feb/17/2017
 //
 // ----------------------------------------------------------------
 $path="/var/www/data_base/common/php_common";
@@ -39,7 +39,7 @@ $user = 'scott';
 $password = 'tiger';
 $db = 'city';
 
-$dsn = 'mysql:dbname=' . $db . ';host=' . $host;
+$dsn = 'mysql:dbname=' . $db . ';host=' . $host . ';charset=utf8mb4';
 
 $dbcon = new PDO ($dsn, $user,$password);
 

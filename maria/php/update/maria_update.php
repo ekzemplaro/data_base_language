@@ -3,7 +3,7 @@
 /*
 	maria_update.php
 
-					Jan/27/2017
+					Feb/16/2017
 
 */
 // --------------------------------------------------------------------
@@ -19,7 +19,7 @@ $user = 'scott';
 $password = 'tiger';
 $db = 'city';
 
-$dsn = 'mysql:dbname=' . $db . ';host=' . $host;
+$dsn = 'mysql:dbname=' . $db . ';host=' . $host . ';charset=utf8mb4';
 
 fputs (STDERR,"*** 開始 ***\n");
 
