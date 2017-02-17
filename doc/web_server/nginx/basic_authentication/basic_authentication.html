@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<title>Basic 認証</title>
+</head>
+<body>
+<h2>Basic 認証</h2>
+
+ユーザ名とパスワードを追加。
+<blockquote>
+	$ sudo htpasswd -c /etc/nginx/.htpasswd username
+</blockquote>
+
+/etc/nginx/nginx.conf<br />
+<blockquote>
+<pre>
+   server {
+
+        location / {
+
+        auth_basic "Restricted";
+        auth_basic_user_file /etc/nginx/.htpasswd;
+	}
+</pre>	
+</blockquote>
+
+nginx.conf の確認<br />
+<blockquote>
+	# nginx -t<br />
+	nginx: the configuration file /etc/nginx/nginx.conf syntax is ok<br />
+</blockquote>
+
+再起動<br />
+<blockquote>
+	# systemctl restart nginx<p />
+</blockquote>
+
+<hr />
+<a href="../">Return</a><p />
+Feb/17/2017 AM 08:15<p />
+</body>
+</html>
