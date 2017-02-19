@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<title>Streama</title>
+</head>
+<body>
+<h2><a href="http://dularion.github.io/streama/">Streama</a></h2>
+<blockquote>
+	ストリーミング配信環境<p />
+</blockquote>
+
+ダウンロード<br />
+<blockquote>
+wget https://github.com/dularion/streama/releases/download/v1.0.12/streama-1.0.12.war -O streama.war<p />
+
+wget https://raw.githubusercontent.com/dularion/streama/master/docs/sample_application.yml -O application.yml<p />
+</blockquote>
+
+必要なソフト<p />
+<blockquote>
+	# apt install openjdk-8-jre<p />
+</blockquote>
+
+インストール<br />
+<blockquote>
+	# mkdir /var/data/streama<p />
+	# chown uchida:uchida /var/data/streama<p />
+	streama.war　と、application.yml を、/var/data/streama に置く<p />
+	</blockquote>
+</blockquote>
+
+前提条件<p />
+<blockquote>
+<b>Ubuntu 16.10</b><p />
+$ java -version<br />
+openjdk version "1.8.0_121"<br />
+OpenJDK Runtime Environment (build 1.8.0_121-8u121-b13-0ubuntu1.16.10.2-b13)<br />
+OpenJDK 64-Bit Server VM (build 25.121-b13, mixed mode)<br />
+</blockquote>
+<blockquote>
+<b>Arch Linux</b><p />
+$ java -version<br />
+openjdk version "1.8.0_121"<br />
+OpenJDK Runtime Environment (build 1.8.0_121-b13)<br />
+OpenJDK 64-Bit Server VM (build 25.121-b13, mixed mode)<br />
+</blockquote>
+
+起動<br />
+<blockquote>
+	$ cd /var/data/streama<p />
+	$ chmod +x streama.war<p />
+	$ ./streama.war<p />
+	<blockquote>
+		ポート8080 で、Web が起動します。<p />
+	</blockquote>
+</blockquote>
+
+アクセス<p />
+<blockquote>
+	http://localhost:8080/<p />
+	http://hostname.:8080/<p />
+</blockquote>
+
+<hr />
+<a href="../">Return</a><p />
+Feb/20/2017 AM 08:15<p />
+</body>
+</html>
