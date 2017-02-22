@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+<title>Amazon Linux AMI</title>
+</head>
+<body>
+<h2><a href="https://aws.amazon.com/jp/amazon-linux-ami/">Amazon Linux AMI</a></h2><p />
+
+ssh でアクセス<p />
+<blockquote>
+	$ ssh -i key_pair.pem ec2-user@35.162.*.*<p />
+	<blockquote>
+	Amazon EC2 コンソールを使って、<br />
+	セキュリティーグループで、インバウンドのIP を設定する必要がある。<p />
+	</blockquote>
+</blockquote>
+
+
+バージョン確認方法<br />
+<blockquote>
+<pre>
+$ cat /etc/os-release
+NAME="Amazon Linux AMI"
+VERSION="2016.09"
+ID="amzn"
+ID_LIKE="rhel fedora"
+VERSION_ID="2016.09"
+PRETTY_NAME="Amazon Linux AMI 2016.09"
+ANSI_COLOR="0;33"
+CPE_NAME="cpe:/o:amazon:linux:2016.09:ga"
+HOME_URL="http://aws.amazon.com/amazon-linux-ami/"
+</pre>
+</blockquote>
+
+ソフトの更新とインストール<p />
+<blockquote>
+$ sudo yum update<br />
+$ sudo yum -y install php<br />
+$ sudo yum -y install git<br />
+$ sudo yum -y install gcc-c++<br />
+</blockquote>
+
+Node.js のインストール<p />
+<blockquote>
+$ git clone https://github.com/creationix/nvm.git ~/.nvm<br />
+$ source ~/.nvm/nvm.sh<br />
+$ nvm ls-remote<br />
+$ nvm install 7.6.0<br />
+$ node -v<br />
+$ npm install aws-sdk<br />
+</blockquote>
+
+<blockquote>
+</blockquote>
+
+<blockquote>
+	<a href="dynamodb/">DynamoDB</a><p />
+</blockquote>
+
+<hr />
+<a href="../">Return</a><p />
+Feb/22/2017 AM 08:15<p />
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+<title>DynamoDB</title>
+</head>
+<body>
+<h2><a href="https://aws.amazon.com/jp/documentation/dynamodb/">DynamoDB</a></h2><p />
+
+事前準備<p />
+<blockquote>
+	$ aws configure<p />
+</blockquote>
+
+データの一覧<p />
+<blockquote>
+	$ aws dynamodb scan --table-name cities<p />
+</blockquote>
+
+
+検索<br />
+<blockquote>
+	$ aws dynamodb get-item --table-name cities  --key '{ "key": {"S": "t0922" }  }'<p />
+</blockquote>
+
+データの挿入<p />
+<blockquote>
+	$ aws dynamodb put-item --table-name cities --item '{ "population": { "N": "38164" }, "date_mod": { "S": "1950-6-22" }, "key": { "S": "t0924" }, "name": { "S": "足利" } }'<p />
+</blockquote>
+
+データの削除<p />
+<blockquote>
+	$ aws dynamodb delete-item --table-name cities  --key '{"key": {"S": "t0924"}}'<p />
+</blockquote>
+
+テーブルの削除<p />
+<blockquote>
+	$ aws dynamodb delete-table --table-name cities<p />
+</blockquote>
+
+テーブルの作成<p />
+<blockquote>
+	$ aws dynamodb create-table --table-name 'cities' \<br />
+--attribute-definitions '[{"AttributeName":"key","AttributeType": "S"}]' \<br />
+--key-schema '[{"AttributeName":"key","KeyType": "HASH"}]' \<br />
+--provisioned-throughput '{"ReadCapacityUnits": 5,"WriteCapacityUnits": 5}'<p />
+</blockquote>
+
+AWS SDK for PHP<p />
+<blockquote>
+	$ curl -sS https://getcomposer.org/installer<p />
+	$ php composer.phar require aws/aws-sdk-php<p />
+</blockquote>
+
+PHP のサンプル<p />
+<blockquote>
+	<a href="php/cities_insert.php.txt">cities_insert.php</a><p />
+	<a href="php/cities_search.php.txt">cities_search.php</a><p />
+	<a href="php/cities_scan.php.txt">cities_scan.php</a><p />
+	<a href="php/aws_config.php.txt">aws_config.php</a><p />
+</blockquote>
+
+<blockquote>
+</blockquote>
+
+<hr />
+<a href="../">Return</a><p />
+Feb/22/2017 AM 08:15<p />
+</body>
+</html>
