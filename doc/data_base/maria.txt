@@ -56,13 +56,8 @@ Bye
 
 再起動<p />
 <blockquote>
-<pre>
-$ sudo service mysql stop
- * Stopping MariaDB database server mysqld                               [ OK ] 
-uchida@nlf132:~$ sudo service mysql start
- * Starting MariaDB database server mysqld                               [ OK ] 
- * Checking for corrupt, not cleanly closed and upgrade needing tables.
-</pre>
+# systemctl stop mysql<br />
+# systemctl start mysql<br />
 </blockquote>
 
 

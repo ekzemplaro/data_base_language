@@ -12,7 +12,11 @@
 
 事前準備<p />
 <blockquote>
-	$ aws configure<p />
+	$ aws configure<br />
+	AWS Access Key ID [None]:<br /> 
+	AWS Secret Access Key [None]:<br /> 
+	Default region name [None]: ap-northeast-1<br /> 
+	Default output format [None]: json<br />
 </blockquote>
 
 データの一覧<p />
@@ -51,23 +55,58 @@
 
 AWS SDK for PHP<p />
 <blockquote>
-	$ curl -sS https://getcomposer.org/installer<p />
+	$ curl -sS https://getcomposer.org/installer | php<p />
 	$ php composer.phar require aws/aws-sdk-php<p />
 </blockquote>
 
-PHP のサンプル<p />
+PHP のサンプル (AWS のDynamoDB へ接続)<p />
 <blockquote>
-	<a href="php/cities_insert.php.txt">cities_insert.php</a><p />
-	<a href="php/cities_search.php.txt">cities_search.php</a><p />
-	<a href="php/cities_scan.php.txt">cities_scan.php</a><p />
-	<a href="php/aws_config.php.txt">aws_config.php</a><p />
+	<a href="php_aws/cities_create_table.php.txt">cities_create_table.php</a><p />
+	<a href="php_aws/cities_delete_table.php.txt">cities_delete_table.php</a><p />
+	<a href="php_aws/cities_insert.php.txt">cities_insert.php</a><p />
+	<a href="php_aws/cities_search.php.txt">cities_search.php</a><p />
+	<a href="php_aws/cities_scan.php.txt">cities_scan.php</a><p />
+	<a href="php_aws/aws_config.php.txt">aws_config.php</a><p />
 </blockquote>
 
+PHP のサンプル (AWS のDynamoDB へ接続,バッチでのデータの挿入)<p />
 <blockquote>
+	<a href="php_aws_batch/batch_create_table.php.txt">batch_create_table.php</a><p />
+	<a href="php_aws_batch/batch_delete_table.php.txt">batch_delete_table.php</a><p />
+	<a href="php_aws_batch/batch_write.php.txt">batch_write.php</a><p />
+	<a href="php_aws_batch/batch_scan.php.txt">batch_scan.php</a><p />
+</blockquote>
+
+
+Python (ダウンロード可能バージョンへの接続）<p />
+<blockquote>
+<a href="http://docs.aws.amazon.com/ja_jp/amazondynamodb/latest/gettingstartedguide/GettingStarted.Python.html">Python および DynamoDB</a><p />
+$ sudo pip install boto3<p />
+	<blockquote>
+	<a href="http://boto3.readthedocs.io/en/latest/guide/quickstart.html#configuration">Bot 3  Quickstart</a><p />
+	以下のファイルを作成する<p />
+		<blockquote>
+		.aws/credentials<br />
+		.aws/config<br />
+		</blockquote>
+	</blockquote>
+	<a href="python/cities_create_table.py.txt">cities_create_table.py</a><p />
+	<a href="python/cities_delete_table.py.txt">cities_delete_table.py</a><p />
+	<a href="python/cities_insert.py.txt">cities_insert.py</a><p />
+	<a href="python/cities_query.py.txt">cities_query.py</a><p />
+</blockquote>
+
+PHP (ダウンロード可能バージョンへの接続）<p />
+<blockquote>
+	<a href="php_local/cities_create_table.php.txt">cities_create_table.php</a><p />
+	<a href="php_local/cities_delete_table.php.txt">cities_delete_table.php</a><p />
+	<a href="php_local/cities_insert_local.php.txt">cities_insert_local.php</a><p />
+	<a href="php_local/cities_scan_local.php.txt">cities_scan_local.php</a><p />
+	<a href="php_local/cities_count_local.php.txt">cities_count_local.php</a><p />
 </blockquote>
 
 <hr />
 <a href="../">Return</a><p />
-Feb/22/2017 AM 08:15<p />
+Feb/24/2017 AM 08:15<p />
 </body>
 </html>

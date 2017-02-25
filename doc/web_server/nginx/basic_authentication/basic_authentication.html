@@ -9,9 +9,14 @@
 <body>
 <h2>Basic 認証</h2>
 
-ユーザ名とパスワードを追加。
+/usr/bin/htpasswd をインストール<p />
 <blockquote>
-	$ sudo htpasswd -c /etc/nginx/.htpasswd username
+	# pacman -S apache<p />
+</blockquote>
+
+ユーザ名とパスワードを追加<p />
+<blockquote>
+	$ sudo htpasswd -c /etc/nginx/.htpasswd username<p />
 </blockquote>
 
 /etc/nginx/nginx.conf<br />
@@ -40,6 +45,6 @@ nginx.conf の確認<br />
 
 <hr />
 <a href="../">Return</a><p />
-Feb/17/2017 AM 08:15<p />
+Feb/23/2017 AM 08:15<p />
 </body>
 </html>
