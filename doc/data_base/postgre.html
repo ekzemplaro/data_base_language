@@ -4,7 +4,7 @@
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
-<script src="/js/jquery-2.2.0.min.js"></script>
+<script src="/js/jquery-3.1.1.min.js"></script>
 <meta content="Program Language Examples to connect to PostgreSQL" name="description">
 <meta content="PostgreSQL,クライアント,接続,言語,サンプル" name="keyword">
 <meta content="Uchida Masatomo" name="author">
@@ -104,10 +104,10 @@ psql book -U scott<br />
 
 PHP<p />
 <blockquote>
-	php5-pgsql<p />
+	# apt install php-pgsql<p />
 	# pacman -S php-pgsql<p />
 	<blockquote>
-	/etc/php/conf.d/pgsql.ini<br />
+	/etc/php/php.ini<br />
 		<blockquote>
 		extension=pgsql.so<br />
 		</blockquote>
@@ -118,6 +118,7 @@ PHP<p />
 Python<p />
 <blockquote>
 	python-pygresql<p />
+	# pacman -S python-psycopg2<p />
 </blockquote>
 
 Perl<p />
@@ -128,6 +129,13 @@ Perl<p />
 Ruby<p />
 <blockquote>
 	libdbd-pg-ruby<p />
+
+	Arch Linux<br />
+	<blockquote>
+	$ gem install pg<br />
+	$ gem install rdbi<br />
+	$ gem install rdbi-driver-postgresql<br />
+	</blockquote>
 </blockquote>
 
 Lua<p />
@@ -232,6 +240,34 @@ psql -U USERNAME DBNAME < dbexport.pgsql<br />
 createdb city<br />
 psql -U scott city < dbexport.pgsql<br />
 </blockquote>
+
+
+psql の使い方<p />
+<blockquote>
+<pre>
+$ psql -U postgres
+psql (9.5.4)
+Type "help" for help.
+
+postgres=# \c city;
+You are now connected to database "city" as user "postgres".
+city=# select * from cities;
+  id   |  name  | population |  date_mod  
+-------+--------+------------+------------
+ t3461 | 広島   |      47800 | 2003-05-20
+ t3468 | 大竹   |      78400 | 2003-10-26
+ t3467 | 三次   |      81200 | 2003-07-23
+ t3466 | 竹原   |      51800 | 2003-01-21
+ t3469 | 府中   |      23400 | 2003-12-15
+ t3465 | 尾道   |      39100 | 2003-08-04
+ t3463 | 東広島 |      21600 | 2003-06-14
+ t3464 | 呉     |      83600 | 2003-09-09
+ t3462 | 福山   |      93500 | 2003-06-12
+(9 rows)
+
+city=# \q
+</pre>
+</blockquote>
 <hr />
 <div id="result_aa">result_aa</div>
 <hr />
@@ -245,6 +281,6 @@ psql -U scott city < dbexport.pgsql<br />
 <div id="outarea_hh">outarea_hh</div>
 <hr />
 <a href="/data_base/">Return</a><p />
-Nov/25/2015 AM 08:15<p />
+Feb/15/2017 AM 08:15<p />
 </body>
 </html>

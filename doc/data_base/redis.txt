@@ -6,8 +6,8 @@
 Ubuntu<p />
 <blockquote>
 <pre>
-ii  redis-server   2:3.0.3-3  amd64  Persistent key-value database with network interface
-ii  redis-tools    2:3.0.3-3  amd64  Persistent key-value database with network interface (client)
+ii  redis-server   2:3.2.1-1  amd64  Persistent key-value database with network interface
+ii  redis-tools    2:3.2.1-1  amd64  Persistent key-value database with network interface (client)
 </pre>
 	/etc/redis/redis.conf<p />
 </blockquote>
@@ -59,11 +59,9 @@ PHP<p />
 <a href="https://github.com/nicolasff/phpredis">phpredis-master.zip</a><p />
 
 <blockquote>
+Ubuntu<p />
 <blockquote>
-	phpize<br />
-	./configure<br />
-	make<br />
-	sudo make install<p />
+	# apt install php-redis<p />
 </blockquote>
 
 Arch Linux<br />
@@ -87,8 +85,9 @@ ii  python-redis   2.4.13-2  all   Persistent key-value database with network in
 </blockquote>
 
 Perl<p />
-libredis-perl<p />
-<a href="http://annocpan.org/dist/Redis">AnnoCPAN</a><p />
+<blockquote>
+	libredis-perl<p />
+	<a href="http://annocpan.org/dist/Redis">AnnoCPAN</a><p />
 </blockquote>
 
 Ruby<p />

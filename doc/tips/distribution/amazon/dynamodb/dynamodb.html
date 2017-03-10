@@ -53,6 +53,16 @@
 --provisioned-throughput '{"ReadCapacityUnits": 5,"WriteCapacityUnits": 5}'<p />
 </blockquote>
 
+テーブルの一覧<p />
+<blockquote>
+	$ aws dynamodb list-tables<p />
+</blockquote>
+
+項目数<p />
+<blockquote>
+	$ aws dynamodb describe-table --table-name cities<p />
+</blockquote>
+
 AWS SDK for PHP<p />
 <blockquote>
 	$ curl -sS https://getcomposer.org/installer | php<p />

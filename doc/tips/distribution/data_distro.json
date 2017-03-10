@@ -18,11 +18,11 @@
 "opensuse": 
 	{"name": "openSUSE","kernel": "3.16.7-21-desktop","bash": "4.2.53"},
 "redhat": 
-	{"name": "RedHat","kernel": "","bash": ""},
+	{"name": "RedHat","kernel": "3.10.0-514.10.2.el7.x86_64","bash": "4.2.46"},
 "tinycore": 
 	{"name": "Tiny Core Linux","kernel": "3.16.6-tinycore","bash": "4.3.39"},
 "ubuntu": 
-	{"name": "Ubuntu","kernel": "4.8.0-39-generic","bash": "4.3.46"},
+	{"name": "Ubuntu","kernel": "4.8.0-41-generic","bash": "4.3.46"},
 "xenserver": 
 	{"name": "XenServer","kernel": "3.10.0+2","bash": "3.2.25"}
 }

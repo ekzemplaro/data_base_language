@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<title>Drupal</title>
+</head>
+<body>
+<h2><a href="https://www.drupal.org/">Drupal</a></h2>
+<blockquote>
+	コンテンツ管理システム (CMS) <p />
+</blockquote>
+
+ダウンロード<br />
+<blockquote>
+wget https://ftp.drupal.org/files/projects/drupal-8.2.6.tar.gz<p />
+</blockquote>
+
+前提条件<p />
+<blockquote>
+	PHP が動くWeb サーバーが動いていること。<p />
+	MariaDB を使う場合は、ユーザー、パスワード、データベースを作成しておくこと。<p />
+<blockquote>
+<pre>
+$ mysql -udrupal -pdrupal drupal
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 68
+Server version: 10.1.21-MariaDB MariaDB Server
+
+Copyright (c) 2000, 2016, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+</pre>
+</blockquote>
+
+</blockquote>
+
+インストール<br />
+<blockquote>
+	$ tar xvfz drupal-8.2.6.tar.gz<p />
+	drupal-8.2.6 をWeb からアクセスできるようにする。<p />
+	ブラウザーで、http://localhost/drupal-8.2.6/<p />
+</blockquote>
+
+Drush のインストール<p />
+<blockquote>
+$ wget http://files.drush.org/drush.phar<p />
+</blockquote>
+
+<blockquote>
+<pre>
+$ php drush.phar core-status
+ PHP configuration      :  /etc/php/php.ini                     
+ PHP OS                 :  Linux                                
+ Drush script           :  /home/uchida/tools/drupal/drush.phar 
+ Drush version          :  8.1.9                                
+ Drush temp directory   :  /tmp                                 
+ Drush configuration    :                                       
+ Drush alias files      :
+</pre>
+</blockquote>
+
+REST UI のダウンロード<p />
+<blockquote>
+$ ./drush.phar dl restui<p />
+フォルダーの置き場所<p />
+	<blockquote>
+	drupal-8.2.6/modules/restui<p />
+	</blockquote>
+</blockquote>
+
+設定<p />
+<blockquote>
+	<img src="png/drupal_rest.png"><p />
+</blockquote>
+
+GET で記事を取り出す<p /> 
+<blockquote>
+curl -X GET http://localhost/drupal-8.2.6/node/2?_format=json<p />
+</blockquote>
+
+<blockquote>
+</blockquote>
+
+<blockquote>
+</blockquote>
+
+<hr />
+<a href="../">Return</a><p />
+Mar/10/2017 AM 08:15<p />
+</body>
+</html>
