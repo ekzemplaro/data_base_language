@@ -1,0 +1,2 @@
+#
+./pouch_delete.js /var/tmp/pouchdb/db_cities t2026

@@ -1,0 +1,11 @@
+db.allDocs({include_docs: true, descending: true}, function(err, doc)
+{
+	for (var it in doc.rows)
+		{
+		const unit_aa = doc.rows[it]
+		var str_out =  unit_aa.key + "\t" + unit_aa.doc.name + "\t"
+		str_out += unit_aa.doc.population
+		str_out += "\t" + unit_aa.doc.date_mod
+		console.log (str_out)
+		}
+})

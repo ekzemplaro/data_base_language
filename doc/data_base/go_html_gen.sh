@@ -31,6 +31,7 @@ cat $DOC/head_short.txt neo4j.txt $DOC/tail_common.txt > neo4j.html
 cat $DOC/head_short.txt oracle.txt $DOC/tail_common.txt > oracle.html
 cat $DOC/head_short.txt pdf.txt $DOC/tail_common.txt > pdf.html
 cat $DOC/head_short.txt postgre.txt $DOC/tail_common.txt > postgre.html
+cat $DOC/head_short.txt pouch.txt $DOC/tail_common.txt > pouch.html
 cat $DOC/head_short.txt redis.txt $DOC/tail_common.txt > redis.html
 cat $DOC/head_short.txt riak.txt $DOC/tail_common.txt > riak.html
 cat $DOC/head_short.txt sqlite3.txt $DOC/tail_common.txt > sqlite3.html

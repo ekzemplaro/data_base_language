@@ -2,15 +2,17 @@
 #
 #	redis_delete.sh
 #
-#						Feb/16/2012
+#						Mar/15/2017
 #
 # --------------------------------------------------------------------------
 echo "*** 開始 ***"
 #
+hostname="localhost"
+#
 key_in=$1
 #
 echo $key_in
-redis-cli -h host_dbase -p 6379 del $key_in
+redis-cli -h $hostname -p 6379 del $key_in
 #
 #
 echo "*** 終了 ***"

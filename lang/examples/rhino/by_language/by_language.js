@@ -1,7 +1,7 @@
 // --------------------------------------------------------------------
 //	rhino/by_language/by_language.js
 //
-//					Apr/06/2015
+//					Mar/14/2017
 // --------------------------------------------------------------------
 importPackage (java.io);
 // --------------------------------------------------------------------
@@ -164,6 +164,7 @@ function lang_gen (lang,suffix)
 	db_gen (lang,suffix,"riak","riak");
 	db_gen (lang,suffix,"xlsx","xlsx");
 	db_gen (lang,suffix,"maria","maria");
+	db_gen (lang,suffix,"PouchDB","pouch");
 	print	("</table>");
 	print	("</div>\n\n");
 }

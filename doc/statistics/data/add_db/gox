@@ -1,2 +1,3 @@
 #
-./add_db.js sheet_bb.json sheet_dd.json maria 岡山 t33
+# ./add_db.js sheet_bb.json sheet_dd.json maria 岡山 t33
+./add_db.js sheet_bb.json sheet_dd.json pouch 青森 t02

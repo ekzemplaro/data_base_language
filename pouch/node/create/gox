@@ -1,0 +1,5 @@
+#
+DB=/var/tmp/pouchdb/db_cities
+rm -rf $DB
+#
+./pouch_create.js $DB

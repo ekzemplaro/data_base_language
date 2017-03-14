@@ -1,0 +1,2 @@
+#
+./pouch_read.js /var/tmp/pouchdb/db_cities
