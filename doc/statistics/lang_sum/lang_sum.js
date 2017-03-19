@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------
 //	statistics/lang_sum/lang_sum.js
 //
-//					Sep/15/2014
+//					Mar/19/2017
 // -----------------------------------------------------------------------
 jQuery (function ()
 {
@@ -120,7 +120,7 @@ function show_console_sum_proc (url_json)
 		var success_all = 0;
 		var total_all = 0;
 
-		var total_dbase = 44;
+		var total_dbase = 45;
 		var out_str = table_head_proc ();
 
 		var no = 1;

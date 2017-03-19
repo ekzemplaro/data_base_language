@@ -15,10 +15,10 @@
 	{"name": "Fedora","kernel": "4.3.5-300.fc23.x86_64","bash": "4.3.42"},
 "gentoo": 
 	{"name": "Gentoo","kernel": "4.0.5-gentoo","bash": "4.3.33"},
-"opensuse": 
-	{"name": "openSUSE","kernel": "3.16.7-21-desktop","bash": "4.2.53"},
 "redhat": 
 	{"name": "RedHat","kernel": "3.10.0-514.10.2.el7.x86_64","bash": "4.2.46"},
+"suse": 
+	{"name": "SUSE","kernel": "4.4.49-92.11-default","bash": "4.3.42"},
 "tinycore": 
 	{"name": "Tiny Core Linux","kernel": "3.16.6-tinycore","bash": "4.3.39"},
 "ubuntu": 
