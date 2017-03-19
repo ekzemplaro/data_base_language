@@ -12,7 +12,7 @@
 カーネル<p/>
 <blockquote>
 $ uname -a<br />
-Linux iwata 4.8.13-1-ARCH #1 SMP PREEMPT Fri Dec 9 07:24:34 CET 2016 x86_64 GNU/Linux<p />
+Linux iwata 4.10.3-1-ARCH #1 SMP PREEMPT Wed Mar 15 09:17:17 CET 2017 x86_64 GNU/Linux<p />
 </blockquote>
 
 バージョン確認方法<br />
@@ -74,6 +74,12 @@ Grub のインストール<br />
 
 	# grub-install --target=i386-pc --recheck --debug /dev/sda<br />
 	# grub-mkconfig -o /boot/grub/grub.cfg<p />
+</blockquote>
+
+wifi 接続<p />
+<blockquote>
+	# pacman -S dialog<br />
+	# pacman -S wpa_supplicant<br />
 </blockquote>
 
 </blockquote>
@@ -232,6 +238,10 @@ yaourt を使ってインストール<br />
 	# pacman -S ibus-anthy<br />
 	# ibus-setup<br />
 	</blockquote>
+ibus の再起動<p />
+	<blockquote>
+	$ ibus-daemon -drx<p />
+	</blockquote>
 <hr />
 <a href="update_error.html"># pacman -Syu でエラー</a><p />
 
@@ -266,6 +276,6 @@ Wifi の設定<br />
 </blockquote>
 
 <a href="../">Return</a><p />
-Jan/31/2017 AM 08:15<p />
+Mar/19/2017 AM 08:15<p />
 </body>
 </html>

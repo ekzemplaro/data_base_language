@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<title>Let's Encript</title>
+</head>
+<body>
+<h2><a href="https://letsencrypt.org/getting-started/">Let's Encript</a></h2>
+
+インストール<p />
+<blockquote>
+	Arch Linux<p />
+	<blockquote>
+	# pacman -S certbox-nginx<p />
+	</blockquote>
+	Ubuntu<p />
+	<blockquote>
+	# apt install certbox<p />
+	</blockquote>
+	RedHat 7.3<p />
+	<blockquote>
+	$ wget https://dl.eff.org/certbot-auto<p />
+	</blockquote>
+</blockquote>
+
+証明書を自動生成<p />
+<blockquote>
+certbot certonly --webroot -w /var/www -d ekzemplaro.org \
+	--email aaa@ekzemplaro.org
+</blockquote>
+
+結果<p />
+<blockquote>
+<pre>
+IMPORTANT NOTES:
+ - Congratulations! Your certificate and chain have been saved at
+   /etc/letsencrypt/live/ekzemplaro.org/fullchain.pem. Your cert will
+   expire on 2017-06-15. To obtain a new or tweaked version of this
+   certificate in the future, simply run certbot again. To
+   non-interactively renew *all* of your certificates, run "certbot
+   renew"
+ - Your account credentials have been saved in your Certbot
+   configuration directory at /etc/letsencrypt. You should make a
+   secure backup of this folder now. This configuration directory will
+   also contain certificates and private keys obtained by Certbot so
+   making regular backups of this folder is ideal.
+ - If you like Certbot, please consider supporting our work by:
+
+   Donating to ISRG / Let's Encrypt:   https://letsencrypt.org/donate
+   Donating to EFF:                    https://eff.org/donate-le
+</pre>
+</blockquote>
+
+
+/etc/nginx/nginx.conf<br />
+<blockquote>
+<pre>
+server {
+	listen  443 ssl;
+	server_name     ekzemplaro.org;
+	ssl_certificate         /etc/letsencrypt/live/ekzemplaro.org/cert.pem;
+	ssl_certificate_key     /etc/letsencrypt/live/ekzemplaro.org/privkey.pem;
+	}
+</pre>	
+</blockquote>
+
+nginx.conf の確認<br />
+<blockquote>
+	# nginx -t<br />
+	nginx: the configuration file /etc/nginx/nginx.conf syntax is ok<br />
+</blockquote>
+
+再起動<br />
+<blockquote>
+	# systemctl restart nginx<p />
+</blockquote>
+
+アクセス<p /> 
+<blockquote>
+	https://ekzemplaro.org<p />
+</blockquote>
+
+<blockquote>
+</blockquote>
+
+<blockquote>
+</blockquote>
+
+<hr />
+<a href="../">Return</a><p />
+Mar/17/2017 AM 08:15<p />
+</body>
+</html>

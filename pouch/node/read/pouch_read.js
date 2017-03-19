@@ -24,8 +24,8 @@ db.allDocs({include_docs: true, ascending: true}, function(err, doc)
 		str_out += "\t" + unit_aa.doc.date_mod
 		console.log (str_out)
 		}
-})
 
-console.error ("*** 終了 ***")
+	console.error ("*** 終了 ***")
+})
 
 // ---------------------------------------------------------------
