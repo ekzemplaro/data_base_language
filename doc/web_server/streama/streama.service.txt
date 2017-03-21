@@ -1,0 +1,13 @@
+[Unit]
+Description=streama
+After=syslog.target
+
+[Service]
+User=root
+ExecStart=/var/data/streama/streama.war
+SuccessExitStatus=143
+ConditionPathExists=/var/data/streama/streama.war
+# end streama.service content
+
+[Install]
+WantedBy=multi-user.target

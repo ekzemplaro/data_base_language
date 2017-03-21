@@ -220,7 +220,24 @@ Shift-JIS で文字化けをするとき<br />
 <a href="basic_authentication/">Basic 認証</a><p />
 <a href="letsencrypt/">Let's Encrypt</a><p />
 <hr />
+リバースプロキシー<p />
+	<blockquote>
+	<pre>
+	server {
+
+
+	location /tomcat {
+		proxy_pass http://localhost:8080/;
+		proxy_set_header   X-Forwarded-For $remote_addr;
+		}
+
+
+	}
+	</pre>
+	</blockquote>
+
+<hr />
 <a href="../">Return</a><p />
-Mar/17/2017 AM 08:15<p />
+Mar/19/2017 AM 08:15<p />
 </body>
 </html>

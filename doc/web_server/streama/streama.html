@@ -78,8 +78,31 @@ Grails application running at http://localhost:8080 in environment: production
 	http://hostname:8080/<p />
 </blockquote>
 
+systemctl で起動<p />
+<blockquote>
+	<a href="streama.service.txt">/etc/systemd/system/streama.service</a><p />
+
+	# systectl start streama<br />
+	# systectl status streama<br />
+	# systectl enable streama<br />
+</blockquote>
+
+Nginx のリバースプロキシーを使う<p />
+<blockquote>
+<pre>
+	location / {
+		root   /var/data/streama;
+		proxy_pass http://localhost:8080/;
+		proxy_set_header   X-Forwarded-For $remote_addr;
+		}
+</pre>
+</blockquote>
+
+<blockquote>
+</blockquote>
+
 <hr />
 <a href="../">Return</a><p />
-Mar/17/2017 AM 08:15<p />
+Mar/21/2017 AM 08:15<p />
 </body>
 </html>
