@@ -3,7 +3,9 @@
 <body>
 <h1>pdf</a></h1>
 
+ツール<p />
 <blockquote>
+	# pacman -S evince<p />
 </blockquote>
 
 <pre>

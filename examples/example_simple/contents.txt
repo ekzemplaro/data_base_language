@@ -1,5 +1,5 @@
 <body>
-<h2>example_simple (Nov/12/2016)</h2><p />
+<h2>example_simple</h2><p />
 <div class="top">
 </div>
 

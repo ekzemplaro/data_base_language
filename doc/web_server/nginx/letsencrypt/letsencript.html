@@ -69,7 +69,7 @@ IMPORTANT NOTES:
 server {
 	listen  443 ssl;
 	server_name     ekzemplaro.org;
-	ssl_certificate         /etc/letsencrypt/live/ekzemplaro.org/cert.pem;
+	ssl_certificate         /etc/letsencrypt/live/ekzemplaro.org/fullchain.pem;
 	ssl_certificate_key     /etc/letsencrypt/live/ekzemplaro.org/privkey.pem;
 	}
 </pre>	
@@ -91,6 +91,38 @@ nginx.conf の確認<br />
 	https://ekzemplaro.org<p />
 </blockquote>
 
+テスト<p />
+<blockquote>
+	<a href="https://www.ssllabs.com/ssltest/">SSL Server Test</a><p />
+</blockquote>
+
+<blockquote>
+	<a href="https://weakdh.org/sysadmin.html">Diffie-Hellman</a><p />
+
+	dhparams.pem の作成<p />
+	<blockquote>
+	openssl dhparam -out dhparams.pem 2048<p />
+	</blockquote>
+
+	/etc/nginx/nginx.conf<p />
+	<blockquote>
+	<pre>
+    server {
+listen  443 ssl;
+server_name     ekzemplaro.org;
+ssl_certificate         /etc/letsencrypt/live/ekzemplaro.org/fullchain.pem;
+ssl_certificate_key     /etc/letsencrypt/live/ekzemplaro.org/privkey.pem;
+
+ssl_ciphers 'ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA';
+
+ssl_prefer_server_ciphers on;
+
+ssl_dhparam /etc/nginx/dhparams/dhparams.pem;
+
+	</pre>
+	</blockquote>
+</blockquote>
+
 <blockquote>
 </blockquote>
 
@@ -99,6 +131,6 @@ nginx.conf の確認<br />
 
 <hr />
 <a href="../">Return</a><p />
-Mar/21/2017 AM 08:15<p />
+Mar/24/2017 AM 08:15<p />
 </body>
 </html>
