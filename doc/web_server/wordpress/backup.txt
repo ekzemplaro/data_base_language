@@ -2,15 +2,16 @@
 <blockquote>
 送信側<p />
 <blockquote>
-mysqldump --add-drop-table -h localhost -uwordpress -ptiger wordpress | bzip2 -d blog.bak.sql.bz2<p />
+$ mysqldump --add-drop-table -h localhost -uwordpress -ptiger wordpress > blog.bak.sql<br />
+bzip2 blog.backup.sql<br />
 </blockquote>
 
 受信側<p />
 <blockquote>
-bzip2 -d blog.bak.sql.bz2<p />
+$ bunzip2 blog.bak.sql.bz2<p />
 
-sed 's/host_src/host_dest/g' < blog.bak.sql > modified.sql<p />
-mysql -h localhost -uwordpress -ptiger wordpress < modified.sql<p />
+$ sed 's/host_src/host_dest/g' < blog.bak.sql > modified.sql<p />
+$ mysql -h localhost -uwordpress -ptiger wordpress < modified.sql<p />
 </blockquote>
 注意<p />
 <blockquote>
