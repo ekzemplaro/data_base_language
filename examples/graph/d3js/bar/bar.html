@@ -4,15 +4,30 @@
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
-<script type="text/javascript" src="/js/loader.js"></script>
-<script src="line.js"></script>
-<title>Line</title>
+<head>
+<style>
+
+.bar {
+  fill: steelblue;
+}
+
+.bar:hover {
+  fill: brown;
+}
+
+.axis--x path {
+  display: none;
+}
+
+</style>
+<svg width="960" height="500"></svg>
+<script src="/js/d3.v4.min.js"></script>
+<script src="bar.js"></script>
+<title>D3.js bar</title>
 </head>
 <body>
-<div id="curve_chart" style="width: 500px; height: 300px"></div>
 <a href="html_src/">src</a><p />
 <hr />
 Mar/29/2017<p />
 </body>
 </html>
-
