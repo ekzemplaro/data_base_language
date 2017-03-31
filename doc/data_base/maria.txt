@@ -181,3 +181,12 @@ select Host, User, Password from mysql.user;
 <blockquote>
 drop user 'user'@'localhost';
 </blockquote>
+
+エラーログの出力<p />
+<blockquote>
+	/etc/mysq/my.cnf<p />
+	<blockquote>
+	[mysqld]<br />
+	log-error=/var/log/mysql/mysqld.log<br />
+	</blockquote>
+</blockquote>
