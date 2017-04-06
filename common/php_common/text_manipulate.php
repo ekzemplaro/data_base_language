@@ -3,7 +3,7 @@
 /*
 	php_common/text_manipulate.php
 
-					Feb/09/2015
+					Apr/06/2017
 
 */
 // --------------------------------------------------------------------
@@ -145,23 +145,21 @@ function dict_append_proc ($dict_aa,$id,$name,$population,$date_mod)
 // --------------------------------------------------------------------
 function csv_read_proc ($file_in)
 {
-$dict_aa = array ();
+	$dict_aa = array ();
 
-$fp = fopen ($file_in,"r");
+	$fp = fopen ($file_in,"r");
 
-while ($line = fgets ($fp))
-	{
-//	$mtx = preg_split ("/[\s,\t]+/",$line);
-	$mtx = explode (",",rtrim ($line));
-//	print	"$mtx[0]\t$mtx[1]\t$mtx[2]\t$mtx[3]\n";
-	$dict_unit = array ();
-	$dict_unit['name'] = $mtx[1];
-	$dict_unit['population'] = $mtx[2];
-	$dict_unit['date_mod'] = $mtx[3];
-	$dict_aa[$mtx[0]]= $dict_unit;
-	}
+	while ($line = fgets ($fp))
+		{
+		$mtx = explode (",",rtrim ($line));
+		$dict_unit = array ();
+		$dict_unit['name'] = $mtx[1];
+		$dict_unit['population'] = $mtx[2];
+		$dict_unit['date_mod'] = $mtx[3];
+		$dict_aa[$mtx[0]]= $dict_unit;
+		}
 
-fclose ($fp);
+	fclose ($fp);
 
 	return	$dict_aa;
 }
@@ -169,17 +167,18 @@ fclose ($fp);
 // --------------------------------------------------------------------
 function csv_write_proc ($fname_out,$dict_aa)
 {
-	$out_str = "";
+	$fp_out=fopen ($fname_out,"w");
 
 	foreach ($dict_aa as $key => $value)
 		{
-		$out_str .= $key . ",";
-		$out_str .= $value['name'] . ",";
-		$out_str .= $value['population'] . ",";
-		$out_str .= $value['date_mod'] . "\n";
+		$fields = [$key,$value['name'],
+			$value['population'],$value['date_mod']];
+		fputcsv ($fp_out, $fields);
 		}
 
-	file_write_proc ($out_str,$fname_out);
+	fclose ($fp_out);
+
+	chmod ($fname_out,0666);
 }
 
 // --------------------------------------------------------------------
