@@ -3,7 +3,7 @@
 #
 #	ruby/create/maria_create.rb
 #
-#					Feb/03/2017
+#					Apr/07/2017
 # ---------------------------------------------------------------------
 require 'mysql'
 #
@@ -48,7 +48,7 @@ puts	"*** 開始 ***"
 #
 host = "127.0.0.1"
 user = "scott"
-password = "tiger"
+password = "tiger123"
 data_base = 'city'
 connection = Mysql::new(host, user,password,data_base)
 #

@@ -1,8 +1,8 @@
-#! /usr/bin/nodejs
+#! /usr/bin/node
 // ---------------------------------------------------------------
 //	maria_delete.js
 //
-//					Dec/16/2016
+//					Apr/07/2017
 //
 // ---------------------------------------------------------------
 var mysql = require('mysql')
@@ -18,7 +18,7 @@ console.log (id_in)
 var connection = mysql.createConnection ({
 	host: 'localhost',
 	user: 'scott',
-	password: 'tiger'
+	password: 'tiger123'
 	})
 
 connection.query ('Use city')

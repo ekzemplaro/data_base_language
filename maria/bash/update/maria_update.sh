@@ -2,7 +2,7 @@
 #
 #	maria_update.sh
 #
-#				Sep/16/2013
+#				Apr/07/2014
 #
 # --------------------------------------------------------------------------
 #
@@ -22,7 +22,7 @@ echo "update cities set POPULATION = "$population_in",DATE_MOD = '"$today \
 	"' where ID = '"$id_in"';" >> $work_file
 #
 cat $work_file
-mysql -h localhost -uscott -ptiger < $work_file
+mysql -h localhost -uscott -ptiger123 < $work_file
 #
 rm -f $work_file
 echo	"*** 終了 ***"

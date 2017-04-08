@@ -3,7 +3,7 @@
 /*
 	maria_read.php
 
-					Feb/16/2017
+					Apr/07/2017
 
 */
 // --------------------------------------------------------------------
@@ -13,7 +13,7 @@ include "sql_display.php";
 // --------------------------------------------------------------------
 $host = 'localhost';
 $user = 'scott';
-$password = 'tiger';
+$password = 'tiger123';
 $db = 'city';
 
 $dsn = 'mysql:dbname=' . $db . ';host=' . $host . ';charset=utf8mb4';

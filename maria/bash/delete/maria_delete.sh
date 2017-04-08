@@ -2,7 +2,7 @@
 #
 #	maria_delete.sh
 #
-#				Sep/16/2013
+#				Apr/07/2017
 #
 # --------------------------------------------------------------------------
 #
@@ -17,7 +17,7 @@ echo "use city;" > $work_file
 echo "delete from cities where ID = '"$id_in"';" >> $work_file
 #
 cat $work_file
-mysql -h localhost -uscott -ptiger < $work_file
+mysql -h localhost -uscott -ptiger123 < $work_file
 #
 rm -f $work_file
 echo	"*** 終了 ***"

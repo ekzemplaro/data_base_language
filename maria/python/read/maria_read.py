@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 #	maria_read.py
-#					Oct/14/2016
+#					Apr/07/2017
 #
 import sys
 #
@@ -19,7 +19,7 @@ sys.stderr.write ("*** 開始 ***\n")
 host_aa='localhost'
 data_base = 'city'
 user_aa ='scott'
-password_aa = 'tiger'
+password_aa = 'tiger123'
 conn = mysql.connector.connect(user=user_aa, password=password_aa, \
                               host=host_aa,database=data_base)
 #

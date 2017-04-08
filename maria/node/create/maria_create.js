@@ -1,13 +1,12 @@
-#! /usr/bin/nodejs
+#! /usr/bin/node
 // ---------------------------------------------------------------
 //	maria_create.js
 //
-//					Dec/11/2015
+//					Apr/07/2015
 //
 // ---------------------------------------------------------------
 var mysql = require('mysql')
 var text_manipulate= require ('/var/www/data_base/common/node_common/text_manipulate')
-var sql_manipulate= require ('/var/www/data_base/common/node_common/sql_manipulate')
 
 // ---------------------------------------------------------------
 function data_prepare_proc ()
@@ -31,12 +30,11 @@ function data_prepare_proc ()
 console.log ("*** 開始 ***")
 
 var dict_aa = data_prepare_proc ()
-text_manipulate.dict_display_proc (dict_aa)
 
 var connection = mysql.createConnection ({
 	host: 'localhost',
 	user: 'scott',
-	password: 'tiger'
+	password: 'tiger123'
 	})
 
 connection.query ('Use city')

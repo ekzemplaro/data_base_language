@@ -2,7 +2,7 @@
 /*
 	maria_create.cpp
 
-					Nov/19/2014
+					Apr/08/2017
 
 */
 // --------------------------------------------------------------------
@@ -22,13 +22,12 @@ typedef map<string,string> Unit;
 
 #define MYSQL_SERVER "localhost"
 #define MYSQL_USERNAME "scott"
-#define MYSQL_PASSWORD "tiger"
+#define MYSQL_PASSWORD "tiger123"
 #define MYSQL_DB "city"
 #define MYSQL_SOCKET "/var/run/mysqld/mysqld.sock"
 #define MYSQL_OPT 0
 
 // --------------------------------------------------------------------
-extern	void dict_display_proc (map <string,Unit> dict_aa);
 extern	map <string,Unit> dict_append_proc
 	(map <string,Unit> dict_aa,string id,string name,
 	int population,string date_mod);
@@ -46,7 +45,7 @@ static map <string,Unit >  data_prepare_proc ()
 	dict_aa = dict_append_proc (dict_aa,"t3324","玉野",235814,"1922-4-24");
 
 	dict_aa = dict_append_proc (dict_aa,"t3325","笠岡",834971,"1922-11-5");
-	dict_aa = dict_append_proc (dict_aa,"t3326","井原",731949,"1922-5-22");
+	dict_aa = dict_append_proc (dict_aa,"t3326","井原",731549,"1922-5-22");
 	dict_aa = dict_append_proc (dict_aa,"t3327","総社",462785,"1922-7-17");
 	dict_aa = dict_append_proc (dict_aa,"t3328","高梁",549617,"1922-3-7");
 	dict_aa = dict_append_proc (dict_aa,"t3329","新見",742863,"1922-5-9");
@@ -90,8 +89,6 @@ int main (int argc,char *argv[])
 	map <string,Unit> dict_aa = data_prepare_proc ();
 
 	cout << "要素数：" << (unsigned int)dict_aa.size() << endl;
-
-	dict_display_proc (dict_aa);
 
 	MYSQL mysql_buf;
 	MYSQL *mysql=0;

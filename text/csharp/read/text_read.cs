@@ -2,7 +2,7 @@
 /*
 	read/text_read.cs
 
-					Jun/13/2014
+					Apr/08/2017
 
 */
 // ----------------------------------------------------------------
@@ -21,6 +21,7 @@ public static int Main (string[] args)
 	if (args.Length < 1)
 		{
 		Console.WriteLine ("*** error ***");
+		Console.Error.WriteLine ("Type: text_read.exe cities.txt");
 		return 1;
 		}
 

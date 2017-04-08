@@ -2,7 +2,7 @@
 /*
 	csharp/create/text_create.cs
 
-					Jul/16/2016
+					Apr/08/2017
 
 */
 // --------------------------------------------------------------------
@@ -20,6 +20,7 @@ static	int Main (string [] args)
 	if (args.Length < 1)
 		{
 		Console.Error.WriteLine ("*** error ***");
+		Console.Error.WriteLine ("Type: text_create.exe cities.txt");
 		return 1;
 		}
 

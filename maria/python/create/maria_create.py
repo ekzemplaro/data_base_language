@@ -3,7 +3,7 @@
 #
 #	maria_create.py
 #
-#					Jan/19/2017
+#					Apr/07/2017
 #
 # --------------------------------------------------------
 import	sys
@@ -41,7 +41,7 @@ dict_aa = data_prepare_proc ()
 host_aa='localhost'
 data_base = 'city'
 user_aa ='scott'
-password_aa = 'tiger'
+password_aa = 'tiger123'
 conn = mysql.connector.connect(user=user_aa, password=password_aa, \
                               host=host_aa,database=data_base)
 #

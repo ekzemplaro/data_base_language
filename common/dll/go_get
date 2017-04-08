@@ -23,3 +23,7 @@ cp -p $NEWTONSOFT/Newtonsoft.Json.dll .
 #
 EPPLUS=/home/uchida/c_sharp/excel/epplus
 cp -p $EPPLUS/EPPlus.dll .
+#
+MYSQL=/home/uchida/lang/csharp/mysql/v4.5
+cp -p $MYSQL/MySql.Data.dll .
+#

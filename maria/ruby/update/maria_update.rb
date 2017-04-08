@@ -3,12 +3,11 @@
 #
 #	maria_update.rb
 #
-#				Feb/03/2017
+#					Apr/07/2017
 #
 require 'mysql'
 require 'date'
 #
-load '/var/www/data_base/common/ruby_common/sql_manipulate.rb'
 # ------------------------------------------------------------
 def	update_proc (connection,id,population)
 	date_mod=Date.today
@@ -25,7 +24,7 @@ puts id_in,population_in
 #
 host = "127.0.0.1"
 user = "scott"
-password = "tiger"
+password = "tiger123"
 data_base = 'city'
 connection = Mysql::new(host, user,password,data_base)
 #
@@ -33,7 +32,6 @@ update_proc(connection,id_in,population_in)
 #
 connection.commit
 connection.close
-#
 #
 puts "*** 終了 ***"
 # ------------------------------------------------------------

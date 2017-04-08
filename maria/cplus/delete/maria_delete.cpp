@@ -2,7 +2,7 @@
 /*
 	maria_delete.cpp
 
-				Nov/19/2014
+				Apr/08/2017
 
 
 */
@@ -18,7 +18,7 @@ using namespace std;
 
 #define MYSQL_SERVER "localhost"
 #define MYSQL_USERNAME "scott"
-#define MYSQL_PASSWORD "tiger"
+#define MYSQL_PASSWORD "tiger123"
 #define MYSQL_DB "city"
 #define MYSQL_SOCKET "/var/run/mysqld/mysqld.sock"
 #define MYSQL_OPT 0

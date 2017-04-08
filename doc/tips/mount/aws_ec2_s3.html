@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+<title>Mount aws ec2 s3</title>
+</head>
+<body>
+<h2>EC2 で、S3 をマウント</h2><p />
+
+参考になるページ<p />
+<blockquote>
+	<a href="http://qiita.com/tftf/items/17e469373478ff38a200">
+	aws ubuntu s3マウント</a><p />
+</blockquote>
+
+前提ソフトのインストール<p />
+<blockquote>
+	# apt install automake autotools-dev g++ git libcurl4-gnutls-dev libfuse-dev libssl-dev libxml2-dev make pkg-config
+</blockquote>
+
+s3fsをインストール<p />
+
+<blockquote>
+	$ git clone https://github.com/s3fs-fuse/s3fs-fuse.git<p />
+	$ cd s3fs-fuse<p />
+	$ ./autogen.sh<p />
+	$ ./configure<p />
+	$ make<p />
+	$ sudo make install<p />
+</blockquote>
+
+マウントポイントの作成<p />
+<blockquote>
+$ sudo mkdir /mnt/s3<p />
+</blockquote>
+
+IAM access keyを保存<p />
+
+<blockquote>
+$ echo &lt;Access Key ID&gt;:&lt;Secret Access Key&gt; | sudo tee -a /etc/passwd-s3fs<p />
+$ sudo chmod 640 /etc/passwd-s3fs<p />
+</blockquote>
+
+<blockquote>
+</blockquote>
+
+
+<blockquote>
+</blockquote>
+
+<hr />
+AWS の EC2 で、S3 の領域をマウント<p />
+	<blockquote>
+	$ sudo s3fs s1.ekzemplaro.org /mnt/s1 -o rw,allow_other,uid=1000,gid=1000,default_acl=public-read<p />
+	<pre>
+	s3fs           274877906944       0 274877906944   0% /mnt/s1
+	</pre>
+	</blockquote>
+
+<hr />
+<a href="../">Return</a><p />
+Apr/07/2017 AM 08:15<p />
+</body>
+</html>

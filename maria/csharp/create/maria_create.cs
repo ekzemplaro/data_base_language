@@ -2,7 +2,7 @@
 /*
 	maria_create.cs
 
-					Aug/24/2015
+					Apr/08/2017
 
 */
 // -------------------------------------------------------------------
@@ -20,12 +20,15 @@ static void Main (string[] args)
 
 	Dictionary <string,Object> dict_aa = data_prepare_proc ();
 
-	string server="localhost";
-	string str_db="city";
+	string server = "localhost";
+	string str_db = "city";
+	string user = "scott";
+	string password = "tiger123";
 
 	string str_connect = "Server=" + server + 
-	";User Id=scott;Password=tiger;" +
-		"Database=" + str_db + ";";
+		";User Id=" + user + ";Password=" + password +
+		";Database=" + str_db + ";";
+
 
 	MySqlConnection connection = new MySqlConnection (str_connect);
 	connection.Open ();

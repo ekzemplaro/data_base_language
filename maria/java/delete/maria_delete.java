@@ -2,8 +2,7 @@
 /*
 	java/delete/maria_delete.java
 
-				Sep/05/2016
-
+				Apr/08/2017
 
 */
 // ----------------------------------------------------------------------
@@ -23,7 +22,9 @@ public static void main (String[] args) throws Exception
 	System.out.println ("\tkey_in = " + key_in);
 
 	String url="jdbc:mysql://localhost/city";
-	Connection conn=DriverManager.getConnection (url,"scott","tiger");
+	String user = "scott";
+	String password = "tiger123";
+	Connection conn=DriverManager.getConnection (url,user,password);
 
 	rdb_common.delete_proc	(conn,key_in);
 

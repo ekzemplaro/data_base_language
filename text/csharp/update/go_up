@@ -1,2 +1,2 @@
 #
-./text_update.exe /var/tmp/plain_text/cities.txt t2385 714932800
+mono text_update.exe /var/tmp/plain_text/cities.txt t2385 714932800

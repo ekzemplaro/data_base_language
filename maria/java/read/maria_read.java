@@ -2,7 +2,7 @@
 /*
 	maria_read.java
 
-					Sep/05/2016
+					Apr/08/2017
 
 */
 // ------------------------------------------------------------------
@@ -18,7 +18,10 @@ public static void main(String[] args)
 	try
 	{
 	String url="jdbc:mysql://localhost/city";
-	Connection conn = DriverManager.getConnection (url,"scott","tiger");
+	String user = "scott";
+	String password = "tiger123";
+
+	Connection conn = DriverManager.getConnection (url,user,password);
 
 	rdb_common.display_proc (conn);
 

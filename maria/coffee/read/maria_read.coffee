@@ -2,7 +2,7 @@
 # ---------------------------------------------------------------
 #	maria_read.coffee
 #
-#					Sep/16/2014
+#					Apr/07/2017
 #
 # ---------------------------------------------------------------
 row_display_proc = (row_in) ->
@@ -18,7 +18,7 @@ mysql = require('mysql')
 connection = mysql.createConnection ({
 	host: 'localhost',
 	user: 'scott',
-	password: 'tiger'
+	password: 'tiger123'
 	})
 
 connection.query ('Use city')

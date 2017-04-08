@@ -14,11 +14,12 @@ public static class maria_read
 {
 public static void Main (string[] args)
 {
-	string server="localhost";
-	string str_db="city";
-
+	string server = "localhost";
+	string str_db = "city";
+	string user = "scott";
+	string password = "tiger123";
 	string str_connect = "Server=" + server + 
-	";User Id=scott;Password=tiger;Database=" + str_db + ";";
+	";User Id=" + user + ";Password=" + password + ";Database=" + str_db + ";";
 
 	MySqlConnection conn = new MySqlConnection (str_connect);
 

@@ -2,7 +2,7 @@
 # ---------------------------------------------------------------
 #	maria_update.coffee
 #
-#					Sep/16/2014
+#					Apr/07/2017
 #
 # ---------------------------------------------------------------
 mysql = require('mysql')
@@ -18,7 +18,7 @@ console.log (id_in + "\t" + population_in)
 connection = mysql.createConnection ({
 	host: 'localhost',
 	user: 'scott',
-	password: 'tiger'
+	password: 'tiger123'
 	})
 
 connection.query ('Use city')

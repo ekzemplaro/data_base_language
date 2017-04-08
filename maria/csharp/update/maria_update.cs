@@ -2,7 +2,7 @@
 /*
 	update/maria_update.cs
 
-					Aug/24/2015
+					Apr/08/2017
 
 
 */
@@ -21,12 +21,14 @@ static void Main (string[] args)
 	string	id_in = args[0];
 	int	population_in = int.Parse (args[1]);
 
-	string server="localhost";
-	string str_db="city";
+	string server = "localhost";
+	string str_db = "city";
+	string user = "scott";
+	string password = "tiger123";
 
-	string str_connect = "Server=" + server +
-	";User Id=scott;Password=tiger;" +
-		"Database=" + str_db + ";";
+	string str_connect = "Server=" + server + 
+		";User Id=" + user + ";Password=" + password +
+		";Database=" + str_db + ";";
  
 	MySqlConnection connection = new MySqlConnection (str_connect);
 	connection.Open ();
