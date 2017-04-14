@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+<title>sql script</title>
+</head>
+<body>
+<h2>sql script</h2><p />
+
+テーブルの定義<p />
+<blockquote>
+	show create table cities;<p />
+</blockquote>
+
+別テーブルのカラムの値をコピー<p />
+<blockquote>
+	insert into cities2 (id,name) select id,name from cities;<p />
+</blockquote>
+
+グローバルレベルでCREATE権限を設定<p >
+<blockquote>
+	grant create on *.* to 'scott'@'localhost';<p />
+</blockquote>
+
+権限を表示<p />
+<blockquote>
+	show grants for scott@localhost;<p />
+</blockquote>
+
+ユーザーの表示<p />
+<blockquote>
+	select user,host from mysql.user;<p />
+</blockquote>
+
+<blockquote>
+</blockquote>
+
+<blockquote>
+</blockquote>
+
+<hr />
+<a href="../">Return</a><p />
+Apr/12/2017 AM 08:15<p />
+</body>
+</html>

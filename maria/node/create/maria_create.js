@@ -29,7 +29,7 @@ function data_prepare_proc ()
 // ---------------------------------------------------------------
 console.log ("*** 開始 ***")
 
-var dict_aa = data_prepare_proc ()
+const dict_aa = data_prepare_proc ()
 
 var connection = mysql.createConnection ({
 	host: 'localhost',
@@ -45,16 +45,17 @@ var command = 'create table cities (id varchar(10), name varchar(20),'
 command += ' population int, date_mod date)'
 connection.query (command)
 
-	for (var key  in dict_aa)
-		{
-		var sql_str  = "insert into cities (id,name,population,date_mod) values ("
+for (var key  in dict_aa)
+	{
+	var sql_str = "insert into cities (id,name,population,date_mod) values ("
 
-	var str_data = "'" + key + "','" + dict_aa[key].name + "',"
+	const str_data = "'" + key + "','" + dict_aa[key].name + "',"
 		+ dict_aa[key].population + ",'" + dict_aa[key].date_mod + "')"
 
-		sql_str += str_data
-			connection.query (sql_str)
-			}
+	sql_str += str_data
+		connection.query (sql_str)
+	}
+
 connection.end()
 
 console.log ("*** 終了 ***")

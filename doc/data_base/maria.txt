@@ -58,6 +58,14 @@ Bye
 <blockquote>
 # systemctl stop mysql<br />
 # systemctl start mysql<br />
+# systemctl status mysql<p />
+
+CentOS 6.9<p />
+<blockquote>
+	# service mysqld stop<br />
+	# service mysqld start<br />
+	# service mysqld status<br />
+</blockquote>
 </blockquote>
 
 
@@ -189,4 +197,19 @@ drop user 'user'@'localhost';
 	[mysqld]<br />
 	log-error=/var/log/mysql/mysqld.log<br />
 	</blockquote>
+</blockquote>
+
+パスワードなしで、rootでアクセス
+<blockquote>
+	/etc/mysq/my.cnf<p />
+	<blockquote>
+	[mysqld]<br />
+	skip-grant-tables<br />
+	</blockquote>
+</blockquote>
+
+<blockquote>
+</blockquote>
+
+<blockquote>
 </blockquote>

@@ -25,7 +25,7 @@ connection.query ('Use city')
 
 const command = sql_manipulate.delete_command_gen (id_in)
 
-connection.query(command, function (err, rows)
+connection.query(command, function (err,rows)
 	{
   	if (err) throw err
 	console.log ("*** 終了 ***")
