@@ -14,12 +14,20 @@
 
 ダウンロード<br />
 <blockquote>
-wget https://ftp.drupal.org/files/projects/drupal-8.2.6.tar.gz<p />
+wget https://ftp.drupal.org/files/projects/drupal-8.3.0.tar.gz<p />
 </blockquote>
 
 前提条件<p />
 <blockquote>
 	PHP が動くWeb サーバーが動いていること。<p />
+	<blockquote>
+		# pacman -S php-gd<p />
+		/etc/php/php.ini<p />
+		<blockquote>
+		zend_extension=opcache.so<p />
+		</blockquote>
+
+	</blockquote>
 	MariaDB を使う場合は、ユーザー、パスワード、データベースを作成しておくこと。<p />
 <blockquote>
 <pre>
@@ -38,10 +46,22 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
 インストール<br />
 <blockquote>
-	$ tar xvfz drupal-8.2.6.tar.gz<p />
-	drupal-8.2.6 をWeb からアクセスできるようにする。<p />
-	ブラウザーで、http://localhost/drupal-8.2.6/<p />
+	$ tar xvfz drupal-8.3.0.tar.gz<p />
+	drupal-8.3.0 をWeb からアクセスできるようにする。<p />
+	ブラウザーで、http://localhost/drupal-8.3.0/<p />
 </blockquote>
+<img src="png/drupal_database.png"><p />
+
+sites/default/settings.php<p />
+<blockquote>
+<pre>
+$databases['default']['default'] = array (
+  'database' => 'drupal',
+  'username' => 'drupal',
+  'password' => 'drupal',
+</pre>
+</blockquote>
+
 
 Drush のインストール<p />
 <blockquote>
