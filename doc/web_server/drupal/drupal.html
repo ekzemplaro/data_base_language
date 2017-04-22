@@ -123,6 +123,16 @@ curl -X GET http://localhost/drupal-8.2.6/node/2?_format=json<p />
 </blockquote>
 
 <hr />
+Nginx<p />
+/etc/nginx/sites-available/default<p />
+<blockquote>
+        location /drupal {<br />
+                try_files $uri /drupal/index.php?$query_string;<br />
+        }<br />
+</blockquote>
+
+
+<hr />
 <a href="../">Return</a><p />
 Apr/17/2017 AM 08:15<p />
 </body>

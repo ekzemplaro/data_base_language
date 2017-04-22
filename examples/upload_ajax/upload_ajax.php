@@ -11,15 +11,19 @@ $tmp_name = $_FILES['file']['tmp_name'];
 
 $message = array ();
 $message[] = "*** check ***";
-$path_target = "/var/tmp/" . $filename;
+$path_target = "/tmp/" . $filename;
 $message[] = $path_target;
 
-if (move_uploaded_file
-		($tmp_name,$path_target) == FALSE)
-		{
-	        $message[] = 'nothing is uploaded at ' . $_POST['now'];
-		$message[] = $filename . " cannot be uploaded.";
-		}
+if (move_uploaded_file ($tmp_name,$path_target) == FALSE)
+	{
+        $message[] = 'nothing is uploaded at ' . $_POST['now'];
+	$message[] = $filename . " cannot be uploaded.";
+	}
+else
+	{
+	$message[] = "*** success ***";
+	$message[] = $filename . " is uploaded.";
+	}
 
 	$data['message'] = $message;
 
