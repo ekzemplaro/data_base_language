@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+<title>Gcloud Ubuntu 17.04</title>
+</head>
+<body>
+<h2>Gcloud で、Ubuntu 17.04 をセットアップする</h2><p />
+
+更新<p />
+<blockquote>
+	$ sudo apt update<br />
+	$ sudo apt upgrade<p />
+</blockquote>
+Nginx のインストール<p />
+<blockquote>
+	$ sudo apt install nginx-full<p />
+	<blockquote>
+		ディフォールトのページは、/var/www/html/index.html<p /> 
+	</blockquote>
+	$ sudo apt install php php-cli php-fpm php-json<p />
+	<blockquote>
+		/etc/nginx/sites-available/default を編集<p />
+		<blockquote>
+		location ~ \.php$ {<br />
+		include snippets/fastcgi-php.conf;<br />
+		fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;<br />
+		}<br />
+		</blockquote>
+		設定の確認<p />
+		<blockquote>
+		$ sudo nginx -t<p />
+		</blockquote>
+		Nginx の再起動<p />
+		<blockquote>
+		$ sudo systemctl restart nginx<p />
+		</blockquote>
+	</blockquote>
+	$ sudo apt install fcgiwrap<p />
+	<blockquote>
+		/etc/nginx/sites-available/default を編集<p />
+		<blockquote>
+		location ~ \.py$ {<br />
+		gzip off;<br />
+		include fastcgi_params;<br />
+		fastcgi_pass unix:/var/run/fcgiwrap.socket;<br />
+		fastcgi_index index.py;<br />
+		fastcgi_param SCRIPT_FILENAME /var/www$fastcgi_script_name;<br />
+		}<br />
+		</blockquote>
+	</blockquote>
+</blockquote>
+
+<blockquote>
+</blockquote>
+
+<blockquote>
+</blockquote>
+
+<hr />
+<a href="../">Return</a><p />
+Apr/23/2017 AM 08:15<p />
+</body>
+</html>
