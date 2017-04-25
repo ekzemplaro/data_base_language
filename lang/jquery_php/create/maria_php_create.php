@@ -2,7 +2,7 @@
 // ---------------------------------------------------------------------
 //	maria_php_create.php
 //
-//					Sep/17/2013
+//					Apr/25/2017
 //
 // ---------------------------------------------------------------------
 // $path=$_SERVER["DOCUMENT_ROOT"]."/data_base/common/php_common";
@@ -12,7 +12,6 @@ set_include_path (get_include_path() . PATH_SEPARATOR . $path);
 include "text_manipulate.php";
 include "sql_display.php";
 include "sql_manipulate.php";
-include "mysql_utf8.php";
 
 //
 // ---------------------------------------------------------------------
@@ -37,11 +36,9 @@ $dict_aa = data_prepare_proc ();
 
 $dsn = 'mysql:dbname=city;host=localhost';
 $user = 'scott';
-$password = 'tiger';
+$password = 'tiger123';
 
 $dbcon = new PDO ($dsn, $user,$password);
-
-mysql_utf8_proc ($dbcon);
 
 drop_table_proc ($dbcon);
 create_table_proc ($dbcon);

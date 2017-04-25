@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+<title>CentOS 6.9</title>
+</head>
+<body>
+<h2>CentOS 6.9</h2>
+カーネル<p/>
+<blockquote>
+$ uname -a<br />
+Linux *** 2.6.32-696.1.1.el6.x86_64 #1 SMP Tue Apr 11 17:13:24 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux
+</blockquote>
+
+バージョン確認方法<br />
+<blockquote>
+$ cat /etc/centos-release<br />
+CentOS release 6.9 (Final)<br />
+</blockquote>
+
+
+Nginx のインストール<br />
+<blockquote>
+# yum -y install nginx<p />
+# service nginx start<p />
+# service iptables stop<p />
+ディフォールトのページ<p />
+	<blockquote>
+	/usr/share/nginx/html/index.html<p />
+	</blockquote>
+# yum -y install php php-fpm php-cli php-common<p />
+/etc/php-fpm.d/www.conf<p />
+<blockquote>
+	listen = /var/run/php-fpm/php-fpm.sock<p />
+</blockquote>
+
+/etc/nginx/conf.d/default.conf<p />
+<blockquote>
+	<pre>
+	location ~ \.php$ {
+	root          /usr/share/nginx/html;
+	fastcgi_index  index.php;
+	fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+	include        fastcgi_params;
+	fastcgi_pass unix:/var/run/php-fpm/php-fpm.sock;
+	</pre>
+        }
+</blockquote>
+# service php-fpm start<p />
+</blockquote>
+
+MariaDB のインストール<br />
+
+<blockquote>
+MariaDBのPGP keyをインストール<p /> 
+<blockquote>
+# rpm --import https://yum.mariadb.org/RPM-GPG-KEY-MariaDB<p />
+</blockquote>
+
+/etc/yum.repos.d/mariadb.repo を作成<p />
+<blockquote>
+	[mariadb]<br />
+	name = MariaDB<br />
+	baseurl = http://yum.mariadb.org/10.1.22/centos6-amd64<br />
+	gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB<br />
+	gpgcheck=1<br />
+	enabled=1<br />
+</blockquote>
+
+インストール<p />
+<blockquote>
+	# yum install MariaDB-devel MariaDB-client MariaDB-server<p />
+</blockquote>
+
+スタート<p />
+<blockquote>
+	# service mysql start<p />
+</blockquote>
+
+クライアントからアクセス<p />
+<blockquote>
+<pre>
+$ mysql -uroot
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 3
+Server version: 10.1.22-MariaDB MariaDB Server
+
+Copyright (c) 2000, 2016, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]>
+</pre>
+</blockquote>
+</blockquote>
+
+PDO のインストール<p />
+<blockquote>
+	# yum -y install php-mysql<p />
+</blockquote>
+
+<hr />
+
+PHP 7.0 にした後<p />
+
+/etc/php-fpm.d/www.conf<p />
+<blockquote>
+listen.owner = nginx<br />
+listen.group = nginx<br />
+</blockquote>
+
+
+<blockquote>
+</blockquote>
+
+<hr />
+<a href="../">Return</a><p />
+Apr/25/2017 AM 08:15<p />
+</body>
+</html>

@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>Arch Linux nginx Jun/09/2015</title>
+<title>Arch Linux Nginx</title>
 </head>
 <body>
 
@@ -35,6 +35,13 @@ nginx の起動<br />
 	</blockquote>
 
 	<a href="./nginx.conf.txt">/etc/nginx/nginx.conf</a> の設定<p />
+		<blockquote>
+		unix socket を調べる<p />
+			<blockquote>
+			$ grep listen /etc/php/php-fpm.d/www.conf | grep php-fpm<br />
+			listen = /run/php-fpm/php-fpm.sock<br />
+			</blockquote>
+		</blockquote>
 	<blockquote>
 		location ~ \.php$ {<br />
 		root   /var/www;<br />
@@ -73,6 +80,6 @@ nginx の起動<br />
 </blockquote>
 
 <a href="./">Return</a><p />
-Jun/09/2015 AM 08:15<p />
+Apr/25/2017 AM 08:15<p />
 </body>
 </html>
