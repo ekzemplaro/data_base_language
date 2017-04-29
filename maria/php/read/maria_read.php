@@ -3,11 +3,11 @@
 /*
 	maria_read.php
 
-					Apr/07/2017
+					Apr/25/2017
 
 */
 // --------------------------------------------------------------------
-$path="/var/www/data_base/common/php_common";
+$path="../../../common/php_common";
 set_include_path (get_include_path() . PATH_SEPARATOR . $path);
 include "sql_display.php";
 // --------------------------------------------------------------------
@@ -16,7 +16,7 @@ $user = 'scott';
 $password = 'tiger123';
 $db = 'city';
 
-$dsn = 'mysql:dbname=' . $db . ';host=' . $host . ';charset=utf8mb4';
+$dsn = 'mysql:dbname=' . $db . ';host=' . $host . ';charset=utf8';
 
 fputs (STDERR,"*** 開始 ***\n");
 
