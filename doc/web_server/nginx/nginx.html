@@ -28,7 +28,7 @@ ii  nginx-full     1.6.2-5ubuntu3     amd64   nginx web/proxy server (standard v
 <a href="http://library.linode.com/web-servers/nginx/perl-fastcgi/ubuntu-11.04-natty">Perl-FastCGI on Ubuntu</a><p />
 
 PHPを使えるようにする。<p />
-php7-fpm (FastCGI Process Manager) を使う。<p />
+php7.0-fpm (FastCGI Process Manager) を使う。<p />
 参考になるページ<br />
 <blockquote>
 <a href="http://obel.hatenablog.jp/entry/20160311/1457644814">
@@ -50,21 +50,19 @@ Debian（jessie）にPHP 7をインストールする方法</a><p />
 <pre>
 #
 	location ~ \.php$ {
-	fastcgi_split_path_info ^(.+\.php)(/.+)$;
-#
-	fastcgi_pass unix:/var/run/php7-fpm.sock;
-	fastcgi_index index.php;
-#	include fastcgi_params;
-	include fastcgi.conf;
-	client_max_body_size 32M;
-	try_files $uri =403;
+	include snippets/fastcgi-php.conf;
+	fastcgi_pass unix:/run/php/php7.0-fpm.sock;
 	}
 </pre>
+	<blockquote>
+	/etc/php/7.0/fpm/pool.d/www.conf に<br />
+	listen = /run/php/php7.0-fpm.sock となっている<p />
+	</blockquote>
 </blockquote>
 <hr />
-php7-fpm の再起動<p />
+php7.0-fpm の再起動<p />
 <blockquote>
-	# systemctl restart php7-fpm<p />
+	# systemctl restart php7.0-fpm<p />
 </blockquote>
 
 
@@ -239,6 +237,6 @@ Shift-JIS で文字化けをするとき<br />
 
 <hr />
 <a href="../">Return</a><p />
-Mar/24/2017 AM 08:15<p />
+May/03/2017 AM 08:15<p />
 </body>
 </html>

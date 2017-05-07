@@ -1,15 +1,15 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #	maria_read.py
-#					Apr/07/2017
+#					Apr/30/2017
 #
 import sys
 #
 import mysql.connector
 #
 #
-sys.path.append ('/var/www/data_base/common/python_common')
+sys.path.append ('../../../common/python_common')
 from text_manipulate import dict_display_proc
 from sql_manipulate import sql_to_dict_proc
 #

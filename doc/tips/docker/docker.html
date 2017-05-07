@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>docker Jan/14/2016</title>
+<title>Docker</title>
 </head>
 <body>
 <h2>Docker</h2><p />
@@ -106,37 +106,62 @@ Dockerのインストールと主なコマンドの使い方</a><p />
 # docker info<p />
 <blockquote>
 <pre>
-Containers: 0
-Images: 0
+Containers: 2
+ Running: 0
+ Paused: 0
+ Stopped: 2
+Images: 1
+Server Version: 1.12.6
 Storage Driver: aufs
  Root Dir: /var/lib/docker/aufs
  Backing Filesystem: extfs
- Dirs: 0
+ Dirs: 9
  Dirperm1 Supported: true
-Execution Driver: native-0.2
-Kernel Version: 4.2.0-23-generic
-Operating System: Ubuntu 15.10
-CPUs: 2
-Total Memory: 7.529 GiB
-Name: cdea022
-ID: OU72:QOKN:FKAB:VZME:B2OI:CLMA:STE7:7LLE:Z7NM:EN7S:TQBD:YPOZ
+Logging Driver: json-file
+Cgroup Driver: cgroupfs
+Plugins:
+ Volume: local
+ Network: null host bridge overlay
+Swarm: inactive
+Runtimes: runc
+Default Runtime: runc
+Security Options: apparmor seccomp
+Kernel Version: 4.10.0-20-generic
+Operating System: Ubuntu 17.04
+OSType: linux
+Architecture: x86_64
+CPUs: 4
+Total Memory: 3.755 GiB
+Name: iwata
+ID: 6YRX:UKOF:UQJB:PWZJ:G4F2:SMYP:QKW6:Z4RM:J7TP:KA4D:P4IB:AOBU
+Docker Root Dir: /var/lib/docker
+Debug Mode (client): false
+Debug Mode (server): false
+Registry: https://index.docker.io/v1/
 WARNING: No swap limit support
+Insecure Registries:
+ 127.0.0.0/8
 </pre>
 </blockquote>
 
 # docker version<p />
 <blockquote>
 <pre>
-Client version: 1.6.2
-Client API version: 1.18
-Go version (client): go1.5.1
-Git commit (client): 7c8fca2
-OS/Arch (client): linux/amd64
-Server version: 1.6.2
-Server API version: 1.18
-Go version (server): go1.5.1
-Git commit (server): 7c8fca2
-OS/Arch (server): linux/amd64
+Client:
+ Version:      1.12.6
+ API version:  1.24
+ Go version:   go1.7.4
+ Git commit:   78d1802
+ Built:        Tue Mar 14 09:47:15 2017
+ OS/Arch:      linux/amd64
+
+Server:
+ Version:      1.12.6
+ API version:  1.24
+ Go version:   go1.7.4
+ Git commit:   78d1802
+ Built:        Tue Mar 14 09:47:15 2017
+ OS/Arch:      linux/amd64
 </pre>
 </blockquote>
 
@@ -171,7 +196,16 @@ Install<br />
 	# docker ps -a<p />
 </blockquote>
 <hr />
-<a href="/data_base/">Return</a><p />
-Jan/14/2016 AM 08:15<p />
+<blockquote>
+<pre>
+# docker run ubuntu cat /etc/lsb-release
+DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=16.04
+DISTRIB_CODENAME=xenial
+DISTRIB_DESCRIPTION="Ubuntu 16.04.2 LTS"
+</pre>
+</blockquote>
+<a href="../">Return</a><p />
+May/07/2017 AM 08:15<p />
 </body>
 </html>
