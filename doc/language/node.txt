@@ -7,8 +7,8 @@
 <h2><a href="http://nodejs.org">node.js</a></h2><p />
 <blockquote>
 <pre>
-ii  nodejs   0.4.9-1ubuntu3   Node.js event-based server-side javascript engine
-ii  npm      0.2.19-1         package manager for nodejs
+ii  nodejs   4.7.2~dfsg-1ubuntu3   amd64     evented I/O for V8 javascript
+ii  npm      3.5.2-0ubuntu4        all       package manager for Node.js
 </pre>
 </blockquote>
 

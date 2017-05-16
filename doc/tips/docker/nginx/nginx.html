@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+<title>Nginx on Docker</title>
+</head>
+<body>
+<h2>Nginx on Docker</h2><p />
+
+<blockquote>
+# docker ps<br />
+	<blockquote>
+	<pre>
+	CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+	</pre>
+	</blockquote>
+
+# docker run -d -P nginx<br />
+	<blockquote>
+	<pre>
+	4f04bc2f2e048422c329cbb2be50c915fe1e1feb2cb1b201d1f16ea48ac0b03e
+	</pre>
+	</blockquote>
+
+# docker ps<br />
+	<blockquote>
+	<pre>
+	CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                   NAMES
+	4f04bc2f2e04        nginx               "nginx -g 'daemon off"   4 seconds ago       Up 3 seconds        0.0.0.0:32769->80/tcp   nostalgic_lovelace
+	</pre>
+	</blockquote>
+
+$ curl --silent --head http://localhost:32769<br />
+	<blockquote>
+	<pre>
+	HTTP/1.1 200 OK
+	Server: nginx/1.13.0
+	Date: Sun, 07 May 2017 21:27:57 GMT
+	Content-Type: text/html
+	Content-Length: 612
+	Last-Modified: Tue, 25 Apr 2017 11:30:31 GMT
+	Connection: keep-alive
+	ETag: "58ff3357-264"
+	Accept-Ranges: bytes
+	</pre>
+	</blockquote>
+
+# docker start 4f04bc2f2e04<p />
+# docker stop 4f04bc2f2e04<p />
+
+# docker images<br />
+	<blockquote>
+	<pre>
+	REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+	nginx               latest              46102226f2fd        12 days ago         109.4 MB
+	centos              latest              a8493f5f50ff        4 weeks ago         192.5 MB
+	</pre>
+	</blockquote>
+
+# docker exec -i -t 4f04bc2f2e04 /bin/bash<br />
+	<blockquote>
+	root@4f04bc2f2e04:/# cat /etc/os-release
+	PRETTY_NAME="Debian GNU/Linux 9 (stretch)"
+	NAME="Debian GNU/Linux"
+	VERSION_ID="9"
+	VERSION="9 (stretch)"
+	ID=debian
+	HOME_URL="https://www.debian.org/"
+	SUPPORT_URL="https://www.debian.org/support"
+	BUG_REPORT_URL="https://bugs.debian.org/"
+	</blockquote>
+
+
+<hr />
+	<blockquote>
+	</blockquote>
+
+<hr />
+<a href="../">Return</a><p />
+May/08/2017 AM 08:15<p />
+</body>
+</html>

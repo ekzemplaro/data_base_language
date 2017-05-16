@@ -41,3 +41,5 @@ $_FILE[ パラメータ名 ][ error ] 	エラーコード。
 
 </pre>
 <hr />
+# apt install php7.0-mbstring<p /> 
+<hr />
