@@ -15,6 +15,10 @@ Install on Ubuntu 17.04<p />
 	送信メールサーバー<p />
 	<blockquote>
 	# apt install postfix<p />
+		<blockquote>
+		<a href="main.cf.txt">/etc/postfix/main.cf</a><p />
+		</blockquote>
+
 	</blockquote>
 	受信メールサーバー<p />
 	<blockquote>
@@ -26,6 +30,43 @@ Install on Ubuntu 17.04<p />
 	</blockquote>
 </blockquote>
 
+バージョンの確認<p />
+<blockquote>
+	Postfix<p />
+	<blockquote>
+	$ postconf | grep mail_version<br />
+	mail_version = 3.1.4<br />
+	milter_macro_v = $mail_name $mail_version<br />
+	</blockquote>
+
+	Dovecot<p />
+	<blockquote>
+	$ dovecot --version<br />
+	2.2.27 (c0f36b0)<br />
+	</blockquote>
+
+	mail<p />
+	<blockquote>
+	$  mail --version<br />
+mail (GNU Mailutils) 3.1.1<br />
+Copyright (C) 2007-2016 Free Software Foundation, inc.<br />
+License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;<br />
+This is free software: you are free to change and redistribute it.<br />
+There is NO WARRANTY, to the extent permitted by law.<br />
+	</blockquote>
+</blockquote>
+
+
+テストメールの送信<p />
+<blockquote>
+	$ mail aaaa@gmail.com<br />
+	Cc:<br /> 
+	Subject: Test<br />
+	May/17/2017<br />
+	<blockquote>
+		Cntrl + D で終了<p />
+</blockquote>
+
 <blockquote>
 </blockquote>
 
@@ -33,6 +74,6 @@ Install on Ubuntu 17.04<p />
 </blockquote>
 
 <a href="../">Return</a><p />
-May/16/2017 AM 08:15<p />
+May/17/2017 AM 08:15<p />
 </body>
 </html>

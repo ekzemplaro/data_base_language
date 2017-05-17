@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+<title>Mail System on Arch</title>
+</head>
+<body>
+
+バージョンの確認<p />
+<blockquote>
+	Postfix<p />
+	<blockquote>
+	$ postconf | grep mail_version<br />
+	mail_version = 3.2.0<br />
+	milter_macro_v = $mail_name $mail_version<br />
+	</blockquote>
+
+	Dovecot<p />
+	<blockquote>
+	$ dovecot --version<br />
+	2.2.29.1 (e0b76e3)<br />
+	</blockquote>
+</blockquote>
+
+
+テストメールの送信<p />
+<blockquote>
+	$ gnu-mail aaaa@gmail.com<br />
+	Cc:<br /> 
+	Subject: Test<br />
+	May/17/2017<br />
+	<blockquote>
+		Cntrl + D で終了<p />
+	</blockquote>
+	$ mail aaa@gmail.com<br />
+	Subject: Test<br />
+	May/17/2017<br />
+	.<br />
+</blockquote>
+
+<blockquote>
+</blockquote>
+
+<blockquote>
+</blockquote>
+<hr />
+# newaliases<p />
+<hr />
+
+/etc/postfix/main.cf<p />
+	<blockquote>
+	home_mailbox = Maildir/<p />
+	</blockquote>
+
+$ mail -f ~/Maildir<p />
+
+<hr />
+<pre>
+$ nmap localhost
+
+Starting Nmap 7.40 ( https://nmap.org ) at 2017-05-17 20:32 JST
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.000089s latency).
+Other addresses for localhost (not scanned): ::1
+rDNS record for 127.0.0.1: localhost.localdomain
+Not shown: 996 closed ports
+PORT     STATE SERVICE
+22/tcp   open  ssh
+25/tcp   open  smtp
+80/tcp   open  http
+3306/tcp open  mysql
+
+Nmap done: 1 IP address (1 host up) scanned in 0.08 seconds
+</pre>
+<a href="../">Return</a><p />
+May/17/2017 AM 08:15<p />
+</body>
+</html>

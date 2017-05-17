@@ -10,6 +10,7 @@
 <body>
 <h2>mail</h2><p />
 <a href="./mail_ubuntu/">Install on Ubuntu</a><p />
+<a href="./mail_arch/">Mail on Arch</a><p />
 
 pop3（110）ポートを使ったメールの受信方法<p />
 <blockquote>
@@ -20,7 +21,7 @@ Connected to pop.nifty.com.
 Escape character is '^]'.
 +OK @nifty pop server at conuserg-09.nifty.com starting. <31455.1474151762@conuserg-09.nifty.com>
 user scott
-+OK Password required for ekzemplaro.
++OK Password required for scott.
 pass tiger
 +OK ekzemplaro has 2 messages in 8438 octets.
 list
@@ -30,7 +31,7 @@ list
 .
 retr 2
 +OK 1352 octets
-Return-Path: linux@hi-ho.ne.jp
+Return-Path: aabb@hi-ho.ne.jp
 Received: by conbox-005 id 57ddc53b7c2226;
 	Sun, 18 Sep 2016 07:35:39 +0900
 .
@@ -64,16 +65,16 @@ Connection closed by foreign host.
 Postfix のテスト<br />
 <blockquote>
 <pre>
-$ telnet ekzemplaro.org 25
+$ telnet example.org 25
 Trying 192.168.8.29...
-Connected to ekzemplaro.org.
+Connected to example.org.
 Escape character is '^]'.
-220 mail.ekzemplaro.org ESMTP Postfix
-helo ekzemplaro.org
-250 mail.ekzemplaro.org
-mail from: uchida
+220 mail.example.org ESMTP Postfix
+helo example.org
+250 mail.example.org
+mail from: scott
 250 2.1.0 Ok
-rcpt to: suzuki
+rcpt to: john
 250 2.1.5 Ok
 data
 354 End data with <CR><LF>.<CR><LF>
@@ -89,9 +90,9 @@ Connection closed by foreign host.
 メール送信のテスト<p />
 <blockquote>
 <pre>
-$ sendmail uchida@hello.org
-From: uchida@good.com
-To: uchida@hello.org
+$ sendmail scott@hello.org
+From: scott@good.com
+To: john@hello.org
 Subject: Test Mail
 Good Evening
 Nov/04/2016 18:42
@@ -112,7 +113,9 @@ Ctrl+Dを押す
 </blockquote>
 
 <a href="msmtp">msmtp を使ったメールの送信方法</a><p />
+
+
 <a href="../">Return</a><p />
-Jan/23/2017 AM 08:15<p />
+May/17/2017 AM 08:15<p />
 </body>
 </html>
