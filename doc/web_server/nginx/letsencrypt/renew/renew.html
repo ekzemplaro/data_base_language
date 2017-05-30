@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<title>Let's Encript renew</title>
+</head>
+<body>
+
+更新<p />
+<blockquote>
+<pre>
+# certbot renew
+Saving debug log to /var/log/letsencrypt/letsencrypt.log
+
+-------------------------------------------------------------------------------
+Processing /etc/letsencrypt/renewal/ekzemplaro.org.conf
+-------------------------------------------------------------------------------
+Cert is due for renewal, auto-renewing...
+Renewing an existing certificate
+Performing the following challenges:
+http-01 challenge for ekzemplaro.org
+Waiting for verification...
+Cleaning up challenges
+
+-------------------------------------------------------------------------------
+new certificate deployed without reload, fullchain is
+/etc/letsencrypt/live/ekzemplaro.org/fullchain.pem
+-------------------------------------------------------------------------------
+
+Congratulations, all renewals succeeded. The following certs have been renewed:
+  /etc/letsencrypt/live/ekzemplaro.org/fullchain.pem (success)
+</pre>
+</blockquote>
+
+自動化<p />
+<blockquote>
+	クローンに登録<p />
+	<blockquote>
+	/usr/bin/certbot renew --post-hook "systemctl restart nginx"<p />
+	</blockquote>
+</blockquote>
+
+有効期限の確認<p />
+<blockquote>
+<pre>
+# openssl x509 -in /etc/letsencrypt/live/ekzemplaro.org/cert.pem -noout -dates
+notBefore=May 27 10:01:00 2017 GMT
+notAfter=Aug 25 10:01:00 2017 GMT
+</pre>
+</blockquote>
+
+<hr />
+<a href="../">Return</a><p />
+Mar/27/2017 AM 08:15<p />
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+<title>ipv6</title>
+</head>
+<body>
+<h2>ipv6</h2><p />
+
+dig<p />
+<blockquote>
+<pre>
+$ dig www.iijmio.jp AAAA
+
+; <<>> DiG 9.10.3-P4-Ubuntu <<>> www.iijmio.jp AAAA
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 55109
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;www.iijmio.jp.			IN	AAAA
+
+;; ANSWER SECTION:
+www.iijmio.jp.		300	IN	AAAA	2001:240:bb81:8f00::77
+
+;; Query time: 2 msec
+;; SERVER: 157.7.180.133#53(157.7.180.133)
+;; WHEN: Sat May 27 20:48:59 JST 2017
+;; MSG SIZE  rcvd: 70
+</pre>
+</blockquote>
+
+ping6<p />
+<blockquote>
+<pre>
+$ ping6 -c 3  www.iijmio.jp
+PING www.iijmio.jp(2001:240:bb81:8f00::77 (2001:240:bb81:8f00::77)) 56 data bytes
+64 bytes from 2001:240:bb81:8f00::77 (2001:240:bb81:8f00::77): icmp_seq=1 ttl=53 time=2.27 ms
+64 bytes from 2001:240:bb81:8f00::77 (2001:240:bb81:8f00::77): icmp_seq=2 ttl=53 time=2.13 ms
+64 bytes from 2001:240:bb81:8f00::77 (2001:240:bb81:8f00::77): icmp_seq=3 ttl=53 time=2.25 ms
+
+--- www.iijmio.jp ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2002ms
+rtt min/avg/max/mdev = 2.130/2.218/2.272/0.083 ms
+</pre>
+</blockquote>
+
+<hr />
+CentOS7 で一時的にIPv6を無効化する<p />
+<blockquote>
+	# sysctl -w net.ipv6.conf.all.disable_ipv6=1<br />
+	# sysctl -w net.ipv6.conf.default.disable_ipv6=1<br />
+</blockquote>
+
+CentOS7 で恒久的にIPv6を無効化する<p />
+<blockquote>
+	/etc/sysctl.d/disable_ipv6.conf<p />
+	<blockquote>
+	net.ipv6.conf.all.disable_ipv6 = 1<br />
+	net.ipv6.conf.default.disable_ipv6 = 1<br />
+	</blockquote>
+	# sysctl -p /etc/sysctl.d/disable_ipv6.conf<p />
+</blockquote>
+
+<blockquote>
+<pre>
+</pre>
+</blockquote>
+
+
+<blockquote>
+<pre>
+</pre>
+</blockquote>
+
+
+<a href="../">Return</a><p />
+May/28/2017 AM 08:15<p />
+</body>
+</html>

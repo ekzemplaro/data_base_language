@@ -2,7 +2,7 @@
 #
 #	xlsx_manipulate.py
 #
-#						Sep/29/2016
+#						May/30/2017
 #
 # -------------------------------------------------------------------
 import sys
@@ -18,12 +18,12 @@ def xlsx_read_proc (xlsx_file):
 
 	print (ws.max_row)
 	max_row = ws.max_row
-	for row in range (1,max_row + 1): 
+	for row in ws.rows:
 		unit_aa = {}
-		key = ws.cell('A%d' % row).value
-		unit_aa['name'] = ws.cell('B%d' % row).value
-		unit_aa['population'] = int (ws.cell('C%d' % row).value)
-		unit_aa['date_mod'] = ws.cell('D%d' % row).value
+		key = row[0].value
+		unit_aa['name'] = row[1].value
+		unit_aa['population'] = int (row[2].value)
+		unit_aa['date_mod'] = row[3].value
 		dict_aa[key] = unit_aa
 #
 	return	dict_aa

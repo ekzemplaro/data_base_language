@@ -208,7 +208,13 @@ drop user 'user'@'localhost';
 	</blockquote>
 </blockquote>
 
+外部から接続する<p />
 <blockquote>
+	# bind-address = 127.0.0.1<p />
+	Ubuntu の場合<p />
+	<blockquote>
+	/etc/mysql/mariadb.conf.d/50-server.cnf<p />
+	</blockquote>
 </blockquote>
 
 <blockquote>
