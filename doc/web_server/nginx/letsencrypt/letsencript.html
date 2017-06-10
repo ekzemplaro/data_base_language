@@ -21,15 +21,27 @@
 	</blockquote>
 	RedHat 7.3<p />
 	<blockquote>
-	$ wget https://dl.eff.org/certbot-auto<p />
-	$ chmod +x certbot-auto<p />
-	$ ./certbot-auto<p />
+		$ wget https://dl.eff.org/certbot-auto<p />
+		$ chmod +x certbot-auto<p />
+		$ ./certbot-auto<p />
 	</blockquote>
+
 	Ubuntu 14.04<p />
 	<blockquote>
-	# apt install letsencrypt<p />
+		# apt install letsencrypt<p />
+		<blockquote>
+		$ letsencrypt certonly --webroot -w /var/www -d aaa.ekzemplaro.org<p />
+		</blockquote>
+	</blockquote>
+
+	Ubuntu 16.04<p />
 	<blockquote>
-	$ letsencrypt certonly --webroot -w /var/www -d aaa.ekzemplaro.org<p />
+		# add-apt-repository ppa:certbot/certbot<p />
+		# apt update<p />
+		# apt install certbot<p />
+	<blockquote>
+
+
 	</blockquote>
 	</blockquote>
 </blockquote>
@@ -132,6 +144,6 @@ ssl_dhparam /etc/nginx/dhparams/dhparams.pem;
 
 <hr />
 <a href="../">Return</a><p />
-Mar/27/2017 AM 08:15<p />
+Jun/06/2017 AM 08:15<p />
 </body>
 </html>

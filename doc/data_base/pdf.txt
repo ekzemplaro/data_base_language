@@ -74,3 +74,12 @@ C#<p />
 	iTextAsian.dll<p />
 	<a href="https://github.com/itext">itext</a><br />
 </blockquote>
+
+PDF のページを削除<p />
+<blockquote>
+	$ yaourt -Sb pdftk-bin<p />
+	$ pdftk in01.pdf cat 1-2 output out01.pdf<p />
+</blockquote>
+
+<blockquote>
+</blockquote>

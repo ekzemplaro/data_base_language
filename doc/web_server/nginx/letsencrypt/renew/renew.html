@@ -51,8 +51,25 @@ notAfter=Aug 25 10:01:00 2017 GMT
 </pre>
 </blockquote>
 
+80 と 443 のポートを Listen していないと更新ができない<p />
+<blockquote>
+<pre>
+# netstat -ant
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.1:3306          0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN     
+tcp        0    316 172.31.26.168:22        163.49.211.219:60520    ESTABLISHED
+tcp        0      0 172.31.26.168:22        163.49.211.219:58984    ESTABLISHED
+tcp6       0      0 :::80                   :::*                    LISTEN     
+tcp6       0      0 :::22                   :::*                    LISTEN     
+tcp6       0      0 :::443                  :::*                    LISTEN 
+</pre>
+</blockquote>
 <hr />
 <a href="../">Return</a><p />
-Mar/27/2017 AM 08:15<p />
+Jun/10/2017 AM 08:15<p />
 </body>
 </html>

@@ -2,7 +2,7 @@
 #
 #	xlsx_manipulate.py
 #
-#						May/30/2017
+#						May/31/2017
 #
 # -------------------------------------------------------------------
 import sys
@@ -32,14 +32,20 @@ def xlsx_write_proc (xlsx_file,dict_aa):
 	wb = Workbook()
 	ws = wb.worksheets[0]
 	ws.title = "Cities"
-
-	row = 1
-	for key in dict_aa.keys():
-		ws.cell('A%s' % row).value = key
-		ws.cell('B%s' % row).value = dict_aa[key]['name']
-		ws.cell('C%s' % row).value = dict_aa[key]['population']
-		ws.cell('D%s' % row).value = dict_aa[key]['date_mod']
-		row += 1
+	print ("ws.max_row = %d" % ws.max_row)
+#
+	keys_list = list(dict_aa.keys())
+	print ("len = %d\n" % len(keys_list)) 
+#
+	for it in range (len(keys_list)):
+		jt = it + 1
+		key = keys_list[it]
+		unit_aa = dict_aa[key]
+#
+		ws['A%d' % jt] = key
+		ws['B%d' % jt] = unit_aa['name']
+		ws['C%d' % jt] = unit_aa['population']
+		ws['D%d' % jt] = unit_aa['date_mod']
 #
 	wb.save (filename = xlsx_file)
 #
