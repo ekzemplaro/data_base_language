@@ -1,0 +1,5 @@
+<title>photo</title>
+</head>
+<body>
+<h2>photo</h2>
+<blockquote>

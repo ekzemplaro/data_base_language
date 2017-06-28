@@ -3,7 +3,7 @@
 // ------------------------------------------------------------------
 //	create/redis_create.php
 //
-//					Apr/09/2015
+//					Jun/23/2017
 //
 // ------------------------------------------------------------------
 $path="/var/www/data_base/common/php_common";
@@ -34,7 +34,7 @@ print "*** 開始 ***\n";
 $dict_aa = data_prepare_proc ();
 
 $redis = new Redis();
-$redis->connect('host_dbase', 6379);
+$redis->connect('localhost', 6379);
 
 foreach ($dict_aa as $key => $value)
 	{

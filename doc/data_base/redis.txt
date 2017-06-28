@@ -184,3 +184,10 @@ $
 </pre>
 <hr />
 
+<hr />
+6380 ポートで、Redis を動かす。
+<blockquote>
+	/opt/redis/redis_6380.conf<br />
+	/opt/redis/redis_6380.sh<br />
+	/etc/systemd/system/redis_6380.service<br />
+</blockquote>

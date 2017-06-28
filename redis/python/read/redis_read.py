@@ -3,7 +3,7 @@
 #
 #	redis_read.py
 #
-#					Dec/09/2014
+#					Jun/23/2017
 #
 # --------------------------------------------------------------
 import sys
@@ -14,9 +14,9 @@ sys.path.append ('/var/www/data_base/common/python_common')
 from text_manipulate import dict_display_proc
 
 # --------------------------------------------------------------
-print ("*** 開始 ***")
+sys.stderr.write("*** 開始 ***\n")
 
-rr = redis.Redis(host='host_dbase', port=6379, db=0)
+rr = redis.Redis(host='localhost', port=6379, db=0)
 
 keys = rr.keys ('t*')
 
@@ -28,6 +28,6 @@ for key in sorted (keys):
 	str_out += "\t"+ unit_aa['date_mod']
 	print (str_out)
 #
-print ("*** 終了 ***")
+sys.stderr.write("*** 終了 ***\n")
 #
 # --------------------------------------------------------------

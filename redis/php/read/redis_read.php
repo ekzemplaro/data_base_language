@@ -5,7 +5,7 @@
 
 	read/redis_read.php
 
-					Apr/09/2015
+					Jun/23/2017
 
 
 */
@@ -20,7 +20,7 @@ include "text_manipulate.php";
 print	"*** 開始 ***\n";
 
 $redis = new Redis();
-$redis->connect('host_dbase', 6379);
+$redis->connect('localhost', 6379);
 
 $keys = $redis->getKeys ('t*');
 

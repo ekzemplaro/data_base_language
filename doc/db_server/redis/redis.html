@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<title>Redis</title>
+</head>
+<body>
+
+6380 ポートで、Redis を動かす。<p />
+<blockquote>
+	<a href="data/redis_6380.conf.txt">/opt/redis/redis_6380.conf</a><p />
+	<a href="data/redis_6380.sh.txt">/opt/redis/redis_6380.sh</a><p />
+	<blockquote>
+	<pre>
+	#! /bin/bash
+	LOG_FILE="/tmp/redis_6380.log"
+	redis-server /opt/redis/redis_6380.conf > $LOG_FILE
+	</pre>
+	</blockquote>
+
+	<a href="data/redis_6380.service.txt">/etc/systemd/system/redis_6380.service</a><p />
+	<blockquote>
+	<pre>
+	[Unit]
+	Description=redis server port 6380
+	After=netctl@profile.service
+
+	[Service]
+	ExecStart=/opt/redis/redis_6380.sh
+	Type=simple
+
+	[Install]
+	WantedBy=multi-user.target
+	</pre>
+	</blockquote>
+
+	サービスの起動<p />
+	<blockquote>
+	# systemctl start redis_6380<p />
+	</blockquote>
+
+</blockquote>
+
+
+<blockquote>
+</blockquote>
+
+
+<blockquote>
+</blockquote>
+
+</blockquote>
+
+
+<blockquote>
+</blockquote>
+
+
+<blockquote>
+</blockquote>
+
+
+<hr />
+<hr />
+
+<a href="../">Return</a><p />
+Jun/29/2017 AM 08:25<p />
+</body>
+</html>

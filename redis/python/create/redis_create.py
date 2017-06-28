@@ -3,7 +3,7 @@
 #
 #	create/redis_create.py
 #
-#					Dec/09/2014
+#					Jun/23/2017
 #
 import sys
 import json
@@ -29,9 +29,9 @@ def	data_prepare_proc ():
 	return	dict_aa
 #
 # ----------------------------------------------------------------
-print ("*** 開始 ***")
+sys.stderr.write("*** 開始 ***\n")
 #
-rr = redis.Redis(host='host_dbase', port=6379, db=0)
+rr = redis.Redis(host='localhost', port=6379, db=0)
 #
 dict_aa = data_prepare_proc ()
 #
@@ -41,5 +41,5 @@ for key in dict_aa.keys():
 	json_str = json.dumps (value)
 	rr.set(key, json_str)
 #
-print ("*** 終了 ***")
+sys.stderr.write("*** 終了 ***\n")
 # ----------------------------------------------------------------

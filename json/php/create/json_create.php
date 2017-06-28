@@ -3,7 +3,7 @@
 //
 //	json_create.php
 //
-//					Sep/15/2016
+//					Jun/24/2017
 //
 // ----------------------------------------------------------------
 $path="/var/www/data_base/common/php_common";
@@ -29,7 +29,7 @@ $dict_aa = dict_append_proc ($dict_aa,"t0930",'栃木',27146,'2002-6-17');
 $dict_aa = dict_append_proc ($dict_aa,"t0931",'大田原',25371,'2002-8-15');
 $dict_aa = dict_append_proc ($dict_aa,"t0932",'鹿沼',28179,'2002-4-17');
 $dict_aa = dict_append_proc ($dict_aa,"t0933",'那須塩原',29136,'2002-3-11');
-$dict_aa = dict_append_proc ($dict_aa,"t0934",'那須烏山',83215,'2422-6-12');
+$dict_aa = dict_append_proc ($dict_aa,"t0934",'那須烏山',83712,'2002-6-24');
 
 	return	$dict_aa;
 }

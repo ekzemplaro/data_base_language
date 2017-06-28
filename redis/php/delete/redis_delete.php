@@ -3,7 +3,7 @@
 // ------------------------------------------------------------------
 //	delete/redis_delete.php
 //
-//					May/28/2013
+//					Jun/23/2017
 //
 // ------------------------------------------------------------------
 $path="/var/www/data_base/common/php_common";
@@ -18,8 +18,7 @@ $id_in = $argv[1];
 print	$id_in . "\n";
 
 $redis = new Redis();
-// $redis->connect('127.0.0.1', 6379);
-$redis->connect('host_dbase', 6379);
+$redis->connect('localhost', 6379);
 
 kvalue_delete_proc ($redis,$id_in);
 

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<meta content="Uchida Masatomo" name="author">
+<title>Bluemix</title>
+</head>
+<body>
+<h2>Bluemix</h2><p />
+
+インストール<p />
+<blockquote>
+	$ yaourt -Sb bluemix-cli<p />
+</blockquote>
+
+バージョン<p />
+<blockquote>
+	$ bx --version<br />
+	bx version 0.5.4+ae22935-2017-05-18T03:55:55+00:00<br />
+</blockquote>
+
+使い方<p />
+<blockquote>
+	$ bx api https://api.ng.bluemix.net<br />
+	$ bx login -u user@example.ne.jp -p password -o example -s us<br />
+	$ bx app push
+</blockquote>
+
+Ubuntu 17.04<p />
+<blockquote>
+	$ wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add -<br />
+	$ echo "deb http://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list<br />
+	# apt update<br />
+	# apt install cf-cli<br />
+</blockquote>
+
+バージョン<p />
+<blockquote>
+	$ cf --version<br />
+	cf version 6.27.0+d26b32d.2017-06-08<br />
+</blockquote>
+
+使い方<p />
+<blockquote>
+	$ cf api https://api.ng.bluemix.net<br />
+	$ cf login -u user@example.ne.jp -p password -o example -s us<br />
+	$ cf push
+</blockquote>
+
+リンク<p />
+<blockquote>
+<a href="https://github.com/cloudfoundry/cli">Cloud Foundry CLI</a><p />
+</blockquote>
+
+<blockquote>
+</blockquote>
+
+
+<hr />
+<a href="../">Return</a><p />
+Jun/24/2017 AM 08:15<p />
+</body>
+</html>

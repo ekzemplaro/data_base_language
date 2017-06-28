@@ -1,0 +1,11 @@
+[Unit]
+Description=redis server port 6380
+After=netctl@profile.service
+
+[Service]
+ExecStart=/opt/redis/redis_6380.sh
+Type=simple
+
+[Install]
+WantedBy=multi-user.target
+
