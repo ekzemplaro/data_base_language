@@ -3,7 +3,7 @@
 /*
 	maria_read.php
 
-					Apr/25/2017
+					Jun/29/2017
 
 */
 // --------------------------------------------------------------------
@@ -20,11 +20,16 @@ $dsn = 'mysql:dbname=' . $db . ';host=' . $host . ';charset=utf8';
 
 fputs (STDERR,"*** 開始 ***\n");
 
-$dbcon = new PDO ($dsn, $user,$password);
-
-disp_lower_proc ($dbcon);
-
-$dbcon = null;
+try
+	{
+	$dbcon = new PDO ($dsn, $user,$password);
+	disp_lower_proc ($dbcon);
+	$dbcon = null;
+	}
+catch  (PDOException $e)
+	{
+	print('Error:'.$e->getMessage());
+	}
 
 fputs (STDERR,"*** 終了 ***\n");
 // --------------------------------------------------------------------

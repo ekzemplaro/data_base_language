@@ -4,6 +4,7 @@ After=netctl@profile.service
 
 [Service]
 ExecStart=/opt/redis/redis_6380.sh
+ExecStop=/usr/bin/redis-cli -p 6380 shutdown
 Type=simple
 
 [Install]

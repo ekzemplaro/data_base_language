@@ -3,7 +3,7 @@
 //
 //	maria_create.php
 //
-//					Apr/25/2017
+//					Jun/29/2017
 //
 // ----------------------------------------------------------------
 $path="../../../common/php_common";
@@ -38,18 +38,21 @@ $host = 'localhost';
 $user = 'scott';
 $password = 'tiger123';
 $db = 'city';
-
 $dsn = 'mysql:dbname=' . $db . ';host=' . $host . ';charset=utf8';
 
-$dbcon = new PDO ($dsn, $user,$password);
-
-drop_table_proc ($dbcon);
-create_table_proc ($dbcon);
-
-dict_to_db_proc ($dict_aa,$dbcon);
-
-$dbcon = null;
+try
+	{
+	$dbcon = new PDO ($dsn, $user,$password);
+	drop_table_proc ($dbcon);
+	create_table_proc ($dbcon);
+	dict_to_db_proc ($dict_aa,$dbcon);
+	$dbcon = null;
+	}
+catch  (PDOException $e)
+	{
+	print('Error:'.$e->getMessage());
+	}
 
 fputs (STDERR,"*** 終了 ***\n");
+// ----------------------------------------------------------------
 ?>
-

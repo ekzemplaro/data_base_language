@@ -3,7 +3,7 @@
 /*
 	maria_delete.php
 
-					Apr/25/2017
+					Jun/29/2017
 
 */
 // --------------------------------------------------------------------
@@ -23,14 +23,18 @@ $dsn = 'mysql:dbname=' . $db . ';host=' . $host . ';charset=utf8';
 fputs (STDERR,"*** 開始 ***\n");
 
 $id_in = $argv[1];
-
 echo $id_in . "\n";
 
-$dbcon = new PDO ($dsn, $user,$password);
-
-sql_delete_proc ($dbcon,$id_in);
-
-$dbcon = null;
+try
+	{
+	$dbcon = new PDO ($dsn, $user,$password);
+	sql_delete_proc ($dbcon,$id_in);
+	$dbcon = null;
+	}
+catch  (PDOException $e)
+	{
+	print('Error:'.$e->getMessage());
+	}
 
 fputs (STDERR,"*** 終了 ***\n");
 // --------------------------------------------------------------------

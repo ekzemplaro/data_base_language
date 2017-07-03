@@ -3,7 +3,7 @@
 /*
 	maria_update.php
 
-					Apr/25/2017
+					Jun/29/2017
 
 */
 // --------------------------------------------------------------------
@@ -28,11 +28,16 @@ $population_in = intval ($argv[2]);
 
 echo $id_in . "\t" . $population_in . "\n";
 
-$dbcon = new PDO ($dsn, $user,$password);
-
-sql_update_proc ($dbcon,$id_in,$population_in);
-
-$dbcon = null;
+try
+	{
+	$dbcon = new PDO ($dsn, $user,$password);
+	sql_update_proc ($dbcon,$id_in,$population_in);
+	$dbcon = null;
+	}
+catch  (PDOException $e)
+	{
+	print('Error:'.$e->getMessage());
+	}
 
 fputs (STDERR,"*** 終了 ***\n");
 // --------------------------------------------------------------------
