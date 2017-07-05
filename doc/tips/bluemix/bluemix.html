@@ -19,7 +19,37 @@
 バージョン<p />
 <blockquote>
 	$ bx --version<br />
-	bx version 0.5.4+ae22935-2017-05-18T03:55:55+00:00<br />
+	bx version 0.5.5+87df0e6-2017-07-03T05:55:45+00:00<br />
+</blockquote>
+
+
+環境の表示<p />
+<blockquote>
+	<pre>
+$ bx config --list
+Name                                  Value   
+Color enabled                         -   
+HTTP timeout (Second)                 0   
+Trace                                 -   
+User locale                           -   
+Check CLI version enabled             true   
+Collecting usage statistics enabled   false
+	</pre>
+</blockquote>
+
+環境の設定<p />
+<blockquote>
+	$ bluemix config --usage-stats-collect false<p />
+</blockquote>
+
+アプリケーションの表示<p />
+<blockquote>
+	$ bx app list<p />
+</blockquote>
+
+アプリケーションの停止<p />
+<blockquote>
+	$ bx app stop app_ver1<p />
 </blockquote>
 
 使い方<p />
@@ -69,6 +99,6 @@ Ubuntu 17.04<p />
 
 <hr />
 <a href="../">Return</a><p />
-Jul/03/2017 AM 08:15<p />
+Jul/05/2017 AM 08:15<p />
 </body>
 </html>
