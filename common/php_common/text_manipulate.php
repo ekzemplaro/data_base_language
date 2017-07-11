@@ -3,7 +3,7 @@
 /*
 	php_common/text_manipulate.php
 
-					Apr/06/2017
+					Jul/11/2017
 
 */
 // --------------------------------------------------------------------
@@ -147,19 +147,21 @@ function csv_read_proc ($file_in)
 {
 	$dict_aa = array ();
 
-	$fp = fopen ($file_in,"r");
-
-	while ($line = fgets ($fp))
+	$file = new SplFileObject($file_in); 
+	$file->setFlags(SplFileObject::READ_CSV);
+	foreach($file as $line)
 		{
-		$mtx = explode (",",rtrim ($line));
-		$dict_unit = array ();
-		$dict_unit['name'] = $mtx[1];
-		$dict_unit['population'] = $mtx[2];
-		$dict_unit['date_mod'] = $mtx[3];
-		$dict_aa[$mtx[0]]= $dict_unit;
+		if(!is_null($line[0]))
+			{
+			$dict_unit = array ();
+			$dict_unit['name'] = $line[1];
+			$dict_unit['population'] = $line[2];
+			$dict_unit['date_mod'] = $line[3];
+			$dict_aa[$line[0]]= $dict_unit;
+			}
 		}
 
-	fclose ($fp);
+	$file = null;
 
 	return	$dict_aa;
 }

@@ -27,6 +27,11 @@
 	aws-cli/1.11.78 Python/3.6.0 Linux/4.10.11-1-ARCH botocore/1.5.41<br />
 </blockquote>
 
+EC2<p />
+<blockquote>
+	$ aws ec2 describe-instances<p />
+</blockquote>
+
 S3<p />
 <blockquote>
 	$ aws s3 ls s3://s1.example.com<p />
@@ -36,6 +41,15 @@ S3<p />
 	$ aws s3 rm s3://s1.ekzemplaro.org/test01.txt<p />
 
 	$ aws s3 sync . s3://s1.ekzemplaro.org --delete<p />
+</blockquote>
+
+IAM<p />
+<blockquote>
+	$ aws iam list-access-keys<p />
+	$ aws iam users<p />
+</blockquote>
+
+<blockquote>
 </blockquote>
 
 <blockquote>
@@ -51,10 +65,16 @@ credentials.csv をダウンロードしたら<p />
 		aws_access_key_id = AKIAJ*******<br />
 		aws_secret_access_key = HilYZJZ3McInc4D**********<br />
 		</blockquote>
+	.aws/config<p />
+		<blockquote>
+		[default]<br />
+		output = json<br />
+		region = ap-northeast-1<br />
+		</blockquote>
 	</blockquote>
 
 <hr />
 <a href="../">Return</a><p />
-Apr/26/2017 AM 08:15<p />
+Jul/11/2017 AM 08:15<p />
 </body>
 </html>
