@@ -37,11 +37,9 @@ PHP<p />
 
 Python<p />
 <blockquote>
-<pre>
-ii  python-openpyxl  1.5.8-1  all   module to read/write OpenXML xlsx/xlsm files
-</pre>
+	# apt install python3-openpyxl<p />
 
-/usr/share/doc/python-excelerator/examples<p />
+	/usr/share/doc/python-excelerator/examples<p />
 </blockquote>
 
 Arch Linux<br />
