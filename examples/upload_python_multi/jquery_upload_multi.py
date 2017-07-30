@@ -3,28 +3,14 @@
 #
 #	upload_python_multi/jquery_upload_multi.py
 #
-#					Jul/05/2016
+#					Jul/29/2017
 #
 # --------------------------------------------------------------------
-# import	os
 import	sys
 import	json
 import	cgi
 # --------------------------------------------------------------------
-from upload_file import upload_file_proc
-# --------------------------------------------------------------------
-def file_process (file_key,form):
-	message = []
-	item = form[file_key]
-	try:
-		message_aa = upload_file_proc (upload_dir,item)
-		message.extend (message_aa)
-	except Exception as ee:
-		message.append ("*** error *** from upload_file_proc ***")
-		message.append (str (ee))
-#
-	return	message
-
+from upload_file import single_upload_file_proc
 # --------------------------------------------------------------------
 message = []
 message.append ("*** start *** jquery_upload_multi.py ***")
@@ -35,12 +21,15 @@ message.append (str (form["upload_dir"]))
 upload_dir = form["upload_dir"].value
 message.append ("upload_dir = " + upload_dir)
 #
-array_fname = ["file_aa","file_bb","file_cc","file_dd","file_ee", \
-	"file_ff","file_gg","file_hh","file_ii","file_jj"]
-for fname in array_fname:
-	if fname in form:
-		message += file_process (fname,form)
+count = 0
+for key in form:
+	if (key != "upload_dir"):
+#		message.append ("count = %d" % count)
+#		message.append ("key = " + key)
+		item = form[key]
+		message += single_upload_file_proc (upload_dir,item)
 #
+		count += 1
 #
 message.append ("*** end *** jquery_upload_multi.py ***")
 rvalue = {}

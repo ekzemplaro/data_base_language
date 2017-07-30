@@ -2,7 +2,7 @@
 // ---------------------------------------------------------------
 //	couch_read.js
 //
-//					Feb/09/2016
+//					Jul/26/2017
 // ---------------------------------------------------------------
 var cradle = require ('cradle')
 var underscore = require('underscore')
@@ -11,15 +11,8 @@ var text_manipulate=require ("/var/www/data_base/common/node_common/text_manipul
 // ---------------------------------------------------------------
 console.log ("*** 開始 ***")
 var name = 'nagano'
-var cc = new (cradle.Connection) ('http://localhost', 5984, {
-      cache: true,
-      raw: false,
-      forceSave: true,
-      request: {
-        //Pass through configuration to `request` library for all requests on this connection. 
-      }
-  })
 
+var cc = new (cradle.Connection)
 
 var db = cc.database (name)
 
