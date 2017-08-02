@@ -2,7 +2,7 @@
 #
 #	python_common/file_io.py
 #
-#					Dec/27/2016
+#					Jul/31/2017
 #
 #
 import	sys
@@ -10,23 +10,23 @@ import	string
 import	fcntl
 #
 # --------------------------------------------------------------------
-def	file_to_str_proc (file_in):
+def	file_to_str_proc(file_in):
 	str_out = ""
 	try:
-		fp_in = open (file_in,encoding='utf-8')
-		str_out = fp_in.read ()
-		fp_in.close ()
+		fp_in = open(file_in,encoding='utf-8')
+		str_out = fp_in.read()
+		fp_in.close()
 	except Exception as ee:
-		sys.stderr.write ("*** error *** file_to_str_proc ***\n")
-		sys.stderr.write (str (ee))
+		sys.stderr.write("*** error *** file_to_str_proc ***\n")
+		sys.stderr.write(str (ee))
 #
 	return	str_out
 # --------------------------------------------------------------------
-def file_write_proc (file_name,str_out):
+def file_write_proc(file_name,str_out):
 #
-	fp_out = open (file_name,mode='w',encoding='utf-8')
+	fp_out = open(file_name,mode='w',encoding='utf-8')
 	fcntl.lockf(fp_out, fcntl.LOCK_EX)
-	fp_out.write (str_out)
-	fp_out.close ()
+	fp_out.write(str_out)
+	fp_out.close()
 #
 # --------------------------------------------------------------------

@@ -3,13 +3,13 @@
 #
 #	json_read.py
 #
-#					Jun/07/2017
+#					Jul/31/2017
 #
 # ------------------------------------------------------------------
 import	sys
 import	json
 #
-sys.path.append ('/var/www/data_base/common/python_common')
+sys.path.append('/var/www/data_base/common/python_common')
 from text_manipulate import dict_display_proc
 from file_io import file_to_str_proc
 #

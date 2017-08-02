@@ -3,7 +3,7 @@
 #
 #	redis_delete.py
 #
-#					Jun/23/2017
+#					Jul/31/2017
 #
 import	sys
 #
@@ -17,8 +17,8 @@ print ("%s" % key_in)
 #
 rr = redis.Redis(host='localhost', port=6379, db=0)
 #
-str_key = str (key_in)
-rr.delete (str_key)
+str_key = str(key_in)
+rr.delete(str_key)
 #
 sys.stderr.write("*** 終了 ***\n")
 #

@@ -3,20 +3,20 @@
 #
 #	maria_delete.py
 #
-#					Apr/07/2017
+#					Jul/31/2017
 #
 # --------------------------------------------------------
 import	sys
 import	mysql.connector
 #
-sys.path.append ('/var/www/data_base/common/python_common')
+sys.path.append ('../../../common/python_common')
 from sql_manipulate import sql_delete_proc
 #
 # --------------------------------------------------------
-sys.stderr.write ("*** 開始 ***\n")
+sys.stderr.write("*** 開始 ***\n")
 #
 key_in = sys.argv[1]
-print ("%s" % key_in)
+print("%s" % key_in)
 #
 host_aa='localhost'
 data_base = 'city'
@@ -25,13 +25,14 @@ password_aa = 'tiger123'
 conn = mysql.connector.connect(user=user_aa, password=password_aa, \
                               host=host_aa,database=data_base)
 #
-cursor = conn.cursor ()
+cursor = conn.cursor()
 #
-sql_delete_proc	(cursor,key_in)
-conn.commit ()
+sql_delete_proc(cursor,key_in)
 #
-cursor.close ()
-conn.close ()
-sys.stderr.write ("*** 終了 ***\n")
+conn.commit()
+cursor.close()
+conn.close()
+#
+sys.stderr.write("*** 終了 ***\n")
 #
 # --------------------------------------------------------

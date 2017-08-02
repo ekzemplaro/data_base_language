@@ -3,11 +3,11 @@
 #
 #	text_read.py
 #
-#						Jun/06/2017
+#						Jul/31/2017
 #
 import	sys
 #
-sys.path.append ('/var/www/data_base/common/python_common')
+sys.path.append('/var/www/data_base/common/python_common')
 from text_manipulate import text_read_proc
 from text_manipulate import dict_display_proc
 
@@ -20,7 +20,7 @@ try:
 	dict_display_proc(dict_aa)
 except Exception as ee:
 	sys.stderr.write("*** error *** in text_read_proc ***\n")
-	sys.stderr.write(str (ee))
+	sys.stderr.write(str(ee))
 #
 sys.stderr.write("*** 終了 ***\n")
 # --------------------------------------------------------------------
