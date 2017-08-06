@@ -1,4 +1,4 @@
-<title>python Apr/20/2016</title>
+<title>python Aug/06/2017</title>
 </head>
 <body>
 <h2><a href="http://www.python.org">python</a></h2><p />
@@ -46,6 +46,21 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> print (pymssql.__file__)
 /home/uchida/.local/lib/python3.4/site-packages/pymssql.cpython-34m.so
 >>> quit ()
+</pre>
+</blockquote>
+
+
+モジュールのバージョンを調べる<br />
+<blockquote>
+<pre>
+$ python
+Python 3.6.2 (default, Jul 20 2017, 03:52:27) 
+[GCC 7.1.1 20170630] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import requests
+>>> requests.__version__
+'2.18.3'
+>>> quit()
 </pre>
 </blockquote>
 

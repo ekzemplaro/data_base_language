@@ -2,7 +2,7 @@
 // ---------------------------------------------------------------
 //	redis_create.js
 //
-//					Feb/09/2016
+//					Aug/03/2017
 //
 // ---------------------------------------------------------------
 var text_manipulate=require ("/var/www/data_base/common/node_common/text_manipulate")
@@ -19,7 +19,7 @@ function data_prepare_proc ()
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1856','鯖江',64792,'1950-9-12')
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1857','あわら',38251,'1950-3-21')
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1858','越前',52486,'1950-7-26')
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1859','坂井',26157,'1950-11-18')
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1859','坂井',25397,'1950-11-9')
 	
 	return	dict_aa
 }
@@ -29,20 +29,26 @@ console.log ("*** 開始 ***")
 var dict_aa = data_prepare_proc ()
 
 var redis = require ("redis")
-var client = redis.createClient (6379,'host_dbase')
+var client = redis.createClient (6379,'localhost')
 
 client.on("error", function (err) {
         console.log("Redis connection error to " + client.host + ":" + client.port + " - " + err)
     })
 
-for (var key in dict_aa)
+const keys = Object.keys(dict_aa)
+
+keys.forEach(function(key,index)
 	{
 	var str_json = JSON.stringify (dict_aa[key])
 
 	client.set(key, str_json, redis.print)
-	}
 
-client.quit()
-console.log ("*** 終了 ***")
+	if (keys.length === (index + 1))
+		{
+		client.quit()
+		console.log ("*** 終了 ***")
+		}
+	})
+
 
 // ---------------------------------------------------------------

@@ -2,7 +2,7 @@
 //
 //	text_manipulate.js
 //
-//						Jan/06/2017
+//						Aug/04/2017
 //
 // ------------------------------------------------------------------
 function text_read_proc (file_in)
@@ -11,12 +11,12 @@ function text_read_proc (file_in)
 
 	var lines_in = file_read_proc (file_in)
 
-	for (var it=0; it< lines_in.length; it++)
+	lines_in.forEach (function (line)
 		{
-		var rr = String.split (lines_in[it],"\t")
+		var rr = String.split (line,"\t")
 
 		dict_aa[rr[0]] = {"name": rr[1],"population": rr[2], "date_mod": rr[3]}
-		}
+		})
 	
 	return	dict_aa
 }
@@ -24,18 +24,12 @@ function text_read_proc (file_in)
 // ------------------------------------------------------------------
 function dict_display_proc (dict_aa)
 {
-	var array = new Array()
-
-	for (var it in dict_aa)
-		{
-		array.push (it)
-		}
+	const array=Object.keys(dict_aa)
 
 	var array_bb = array.sort ()
 
-	for (var it in array_bb)
+	array_bb.forEach(function(key)
 		{
-		var key = array_bb[it]
 		if ((key != '_id') && (key != '_rev'))
 			{
 		var out_str = key + "\t"
@@ -44,7 +38,7 @@ function dict_display_proc (dict_aa)
 		out_str += dict_aa[key]["date_mod"]
 		print (out_str)
 			}
-		}
+		})
 }
 
 // ---------------------------------------------------------------
@@ -115,12 +109,12 @@ function csv_read_proc (file_in)
 
 	var lines_in = file_read_proc (file_in)
 
-	for (var it=0; it< lines_in.length; it++)
+	lines_in.forEach(function(line)
 		{
-		var rr = String.split (lines_in[it],",")
+		var rr = String.split (line,",")
 
 		dict_aa[rr[0]] = {"name": rr[1],"population": rr[2], "date_mod": rr[3]}
-		}
+		})
 	
 	return	dict_aa
 }

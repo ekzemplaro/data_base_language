@@ -1,4 +1,4 @@
 <blockquote>
-npm install express<p />
-
+# npm install -g express<p />
+# npm install -g express-generator<p />
 </blockquote>

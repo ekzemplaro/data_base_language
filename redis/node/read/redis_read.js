@@ -2,13 +2,13 @@
 // ---------------------------------------------------------------
 //	redis_read.js
 //
-//					Feb/09/2016
+//					Aug/03/2017
 //
 // ---------------------------------------------------------------
 console.log ("*** 開始 ***")
 //
 var redis = require("redis")
-var client = redis.createClient(6379,'host_dbase')
+var client = redis.createClient(6379,'localhost')
 
 client.on ("error", function (err)
 {
@@ -19,16 +19,17 @@ client.on ("error", function (err)
 var keys=["t1851","t1852","t1853",
 	"t1854","t1855","t1856",
 	"t1857","t1858","t1859"]
-for (var it in keys)
-	{
-	read_single_proc (client,keys[it])
-	}
 
-client.quit()
-console.log ("*** 終了 ***")
+console.log("keys.length = " + keys.length)
+
+keys.forEach(function(key,index)
+	{
+	read_single_proc (client,key,index)
+	})
+
 
 // ---------------------------------------------------------------
-function read_single_proc (client,key)
+function read_single_proc (client,key,index)
 {
 	client.get (key, function (err, reply)
 	{
@@ -46,6 +47,12 @@ function read_single_proc (client,key)
 		out_str += data.population + "\t"
 		out_str += data.date_mod
 		console.log (out_str)
+		}
+
+	if (keys.length === (index + 1))
+		{
+		client.quit()
+		console.log ("*** 終了 ***")
 		}
 	})
 }

@@ -34,7 +34,8 @@ var onConnect = function()
 
 	for (var it in keys)
 		{
-		proc01 (keys[it])
+		console.log(it)
+//		proc01 (keys[it])
 		}
 
 	client.close()

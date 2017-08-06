@@ -2,7 +2,7 @@
 // ---------------------------------------------------------------
 //	maria_read.js
 //
-//					Apr/07/2017
+//					Aug/04/2017
 //
 // ---------------------------------------------------------------
 var text_manipulate=require ("/var/www/data_base/common/node_common/text_manipulate")
@@ -27,19 +27,17 @@ connection.query("select * from cities", function (err, rows)
 
 	var dict_aa = new Object ()
 
-	for (var it in rows)
+	rows.forEach(function(row)
 		{
-		dict_aa[rows[it].id] = {"name": rows[it].name,
-			"population": rows[it].population,
-			"date_mod": rows[it].date_mod}
-		}
+		dict_aa[row.id] = {"name": row.name,
+			"population": row.population,
+			"date_mod": row.date_mod}
+		})
 
 	text_manipulate.dict_display_proc (dict_aa)
 
-console.log ("*** 終了 ***")
+	connection.end()
+	console.log ("*** 終了 ***")
 	})
 
-connection.end()
-
-console.log ("*** ppp ***")
 // ---------------------------------------------------------------

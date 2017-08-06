@@ -2,7 +2,7 @@
 // ---------------------------------------------------------------
 //	redis_update.js
 //
-//					Feb/09/2016
+//					Aug/03/2017
 //
 // ---------------------------------------------------------------
 var node_common = '/var/www/data_base/common/node_common'
@@ -18,7 +18,7 @@ console.log (key_in + "\t" + population_in)
 
 //
 var redis = require ("redis")
-var client = redis.createClient (6379,'host_dbase')
+var client = redis.createClient (6379,'localhost')
 
 client.on("error", function (err)
 	{
