@@ -14,8 +14,8 @@ EPUB=$(JAR)/epubgen-0.5.0.jar
 ITEXT=$(JAR)/iText-5.0.5.jar
 HGDB_JAR=/home/uchida/dbm/hgdb/hypergraphdb-1.1/hypergraphdb.jar
 SG_CDB=$(JAR)/sg-cdb-1.0.4.jar
-POI313=/var/www/data_base/common/jar/poi-3.13
-POI_LIB=$(POI313)/poi-3.13-20150929.jar:$(POI313)/poi-ooxml-3.13-20150929.jar:$(POI313)/poi-ooxml-schemas-3.13-20150929.jar:$(POI313)/ooxml-lib/xmlbeans-2.6.0.jar
+POI=/usr/share/java/apache-poi
+POI_LIB=$(POI)/poi-3.16.jar:$(POI)/poi-ooxml-3.16.jar:$(POI)/poi-ooxml-schemas-3.16.jar:$(POI)/ooxml-lib/xmlbeans-2.6.0.jar
 #
 HTTPCLIENT=$(COMMON)/jar/commons-httpclient
 HTTPCLIENT_JAR=.:$(HTTPCLIENT)/commons-httpclient-3.1.jar:$(HTTPCLIENT)/commons-logging-1.2.jar:$(HTTPCLIENT)/commons-codec-1.10.jar
@@ -48,12 +48,12 @@ CPP_XLSX=.:$(POI_LIB)
 CPP_HBASE=`hbase classpath`
 #
 all: json_manipulate.class \
+	xlsx_manipulate.class \
 	xml_manipulate.class \
 	get_uri.class \
 	xml_manipulate.class \
 	text_manipulate.class \
 	file_io.class \
-	xlsx_manipulate.class \
 	mcached_manipulate.class \
 	mcached_socket.class \
 	cdb_manipulate.class \

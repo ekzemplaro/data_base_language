@@ -1,7 +1,7 @@
 // ----------------------------------------------------------------
 /*
 	xlsx_delete.groovy
-					Aug/05/2013
+					Aug/08/2017
 
 */
 // ----------------------------------------------------------------
@@ -26,8 +26,6 @@ public static void main (String[] args)
 	def dict_bb = gg.dict_delete_proc (dict_aa,key)
 
 	ff.xlsx_write_proc (xlsx_file,dict_bb) 
-
-	gg.dict_display_proc (dict_bb)
 
 	println ("*** 終了 ***")  
 }

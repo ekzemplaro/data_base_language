@@ -21,6 +21,7 @@ mysql_utf8.py
 neo4j_manipulate.py
 pdf_manipulate.py
 python_proxy_get.py
+requests_get.py
 riak_manipulate.py
 sql_manipulate.py
 sql_to_json.py

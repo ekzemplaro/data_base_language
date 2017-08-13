@@ -10,8 +10,10 @@ TIKA=$(JAR)/tika-app-1.0.jar
 EPUB=$(JAR)/epubgen-0.5.0.jar
 HGDB_JAR=/home/uchida/dbm/hgdb/hypergraphdb-1.1/hypergraphdb.jar
 SG_CDB=$(JAR)/sg-cdb-1.0.4.jar
-POI313=/var/www/data_base/common/jar/poi-3.13
-POI_LIB=$(POI313)/poi-3.13-20150929.jar:$(POI313)/poi-ooxml-3.13-20150929.jar:$(POI313)/poi-ooxml-schemas-3.13-20150929.jar:$(POI313)/ooxml-lib/xmlbeans-2.6.0.jar
+#
+POI=/usr/share/java/apache-poi
+POI_LIB=$(POI)/poi-3.16.jar:$(POI)/poi-ooxml-3.16.jar:$(POI)/poi-ooxml-schemas-3.16.jar:$(POI)/ooxml-lib/xmlbeans-2.6.0.jar:$(POI)/lib/commons-collections4-4.1.jar
+#
 MONGO_JAR=$(JAR)/mongo-2.8.0.jar
 HTTPCLIENT=$(JAR)/commons-httpclient
 HTTPCLIENT_JAR=$(HTTPCLIENT)/commons-httpclient-3.1.jar:$(HTTPCLIENT)/commons-logging-1.2.jar:$(HTTPCLIENT)/commons-codec-1.10.jar
@@ -38,10 +40,10 @@ CPP_NET=./:$(HTTPCLIENT_JAR)
 all: sql_manipulate.class xml_manipulate.class \
 	text_manipulate.class \
 	mcached_manipulate.class \
+	xlsx_manipulate.class \
 	ftp_manipulate.class \
 	tika_manipulate.class \
 	net_manipulate.class \
-	xlsx_manipulate.class \
 	epub_manipulate.class \
 	mongo_manipulate.class \
 	cassandra_manipulate.class \

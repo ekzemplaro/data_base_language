@@ -74,6 +74,7 @@ Java<p />
 <blockquote>
 <a href="http://poi.apache.org/">Apache POI</a><br />
 <blockquote>
+	$ yaourt -Sb apache-poi<p />
 	poi-bin-3.12-20150511.tar.gz<p />
 	<a href="http://www.javadrive.jp/poi/">Apache POIでExcelを操作</a><p />
 </blockquote>

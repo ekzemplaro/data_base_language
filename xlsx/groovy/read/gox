@@ -1,7 +1,8 @@
 #
 COMMON=/var/www/data_base/common
-POI313=$COMMON/jar/poi-3.13
-POI_LIB=$POI313/poi-3.13-20150929.jar:$POI313/poi-ooxml-3.13-20150929.jar:$POI313/poi-ooxml-schemas-3.13-20150929.jar:$POI313/ooxml-lib/xmlbeans-2.6.0.jar
+#
+POI=/usr/share/java/apache-poi
+POI_LIB=$POI/poi-3.16.jar:$POI/poi-ooxml-3.16.jar:$POI/poi-ooxml-schemas-3.16.jar:$POI/ooxml-lib/xmlbeans-2.6.0.jar:$POI/lib/commons-collections4-4.1.jar
 #
 #
 GROOVY_COMMON=$COMMON/groovy_common

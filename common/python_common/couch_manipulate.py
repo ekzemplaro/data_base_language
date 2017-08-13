@@ -2,23 +2,22 @@
 #
 #	couch_manipulate.py
 #
-#					Jun/02/2015
+#					Aug/13/2017
 #
 # ----------------------------------------------------------------
 import sys
-import pycurl
 import json
 #
 from text_manipulate import dict_append_proc
-from curl_get import curl_get_proc
-from curl_get import curl_put_proc
-from curl_get import curl_delete_proc
+from requests_get import requests_put_proc
+from requests_get import requests_delete_proc
 #
+from requests_get import requests_get_proc
 # ----------------------------------------------------------------
 def couch_to_dict_proc (url_json):
 	url_all_docs = url_json + "/" + "_all_docs?include_docs=true"
-	str_json = curl_get_proc (url_all_docs)
-	list_aa = json.loads (str (str_json,'UTF-8'))
+	str_json = requests_get_proc (url_all_docs)
+	list_aa = json.loads (str_json)
 
 	dict_aa = {}
 #
@@ -36,13 +35,13 @@ def couch_to_dict_proc (url_json):
 #
 # ----------------------------------------------------------------
 def	dict_to_couch_proc (dict_aa,url_collection):
-	curl_delete_proc (url_collection)
-	curl_put_proc (url_collection,'{}')
+	requests_delete_proc (url_collection)
+	requests_put_proc (url_collection,'{}')
 #
 	for key in dict_aa:
 		value = dict_aa[key]
 		json_str = json.dumps (value)
 		url_target = url_collection + '/' + key
-		curl_put_proc (url_target,json_str)
+		requests_put_proc (url_target,json_str)
 #
 # ----------------------------------------------------------------

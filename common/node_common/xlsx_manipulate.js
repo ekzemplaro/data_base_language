@@ -2,7 +2,7 @@
 //
 //	xlsx_manipulate.js
 //
-//					Dec/26/2016
+//					Aug/06/2017
 //
 // ---------------------------------------------------------------
 var fs = require('fs')
@@ -16,10 +16,8 @@ exports.xlsx_read_proc = function (xlsx_file)
 
 	var data = book[0]['data']
 
-	for (var it in data)
+	data.forEach(function(unit_aa)
 		{
-		const unit_aa = data[it]
-
 		const key = unit_aa[0]
 		const name = unit_aa[1]
 		const population = unit_aa[2]
@@ -27,7 +25,7 @@ exports.xlsx_read_proc = function (xlsx_file)
 
 		dict_aa[key] = {"name": name,"population": population,
 			"date_mod": date_mod}
-		}
+		})
 
 	return	dict_aa
 }
