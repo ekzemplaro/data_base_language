@@ -3,7 +3,7 @@
 #
 #	mssql_read.py
 #
-#						Nov/18/2015
+#						Aug/30/2017
 #
 #
 # ----------------------------------------------------------------
@@ -18,9 +18,9 @@ from text_manipulate import dict_display_proc
 #
 print ("*** 開始 ***")
 #
-server_mssql = 'host_mssql\EG'
+server_mssql = 'localhost'
 user_mssql = 'sa'
-password_mssql = 'Tiger123'
+password_mssql = 'Sql12345'
 #
 try:
 	conn = pymssql.connect \

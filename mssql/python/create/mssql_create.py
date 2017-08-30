@@ -3,7 +3,7 @@
 #
 #	mssql_create.py
 #
-#					Jun/23/2015
+#					Aug/30/2017
 #
 # --------------------------------------------------------
 import	sys
@@ -49,9 +49,9 @@ print ("*** 開始 ***")
 #
 dict_aa = data_prepare_proc ()
 #
-server_mssql = 'host_mssql\EG'
+server_mssql = 'localhost'
 user_mssql = 'sa'
-password_mssql = 'Tiger123'
+password_mssql = 'Sql12345'
 #
 try:
 	conn = pymssql.connect \

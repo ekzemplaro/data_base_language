@@ -1,5 +1,5 @@
 #
-MSSQL_JPN=/home/uchida/data_base/ms_sqlserver/jdbc/sqljdbc_2.0/jpn
+MSSQL_JPN=/home/uchida/db/mssql/sqljdbc_6.2/enu
 #
-cp -p $MSSQL_JPN/sqljdbc4.jar .
+cp -p $MSSQL_JPN/mssql-jdbc-6.2.1.jre8.jar .
 #

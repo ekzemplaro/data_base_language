@@ -3,7 +3,7 @@ COMMON=/var/www/data_base/common
 JAVA_COMMON=$COMMON/java_common
 JAR=$COMMON/jar
 #
-export MSSQL_JAR=$JAR/mssql/sqljdbc4.jar
+export MSSQL_JAR=$JAR/mssql/mssql-jdbc-6.2.1.jre8.jar
 export CLASSPATH=./:$JAVA_COMMON:$MSSQL_JAR
 #
 java mssql_read 

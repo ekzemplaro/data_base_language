@@ -2,7 +2,7 @@
 /*
 	read/mssql_read.cs
 
-				Nov/18/2015
+				Aug/30/2017
 */
 // ---------------------------------------------------------------
 using System;
@@ -20,11 +20,11 @@ static void Main (string [] args)
 
 	Console.WriteLine ("*** 開始 ***");
 
-	string server_mssql = @"server=host_mssql\EG;";
+	string server_mssql = @"server=localhost;";
 
 	string str_connect = server_mssql
 			+ "uid=sa;"
-			+ "pwd=Tiger123;"
+			+ "pwd=Sql12345;"
 			+ "database=city";
 
 	cnn = new SqlConnection (str_connect);

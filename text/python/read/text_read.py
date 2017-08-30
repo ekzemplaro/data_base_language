@@ -3,7 +3,7 @@
 #
 #	text_read.py
 #
-#						Jul/31/2017
+#						Aug/15/2017
 #
 import	sys
 #
@@ -20,7 +20,7 @@ try:
 	dict_display_proc(dict_aa)
 except Exception as ee:
 	sys.stderr.write("*** error *** in text_read_proc ***\n")
-	sys.stderr.write(str(ee))
+	sys.stderr.write(str(ee) + '\n')
 #
 sys.stderr.write("*** 終了 ***\n")
 # --------------------------------------------------------------------

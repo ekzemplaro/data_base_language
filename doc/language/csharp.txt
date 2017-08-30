@@ -1,9 +1,9 @@
-<title>C# Nov/26/2014</title>
+<title>C# Aug/30/2017</title>
 </head>
 <body>
 <h2><a href="http://en.csharp-online.net">C#</a></h2><p />
 
-# apt-get install mono-complete<p />
+# apt install mono-complete<p />
 <blockquote>
 <pre>
 ii  mono-mcs   3.2.8+dfsg-4ubuntu1   all   Mono C# 2.0 / 3.0 / 4.0 / 5.0  compiler for CLI 2.0 / 4.0 / 4.5
