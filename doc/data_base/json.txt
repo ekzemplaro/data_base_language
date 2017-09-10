@@ -114,6 +114,7 @@ paranamer-2.7.jar<br />
 
 Java<p />
 <blockquote>
+	jsonic-1.3.10.jar<br />
 </blockquote>
 
 

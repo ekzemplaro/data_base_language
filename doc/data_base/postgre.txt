@@ -261,4 +261,33 @@ city=# select * from cities;
 city=# \q
 </pre>
 </blockquote>
+
+<blockquote>
+<pre>
+$ psql -U scott city
+psql (9.6.4)
+"help" でヘルプを表示します.
+
+city=> \dt;
+          リレーションの一覧
+ スキーマ |  名前  |    型    | 所有者 
+----------+--------+----------+--------
+ public   | cities | テーブル | scott
+(1 行)
+
+city=> \d cities;
+           テーブル "public.cities"
+     列     |          型           |  修飾語  
+------------+-----------------------+----------
+ id         | character varying(10) | not null
+ name       | text                  | 
+ population | integer               | 
+ date_mod   | date                  | 
+インデックス:
+    "cities_pkey" PRIMARY KEY, btree (id)
+
+city=> \q
+</pre>
+</blockquote>
+
 <hr />

@@ -1,8 +1,7 @@
 COMMON=/var/www/data_base/common
 JAVA_COMMON=$(COMMON)/java_common
-JAR=$(COMMON)/jar
-CPATH=.:$(JAVA_COMMON):$(JAR)/jsonic-1.3.5.jar
+CPATH=.:$(JAVA_COMMON)
 json_delete.class: json_delete.java
-	javac -cp $(CPATH) json_delete.java -Xlint:unchecked
+	javac -cp $(CPATH) json_delete.java
 clean:
 	rm -f *.class

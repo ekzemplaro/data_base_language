@@ -2,7 +2,7 @@
 #
 #	python_common/sql_manipulate.py
 #
-#				Mar/18/2015
+#				Sep/04/2017
 #
 # --------------------------------------------------------
 import	sys
@@ -93,7 +93,7 @@ def	sql_insert_proc	(cursor_aa,id_in,name_in,ipop_in,date_mod_in):
 #
 # --------------------------------------------------------
 def	create_table_proc (cursor_aa):
-	sql_str="create table cities (id varchar(10), name varchar(20)," \
+	sql_str="create table cities (id varchar(10) primary key, name varchar(20)," \
 		+ " population int, date_mod date)"
 #
 	try:
