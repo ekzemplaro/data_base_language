@@ -217,5 +217,10 @@ drop user 'user'@'localhost';
 	</blockquote>
 </blockquote>
 
+パスワードに特殊文字が入っている時は、シングルクォートで囲む<p />
+<blockquote>
+	mysql -h192.108.46.8 -uaaa -p'a*$bcdSf&$g'<p />
+</blockquote>
+
 <blockquote>
 </blockquote>
