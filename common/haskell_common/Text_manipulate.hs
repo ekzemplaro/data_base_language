@@ -1,14 +1,15 @@
 -- -----------------------------------------------------------------
 --	Text_manipulate.hs
 --
---						Dec/25/2014
+--						Oct/10/2017
 --
 -- -----------------------------------------------------------------
 module Text_manipulate where
 
-import System.Time
+-- import System.Time
+import Data.Time
 import Data.Char
-import Data.List.Split
+-- import Data.List.Split
 import Data.Map
 import Data.Maybe
 
@@ -68,7 +69,8 @@ dict_update_proc key_in population_in today dict_in =
 get_current_date_proc ::IO [Char]
 get_current_date_proc =
 	do
-		now <- getClockTime
+--		now <- getClockTime
+		now <- getZonedTime
 		nowCal <- toCalendarTime now
 		let year = show (ctYear nowCal)
 		let month = show (ctMonth nowCal)

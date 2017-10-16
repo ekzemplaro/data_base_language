@@ -1,7 +1,7 @@
 <meta content="Program Language Examples in Haskell" name="description">
 <meta content="Haskell,クライアント,接続,言語,サンプル" name="keyword">
 <meta content="Uchida Masatomo" name="author">
-<title>Haskell Dec/22/2014</title>
+<title>Haskell Oct/10/2017</title>
 </head>
 <body>
 <h2><a href="http://haskell.org">Haskell</a></h2><p />
@@ -48,6 +48,8 @@ sudo make install<br />
 Arch Linux<br />
 <blockquote>
 	# pacman -S ghc<p />
+	# pacman -S stack<p />
+<p />
 	# pacman -S cabal-install<p />
 	$ cabal update<p />
 	$ cabal install safe<p />
