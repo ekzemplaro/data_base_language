@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>github の使い方 Oct/02/2017</title>
+<title>github の使い方 Oct/24/2017</title>
 </head>
 <body>
 <h2>github の使い方</h2><p />
@@ -57,7 +57,13 @@ $ git clone -b develop https://product.backlog.jp/git/NEWS_AAA/ABBB.git<p />
 	* develop<br />
 </blockquote>
 
+エラーへの対応<p />
 <blockquote>
+ server certificate verification failed. CAfile: /etc/ssl/certs/ca-certificates.crt CRLfile: none<p />
+対策<p />
+	<blockquote>
+	export GIT_SSL_NO_VERIFY=1<p />
+	</blockquote>
 </blockquote>
 
 <blockquote>
@@ -65,6 +71,6 @@ $ git clone -b develop https://product.backlog.jp/git/NEWS_AAA/ABBB.git<p />
 
 <hr />
 <a href="../">Return</a><p />
-Oct/02/2017 AM 08:15<p />
+Oct/24/2017 AM 08:15<p />
 </body>
 </html>

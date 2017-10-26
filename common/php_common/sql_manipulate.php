@@ -2,7 +2,7 @@
 /*
 	php_common/sql_manipulate.php
 
-					Aug/04/2014
+					Oct/25/2017
 
 */
 // --------------------------------------------------------------------
@@ -14,8 +14,14 @@ $sql = "update cities set POPULATION=" . $population;
 $sql .= ", DATE_MOD='" . $today . "'";
 $sql .= " where ID='" . $id . "'";
 
+$dbcon->beginTransaction();
+$sth = $dbcon->exec($sql);
+$dbcon->commit();
+
+/*
 $stmt=$dbcon->prepare ($sql);
 $stmt->execute ();
+*/
 }
 
 // --------------------------------------------------------------------
@@ -23,8 +29,14 @@ function sql_delete_proc ($dbcon,$id)
 {
 $sql = "delete from cities where ID='" . $id . "'";
 
+$dbcon->beginTransaction();
+$sth = $dbcon->exec($sql);
+$dbcon->commit();
+
+/*
 $stmt=$dbcon->prepare ($sql);
 $stmt->execute ();
+*/
 }
 
 // --------------------------------------------------------------------
@@ -34,17 +46,28 @@ function insert_proc ($dbcon,$id_in,$name_in,$population_in,$date_mod_in)
 		. "values ('" . $id_in . "','" . $name_in . "',"
 		. $population_in .  ",'" . $date_mod_in . "')";
 
+$dbcon->beginTransaction();
+$sth = $dbcon->exec($sql);
+$dbcon->commit();
+/*
 	$stmt=$dbcon->prepare ($sql);
 	$stmt->execute ();
-
+*/
 }
 
 // --------------------------------------------------------------------
 function drop_table_proc ($dbcon)
 {
 	$sql="drop table cities;";
+
+$dbcon->beginTransaction();
+$sth = $dbcon->exec($sql);
+$dbcon->commit();
+
+/*
 	$stmt=$dbcon->prepare ($sql);
 	$stmt->execute ();
+*/
 }
 
 // --------------------------------------------------------------------
@@ -52,8 +75,15 @@ function create_table_proc ($dbcon)
 {
 	$sql="create TABLE cities (id varchar(10) NOT NULL PRIMARY KEY,name text,"
 		. "population int,date_mod text)";
+
+$dbcon->beginTransaction();
+$sth = $dbcon->exec($sql);
+$dbcon->commit();
+
+/*
 	$stmt=$dbcon->prepare ($sql);
 	$stmt->execute ();
+*/
 }
 
 // --------------------------------------------------------------------

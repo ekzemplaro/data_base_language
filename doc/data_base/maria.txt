@@ -78,7 +78,7 @@ PHP (Archlinux)<p />
 
 PHP (Ubuntu)<p />
 <blockquote>
-	# apt install php7.0-mysql<p />
+	# apt install php7.1-mysql<p />
 </blockquote>
 
 
