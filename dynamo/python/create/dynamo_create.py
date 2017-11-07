@@ -36,7 +36,7 @@ def create_table_proc():
 # ---------------------------------------------------------------
 sys.stderr.write ("*** 開始 ***\n")
 
-dynamodb = boto3.resource('dynamodb',endpoint_url="http://atami:8000")
+dynamodb = boto3.resource('dynamodb',endpoint_url="http://localhost:8000")
 
 create_table_proc()
 

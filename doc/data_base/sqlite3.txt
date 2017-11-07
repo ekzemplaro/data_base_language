@@ -125,3 +125,22 @@ C#<p />
 <blockquote>
 /usr/lib/mono/2.0/Mono.Data.Sqlite.dll<p />
 </blockquote>
+
+<hr />
+<pre>
+$ sqlite3 cities.db 
+SQLite version 3.21.0 2017-10-24 18:55:49
+Enter ".help" for usage hints.
+sqlite> .schema
+CREATE TABLE cities (id varchar(10) primary key, name varchar(20), population int, date_mod date);
+sqlite> .quit
+</pre>
+<blockquote>
+</blockquote>
+
+<blockquote>
+</blockquote>
+
+<blockquote>
+</blockquote>
+

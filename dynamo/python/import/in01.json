@@ -1,0 +1,44 @@
+[
+  {
+    "name": "下野",
+    "date_mod": "2005-10-4",
+    "key": "t0926",
+    "population": 69412
+  },
+  {
+    "name": "宇都宮",
+    "date_mod": "2005-5-10",
+    "key": "t0921",
+    "population": 71239
+  },
+  {
+    "name": "小山",
+    "date_mod": "2005-5-24",
+    "key": "t0922",
+    "population": 79814
+  },
+  {
+    "name": "足利",
+    "date_mod": "2005-6-9",
+    "key": "t0924",
+    "population": 59837
+  },
+  {
+    "name": "日光",
+    "date_mod": "2005-4-16",
+    "key": "t0925",
+    "population": 49871
+  },
+  {
+    "name": "佐野",
+    "date_mod": "2005-7-15",
+    "key": "t0923",
+    "population": 91845
+  },
+  {
+    "name": "さくら",
+    "date_mod": "2005-8-10",
+    "key": "t0927",
+    "population": 12437
+  }
+]

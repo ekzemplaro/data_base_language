@@ -20,6 +20,11 @@
 	<blockquote>
 	# apt install awscli<p />
 	</blockquote>
+
+	Raspbian<p />
+	<blockquote>
+	# pip3 install awscli --upgrade<p />
+	</blockquote>
 </blockquote>
 
 <blockquote>
@@ -47,10 +52,38 @@ IAM<p />
 <blockquote>
 	$ aws iam list-access-keys<p />
 	$ aws iam users<p />
+	$ aws iam list-roles<p />
 </blockquote>
+
+DynamoDB<p />
+<blockquote>
+	$ aws dynamodb list-tables<p />
+	$ aws dynamodb delete-table --table-name table_aa<p />
+</blockquote>
+
+Lambda<p />
+<blockquote>
+	$ aws lambda list-functions<p />
+	$ aws lambda list-functions | grep FunctionName<p />
+	$ aws lambda delete-function --function-name func01<p />
+</blockquote>
+
+API Gateway<p />
+<blockquote>
+	$ aws apigateway get-rest-apis<p />
+	$ aws apigateway delete-rest-api --rest-api-id 1234123412<p />
+</blockquote>
+
+
+Cloud Watch<p />
+<blockquote>
+	$ aws cloudwatch list-metrics --namespace "AWS/ApiGateway"<p />
+</blockquote>
+
 
 <blockquote>
 </blockquote>
+
 
 <blockquote>
 </blockquote>
@@ -75,6 +108,6 @@ credentials.csv をダウンロードしたら<p />
 
 <hr />
 <a href="../">Return</a><p />
-Jul/11/2017 AM 08:15<p />
+Nov/05/2017 AM 08:15<p />
 </body>
 </html>

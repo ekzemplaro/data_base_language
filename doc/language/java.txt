@@ -1,11 +1,11 @@
-<title>Java Feb/11/2017</title>
+<title>Java Nov/4/2017</title>
 </head>
 <body>
 <h2><a href="http://www.oracle.com/technetwork/java/index.html">Java</a></h2><p />
 <blockquote>
 <pre>
-ii  openjdk-8-jdk:amd64   8u91-b14-0ubuntu4~16.04.1       amd64   OpenJDK Development Kit (JDK)
-ii  libcommons-httpclient-java     3.1-12    all    Commons HTTPClient - Java library for creating HTTP clients
+ii  openjdk-9-jdk: 9~b181-4     amd64        OpenJDK Development Kit (JDK)
+ii  libcommons-htt 3.1-13       all          Commons HTTPClient - Java library
 </pre>
 </blockquote>
 

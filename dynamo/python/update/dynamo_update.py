@@ -3,7 +3,7 @@
 #
 #	dynamo_update.py
 #
-#					Oct/21/2017
+#					Oct/27/2017
 # --------------------------------------------------------------------
 import sys
 import datetime
@@ -28,7 +28,7 @@ key_in = sys.argv[1]
 population_in = int(sys.argv[2])
 print("%s\t%d" % (key_in, population_in))
 
-dynamodb = boto3.resource('dynamodb',endpoint_url="http://atami:8000")
+dynamodb = boto3.resource('dynamodb',endpoint_url="http://localhost:8000")
 
 table = dynamodb.Table('cities')
 #
