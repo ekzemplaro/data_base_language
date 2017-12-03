@@ -15,8 +15,11 @@ from text_manipulate import dict_display_proc
 sys.stderr.write("*** 開始 ***\n")
 file_in = sys.argv[1]
 #
-dict_aa = csv_read_proc(file_in)
+try:
+	dict_aa = csv_read_proc(file_in)
+	dict_display_proc(dict_aa)
+except Exception as ee:
+	sys.stderr.write(str(ee) + "\n")
 #
-dict_display_proc(dict_aa)
 sys.stderr.write("*** 終了 ***\n")
 # --------------------------------------------------------------------

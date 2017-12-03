@@ -2,7 +2,7 @@
 #
 #	text_manipulate.py
 #
-#					Jul/31/2017
+#					Nov/18/2017
 import	sys
 import	csv
 import	string
@@ -84,16 +84,22 @@ def     dict_append_proc(dict_aa,key,name,population,date_mod):
 	return dict_aa
 #
 # ---------------------------------------------------------------
-def	csv_write_proc(file_out,dict_aa):
-#
-	fp_out = open(file_out,mode='w',encoding='utf-8')
+def	csv_write_proc(file_csv,dict_aa):
+	ff = open(file_csv,'w')
+	writer = csv.writer(ff, lineterminator='\n')
 	for key in dict_aa.keys():
+		array_aa = []
 		unit = dict_aa[key]
-		str_out = key + "," + str(unit['name']) + ","
-		str_out += "%d," % unit['population']
-		str_out += unit['date_mod'] + "\n"
-		fp_out.write(str_out)
-	fp_out.close()
+		pp = "%d" % unit['population']
+#
+		array_aa.append(key)
+		array_aa.append(str(unit['name']))
+		array_aa.append(pp)
+		array_aa.append(unit['date_mod'])
+		writer.writerow(array_aa)
+#
+	ff.close()
+#
 # ---------------------------------------------------------------
 def	csv_read_proc(file_csv):
 #

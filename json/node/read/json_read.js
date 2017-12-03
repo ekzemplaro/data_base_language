@@ -2,7 +2,7 @@
 // ---------------------------------------------------------------
 //	read/json_read.js
 //
-//					Dec/26/2016
+//					Nov/30/2017
 //
 // ---------------------------------------------------------------
 var fs = require("fs")
@@ -20,7 +20,7 @@ if (fs.existsSync(filename))
 
 	try
 		{
-		var dict_aa = JSON.parse (json_str)
+		const dict_aa = JSON.parse (json_str)
 		text_manipulate.dict_display_proc (dict_aa)
 		}
 	catch (error)

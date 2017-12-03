@@ -46,7 +46,6 @@ $file_out = $argv[1];
 echo	$file_out . "\n";
 
 file_write_proc ($str_json,$file_out);
-chmod ($file_out,0666);
 
 fputs (STDERR,"*** 終了 ***\n");
 // ----------------------------------------------------------------

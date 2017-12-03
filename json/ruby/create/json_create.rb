@@ -3,7 +3,7 @@
 #
 #	ruby/create/json_create.rb
 #
-#					Feb/26/2015
+#					Nov/27/2017
 #
 require 'json'
 #
@@ -30,16 +30,14 @@ dict_aa=dict_append_proc(dict_aa,"t0934","那須烏山",64812,"2006-11-30")
 return dict_aa
 end
 # ---------------------------------------------------------------------
-puts	"*** 開始 ***"
+STDERR.puts	"*** 開始 ***"
 json_file = ARGV[0]
 #
 dict_aa=data_prepare_proc()
 #
-dict_display_proc(dict_aa)
-#
 json_out = JSON.pretty_generate(dict_aa)
 file_write_proc(json_file,json_out)
 #
-puts	"*** 終了 ***"
+STDERR.puts	"*** 終了 ***"
 #
 # ---------------------------------------------------------------------

@@ -1,9 +1,8 @@
 #
 #	cgi_manipulate.py
 #
-#					Aug/04/2014
+#					Nov/13/2017
 #
-import	math
 import	cgi
 import	string
 import	sys

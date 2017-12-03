@@ -2,18 +2,31 @@
 // ------------------------------------------------------------------
 //	/data_base/common/php_common/file_io.php
 //
-//					Jun/24/2015
+//					Nov/13/2017
 //
 // ------------------------------------------------------------------
 function file_write_proc ($string_out,$file_out)
 {
-	$fp_out=fopen ($file_out,"w");
-	flock ($fp_out,LOCK_EX);
-	fputs ($fp_out,$string_out);
-	flock ($fp_out,LOCK_UN);
-	fclose ($fp_out);
+	try
+		{
+		$fp_out=fopen ($file_out,"w");
+		if ($fp_out == FALSE)
+			{
+			throw new Exception("Cannot write !\n");
+			}
 
-	chmod ($file_out,0666);
+		flock ($fp_out,LOCK_EX);
+		fputs ($fp_out,$string_out);
+		flock ($fp_out,LOCK_UN);
+		fclose ($fp_out);
+
+		chmod ($file_out,0666);
+		}
+	catch (Exception $ee)
+		{
+		print("*** error *** file_write_proc ***\n");
+		print('Error:'.$ee->getMessage());
+		}
 }
 
 // ------------------------------------------------------------------

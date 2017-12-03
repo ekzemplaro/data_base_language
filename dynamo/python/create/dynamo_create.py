@@ -3,7 +3,7 @@
 #
 #	dynamo_create.py
 #
-#					Oct/20/2017
+#					Dec/04/2017
 # ---------------------------------------------------------------
 import	sys
 import	boto3
@@ -27,8 +27,8 @@ def create_table_proc():
 			{'AttributeName': 'key', 'AttributeType': 'S' },
 			],
 		ProvisionedThroughput={
-			'ReadCapacityUnits': 30,
-			'WriteCapacityUnits': 30
+			'ReadCapacityUnits': 5,
+			'WriteCapacityUnits': 5
 			}
 		)
 

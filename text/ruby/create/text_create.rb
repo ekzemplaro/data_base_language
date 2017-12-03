@@ -3,7 +3,7 @@
 #
 #	ruby/create/text_create.rb
 #
-#					Feb/26/2015
+#					Nov/27/2017
 #
 load '/var/www/data_base/common/ruby_common/text_manipulate.rb'
 # ---------------------------------------------------------------------
@@ -22,15 +22,13 @@ def data_prepare_proc ()
 	return	dict_aa
 end
 # ---------------------------------------------------------------------
-puts	"*** 開始 ***"
+STDERR.puts	"*** 開始 ***"
 text_file = ARGV[0]
 #
 dict_aa = data_prepare_proc()
 #
-dict_display_proc(dict_aa)
-#
 text_write_proc(text_file,dict_aa)
 #
-puts	"*** 終了 ***"
+STDERR.puts	"*** 終了 ***"
 #
 # ---------------------------------------------------------------------
