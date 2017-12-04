@@ -1,7 +1,7 @@
 <meta content="Program Language Examples in racket" name="description">
 <meta content="Ada,クライアント,接続,言語,サンプル" name="keyword">
 <meta content="Uchida Masatomo" name="author">
-<title>kotlin Mar/31/2015</title>
+<title>kotlin Dec/04/2017</title>
 </head>
 <body>
 <h2><a href="http://kotlinlang.org">Kotlin</a></h2><p />
@@ -14,7 +14,7 @@
 
 Arch Linux<br />
 <blockquote>
-$ yaourt -Sb kotlin<p />
+# pacman -S kotlin<p />
 </blockquote>
 
 <blockquote>

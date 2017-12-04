@@ -2,7 +2,7 @@
 /*
 	text_manipulate.kt
 
-					Apr/01/2015
+					Dec/04/2017
 */
 // ------------------------------------------------------------------
 import	java.io.File
@@ -60,17 +60,22 @@ fun dict_to_str_proc
 	(dict_aa: HashMap <String, HashMap <String,String>>,delim:String)
 		: String
 {
-	var keys =  dict_aa.keySet ()
+//	val keys =  dict_aa.keySet ()
+	val keys =  dict_aa.keys
 
 	var str_out = ""
 
 	keys.forEach {
-		var key=it
-		var unit_aa = dict_aa[key]
-		str_out += key + delim
-		str_out += unit_aa["name"] + delim
-		str_out += unit_aa["population"] + delim
-		str_out += unit_aa["date_mod"] + "\n"
+		val key=it
+		val unit_aa = dict_aa[key]
+		str_out += key
+		str_out += delim
+		str_out += unit_aa?.get("name")
+		str_out += delim
+		str_out += unit_aa?.get("population")
+		str_out += delim
+		str_out += unit_aa?.get("date_mod")
+		str_out += "\n"
 		}
 
 	return	str_out
