@@ -1,7 +1,7 @@
 // ----------------------------------------------------------------
 //	json_create.go
 //
-//					Jan/22/2014
+//					Dec/04/2017
 //
 // ----------------------------------------------------------------
 package main
@@ -19,7 +19,7 @@ func data_prepare_proc () map[string](map[string]string) {
 	dict_aa := make (map[string](map[string]string))
 
 	dict_aa["t0921"] = unit_gen_proc ("宇都宮","31852","1921-7-19")
-	dict_aa["t0922"] = unit_gen_proc ("小山","42571","1921-9-20")
+	dict_aa["t0922"] = unit_gen_proc ("小山","46571","1921-9-20")
 	dict_aa["t0923"] = unit_gen_proc ("佐野","68397","1921-7-14")
 	dict_aa["t0924"] = unit_gen_proc ("足利","76518","1921-7-31")
 	dict_aa["t0925"] = unit_gen_proc ("日光","61459","1921-6-24")
@@ -42,8 +42,6 @@ func main() {
 	out_filename := os.Args[1]
 
 	dict_aa := data_prepare_proc ()
-
-	dict_display_proc (dict_aa)
 
         output, _ := json.Marshal(dict_aa)
 

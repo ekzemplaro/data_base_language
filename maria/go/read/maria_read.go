@@ -2,7 +2,7 @@
 //
 //	maria_read.go
 //
-//					Jun/03/2015
+//					Dec/04/2017
 //
 // ----------------------------------------------------------------
 package main
@@ -17,7 +17,7 @@ import (
 func main() {
 	fmt.Println ("*** 開始 ***")
 	// Create the database handle, confirm driver is present
-	db, _ := sql.Open ("mysql", "scott:tiger@/city")
+	db, _ := sql.Open ("mysql", "scott:tiger123@/city")
 	defer db.Close()
 
 	sql_str := "select id,name,population,date_mod from cities order by id"

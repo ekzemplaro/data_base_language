@@ -2,7 +2,7 @@
 //
 //	text_create.go
 //
-//					Jul/08/2014
+//					Dec/04/2017
 //
 // ----------------------------------------------------------------
 package main
@@ -37,8 +37,6 @@ func main () {
 	file_text := os.Args[1]
 
 	dict_aa := data_prepare_proc ()
-
-	dict_display_proc (dict_aa)
 
 	text_write_proc (file_text,dict_aa)
 

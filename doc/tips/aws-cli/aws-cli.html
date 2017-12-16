@@ -88,6 +88,25 @@ IOT<p />
 	$ aws iot delete-thing --thing-name sunflower<p />
 </blockquote>
 
+RDS<p />
+<blockquote>
+	$ aws rds describe-db-instances<p />
+	$ aws rds describe-db-instances | grep DBInstanceIdentifier<p />
+	$ aws rds delete-db-instance --db-instance-identifier sample-test --skip-final-snapshot<p />
+</blockquote>
+
+
+SNS<p />
+<blockquote>
+	$ aws sns list-topics<p />
+	$ aws sns create-topic --name example01<p />
+	$ aws sns delete-topic --topic-arn "arn:aws:sns:ap-northeast-1:111111159025:example01"<p />
+</blockquote>
+
+
+<blockquote>
+</blockquote>
+
 
 <blockquote>
 </blockquote>
@@ -112,6 +131,6 @@ credentials.csv をダウンロードしたら<p />
 
 <hr />
 <a href="../">Return</a><p />
-Nov/30/2017 AM 08:15<p />
+Dec/16/2017 AM 08:15<p />
 </body>
 </html>

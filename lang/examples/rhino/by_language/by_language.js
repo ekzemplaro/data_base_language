@@ -165,6 +165,7 @@ function lang_gen (lang,suffix)
 	db_gen (lang,suffix,"xlsx","xlsx");
 	db_gen (lang,suffix,"maria","maria");
 	db_gen (lang,suffix,"PouchDB","pouch");
+	db_gen (lang,suffix,"DynamoDB","dynamo");
 	print	("</table>");
 	print	("</div>\n\n");
 }

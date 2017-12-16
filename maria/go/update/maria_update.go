@@ -2,7 +2,7 @@
 //
 //	maria_update.go
 //
-//					Jun/03/2015
+//					Dec/04/2017
 //
 // ----------------------------------------------------------------
 package main
@@ -24,7 +24,7 @@ func main() {
 	fmt.Printf ("key_in = %s\t" , key_in)
 	fmt.Printf ("population_in = %d\n" , population_in)
 
-	db, _ := sql.Open ("mysql", "scott:tiger@/city")
+	db, _ := sql.Open ("mysql", "scott:tiger123@/city")
 	defer db.Close()
 
 	today := get_current_date_proc ()

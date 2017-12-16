@@ -2,7 +2,7 @@
 //
 //	json_delete.go
 //
-//					Jan/22/2014
+//					Dec/04/2017
 // ---------------------------------------------------------------
 package main 
 
@@ -31,7 +31,6 @@ func main () {
 	json.Unmarshal ([]byte(json_str), &dict_aa )
 
 	delete (dict_aa,key_in)
-	dict_display_proc (dict_aa)
 
 	output, _ := json.Marshal(dict_aa)
 

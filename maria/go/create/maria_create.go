@@ -2,7 +2,7 @@
 //
 //	maria_create.go
 //
-//					Jun/03/2015
+//					Dec/04/2017
 //
 // ----------------------------------------------------------------
 package main
@@ -37,7 +37,7 @@ func main() {
 
 	dict_aa := data_prepare_proc ()
 
-	db, _ := sql.Open ("mysql","scott:tiger@/city")
+	db, _ := sql.Open ("mysql","scott:tiger123@/city")
 	defer db.Close ()
 
 	_, err := db.Exec ("drop table cities")

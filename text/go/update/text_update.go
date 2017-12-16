@@ -2,7 +2,7 @@
 //
 //	text_update.go
 //
-//					Jan/22/2014
+//					Dec/04/2017
 //
 // ----------------------------------------------------------------
 package main
@@ -27,8 +27,6 @@ func main() {
 	var dict_aa = text_read_proc (text_file)
 
 	dict_aa = dict_update_proc (dict_aa,id_in,population_in )
-
-	dict_display_proc (dict_aa)
 
 	text_write_proc (text_file,dict_aa)
 

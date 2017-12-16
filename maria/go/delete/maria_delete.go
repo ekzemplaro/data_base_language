@@ -2,7 +2,7 @@
 //
 //	maria_delete.go
 //
-//					Jun/03/2015
+//					Dec/04/2017
 //
 // ----------------------------------------------------------------
 package main
@@ -21,7 +21,7 @@ func main() {
 
 	fmt.Printf ("key_in = %s\n" , key_in)
 
-	db, _ := sql.Open ("mysql", "scott:tiger@/city")
+	db, _ := sql.Open ("mysql", "scott:tiger123@/city")
 	defer db.Close ()
 
 
