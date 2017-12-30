@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<title>Lighttpd</title>
+</head>
+<body>
+Lighttpd (Port 80)<p />
+
+インストール<p />
+<blockquote>
+	# apt install lighttpd<p />
+	# apt install php5-cgi<p />
+</blockquote>
+
+ディフォールトのページ<p />
+<blockquote>
+/var/www/html/index.lighttpd.html<p />
+</blockquote>
+
+<blockquote>
+</blockquote>
+
+PHPの設定<br />
+<blockquote>
+	# lighty-enable-mod fastcgi<p />
+	# lighty-enable-mod fastcgi-php<p />
+	# /etc/init.d/lighttpd force-reload<p />
+</blockquote>
+
+Pythonの設定<br />
+<blockquote>
+	server.modules = (<br />
+	"mod_access",<br />
+	"mod_alias",<br />
+	"mod_compress",<br />
+ 	"mod_redirect",<br />
+        "mod_cgi",<br />
+)<br />
+<p />
+<pre>
+$HTTP["url"] =~ "^/cgi-bin/" {
+        cgi.assign = ( ".py" => "/usr/bin/python" )
+}
+</pre>
+</blockquote>
+
+再起動<br />
+<blockquote>
+# systemctl stop lighttpd<br />
+# systemctl start lighttpd<p />
+</blockquote>
+
+ログの出力場所<br />
+<blockquote>
+</blockquote>
+
+
+<blockquote>
+<a href="https://wiki.ubuntu.com/Lighttpd%2BPHP">Lighttpd+PHP</a><p />
+<a href="https://raspberrypi.stackexchange.com/questions/1346/how-to-get-python-to-work-with-lighttpd">How to get Python to work with Lighttpd?</a><p />
+</blockquote>
+
+<hr />
+<a href="/data_base/data_base.html">Return</a><p />
+Dec/30/2017 AM 08:15<p />
+</body>
+</html>
