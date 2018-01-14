@@ -87,9 +87,24 @@ Arch Linux<br />
 	</blockquote>
 </blockquote>
 
+CentOS7<br />
+<blockquote>
+	# yum install -y httpd<p />
+	# systemctl start httpd<br />
+	# systemctl enable httpd<p />
+	# firewall-cmd --permanent --zone=public --add-service=http<br />
+	# firewall-cmd --permanent --zone=public --add-service=https<br />
+	# firewall-cmd --reload<p />
+</blockquote>
+
+Python を置くフォルダー<p />
+<blockquote>
+	/var/www/cgi-bin/<p />
+</blockquote>
+
 <a href="./letsencrypt/">Let's Encrypt</a><p /> 
 <hr />
 <a href="../">Return</a><p />
-May/08/2017 AM 08:25<p />
+Jan/10/2018 AM 07:37<p />
 </body>
 </html>

@@ -10,6 +10,11 @@
 <body>
 <h2>sql script</h2><p />
 
+バージョンの確認<p />
+<blockquote>
+	select version();<p />
+</blockquote>
+
 テーブルの定義<p />
 <blockquote>
 	show create table cities;<p />
@@ -51,6 +56,16 @@
 	alter table cities drop browser;<p />
 </blockquote>
 
+文字コードの確認<p />
+<blockquote>
+	show variables like 'char%';<p />
+</blockquote>
+
+文字コードの設定<p />
+<blockquote>
+	set character_set_client='utf8';<p />
+</blockquote>
+
 <blockquote>
 </blockquote>
 
@@ -59,6 +74,6 @@
 
 <hr />
 <a href="../">Return</a><p />
-Oct/26/2017 AM 08:15<p />
+Jan/11/2018 AM 08:00<p />
 </body>
 </html>

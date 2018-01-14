@@ -2,7 +2,7 @@
 // ---------------------------------------------------------------
 //	redis_create.js
 //
-//					Aug/03/2017
+//					Jan/03/2018
 //
 // ---------------------------------------------------------------
 var text_manipulate=require ("/var/www/data_base/common/node_common/text_manipulate")
@@ -39,7 +39,7 @@ const keys = Object.keys(dict_aa)
 
 keys.forEach(function(key,index)
 	{
-	var str_json = JSON.stringify (dict_aa[key])
+	const str_json = JSON.stringify (dict_aa[key])
 
 	client.set(key, str_json, redis.print)
 

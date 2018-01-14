@@ -2,7 +2,7 @@
 // ---------------------------------------------------------------
 //	redis_update.js
 //
-//					Aug/03/2017
+//					Jan/03/2018
 //
 // ---------------------------------------------------------------
 var node_common = '/var/www/data_base/common/node_common'
@@ -11,8 +11,8 @@ var text_manipulate=require (node_common + '/text_manipulate')
 
 // ---------------------------------------------------------------
 console.log ("*** 開始 ***")
-var key_in=process.argv[2]
-var population_in=process.argv[3]
+const key_in=process.argv[2]
+const population_in=process.argv[3]
 
 console.log (key_in + "\t" + population_in)
 

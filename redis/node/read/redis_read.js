@@ -2,7 +2,7 @@
 // ---------------------------------------------------------------
 //	redis_read.js
 //
-//					Aug/03/2017
+//					Jan/03/2018
 //
 // ---------------------------------------------------------------
 console.log ("*** 開始 ***")
@@ -16,7 +16,7 @@ client.on ("error", function (err)
 		+ client.host + ":" + client.port + " - " + err)
 })
 
-var keys=["t1851","t1852","t1853",
+const keys=["t1851","t1852","t1853",
 	"t1854","t1855","t1856",
 	"t1857","t1858","t1859"]
 
@@ -39,8 +39,8 @@ function read_single_proc (client,key,index)
         	}
 	 else if (reply != null)
 		{
-		var json_str = reply
-		var data = JSON.parse (json_str)
+		const json_str = reply
+		const data = JSON.parse (json_str)
 
 		var out_str = key + "\t"
 		out_str  += data.name + "\t"

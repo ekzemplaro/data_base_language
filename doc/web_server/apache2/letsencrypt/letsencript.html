@@ -109,7 +109,13 @@ CentOS 6.9<p />
 	# service httpd restart<p />
 </blockquote>
 
+CentOS 7.4<p />
 <blockquote>
+	# yum install certbot certbot-apache<p />
+	# sudo firewall-cmd --add-port=443/tcp --zone=public<p />
+	# sudo firewall-cmd --add-port=443/tcp --zone=public --permanent<p />
+
+	# sudo certbot run --apache -d example.com<p />
 </blockquote>
 
 <blockquote>
@@ -117,6 +123,6 @@ CentOS 6.9<p />
 
 <hr />
 <a href="../">Return</a><p />
-May/08/2017 AM 08:15<p />
+Jan/14/2018 AM 08:15<p />
 </body>
 </html>

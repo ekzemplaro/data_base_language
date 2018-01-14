@@ -21,7 +21,7 @@ Linux ***** 3.10.0-514.26.2.el7.x86_64 #1 SMP Tue Jul 4 15:04:05 UTC 2017 x86_64
 バージョン確認方法<br />
 <blockquote>
 $ cat /etc/redhat-release<br />
-CentOS Linux release 7.3.1611 (Core)<br />
+CentOS Linux release 7.4.1708 (Core)<br />
 </blockquote>
 
 ネットワークの確認<p />
@@ -84,14 +84,71 @@ rsyncd の設定<br />
 # ln -s /usr/share/zoneinfo/Japan /etc/localtime<p />
 </blockquote>
 
+Apache2 のインストール<p />
+<blockquote>
+	# yum install httpd -y<p />
+	# systemctl start httpd<br />
+	# systemctl enable httpd<p />
+</blockquote>
 
 ポート 80 にアクセスできるようにする。<p />
 <blockquote>
 # firewall-cmd --permanent --add-service=http --zone=public<p />
 # firewall-cmd --reload<p />
 </blockquote>
+
+ftpd のインストール<p />
+<blockquote>
+	# yum install vsftpd ftp -y<p />
+
+	/etc/vsftpd/vsftpd.conf の最後に次を加える<p />
+	<blockquote>
+		pasv_enable=Yes<br />
+		pasv_max_port=40000<br />
+		pasv_min_port=40000<br />
+	</blockquote>
+	# systemctl start vsftpd<br />
+	# systemctl enable vsftpd<p />
+	# firewall-cmd --permanent --add-port=21/tcp<br />
+	# firewall-cmd --permanent --add-port=40000/tcp<br />
+	# firewall-cmd --reload<p />
+</blockquote>
+
+MariaDB のインストール<p />
+<blockquote>
+	# yum install mariadb mariadb-server<p />
+	# systemctl start mariadb<br />
+	# systemctl enable mariadb<p />
+</blockquote>
+
+phpMyAdmin のインストール<p />
+<blockquote>
+	# yum install phpmyadmin -y<p />
+
+	/etc/httpd/conf.d/phpMyAdmin.conf を編集<p />
+	<blockquote>
+	Require ip 153.203.186.102<p />
+	Require ip 153.203.<p />
+	Require all granted<p />
+	Allow from 153.203.186.102<p />
+	Allow from 153.203.<p />
+	Allow from All<p />
+	</blockquote>
+
+</blockquote>
+
+Python 3.6 のインストール<p />
+<blockquote>
+	# yum install -y https://centos7.iuscommunity.org/ius-release.rpm<p />
+
+	# yum install python36u python36u-libs python36u-devel python36u-pip<p />
+</blockquote>
+
+<blockquote>
+</blockquote>
+
 <hr />
 <a href="../">Return</a><p />
-Jan/18/2017 AM 08:15<p />
+Jan/12/2017 AM 08:15<p />
 </body>
 </html>

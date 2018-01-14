@@ -2,11 +2,11 @@
 "amazon": 
 	{"name": "Amazon","kernel": "4.4.44-39","bash": "4.2.46"},
 "archlinux": 
-	{"name": "ArchLinux","kernel": "4.14.8-1-ARCH","bash": "4.4.12"},
+	{"name": "ArchLinux","kernel": "4.14.13-1-ARCH","bash": "4.4.12"},
 "boot2docker": 
 	{"name": "boot2docker","kernel": "4.0.7-boot2docker","bash": ""},
 "centos": 
-	{"name": "CentOS","kernel": "3.10.0-327.36.2.el7.x86_64","bash": "4.2.46"},
+	{"name": "CentOS","kernel": "3.10.0-327.36.3.el7.x86_64","bash": "4.2.46"},
 "coreos": 
 	{"name": "CoreOS","kernel": "4.10.9-coreos","bash": "4.3.48"},
 "debian": 
@@ -16,13 +16,13 @@
 "gentoo": 
 	{"name": "Gentoo","kernel": "4.0.5-gentoo","bash": "4.3.33"},
 "redhat": 
-	{"name": "RedHat","kernel": "3.10.0-514.16.1.el7.x86_64","bash": "4.2.46"},
+	{"name": "RedHat","kernel": "3.10.0-693.11.6.el7.x86_64","bash": "4.2.46"},
 "suse": 
 	{"name": "SUSE","kernel": "4.4.49-92.11-default","bash": "4.3.42"},
 "tinycore": 
 	{"name": "Tiny Core Linux","kernel": "3.16.6-tinycore","bash": "4.3.39"},
 "ubuntu": 
-	{"name": "Ubuntu","kernel": "4.13.0-21-generic","bash": "4.4.12"},
+	{"name": "Ubuntu","kernel": "4.13.0-25-generic","bash": "4.4.12"},
 "vyos": 
 	{"name": "Vyos","kernel": "3.13.11-1-amd64-vyos","bash": "4.1.5"},
 "xenserver": 
