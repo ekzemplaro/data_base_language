@@ -2,18 +2,17 @@
 /*
 	maria_read.cpp
 
-				Apr/10/2017
+				Feb/11/2018
 
 
 */
 // --------------------------------------------------------------------
-#include	<iostream>
+#include <iostream>
+#include <cstdlib>
+#include <cstdio>
+#include <mysql.h>
 
 using namespace std;
-
-#include <stdlib.h>
-#include <stdio.h>
-#include <mysql.h>
 
 #define MYSQL_SERVER "localhost"
 #define MYSQL_USERNAME "scott"

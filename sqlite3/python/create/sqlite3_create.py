@@ -3,7 +3,7 @@
 #
 #	sqlite3_create.py
 #
-#					Sep/06/2016
+#					Feb/11/2018
 #
 # -------------------------------------------------------------------------
 import	sys
@@ -31,17 +31,21 @@ def	data_prepare_proc ():
 #
 # -------------------------------------------------------------------------
 def	sqlite3_write_proc (file_out,dict_aa):
-	conn = sqlite3.connect (file_out)
-	cursor = conn.cursor ()
+	try:
+		conn = sqlite3.connect (file_out)
+		cursor = conn.cursor ()
 #
-	drop_table_proc (cursor)
-	create_table_proc (cursor)
+		drop_table_proc (cursor)
+		create_table_proc (cursor)
 #
-	table_insert_proc (cursor,dict_aa)
+		table_insert_proc (cursor,dict_aa)
 #
-	conn.commit ()
-	cursor.close ()
-	conn.close ()
+		conn.commit ()
+		cursor.close ()
+		conn.close ()
+	except Exception as ee:
+		sys.stderr.write("*** error *** in sqlite3_write_proc ***\n")
+		sys.stderr.write(str(ee) + "\n")
 #
 # -------------------------------------------------------------------------
 sys.stderr.write ("*** 開始 ***\n")

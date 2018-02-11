@@ -222,5 +222,13 @@ drop user 'user'@'localhost';
 	mysql -h192.108.46.8 -uaaa -p'a*$bcdSf&$g'<p />
 </blockquote>
 
+GUI のツール<p />
+<blockquote>
+	mysql-workbench<p />
+</blockquote>
+
+<blockquote>
+</blockquote>
+
 <blockquote>
 </blockquote>

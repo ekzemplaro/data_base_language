@@ -29,7 +29,7 @@
 
 <blockquote>
 	$ aws --version<br />
-	aws-cli/1.11.78 Python/3.6.0 Linux/4.10.11-1-ARCH botocore/1.5.41<br />
+	aws-cli/1.14.26 Python/3.6.4 Linux/4.14.14-1-ARCH botocore/1.8.32<br />
 </blockquote>
 
 EC2<p />
@@ -51,7 +51,7 @@ S3<p />
 IAM<p />
 <blockquote>
 	$ aws iam list-access-keys<p />
-	$ aws iam users<p />
+	$ aws iam list-users<p />
 	$ aws iam list-roles<p />
 </blockquote>
 
@@ -59,6 +59,13 @@ DynamoDB<p />
 <blockquote>
 	$ aws dynamodb list-tables<p />
 	$ aws dynamodb delete-table --table-name table_aa<p />
+
+	$ aws dynamodb list-tables --endpoint-url http://localhost:8000<p />
+	$ aws dynamodb scan --table-name cities  --endpoint-url http://localhost:8000<p />
+	$ aws dynamodb get-item --table-name cities --key '{"key": {"S": "t0921"}}' --endpoint-url http://localhost:8000<p />
+	$  aws dynamodb scan --table-name  cities --endpoint-url http://localhost:8000 --query 'Count'<p />
+	$ aws dynamodb scan --table-name tbl_raspberry --select "COUNT"<br />
+
 </blockquote>
 
 Lambda<p />
@@ -101,6 +108,9 @@ SNS<p />
 	$ aws sns list-topics<p />
 	$ aws sns create-topic --name example01<p />
 	$ aws sns delete-topic --topic-arn "arn:aws:sns:ap-northeast-1:111111159025:example01"<p />
+	$ aws sns subscribe --topic-arn "arn:aws:sns:ap-northeast-1:111111159025:example01" --protocol email --notification-endpoint "aaa@example.com"<p />
+	$ aws sns list-subscriptions<p />
+	$ aws sns unsubscribe --subscription-arn arn:aws:sns:ap-northeast-1:111111159025:example01:1328f057-de93-4c15-512e-8bb2268db8c4<p />
 </blockquote>
 
 
@@ -131,6 +141,6 @@ credentials.csv をダウンロードしたら<p />
 
 <hr />
 <a href="../">Return</a><p />
-Dec/16/2017 AM 08:15<p />
+Feb/05/2018 AM 08:15<p />
 </body>
 </html>

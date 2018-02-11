@@ -2,7 +2,7 @@
 /*
 	maria_create.cpp
 
-					Apr/08/2017
+					Feb/11/2018
 
 */
 // --------------------------------------------------------------------
@@ -10,7 +10,7 @@
 #include	<fstream>
 #include	<map>
 
-#include	<string.h>
+#include	<cstring>
 #include	<boost/lexical_cast.hpp>
 #include	<mysql.h>
 

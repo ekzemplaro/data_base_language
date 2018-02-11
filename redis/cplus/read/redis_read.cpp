@@ -30,7 +30,7 @@ int main (int argc,char *argv[])
 	string keys[] = {"t1851","t1852","t1853","t1854","t1855", 
 			"t1856","t1857","t1858","t1859"};
 
-	const char *hostname = "host_dbase";
+	const char *hostname = "localhost";
 	const char *port = "6379";
 
 	if (0 == getaddrinfo (hostname,port,&hints,&addrs))

@@ -36,7 +36,7 @@ int main (int argc,char *argv[])
 	hints.ai_family = AF_UNSPEC;
 	hints.ai_socktype = SOCK_STREAM;
 
-	if (0 == getaddrinfo ("host_dbase","6379",&hints,&addrs))
+	if (0 == getaddrinfo ("localhost","6379",&hints,&addrs))
 		{
 		redis_socket_update_proc (key_in,population_in,addrs);
 

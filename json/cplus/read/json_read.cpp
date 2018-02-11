@@ -2,7 +2,7 @@
 /*
 	json_read.cpp
 
-					Feb/27/2012
+					Feb/11/2018
 */
 // -----------------------------------------------------------------------
 #include	<iostream>
@@ -22,7 +22,7 @@ extern	string file_to_str_proc (char file_in[]);
 // -----------------------------------------------------------------------
 int main (int argc, char* argv[])
 {
-	cout << "*** 開始 ***\n";
+	cerr << "*** 開始 ***\n";
 
 	char file_in[160];
 
@@ -34,7 +34,7 @@ int main (int argc, char* argv[])
 
 	dict_display_proc (dict_aa);
 
-	cout << "*** 終了 ***\n";
+	cerr << "*** 終了 ***\n";
 
 	return 0;
 }

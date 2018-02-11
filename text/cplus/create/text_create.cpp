@@ -2,15 +2,14 @@
 /*
 	text_create.cpp
 
-					Feb/28/2012
+					Feb/11/2018
 
 */
 // --------------------------------------------------------------------
 #include	<iostream>
 #include	<fstream>
 #include	<map>
-
-#include	<string.h>
+#include	<cstring>
 #include	<boost/lexical_cast.hpp>
 
 using namespace std;
@@ -49,7 +48,7 @@ static map <string,Unit >  data_prepare_proc ()
 // --------------------------------------------------------------------
 int main (int argc,char *argv[])
 {
-	cout << "*** 開始 ***\n";
+	cerr << "*** 開始 ***\n";
 
 	char file_out[160];
 
@@ -65,7 +64,7 @@ int main (int argc,char *argv[])
 
 	text_write_proc (file_out,dict_aa);
 
-	cout << "*** 終了 ***\n";
+	cerr << "*** 終了 ***\n";
 }
 
 // --------------------------------------------------------------------

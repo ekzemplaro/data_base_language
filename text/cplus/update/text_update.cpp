@@ -2,7 +2,7 @@
 /*
 	text_update.cpp
 
-					Feb/28/2012
+					Feb/11/2018
 */
 // --------------------------------------------------------------------
 #include	<iostream>
@@ -32,7 +32,7 @@ extern map <string,Unit> dict_update_proc
 // --------------------------------------------------------------------
 int main (int argc,char *argv[])
 {
-	cout << "*** 開始 ***\n";
+	cerr << "*** 開始 ***\n";
 
 	char	file_name[160];
 	char	key_in[10];
@@ -52,7 +52,7 @@ int main (int argc,char *argv[])
 
 	text_write_proc (file_name,dict_aa);
 
-	cout << "*** 終了 ***\n";
+	cerr << "*** 終了 ***\n";
 
 	return 0;
 }

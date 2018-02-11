@@ -2,7 +2,7 @@
 /*
 	json_create.cpp
 
-				Feb/24/2012
+				Feb/11/2018
 */
 // --------------------------------------------------------------------
 #include	<iostream>
@@ -10,8 +10,7 @@
 #include	<sstream>
 #include	<string>
 #include	<map>
-
-#include	<string.h>
+#include	<cstring>
 #include	<boost/lexical_cast.hpp>
 #include	<boost/foreach.hpp>
 
@@ -52,7 +51,7 @@ static map <string,Unit >  data_prepare_proc ()
 // --------------------------------------------------------------------
 int main (int argc,char *argv[])
 {
-	cout << "*** 開始 ***\n";
+	cerr << "*** 開始 ***\n";
 
 	char file_out[160];
 
@@ -70,7 +69,7 @@ int main (int argc,char *argv[])
 	fp_out << str_json;
 	fp_out.close ();
 
-	cout << "*** 終了 ***\n";
+	cerr << "*** 終了 ***\n";
 }
 
 // --------------------------------------------------------------------

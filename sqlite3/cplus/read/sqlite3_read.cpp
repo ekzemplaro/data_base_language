@@ -2,19 +2,18 @@
 /*
 	sqlite3_read.cpp
 
-				Jan/26/2011
+				Feb/11/2018
 
 
 */
 // --------------------------------------------------------------------
-#include	<iostream>
-#include	<cstring>
+#include <iostream>
+#include <cstring>
+#include <cstdio>
+#include <cstdlib>
+#include <sqlite3.h>
 
 using namespace std;
-
-#include	<stdio.h>
-#include	<stdlib.h>
-#include	<sqlite3.h>
 
 // --------------------------------------------------------------------
 static int callback (void *NotUsed, int argc, char *argv[],char *azColName[])

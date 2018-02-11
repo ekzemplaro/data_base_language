@@ -2,7 +2,7 @@
 /*
 	curl_manipulate.cpp
 
-					Jun/19/2015
+					Feb/11/2018
 */
 // --------------------------------------------------------------------
 #include	<cstdio>
@@ -16,7 +16,7 @@
 #include	<curl/curl.h>
 
 #include	<stdio.h>
-#include	<stdlib.h>
+#include	<cstdlib>
 #include	<sys/stat.h>
 #include	<unistd.h>
 

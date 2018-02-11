@@ -2,12 +2,12 @@
 /*
 	redis_delete.cpp
 
-				Jan/06/2015
+				Feb/11/2018
 
 */
 // --------------------------------------------------------------------
 #include	<iostream>
-#include	<stdio.h>
+#include	<cstdio>
 #include	<sys/socket.h>
 #include	<netdb.h>
 
@@ -36,7 +36,7 @@ int main (int argc,char *argv[])
 	hints.ai_family = AF_UNSPEC;
 	hints.ai_socktype = SOCK_STREAM;
  
-	if (0 == getaddrinfo ("host_dbase","6379",&hints,&addrs))
+	if (0 == getaddrinfo ("localhost","6379",&hints,&addrs))
 		{
 		sock = socket(addrs->ai_family,
 			addrs->ai_socktype, addrs->ai_protocol);
