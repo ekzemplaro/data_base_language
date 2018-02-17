@@ -65,6 +65,7 @@ DynamoDB<p />
 	$ aws dynamodb get-item --table-name cities --key '{"key": {"S": "t0921"}}' --endpoint-url http://localhost:8000<p />
 	$  aws dynamodb scan --table-name  cities --endpoint-url http://localhost:8000 --query 'Count'<p />
 	$ aws dynamodb scan --table-name tbl_raspberry --select "COUNT"<br />
+	$ aws dynamodb query --table-name tbl_raspberry --key-conditions '{"id_raspberry": { "AttributeValueList": [ { "S" : "ras0002" } ] , "ComparisonOperator": "EQ" } }'<p />
 
 </blockquote>
 
@@ -93,6 +94,8 @@ IOT<p />
 	$ aws iot list-things<p />
 	$ aws iot describe-thing --thing-name sunflower<p />
 	$ aws iot delete-thing --thing-name sunflower<p />
+	$ aws iot list-topic-rules<p />
+	$ aws iot get-topic-rule --rule-name rule001<p />
 </blockquote>
 
 RDS<p />
@@ -141,6 +144,6 @@ credentials.csv をダウンロードしたら<p />
 
 <hr />
 <a href="../">Return</a><p />
-Feb/05/2018 AM 08:15<p />
+Feb/12/2018 AM 08:15<p />
 </body>
 </html>

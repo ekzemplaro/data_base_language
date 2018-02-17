@@ -2,15 +2,15 @@
 #
 #	python_common/file_io.py
 #
-#					Jul/31/2017
+#					Feb/17/2018
 #
-#
+# --------------------------------------------------------------------
 import	sys
 import	string
 import	fcntl
 #
 # --------------------------------------------------------------------
-def	file_to_str_proc(file_in):
+def file_to_str_proc(file_in):
 	str_out = ""
 	try:
 		fp_in = open(file_in,encoding='utf-8')

@@ -2,7 +2,8 @@
 #
 #	text_manipulate.py
 #
-#					Nov/18/2017
+#					Feb/17/2018
+# ---------------------------------------------------------------
 import	sys
 import	csv
 import	string
@@ -34,7 +35,7 @@ def	text_read_proc(file_in):
 	return	dict_aa
 #
 # ---------------------------------------------------------------
-def	dict_display_proc(dict_aa):
+def dict_display_proc(dict_aa):
 	for key in sorted(dict_aa.keys()):
 		if ((key != '_id') and (key != '_rev')):
 			unit = dict_aa[key]
@@ -42,7 +43,7 @@ def	dict_display_proc(dict_aa):
 #			str_out = key+"\t"+ str(name)
 			str_out = str(key) +"\t"+ str(name)
 			str_out += "\t" + str(unit['population'])
-			str_out += "\t" + unit['date_mod']
+			str_out += "\t" + str(unit['date_mod'])
 			print(str_out)
 # ---------------------------------------------------------------
 def	text_write_proc(file_out,dict_aa):
