@@ -2,7 +2,7 @@
 //
 //	json_read.go
 //
-//					Jan/22/2014
+//					Feb/24/2018
 // ---------------------------------------------------------------
 package main 
 
@@ -15,7 +15,7 @@ import (
 
 // ---------------------------------------------------------------
 func main () {
-	fmt.Printf ("*** 開始 ***\n")
+	fmt.Fprintf (os.Stderr,"*** 開始 ***\n")
 
 	file_json := os.Args[1]
 	fmt.Printf ("%s\n",file_json)
@@ -30,7 +30,7 @@ func main () {
 
 	dict_display_proc (dict_aa)
 
-	fmt.Printf ("*** 終了 ***\n")
+	fmt.Fprintf (os.Stderr,"*** 終了 ***\n")
 }
 
 // ---------------------------------------------------------------

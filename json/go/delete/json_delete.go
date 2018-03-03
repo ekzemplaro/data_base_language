@@ -2,7 +2,7 @@
 //
 //	json_delete.go
 //
-//					Dec/04/2017
+//					Feb/24/2018
 // ---------------------------------------------------------------
 package main 
 
@@ -15,7 +15,7 @@ import (
 
 // ---------------------------------------------------------------
 func main () {
-	fmt.Printf ("*** 開始 ***\n")
+	fmt.Fprintf (os.Stderr,"*** 開始 ***\n")
 
 	json_filename := os.Args[1]
 
@@ -36,7 +36,7 @@ func main () {
 
 	ioutil.WriteFile (json_filename,[]byte(output),0666)
 
-	fmt.Printf ("*** 終了 ***\n")
+	fmt.Fprintf (os.Stderr,"*** 終了 ***\n")
 }
 
 // ---------------------------------------------------------------

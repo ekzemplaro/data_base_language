@@ -1,4 +1,4 @@
 #
-HTTPCLIENT=/home/uchida/java/httpcomponents-client-4.3.6/lib
+HTTPCLIENT=/home/uchida/lang/java/httpclient/httpcomponents-client-4.5.5/lib
 #
 cp -p $HTTPCLIENT/*.jar .

@@ -2,7 +2,7 @@
 //
 //	json_read.scala
 //
-//					Feb/03/2015
+//					Mar/03/2018
 //
 // -----------------------------------------------------------------
 import scala.io.Source
@@ -14,7 +14,7 @@ object json_read
 // -----------------------------------------------------------------
 def main (args: Array[String])
 {
-	println	("*** 開始 ***")
+	System.err.println	("*** 開始 ***")
 
 	val file_in = args(0)
 
@@ -33,7 +33,7 @@ def main (args: Array[String])
 
 	text_manipulate.dict_display_proc (dict_aa)
 
-	println	("*** 終了 ***")
+	System.err.println	("*** 終了 ***")
 }
 
 // -----------------------------------------------------------------

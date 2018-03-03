@@ -1,0 +1,73 @@
+
+https://qiita.com/sparkgene/items/c3ac042f30cc5d0fe324
+
+http://variedtastefinder.jp/blog/?p=1782
+
+
+https://note.spage.jp/archives/137#i-4
+
+http://christina04.hatenablog.com/entry/2015/01/08/205438
+
+-----------------------------------------------------------
+
+
+wget http://nginx.org/download/nginx-1.12.2.tar.gz
+
+git clone https://github.com/arut/nginx-rtmp-module.git
+
+
+sudo apt install g++
+sudo apt install libpcre3-dev
+sudo apt install libssl-dev
+sudo apt install make
+
+
+./configure --add-module=/home/uchida/tmp/nginx-rtmp-module
+make
+sudo make install
+
+$ /usr/local/nginx/sbin/nginx -v
+nginx version: nginx/1.12.2
+
+$ /usr/local/nginx/sbin/nginx -V
+nginx version: nginx/1.12.2
+built by gcc 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.9) 
+built with OpenSSL 1.0.2g  1 Mar 2016
+TLS SNI support enabled
+configure arguments: --add-module=/home/uchida/tmp/nginx-rtmp-module
+
+
+sudo /usr/local/nginx/sbin/nginx
+
+/usr/local/nginx/html/index.html
+
+
+
+/lib/systemd/system/nginx.service
+
+	PIDFile=/usr/local/nginx/logs/nginx.pid
+
+
+--------------------------------------------
+
+/usr/local/nginx/conf/nginx.conf
+
+rtmp {
+        server {
+                listen 1935;
+                chunk_size 4096;
+
+                application live {
+                play /usr/local/nginx/html/video;
+                        live on;
+                        record off;
+                }
+        }
+}
+
+
+--------------------------------------------
+/usr/local/nginx/html/video
+
+wget http://japanism.info/images/waterfall-free-video1.zip
+--------------------------------------------

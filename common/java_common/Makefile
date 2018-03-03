@@ -17,8 +17,8 @@ SG_CDB=$(JAR)/sg-cdb-1.0.4.jar
 POI=/usr/share/java/apache-poi
 POI_LIB=$(POI)/poi-3.16.jar:$(POI)/poi-ooxml-3.16.jar:$(POI)/poi-ooxml-schemas-3.16.jar:$(POI)/ooxml-lib/xmlbeans-2.6.0.jar
 #
-HTTPCLIENT=$(COMMON)/jar/commons-httpclient
-HTTPCLIENT_JAR=.:$(HTTPCLIENT)/commons-httpclient-3.1.jar:$(HTTPCLIENT)/commons-logging-1.2.jar:$(HTTPCLIENT)/commons-codec-1.10.jar
+HTTPCLIENT=$(COMMON)/jar/httpclient
+HTTPCLIENT_JAR=.:$(HTTPCLIENT)/httpclient-4.5.5.jar:$(HTTPCLIENT)/commons-logging-1.2.jar:$(HTTPCLIENT)/commons-codec-1.10.jar
 #
 #
 CPP_A=.:$(EXIST_HOME)/exist.jar:$(L_CORE)/xmldb.jar:$(L_CORE)/log4j-1.2.15.jar

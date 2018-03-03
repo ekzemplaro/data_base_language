@@ -6,6 +6,7 @@
 import	java.io.BufferedReader;
 import	java.io.InputStreamReader;
 
+/*
 import org.apache.commons.httpclient.HttpClient;  
 import org.apache.commons.httpclient.HttpStatus;
 import org.apache.commons.httpclient.methods.GetMethod;
@@ -14,7 +15,10 @@ import org.apache.commons.httpclient.methods.PutMethod;
 import org.apache.commons.httpclient.methods.DeleteMethod;
 import org.apache.commons.httpclient.methods.RequestEntity;
 import org.apache.commons.httpclient.methods.StringRequestEntity;
-
+*/
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpDelete;
 // --------------------------------------------------------------
 public class get_uri
 {

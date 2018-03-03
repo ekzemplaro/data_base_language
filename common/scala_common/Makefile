@@ -40,11 +40,11 @@ all: text_manipulate.class \
 	file_io.class \
 	xml_manipulate.class \
 	sql_manipulate.class \
+	json_manipulate.class \
+	get_uri.class \
 	ftp_manipulate.class \
 	mcached_manipulate.class \
 	redis_manipulate.class \
-	json_manipulate.class \
-	get_uri.class \
 	xlsx_manipulate.class \
 	cdb_manipulate.class \
 	mongo_manipulate.class \

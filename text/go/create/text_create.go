@@ -2,7 +2,7 @@
 //
 //	text_create.go
 //
-//					Dec/04/2017
+//					Feb/24/2018
 //
 // ----------------------------------------------------------------
 package main
@@ -32,7 +32,7 @@ func data_prepare_proc () map[string](map[string]string) {
 // ----------------------------------------------------------------
 func main () {
 
-	fmt.Println ("*** 開始 ***")
+	fmt.Fprintln (os.Stderr,"*** 開始 ***")
 
 	file_text := os.Args[1]
 
@@ -40,7 +40,7 @@ func main () {
 
 	text_write_proc (file_text,dict_aa)
 
-	fmt.Println ("*** 終了 ***")
+	fmt.Fprintln (os.Stderr,"*** 終了 ***")
 }
 
 // ----------------------------------------------------------------

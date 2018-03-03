@@ -1,3 +1,2 @@
 #
 ecl -shell text_read.lisp -eval '(quit)' -- /var/tmp/plain_text/cities.txt
-#ecl -shell text_read.lisp

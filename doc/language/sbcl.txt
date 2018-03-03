@@ -1,10 +1,16 @@
-<title>sbcl Sep/27/2013</title>
+<title>sbcl Mar/02/2018</title>
 </head>
 <body>
 <h2><a href="http://www.sbcl.org">Steel Bank Common Lisp</a></h2><p />
 <pre>
 ii  sbcl   2:1.2.14-1ubuntu1   amd64   Common Lisp compiler and development system
 </pre>
+
+Arch Linux<p />
+<blockquote>
+	# pacman -S sbcl<p />
+</blockquote>
+
 <blockquote>
 	<pre>
 $ sbcl
@@ -98,7 +104,3 @@ HASH-TABLE
 * (print (gethash 'date_mod unit_pp))
 </pre>
 <hr />
-Arch Linux<p />
-<blockquote>
-# pacman -S sbcl<p />
-</blockquote>

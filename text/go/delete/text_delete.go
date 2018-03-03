@@ -2,7 +2,7 @@
 //
 //	text_delete.go
 //
-//					Jan/22/2014
+//					Feb/24/2018
 //
 // ----------------------------------------------------------------
 package main
@@ -14,7 +14,7 @@ import (
 
 // ----------------------------------------------------------------
 func main() {
-	fmt.Println ("*** 開始 ***")
+	fmt.Fprintln (os.Stderr,"*** 開始 ***")
 
 	text_file := os.Args[1]
 	key := os.Args[2]
@@ -27,7 +27,7 @@ func main() {
 
 	text_write_proc (text_file,dict_aa)
 
-	fmt.Println ("*** 終了 ***")
+	fmt.Fprintln (os.Stderr,"*** 終了 ***")
 }
 
 // ----------------------------------------------------------------

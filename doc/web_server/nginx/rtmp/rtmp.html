@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<title>RTMP</title>
+</head>
+<body>
+NginxでRTMPストリーミングをする<p />
+
+Ubuntu 16.04 サーバーで確認<p />
+
+ソースコードの用意<p />
+<blockquote>
+	wget http://nginx.org/download/nginx-1.12.2.tar.gz<p />
+	git clone https://github.com/arut/nginx-rtmp-module.git<p />
+</blockquote>
+
+必要なソフトのインストール<p />
+<blockquote>
+	sudo apt install g++<br />
+	sudo apt install libpcre3-dev<br />
+	sudo apt install libssl-dev<br />
+	sudo apt install make<p />	
+</blockquote>
+
+コンパイル、インストール<p />
+<blockquote>
+	./configure --add-module=/home/uchida/tmp/nginx-rtmp-module<br />
+	make<br />
+	sudo make install<br />
+</blockquote>
+
+バージョンの確認<p />
+<blockquote>
+	$ /usr/local/nginx/sbin/nginx -v<br />
+	nginx version: nginx/1.12.2<p />
+
+	<p />
+	$ /usr/local/nginx/sbin/nginx -V<br />
+	nginx version: nginx/1.12.2<br />
+	built by gcc 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.9)<br />
+	built with OpenSSL 1.0.2g  1 Mar 2016<br />
+	TLS SNI support enabled<br />
+	configure arguments: --add-module=/home/uchida/tmp/nginx-rtmp-module<br />
+</blockquote>
+
+試しに起動<p />
+<blockquote>
+	sudo /usr/local/nginx/sbin/nginx<br />
+	<blockquote>
+	/usr/local/nginx/html/index.html が表示される<p />
+		<blockquote>
+		表示されない場合は、ポートが開いているか確認<p />
+		</blockquote>
+	停止<p />
+		<blockquote>
+		sudo /usr/local/nginx/sbin/nginx -s stop<br />
+		</blockquote>
+	</blockquote>
+</blockquote>
+
+systemctl で起動できるようにする<p />
+<blockquote>
+	<a href="./nginx.service.txt">/lib/systemd/system/nginx.service</a> を作成<p />
+	<blockquote>
+		PIDFile=/usr/local/nginx/logs/nginx.pid<p />
+	</blockquote>
+
+	起動<p />
+	<blockquote>
+		sudo systemctl start nginx<p />
+	</blockquote>
+
+	状態を調べる<p />
+	<blockquote>
+		sudo systemctl status nginx<p />
+	</blockquote>
+
+	停止<p />
+	<blockquote>
+		sudo systemctl stop nginx<p />
+	</blockquote>
+</blockquote>
+
+/usr/local/nginx/conf/nginx.conf の最後に次の設定をつける<p />
+<blockquote>
+<pre>
+rtmp {
+        server {
+                listen 1935;
+                chunk_size 4096;
+
+                application live {
+                play /usr/local/nginx/html/video;
+                        live on;
+                        record off;
+                }
+        }
+}
+</pre>
+</blockquote>
+
+mp4 を保存するフォルダーを作成<p />
+<blockquote>
+	/usr/local/nginx/html/video<p />
+</blockquote>
+
+サンプルのmp4 をダウンロード<p />
+<blockquote>
+	wget http://japanism.info/images/waterfall-free-video1.zip<p />
+</blockquote>
+
+スクリーンを動画としてキャプチャ<p />
+<blockquote>
+	simplescreenrecorder
+	<blockquote>
+	Videos/*.mkv で保存される<p />
+	</blockquote>
+	mp4 に変換<p />
+	<blockquote>
+	ffmpeg -i in01.mkv -vcodec copy out01.mp4<p />
+	</blockquote>
+	vlc で確認<p />
+	<blockquote>
+	vlc out01.mp4<p />
+	</blockquote>
+</blockquote>
+
+curl で検証<p />
+<blockquote>
+	curl -o tmp01.mp4 rtmp://localhost/live/waterfall-free-video1.mp4<p />
+
+	curl -o tmp01.mp4 rtmp://pansy.local/live/waterfall-free-video1.mp4<p />
+	<blockquote>
+	他のサイトからアクセスする時は、1935 が開いている必要がある<p />
+	</blockquote>
+
+</blockquote>
+
+vlc でネットワーク越しに検証<p />
+	<blockquote>
+	vlc rtmp://pansy.local/live/waterfall-free-video1.mp4<p />
+	</blockquote>
+
+録画時間を取得<p />
+<blockquote>
+	ffprobe tmp02.mp4 -hide_banner -show_entries format=duration<p />
+</blockquote>
+
+<blockquote>
+</blockquote>
+
+<hr />
+<a href="../">Return</a><p />
+Mar/02/2018 AM 08:15<p />
+</body>
+</html>

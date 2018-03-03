@@ -3,7 +3,7 @@
 //
 //	json_read.js
 //
-//						Jan/27/2016
+//						Mar/04/2018
 //
 // ------------------------------------------------------------------
 importPackage (java.io)
@@ -12,15 +12,15 @@ importPackage (java.lang)
 load ("/var/www/data_base/common/rhino_common/text_manipulate.js")
 load ("/var/www/data_base/common/rhino_common/file_io.js")
 
-var file_in=arguments[0]
+const file_in=arguments[0]
 
-print	("*** 開始 ***")
+System.err.println ("*** 開始 ***")
 
 file = new File (file_in)
 
 if (file.exists ())
 	{
-	var json_str = string_read_proc (file_in)
+	const json_str = string_read_proc (file_in)
 
 	var dict_aa = JSON.parse (json_str)
 
@@ -31,5 +31,5 @@ else
 	System.err.println	(file_in + " doesn't exist ***")
 	}
 
-print	("*** 終了 ***")
+System.err.println ("*** 終了 ***")
 // ------------------------------------------------------------------

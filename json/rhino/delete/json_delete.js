@@ -3,17 +3,18 @@
 //
 //	json_delete.js
 //
-//					Aug/07/2015
+//					Mar/04/2018
 //
 // ------------------------------------------------------------------
 importPackage (java.io)
+importPackage (java.lang)
 
 load ("/var/www/data_base/common/rhino_common/text_manipulate.js")
 load ("/var/www/data_base/common/rhino_common/file_io.js")
 
-print	("*** 開始 ***")
-var file_name=arguments[0]
-var key_in=arguments[1]
+System.err.println ("*** 開始 ***")
+const file_name=arguments[0]
+const key_in=arguments[1]
 
 print	("key_in = " + key_in)
 
@@ -28,5 +29,5 @@ if (dict_aa[key_in])
 	string_write_proc (file_name,json_str)
 	}
 
-print	("*** 終了 ***")
+System.err.println ("*** 終了 ***")
 // ------------------------------------------------------------------

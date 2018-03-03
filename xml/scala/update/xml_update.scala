@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------
 //	xml_update.scala
 //
-//						Jul/20/2011
+//						Mar/03/2018
 // -----------------------------------------------------------------
 import scala.io.Source
 import scala.collection.mutable
@@ -11,7 +11,7 @@ object xml_update
 // -----------------------------------------------------------------
 def main (args: Array[String])
 {
-	println	("*** 開始 ***")
+	System.err.println	("*** 開始 ***")
 
 	val xml_file = args(0)
 	val id_in = args(1)
@@ -33,7 +33,7 @@ def main (args: Array[String])
 
 	file_io.file_write_proc (xml_file,out_str)
 
-	println	("*** 終了 ***")
+	System.err.println	("*** 終了 ***")
 }
 
 // -----------------------------------------------------------------

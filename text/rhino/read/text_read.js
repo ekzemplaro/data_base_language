@@ -3,7 +3,7 @@
 //
 //	text_read.js
 //
-//						Aug/07/2015
+//						Mar/04/2018
 //
 // ------------------------------------------------------------------
 importPackage (java.io)
@@ -12,21 +12,21 @@ importPackage (java.lang)
 load ("/var/www/data_base/common/rhino_common/file_io.js")
 load ("/var/www/data_base/common/rhino_common/text_manipulate.js")
 
-print	("*** 開始 ***")
+System.err.println ("*** 開始 ***")
 
-file_in=arguments[0]
+const file_in=arguments[0]
 
 file = new File (file_in)
 
 if (file.exists ())
 	{
-	var dict_aa = text_read_proc (file_in)
+	const dict_aa = text_read_proc (file_in)
 	dict_display_proc (dict_aa)
 	}
 else
 	{
-	System.err.println	(file_in + " doesn't exist ***")
+	System.err.println (file_in + " doesn't exist ***")
 	}
 
-print	("*** 終了 ***")
+System.err.println ("*** 終了 ***")
 // ------------------------------------------------------------------

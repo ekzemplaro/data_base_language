@@ -2,7 +2,7 @@
 ;
 ;	text_read.lisp
 ;
-;						Oct/04/2013
+;						Mar/02/2018
 ;
 ; -------------------------------------------------------------------
 (load "/var/www/data_base/common/common_lisp/text_manipulate.lisp")

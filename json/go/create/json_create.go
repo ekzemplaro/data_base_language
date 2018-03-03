@@ -1,7 +1,7 @@
 // ----------------------------------------------------------------
 //	json_create.go
 //
-//					Dec/04/2017
+//					Feb/24/2018
 //
 // ----------------------------------------------------------------
 package main
@@ -37,7 +37,7 @@ func data_prepare_proc () map[string](map[string]string) {
 }
 // ----------------------------------------------------------------
 func main() {
-	fmt.Printf ("*** 開始 ***\n")
+	fmt.Fprintf (os.Stderr,"*** 開始 ***\n")
 
 	out_filename := os.Args[1]
 
@@ -47,7 +47,7 @@ func main() {
 
         ioutil.WriteFile (out_filename,[]byte(output),0666)
 
-	fmt.Printf ("*** 終了 ***\n")
+	fmt.Fprintf (os.Stderr,"*** 終了 ***\n")
 }
  
 // ----------------------------------------------------------------

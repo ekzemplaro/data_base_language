@@ -3,23 +3,24 @@
 //
 //	text_create.js
 //
-//					Aug/25/2015
+//					Mar/04/2018
 //
 // ------------------------------------------------------------------
 importPackage (java.io)
+importPackage (java.lang)
 
 load ("/var/www/data_base/common/rhino_common/file_io.js")
 load ("/var/www/data_base/common/rhino_common/text_manipulate.js")
 
-var file_out=arguments[0]
+const file_out=arguments[0]
 
-print	("*** 開始 ***")
+System.err.println ("*** 開始 ***")
 
-var dict_aa = data_prepare_proc ()
+const dict_aa = data_prepare_proc ()
 
 text_write_proc (file_out,dict_aa)
 
-print	("*** 終了 ***")
+System.err.println ("*** 終了 ***")
 // ------------------------------------------------------------------
 function data_prepare_proc ()
 {
