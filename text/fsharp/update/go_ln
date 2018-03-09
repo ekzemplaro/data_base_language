@@ -1,9 +1,12 @@
 #
 FSHARP_COMMON=/var/www/data_base/common/fsharp_common
-CSHARP_COMMON=/var/www/data_base/common/csharp_common
+DLL=/var/www/data_base/common/dll
+FSHARP=/usr/lib/mono/fsharp
 #
-ln -s $FSHARP_COMMON/FSharp.Core.dll FSharp.Core.dll
-ln -s $FSHARP_COMMON/FSharp.Core.optdata FSharp.Core.optdata
-ln -s $FSHARP_COMMON/FSharp.Core.sigdata FSharp.Core.sigdata
+ln -s $DLL/RestSharp.dll .
 #
-ln -s $CSHARP_COMMON/table_manipulate.dll table_manipulate.dll
+ln -s $FSHARP/FSharp.Core.dll .
+ln -s $FSHARP/FSharp.Core.optdata .
+ln -s $FSHARP/FSharp.Core.sigdata .
+#
+ln -s $FSHARP_COMMON/text_manipulate.fs .

@@ -2,7 +2,7 @@
 "amazon": 
 	{"name": "Amazon","kernel": "4.4.44-39","bash": "4.2.46"},
 "archlinux": 
-	{"name": "ArchLinux","kernel": "4.15.6-1-ARCH","bash": "4.4.19"},
+	{"name": "ArchLinux","kernel": "4.15.7-1-ARCH","bash": "4.4.19"},
 "boot2docker": 
 	{"name": "boot2docker","kernel": "4.0.7-boot2docker","bash": ""},
 "centos": 

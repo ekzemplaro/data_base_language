@@ -1,0 +1,8 @@
+ii  r-base   3.4.2-1ubuntu1           all     GNU R statistical computation and graphics system
+ii  r-base-core     3.4.2-1ubuntu1    amd64   GNU R core of statistical computation and graphics system
+ii  r-base-dev      3.4.2-1ubuntu1    all     GNU R installation of auxiliary GNU R packages
+ii  r-base-html     3.4.2-1ubuntu1    all     GNU R html docs for statistical computing system functions
+ii  r-cran-rmysql   0.10.13-1build1   amd64   GNU R package providing a DBI-compliant interface to MySQL
+ii  r-cran-jsonlite   1.2-1build1     amd64   Robust, High Performance JSON Parser and Generator for R
+ii  r-cran-curl       3.0-2           amd64   GNU R modern and flexible web client for R
+

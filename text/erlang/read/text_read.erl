@@ -2,10 +2,9 @@
 %% -----------------------------------------------------------
 %%	text_read.erl
 %%
-%%					Feb/08/2016
+%%					Mar/08/2018
 %% -----------------------------------------------------------
 -module(text_read).
--compile(export_all).
 -import(text_manipulate, [text_read_proc/1,display_proc/1]).
 
 main (A)->

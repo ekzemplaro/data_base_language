@@ -5,7 +5,7 @@
 %%					Sep/26/2011
 %% -----------------------------------------------------------
 -module(text_read).
--compile(export_all).
+%% -compile(export_all).
 -import(text_manipulate, [csv_read_proc/1,display_proc/1]).
 
 main (A)->

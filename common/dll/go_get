@@ -27,3 +27,4 @@ cp -p $EPPLUS/EPPlus.dll .
 MYSQL=/home/uchida/lang/csharp/mysql/v4.5
 cp -p $MYSQL/MySql.Data.dll .
 #
+cp -p /home/uchida/lang/csharp/restsharp/RestSharp.dll .

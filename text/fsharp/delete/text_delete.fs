@@ -2,33 +2,30 @@
 //
 //	text_delete.fs
 //
-//					Feb/08/2016
+//					Mar/09/2018
 //
 // -------------------------------------------------------------------
 open System
-open System.Text
-open Microsoft.FSharp.Core
 open System.IO
+open Microsoft.FSharp.Core
 
 // -------------------------------------------------------------------
 [<EntryPoint>]
 let main (args : string[] ) =
 
-  printfn "*** 開始 ***"
-  printfn "*** aaaaa ***"
+  Console.Error.WriteLine("*** 開始 ***")
 
   let file_txt = args.[0]
 
   let key = args.[1]
   printfn "%s" key
 
-  let dict_aa = text_manipulate.text_read_proc (file_txt)
+  let dict_aa = text_manipulate.m01.text_read_proc (file_txt)
 
   let _ = dict_aa.Remove (key)
 
-  let _=  text_manipulate.text_write_proc (file_txt,dict_aa)
+  let _=  text_manipulate.m01.text_write_proc (file_txt,dict_aa)
 
-  printfn "*** 終了 ***"
+  Console.Error.WriteLine("*** 終了 ***")
   0
-
 // ----------------------------------------------------------------

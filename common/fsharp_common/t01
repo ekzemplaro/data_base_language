@@ -1,0 +1,15 @@
+let dict_aa = new Dictionary<string,Dictionary<string,string>>()
+let count = List.length list_aa
+printfn "count = %d" count
+printfn "---------"
+for line in list_aa do
+  let cols = line.Split [|'\t'|]
+  let key = cols.[0]
+  let name = cols.[1]
+  let population = cols.[2]
+  let date_mod = cols.[3]
+  let unit_aa = new Dictionary<string,string>()
+  let _ = unit_aa.Add ("name",name)
+  let _ = unit_aa.Add ("population", string population)
+  let _ = unit_aa.Add ("date_mod",date_mod)
+  dict_aa.Add (key,unit_aa)

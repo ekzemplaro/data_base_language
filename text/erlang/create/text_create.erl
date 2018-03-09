@@ -2,11 +2,10 @@
 %% ----------------------------------------------------------------
 %%	text_create.erl
 %%
-%%					Feb/08/2016
+%%					Mar/08/2018
 %%
 %% ----------------------------------------------------------------
 -module(text_create).
--import(text_manipulate, [display_proc/1]).
 -import(text_manipulate, [text_write_proc/2]).
 %% ----------------------------------------------------------------
 main(A) ->
@@ -15,7 +14,6 @@ main(A) ->
 	[Arg0|_]=A,
 	File_out = Arg0,
 	Dict_aa = data_prepare_proc (),
-	display_proc (Dict_aa),
 %%
 	text_write_proc (File_out,Dict_aa),
 %%
@@ -33,6 +31,6 @@ data_prepare_proc ()->
 	{t2386,{{name,"常滑"},{population,81934},{date_mod,"1996-7-12"}}},
 	{t2387,{{name,"大府"},{population,56872},{date_mod,"1996-9-21"}}},
 	{t2388,{{name,"瀬戸"},{population,29351},{date_mod,"1996-3-18"}}},
-	{t2389,{{name,"犬山"},{population,93456},{date_mod,"1996-7-24"}}}
+	{t2389,{{name,"犬山"},{population,91456},{date_mod,"1996-7-24"}}}
 	].
 %% ----------------------------------------------------------------

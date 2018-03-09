@@ -2,7 +2,7 @@
 /*
 	read/text_read.cs
 
-					Apr/08/2017
+					Mar/08/2018
 
 */
 // ----------------------------------------------------------------
@@ -25,7 +25,7 @@ public static int Main (string[] args)
 		return 1;
 		}
 
-	string	file_in = args[0];
+	string file_in = args[0];
 
 	Console.WriteLine ("file_in = " + file_in);
 

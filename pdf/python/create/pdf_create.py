@@ -3,7 +3,7 @@
 #
 #	pdf_create.py
 #
-#					Oct/19/2016
+#					Mar/06/2018
 # -------------------------------------------------------------------------
 #
 import	sys
@@ -36,7 +36,12 @@ print	(file_pdf)
 #
 dict_aa = data_prepare_proc ()
 #
-dict_to_pdf_proc (file_pdf,dict_aa)
+try:
+	dict_to_pdf_proc (file_pdf,dict_aa)
+except Exception as ee:
+	sys.stderr.write("*** error *** in dict_to_pdf_proc ***\n")
+	sys.stderr.write(str(ee) + "\n")
+#
 #
 sys.stderr.write ("*** 終了 ***\n")
 # -------------------------------------------------------------------------

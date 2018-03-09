@@ -24,7 +24,7 @@ def	data_prepare_proc ():
 	dict_aa = dict_append_proc (dict_aa,'t1276','我孫子',35987,'2003-1-21')
 	dict_aa = dict_append_proc (dict_aa,'t1277','鴨川',81256,'2003-7-23')
 	dict_aa = dict_append_proc (dict_aa,'t1278','銚子',29374,'2003-10-26')
-	dict_aa = dict_append_proc (dict_aa,'t1279','市川',85613,'2003-2-17')
+	dict_aa = dict_append_proc (dict_aa,'t1279','市川',87613,'2003-2-17')
 #
 	return	dict_aa
 #
@@ -37,7 +37,10 @@ print	(file_out)
 #
 dict_aa = data_prepare_proc ()
 #
-csv_write_proc (file_out,dict_aa)
+try:
+	csv_write_proc (file_out,dict_aa)
+except Exception as ee:
+	sys.stderr.write(str(ee) + "\n")
 #
 sys.stderr.write ("*** 終了 ***\n")
 # -------------------------------------------------------------------------

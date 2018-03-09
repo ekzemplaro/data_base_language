@@ -1,1 +1,2 @@
+export TERM=xterm
 mono ./text_create.exe /var/tmp/plain_text/cities.txt

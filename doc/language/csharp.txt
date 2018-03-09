@@ -1,4 +1,4 @@
-<title>C# Aug/30/2017</title>
+<title>C# Mar/08/2018</title>
 </head>
 <body>
 <h2><a href="http://en.csharp-online.net">C#</a></h2><p />
@@ -35,3 +35,15 @@ cannot execute binary file: Exec format error というエラーが出たら<p /
 
 # pacman -S monodevelop<p />
 </blockquote>
+
+
+<blockquote>
+	export TERM=xterm<p />
+</blockquote>
+
+<blockquote>
+</blockquote>
+
+<blockquote>
+</blockquote>
+

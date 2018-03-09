@@ -1,6 +1,5 @@
-COMMON=/var/www/data_base/common/csharp_common
+COMMON=/var/www/data_base/common/fsharp_common
 text_delete.exe : text_delete.fs
-	fsharpc text_delete.fs \
-		-r:$(COMMON)/table_manipulate.dll
+	fsharpc text_manipulate.fs text_delete.fs
 clean:
 	rm -f *.exe
