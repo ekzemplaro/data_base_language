@@ -2,7 +2,7 @@
 //
 //	maria_create.fs
 //
-//					Feb/08/2016
+//					Mar/09/2018
 //
 // -------------------------------------------------------------------
 open System
@@ -58,7 +58,7 @@ let data_insert_proc (conn: MySqlConnection) =
 let main (args : string[] ) =
   printfn "*** 開始 ***"
 
-  let conn = new MySqlConnection "userid=scott;password=tiger;database=city;Host=localhost"
+  let conn = new MySqlConnection "userid=scott;password=tiger123;database=city;Host=localhost"
 
   conn.Open ()
 

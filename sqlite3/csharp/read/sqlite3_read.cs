@@ -17,7 +17,7 @@ static int Main (string[] args)
 {
 	string out_str;
 
-	Console.WriteLine ("*** 開始 ***");
+	Console.Error.WriteLine ("*** 開始 ***");
 
 	if (args.Length < 1)
 		{
@@ -57,7 +57,7 @@ static int Main (string[] args)
 	conn.Close();
 	conn.Dispose();
 
-	Console.WriteLine ("*** 終了 ***");
+	Console.Error.WriteLine ("*** 終了 ***");
 
 	return	0;
 }

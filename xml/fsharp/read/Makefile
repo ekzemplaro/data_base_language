@@ -1,6 +1,4 @@
-CSHARP_COMMON=/var/www/data_base/common/csharp_common
 xml_read.exe: xml_read.fs
-	fsharpc xml_read.fs \
-		-r:$(CSHARP_COMMON)/table_manipulate.dll
+	fsharpc text_manipulate.fs file_io.fs xml_read.fs
 clean:
 	rm -f *.exe

@@ -1,10 +1,5 @@
-COMMON=/var/www/data_base/common
-CSHARP_COMMON=$(COMMON)/csharp_common
-DLL=$(COMMON)/dll
-json_create.exe: json_create.fs 
-	fsharpc json_create.fs \
-		-r:$(CSHARP_COMMON)/table_manipulate.dll \
-		-r:Newtonsoft.Json.dll \
-		-r:$(DLL)/nunit.framework.dll
+json_create.exe: json_create.fs
+	fsharpc text_manipulate.fs file_io.fs json_manipulate.fs json_create.fs \
+		-r:Newtonsoft.Json.dll
 clean:
 	rm -f *.exe

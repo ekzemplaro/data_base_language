@@ -15,7 +15,7 @@
 	</blockquote>
 	<blockquote>
 		例えば、/home/scott で、<br />
-		tar xvfz wordpress-4.7.3-ja.tar.gz<p />
+		tar xvfz wordpress-4.9.4-ja.tar.gz<p />
 		cd /var/www<br />
 		ln -s /home/scott/wordpress .<br />
 	</blockquote>

@@ -2,7 +2,7 @@
 //
 //	maria_read.fs
 //
-//					Feb/08/2016
+//					Mar/09/2018
 //
 // -------------------------------------------------------------------
 open System
@@ -14,7 +14,7 @@ open MySql.Data.MySqlClient
 let main (args : string[] ) =
   printfn ("*** 開始 ***")
 
-  let conn = new MySqlConnection "userid=scott;password=tiger;database=city;Host=localhost"
+  let conn = new MySqlConnection "userid=scott;password=tiger123;database=city;Host=localhost"
   conn.Open()
 
   let cmd = new MySqlCommand ("SELECT * FROM cities", conn )

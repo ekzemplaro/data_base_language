@@ -19,6 +19,7 @@ Arch Linux<p />
 	次のコマンドがインストールされる<p />
 		<blockquote>
 		/usr/bin/vpnserver<p />
+		/usr/bin/vpnclient<p />
 		/usr/bin/vpncmd<p />
 		</blockquote>
 
@@ -29,7 +30,7 @@ Arch Linux<p />
 		</blockquote>
 	サーバーの設定<p />
 		<blockquote>
-		$ vpncmd<p />
+		$ vpncmd /server<p />
 		</blockquote>
 	</blockquote>
 </blockquote>
@@ -50,6 +51,27 @@ softether-vpnserver-v4.20-9608-rtm-2016.04.17-linux-x64-64bit.tar.gz<p />
 $ sudo ./vpnserver start<p />
 </blockquote>
 
+Ubuntu 17.10<p />
+
+<blockquote>
+	前提ソフト<p  />
+	<blockquote>
+	make<br />
+	gcc<br />
+	bridge-utils<br />
+	libssl-dev<br />
+	libncurses5-dev<br />
+	libreadline-dev<br />
+	</blockquote>
+</blockquote>
+
+<blockquote>
+	git pull https://github.com/SoftEtherVPN/SoftEtherVPN.git<p />
+	cd SoftEtherVPN<p />
+	make<p />
+	sudo make install<p />
+</blockquote>
+
 参考になるページ<p />
 <blockquote>
 	<a href="http://www.linuxmania.jp/softether-vpn.html#ser-set">
@@ -66,7 +88,7 @@ Arch Linux<p />
 		</blockquote>
 	クライアントの設定<p />
 		<blockquote>
-		$ vpncmd<p />
+		$ vpncmd /client<p />
 		</blockquote>
 </blockquote>
 
@@ -208,6 +230,6 @@ The command completed successfully.
 </blockquote>
 <hr />
 <a href="../">Return</a><p />
-Feb/02/2017 AM 08:15<p />
+Mar/16/2018 AM 08:15<p />
 </body>
 </html>

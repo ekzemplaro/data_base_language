@@ -2,7 +2,7 @@
 //
 //	maria_update.fs
 //
-//					Feb/08/2016
+//					Mar/09/2018
 //
 // -------------------------------------------------------------------
 open System
@@ -17,7 +17,7 @@ let main (args : string[] ) =
   let population_in = int args.[1]
   printfn "%s\t%d" key_in population_in
 
-  let conn = new MySqlConnection "userid=scott;password=tiger;database=city;Host=localhost"
+  let conn = new MySqlConnection "userid=scott;password=tiger123;database=city;Host=localhost"
   conn.Open()
 
   let today = System.String.Format ("{0:yyyy-MM-dd}",System.DateTime.Now)

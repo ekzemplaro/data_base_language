@@ -1,7 +1,5 @@
-COMMON=/var/www/data_base/common/csharp_common
 json_update.exe: json_update.fs
-	fsharpc json_update.fs  \
-		-r:table_manipulate.dll \
+	fsharpc text_manipulate.fs file_io.fs json_manipulate.fs json_update.fs \
 		-r:Newtonsoft.Json.dll
 clean:
 	rm -f *.exe

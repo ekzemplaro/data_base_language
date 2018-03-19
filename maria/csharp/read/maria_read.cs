@@ -23,10 +23,9 @@ public static void Main (string[] args)
 
 	MySqlConnection conn = new MySqlConnection (str_connect);
 
-	Console.WriteLine ("*** 開始 ***");
+	Console.Error.WriteLine ("*** 開始 ***");
 
 	conn.Open();
-    
 
 	MySqlCommand command = new MySqlCommand("select * from cities", conn);
 
@@ -44,7 +43,7 @@ public static void Main (string[] args)
 
 	conn.Close();
 
-	Console.WriteLine ("*** 終了 ***");
+	Console.Error.WriteLine ("*** 終了 ***");
 }
 
 // ----------------------------------------------------------------

@@ -1,9 +1,7 @@
 #
 FSHARP_COMMON=/var/www/data_base/common/fsharp_common
-DLL=/var/www/data_base/common/dll
 FSHARP=/usr/lib/mono/fsharp
 #
-ln -s $DLL/RestSharp.dll .
 #
 ln -s $FSHARP/FSharp.Core.dll .
 ln -s $FSHARP/FSharp.Core.optdata .

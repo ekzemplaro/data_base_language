@@ -2,7 +2,7 @@
 /*
 	xml_file/c_sharp/read/xml_read.cs
 
-					Sep/27/2011
+					Mar/10/2018
 
 */
 // ----------------------------------------------------------------
@@ -14,7 +14,7 @@ public static class xml_read
 {
 public static void Main (string[] args)
 {
-	Console.WriteLine ("*** 開始 ***");
+	Console.Error.WriteLine ("*** 開始 ***");
 
 	string	xml_file = args[0];
 
@@ -26,7 +26,7 @@ public static void Main (string[] args)
 
 	text_manipulate.dict_display_proc (dict_aa);
 
-	Console.WriteLine ("*** 終了 ***");
+	Console.Error.WriteLine ("*** 終了 ***");
 }
 
 // ----------------------------------------------------------------

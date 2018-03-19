@@ -1,11 +1,12 @@
 #
 COMMON=/var/www/data_base/common
 FSHARP_COMMON=$COMMON/fsharp_common
-CSHARP_COMMON=$COMMON/csharp_common
 DLL=$COMMON/dll
+FSHARP=/usr/lib/mono/fsharp
 #
-ln -s $FSHARP_COMMON/FSharp.Core.dll FSharp.Core.dll
-ln -s $FSHARP_COMMON/FSharp.Core.optdata FSharp.Core.optdata
-ln -s $FSHARP_COMMON/FSharp.Core.sigdata FSharp.Core.sigdata
+ln -s $FSHARP/FSharp.Core.dll .
+ln -s $FSHARP/FSharp.Core.optdata .
+ln -s $FSHARP/FSharp.Core.sigdata .
 #
-ln -s $DLL/MySql.Data.dll MySql.Data.dll
+ln -s $DLL/MySql.Data.dll .
+#

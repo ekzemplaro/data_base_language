@@ -1,0 +1,13 @@
+make
+gcc
+bridge-utils
+libssl-dev
+
+libncurses5-dev
+libreadline-dev
+
+
+git
+
+
+https://github.com/SoftEtherVPN/SoftEtherVPN.git
