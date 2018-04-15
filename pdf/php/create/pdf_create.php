@@ -5,7 +5,7 @@
 //	pdf_create.php
 //
 //
-//						Oct/20/2016
+//						Mar/23/2018
 //
 // ----------------------------------------------------------------
 require_once ('/var/www/lib/php/tcpdf/tcpdf.php');
@@ -18,16 +18,16 @@ include "text_manipulate.php";
 // ----------------------------------------------------------------
 function dict_to_pdf_proc ($pdf_file,$dict_aa)
 {
-$pdf=new TCPDF();
-$pdf->AddPage();
-$font_path = '/var/www/lib/php/IPAfont00303/ipag.ttf';
+	$pdf=new TCPDF();
+	$pdf->setPrintHeader( false );
+	$pdf->AddPage();
+	$font_path = '/var/www/lib/php/IPAfont00303/ipag.ttf';
 
-if (file_exists($font_path)) {
-	$font = new TCPDF_FONTS();
-	$fontX = $font->addTTFfont($font_path);
-	$pdf->SetFont($fontX , '', 10,'',true);
-	}
-
+	if (file_exists($font_path)) {
+		$font = new TCPDF_FONTS();
+		$fontX = $font->addTTFfont($font_path);
+		$pdf->SetFont($fontX , '', 10,'',true);
+		}
 
 	$width = 40;
 	$height = 10;

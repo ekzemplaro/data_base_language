@@ -138,8 +138,8 @@ $ mysqldump -u root city > city.sql<p />
 </blockquote>
 復元<br />
 <blockquote>
-$ mysql-u root -p < dump.sql<p />
-$ mysql-u root city < city.sql<p />
+$ mysql -u root -p < dump.sql<p />
+$ mysql -u root city < city.sql<p />
 </blockquote>
 <hr />
 Ubuntu<p />
