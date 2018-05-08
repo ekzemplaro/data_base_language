@@ -54,6 +54,17 @@ Bye
 	</blockquote>
 </blockquote>
 
+Ubuntu 18.04<br />
+<blockquote>
+	/etc/mysql/mysql.conf.d/mysqld.cnf<p />
+	<blockquote>
+	[mysqld]<br />
+	character-set-server=utf8<br />
+	</blockquote>
+</blockquote>
+
+
+
 再起動<p />
 <blockquote>
 # systemctl stop mysql<br />

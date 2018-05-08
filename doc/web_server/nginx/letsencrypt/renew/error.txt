@@ -1,0 +1,48 @@
+
+# certbot renew
+Saving debug log to /var/log/letsencrypt/letsencrypt.log
+
+-------------------------------------------------------------------------------
+Processing /etc/letsencrypt/renewal/ekzemplaro.org.conf
+-------------------------------------------------------------------------------
+Cert is due for renewal, auto-renewing...
+Plugins selected: Authenticator webroot, Installer None
+Renewing an existing certificate
+/usr/lib/python3.6/site-packages/josepy/jwa.py:107: CryptographyDeprecationWarning: signer and verifier have been deprecated. Please use sign and verify instead.
+  signer = key.signer(self.padding, self.hash)
+Performing the following challenges:
+http-01 challenge for ekzemplaro.org
+Waiting for verification...
+Cleaning up challenges
+Attempting to renew cert (ekzemplaro.org) from /etc/letsencrypt/renewal/ekzemplaro.org.conf produced an unexpected error: Failed authorization procedure. ekzemplaro.org (http-01): urn:acme:error:unauthorized :: The client lacks sufficient authorization :: Invalid response from http://ekzemplaro.org/.well-known/acme-challenge/rboehR9s1TyAdp-0YL8fXKm9gazzL8Xih25eFS8cQ9k: "<html>
+<head><title>403 Forbidden</title></head>
+<body bgcolor="white">
+<center><h1>403 Forbidden</h1></center>
+<hr><center>". Skipping.
+All renewal attempts failed. The following certs could not be renewed:
+  /etc/letsencrypt/live/ekzemplaro.org/fullchain.pem (failure)
+
+-------------------------------------------------------------------------------
+
+All renewal attempts failed. The following certs could not be renewed:
+  /etc/letsencrypt/live/ekzemplaro.org/fullchain.pem (failure)
+-------------------------------------------------------------------------------
+1 renew failure(s), 0 parse failure(s)
+
+IMPORTANT NOTES:
+ - The following errors were reported by the server:
+
+   Domain: ekzemplaro.org
+   Type:   unauthorized
+   Detail: Invalid response from
+   http://ekzemplaro.org/.well-known/acme-challenge/rboehR9s1TyAdp-0YL8fXKm9gazzL8Xih25eFS8cQ9k:
+   "<html>
+   <head><title>403 Forbidden</title></head>
+   <body bgcolor="white">
+   <center><h1>403 Forbidden</h1></center>
+   <hr><center>"
+
+   To fix these errors, please make sure that your domain name was
+   entered correctly and the DNS A/AAAA record(s) for that domain
+   contain(s) the right IP address.
+

@@ -65,12 +65,14 @@ DynamoDB<p />
 	$ aws dynamodb delete-table --table-name table_aa<p />
 
 	$ aws dynamodb list-tables --endpoint-url http://localhost:8000<p />
+	$ aws dynamodb describe-table --table-name table_aa<p />
 	$ aws dynamodb scan --table-name cities  --endpoint-url http://localhost:8000<p />
 	$ aws dynamodb get-item --table-name cities --key '{"key": {"S": "t0921"}}' --endpoint-url http://localhost:8000<p />
 	$  aws dynamodb scan --table-name  cities --endpoint-url http://localhost:8000 --query 'Count'<p />
 	$ aws dynamodb scan --table-name tbl_raspberry --select "COUNT"<br />
 	$ aws dynamodb query --table-name tbl_raspberry --key-conditions '{"id_raspberry": { "AttributeValueList": [ { "S" : "ras0002" } ] , "ComparisonOperator": "EQ" } }'<p />
 
+	$ aws dynamodb delete-item --table-name cities --key '{"id_city": {"S": "t3011"}}'<p />
 </blockquote>
 
 Lambda<p />
@@ -90,6 +92,9 @@ API Gateway<p />
 Cloud Watch<p />
 <blockquote>
 	$ aws cloudwatch list-metrics --namespace "AWS/ApiGateway"<p />
+
+	$ aws logs describe-log-groups  | grep logGroupName<p />
+	$ aws logs delete-log-group --log-group-name "/aws/lambda/example01"<p />
 </blockquote>
 
 IOT<p />
@@ -148,6 +153,6 @@ credentials.csv をダウンロードしたら<p />
 
 <hr />
 <a href="../">Return</a><p />
-Feb/20/2018 AM 08:15<p />
+May/08/2018 AM 08:15<p />
 </body>
 </html>
