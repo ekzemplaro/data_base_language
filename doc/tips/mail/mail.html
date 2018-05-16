@@ -72,15 +72,20 @@ Escape character is '^]'.
 220 mail.example.org ESMTP Postfix
 helo example.org
 250 mail.example.org
-mail from: scott
+
+mail from: scott@example.org
 250 2.1.0 Ok
-rcpt to: john
+
+rcpt to: john@aaa.com
 250 2.1.5 Ok
+
 data
 354 End data with <CR><LF>.<CR><LF>
 Subject: Test mail
+From: scott@example.org
 Good Afternoon
 .
+
 250 2.0.0 Ok: queued as 70ADF262581
 quit
 221 2.0.0 Bye
@@ -119,8 +124,17 @@ Gmail Oath2 を使うには<p />
 <blockquote>
 	# pacman -S python-google-api-python-client<p />
 </blockquote>
+<hr />
+Postfix で外部からメールを送信<p />
+<blockquote>
+	IP アドレスを、mynetworks に入れる。<p />
+	/etc/postfix/main.cf<p />
+	<blockquote>
+	mynetworks = 168.100.189.0/28, 127.0.0.0/8, 153.140.201.204<p />
+	</blockquote>
+</blockquote>
 
 <a href="../">Return</a><p />
-Aug/22/2017 AM 08:15<p />
+May/14/2018 AM 08:15<p />
 </body>
 </html>

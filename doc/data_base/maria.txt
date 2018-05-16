@@ -82,9 +82,11 @@ CentOS 6.9<p />
 
 PHP (Archlinux)<p />
 <blockquote>
-	/etc/php/php.ini<p />
-	# Uncomment "extension=pdo_mysql.so" and "extension=mysqli.so".<p />
-	# systemctl restart mysqld<p />
+	/etc/php/php.ini<br />
+	<blockquote>
+	extension=pdo_mysql.so<br />
+	extension=mysqli.so<br />
+	</blockquote>
 </blockquote>
 
 PHP (Ubuntu)<p />

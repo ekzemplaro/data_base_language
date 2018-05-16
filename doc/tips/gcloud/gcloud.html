@@ -11,6 +11,9 @@
 <h2>Gcloud</h2><p />
 
 インストール<p />
+
+<blockquote>
+Arch Linux<p />
 <blockquote>
 	$ yaourt -Sb google-cloud-sdk<p />
 </blockquote>
@@ -18,25 +21,39 @@
 <blockquote>
 	$ gcloud --version<br />
 <pre>
-Google Cloud SDK 155.0.0
-app-engine-python 1.9.52
-bq 2.0.24
-core 2017.05.10
-gcloud 
-gsutil 4.26
-kubectl
+Google Cloud SDK 200.0.0
+app-engine-go 
+app-engine-python 1.9.69
+beta 2017.09.15
+bq 2.0.33
+core 2018.04.30
+gsutil 4.31
 </pre>
 </blockquote>
+</blockquote>
 
-Ubuntu 17.04<p />
+<blockquote>
+Ubuntu 18.04<p />
 <blockquote>
 	/etc/apt/sources.list.d/google-cloud-sdk.list<p />
 	<blockquote>
-	deb http://packages.cloud.google.com/apt cloud-sdk-zesty main<p />
+	deb http://packages.cloud.google.com/apt cloud-sdk-bionic main<p />
 	</blockquote>
 	curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -<p />
 	# apt update<p />
 	# apt install google-cloud-sdk<p />
+
+	$ gcloud --version<p />
+<pre>
+Google Cloud SDK 201.0.0
+alpha 2018.05.11
+beta 2018.05.11
+bq 2.0.33
+core 2018.05.11
+gsutil 4.31
+</pre>
+
+</blockquote>
 </blockquote>
 
 Google Compute Engine<p />
@@ -80,6 +97,6 @@ ssh で接続中に、<p />
 
 <hr />
 <a href="../">Return</a><p />
-Oct/29/2017 AM 08:15<p />
+May/16/2018 AM 08:15<p />
 </body>
 </html>
