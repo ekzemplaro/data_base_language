@@ -8,42 +8,13 @@
 package main
 
 import (
-	"io"
 	"fmt"
 	"encoding/json"
 	"os"
 	"strconv"
-	"net/http"
-	"log"
 	"strings"
 )
 
-// ----------------------------------------------------------------
-/*
-type city struct {
-	_id string
-	_rev string
-	name string
-	population int
-	date_mod string
-}
-*/
-// ----------------------------------------------------------------
-func putRequest(url string, data io.Reader)  {
-	client := &http.Client{}
-	req, err := http.NewRequest(http.MethodPut, url, data)
-	if err != nil {
-		// handle error
-		log.Fatal(err)
-	}
-	_, err = client.Do(req)
-	if err != nil {
-		// handle error
-		log.Fatal(err)
-	}
-
-
-}
 // ----------------------------------------------------------------
 func main () {
 

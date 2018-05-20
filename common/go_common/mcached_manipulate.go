@@ -2,7 +2,7 @@
 //
 //	mcached_manipulate.go
 //
-//					Feb/11/2015
+//					May/20/2018
 //
 // ----------------------------------------------------------------
 package main
@@ -53,12 +53,12 @@ func mcached_socket_read_proc (conn net.Conn,key_in string) string {
 // ----------------------------------------------------------------
 func json_parser (key string,json_str string) {
 //			fmt.Println (json_str)
-	var unit_aa map[string]string
+	var unit_aa map[string]interface{}
 
 	json.Unmarshal ([]byte(json_str), &unit_aa)
 	fmt.Printf ("%s\t",key)
 	fmt.Printf ("%s\t",unit_aa["name"])
-	fmt.Printf ("%s\t",unit_aa["population"])
+	fmt.Printf ("%f\t",unit_aa["population"])
 	fmt.Printf ("%s\n",unit_aa["date_mod"])
 }
 
@@ -87,13 +87,13 @@ func mcached_socket_write_proc (conn net.Conn,key_in string,json_str string) {
 // ----------------------------------------------------------------
 func json_update_proc (json_str string,population_in int) string {
 
-	var unit_aa map[string]string
+	var unit_aa map[string]interface{}
 	json.Unmarshal ([]byte(json_str), &unit_aa)
 	fmt.Printf ("%s\t",unit_aa["name"])
-	fmt.Printf ("%s\t",unit_aa["population"])
+	fmt.Printf ("%f\t",unit_aa["population"])
 	fmt.Printf ("%s\n",unit_aa["date_mod"])
 
-	unit_aa["population"] = strconv.Itoa (population_in)
+	unit_aa["population"] = population_in
 	unit_aa["date_mod"] = get_current_date_proc ()
 
 	output, _ := json.Marshal(unit_aa)
@@ -104,7 +104,7 @@ func json_update_proc (json_str string,population_in int) string {
 }
 
 // ----------------------------------------------------------------
-func dict_to_mcached_proc (hostname string,port int,dict_aa map[string](map[string]string)) {
+func dict_to_mcached_proc (hostname string,port int,dict_aa map[string](map[string]interface{})) {
 	str_port := strconv.Itoa (port)
 	conn, err := net.Dial ("tcp",hostname + ":" + str_port)
 	if err != nil {
@@ -126,8 +126,8 @@ func dict_to_mcached_proc (hostname string,port int,dict_aa map[string](map[stri
 }
 
 // ----------------------------------------------------------------
-func mcached_to_dict_proc (hostname string,port int,keys []string) map[string](map[string]string){
-	dict_aa := make (map[string](map[string]string))
+func mcached_to_dict_proc (hostname string,port int,keys []string) map[string](map[string]interface{}){
+	dict_aa := make (map[string](map[string]interface{}))
 
 	str_port := strconv.Itoa (port)
 	conn, err := net.Dial ("tcp",hostname + ":" + str_port)
@@ -140,7 +140,7 @@ func mcached_to_dict_proc (hostname string,port int,keys []string) map[string](m
 		json_str := mcached_socket_read_proc (conn,key)
 
 		if 0 < len (json_str) {
-			var unit_aa map[string]string
+			var unit_aa map[string]interface{}
 			json.Unmarshal ([]byte(json_str), &unit_aa)
 			dict_aa[key] = unit_aa
 			}

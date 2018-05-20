@@ -2,7 +2,7 @@
 //
 //	redis_manipulate.go
 //
-//					Jan/20/2015
+//					May/20/2018
 //
 // ----------------------------------------------------------------
 package main
@@ -29,7 +29,7 @@ func redis_socket_write_proc (conn net.Conn,key_in string,json_str string) {
 }
 
 // ----------------------------------------------------------------
-func dict_to_redis_proc (conn net.Conn,dict_aa map[string](map[string]string)) {
+func dict_to_redis_proc (conn net.Conn,dict_aa map[string](map[string]interface{})) {
 	for key,value := range dict_aa {
 //		fmt.Print (key + "\t")
 //		fmt.Println (value["name"])

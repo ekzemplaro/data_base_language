@@ -8,13 +8,8 @@
 package main
 
 import (
-//	"io/ioutil"
-//	"log"
-//	"net/http"
-//	"os"
 	"fmt"
 	"encoding/json"
-//	"reflect"
 )
 
 // ----------------------------------------------------------------

@@ -8,35 +8,12 @@
 package main
 
 import (
-	"io"
 	"fmt"
 	"encoding/json"
 	"os"
-	"net/http"
-	"log"
-//	"strconv"
 	"strings"
 )
 
-// ----------------------------------------------------------------
-
-
-// ----------------------------------------------------------------
-func deleteRequest(url string, data io.Reader)  {
-	client := &http.Client{}
-	req, err := http.NewRequest(http.MethodDelete, url, data)
-	if err != nil {
-		// handle error
-		log.Fatal(err)
-	}
-	_, err = client.Do(req)
-	if err != nil {
-		// handle error
-		log.Fatal(err)
-	}
-
-
-}
 // ----------------------------------------------------------------
 func main () {
 

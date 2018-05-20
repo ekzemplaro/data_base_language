@@ -2,7 +2,7 @@
 //
 //	csv_update.go
 //
-//					Jan/22/2014
+//					May/20/2018
 //
 // ----------------------------------------------------------------
 package main
@@ -27,8 +27,6 @@ func main() {
 	var dict_aa = csv_read_proc (csv_file)
 
 	dict_aa = dict_update_proc (dict_aa,id_in,population_in )
-
-	dict_display_proc (dict_aa)
 
 	csv_write_proc (csv_file,dict_aa)
 

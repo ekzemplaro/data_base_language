@@ -15,15 +15,24 @@ import (
 	"strconv"
 	"time"
 	"sort"
+	"reflect"
 )
 
 // ----------------------------------------------------------------
 func display_record_proc (key string, unit_aa map[string]interface{}) {
 	fmt.Printf ("%s\t",key)
 	fmt.Printf ("%s\t",unit_aa["name"])
-//	population := unit_aa["population"].(int)
+	vv := reflect.TypeOf(unit_aa["population"])
+//	fmt.Println(v)
+
+	population := 0
+	if (vv.Kind() == reflect.Int) {
+		population = unit_aa["population"].(int)
+		} else {
 	pf := unit_aa["population"].(float64)
-	population := int(pf)
+	population = int(pf)
+		}
+
 	str_population := strconv.Itoa(population)
 	fmt.Printf ("%s\t",str_population)
 	fmt.Printf ("%s\n",unit_aa["date_mod"])

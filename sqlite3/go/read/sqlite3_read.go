@@ -2,14 +2,13 @@
 //
 //	sqlite3_read.go
 //
-//					May/19/2018
+//					May/20/2018
 //
 // ----------------------------------------------------------------
 package main
 
 import (
 	"fmt"
-	"strconv"
 	"database/sql"
 	_ "github.com/mattn/go-sqlite3"
 )
@@ -18,7 +17,7 @@ import (
 func main() {
 	fmt.Println ("*** 開始 ***")
 
-	dict_aa := make (map[string](map[string]string))
+	dict_aa := make (map[string](map[string]interface{}))
 
 	db_file := "/var/tmp/sqlite3/cities.db"
 	db, err := sql.Open("sqlite3", db_file)
@@ -45,7 +44,7 @@ func main() {
 		fmt.Println(err)
 		}
 
-	dict_aa[id] = unit_gen_proc (name,strconv.Itoa(population),date_mod)
+	dict_aa[id] = unit_gen_proc (name,population,date_mod)
 	}
 
 	dict_display_proc (dict_aa)
