@@ -26,4 +26,8 @@ mikejs-gomongo-3b6d6a4.tar.gz<p />
 Arch Linux<p />
 <blockquote>
 # pacman -S go<p />
+	<blockquote>
+	$ go version<br />
+	go version go1.10.2 linux/amd64<br />
+	</blockquote>
 </blockquote>

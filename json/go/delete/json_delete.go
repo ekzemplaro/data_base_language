@@ -2,7 +2,7 @@
 //
 //	json_delete.go
 //
-//					Feb/24/2018
+//					May/20/2018
 // ---------------------------------------------------------------
 package main 
 
@@ -26,13 +26,16 @@ func main () {
 
 	json_str := string(buff)
 
-	var dict_aa map[string](map[string]string)
+	var dict_aa map[string](map[string]interface{})
 
 	json.Unmarshal ([]byte(json_str), &dict_aa )
 
 	delete (dict_aa,key_in)
 
+//	dict_display_proc (dict_aa)
+
 	output, _ := json.Marshal(dict_aa)
+
 
 	ioutil.WriteFile (json_filename,[]byte(output),0666)
 

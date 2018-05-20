@@ -2,7 +2,7 @@
 //
 //	text_manipulate.go
 //
-//					Jan/20/2015
+//					May/20/2018
 //
 // ----------------------------------------------------------------
 // package text_manipulate
@@ -18,15 +18,19 @@ import (
 )
 
 // ----------------------------------------------------------------
-func display_record_proc (key string, unit_aa map[string]string) {
+func display_record_proc (key string, unit_aa map[string]interface{}) {
 	fmt.Printf ("%s\t",key)
 	fmt.Printf ("%s\t",unit_aa["name"])
-	fmt.Printf ("%s\t",unit_aa["population"])
+//	population := unit_aa["population"].(int)
+	pf := unit_aa["population"].(float64)
+	population := int(pf)
+	str_population := strconv.Itoa(population)
+	fmt.Printf ("%s\t",str_population)
 	fmt.Printf ("%s\n",unit_aa["date_mod"])
 }
 
 // ----------------------------------------------------------------
-func dict_display_proc (dict_aa map[string](map[string]string)) {
+func dict_display_proc (dict_aa map[string](map[string]interface{})) {
 	var keys []string
 	for key,_ := range dict_aa {
 	keys = append (keys,key)
@@ -41,8 +45,8 @@ func dict_display_proc (dict_aa map[string](map[string]string)) {
 }
 
 // ----------------------------------------------------------------
-func unit_gen_proc (name,population,date_mod string) map[string]string {
-	unit_aa := make (map[string]string)
+func unit_gen_proc (name string,population int,date_mod string) map[string]interface{} {
+	unit_aa := make (map[string]interface{})
 	unit_aa["name"] = name
 	unit_aa["population"] = population
 	unit_aa["date_mod"] = date_mod
@@ -63,11 +67,13 @@ func join_proc (id,name,population,date_mod,delimit string) string {
 
 // ----------------------------------------------------------------
 // [4-4]:
-func dict_to_string_proc (dict_aa map[string](map[string]string),delimit string) string {
+func dict_to_string_proc (dict_aa map[string](map[string]interface{}),delimit string) string {
 	str_out := ""
 	for key,value := range dict_aa {
-	str_out += join_proc (key,value["name"],
-		value["population"],value["date_mod"],delimit)
+	population := value["population"].(int)
+	str_population := strconv.Itoa(population)
+	str_out += join_proc (key,value["name"].(string),
+		str_population,value["date_mod"].(string),delimit)
 	}
 
 	return	(str_out)
@@ -75,7 +81,7 @@ func dict_to_string_proc (dict_aa map[string](map[string]string),delimit string)
 
 // ----------------------------------------------------------------
 // [4]:
-func text_write_proc (text_file string,dict_aa map[string](map[string]string)){
+func text_write_proc (text_file string,dict_aa map[string](map[string]interface{})){
 	delimit := "\t"
 	str_out := dict_to_string_proc (dict_aa,delimit)
 	ioutil.WriteFile (text_file, []byte(str_out), 0666)
@@ -83,8 +89,8 @@ func text_write_proc (text_file string,dict_aa map[string](map[string]string)){
 
 // ----------------------------------------------------------------
 // [6-4]:
-func text_read_proc_exec (text_file,delimit string) map[string](map[string]string){
-	dict_aa := make (map[string](map[string]string))
+func text_read_proc_exec (text_file,delimit string) map[string](map[string]interface{}){
+	dict_aa := make (map[string](map[string]interface{}))
 
 
 	buff,_ := ioutil.ReadFile(text_file)
@@ -99,7 +105,9 @@ func text_read_proc_exec (text_file,delimit string) map[string](map[string]strin
 		data_row := strings.Split (pp,delimit)
 		if (1 < (len (data_row))) {
 		key := data_row[0]
-		dict_aa[key] = unit_gen_proc (data_row[1],data_row[2],data_row[3])
+		str_population := data_row[2]
+		population,_ := strconv.Atoi(str_population)
+		dict_aa[key] = unit_gen_proc (data_row[1],population,data_row[3])
 			}
 		}
 
@@ -109,7 +117,7 @@ func text_read_proc_exec (text_file,delimit string) map[string](map[string]strin
 
 // ----------------------------------------------------------------
 // [6]:
-func text_read_proc (text_file string) map[string](map[string]string){
+func text_read_proc (text_file string) map[string](map[string]interface{}){
 	delimit := "\t"
 	dict_aa := text_read_proc_exec (text_file,delimit)
 
@@ -129,15 +137,15 @@ func get_current_date_proc () string {
 }
 
 // ----------------------------------------------------------------
-func dict_update_proc (dict_aa map[string](map[string]string),
-	key string,population_in int) map[string](map[string]string) {
+func dict_update_proc (dict_aa map[string](map[string]interface{}),
+	key string,population_in int) map[string](map[string]interface{}) {
 
 	fmt.Printf ("key = %s\n", key)
 
-	name_aa := dict_aa[key]["name"]
-	unit_aa := make (map[string]string)
+	name_aa := dict_aa[key]["name"].(string)
+	unit_aa := make (map[string]interface{})
 	unit_aa["name"] = name_aa
-	unit_aa["population"] = strconv.Itoa (population_in)
+	unit_aa["population"] = population_in
 	unit_aa["date_mod"] = get_current_date_proc ()
 
 	dict_aa[key] = unit_aa
@@ -147,7 +155,7 @@ func dict_update_proc (dict_aa map[string](map[string]string),
 
 // ----------------------------------------------------------------
 // [8]:
-func csv_write_proc (text_file string,dict_aa map[string](map[string]string)){
+func csv_write_proc (text_file string,dict_aa map[string](map[string]interface{})){
 	delimit := ","
 	str_out := dict_to_string_proc (dict_aa,delimit)
 	ioutil.WriteFile (text_file, []byte(str_out), 0666)
@@ -155,7 +163,7 @@ func csv_write_proc (text_file string,dict_aa map[string](map[string]string)){
 
 // ----------------------------------------------------------------
 // [10]:
-func csv_read_proc (text_file string) map[string](map[string]string){
+func csv_read_proc (text_file string) map[string](map[string]interface{}){
 	delimit := ","
 
 	dict_aa := text_read_proc_exec (text_file,delimit)

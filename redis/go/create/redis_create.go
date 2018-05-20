@@ -2,7 +2,7 @@
 //
 //	redis_create.go
 //
-//					Jan/20/2015
+//					May/19/2018
 // ---------------------------------------------------------------
 package main 
 
@@ -34,7 +34,7 @@ func main () {
 
 	dict_aa := data_prepare_proc ()
 
-	hostname := "host_dbase"
+	hostname := "localhost"
 	port := "6379"
 
 	conn, err := net.Dial ("tcp",hostname + ":" + port)

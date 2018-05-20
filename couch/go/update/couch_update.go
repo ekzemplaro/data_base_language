@@ -1,85 +1,88 @@
 // ----------------------------------------------------------------
 //
-//	couch_read.go
+//	couch_update.go
 //
-//					Dec/21/2010
+//					May/20/2018
 //
 // ----------------------------------------------------------------
 package main
 
 import (
+	"io"
 	"fmt"
+	"encoding/json"
 	"os"
 	"strconv"
+	"net/http"
+	"log"
+	"strings"
 )
 
 // ----------------------------------------------------------------
-type cities struct {
-	id int
+/*
+type city struct {
+	_id string
+	_rev string
 	name string
-	Population int
-	Date_mod string
+	population int
+	date_mod string
 }
+*/
+// ----------------------------------------------------------------
+func putRequest(url string, data io.Reader)  {
+	client := &http.Client{}
+	req, err := http.NewRequest(http.MethodPut, url, data)
+	if err != nil {
+		// handle error
+		log.Fatal(err)
+	}
+	_, err = client.Do(req)
+	if err != nil {
+		// handle error
+		log.Fatal(err)
+	}
 
-type completerecord struct {
-	Rev string "_rev" // useful only for Retrieve and Edit
-	Cities [] cities
+
 }
-
 // ----------------------------------------------------------------
 func main () {
 
 	fmt.Printf ("*** 開始 ***\n")
 
-	id_in,_ := strconv.Atoi (os.Args[1])
+	key_in := os.Args[1]
 	population_in,_ := strconv.Atoi (os.Args[2])
 
-	fmt.Printf ("id_in = %d\t" , id_in)
+	fmt.Printf ("key_in = %d\t" , key_in)
 	fmt.Printf ("population_in = %d\n" , population_in)
 
-	db, err := couch.NewDatabase ("localhost", "5984", "city")
 
-	id_doc := "cities"
-	rr := new (completerecord)
-	rev, err := db.Retrieve (id_doc, rr)
+	url := "http://localhost:5984/nagano/" + key_in
 
-	if err != nil {
-		fmt.Printf ("*** error ***\n")
-	}
+	json_str := url_get_proc (url)
+	fmt.Printf (json_str + "\n")
 
-	fmt.Printf ("rev = %s\n",rev)
-
-	rr.Cities[0].Population = population_in
-	rr.Cities[0].Date_mod = "2010-12-22"
-
-	for _, pp := range rr.Cities {
-		fmt.Printf( "%d\t%v\t%d\t%s\n",
-		pp.id, pp.name, pp.Population, pp.Date_mod )
+	var unit_aa map[string]interface{}
+	if err := json.Unmarshal([]byte(json_str), &unit_aa); err != nil {
+        	panic(err)
 		}
 
-	id_aa, rev_aa, err_aa := db.InsertWith(rr,"cities")
+	name := unit_aa["name"].(string)
+	population := unit_aa["population"].(float64)
+	date_mod := unit_aa["date_mod"].(string)
+	fmt.Printf ("%s\t%s\t%f\t%s\n",key_in,name,population,date_mod)
 
-	fmt.Printf ("id_aa = %s\n",id_aa)
-	fmt.Printf ("rev_aa = %s\n",rev_aa)
+	unit_out := make(map[string]interface{})
+	unit_out["_rev"] = unit_aa["_rev"].(string)
+	unit_out["name"] = name
+	unit_out["population"] = population_in
+	today := get_current_date_proc ()
+	unit_out["date_mod"] = today
+	output, _ := json.Marshal(unit_out)
+	json_str = string(output)
 
-	if err_aa != nil {
-		fmt.Printf ("*** error ***\n")
-	}
+	fmt.Printf (json_str + "\n")
 
-
-	id_bb := "cities"
-	rr_bb := new(completerecord)
-	rev_bb, err_bb := db.Retrieve (id_bb, rr_bb)
-	if err_bb != nil {
-		fmt.Printf ("*** error ***\n")
-	}
-
-	fmt.Printf ("rev_bb = %s\n",rev_bb)
-
-	for _, pp := range rr.Cities {
-		fmt.Printf( "%d\t%v\t%d\t%s\n",
-		pp.id, pp.name, pp.Population, pp.Date_mod )
-		}
+	putRequest(url, strings.NewReader(json_str))
 
 	fmt.Printf ("*** 終了 ***\n")
 }

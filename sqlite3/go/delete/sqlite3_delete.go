@@ -2,7 +2,7 @@
 //
 //	sqlite3_delete.go
 //
-//					Jun/03/2015
+//					May/19/2018
 //
 // ----------------------------------------------------------------
 package main
@@ -22,7 +22,8 @@ func main() {
 
 	fmt.Printf ("key_in = %s\n" , key_in)
 
-	db, err := sql.Open("sqlite3", "/var/tmp/sqlite3/cities.db")
+	db_file := "/var/tmp/sqlite3/cities.db"
+	db, err := sql.Open("sqlite3", db_file)
 	if err != nil {
 		fmt.Println ("*** error ***")
 		fmt.Println(err)

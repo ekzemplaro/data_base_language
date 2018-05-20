@@ -2,7 +2,7 @@
 //
 //	redis_delete.go
 //
-//					May/21/2013
+//					May/19/2018
 //
 // ----------------------------------------------------------------
 package main
@@ -22,7 +22,7 @@ func main () {
 
 	fmt.Printf (key_in + "\n")
 
-	hostname := "host_dbase"
+	hostname := "localhost"
 	port := "6379"
 
 	conn, err := net.Dial ("tcp",hostname + ":" + port)

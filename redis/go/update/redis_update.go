@@ -2,7 +2,7 @@
 //
 //	redis_update.go
 //
-//					Jan/20/2015
+//					May/19/2018
 //
 // ----------------------------------------------------------------
 package main
@@ -25,7 +25,7 @@ func main () {
 	fmt.Printf ("id_in = %s\t" , key_in)
 	fmt.Printf ("population_in = %d\n" , population_in)
 
-	hostname := "host_dbase"
+	hostname := "localhost"
 	port := "6379"
 
 	conn, err := net.Dial ("tcp",hostname + ":" + port)

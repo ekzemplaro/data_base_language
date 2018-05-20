@@ -2,7 +2,7 @@
 //
 //	sqlite3_create.go
 //
-//					Jun/03/2015
+//					May/19/2018
 //
 // ----------------------------------------------------------------
 package main
@@ -17,7 +17,7 @@ import (
 func data_prepare_proc () map[string](map[string]string) {
 	dict_aa := make (map[string](map[string]string))
 
-	dict_aa["t0711"] = unit_gen_proc ("郡山","71852","1921-5-12")
+	dict_aa["t0711"] = unit_gen_proc ("郡山","71853","1921-5-12")
 	dict_aa["t0712"] = unit_gen_proc ("会津若松","45281","1921-2-25")
 	dict_aa["t0713"] = unit_gen_proc ("白河","62397","1921-9-14")
 	dict_aa["t0714"] = unit_gen_proc ("福島","59178","1921-4-30")
@@ -36,7 +36,8 @@ func main() {
 
 	dict_aa := data_prepare_proc ()
 
-	db, err := sql.Open("sqlite3", "/var/tmp/sqlite3/cities.db")
+	db_file := "/var/tmp/sqlite3/cities.db"
+	db, err := sql.Open("sqlite3", db_file)
 	defer db.Close ()
 
 	_, err = db.Exec ("drop table cities")

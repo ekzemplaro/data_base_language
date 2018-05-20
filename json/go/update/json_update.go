@@ -2,7 +2,7 @@
 //
 //	json_update.go
 //
-//					Feb/24/2018
+//					May/20/2018
 // ---------------------------------------------------------------
 package main 
 
@@ -30,11 +30,11 @@ func main () {
 
 	json_str := string(buff)
 
-	var dict_aa map[string](map[string]string);
+	var dict_aa map[string](map[string]interface{});
 
 	json.Unmarshal ([]byte(json_str), &dict_aa )
 
-	var dict_bb map[string](map[string]string);
+	var dict_bb map[string](map[string]interface{});
 	dict_bb = dict_update_proc (dict_aa,key_in,population_in)
 
 	output, _ := json.Marshal (dict_bb)

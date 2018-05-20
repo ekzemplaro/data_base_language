@@ -1,0 +1,4 @@
+#
+COMMON=/var/www/data_base/common/go_common
+ln -s $COMMON/url_manipulate.go .
+#

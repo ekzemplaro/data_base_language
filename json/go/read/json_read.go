@@ -2,7 +2,7 @@
 //
 //	json_read.go
 //
-//					Feb/24/2018
+//					May/20/2018
 // ---------------------------------------------------------------
 package main 
 
@@ -24,7 +24,7 @@ func main () {
 
 	json_str := string(buff)
 
-	var dict_aa map[string](map[string]string)
+	var dict_aa map[string](map[string]interface{})
 
 	json.Unmarshal ([]byte(json_str), &dict_aa )
 

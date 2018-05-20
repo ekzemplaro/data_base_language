@@ -2,7 +2,7 @@
 //
 //	redis_read.go
 //
-//					Jan/20/2015
+//					May/19/2018
 //
 // ----------------------------------------------------------------
 package main
@@ -17,7 +17,7 @@ func main () {
 
 	fmt.Println ("*** 開始 ***")
 
-	conn, err := net.Dial ("tcp", "host_dbase:6379")
+	conn, err := net.Dial ("tcp", "localhost:6379")
 	if err != nil {
 		fmt.Println(err)
 		return
