@@ -1,1 +1,0 @@
-/var/www/data_base/common/go_common/mcached_manipulate.go

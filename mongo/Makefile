@@ -4,5 +4,6 @@ clean:
 	cd groovy; make clean;	
 	cd java; make clean;	
 	cd boo; make clean;	
+	cd go; make clean;	
 	cd csharp; make clean;	
 	cd typescript; make clean;	

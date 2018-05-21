@@ -11,6 +11,10 @@
 ii  mongodb   1:2.4.9-1ubuntu2   amd64   object/document-oriented database (metapackage)
 </pre>
 </blockquote>
+Arch Linux<br />
+<blockquote>
+# pacman -S mongodb<br />
+</blockquote>
 <blockquote>
 <a href="http://www.mongodb.org/display/DOCS/Drivers">Drivers</a><br />
 </blockquote>
