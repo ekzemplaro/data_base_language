@@ -1,6 +1,6 @@
 // ---------------------------------------------------------------
 //
-//	mongo_read.go
+//	mongo_delete.go
 //
 //					May/22/2018
 // ---------------------------------------------------------------
@@ -12,7 +12,6 @@ import (
 	mgo "gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
 	"time"
-	"strconv"
 )
 
 type City struct {
@@ -23,10 +22,13 @@ type City struct {
 	Date_mod time.Time
 }
 
-
 // ---------------------------------------------------------------
 func main() {
 	fmt.Fprintf (os.Stderr,"*** 開始 ***\n")
+	key_in := os.Args[1]
+
+	fmt.Printf ("key_in = %s\n" , key_in)
+
 	session, err := mgo.Dial("127.0.0.1")
 	if err != nil {
 		panic(err)
@@ -40,20 +42,11 @@ func main() {
 
 	cc := session.DB(db_name).C("saitama")
 
-	var results []City
-	err = cc.Find(bson.M{}).Sort("key").All(&results)
-
+	colQuerier := bson.M{"key": key_in}
+	err = cc.Remove(colQuerier)
 	if err != nil {
 		panic(err)
 	}
-
-	fmt.Println("len(results): ", len(results))
-
-
-	for _,value := range results {
-		str_out := value.Key + "\t" + value.Name + "\t" + strconv.Itoa(value.Population) + "\t" + value.Date_mod.String()
-		fmt.Println(str_out)
-		}
 
 	fmt.Fprintf (os.Stderr,"*** 終了 ***\n")
 }

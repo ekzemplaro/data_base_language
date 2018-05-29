@@ -2,7 +2,7 @@
 /*
 	file_io.cpp
 
-				Feb/27/2012
+				May/28/2018
 
 */
 // ----------------------------------------------------------
@@ -30,6 +30,15 @@ string file_to_str_proc (char file_in[])
 // cerr << "*** ppp ***\n";
 
 	return	chunk;
+}
+
+// ----------------------------------------------------------
+void file_write_proc (char file_out[], string str_out)
+{
+	ofstream fp_out (file_out);
+	fp_out << str_out;
+	fp_out.close ();
+
 }
 
 // ----------------------------------------------------------

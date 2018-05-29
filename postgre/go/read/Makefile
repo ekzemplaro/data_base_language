@@ -1,4 +1,4 @@
-export GOPATH = /home/uchida/gocode
+export GOPATH = /home/uchida/go
 postgre_read: postgre_read.go
 	go build postgre_read.go
 clean:

@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 #	postgre_read.py
-#					Sep/06/2016
+#					May/23/2018
 #
 # --------------------------------------------------------
 import sys
@@ -15,7 +15,7 @@ from text_manipulate import dict_display_proc
 #
 sys.stderr.write ("*** 開始 ***\n")
 #
-conn = psycopg2.connect("dbname=city user=scott password=tiger")
+conn = psycopg2.connect("dbname=city user=scott password=tiger123")
 cur = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
 #
 dict_aa = sql_to_dict_proc (cur)

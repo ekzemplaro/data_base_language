@@ -1,6 +1,6 @@
 // ---------------------------------------------------------------
 //
-//	mongo_read.go
+//	mongo_update.go
 //
 //					May/22/2018
 // ---------------------------------------------------------------
@@ -23,10 +23,15 @@ type City struct {
 	Date_mod time.Time
 }
 
-
 // ---------------------------------------------------------------
 func main() {
 	fmt.Fprintf (os.Stderr,"*** 開始 ***\n")
+	key_in := os.Args[1]
+	population_in,_ := strconv.Atoi (os.Args[2])
+
+	fmt.Printf ("key_in = %s\t" , key_in)
+	fmt.Printf ("population_in = %d\n" , population_in)
+
 	session, err := mgo.Dial("127.0.0.1")
 	if err != nil {
 		panic(err)
@@ -38,22 +43,23 @@ func main() {
 
 	db_name := "city_db"
 
+
 	cc := session.DB(db_name).C("saitama")
 
-	var results []City
-	err = cc.Find(bson.M{}).Sort("key").All(&results)
-
+	colQuerier := bson.M{"key": key_in}
+	change := bson.M{"$set": bson.M{"population": population_in, "date_mod": time.Now()}}
+	err = cc.Update(colQuerier, change)
 	if err != nil {
 		panic(err)
 	}
 
-	fmt.Println("len(results): ", len(results))
+	var results []City
+	err = cc.Find(bson.M{"key": key_in}).Sort("key").All(&results)
 
-
-	for _,value := range results {
-		str_out := value.Key + "\t" + value.Name + "\t" + strconv.Itoa(value.Population) + "\t" + value.Date_mod.String()
-		fmt.Println(str_out)
-		}
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println("Results All: ", results)
 
 	fmt.Fprintf (os.Stderr,"*** 終了 ***\n")
 }

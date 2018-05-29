@@ -190,6 +190,14 @@ org.postgresql.util.PSQLException:
 /usr/share/java/postgresql-jdbc3-8.2.jar
 </blockquote>
 
+go<br />
+<blockquote>
+go get github.com/lib/pq<p />
+	<blockquote>
+	/home/uchida/go/src/github.com/lib/pq<p />
+	</blockquote>
+</blockquote>
+
 Arch Linux<br />
 <blockquote>
 $ yaourt -Sb postgresql-jdbc<p />

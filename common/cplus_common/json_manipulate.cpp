@@ -2,21 +2,20 @@
 /*
 	json_manipulate.cpp
 
-					Feb/10/2015
+					May/29/2018
 */
 // -----------------------------------------------------------------------
 #include	<iostream>
 #include	<fstream>
 #include	<string>
 #include	<boost/lexical_cast.hpp>
-// #include <typeinfo>
 
-#include "/var/www/data_base/common/cplus_common/include/picojson.h"
+#include "json11.hpp"
 
 // -----------------------------------------------------------------------
 using namespace std;
 using namespace boost;
-using namespace picojson;
+using namespace json11;
 
 typedef map<string,string> Unit;
 extern string get_current_date_proc ();
@@ -25,6 +24,7 @@ extern	map <string,Unit> dict_append_proc
 	(map <string,Unit> dict_aa,string id,string name,
 	int population,string date_mod);
 // -----------------------------------------------------------------------
+/*
 map <string,Unit> json_row_append_proc
 	(map <string,Unit> dict_aa,object obj,string key)
 {
@@ -41,43 +41,40 @@ map <string,Unit> json_row_append_proc
 
 	return	dict_aa;
 }
-
+*/
 // -----------------------------------------------------------------------
 map <string,Unit> json_to_dict_proc (string str_json)
 {
 	map <string,Unit> dict_aa;
 
-	char* data_xx;
-	data_xx = (char*) malloc(4096);
-	size_t size_xx = str_json.size ();
-
-	strcpy (data_xx,str_json.c_str ());
-
-	value vv;
 	string err;
+	auto json = Json::parse(str_json, err);
 
-	parse (vv, data_xx, data_xx + size_xx, &err);
-
-	if (err.empty())
+	if (!err.empty())
 		{
-		object obj = vv.get<object>();
-
-	for (picojson::object::iterator it=obj.begin (); it != obj.end (); it++)
-		{
-		string key_pp = (*it).first;
-
-		if ((key_pp != "_id") && (key_pp != "_rev"))
-			{
-		dict_aa = json_row_append_proc (dict_aa,obj,key_pp);
-			}
-		}
+		printf("Failed: %s\n", err.c_str());
 		}
 	else
 		{
-		cerr << err << endl;
-		}
+		for (auto &kk : json.object_items())
+			{
+			string key = kk.first.c_str();
+			Unit unit_aa;
+			for (auto &ll : kk.second.object_items())
+				{
+				string key_item = ll.first.c_str();
+				string vvx = ll.second.string_value();
 
-	free (data_xx);
+				if (vvx.length() == 0)
+					{
+					vvx = ll.second.dump().c_str();
+					}
+				unit_aa[key_item] = vvx;
+
+				}
+			dict_aa[key] = unit_aa;
+			}
+		}
 
 	return	dict_aa;
 }
@@ -127,35 +124,31 @@ string dict_to_json_proc (map <string,Unit> dict_aa)
 {
 	int nnx = (unsigned int)dict_aa.size();
 
-	string tx = ",";
-
-	string str_out = "{";
+	Json::object my_json;
 
 	map <string,Unit>:: iterator it = dict_aa.begin ();
 
-	int count = 0;
 	while (it != dict_aa.end ())
 		{
 		string key = (*it).first;
 		Unit unit_aa = (*it).second;
 
-		if ((nnx -1 ) <= count)
-			{
-			tx = "}";
-			}
+		int population = atoi (unit_aa["population"].c_str ());
 
-		str_out += data_prepare_unit (key,unit_aa["name"],
-			atoi (unit_aa["population"].c_str ()),
-			unit_aa["date_mod"],tx);
+		my_json[key] = Json::object {{ "name", unit_aa["name"]},{ "population", population},{ "date_mod", unit_aa["date_mod"] }};
+
 		it++;
-
-		count++;
 		}
 
-	return	str_out;
+	Json data = my_json;
+
+	string json_str = data.dump();
+
+	return	json_str;
 }
 
 // -----------------------------------------------------------------------
+/*
 object json_record_parser (string json_str)
 {
 //	cout << json_str << endl;
@@ -187,11 +180,12 @@ object json_record_parser (string json_str)
 
 	return	obj;
 }
+*/
 
 // -----------------------------------------------------------------------
 void json_record_display (string key_in,string json_str)
 {
-
+/*
 	object obj = json_record_parser (json_str);
 
 	cout << key_in << "\t";
@@ -202,9 +196,11 @@ void json_record_display (string key_in,string json_str)
 	cout << population << "\t";
 	string date_mod = obj["date_mod"].to_str ();
 	cout << date_mod << "\n";
+*/
 }
 
 // -----------------------------------------------------------------------
+/*
 Unit json_to_unit_proc (string json_str)
 {
 	Unit unit_aa;
@@ -217,7 +213,7 @@ Unit json_to_unit_proc (string json_str)
 
 	return	unit_aa;
 }
-
+*/
 // -----------------------------------------------------------------------
 string unit_to_json_proc (Unit unit_aa)
 {
@@ -234,6 +230,7 @@ string unit_to_json_proc (Unit unit_aa)
 }
 
 // -----------------------------------------------------------------------
+/*
 string json_update_proc (string json_str,int population_in)
 {
 //	cout << key_str << "\t";
@@ -254,8 +251,10 @@ string json_update_proc (string json_str,int population_in)
 
 	return	json_str_new;
 }
+*/
 
 // -----------------------------------------------------------------------
+/*
 int get_riak_keys (string json_str,string keys[])
 {
 	object obj = json_record_parser (json_str);
@@ -281,5 +280,6 @@ int get_riak_keys (string json_str,string keys[])
 
 	return	nn_keys;
 }
+*/
 
 // -----------------------------------------------------------------------

@@ -2,7 +2,7 @@
 //
 //	postgre_delete.go
 //
-//					Jun/05/2015
+//					May/23/2018
 //
 // ----------------------------------------------------------------
 package main
@@ -21,18 +21,17 @@ func main() {
 
 	fmt.Printf ("key_in = %s\n" , key_in)
 
-	db, _ := sql.Open("postgres","user=scott password=tiger dbname=city sslmode=disable")
+	str_connect := "user=scott dbname=city password=tiger123 sslmode=disable"
+
+	db, err := sql.Open ("postgres", str_connect)
 	defer db.Close ()
 
+	sql_str := "delete from cities WHERE id = '" + key_in + "'"
+	fmt.Println (sql_str)
+	_, err = db.Exec (sql_str)
 
-	_, err := db.Exec ("delete from cities WHERE id = $1", key_in)
 	if err != nil {
 		fmt.Println(err)
-		}
-
-
-	if err != nil {
-		fmt.Println (err)
 		}
 
 	fmt.Println ("*** 終了 ***")
