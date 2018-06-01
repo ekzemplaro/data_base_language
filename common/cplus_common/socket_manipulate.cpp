@@ -62,3 +62,28 @@ int socket_get_proc (const char host[],int port)
 }
 
 // --------------------------------------------------------------------
+void socket_write_proc (int sock,const char str_command[])
+{
+	int	len;
+	int	slen;
+
+	const char *pm = str_command;
+
+	do
+		{
+		len = strlen (pm);
+	try
+		{
+		slen = send (sock,pm,len,0);
+		}
+	catch (const char* ss)
+		{
+		cerr << "Exceptoin raised: " << ss << "\n";
+		}
+
+		pm += slen;
+		}
+		while ((0 <= slen) && (slen < len));
+}
+
+// --------------------------------------------------------------------

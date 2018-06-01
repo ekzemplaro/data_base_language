@@ -22,11 +22,8 @@ using namespace boost;
 typedef map<string,string> Unit;
 #define PORT 6379
 // --------------------------------------------------------------------
-// extern void socket_write_proc (int sock,const char str_command[]);
-// extern int socket_connect_proc (int sock,addrinfo *addrs);
-extern string json_update_proc (string json_str,int population_in);
+extern void socket_write_proc (int sock,const char str_command[]);
 extern string unit_to_json_proc (Unit unit_aa);
-extern void json_record_display (string key_in,string json_str);
 // --------------------------------------------------------------------
 // [6-4-4]:
 string redis_received_data_parser
@@ -74,32 +71,6 @@ string redis_socket_receive_proc (int sock)
 }
 
 // --------------------------------------------------------------------
-// [6-8-6]:
-void socket_write_proc (int sock,const char str_command[])
-{
-	int	len;
-	int	slen;
-
-	const char *pm = str_command;
-
-	do
-		{
-		len = strlen (pm);
-	try
-		{
-		slen = send (sock,pm,len,0);
-		}
-	catch (const char* ss)
-		{
-		cerr << "Exceptoin raised: " << ss << "\n";
-		}
-
-		pm += slen;
-		}
-		while ((0 <= slen) && (slen < len));
-}
-
-// -----------------------------------------------------------------
 // [6-8]:
 void redis_socket_write_proc (int sock,string key,string json_str)
 {
