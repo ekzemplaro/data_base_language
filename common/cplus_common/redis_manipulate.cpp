@@ -1,8 +1,8 @@
 // --------------------------------------------------------------------
 /*
-	redis_socket.cpp
+	redis_manipulate.cpp
 
-				Feb/09/2015
+					Jun/01/2018
 
 */
 // --------------------------------------------------------------------
@@ -14,15 +14,17 @@
 #include	<netdb.h>
 #include	<boost/lexical_cast.hpp>
 #include	<boost/algorithm/string.hpp>
+#include <arpa/inet.h>
 
 using namespace std;
 using namespace boost;
 
 typedef map<string,string> Unit;
+#define PORT 6379
 // --------------------------------------------------------------------
+// extern void socket_write_proc (int sock,const char str_command[]);
+// extern int socket_connect_proc (int sock,addrinfo *addrs);
 extern string json_update_proc (string json_str,int population_in);
-extern void socket_write_proc (int sock,const char str_command[]);
-extern int socket_connect_proc (int sock,addrinfo *addrs);
 extern string unit_to_json_proc (Unit unit_aa);
 extern void json_record_display (string key_in,string json_str);
 // --------------------------------------------------------------------
@@ -72,7 +74,33 @@ string redis_socket_receive_proc (int sock)
 }
 
 // --------------------------------------------------------------------
-// [8-8]:
+// [6-8-6]:
+void socket_write_proc (int sock,const char str_command[])
+{
+	int	len;
+	int	slen;
+
+	const char *pm = str_command;
+
+	do
+		{
+		len = strlen (pm);
+	try
+		{
+		slen = send (sock,pm,len,0);
+		}
+	catch (const char* ss)
+		{
+		cerr << "Exceptoin raised: " << ss << "\n";
+		}
+
+		pm += slen;
+		}
+		while ((0 <= slen) && (slen < len));
+}
+
+// -----------------------------------------------------------------
+// [6-8]:
 void redis_socket_write_proc (int sock,string key,string json_str)
 {
 	const char *key_in = key.c_str ();
@@ -115,45 +143,14 @@ void redis_socket_write_proc (int sock,string key,string json_str)
 	if (bytes_recieved == 0) cout << "host shut down." << endl;
 	if (bytes_recieved == -1) cout << "recieve error!" << endl;
 
-//	cerr << "bytes_recieved = " << bytes_recieved << endl;
 }
 
-// --------------------------------------------------------------------
-// [8]:
-void redis_socket_update_proc (string key_str,int population_in,addrinfo *addrs)
+// -----------------------------------------------------------------
+// [6]:
+void dict_to_redis_proc (int sock,map <string,Unit> dict_aa)
 {
-	const char *key_in = key_str.c_str ();
+	cerr << "*** dict_to_redis_proc *** start ***\n";
 
-	char str_command[255];
-	sprintf (str_command,"get %s\r\n",key_in);
-
-//	cout << str_command << "\n";
-
-	int sock = socket(addrs->ai_family,
-		addrs->ai_socktype, addrs->ai_protocol);
-
-	if (0 <= sock)
-		{
-		if (0 <= socket_connect_proc (sock,addrs))
-			{
-			socket_write_proc (sock,str_command);
-
-			string json_str = redis_socket_receive_proc (sock);
-
-			if (0 < json_str.size ())
-			{
-			string json_str_new = json_update_proc (json_str,population_in);
-
-			redis_socket_write_proc (sock,key_str,json_str_new);
-			}
-			}
-		close(sock);
-		}
-}
-
-// --------------------------------------------------------------------
-int dict_to_redis_proc (int sock,map <string,Unit> dict_aa)
-{
 	map <string,Unit>:: iterator itr = dict_aa.begin ();
 
 	while (itr != dict_aa.end ())
@@ -162,41 +159,14 @@ int dict_to_redis_proc (int sock,map <string,Unit> dict_aa)
 		Unit unit_aa = (*itr).second;
 
 		string json_str = unit_to_json_proc (unit_aa);
-		cout << json_str << '\n';
+		cerr << "key_in = " << key_in << '\n';
+		cerr << json_str << '\n';
 
 		redis_socket_write_proc (sock,key_in,json_str);
 		itr++;
 		}
 
-	return	0;
+	cerr << "*** dict_to_redis_proc *** end ***\n";
 }
 
-// --------------------------------------------------------------------
-void redis_socket_read_proc (string key_str,addrinfo *addrs)
-{
-	const char *key_in = key_str.c_str ();
-
-	char str_command[255];
-	sprintf (str_command,"get %s\r\n",key_in);
-
-	int sock = socket(addrs->ai_family,
-		addrs->ai_socktype, addrs->ai_protocol);
-
-	if (0 <= sock)
-		{
-		if (0 <= socket_connect_proc (sock,addrs))
-			{
-			socket_write_proc (sock,str_command);
-
-			string json_str = redis_socket_receive_proc (sock);
-
-			if (0 < json_str.size ())
-				{
-				json_record_display (key_str,json_str);
-				}
-			}
-
-		close(sock);
-		}
-}
 // --------------------------------------------------------------------

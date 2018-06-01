@@ -2,7 +2,7 @@
 /*
 	mcached_delete.cpp
 
-				Feb/10/2015
+					Jun/01/2018
 
 */
 // --------------------------------------------------------------------
@@ -12,7 +12,8 @@
 
 using namespace std;
 // --------------------------------------------------------------------
-extern void mcached_delete_proc (char server[],int port,char key_in[]);
+extern int socket_get_proc (const char host[],int port);
+extern void socket_write_proc (int sock,const char str_command[]);
 // --------------------------------------------------------------------
 int main (int argc,char *argv[])
 {
@@ -24,10 +25,20 @@ int main (int argc,char *argv[])
 
 	cerr << key_in << '\n';
 
-	char server[] = "localhost";
-	int port = 11211;
+	const string host = "127.0.0.1";
+	const int port = 11211;
 
-	mcached_delete_proc (server,port,key_in);
+	int sock = socket_get_proc (host.c_str(),port);
+
+	if (0<= sock)
+		{
+		cerr << "*** check ggg ***\n";
+
+		char str_command[255];
+		sprintf (str_command,"delete %s\r\n",key_in);
+
+		socket_write_proc (sock,str_command);
+		}
 
 	cerr << "*** 終了 ***\n";
 

@@ -2,7 +2,7 @@
 /*
 	json_manipulate.cpp
 
-					May/29/2018
+					Jun/01/2018
 */
 // -----------------------------------------------------------------------
 #include	<iostream>
@@ -80,45 +80,6 @@ map <string,Unit> json_to_dict_proc (string str_json)
 }
 
 // -----------------------------------------------------------------------
-// [8-4-4]:
-string tag_out_proc_int (string str_key,int data_in)
-{
-	string str_out = "\"" + str_key + "\":";
-	str_out += lexical_cast<string>(data_in);
-
-	return	str_out;
-}
-
-// -----------------------------------------------------------------------
-// [8-4-6]:
-string tag_out_proc_string (string str_key,string data_in)
-{
-	string str_out =  "\"" + str_key + "\":";
-	str_out +=  ("\"" + data_in + "\"");
-
-	return	str_out;
-}
-
-// -----------------------------------------------------------------------
-// [8-4]:
-static string data_prepare_unit (string key_in,string name_in,
-	int population_in,string date_mod_in,string tx)
-{
-	string str_out = "\"";
-	str_out += key_in;
-	str_out += "\":{";
-	str_out += tag_out_proc_string ("name",name_in);
-	str_out += ",";
-	str_out += tag_out_proc_int ("population",population_in);
-	str_out += ",";
-	str_out += tag_out_proc_string ("date_mod",date_mod_in);
-	str_out +=  "}";
-	str_out +=  tx;
-
-	return	str_out;
-}
-
-// -----------------------------------------------------------------------
 // [8]:
 string dict_to_json_proc (map <string,Unit> dict_aa)
 {
@@ -148,91 +109,74 @@ string dict_to_json_proc (map <string,Unit> dict_aa)
 }
 
 // -----------------------------------------------------------------------
-/*
-object json_record_parser (string json_str)
-{
-//	cout << json_str << endl;
-
-	char* data_xx;
-	data_xx = (char*) malloc(4096);
-	size_t size_xx = json_str.size ();
-
-	strcpy (data_xx,json_str.c_str ());
-
-	value vv;
-	string err;
-
-	parse (vv, data_xx, data_xx + size_xx, &err);
-
-	object obj;
-
-	if (err.empty())
-		{
-		obj = vv.get<object>();
-		}
-	else
-		{
-		cerr << err << endl;
-		}
-
-
-	free (data_xx);
-
-	return	obj;
-}
-*/
-
-// -----------------------------------------------------------------------
-void json_record_display (string key_in,string json_str)
-{
-/*
-	object obj = json_record_parser (json_str);
-
-	cout << key_in << "\t";
-
-	string name = obj["name"].to_str ();
-	cout << name << "\t";
-	string population = obj["population"].to_str ();
-	cout << population << "\t";
-	string date_mod = obj["date_mod"].to_str ();
-	cout << date_mod << "\n";
-*/
-}
-
-// -----------------------------------------------------------------------
-/*
 Unit json_to_unit_proc (string json_str)
 {
 	Unit unit_aa;
+	string err;
 
+	auto json = Json::parse(json_str, err);
+
+	if (!err.empty())
+		{
+		printf("Failed: %s\n", err.c_str());
+		}
+	else
+		{
+		for (auto &kk : json.object_items())
+			{
+			string key =  kk.first.c_str();
+//			cout << "key = " << key << "\t";
+//			cout << kk.second.dump().c_str() << "\n";
+//			cout << typeid(kk.second).name() << "\n";
+			string vvx = kk.second.string_value();
+
+			if (vvx.length() == 0)
+				{
+				vvx = kk.second.dump().c_str();
+				}
+
+			unit_aa[key] = vvx;
+			}
+		}
+/*
 	object obj = json_record_parser (json_str);
 
 	unit_aa["name"] = obj["name"].to_str ();
 	unit_aa["population"] = obj["population"].to_str ();
 	unit_aa["date_mod"] = obj["date_mod"].to_str ();
+*/
 
 	return	unit_aa;
 }
-*/
 // -----------------------------------------------------------------------
 string unit_to_json_proc (Unit unit_aa)
 {
-	string str_out = "{";
-	str_out += tag_out_proc_string ("name",unit_aa["name"]);
-	str_out += ",";
-//	str_out += tag_out_proc_int ("population",unit_aa["population"]);
-	str_out += tag_out_proc_string ("population",unit_aa["population"]);
-	str_out += ",";
-	str_out += tag_out_proc_string ("date_mod",unit_aa["date_mod"]);
-	str_out +=  "}";
+	string str_out = "";
 
-	return	str_out;
+	Json::object my_json;
+
+	int population = atoi (unit_aa["population"].c_str ());
+
+	my_json = Json::object {{ "name", unit_aa["name"]},{ "population", population},{ "date_mod", unit_aa["date_mod"] }};
+
+	Json data = my_json;
+
+	string json_str = data.dump();
+
+	return	json_str;
 }
 
 // -----------------------------------------------------------------------
-/*
 string json_update_proc (string json_str,int population_in)
 {
+	Unit unit_aa = json_to_unit_proc (json_str);
+
+
+	unit_aa["population"] = lexical_cast<string>(population_in);
+	unit_aa["date_mod"] = get_current_date_proc ();
+
+	string json_str_new = unit_to_json_proc (unit_aa);
+/*
 //	cout << key_str << "\t";
 	object obj = json_record_parser (json_str);
 	string name = obj["name"].to_str ();
@@ -248,10 +192,11 @@ string json_update_proc (string json_str,int population_in)
 	unit_aa["date_mod"] = get_current_date_proc ();
 	string json_str_new = unit_to_json_proc (unit_aa);
 	cout << json_str_new << endl;
+*/
 
 	return	json_str_new;
 }
-*/
+
 
 // -----------------------------------------------------------------------
 /*

@@ -2,7 +2,7 @@ curl_manipulate.cpp
 file_io.cpp
 json_manipulate.cpp
 mcached_socket.cpp
-redis_socket.cpp
+redis_manipulate.cpp
 tcbn_manipulate.cpp
 text_manipulate.cpp
 xml_manipulate.cpp

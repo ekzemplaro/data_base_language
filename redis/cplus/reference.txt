@@ -1,4 +1,3 @@
 json_manipulate.cpp
-mcached_socket.cpp
-redis_socket.cpp
+redis_manipulate.cpp
 text_manipulate.cpp

@@ -2,7 +2,7 @@
 /*
 	mcached_socket.cpp
 
-				Feb/10/2015
+					Jun/01/2018
 
 */
 // --------------------------------------------------------------------
@@ -36,6 +36,8 @@ int socket_connect_proc (int sock,addrinfo *addrs)
 // [4]:
 void socket_write_proc (int sock,const char str_command[])
 {
+// cerr << "*** socket_write_proc *** start ***\n";
+
 	int	len;
 	int	slen;
 
@@ -44,7 +46,16 @@ void socket_write_proc (int sock,const char str_command[])
 	do
 		{
 		len = strlen (pm);
+	try
+		{
 		slen = send (sock,pm,len,0);
+		}
+	catch (const char* ss)
+		{
+		cerr << "Exceptoin raised: " << ss << "\n";
+		}
+
+
 		pm += slen;
 		}
 		while ((0 <= slen) && (slen < len));
@@ -154,6 +165,7 @@ void mcached_socket_write_proc (int sock,string key,string json_str)
 // [8]:
 void socket_update_proc (char key_in[],int population_in,addrinfo *addrs)
 {
+/*
 	char str_command[255];
 	sprintf (str_command,"get %s\r\n",key_in);
 
@@ -181,6 +193,7 @@ void socket_update_proc (char key_in[],int population_in,addrinfo *addrs)
 			}
 		close(sock);
 		}
+*/
 }
 
 // --------------------------------------------------------------------
@@ -263,8 +276,9 @@ void dict_to_mcached_proc (char server[],int port,map <string,Unit> dict_aa)
 map <string,Unit > mcached_to_dict_proc
 	(char server[],int port,int nmax,string keys [])
 {
-	map <string,Unit> dict_aa;
 
+	map <string,Unit> dict_aa;
+/*
 	addrinfo hints;
 	addrinfo *addrs;
 
@@ -290,7 +304,7 @@ map <string,Unit > mcached_to_dict_proc
 
 		freeaddrinfo(addrs);
 		}
-
+*/
 	return	dict_aa;
 }
 
