@@ -4,29 +4,27 @@
 /*
 	mongo_delete.php
 
-					Jun/26/2012
+					Jun/02/2018
 
 */
 // --------------------------------------------------------------------
 $path="/var/www/data_base/common/php_common";
 set_include_path (get_include_path() . PATH_SEPARATOR . $path);
 
-include "mongo_manipulate.php";
+//include "mongo_manipulate.php";
 // --------------------------------------------------------------------
-print	"*** 開始 ***\n";
+fputs (STDERR,"*** 開始 ***\n");
 
 $id_in = $argv[1];
 print	$id_in . "\n";
 
-$m = new Mongo();
+$manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");
+$bulk = new MongoDB\Driver\BulkWrite;
 
-$db = $m->city_db;
+$bulk->delete(['key' => $id_in]);
 
-$col = $db->saitama;
+$result = $manager->executeBulkWrite('city_db.saitama', $bulk);
 
-mongo_delete_proc ($col,$id_in);
-
-print	"*** 終了 ***\n";
-
+fputs (STDERR,"*** 終了 ***\n");
 // --------------------------------------------------------------------
 ?>
