@@ -2,7 +2,7 @@
 // ---------------------------------------------------------------------
 //	mongo_php_read.php
 //
-//					Jun/26/2012
+//					Jun/09/2018
 //
 // ---------------------------------------------------------------------
 $path="/var/www/data_base/common/php_common";
@@ -12,16 +12,25 @@ include ("text_manipulate.php");
 include ("mongo_manipulate.php");
 //
 // ---------------------------------------------------------------------
-$mm = new Mongo();
+$manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");
 
-$db = $mm->city_db;
+$filter = [];
+$options = [
+	'projection' => ['_id' => 0],
+	'sort' => ['_id' => -1],
+];
 
-$col = $db->saitama;
+$query = new MongoDB\Driver\Query($filter, $options);
+$cursor = $manager->executeQuery('city_db.saitama', $query);
 
-$dict_aa = mongo_to_dict_proc ($col);
+$dict_aa = array ();
+
+foreach ($cursor as $document) {
+	$dict_aa = dict_append_proc ($dict_aa,$document->key,$document->name,$document->population,$document->date_mod);
+
+}
 
 $json_str = json_encode ($dict_aa);
-
 
 echo $json_str;
 // ---------------------------------------------------------------------

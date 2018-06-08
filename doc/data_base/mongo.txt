@@ -30,8 +30,8 @@ Arch Linux<br />
 	/etc/mongodb.conf<p />
 	port = 27017<p />
 
-	sudo service mongodb start<p />
-	sudo service mongodb stop<p />
+	sudo systemctl status mongodb<p />
+	sudo systemctl stop mongodb<p />
 
 	/var/log/mongodb/mongodb.log<p />
 </blockquote>
@@ -44,6 +44,17 @@ PHP<p />
 <blockquote>
 	sudo apt-get install php-pear php5-dev<br />
 	sudo 	pecl install mongo<br />
+</blockquote>
+
+Ubuntu 16.04
+<blockquote>
+	sudo apt install php-pear php7.0-dev<br />
+	sudo apt install pkg-config<p />
+	sudo pecl install mongo<br />
+	/etc/php/7.0/cli/php.ini<br />
+	<blockquote>
+	extension=mongodb.so<br />
+	</blockquote>
 </blockquote>
 
 <blockquote>
@@ -69,6 +80,8 @@ Python<p />
 <pre>
 ii  python-pymongo   2.2-4   amd64    Python interface to the MongoDB document-oriented database
 </pre>
+
+sudo apt install python3-pymongo<p />
 
 # pacman -S python-pymongo<p />
 </blockquote>
