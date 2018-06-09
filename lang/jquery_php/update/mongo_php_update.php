@@ -2,7 +2,7 @@
 // ------------------------------------------------------------------
 //	jquery_php/update/mongo_php_update.php
 //
-//				Jun/26/2012
+//				Jun/10/2018
 // ------------------------------------------------------------------
 //$path=$_SERVER["DOCUMENT_ROOT"]."/data_base/common/php_common";
 $path="/var/www/data_base/common/php_common";
@@ -13,22 +13,30 @@ include	"mongo_manipulate.php";
 include "cgi_manipulate.php";
 
 // ------------------------------------------------------------------
-$mm = new Mongo();
-$db = $mm->city_db;
-$col = $db->saitama;
+$manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");
+
+$bulk = new MongoDB\Driver\BulkWrite;
+
+date_default_timezone_set('Asia/Tokyo');
+$today = date ("Y-m-d");
 
 $arry_param = cgi_manipulate ();
 
+$count = 0;
 
 foreach ($arry_param as $val_aa)
 	{
 	$id = $val_aa['id'];
 	$population = $val_aa['population'];
 
-	mongo_update_proc ($col,$id,$population);
+	$newdata = array('$set' => array("population" => $population,"date_mod" => $today));
+
+	$bulk->update(array("key" => $id), $newdata);
 
 	$count++;
 	}
+
+$manager->executeBulkWrite('city_db.saitama', $bulk);
 
 $out_str .= "OK " . $count;
 

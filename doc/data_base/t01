@@ -1,0 +1,32 @@
+<hr />
+DynamoDB on Local<p />
+Create a Table<br />
+<blockquote>
+<pre>
+aws dynamodb create-table --table-name 'cities' \
+--attribute-definitions '[{"AttributeName":"key","AttributeType": "S"}]' \
+--key-schema '[{"AttributeName":"key","KeyType": "HASH"}]' \
+--provisioned-throughput '{"ReadCapacityUnits": 5,"WriteCapacityUnits": 5}' \
+	--endpoint-url http://localhost:8000
+</pre>
+</blockquote>
+
+List Tables<br />
+<blockquote>
+aws dynamodb list-tables --endpoint-url http://localhost:8000<br />
+</blockquote>
+
+Delete a Table<br />
+<blockquote>
+<pre>
+aws dynamodb delete-table --table-name 'cities'
+	--endpoint-url http://localhost:8000
+</pre>
+</blockquote>
+
+<blockquote>
+</blockquote>
+
+<blockquote>
+</blockquote>
+

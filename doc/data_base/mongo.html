@@ -18,6 +18,10 @@
 ii  mongodb   1:2.4.9-1ubuntu2   amd64   object/document-oriented database (metapackage)
 </pre>
 </blockquote>
+Arch Linux<br />
+<blockquote>
+# pacman -S mongodb<br />
+</blockquote>
 <blockquote>
 <a href="http://www.mongodb.org/display/DOCS/Drivers">Drivers</a><br />
 </blockquote>
@@ -33,8 +37,8 @@ ii  mongodb   1:2.4.9-1ubuntu2   amd64   object/document-oriented database (meta
 	/etc/mongodb.conf<p />
 	port = 27017<p />
 
-	sudo service mongodb start<p />
-	sudo service mongodb stop<p />
+	sudo systemctl status mongodb<p />
+	sudo systemctl stop mongodb<p />
 
 	/var/log/mongodb/mongodb.log<p />
 </blockquote>
@@ -45,8 +49,23 @@ ii  mongodb   1:2.4.9-1ubuntu2   amd64   object/document-oriented database (meta
 
 PHP<p />
 <blockquote>
-	sudo apt-get install php-pear php5-dev<br />
-	sudo 	pecl install mongo<br />
+	sudo apt-get install php-pear php7.2-dev<br />
+	sudo 	pecl install mongodb<br />
+	/etc/php/7.2/cli/php.ini<br />
+	<blockquote>
+	extension=mongodb.so<br />
+	</blockquote>
+</blockquote>
+
+Ubuntu 16.04
+<blockquote>
+	sudo apt install php-pear php7.0-dev<br />
+	sudo apt install pkg-config<p />
+	sudo pecl install mongodb<br />
+	/etc/php/7.0/cli/php.ini<br />
+	<blockquote>
+	extension=mongodb.so<br />
+	</blockquote>
 </blockquote>
 
 <blockquote>
@@ -72,6 +91,8 @@ Python<p />
 <pre>
 ii  python-pymongo   2.2-4   amd64    Python interface to the MongoDB document-oriented database
 </pre>
+
+sudo apt install python3-pymongo<p />
 
 # pacman -S python-pymongo<p />
 </blockquote>
@@ -179,6 +200,6 @@ http://localhost:28017/<p />
 <div id="outarea_hh">outarea_hh</div>
 <hr />
 <a href="/data_base/">Return</a><p />
-Oct/16/2017 AM 08:15<p />
+Dec/16/2017 AM 08:15<p />
 </body>
 </html>

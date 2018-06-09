@@ -42,15 +42,19 @@ Arch Linux<br />
 
 PHP<p />
 <blockquote>
-	sudo apt-get install php-pear php5-dev<br />
-	sudo 	pecl install mongo<br />
+	sudo apt-get install php-pear php7.2-dev<br />
+	sudo 	pecl install mongodb<br />
+	/etc/php/7.2/cli/php.ini<br />
+	<blockquote>
+	extension=mongodb.so<br />
+	</blockquote>
 </blockquote>
 
 Ubuntu 16.04
 <blockquote>
 	sudo apt install php-pear php7.0-dev<br />
 	sudo apt install pkg-config<p />
-	sudo pecl install mongo<br />
+	sudo pecl install mongodb<br />
 	/etc/php/7.0/cli/php.ini<br />
 	<blockquote>
 	extension=mongodb.so<br />
@@ -176,4 +180,7 @@ HTTP Status Interface<p />
 <blockquote>
 ExecStart=/usr/bin/mongod --quiet --rest --config /etc/mongodb.conf<p />
 http://localhost:28017/<p />
+</blockquote>
+
+<blockquote>
 </blockquote>

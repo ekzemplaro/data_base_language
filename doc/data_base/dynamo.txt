@@ -1,0 +1,100 @@
+<meta content="Program Language Examples to connect to VoltDB" name="description">
+<meta content="VoltDB,クライアント,接続,言語,サンプル" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<title>VoltDB</title>
+</head>
+<body>
+<h1>DynamoDB</a></h1>
+
+<blockquote>
+</blockquote>
+
+Bash<br />
+<blockquote>
+sudo apt install awscli<br />
+</blockquote>
+
+Python<br />
+<blockquote>
+sudo apt install python3-boto3<br />
+</blockquote>
+
+<blockquote>
+</blockquote>
+
+
+
+
+Java<p />
+<blockquote>
+</blockquote>
+
+C#<p />
+<blockquote>
+</blockquote>
+
+
+
+<hr />
+DynamoDB on Local<p />
+Create a Table<br />
+<blockquote>
+<pre>
+aws dynamodb create-table --table-name 'cities' \
+--attribute-definitions '[{"AttributeName":"key","AttributeType": "S"}]' \
+--key-schema '[{"AttributeName":"key","KeyType": "HASH"}]' \
+--provisioned-throughput '{"ReadCapacityUnits": 5,"WriteCapacityUnits": 5}' \
+	--endpoint-url http://localhost:8000
+</pre>
+</blockquote>
+
+List Tables<br />
+<blockquote>
+aws dynamodb list-tables --endpoint-url http://localhost:8000<br />
+</blockquote>
+
+Delete a Table<br />
+<blockquote>
+<pre>
+aws dynamodb delete-table --table-name 'cities'
+	--endpoint-url http://localhost:8000
+</pre>
+</blockquote>
+
+Insert<br />
+<blockquote>
+<pre>
+aws dynamodb put-item --table-name cities --item \
+ '{"key": { "S": "t0921" }, "name": {"S": "宇都宮"},"population": { "N": "47219" }, "date_mod":{"S": "2003-2-12"}}' \
+	--endpoint-url http://localhost:8000
+#
+aws dynamodb put-item --table-name cities --item \
+ '{"key": { "S": "t0922" }, "name": {"S": "小山"},"population": { "N": "57239" }, "date_mod":{"S": "2003-5-20"}}' \
+	--endpoint-url http://localhost:8000
+#
+aws dynamodb put-item --table-name cities --item \
+ '{"key": { "S": "t0923" }, "name": {"S": "佐野"},"population": { "N": "86217" }, "date_mod":{"S": "2003-9-8"}}' \
+	--endpoint-url http://localhost:8000
+#
+</pre>
+</blockquote>
+
+Scan<br />
+<blockquote>
+aws dynamodb scan --table-name cities --endpoint-url http://localhost:8000<br />
+</blockquote>
+
+Count<br />
+<blockquote>
+<pre>
+aws dynamodb scan --table-name cities --query 'Count' \
+	--endpoint-url http://localhost:8000
+</pre>
+</blockquote>
+
+<blockquote>
+</blockquote>
+
+<blockquote>
+</blockquote>
+
