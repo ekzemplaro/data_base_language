@@ -4,7 +4,7 @@
 /*
 	mongo_update.php
 
-					Jun/02/2018
+					Jun/21/2018
 
 */
 // --------------------------------------------------------------------
@@ -21,7 +21,8 @@ $population_in = $argv[2];
 print	$id_in . "\t";
 print	$population_in . "\n";
 
-$manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");
+$str_connect = "mongodb://scott:tiger123@localhost:27017";
+$manager = new MongoDB\Driver\Manager($str_connect);
 
 $bulk = new MongoDB\Driver\BulkWrite;
 

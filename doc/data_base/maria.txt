@@ -157,7 +157,7 @@ $ mysql -u root city < city.sql<p />
 <hr />
 Ubuntu<p />
 <blockquote>
-# apt-get install phpmyadmin<p />
+# apt install phpmyadmin<p />
 </blockquote>
 Arch Linux<p />
 <blockquote>

@@ -2,7 +2,7 @@
 #
 #	mongo_manipulate.py
 #
-#					May/12/2015
+#					Jun/10/2018
 #
 import	pymongo
 import	datetime
@@ -40,15 +40,13 @@ def	mongo_to_dict_proc (db_aa):
 	return	dict_aa
 #
 # -------------------------------------------------------------------
-def dict_to_mongo_proc (dict_aa):
-	client = pymongo.MongoClient()
-	db = client['city_db']
+def dict_to_mongo_proc (db_aa,dict_aa):
 #
-	db.saitama
-	db.saitama.remove ()
+	db_aa.saitama
+	db_aa.saitama.remove ()
 #
 	for key in dict_aa.keys():
 		unit = dict_aa[key]
-		db.saitama.save({"key": key,"name": unit['name'],"population": unit['population'],"date_mod": unit['date_mod']})
+		db_aa.saitama.save({"key": key,"name": unit['name'],"population": unit['population'],"date_mod": unit['date_mod']})
 #
 # -------------------------------------------------------------------

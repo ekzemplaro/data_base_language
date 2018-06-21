@@ -4,7 +4,7 @@
 /*
 	read/mongo_read.php
 
-					Jun/02/2018
+					Jun/21/2018
 
 */
 // --------------------------------------------------------------------
@@ -16,7 +16,8 @@ include "text_manipulate.php";
 // --------------------------------------------------------------------
 fputs (STDERR,"*** 開始 ***\n");
 
-$manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");
+$str_connect = "mongodb://scott:tiger123@localhost:27017";
+$manager = new MongoDB\Driver\Manager($str_connect);
 
 $filter = [];
 $options = [

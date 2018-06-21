@@ -3,7 +3,7 @@
 #
 #	mongo_update.py
 #
-#					Aug/09/2016
+#					Jun/21/2018
 #
 import	sys
 import	pymongo
@@ -17,7 +17,7 @@ key_in = sys.argv[1]
 population_in = int (sys.argv[2])
 sys.stderr.write ("%s\t%d\n" % (key_in, population_in))
 #
-client = pymongo.MongoClient()
+client = pymongo.MongoClient(username='scott',password='tiger123')
 db = client['city_db']
 #
 mongo_update_proc (db,key_in,population_in)

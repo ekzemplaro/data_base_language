@@ -4,7 +4,7 @@
 /*
 	mongo_delete.php
 
-					Jun/02/2018
+					Jun/21/2018
 
 */
 // --------------------------------------------------------------------
@@ -18,7 +18,9 @@ fputs (STDERR,"*** 開始 ***\n");
 $id_in = $argv[1];
 print	$id_in . "\n";
 
-$manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");
+$str_connect = "mongodb://scott:tiger123@localhost:27017";
+$manager = new MongoDB\Driver\Manager($str_connect);
+
 $bulk = new MongoDB\Driver\BulkWrite;
 
 $bulk->delete(['key' => $id_in]);

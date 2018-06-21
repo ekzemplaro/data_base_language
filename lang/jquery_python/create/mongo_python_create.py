@@ -33,7 +33,10 @@ def	data_prepare_proc ():
 #
 dict_aa = data_prepare_proc ()
 #
-dict_to_mongo_proc (dict_aa)
+client = pymongo.MongoClient()
+db = client['city_db']
+#
+dict_to_mongo_proc (db,dict_aa)
 #
 print ("Content-type: text/html\n\n")
 #

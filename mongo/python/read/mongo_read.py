@@ -3,7 +3,7 @@
 #
 #	mongo_read.py
 #
-#					Aug/09/2016
+#					Sep/21/2018
 #
 import sys
 import pymongo
@@ -14,7 +14,7 @@ from text_manipulate import dict_display_proc
 # -------------------------------------------------------------------
 sys.stderr.write ("*** 開始 ***\n")
 #
-client = pymongo.MongoClient()
+client = pymongo.MongoClient(username='scott',password='tiger123')
 db = client['city_db']
 #
 dict_aa=mongo_to_dict_proc (db)
