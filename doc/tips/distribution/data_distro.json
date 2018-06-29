@@ -6,7 +6,7 @@
 "boot2docker": 
 	{"name": "boot2docker","kernel": "4.0.7-boot2docker","bash": ""},
 "centos": 
-	{"name": "CentOS","kernel": "3.10.0-327.36.3.el7.x86_64","bash": "4.2.46"},
+	{"name": "CentOS","kernel": "3.10.0-862.el7.x86_64","bash": "4.2.46"},
 "coreos": 
 	{"name": "CoreOS","kernel": "4.10.9-coreos","bash": "4.3.48"},
 "debian": 

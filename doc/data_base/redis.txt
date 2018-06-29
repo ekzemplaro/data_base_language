@@ -6,8 +6,8 @@
 Ubuntu<p />
 <blockquote>
 <pre>
-ii  redis-server   2:3.2.1-1  amd64  Persistent key-value database with network interface
-ii  redis-tools    2:3.2.1-1  amd64  Persistent key-value database with network interface (client)
+ii  redis-server   5:4.0.9-1  amd64  Persistent key-value database with network interface
+ii  redis-tools    5:4.0.9-1  amd64  Persistent key-value database with network interface (client)
 </pre>
 	/etc/redis/redis.conf<p />
 </blockquote>

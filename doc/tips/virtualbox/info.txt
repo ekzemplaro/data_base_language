@@ -1,0 +1,16 @@
+http://www.shookuro.com/entry/2018/02/10/172724
+
+# nmcli device
+
+/etc/sysconfig/network-script/ifcfg-enp03s
+
+ONBOOT=yes
+
+reboot
+
+nmcli device
+
+ポートフォワーディングの設定
+「設定」→「ネットワーク」→「高度」→「ポートフォワーディング」
+
+ssh -p 2000 localhost

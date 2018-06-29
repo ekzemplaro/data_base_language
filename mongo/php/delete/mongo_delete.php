@@ -4,7 +4,7 @@
 /*
 	mongo_delete.php
 
-					Jun/21/2018
+					Jun/30/2018
 
 */
 // --------------------------------------------------------------------
@@ -25,7 +25,7 @@ $bulk = new MongoDB\Driver\BulkWrite;
 
 $bulk->delete(['key' => $id_in]);
 
-$result = $manager->executeBulkWrite('city_db.saitama', $bulk);
+$result = $manager->executeBulkWrite('city.saitama', $bulk);
 
 fputs (STDERR,"*** 終了 ***\n");
 // --------------------------------------------------------------------

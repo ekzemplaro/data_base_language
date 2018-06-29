@@ -1,8 +1,8 @@
-#! /usr/bin/nodejs
+#! /usr/bin/node
 //
 //	mongo_create.js
 //
-//					Feb/18/2016
+//					Jun/30/2018
 //
 // ----------------------------------------------------------------
 var text_manipulate=require ("/var/www/data_base/common/node_common/text_manipulate")
@@ -45,10 +45,10 @@ console.log ("*** 開始 ***")
 
 var dict_aa = data_prepare_proc ()
 
-var host = 'localhost'
+var host = 'scott:tiger123@localhost'
 var port = 27017
 
-var db_name = 'city_db'
+var db_name = 'city'
 
 var str_connect = "mongodb://" + host + ":" + port + "/" + db_name + "?w=1" 
 console.log("Connecting to " + host + ":" + port)

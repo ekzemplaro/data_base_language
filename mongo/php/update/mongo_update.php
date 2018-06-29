@@ -4,7 +4,7 @@
 /*
 	mongo_update.php
 
-					Jun/21/2018
+					Jun/30/2018
 
 */
 // --------------------------------------------------------------------
@@ -33,7 +33,7 @@ $newdata = array('$set' => array("population" => $population_in,"date_mod" => $t
 
 $bulk->update(array("key" => $id_in), $newdata);
 
-$manager->executeBulkWrite('city_db.saitama', $bulk);
+$manager->executeBulkWrite('city.saitama', $bulk);
 
 fputs (STDERR,"*** 終了 ***\n");
 

@@ -3,7 +3,7 @@
 #
 #	mongo_create.py
 #
-#					Jun/21/2018
+#					Jun/30/2018
 #
 # -------------------------------------------------------------
 import	sys
@@ -17,9 +17,9 @@ from mongo_manipulate import dict_to_mongo_proc
 def	data_prepare_proc ():
 	dict_aa = {} 
 #
-	dict_aa = dict_append_proc (dict_aa,'t1161','さいたま',54216,'2003-4-30')
-	dict_aa = dict_append_proc (dict_aa,'t1162','所沢',83265,'2003-5-10')
-	dict_aa = dict_append_proc (dict_aa,'t1163','越谷',21754,'2003-6-14')
+	dict_aa = dict_append_proc (dict_aa,'t1161','さいたま',54916,'2003-5-20')
+	dict_aa = dict_append_proc (dict_aa,'t1162','所沢',83765,'2003-8-10')
+	dict_aa = dict_append_proc (dict_aa,'t1163','越谷',21654,'2003-7-14')
 	dict_aa = dict_append_proc (dict_aa,'t1164','久喜',53672,'2003-9-9')
 	dict_aa = dict_append_proc (dict_aa,'t1165','熊谷',42391,'2003-8-4')
 	dict_aa = dict_append_proc (dict_aa,'t1166','秩父',35187,'2003-1-21')
@@ -35,7 +35,7 @@ sys.stderr.write ("*** 開始 ***\n")
 dict_aa = data_prepare_proc ()
 #
 client = pymongo.MongoClient(username='scott',password='tiger123')
-db = client['city_db']
+db = client['city']
 #
 dict_to_mongo_proc (db,dict_aa)
 #

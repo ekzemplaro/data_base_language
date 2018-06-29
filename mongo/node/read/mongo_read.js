@@ -1,17 +1,17 @@
-#! /usr/bin/nodejs
+#! /usr/bin/node
 //
 //	mongo_read.js
 //
-//					Feb/18/2016
+//					Jun/30/2018
 // ----------------------------------------------------------------
 var MongoClient = require('mongodb').MongoClient
 
 console.log ("*** 開始 ***")
 
-var host = 'localhost'
+var host = 'scott:tiger123@localhost'
 var port = 27017
 
-var db_name = 'city_db'
+var db_name = 'city'
 
 var str_connect = "mongodb://" + host + ":" + port + "/" + db_name + "?w=1" 
 console.log("Connecting to " + host + ":" + port)

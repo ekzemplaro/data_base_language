@@ -4,7 +4,7 @@
 /*
 	read/mongo_read.php
 
-					Jun/21/2018
+					Jun/30/2018
 
 */
 // --------------------------------------------------------------------
@@ -26,7 +26,7 @@ $options = [
 ];
 
 $query = new MongoDB\Driver\Query($filter, $options);
-$cursor = $manager->executeQuery('city_db.saitama', $query);
+$cursor = $manager->executeQuery('city.saitama', $query);
 
 $dict_aa = array ();
 
