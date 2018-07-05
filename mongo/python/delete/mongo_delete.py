@@ -3,7 +3,7 @@
 #
 #	mongo_delete.py
 #
-#					Jun/30/2018
+#					Jul/01/2018
 #
 import	sys
 import	string
@@ -19,8 +19,9 @@ sys.stderr.write ("%s\n" % key_in)
 #
 client = pymongo.MongoClient(username='scott',password='tiger123')
 db = client['city']
+collection = 'saitama'
 #
-mongo_delete_proc (db,key_in)
+mongo_delete_proc (db,collection,key_in)
 #
 sys.stderr.write ("*** 終了 ***\n")
 #

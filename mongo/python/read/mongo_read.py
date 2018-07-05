@@ -3,7 +3,7 @@
 #
 #	mongo_read.py
 #
-#					Jun/30/2018
+#					Jul/01/2018
 import sys
 import pymongo
 #
@@ -15,8 +15,9 @@ sys.stderr.write ("*** 開始 ***\n")
 #
 client = pymongo.MongoClient(username='scott',password='tiger123')
 db = client['city']
+collection = 'saitama'
 #
-dict_aa=mongo_to_dict_proc (db)
+dict_aa=mongo_to_dict_proc (db,collection)
 dict_display_proc (dict_aa)
 #
 sys.stderr.write ("*** 終了 ***\n")

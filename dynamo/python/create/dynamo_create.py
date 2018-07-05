@@ -3,7 +3,7 @@
 #
 #	dynamo_create.py
 #
-#					Dec/04/2017
+#					Jul/04/2018
 # ---------------------------------------------------------------
 import	sys
 import	boto3
@@ -42,8 +42,8 @@ create_table_proc()
 
 table = dynamodb.Table('cities')
 
-insert_proc ("t0921","宇都宮",Decimal ("47219"),"2003-2-12")
-insert_proc ("t0922","小山",Decimal ("79814"),"2003-5-24")
+insert_proc ("t0921","宇都宮",Decimal ("45219"),"2003-9-18")
+insert_proc ("t0922","小山",Decimal ("72814"),"2003-6-24")
 insert_proc ("t0923","佐野",Decimal ("91845"),"2003-7-15")
 insert_proc ("t0924","足利",Decimal ("59837"),"2003-6-9")
 insert_proc ("t0925","日光",Decimal ("49871"),"2003-4-16")

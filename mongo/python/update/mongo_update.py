@@ -3,7 +3,7 @@
 #
 #	mongo_update.py
 #
-#					Jun/30/2018
+#					Jul/01/2018
 #
 import	sys
 import	pymongo
@@ -19,8 +19,9 @@ sys.stderr.write ("%s\t%d\n" % (key_in, population_in))
 #
 client = pymongo.MongoClient(username='scott',password='tiger123')
 db = client['city']
+collection = 'saitama'
 #
-mongo_update_proc (db,key_in,population_in)
+mongo_update_proc (db,collection,key_in,population_in)
 #
 sys.stderr.write ("*** 終了 ***\n")
 # -------------------------------------------------------------------
