@@ -3,19 +3,17 @@
 /*
 	sqlite3_update.php
 
-					Apr/28/2011
+					Jul/25/2018
 
 */
 // --------------------------------------------------------------------
 $path="/var/www/data_base/common/php_common";
 set_include_path (get_include_path() . PATH_SEPARATOR . $path);
 
-
-include "sql_display.php";
 include "sql_manipulate.php";
 
 // --------------------------------------------------------------------
-print "*** 開始 ***\n";
+fputs (STDERR,"*** 開始 ***\n");
 $file_in = $argv[1];
 $id_in = $argv[2];
 $population_in = $argv[3];
@@ -26,9 +24,8 @@ $dbcon = new PDO ("sqlite:" . $file_in);
 
 sql_update_proc ($dbcon,$id_in,$population_in);
 
-disp_lower_proc ($dbcon);
-
 $dbcon = null;
-print "*** 終了 ***\n";
+
+fputs (STDERR,"*** 終了 ***\n");
 // --------------------------------------------------------------------
 ?>	

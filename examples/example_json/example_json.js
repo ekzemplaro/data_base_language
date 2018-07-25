@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------
 //	example_json.js
 //
-//					May/15/2018
+//					Jul/24/2018
 //
 // -----------------------------------------------------------------------
 jQuery (function ()
@@ -10,25 +10,36 @@ jQuery (function ()
 
 	var data_text = ""
 
-	var file_in = "./id_8303.json"
+//	var file_in = "./tochigi.json"
+	var file_in = "./cities.json"
 
 	jQuery.getJSON (file_in,function (data_aa)
 		{
 		var str_out = ""
-		for (var key in data_aa.books)
+		str_out += "<table>"
+		for (var key in data_aa)
 			{
-			str_out += data_aa.books[key].id + "<br />"
-			str_out += data_aa.books[key].title + "<br />"
-			str_out += data_aa.books[key].language + "<br />"
-			str_out += data_aa.books[key].num_sections + "<br />"
-			str_out += data_aa.books[key].totaltime + "<br />"
+			str_out += "<tr>"
+			str_out += "<td>" + data_aa[key].name + "</td>"
+			str_out += "<td>" + data_aa[key].population + "</td>"
+			str_out += "<td>" + data_aa[key].date_mod + "</td>"
+			str_out += "</tr>"
 			}
+		str_out += "</table>"
 
 		jQuery(".contents").html (str_out)
 		})
+		.fail(function(jqXHR, textStatus, errorThrown)
+			{
+			var str_out = "<h2>Not Exist</h2>"
+			str_out += "<blockquote>"
+				str_out += file_in + "<br />"
+			str_out += "</blockquote>"
+			jQuery(".contents").html(str_out)
+			jQuery("#outarea_ee").text("textStatus = " + textStatus)
+			})
 
 	jQuery("#outarea_hh").text ("*** example_json *** end ***")
-
 })
 
 // -----------------------------------------------------------------------

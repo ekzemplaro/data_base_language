@@ -3,7 +3,7 @@
 /*
 	sqlite3_read.php	for sqlite3
 
-					Jan/12/2011
+					Jul/25/2018
 
 */
 // --------------------------------------------------------------------
@@ -16,12 +16,12 @@ include "sql_display.php";
 $sqlite3_file = $argv[1];
 $dbcon = new PDO ("sqlite:" . $sqlite3_file);
 
-print "*** 開始 ***\n";
+fputs (STDERR,"*** 開始 ***\n");
 
 disp_lower_proc ($dbcon);
 
 $dbcon=null;
 
-print "*** 終了 ***\n";
+fputs (STDERR,"*** 終了 ***\n");
 // --------------------------------------------------------------------
 ?>	

@@ -2,7 +2,7 @@
 // ---------------------------------------------------------------------
 //	mongo_php_read.php
 //
-//					Jun/09/2018
+//					Jul/25/2018
 //
 // ---------------------------------------------------------------------
 $path="/var/www/data_base/common/php_common";
@@ -12,7 +12,9 @@ include ("text_manipulate.php");
 include ("mongo_manipulate.php");
 //
 // ---------------------------------------------------------------------
-$manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");
+$str_connect = "mongodb://scott:tiger123@localhost:27017";
+$manager = new MongoDB\Driver\Manager($str_connect);
+
 
 $filter = [];
 $options = [

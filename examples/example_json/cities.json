@@ -1,0 +1,32 @@
+{
+  "t0921": {
+    "name": "宇都宮",
+    "population": 68714,
+    "date_mod": "1950-9-24"
+  },
+  "t0922": {
+    "name": "小山",
+    "population": 29157,
+    "date_mod": "1950-3-15"
+  },
+  "t0923": {
+    "name": "佐野",
+    "population": 65741,
+    "date_mod": "1950-10-7"
+  },
+  "t0924": {
+    "name": "足利",
+    "population": 38164,
+    "date_mod": "1950-6-22"
+  },
+  "t0925": {
+    "name": "日光",
+    "population": 49675,
+    "date_mod": "1950-8-28"
+  },
+  "t0926": {
+    "name": "下野",
+    "population": 65813,
+    "date_mod": "1950-9-12"
+  }
+}

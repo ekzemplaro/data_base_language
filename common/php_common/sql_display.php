@@ -4,7 +4,7 @@
 //	sql_display.php
 //
 //
-//					Feb/05/2010
+//					Jul/25/2018
 //
 //
 // --------------------------------------------------------------------
@@ -30,8 +30,6 @@ foreach ($dbcon->query($sql) as $row)
 // --------------------------------------------------------------------
 function disp_lower_proc ($dbh)
 {
-print ("*** disp_lower_proc check ***\n");
-
 try{
 	$sql = 'select * from cities order by id';
 	foreach ($dbh->query($sql) as $row)
@@ -46,7 +44,6 @@ try{
     die();
 }
 
-$dbh = null;
 }
 
 // ---------------------------------------------------------------------
