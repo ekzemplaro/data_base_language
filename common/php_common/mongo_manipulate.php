@@ -3,82 +3,83 @@
 /*
 	mongo_manipulate.php
 
-					Nov/25/2014
+					Aug/01/2018
 
 */
 // --------------------------------------------------------------------
-function mongo_to_dict_proc ($col)
+function mongo_to_dict_proc ($user,$password)
 {
 	$dict_aa = array ();
 
-	$cursor = $col->find();
+	$str_connect = "mongodb://" . $user . ":" . $password . "@localhost:27017";
+	$manager = new MongoDB\Driver\Manager($str_connect);
 
-	foreach ($cursor as $obj) {
-		$dict_unit = array ();
-		$dict_unit['name'] = $obj["name"];
-		$dict_unit['population'] = $obj["population"];
-		$dict_unit['date_mod'] = $obj["date_mod"];
-		$dict_aa[$obj["id"]]= $dict_unit;
-		}
+	$filter = [];
+	$options = [
+		'projection' => ['_id' => 0],
+		'sort' => ['_id' => -1],
+	];
+
+	$query = new MongoDB\Driver\Query($filter, $options);
+	$cursor = $manager->executeQuery('city.saitama', $query);
+
+	$dict_aa = array ();
+
+	foreach ($cursor as $document) {
+		$dict_aa = dict_append_proc ($dict_aa,$document->key,$document->name,$document->population,$document->date_mod);
+	}
 
 	return	$dict_aa;
 }
 
 // --------------------------------------------------------------------
-function mongo_update_proc ($col,$id_in,$population_in)
+function mongo_update_proc ($id_in,$population_in,$user,$password)
 {
-$cursor = $col->find(array('id' => $id_in));
+	$str_connect = "mongodb://" . $user . ":" . $password . "@localhost:27017";
+	$manager = new MongoDB\Driver\Manager($str_connect);
 
-foreach ($cursor as $obj) {
-	echo $obj["id"] . "\t";
-	echo $obj["name"] . "\t";
-	echo $obj["population"] . "\t";
-	echo $obj["date_mod"] . "\n";
-	$obj["population"] = $population_in;
+	$bulk = new MongoDB\Driver\BulkWrite;
+
 	date_default_timezone_set('Asia/Tokyo');
-	$obj["date_mod"] = date ("Y-m-d");
+	$today = date ("Y-m-d");
 
-	$col->save ($obj);
-	}
+	$newdata = array('$set' => array("population" => $population_in,"date_mod" => $today));
+
+	$bulk->update(array("key" => $id_in), $newdata);
+
+	$manager->executeBulkWrite('city.saitama', $bulk);
 }
 
 // --------------------------------------------------------------------
-function mongo_delete_proc ($col,$id_in)
+function mongo_delete_proc ($id_in,$user,$password)
 {
-$cursor = $col->find(array('id' => $id_in));
+	$str_connect = "mongodb://" . $user . ":" . $password . "@localhost:27017";
+	$manager = new MongoDB\Driver\Manager($str_connect);
 
-foreach ($cursor as $obj) {
-	echo $obj["id"] . "\t";
-	echo $obj["name"] . "\t";
-	echo $obj["population"] . "\t";
-	echo $obj["date_mod"] . "\n";
+	$bulk = new MongoDB\Driver\BulkWrite;
 
-	$col->remove ($obj);
-	}
+	$bulk->delete(['key' => $id_in]);
+
+	$result = $manager->executeBulkWrite('city.saitama', $bulk);
 }
 
 // --------------------------------------------------------------------
-function dict_to_mongo_proc ($col,$dict_aa)
+function dict_to_mongo_proc ($dict_aa,$user,$password)
 {
-	print $col->count () . "\n";
-	$col->remove ();
-	print $col->count () . "\n";
+	$str_connect = "mongodb://" . $user . ":" . $password . "@localhost:27017";
 
+	$manager = new MongoDB\Driver\Manager($str_connect);
+
+	$manager->executeCommand('city', new \MongoDB\Driver\Command(["drop" => "saitama"]));
+
+
+	$bulk = new MongoDB\Driver\BulkWrite;
 	foreach ($dict_aa as $key => $value)
 		{
-		$name = $value['name'];
-		$population = $value['population'];
-		$date_mod = $value['date_mod'];
-
-		$obj = array ();
-		$obj["id"] = $key;
-		$obj["name"] = $name;
-		$obj["population"] = $population;
-		$obj["date_mod"] = $date_mod;
-
-		$col->save ($obj);
+	$bulk->insert(['key' => $key, 'name' => $value["name"], 'population' => $value['population'], 'date_mod' => $value['date_mod']]);
 		}
-	print $col->count () . "\n";
+
+	$manager->executeBulkWrite('city.saitama', $bulk);
 }
 
 // --------------------------------------------------------------------

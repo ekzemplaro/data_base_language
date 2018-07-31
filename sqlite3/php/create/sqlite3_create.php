@@ -11,6 +11,7 @@ set_include_path (get_include_path() . PATH_SEPARATOR . $path);
 //
 include "text_manipulate.php";
 include "sql_manipulate.php";
+include "file_io.php";
 // ----------------------------------------------------------------
 function data_prepare_proc ()
 {
@@ -34,6 +35,8 @@ fputs (STDERR,"*** 開始 ***\n");
 
 $file_out = $argv[1];
 print	$file_out . "\n";
+
+folder_create_proc ($file_out);
 
 $dict_aa = data_prepare_proc ();
 

@@ -3,7 +3,7 @@
 //
 //	json_create.php
 //
-//					Jun/24/2017
+//					Jul/25/2018
 //
 // ----------------------------------------------------------------
 $path="/var/www/data_base/common/php_common";
@@ -37,13 +37,14 @@ $dict_aa = dict_append_proc ($dict_aa,"t0934",'那須烏山',83712,'2002-6-24');
 // ----------------------------------------------------------------
 fputs (STDERR,"*** 開始 ***\n");
 
+$file_out = $argv[1];
+echo	$file_out . "\n";
+
+folder_create_proc ($file_out);
+
 $dict_aa = data_prepare_proc ();
 
 $str_json = json_encode ($dict_aa);
-
-$file_out = $argv[1];
-
-echo	$file_out . "\n";
 
 file_write_proc ($str_json,$file_out);
 

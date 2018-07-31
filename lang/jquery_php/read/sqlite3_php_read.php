@@ -13,6 +13,7 @@ include "text_manipulate.php";
 //
 // ---------------------------------------------------------------------
 $sqlite3_file = "/var/tmp/sqlite3/cities.db";
+$sqlite3_file = "cities.db";
 
 $dbcon = new PDO ("sqlite:" . $sqlite3_file);
 

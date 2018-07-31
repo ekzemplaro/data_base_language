@@ -4,7 +4,7 @@
 /*
 	mongo_update.php
 
-					Jun/30/2018
+					Aug/01/2018
 
 */
 // --------------------------------------------------------------------
@@ -15,25 +15,15 @@ include "mongo_manipulate.php";
 // --------------------------------------------------------------------
 fputs (STDERR,"*** 開始 ***\n");
 
-
 $id_in = $argv[1];
 $population_in = $argv[2];
 print	$id_in . "\t";
 print	$population_in . "\n";
 
-$str_connect = "mongodb://scott:tiger123@localhost:27017";
-$manager = new MongoDB\Driver\Manager($str_connect);
+$user = 'scott';
+$password = 'tiger123';
 
-$bulk = new MongoDB\Driver\BulkWrite;
-
-date_default_timezone_set('Asia/Tokyo');
-$today = date ("Y-m-d");
-
-$newdata = array('$set' => array("population" => $population_in,"date_mod" => $today));
-
-$bulk->update(array("key" => $id_in), $newdata);
-
-$manager->executeBulkWrite('city.saitama', $bulk);
+mongo_update_proc ($id_in,$population_in,$user,$password);
 
 fputs (STDERR,"*** 終了 ***\n");
 

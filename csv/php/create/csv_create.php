@@ -12,7 +12,8 @@ set_include_path (get_include_path() . PATH_SEPARATOR . $path);
 include "text_manipulate.php";
 include "file_io.php";
 // ----------------------------------------------------------------
-fputs (STDERR,"*** 開始 ***\n");
+function data_prepare_proc ()
+{
 
 $dict_aa = array ();
 
@@ -26,12 +27,18 @@ $dict_aa = dict_append_proc ($dict_aa,'t1277','鴨川',82157,'2002-4-17');
 $dict_aa = dict_append_proc ($dict_aa,'t1278','銚子',91548,'2002-2-24');
 $dict_aa = dict_append_proc ($dict_aa,'t1279','市川',74256,'2002-11-12');
 
+return	$dict_aa;
+}
+
+// ----------------------------------------------------------------
+fputs (STDERR,"*** 開始 ***\n");
 
 $file_out = $argv[1];
-
 print	$file_out . "\n";
 
 folder_create_proc ($file_out);
+
+$dict_aa = data_prepare_proc ();
 
 csv_write_proc ($file_out,$dict_aa);
 
