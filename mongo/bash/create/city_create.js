@@ -1,8 +1,8 @@
-use city_db;
+use city;
 db.saitama.remove ({});
-tx = {"key":"t1161","name":"さいたま","population":58143,"date_mod":"2001-9-12"};
+tx = {"key":"t1161","name":"さいたま","population":78143,"date_mod":"2001-3-24"};
 db.saitama.save (tx);
-tx = {"key":"t1162", "name": "所沢", "population":12987, "date_mod":"2001-10-9"};
+tx = {"key":"t1162", "name": "所沢", "population":42987, "date_mod":"2001-10-9"};
 db.saitama.save (tx);
 tx = {"key":"t1163", "name": "越谷", "population":93742, "date_mod": "2001-5-21"};
 db.saitama.save (tx);

@@ -2,7 +2,7 @@
 #
 #	mongo_manipulate.py
 #
-#					Jul/01/2018
+#					Aug/05/2018
 #
 import	pymongo
 import	datetime
@@ -10,27 +10,15 @@ import	datetime
 from text_manipulate import dict_append_proc
 # -------------------------------------------------------------------
 def	mongo_update_proc (db_aa,collection,key_in,population_in):
-#	collection = "saitama"
 	date_mod = datetime.datetime.now ()
-	for item in db_aa[collection].find().sort("key", pymongo.ASCENDING):
-		if (key_in == item["key"]):
-			item["population"] = population_in
-			item["date_mod"] = '%s' % date_mod
-			print ("** found **",item["key"],item["population"])
-			db_aa[collection].save (item)
+	db_aa[collection].update({"key": key_in},{"$set":{"population": population_in,"date_mod": '%s' % date_mod}})
 #
 # -------------------------------------------------------------------
 def	mongo_delete_proc (db_aa,collection,key_in):
-#	collection = "saitama"
-	for item in db_aa[collection].find().sort("key", pymongo.ASCENDING):
-		if (key_in == item["key"]):
-			print (item["key"],item["population"])
-			db_aa[collection].remove (item)
+	db_aa[collection].remove ({"key": key_in})
 #
 # -------------------------------------------------------------------
 def	mongo_to_dict_proc (db_aa,collection):
-#
-#	collection = "saitama"
 #
 	dict_aa = {}
 
@@ -42,7 +30,6 @@ def	mongo_to_dict_proc (db_aa,collection):
 # -------------------------------------------------------------------
 def dict_to_mongo_proc (db_aa,collection,dict_aa):
 #
-#	collection = "saitama"
 	db_aa[collection]
 	db_aa[collection].remove ()
 #
