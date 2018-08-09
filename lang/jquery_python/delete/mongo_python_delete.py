@@ -3,7 +3,7 @@
 #
 #	mongo_python_delete.py
 #
-#						May/12/2015
+#						Aug/05/2018
 #
 #
 # ----------------------------------------------------------------
@@ -19,20 +19,21 @@ sys.path.append ("/var/www/data_base/common/python_common")
 from mongo_manipulate import mongo_delete_proc
 from cgi_manipulate import parse_parameter
 # ----------------------------------------------------------------
-client = pymongo.MongoClient()
-db = client['city_db']
+client = pymongo.MongoClient(username='scott',password='tiger123')
+db = client['city']
+collection = 'saitama'
 #
 # -------------------------------------------------------------------
 #
-print ("Content-type: text/html\n\n")
+print("Content-type: text/html\n\n")
 #
 # ---------------------------------------------------------------
-array_bb = parse_parameter ()
+array_bb = parse_parameter()
 #
 for it in range (len(array_bb)):
 	id_in = array_bb[it]
-	print ("id_in = %s<br />" % id_in)
-	mongo_delete_proc	(db,id_in)
+	print("id_in = %s<br />" % id_in)
+	mongo_delete_proc(db,collection,id_in)
 #
-print ("OK<br />")
+print("OK<br />")
 #

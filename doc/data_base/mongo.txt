@@ -193,14 +193,7 @@ mongo admin --host example.com:27017 -u scott -p tiger123<p />
 <pre>
 > use admin
 switched to db admin
-> db.createUser({
-... user: "scott",
-... pwd: "tiger123",
-... roles: [
-... "userAdminAnyDatabase",
-... "readWriteAnyDatabase",
-... "dbAdminAnyDatabase"]
-... })
+> db.createUser({user: "scott",pwd: "tiger123",roles: ["userAdminAnyDatabase","readWriteAnyDatabase","dbAdminAnyDatabase"]})
 Successfully added user: {
 	"user" : "hapo",
 	"roles" : [

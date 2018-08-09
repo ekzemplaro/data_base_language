@@ -3,7 +3,7 @@
 #
 #	mongo_python_read.py
 #
-#					Jun/24/2015
+#					Aug/05/2018
 #
 # ----------------------------------------------------------------
 import	sys
@@ -25,13 +25,12 @@ def json_str_gen_proc ():
 	return	str_aa
 # ---------------------------------------------------------------------
 #
-client = pymongo.MongoClient()
-db = client['city_db']
+client = pymongo.MongoClient(username='scott',password='tiger123')
+db = client['city']
+collection = 'saitama'
 #
-#json_str = json_str_gen_proc ()
-#print	json_str
 #
-dict_aa = mongo_to_dict_proc (db)
+dict_aa = mongo_to_dict_proc(db,collection)
 #
 str_aa = json.dumps (dict_aa)
 #

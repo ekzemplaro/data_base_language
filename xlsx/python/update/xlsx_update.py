@@ -3,9 +3,8 @@
 #
 #	xlsx_update.py
 #
-#					Oct/14/2016
+#					Aug/09/2018
 import	sys
-import	string
 #
 # ---------------------------------------------------------------
 sys.path.append ('/var/www/data_base/common/python_common')
@@ -14,18 +13,18 @@ from xlsx_manipulate import xlsx_read_proc
 from xlsx_manipulate import xlsx_write_proc
 # ---------------------------------------------------------------
 #
-sys.stderr.write ("*** 開始 ***\n")
+sys.stderr.write("*** 開始 ***\n")
 #
 xlsx_file = sys.argv[1]
 key = sys.argv[2]
-population_in = int (sys.argv[3])
-print ("%s\t%d" % (key, population_in))
+population_in = int(sys.argv[3])
+print("%s\t%d" % (key, population_in))
 
-dict_aa = xlsx_read_proc	(xlsx_file)
+dict_aa = xlsx_read_proc(xlsx_file)
 
-dict_bb = dict_update_proc (dict_aa,key,population_in)
+dict_bb = dict_update_proc(dict_aa,key,population_in)
 
-xlsx_write_proc (xlsx_file,dict_bb)
+xlsx_write_proc(xlsx_file,dict_bb)
 #
-sys.stderr.write ("*** 終了 ***\n")
+sys.stderr.write("*** 終了 ***\n")
 # ---------------------------------------------------------------

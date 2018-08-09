@@ -2,7 +2,7 @@
 #
 #	xlsx_manipulate.py
 #
-#						May/31/2017
+#						Aug/08/2018
 #
 # -------------------------------------------------------------------
 import sys
@@ -26,6 +26,8 @@ def xlsx_read_proc (xlsx_file):
 		unit_aa['date_mod'] = row[3].value
 		dict_aa[key] = unit_aa
 #
+	wb.close()
+#
 	return	dict_aa
 # -------------------------------------------------------------------
 def xlsx_write_proc (xlsx_file,dict_aa):
@@ -48,6 +50,7 @@ def xlsx_write_proc (xlsx_file,dict_aa):
 		ws['D%d' % jt] = unit_aa['date_mod']
 #
 	wb.save (filename = xlsx_file)
+	wb.close()
 #
 	os.chmod (xlsx_file,0o766)
 # -------------------------------------------------------------------

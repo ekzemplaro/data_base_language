@@ -3,7 +3,7 @@
 # -------------------------------------------------------------------------
 #	mongo_python_create.py
 #
-#						May/12/2015
+#						Aug/05/2018
 # -------------------------------------------------------------------------
 import	sys
 import	json
@@ -33,10 +33,11 @@ def	data_prepare_proc ():
 #
 dict_aa = data_prepare_proc ()
 #
-client = pymongo.MongoClient()
-db = client['city_db']
+client = pymongo.MongoClient(username='scott',password='tiger123')
+db = client['city']
+collection = 'saitama'
 #
-dict_to_mongo_proc (db,dict_aa)
+dict_to_mongo_proc (db,collection,dict_aa)
 #
 print ("Content-type: text/html\n\n")
 #

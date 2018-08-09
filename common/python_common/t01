@@ -1,6 +1,0 @@
-# -------------------------------------------------------------------
-def	mongo_update_proc (db_aa,collection,key_in,population_in):
-	date_mod = datetime.datetime.now ()
-	db_aa[collection].update({"key": key_in},{"$set":{"population": population_in,"date_mod": '%s' % date_mod}})
-#
-# -------------------------------------------------------------------
