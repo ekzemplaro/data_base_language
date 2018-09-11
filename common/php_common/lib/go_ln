@@ -1,1 +1,3 @@
 ln -s /home/uchida/dbm/cassandra/php/Cassandra-PHP-Client-Library-master cassandra
+#
+ln -s /home/uchida/lang/php/PhpSpreadsheet/ex01/vendor .

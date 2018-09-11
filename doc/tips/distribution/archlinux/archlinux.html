@@ -204,20 +204,15 @@ Java のインストール<p />
 	# groupadd -g 1200 uchida<p />
 	</blockquote>
 
-yaourt のインストール<br />
+yay のインストール<br />
 	<blockquote>
-	/etc/pacman.conf<br />
-		<blockquote>
-		[archlinuxfr]<br />
-		SigLevel = Optional<br />
-		Server = http://repo.archlinux.fr/$arch<br />
-		</blockquote>
-	# pacman -Syy<br />
-	# pacman -S yaourt<br />
+	$ git clone https://aur.archlinux.org/yay.git<br />
+	$ cd yay<br />
+	$ makepkg -si<br />
 	</blockquote>
-yaourt を使ってインストール<br />
+yay を使ってインストール<br />
 	<blockquote>
-	$ yaourt -Sb google-chrome<p />
+	$ yay -S google-chrome<p />
 	</blockquote>
 <hr />
 フォント<p />

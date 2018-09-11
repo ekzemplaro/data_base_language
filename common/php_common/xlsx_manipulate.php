@@ -1,43 +1,69 @@
-#! /usr/bin/php
 <?php
 //
 //	xlsx_manipulate.php
 //
-//					Jul/30/2013
+//					Sep/09/2018
 //
 // ----------------------------------------------------------------
-// $path="/var/www/data_base/common/php_common";
-// set_include_path (get_include_path() . PATH_SEPARATOR . $path);
+require 'vendor/autoload.php';
 
-require_once '/var/www/Classes/PHPExcel.php';
-require_once '/var/www/Classes/PHPExcel/Writer/Excel2007.php';
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Reader\Xlsx as Reader;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx as Writer;;
+
 // ----------------------------------------------------------------
 function xlsx_write_proc ($xlsx_file,$dict_aa)
 {
-	$objPHPExcel = new PHPExcel();
-
-	$objPHPExcel->getProperties()->setCreator ("Uchida Masatomo");
-	$objPHPExcel->getProperties()->setLastModifiedBy ("Uchida Masatomo");
-	$objPHPExcel->getProperties()->setTitle("Office 2007 XLSX Example Document");
-	$objPHPExcel->getProperties()->setSubject("Office 2007 XLSX Example Document");
-	$objPHPExcel->getProperties()->setDescription("Test document for Office 2007 XLSX, generated using PHP classes.");
+	$spreadsheet = new Spreadsheet();
+	$sheet = $spreadsheet->getActiveSheet();
 
 	$nn = 1;
 	foreach ($dict_aa as $key => $value)
 		{
-		$objPHPExcel->setActiveSheetIndex(0)
-			->setCellValue('A'. $nn, $key)
-			->setCellValue('B'. $nn, $value['name'])
-			->setCellValue('C'. $nn, $value['population'])
-			->setCellValue('D'. $nn, $value['date_mod']);
+		$cell = 'A' . $nn;
+		$sheet->setCellValue($cell,$key);
+		$cell = 'B' . $nn;
+		$sheet->setCellValue($cell,$value['name']);
+		$cell = 'C' . $nn;
+		$sheet->setCellValue($cell,$value['population']);
+		$cell = 'D' . $nn;
+		$sheet->setCellValue($cell,$value['date_mod']);
 		$nn += 1;
 		}
 
-$objPHPExcel->getActiveSheet()->setTitle('Example');
-
-	$objWriter = new PHPExcel_Writer_Excel2007($objPHPExcel);
-	$objWriter->save ($xlsx_file);
+	$writer = new Writer($spreadsheet);
+	$writer->save($xlsx_file);
 }
 
 // ----------------------------------------------------------------
-?>
+function xlsx_read_proc ($xlsx_file)
+{
+	$dict_aa = array ();
+
+	$reader = new Reader();
+	$spreadsheet = $reader->load($xlsx_file);
+
+	$sheet = $spreadsheet->getActiveSheet();
+
+	for ($it=1; $it<= 100; $it++)
+		{
+		$dict_unit = array ();
+
+		$id = $sheet->getCell ('A' . $it) -> getValue ();
+
+		if ($id == "")
+			{
+			break;
+			}
+
+		$dict_unit['name'] = $sheet->getCell ('B' . $it) -> getValue ();
+	$dict_unit['population'] = $sheet->getCell ('C' . $it) -> getValue ();
+	$dict_unit['date_mod'] = $sheet->getCell ('D' . $it) -> getValue ();
+
+		$dict_aa[$id]= $dict_unit;
+		}
+
+	return	$dict_aa;
+}
+
+// ----------------------------------------------------------------

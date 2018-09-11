@@ -3,7 +3,7 @@
 //
 //	xlsx_create.php
 //
-//					Oct/16/2016
+//					Sep/09/2018
 //
 // ----------------------------------------------------------------
 $path="/var/www/data_base/common/php_common";
@@ -30,8 +30,8 @@ function data_prepare_proc ()
 {
 $dict_aa = array ();
 
-$dict_aa = dict_append_proc ($dict_aa,'t2971','奈良',51476,'2002-5-21');
-$dict_aa = dict_append_proc ($dict_aa,'t2972','大和高田',47395,'2002-8-12');
+$dict_aa = dict_append_proc ($dict_aa,'t2971','奈良',59276,'2002-7-31');
+$dict_aa = dict_append_proc ($dict_aa,'t2972','大和高田',47325,'2002-4-12');
 $dict_aa = dict_append_proc ($dict_aa,'t2973','大和郡山',28914,'2002-9-01');
 $dict_aa = dict_append_proc ($dict_aa,'t2974','天理',46379,'2002-10-29');
 $dict_aa = dict_append_proc ($dict_aa,'t2975','橿原',36715,'2002-7-14');

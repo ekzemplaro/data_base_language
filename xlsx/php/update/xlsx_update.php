@@ -3,14 +3,13 @@
 //
 //	xlsx_update.php
 //
-//					Oct/16/2016
+//					Sep/09/2018
 //
 // ----------------------------------------------------------------
 $path="/var/www/data_base/common/php_common";
 set_include_path (get_include_path() . PATH_SEPARATOR . $path);
 
 include "text_manipulate.php";
-include "excel_manipulate.php";
 include "xlsx_manipulate.php";
 // ----------------------------------------------------------------
 fputs (STDERR,"*** 開始 ***\n");
@@ -25,13 +24,13 @@ print	$id_in . "\t";
 print	$population_in . "\n";
 
 
-$dict_aa = excel_read_proc ($file_xlsx);
+$dict_aa = xlsx_read_proc ($file_xlsx);
 
 $dict_bb = dict_update_proc ($dict_aa,$id_in,$population_in);
 
 xlsx_write_proc ($file_xlsx,$dict_bb);
 
-echo " Peak memory usage: " . (memory_get_peak_usage(true) / 1024 / 1024) . " MB\r\n";
+echo " Peak memory usage: " . (memory_get_peak_usage(true) / 1024 / 1024) . " MB\n";
 
 fputs (STDERR,"*** 終了 ***\n");
 

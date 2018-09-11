@@ -3,14 +3,14 @@
 //
 //	xlsx_read.php
 //
-//					Oct/16/2016
+//					Sep/09/2018
 //
 // ----------------------------------------------------------------
 $path="/var/www/data_base/common/php_common";
 set_include_path (get_include_path() . PATH_SEPARATOR . $path);
 
 include "text_manipulate.php";
-include "excel_manipulate.php";
+include "xlsx_manipulate.php";
 // ----------------------------------------------------------------
 fputs (STDERR,"*** 開始 ***\n");
 
@@ -20,7 +20,7 @@ $file_in = $argv[1];
 #
 print $file_in . "\n";
 
-$dict_aa = excel_read_proc ($file_in);
+$dict_aa = xlsx_read_proc ($file_in);
 
 dict_display_proc ($dict_aa);
 
