@@ -1,14 +1,14 @@
-#! /usr/bin/nodejs
+#! /usr/bin/node
 // ---------------------------------------------------------------
 //	redis_read.js
 //
-//					Jan/03/2018
+//					Sep/14/2018
 //
 // ---------------------------------------------------------------
-console.log ("*** 開始 ***")
+console.error ("*** 開始 ***")
 //
-var redis = require("redis")
-var client = redis.createClient(6379,'localhost')
+const redis = require("redis")
+const client = redis.createClient(6379,'localhost')
 
 client.on ("error", function (err)
 {
@@ -52,7 +52,7 @@ function read_single_proc (client,key,index)
 	if (keys.length === (index + 1))
 		{
 		client.quit()
-		console.log ("*** 終了 ***")
+		console.error ("*** 終了 ***")
 		}
 	})
 }

@@ -1,8 +1,8 @@
-#! /usr/bin/nodejs
+#! /usr/bin/node
 //
 //	sqlite3_delete.js
 //
-//					Dec/26/2016
+//					Sep/14/2018
 //
 // ------------------------------------------------------------
 var sqlite3 = require("sqlite3")
@@ -19,7 +19,7 @@ function delete_command_gen (id_in)
 }
 
 // ------------------------------------------------------------
-console.log ("*** 開始 ***")
+console.error ("*** 開始 ***")
 
 const file_sqlite3 = process.argv[2]
 const id_in=process.argv[3]
@@ -34,5 +34,5 @@ const command = delete_command_gen (id_in)
 db.run (command)
 
 db.close ()
-console.log ("*** 終了 ***")
+console.error ("*** 終了 ***")
 // ------------------------------------------------------------

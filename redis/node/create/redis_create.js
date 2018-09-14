@@ -1,8 +1,8 @@
-#! /usr/bin/nodejs
+#! /usr/bin/node
 // ---------------------------------------------------------------
 //	redis_create.js
 //
-//					Jan/03/2018
+//					Sep/14/2018
 //
 // ---------------------------------------------------------------
 var text_manipulate=require ("/var/www/data_base/common/node_common/text_manipulate")
@@ -24,12 +24,12 @@ function data_prepare_proc ()
 	return	dict_aa
 }
 // ---------------------------------------------------------------
-console.log ("*** 開始 ***")
+console.error ("*** 開始 ***")
 //
 var dict_aa = data_prepare_proc ()
 
-var redis = require ("redis")
-var client = redis.createClient (6379,'localhost')
+const redis = require ("redis")
+const client = redis.createClient (6379,'localhost')
 
 client.on("error", function (err) {
         console.log("Redis connection error to " + client.host + ":" + client.port + " - " + err)
@@ -46,7 +46,7 @@ keys.forEach(function(key,index)
 	if (keys.length === (index + 1))
 		{
 		client.quit()
-		console.log ("*** 終了 ***")
+		console.error ("*** 終了 ***")
 		}
 	})
 

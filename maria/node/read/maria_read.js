@@ -2,13 +2,13 @@
 // ---------------------------------------------------------------
 //	maria_read.js
 //
-//					Aug/04/2017
+//					Sep/14/2018
 //
 // ---------------------------------------------------------------
 var text_manipulate=require ("/var/www/data_base/common/node_common/text_manipulate")
 
 // ---------------------------------------------------------------
-console.log ("*** 開始 ***")
+console.error ("*** 開始 ***")
 
 var mysql = require('mysql')
 
@@ -37,7 +37,7 @@ connection.query("select * from cities", function (err, rows)
 	text_manipulate.dict_display_proc (dict_aa)
 
 	connection.end()
-	console.log ("*** 終了 ***")
+	console.error ("*** 終了 ***")
 	})
 
 // ---------------------------------------------------------------

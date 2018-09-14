@@ -1,8 +1,8 @@
-#! /usr/bin/nodejs
+#! /usr/bin/node
 //
 //	sqlite3_create.js
 //
-//					Dec/26/2016
+//					Feb/14/2018
 //
 // ------------------------------------------------------------
 var sqlite3 = require("sqlite3")
@@ -43,14 +43,13 @@ function table_create_insert_proc (db,dict_aa)
 		+ dict_aa[key].population + ",'" + dict_aa[key].date_mod + "')"
 
 		sql_str += str_data
-//			console.log (sql_str)
 			db.run (sql_str)
 			}
 		})
 }
 
 // ------------------------------------------------------------
-console.log ("*** 開始 ***")
+console.error ("*** 開始 ***")
 
 const file_sqlite3 = process.argv[2]
 
@@ -63,5 +62,6 @@ var db = new sqlite3.Database (file_sqlite3)
 table_create_insert_proc (db,dict_aa)
 
 db.close ()
-console.log ("*** 終了 ***")
+
+console.error ("*** 終了 ***")
 // ------------------------------------------------------------

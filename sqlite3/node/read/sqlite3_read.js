@@ -1,19 +1,19 @@
-#! /usr/bin/nodejs
+#! /usr/bin/node
 //
 //	sqlite3_read.js
 //
-//					Dec/26/2016
+//					Sep/14/2018
 //
 // ------------------------------------------------------------
-var sqlite3 = require("sqlite3")
+const sqlite3 = require("sqlite3")
 
-console.log ("*** 開始 ***")
+console.error ("*** 開始 ***")
 
 const file_sqlite3 = process.argv[2]
 
 console.log (file_sqlite3)
 
-var db = new sqlite3.Database (file_sqlite3)
+const db = new sqlite3.Database (file_sqlite3)
 
 const command = "select id,name,population,date_mod from cities"
 
@@ -26,5 +26,5 @@ db.each (command,function (err,row)
 
 db.close ()
 
-console.log ("*** 終了 ***")
+console.error ("*** 終了 ***")
 // ------------------------------------------------------------

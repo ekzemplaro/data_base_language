@@ -2,14 +2,14 @@
 // ---------------------------------------------------------------
 //	maria_update.js
 //
-//					Apr/07/2017
+//					Sep/14/2018
 //
 // ---------------------------------------------------------------
 var mysql = require('mysql')
 var sql_manipulate= require ('/var/www/data_base/common/node_common/sql_manipulate')
 
 // ---------------------------------------------------------------
-console.log ("*** 開始 ***")
+console.error ("*** 開始 ***")
 
 const id_in = process.argv[2]
 const population_in = process.argv[3]
@@ -29,7 +29,7 @@ const command = sql_manipulate.update_command_gen (id_in,population_in)
 connection.query(command, function (err, rows)
 	{
   	if (err) throw err
-	console.log ("*** 終了 ***")
+	console.error ("*** 終了 ***")
 	})
 
 connection.end()

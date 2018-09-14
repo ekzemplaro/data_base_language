@@ -1,40 +1,45 @@
-#! /usr/bin/nodejs
+#! /usr/bin/node
 // ---------------------------------------------------------------
 //	postgre_update.js
 //
-//					Jul/23/2012
+//					Sep/12/2018
 //
 // ---------------------------------------------------------------
-var pg = require('pg');
-var sql_manipulate= require ('/var/www/data_base/common/node_common/sql_manipulate');
+var pg = require('pg')
+var sql_manipulate= require ('/var/www/data_base/common/node_common/sql_manipulate')
 
 // ---------------------------------------------------------------
-console.log ("*** 開始 ***");
-var id_in = process.argv[2];
-var population_in = process.argv[3];
+console.error ("*** 開始 ***")
+const id_in = process.argv[2]
+const population_in = process.argv[3]
 
-console.log (id_in + "\t" + population_in);
+console.log (id_in + "\t" + population_in)
 
-var str_connect = "tcp://scott:tiger@localhost:5432/city";
+const { Client } = require('pg')
 
-pg.connect (str_connect,function (error,client)
-	{
-	var command = sql_manipulate.update_command_gen (id_in,population_in);
+const client = new Client({
+	user: 'scott',
+	host: 'localhost',
+	database: 'city',
+	password: 'tiger123',
+	port: 5432,
+})
 
-	console.log (command);
+client.connect()
 
-	var query = client.query(command);
+const command = sql_manipulate.update_command_gen (id_in,population_in)
 
-/*
-	query.on('row',function (row) {
-		});
-*/
+console.error (command)
 
-	query.on('end',function () {
-		client.end ();
-		});
+const query = {
+	text: command,
+}
 
-	console.log ("*** 終了 ***");
-	});
+client.query(query)
+    .then(res => {
+	client.end()
+	console.error ("*** 終了 ***")
+	})
+	.catch(e => console.error(e.stack))
 
 // ---------------------------------------------------------------

@@ -1,8 +1,8 @@
-#! /usr/bin/nodejs
+#! /usr/bin/node
 // ---------------------------------------------------------------
 //	redis_update.js
 //
-//					Jan/03/2018
+//					Sep/14/2018
 //
 // ---------------------------------------------------------------
 var node_common = '/var/www/data_base/common/node_common'
@@ -10,15 +10,15 @@ var node_common = '/var/www/data_base/common/node_common'
 var text_manipulate=require (node_common + '/text_manipulate')
 
 // ---------------------------------------------------------------
-console.log ("*** 開始 ***")
+console.error ("*** 開始 ***")
 const key_in=process.argv[2]
 const population_in=process.argv[3]
 
 console.log (key_in + "\t" + population_in)
 
 //
-var redis = require ("redis")
-var client = redis.createClient (6379,'localhost')
+const redis = require ("redis")
+const client = redis.createClient (6379,'localhost')
 
 client.on("error", function (err)
 	{
@@ -28,7 +28,7 @@ client.on("error", function (err)
 
 redis_update_proc (client,key_in,population_in)
 
-console.log ("*** 終了 ***")
+console.error ("*** 終了 ***")
 
 // ---------------------------------------------------------------
 function redis_update_proc (client,key_in,population_in)

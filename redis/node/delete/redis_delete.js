@@ -1,18 +1,18 @@
-#! /usr/bin/nodejs
+#! /usr/bin/node
 // ---------------------------------------------------------------
 //	redis_delete.js
 //
-//					Jan/03/2018
+//					Sep/14/2018
 //
 // ---------------------------------------------------------------
-console.log ("*** 開始 ***")
+console.error ("*** 開始 ***")
 const key_in=process.argv[2]
 
 console.log (key_in)
 
 //
-var redis = require ("redis")
-var client = redis.createClient (6379,'localhost')
+const redis = require ("redis")
+const client = redis.createClient (6379,'localhost')
 
 client.on("error", function (err)
 	{
@@ -23,6 +23,6 @@ client.on("error", function (err)
 client.del(key_in)
 
 client.quit()
-console.log ("*** 終了 ***")
+console.error ("*** 終了 ***")
 
 // ---------------------------------------------------------------

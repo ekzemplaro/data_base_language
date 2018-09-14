@@ -1,8 +1,8 @@
-#! /usr/bin/nodejs
+#! /usr/bin/node
 //
 //	sqlite3_update.js
 //
-//					Dec/26/2016
+//					Sep/14/2018
 //
 // ------------------------------------------------------------
 var sqlite3 = require("sqlite3")
@@ -21,7 +21,7 @@ function update_command_gen (id_in,population_in)
 }
 
 // ------------------------------------------------------------
-console.log ("*** 開始 ***")
+console.error ("*** 開始 ***")
 
 const file_sqlite3 = process.argv[2]
 const id_in=process.argv[3]
@@ -38,5 +38,5 @@ db.run (command)
 
 db.close ()
 
-console.log ("*** 終了 ***")
+console.error ("*** 終了 ***")
 // ------------------------------------------------------------
