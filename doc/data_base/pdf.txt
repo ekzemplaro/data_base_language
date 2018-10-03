@@ -42,6 +42,7 @@ Python<p />
 	python-reportlab<p />
 	# pacman -S python-reportlab<p />
 	# pacman -S poppler-data<p />
+	$ yay python-pdftotext<p />
 </blockquote>
 
 Ruby<p />

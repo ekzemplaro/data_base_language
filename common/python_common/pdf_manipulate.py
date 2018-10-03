@@ -2,15 +2,14 @@
 #
 #	pdf_manipulate.py
 #
-#						Jan/21/2016
+#						Oct/02/2018
 #
 # ------------------------------------------------------------------
 import	os
-from subprocess import Popen, PIPE
-import	shlex
 import	string
 
 import	sys
+import	pdftotext
 #
 from reportlab.pdfbase.cidfonts import UnicodeCIDFont
 from reportlab.pdfbase import pdfmetrics
@@ -20,21 +19,19 @@ from text_manipulate import dict_append_proc
 def pdf_to_dict_proc (file_pdf):
 	dict_aa = {}
 #
-	cmdline = "pdftotext -layout " + file_pdf + " -"
-	args = shlex.split(cmdline)
-	result = Popen(args, stdout=PIPE).stdout.readlines()
-
-	for str in result:
+	fp_in = open(file_pdf, "rb")
+	pdf = pdftotext.PDF(fp_in)
+	fp_in.close()
+#
+	lines = pdf[0].split("\n")
+	for str in lines:
 		line = str.rstrip()
-#		print (line)
 		if (5 < len (line)):
 			cols= line.split ()
-			key = cols[0].decode ('utf-8')
-			name = cols[1].decode ('utf-8')
-			population = cols[2].decode ('utf-8')
-			date_mod = cols[3].decode ('utf-8')
-#			print (str (cols[0],'utf-8'))
-#			print (cols[0].decode ('utf-8'))
+			key = cols[0]
+			name = cols[1]
+			population = cols[2]
+			date_mod = cols[3]
 			if (key[0] == "t"):
 				dict_aa = dict_append_proc (dict_aa,key, \
 					name,population,date_mod)

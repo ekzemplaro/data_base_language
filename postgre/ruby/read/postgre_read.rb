@@ -3,7 +3,7 @@
 #
 #	postgre_read.rb
 #
-#						Feb/03/2017
+#						Sep/14/2018
 #
 require 'rdbi'
 require 'rdbi-driver-postgresql'
@@ -14,7 +14,7 @@ load '/var/www/data_base/common/ruby_common/sql_manipulate.rb'
 puts "*** 開始 ***"
 #
 user = "scott"
-password = "tiger"
+password = "tiger123"
 data_base = 'city'
 dbh = RDBI.connect(:PostgreSQL, :dbname=>data_base, :port=>5432,
 	:user=>user, :password=>password)
