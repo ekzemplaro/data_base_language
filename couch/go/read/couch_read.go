@@ -2,20 +2,21 @@
 //
 //	couch_read.go
 //
-//					Mar/20/2018
+//					Oct/04/2018
 //
 // ----------------------------------------------------------------
 package main
 
 import (
 	"fmt"
+	"os"
 	"encoding/json"
 )
 
 // ----------------------------------------------------------------
 func main () {
 
-	fmt.Printf ("*** 開始 ***\n")
+	fmt.Fprintf (os.Stderr,"*** 開始 ***\n")
 
 	url := "http://localhost:5984/nagano/_all_docs"
 
@@ -47,8 +48,7 @@ func main () {
 
 		}
 
-
-	fmt.Printf ("*** 終了 ***\n")
+	fmt.Fprintf (os.Stderr,"*** 終了 ***\n")
 }
 
 // ----------------------------------------------------------------

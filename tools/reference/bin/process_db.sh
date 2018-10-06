@@ -2,7 +2,7 @@
 #
 #	process_db.sh
 #
-#					Dec/16/2017
+#					Oct/06/2018
 #
 DATA_BASE=/var/www/data_base
 BIN=$DATA_BASE"/tools/reference/bin"
@@ -20,7 +20,7 @@ for db in text csv xml json calc excel pdf epub \
 	xindice exist dbxml gdbm berkeley cdb \
 	mcached mcachedb redis tcbn tyrant \
 	couch ftp webdav mongo cassandra voltdb hbase voldemort neo4j \
-	hgdb riak xlsx maria pouch dynamo
+	hgdb riak xlsx maria pouch dynamo elastic
 do
 	folder=$DATA_BASE"/"$db"/"$lang
 	if [ -d $folder ]

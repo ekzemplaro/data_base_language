@@ -2,7 +2,7 @@
 #
 #	text_manipulate.py
 #
-#					Feb/17/2018
+#					Oct/06/2018
 # ---------------------------------------------------------------
 import	sys
 import	csv
@@ -10,7 +10,7 @@ import	string
 import	datetime
 #
 # ---------------------------------------------------------------
-def	text_read_proc(file_in):
+def text_read_proc(file_in):
 #
 	fp_in = open(file_in,encoding='utf-8')
 	lines = fp_in.readlines()
@@ -46,7 +46,7 @@ def dict_display_proc(dict_aa):
 			str_out += "\t" + str(unit['date_mod'])
 			print(str_out)
 # ---------------------------------------------------------------
-def	text_write_proc(file_out,dict_aa):
+def text_write_proc(file_out,dict_aa):
 #
 	fp_out = open(file_out,mode='w', encoding='utf-8')
 	for key in dict_aa.keys():
@@ -57,7 +57,7 @@ def	text_write_proc(file_out,dict_aa):
 		fp_out.write(str_out)
 	fp_out.close()
 # ---------------------------------------------------------------
-def	dict_update_proc(dict_in,id,population):
+def dict_update_proc(dict_in,id,population):
 	key = str(id)
 	if key in dict_in:
 		dict_in[key]['population'] = population
@@ -67,25 +67,25 @@ def	dict_update_proc(dict_in,id,population):
 	return	dict_in
 #
 # ---------------------------------------------------------------
-def	dict_delete_proc(dict_in,key):
+def dict_delete_proc(dict_in,key):
 	if key in dict_in:
 		del dict_in[key]
 #
 	return	dict_in
 #
 # ---------------------------------------------------------------
-def	hash_update_proc(array_unit,population):
+def hash_update_proc(array_unit,population):
 	date_mod = datetime.date.today()
 	array_unit['population'] = population
 	array_unit['date_mod'] = '%s' % date_mod
 # ---------------------------------------------------------------
-def     dict_append_proc(dict_aa,key,name,population,date_mod):
+def dict_append_proc(dict_aa,key,name,population,date_mod):
 	dict_aa[key] = {'name':name,'population':population,'date_mod':date_mod}
 #
 	return dict_aa
 #
 # ---------------------------------------------------------------
-def	csv_write_proc(file_csv,dict_aa):
+def csv_write_proc(file_csv,dict_aa):
 	ff = open(file_csv,'w')
 	writer = csv.writer(ff, lineterminator='\n')
 	for key in dict_aa.keys():
@@ -102,7 +102,7 @@ def	csv_write_proc(file_csv,dict_aa):
 	ff.close()
 #
 # ---------------------------------------------------------------
-def	csv_read_proc(file_csv):
+def csv_read_proc(file_csv):
 #
 	fp = open(file_csv, 'r')
 	reader = csv.reader(fp)
