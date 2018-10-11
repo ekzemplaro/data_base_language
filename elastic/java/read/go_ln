@@ -1,0 +1,4 @@
+HTTPCLIENT=/var/www/data_base/common/jar/httpclient
+#
+ln -s $HTTPCLIENT/httpclient-4.5.5.jar .
+ln -s $HTTPCLIENT/httpcore-4.4.9.jar .

@@ -6,19 +6,19 @@
 import	java.io.BufferedReader;
 import	java.io.InputStreamReader;
 
-/*
-import org.apache.commons.httpclient.HttpClient;  
-import org.apache.commons.httpclient.HttpStatus;
-import org.apache.commons.httpclient.methods.GetMethod;
-import org.apache.commons.httpclient.methods.PostMethod;
-import org.apache.commons.httpclient.methods.PutMethod;
-import org.apache.commons.httpclient.methods.DeleteMethod;
-import org.apache.commons.httpclient.methods.RequestEntity;
-import org.apache.commons.httpclient.methods.StringRequestEntity;
-*/
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+
+
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpDelete;
+
+import org.apache.http.util.EntityUtils;
+import org.apache.http.HttpStatus;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
 // --------------------------------------------------------------
 public class get_uri
 {
@@ -28,85 +28,40 @@ static String get_uri_proc (String uri)
 {
 	String json_str = "";
 
-	try {
-	HttpClient httpclient = new HttpClient();
+	Charset charset = StandardCharsets.UTF_8;
+	CloseableHttpClient httpclient = HttpClients.createDefault();
+	HttpGet request = new HttpGet(uri);
 
-	GetMethod get = new GetMethod (uri);
+	CloseableHttpResponse response = null;
 
 	try 
 	{
-		int statusCode = httpclient.executeMethod (get);
+		response = httpclient.execute(request);
+
+		int status = response.getStatusLine().getStatusCode();
 
 //		System.out.println(get.getStatusLine());
 
-		if (statusCode != HttpStatus.SC_OK)
+		if (status == HttpStatus.SC_OK)
 			{
-			System.err.println
-				("Method failed: " + get.getStatusLine());
+
+		String responseData = 
+                             EntityUtils.toString(response.getEntity(),charset);
+
+		System.out.println(responseData);
 			}
 
-		BufferedReader reader = new BufferedReader(new InputStreamReader
-			(get.getResponseBodyAsStream ()));
-
-		String line;
-		while ((line = reader.readLine()) != null)
-			{
-			json_str += line;
-			}
-
-		reader.close ();
+	} catch (Exception ex)
+		{
+		ex.printStackTrace ();
 
 	} finally
 		{
-		get.releaseConnection();
-		}
-	}
-	catch (Exception ex)
-		{
-		ex.printStackTrace ();
+//		get.releaseConnection();
 		}
 
 	return	json_str;
 }
-// --------------------------------------------------------------
-static void rest_put_proc (String uri_aa,String str_data_in,String type_in)
- throws Exception
-{
-	PutMethod put = new PutMethod (uri_aa);
-	RequestEntity entity = 
-		new StringRequestEntity (str_data_in,type_in,"UTF-8");
-	put.setRequestEntity (entity);
-
-	try
-		{
-		HttpClient httpclient = new HttpClient();
-		int result = httpclient.executeMethod(put);
-		System.out.println("Response status code: " + result);
-		}
-	finally
-		{
-		put.releaseConnection();
-		}
-}
-
-// --------------------------------------------------------------
-static void rest_delete_proc (String uri_aa)
- throws Exception
-{
-	DeleteMethod delete = new DeleteMethod (uri_aa);
-
-	try
-		{
-		HttpClient httpclient = new HttpClient();
-		int result = httpclient.executeMethod(delete);
-		System.out.println("Response status code: " + result);
-		}
-	finally
-		{
-		delete.releaseConnection();
-		}
-}
-
 // --------------------------------------------------------------
 }
 // --------------------------------------------------------------

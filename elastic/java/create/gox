@@ -1,0 +1,8 @@
+#
+export COMMON=/var/www/data_base/common
+export JAVA_COMMON=$COMMON/java_common
+export JAR=$COMMON/jar
+#
+export CLASSPATH=.:$JAVA_COMMON:$JAR/jsonic-1.3.5.jar
+#
+java json_create /var/tmp/json/cities.json
