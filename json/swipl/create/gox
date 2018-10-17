@@ -1,0 +1,2 @@
+#
+./json_create.pl /var/tmp/json/cities.json
