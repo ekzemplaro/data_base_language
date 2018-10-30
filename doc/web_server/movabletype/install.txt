@@ -15,7 +15,9 @@
 	# pacman -S perl-archive-zip<br />
 
 	# pacman -S perl-xml-sax-expat<br />
-
+<p />
+	# pacman -S perl-yaml-syck<br />
+	# pacman -S perl-gd<br />
 	</blockquote>
 
 	<blockquote>
@@ -28,6 +30,7 @@ MySQL の設定<p />
 	<blockquote>
 	コンソールでの作成<p />
 	<blockquote>
+	MariaDB [(none)]> create user mtuser@localhost identified by 'mtpasswd';<p />
 	MariaDB [(none)]> create database mt character set utf8;<p />
 	MariaDB [(none)]> grant all on mt.* to mtuser@localhost identified by 'mtpasswd';
 	</blockquote>

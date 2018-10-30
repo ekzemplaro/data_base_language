@@ -2,7 +2,7 @@
 #
 #	cassandra_create.sh
 #
-#						Sep/03/2013
+#						Oct/21/2018
 #
 WORK_FILE="/tmp/tmp0051.txt"
 #
@@ -50,7 +50,7 @@ echo "*** pppp ***"
 #
 cqlsh < $WORK_FILE
 #
-#rm -f $WORK_FILE
+rm -f $WORK_FILE
 #
 echo "*** 終了 ***"
 # ----------------------------------------------------------------

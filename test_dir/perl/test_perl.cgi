@@ -8,6 +8,6 @@ print "<title>テスト</title>\n";
 print "</head>\n";
 print "<body>\n";
 print "CGIテスト<p />\n";
-print "Nov/01/2016<p />\n";
+print "Oct/24/2018<p />\n";
 print "</body>\n";
 print "</html>\n";

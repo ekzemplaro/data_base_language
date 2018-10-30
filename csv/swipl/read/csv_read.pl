@@ -14,7 +14,7 @@ row_out_proc(A) :-
 	format('~w\t',C1),
 	format('~w\t',C2),
 	format('~w\t',C3),
-	format('~w\n',C1).
+	format('~w\n',C4).
 /* ------------------------------------------------------------------- */
 main(Argv) :-
 	format('*** 開始 ***\n'),
