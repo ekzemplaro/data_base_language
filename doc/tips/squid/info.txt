@@ -1,0 +1,7 @@
+
+sudo pacman -S squid
+sudo systemctl status squid
+
+
+sudo apt install squid
+

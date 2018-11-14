@@ -1,0 +1,1 @@
+curl --proxy http://www2.ekzemplaro.org:3128 https://ekzemplaro.org
