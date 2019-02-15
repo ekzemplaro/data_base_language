@@ -13,27 +13,33 @@ ftp サーバーの設定<p />
 <blockquote>
 	インストール<br />
 		<blockquote>
-		# pacman -S vsftpd<p />
+		sudo pacman -S vsftpd<p />
 		</blockquote>
 	起動<br />
 		<blockquote>
-		# systemctl start vsftpd.service<p />
+		sudo systemctl start vsftpd<p />
 		</blockquote>
 	ブート時に自動で起動<br />
 		<blockquote>
-		# systemctl enable vsftpd.service<p />
+		sudo systemctl enable vsftpd<p />
 		</blockquote>
 	設定<br />
 		<blockquote>
 		/etc/vsftpd.conf<p />
 			<blockquote>
 			local_enable=YES<p />
+			write_enable=YES<p />
+			local_umask=022<p />
 			seccomp_sandbox=NO<p />
 			</blockquote>
 		</blockquote>
 	</blockquote>
 
+参考<p />
+<blockquote>
+	<a href="https://wiki.archlinux.jp/index.php/Very_Secure_FTP_Daemon">Very Secure FTP Daemon</a><p />
+</blockquote>
 <a href="./">Return</a><p />
-Jul/24/2018 AM 08:15<p />
+Jan/18/2019 AM 07:12<p />
 </body>
 </html>
