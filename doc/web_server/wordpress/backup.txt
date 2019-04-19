@@ -17,6 +17,8 @@ $ mysql -h localhost -uwordpress -ptiger wordpress < modified.sql<p />
 <blockquote>
 	この方法でバックアップされるのは、MySQL 内のデータのみ。<p />
 	Theme などは、別にコピーする必要がある。<p />
+	wp-config.php<p />
+	wp-content/uploads<p />
 </blockquote>
 
 </blockquote>

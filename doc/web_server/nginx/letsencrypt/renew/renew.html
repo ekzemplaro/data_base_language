@@ -42,8 +42,9 @@ Congratulations, all renewals succeeded. The following certs have been renewed:
 自動化<p />
 <blockquote>
 	クローンに登録<p />
+	$ sudo crontab -u root -e<p />
 	<blockquote>
-	/usr/bin/certbot renew --post-hook "systemctl restart nginx"<p />
+	00 04 01 * * /usr/bin/certbot renew --post-hook "systemctl restart nginx"<p />
 	</blockquote>
 </blockquote>
 

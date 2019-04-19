@@ -84,5 +84,10 @@ PDF のページを削除<p />
 	$ pdftk in01.pdf cat 1-2 output out01.pdf<p />
 </blockquote>
 
+ツール<p />
+<blockquote>
+	pdfmod<p />
+</blockquote>
+
 <blockquote>
 </blockquote>

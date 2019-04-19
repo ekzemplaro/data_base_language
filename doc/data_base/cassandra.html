@@ -4,11 +4,11 @@
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
-<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/jquery-3.3.1.min.js"></script>
 <meta content="Program Language Examples to connect to Cassandra" name="description">
 <meta content="Cassandra,クライアント,接続,言語,サンプル" name="keyword">
 <meta content="Uchida Masatomo" name="author">
-<title>cassandra May/12/2015</title>
+<title>Cassandra</title>
 </head>
 <body>
 <h1><a href="http://cassandra.apache.org/">Cassandra</a></h1>
@@ -117,9 +117,38 @@ slf4j-api-1.7.2.jar<br />
 </blockquote>
 
 <hr />
+Ubuntu 18.10<br />
+<blockquote>
+$ echo "deb http://www.apache.org/dist/cassandra/debian 311x main" | sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list<br />
+$ curl https://www.apache.org/dist/cassandra/KEYS | sudo apt-key add -<br />
+$ sudo apt-get update<br />
+$ sudo apt install cassandra<br />
+</blockquote>
+起動<p />
+	<blockquote>
+	$ sudo systemctl start cassandra<p />
+	</blockquote>
+
+<hr />
 Arch Linux<br />
 <blockquote>
-$ yaourt -Sb cassandra<p />
+$ yay -S cassandra<p />
+起動<p />
+	<blockquote>
+	$ sudo systemctl start cassandra<p />
+	</blockquote>
+クライアント<p />
+	<blockquote>
+	<pre>
+$ cqlsh
+Connected to Test Cluster at 127.0.0.1:9042.
+[cqlsh 5.0.1 | Cassandra 3.11.3 | CQL spec 3.4.4 | Native protocol v4]
+Use HELP for help.
+cqlsh> show version;
+[cqlsh 5.0.1 | Cassandra 3.11.3 | CQL spec 3.4.4 | Native protocol v4]
+cqlsh> quit
+	</pre>
+	</blockquote>
 </blockquote>
 <div id="result_aa">result_aa</div>
 <hr />
@@ -133,6 +162,6 @@ $ yaourt -Sb cassandra<p />
 <div id="outarea_hh">outarea_hh</div>
 <hr />
 <a href="/data_base/">Return</a><p />
-Dec/16/2017 AM 08:15<p />
+Jun/10/2018 AM 08:15<p />
 </body>
 </html>
