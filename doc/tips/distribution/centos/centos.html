@@ -86,6 +86,13 @@ rsyncd の設定<br />
 # timedatectl set-timezone Asia/Tokyo<p />
 </blockquote>
 
+Nginx のインストール<p />
+<blockquote>
+	# yum install nginx -y<p />
+	# systemctl start nginx<br />
+	# systemctl enable nginx<p />
+</blockquote>
+
 Apache2 のインストール<p />
 <blockquote>
 	# yum install httpd -y<p />
@@ -98,6 +105,15 @@ Apache2 のインストール<p />
 # firewall-cmd --permanent --add-service=http --zone=public<p />
 # firewall-cmd --reload<p />
 </blockquote>
+
+
+ポート 5000 にアクセスできるようにする。<p />
+<blockquote>
+# firewall-cmd --permanent --add-port=5000/tcp --zone=public<p />
+# firewall-cmd --reload<p />
+</blockquote>
+
+
 
 ftpd のインストール<p />
 <blockquote>

@@ -1,14 +1,12 @@
 #! /usr/bin/ruby
-# -*- coding: utf-8 -*-
 #
-#	postgre_delete.rb
+#	version_check.rb
 #
-#				May/14/2019
-#
+#					May/14/2019
+# --------------------------------------------------------------------
 require 'pg'
 require 'dotenv'
 #
-# ------------------------------------------------------------
 puts "*** 開始 ***"
 #
 Dotenv.load
@@ -19,16 +17,12 @@ data_base = ENV['data_base']
 connection = PG::connect(:host => "localhost",
 	:user =>user, :password =>password, :dbname =>data_base)
 #
-id_in = ARGV[0]
+row = connection.exec("SELECT VERSION()")
 #
-puts id_in
-#
-sql_str="DELETE from cities where ID = '#{id_in}'"
-puts sql_str
-connection.exec(sql_str)
-#
+puts("Server version: " + row[0].to_s)
 #
 connection.finish
 #
 puts "*** 終了 ***"
-# ------------------------------------------------------------
+#
+# --------------------------------------------------------------------

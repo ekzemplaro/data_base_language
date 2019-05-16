@@ -3,26 +3,32 @@
 #
 #	postgre_read.rb
 #
-#						Sep/14/2018
+#						May/14/2019
 #
-require 'rdbi'
-require 'rdbi-driver-postgresql'
+require 'pg'
+require 'dotenv'
 #
-# --------------------------------------------------------------------
-load '/var/www/data_base/common/ruby_common/sql_manipulate.rb'
 # --------------------------------------------------------------------
 puts "*** 開始 ***"
 #
-user = "scott"
-password = "tiger123"
-data_base = 'city'
-dbh = RDBI.connect(:PostgreSQL, :dbname=>data_base, :port=>5432,
-	:user=>user, :password=>password)
+Dotenv.load
+user = ENV['user']
+password = ENV['password']
+data_base = ENV['data_base']
 #
-sss = Sql_manipulate.new
-sss.disp_proc(dbh)
+connection = PG::connect(:host => "localhost",
+	:user =>user, :password =>password, :dbname =>data_base)
 #
-dbh.disconnect
+table = connection.exec('select * from cities order by ID')
+#
+table.each {|row|
+	print(row["id"] + "\t")
+	print(row["name"] + "\t")
+	print(row["population"] + "\t")
+	print(row["date_mod"] + "\n")
+	}
+#
+connection.finish
 #
 puts "*** 終了 ***"
 # --------------------------------------------------------------------

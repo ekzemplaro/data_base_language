@@ -3,32 +3,33 @@
 #
 #	postgre_update.rb
 #
-#				Feb/03/2017
+#				May/14/2019
 #
-require 'rdbi'
-require 'rdbi-driver-postgresql'
+require 'pg'
+require 'dotenv'
 #
-#
-load '/var/www/data_base/common/ruby_common/sql_manipulate.rb'
 # ------------------------------------------------------------
 puts "*** 開始 ***"
 #
-user = "scott"
-password = "tiger"
-data_base = 'city'
-dbh = RDBI.connect(:PostgreSQL, :dbname=>data_base, :port=>5432,
-	:user=>user, :password=>password)
+Dotenv.load
+user = ENV['user']
+password = ENV['password']
+data_base = ENV['data_base']
+#
+connection = PG::connect(:host => "localhost",
+	:user =>user, :password =>password, :dbname =>data_base)
 #
 id_in = ARGV[0]
 population_in = ARGV[1].to_i
 #
 puts id_in,population_in
 #
-sss = Sql_manipulate.new
+date_mod=Date.today
+sql_str="UPDATE cities SET population='#{population_in}', DATE_MOD='#{date_mod}' where ID = '#{id_in}'"
+puts sql_str
+connection.exec(sql_str)
 #
-sss.update_proc(dbh,id_in,population_in)
-#
-dbh.disconnect
+connection.finish
 #
 puts "*** 終了 ***"
 # ------------------------------------------------------------

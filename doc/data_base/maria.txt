@@ -99,6 +99,12 @@ Python<p />
 <blockquote>
 	# apt install python3-mysql.connector<p />
 	# pacman -S python-mysql-connector<p />
+
+	CentOS<br />
+	<blockquote>
+	# pip install mysql-connector-python<p />
+	# pip3.6 install mysql-connector-python<p />
+	</blockquote>
 </blockquote>
 
 Ruby<p />
