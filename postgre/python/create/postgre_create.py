@@ -3,11 +3,13 @@
 #
 #	postgre_create.py
 #
-#					Sep/06/2016
+#					May/19/2019
 #
 # --------------------------------------------------------
+import	os
 import	sys
 import	psycopg2
+from dotenv import load_dotenv
 #
 sys.path.append ('/var/www/data_base/common/python_common')
 #
@@ -36,7 +38,13 @@ sys.stderr.write ("*** 開始 ***\n")
 #
 dict_aa = data_prepare_proc ()
 #
-conn = psycopg2.connect("dbname=city user=scott password=tiger")
+dotenv_path = '.env'
+load_dotenv(dotenv_path)
+USER=os.environ.get("user")
+PASSWORD=os.environ.get("user")
+DATA_BASE=os.environ.get("data_base")
+#
+conn = psycopg2.connect("dbname=" + DATA_BASE + " user=" + USER + " password=" + PASSWORD)
 cur = conn.cursor()
 drop_table_proc (cur)
 create_table_proc (cur)
