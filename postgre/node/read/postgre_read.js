@@ -2,18 +2,20 @@
 // ---------------------------------------------------------------
 //	postgre_read.js
 //
-//					Sep/12/2018
+//					May/19/2019
 //
 // ---------------------------------------------------------------
 console.error ("*** 開始 ***");
 
 const { Client } = require('pg')
 
+require('dotenv').config()
+
 const client = new Client({
-	user: 'scott',
+	user: process.env.user,
 	host: 'localhost',
-	database: 'city',
-	password: 'tiger123',
+	database: process.env.data_base,
+	password: process.env.password,
 	port: 5432,
 })
 
