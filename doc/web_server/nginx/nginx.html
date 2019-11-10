@@ -48,7 +48,7 @@ Debian（jessie）にPHP 7をインストールする方法</a><p />
 	スタートページは、/var/www/index.html になる。<p />
 <pre>
 #
-	location ~ \.(php|html)$ {
+	location ~ \.php$ {
 	include snippets/fastcgi-php.conf;
 	fastcgi_pass unix:/run/php/php7.2-fpm.sock;
 	}
@@ -241,6 +241,6 @@ Shift-JIS で文字化けをするとき<br />
 <a href="./rtmp">rtmp</a><p />
 <hr />
 <a href="../">Return</a><p />
-May/03/2018 AM 08:15<p />
+Nov/10/2019 AM 08:15<p />
 </body>
 </html>
