@@ -2,10 +2,11 @@
 //
 //	redis_read.java
 //
-//						Apr/11/2013
+//						Jan/12/2020
 // -------------------------------------------------------------
 import redis.clients.jedis.Jedis;
 
+import	java.util.HashMap;
 import	java.util.Set;
 // -------------------------------------------------------------
 public class redis_read {
@@ -15,7 +16,7 @@ public static void main(String[] args)
 {
 	System.out.println ("*** 開始 ***");
 
-	Jedis jedis = new Jedis("host_dbase");
+	Jedis jedis = new Jedis("localhost");
 
 	Set set_keys = jedis.keys("*");
 //	System.out.println(set_keys);
@@ -27,8 +28,13 @@ public static void main(String[] args)
 
 		if (str_json != null)
 			{
-			redis_manipulate.record_parse_proc
-						(key,str_json);
+			HashMap <String,String>  unit_aa = json_manipulate.unit_json_parser (str_json);
+			System.out.print (key + "\t");
+			System.out.print (unit_aa.get ("name") + "\t");
+			Object ppx = unit_aa.get ("population");
+			System.out.print (ppx + "\t");
+
+			System.out.println (unit_aa.get ("date_mod"));
 			}
 		}
 
