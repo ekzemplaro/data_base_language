@@ -1,2 +1,7 @@
+
+SRC="http://repo1.maven.org/maven2/com/fasterxml/jackson/core"
 #
-cp -p /home/uchida/lang/java/jsonic/jsonic-1.3.10/jsonic-1.3.10.jar .
+wget $SRC/jackson-annotations/2.9.9/jackson-annotations-2.9.9.jar
+wget $SRC/jackson-core/2.9.9/jackson-core-2.9.9.jar
+wget $SRC/jackson-databind/2.9.9/jackson-databind-2.9.9.jar
+#

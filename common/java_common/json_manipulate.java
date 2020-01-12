@@ -3,12 +3,13 @@
 	json_manipulate.java
 
 
-				Feb/04/2015
+				Jan/12/2020
 */
 // -----------------------------------------------------------------------
 import	java.util.HashMap;
-import	net.arnx.jsonic.JSON;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 // -----------------------------------------------------------------------
 public class json_manipulate
 {
@@ -20,9 +21,12 @@ static HashMap <String, HashMap<String,String>>
 	HashMap <String, HashMap<String,String>>  dict_aa
 		= new HashMap <String, HashMap<String,String>> ();
 
+	TypeReference<HashMap <String, HashMap<String,String>>> reference
+		                      = new TypeReference<HashMap <String, HashMap<String,String>>> (){};
 	try
 	{
-	dict_aa = (HashMap <String, HashMap<String,String>>)JSON.decode (json_str);
+		ObjectMapper mapper = new ObjectMapper();
+	dict_aa = mapper.readValue(json_str, reference);
 	}
 	catch (Exception ee)
 	{
@@ -38,9 +42,11 @@ static String	dict_to_json_proc
 {
 	String str_json = "";
 
+	ObjectMapper mapper = new ObjectMapper();
+
 	try
 		{
-		str_json = JSON.encode (dict_aa);
+			str_json = mapper.writeValueAsString(dict_aa);
 		}
 	catch	(Exception ee)
 		{
@@ -54,6 +60,8 @@ static String	dict_to_json_proc
 static String unit_json_gen_proc 
 	(String name_in,int population_in,String date_mod_in)
 {
+	String str_json = "";
+
 	HashMap <String,String> unit_aa
 				= new HashMap <String,String> ();
 
@@ -63,7 +71,16 @@ static String unit_json_gen_proc
 	unit_aa.put ("population",str_population);
 	unit_aa.put ("date_mod",date_mod_in);
 
-	String str_json = JSON.encode (unit_aa);
+	ObjectMapper mapper = new ObjectMapper();
+
+	try
+		{
+		str_json = mapper.writeValueAsString(unit_aa);
+		}
+	catch	(Exception ee)
+		{
+		ee.printStackTrace ();
+		}
 
 	return	str_json;
 }
@@ -72,7 +89,19 @@ static String unit_json_gen_proc
 static HashMap <String,String> unit_json_parser (String str_json)
 {
 	HashMap <String,String>  unit_aa
-			= (HashMap <String,String>)JSON.decode (str_json);
+		= new  HashMap<String,String> ();
+
+	TypeReference<HashMap<String,String>> reference = new TypeReference<HashMap<String,String>> (){};
+
+	ObjectMapper mapper = new ObjectMapper();
+	try
+		{
+		unit_aa = mapper.readValue(str_json, reference);
+		}
+	catch	(Exception ee)
+		{
+		ee.printStackTrace ();
+		}
 
 	return	unit_aa;
 }

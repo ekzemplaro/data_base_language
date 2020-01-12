@@ -28,7 +28,7 @@ jar の中身の確認<br />
 
 バージョンの確認<br />
 <blockquote>
-	javac -J-version<p />
+	javac -version<p />
 	java -version<p />
 </blockquote>
 

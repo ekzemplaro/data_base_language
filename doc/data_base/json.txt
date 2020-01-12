@@ -114,7 +114,9 @@ paranamer-2.7.jar<br />
 
 Java<p />
 <blockquote>
-	jsonic-1.3.10.jar<br />
+	jackson-core-2.9.9.jar<br />
+	jackson-databind-2.9.9.jar<br />
+	jackson-annotations-2.9.9.jar<br />
 </blockquote>
 
 
