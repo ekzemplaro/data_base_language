@@ -1,7 +1,7 @@
 // ------------------------------------------------------------------    
 //	redis_create.java
 //
-//					Apr/11/2013
+//					Jan/12/2020
 //
 // ------------------------------------------------------------------    
 import	java.util.HashMap;
@@ -9,7 +9,6 @@ import	java.util.Set;
 
 import redis.clients.jedis.Jedis;
 
-import	net.arnx.jsonic.JSON;
 // ------------------------------------------------------------------    
 public class redis_create
 {
@@ -22,7 +21,7 @@ public static void main(String[] args)  throws Exception
 	HashMap <String, HashMap <String,String>>
 			dict_aa = data_prepare_proc ();
 
-	Jedis jedis = new Jedis("host_dbase");
+	Jedis jedis = new Jedis("localhost");
 
 	Set set_aaa = dict_aa.keySet ();
 
@@ -32,8 +31,8 @@ public static void main(String[] args)  throws Exception
 		HashMap <String,String>
 			dict_unit = dict_aa.get (key_aa);
 
-		String str_json = JSON.encode (dict_unit);
-//		System.out.println (str_json);        
+		String str_json = json_manipulate.unit_json_gen_proc (dict_unit);
+		System.out.println (str_json);        
 		jedis.set (key,str_json);
 		}
 

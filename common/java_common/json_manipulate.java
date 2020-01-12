@@ -58,10 +58,11 @@ static String	dict_to_json_proc
 
 // -----------------------------------------------------------------------
 static String unit_json_gen_proc 
-	(String name_in,int population_in,String date_mod_in)
+	(HashMap <String,String> unit_aa)
+//	(String name_in,int population_in,String date_mod_in)
 {
 	String str_json = "";
-
+/*
 	HashMap <String,String> unit_aa
 				= new HashMap <String,String> ();
 
@@ -70,7 +71,7 @@ static String unit_json_gen_proc
 	unit_aa.put ("name",name_in);
 	unit_aa.put ("population",str_population);
 	unit_aa.put ("date_mod",date_mod_in);
-
+*/
 	ObjectMapper mapper = new ObjectMapper();
 
 	try
