@@ -1,7 +1,7 @@
 // ------------------------------------------------------------------    
 //	redis_delete.java
 //
-//					Apr/11/2013
+//					Jan/13/2020
 //
 // ------------------------------------------------------------------    
 import	redis.clients.jedis.Jedis;
@@ -18,7 +18,7 @@ public static void main(String[] args)  throws Exception
 	String	key = args[0];
 	System.out.println ("\tkey = " + key);
 
-	Jedis jedis = new Jedis("host_dbase");
+	Jedis jedis = new Jedis("localhost");
 
 	jedis.del (key);
 

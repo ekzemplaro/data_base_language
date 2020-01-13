@@ -1,5 +1,0 @@
-export JAVA_COMMON=/var/www/data_base/common/java_common
-export REDIS_JAR=$JAVA_COMMON/jar/jredis-1.0-rc2.jar
-export CLASSPATH=.:$JAVA_COMMON:$REDIS_JAR
-#
-java redis_delete 1851

@@ -1,7 +1,7 @@
 // ------------------------------------------------------------------    
 //	redis_manipulate.java
 //
-//					Apr/11/2013
+//					Jan/13/2020
 //
 // ------------------------------------------------------------------    
 import	java.io.PrintWriter;
@@ -10,7 +10,7 @@ import	java.util.Set;
 
 import	redis.clients.jedis.Jedis;
 
-import	net.arnx.jsonic.JSON;
+// import	net.arnx.jsonic.JSON;
 // ------------------------------------------------------------------    
 public class redis_manipulate
 {
@@ -22,11 +22,8 @@ static void record_parse_proc (String key, String str_json)
 //	System.out.println (key + "\t" + str_json);
 	System.out.print (key + "\t");
 
-	HashMap <String, Object>  map_data = new HashMap <String, Object> ();
 
-	try
-	{
-	map_data = (HashMap <String, Object>)JSON.decode (str_json);
+	HashMap<String,String>  map_data = json_manipulate.unit_json_parser (str_json);
 
 	String name = map_data.get ("name").toString ();
 	String population = map_data.get ("population").toString ();
@@ -34,12 +31,6 @@ static void record_parse_proc (String key, String str_json)
 	System.out.print (name + "\t");
 	System.out.print (population + "\t");
 	System.out.println (date_mod);
-	}
-	catch (Exception ee)
-	{
-	ee.printStackTrace ();
-	}
-
 }
 
 // ------------------------------------------------------------------    
@@ -57,8 +48,7 @@ static String redis_to_json_proc (Jedis jedis) throws Exception
 
 		if (str_json != null)
 			{
-			HashMap <String,String> unit_aa
-				= (HashMap <String,String>)JSON.decode (str_json);
+			HashMap<String,String> unit_aa = json_manipulate.unit_json_parser (str_json);
 			dict_aa.put (key,unit_aa);
 			}
 		}
@@ -76,9 +66,7 @@ static void redis_update_proc
 
 	if (str_json != null)
 		{
-		redis_manipulate.record_parse_proc (key,str_json);
-		HashMap <String,String> unit_aa
-			 = (HashMap <String,String>)JSON.decode (str_json);
+		HashMap<String,String>  unit_aa = json_manipulate.unit_json_parser (str_json);
 
 		System.out.println (unit_aa.get ("name"));        
 		String str_population = Integer.toString (population_in);
@@ -87,7 +75,7 @@ static void redis_update_proc
 		unit_aa.put ("population",str_population);
 		unit_aa.put ("date_mod",today);
 
-		String json_new = JSON.encode (unit_aa);
+		String json_new = json_manipulate.unit_json_gen_proc(unit_aa);
 
 		jedis.set (key,json_new);
 		}
@@ -96,12 +84,12 @@ static void redis_update_proc
 // ------------------------------------------------------------------    
 static String create_new_json_proc (String str_json,int population)
 {
-	HashMap <String, Object>  unit_aa = (HashMap <String, Object>)JSON.decode (str_json);
+	HashMap<String,String>  unit_aa = json_manipulate.unit_json_parser (str_json);
         String name = unit_aa.get ("name").toString ();
         String date_mod = text_manipulate.get_current_date_proc ();
 
 	String json_new = json_manipulate.unit_json_gen_proc
-		 (name,population,date_mod);
+		 (unit_aa);
 
 	System.out.println (date_mod);        
 

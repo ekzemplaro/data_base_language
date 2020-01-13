@@ -1,1 +1,0 @@
-../jython_rdb_manipulate.py
