@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 #	redis_update.rb
-#					May/22/2013
+#					Jan/16/2020
 #
 require 'redis'
 #require 'json'
@@ -17,7 +17,7 @@ population_in = ARGV[1].to_i
 puts key_in
 puts population_in
 #
-redis = Redis.new(:host => "host_dbase", :port => 6379)
+redis = Redis.new(:host => "localhost", :port => 6379)
 #
 redis_update_proc(redis,key_in,population_in)
 #

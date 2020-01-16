@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 #	redis_create.rb
-#					Feb/26/2015
+#					Jan/16/2020
 #
 require 'redis'
 require 'json'
@@ -30,7 +30,7 @@ puts "*** 開始 ***"
 #
 dict_aa = data_prepare_proc()
 #
-redis = Redis.new(:host => "host_dbase", :port => 6379)
+redis = Redis.new(:host => "localhost", :port => 6379)
 redis.flushdb
 #
 dict_aa.each {|key, value|
