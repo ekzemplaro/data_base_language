@@ -1,2 +1,2 @@
-export NODE_PATH=/home/uchida/node_modules
+export NODE_PATH=/usr/local/lib/node_modules
 ./redis_delete.js t1856
