@@ -50,12 +50,12 @@ Debian（jessie）にPHP 7をインストールする方法</a><p />
 #
 	location ~ \.php$ {
 	include snippets/fastcgi-php.conf;
-	fastcgi_pass unix:/run/php/php7.2-fpm.sock;
+	fastcgi_pass unix:/run/php/php7.3-fpm.sock;
 	}
 </pre>
 	<blockquote>
-	/etc/php/7.2/fpm/pool.d/www.conf に<br />
-	listen = /run/php/php7.2-fpm.sock となっている<p />
+	/etc/php/7.3/fpm/pool.d/www.conf に<br />
+	listen = /run/php/php7.3-fpm.sock となっている<p />
 	</blockquote>
 </blockquote>
 /etc/php/php-fpm.d/www.conf<p />
@@ -63,9 +63,9 @@ Debian（jessie）にPHP 7をインストールする方法</a><p />
 security.limit_extensions = .php .php3 .php4 .php5 .php7 .html<p />
 </blockquote>
 <hr />
-php7.2-fpm の再起動<p />
+php7.3-fpm の再起動<p />
 <blockquote>
-	# systemctl restart php7.2-fpm<p />
+	# systemctl restart php7.3-fpm<p />
 </blockquote>
 
 
@@ -86,7 +86,7 @@ PHPで、アップロードできるファイルのサイズの上限を 512M �
 	location ~ \.php$ {
 	fastcgi_split_path_info ^(.+\.php)(/.+)$;
 #
-	fastcgi_pass unix:/var/run/php7-fpm.sock;
+	fastcgi_pass unix:/var/run/php7.3-fpm.sock;
 
 	fastcgi_index index.php;
 	include fastcgi_params;
@@ -94,7 +94,7 @@ PHPで、アップロードできるファイルのサイズの上限を 512M �
 	}
 </pre>
 
-/etc/php/7.0/fpm/php.ini<p />
+/etc/php/7.3/fpm/php.ini<p />
 	<blockquote>
 		post_max_size = 512M<br />
 		upload_max_filesize = 512M<br />
@@ -241,6 +241,6 @@ Shift-JIS で文字化けをするとき<br />
 <a href="./rtmp">rtmp</a><p />
 <hr />
 <a href="../">Return</a><p />
-Dec/30/2019 AM 08:15<p />
+Jan/31/2020 AM 08:15<p />
 </body>
 </html>

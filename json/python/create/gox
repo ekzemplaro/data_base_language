@@ -1,3 +1,7 @@
 #
+if [ ! -d /var/tmp/json ]
+then
+	mkdir /var/tmp/json
+fi
 #
 ./json_create.py /var/tmp/json/cities.json
