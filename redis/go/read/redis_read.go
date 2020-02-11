@@ -37,6 +37,7 @@ func main () {
 	for _,value := range keys {
 		json_str := mcached_socket_read_proc (conn,value)
 
+//		fmt.Println (json_str)
 		if 0 < len (json_str) {
 			var unit_aa map[string]interface{}
 			json.Unmarshal ([]byte(json_str), &unit_aa)

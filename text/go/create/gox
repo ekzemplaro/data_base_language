@@ -1,2 +1,2 @@
 #
-./text_create /var/tmp/plain_text/cities.txt
+go run text_create.go text_manipulate.go /var/tmp/plain_text/cities.txt

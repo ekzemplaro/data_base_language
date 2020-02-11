@@ -1,2 +1,2 @@
 #
-./json_update /var/tmp/json/cities.json t0925 342198700
+go run json_update.go text_manipulate.go /var/tmp/json/cities.json t0925 342198700

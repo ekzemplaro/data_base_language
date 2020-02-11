@@ -1,2 +1,2 @@
 #
-./text_delete /var/tmp/plain_text/cities.txt t2387
+go run text_delete.go text_manipulate.go /var/tmp/plain_text/cities.txt t2387

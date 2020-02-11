@@ -1,2 +1,2 @@
 #
-./text_update /var/tmp/plain_text/cities.txt t2385 79476200
+go run text_update.go text_manipulate.go /var/tmp/plain_text/cities.txt t2385 79476200

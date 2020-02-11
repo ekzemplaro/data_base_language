@@ -1,2 +1,2 @@
 #
-./json_read /var/tmp/json/cities.json
+go run json_read.go text_manipulate.go /var/tmp/json/cities.json

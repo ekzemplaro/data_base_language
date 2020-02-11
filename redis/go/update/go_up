@@ -1,1 +1,3 @@
-./redis_update t1854 39412800
+go run redis_update.go mcached_manipulate.go text_manipulate.go \
+		redis_manipulate.go \
+		t1854 39412800

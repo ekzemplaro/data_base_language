@@ -1,1 +1,1 @@
-./json_create /var/tmp/json/cities.json
+go run json_create.go text_manipulate.go /var/tmp/json/cities.json

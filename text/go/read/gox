@@ -1,1 +1,1 @@
-./text_read /var/tmp/plain_text/cities.txt
+go run text_read.go text_manipulate.go /var/tmp/plain_text/cities.txt

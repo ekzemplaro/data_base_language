@@ -16,17 +16,29 @@ client.on ("error", function (err)
 		+ client.host + ":" + client.port + " - " + err)
 })
 
-const keys=["t1851","t1852","t1853",
-	"t1854","t1855","t1856",
-	"t1857","t1858","t1859"]
+client.keys ('*',function (err, reply)
+	{
+	if (err)
+		{
+		console.log("Get error: " + err)
+        	}
+	 else if (reply != null)
+		{
+		const keys = reply
+	
 
 console.log("keys.length = " + keys.length)
-
 keys.forEach(function(key,index)
 	{
 	read_single_proc (client,key,index)
+	if (keys.length === (index + 1))
+		{
+		client.quit()
+		}
 	})
-
+		console.error ("*** 終了 ***")
+	}
+	})
 
 // ---------------------------------------------------------------
 function read_single_proc (client,key,index)
@@ -49,11 +61,7 @@ function read_single_proc (client,key,index)
 		console.log (out_str)
 		}
 
-	if (keys.length === (index + 1))
-		{
-		client.quit()
-		console.error ("*** 終了 ***")
-		}
+
 	})
 }
 

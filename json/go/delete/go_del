@@ -1,2 +1,2 @@
 #
-./json_delete /var/tmp/json/cities.json t0927
+go run json_delete.go text_manipulate.go /var/tmp/json/cities.json t0927

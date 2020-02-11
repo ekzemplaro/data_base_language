@@ -1,1 +1,2 @@
-./redis_create
+#
+go run redis_create.go text_manipulate.go redis_manipulate.go
