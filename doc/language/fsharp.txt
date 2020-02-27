@@ -45,5 +45,5 @@ on 'How Mono Finds Assemblies' see http://www.mono-project.com/Gacutil
 
 Arch Linux<br />
 <blockquote>
-	$ yaourt -Sb fsharp<p />
+	$ yay -S fsharp<p />
 </blockquote>

@@ -1,7 +1,0 @@
-	if (err)
-		{
-		console.log("Get error: " + err)
-        	}
-	 else if (reply != null)
-		{
-		const keys = reply
