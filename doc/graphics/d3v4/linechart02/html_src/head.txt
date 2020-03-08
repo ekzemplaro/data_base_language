@@ -1,5 +1,0 @@
-<title>linechart02</title>
-</head>
-<body>
-<h2>linechart02 (Feb/15/2017)</h2>
-<blockquote>

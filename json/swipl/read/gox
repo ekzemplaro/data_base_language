@@ -1,1 +1,1 @@
-./json_read.pl /var/tmp/json/cities.json
+swipl -f ./json_read.pl /var/tmp/json/cities.json

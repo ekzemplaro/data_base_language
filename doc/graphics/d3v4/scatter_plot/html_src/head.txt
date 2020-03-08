@@ -1,5 +1,0 @@
-<title>scatter plot</title>
-</head>
-<body>
-<h2>scatter plot (Mar/30/2018)</h2>
-<blockquote>

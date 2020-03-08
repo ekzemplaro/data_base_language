@@ -1,0 +1,1 @@
+{print"{\"letter\": \""$1"\",\"frequency\":",$2,"},"}
