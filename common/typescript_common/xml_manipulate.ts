@@ -4,7 +4,7 @@
 //					Sep/16/2015
 //
 // ---------------------------------------------------------------
-declare function require(x: string): any;
+// declare function require(x: string): any;
 
 var fs = require("fs");
 var text_manipulate=require ("./text_manipulate");

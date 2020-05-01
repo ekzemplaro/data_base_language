@@ -1,12 +1,9 @@
 // ---------------------------------------------------------------
 //	maria_delete.ts
 //
-//					Feb/09/2016
+//					May/01/2020
 //
 // ---------------------------------------------------------------
-declare function require(x: string): any;
-declare var process:any;
-
 var mysql = require('mysql')
 var sql_manipulate= require ('/var/www/data_base/common/node_common/sql_manipulate')
 
@@ -20,7 +17,7 @@ console.log (id_in)
 var connection = mysql.createConnection ({
 	host: 'localhost',
 	user: 'scott',
-	password: 'tiger'
+	password: 'tiger123'
 	})
 
 connection.query ('Use city')

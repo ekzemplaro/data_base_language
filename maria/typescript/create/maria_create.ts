@@ -1,12 +1,9 @@
 // ---------------------------------------------------------------
 //	maria_create.ts
 //
-//					Feb/09/2016
+//					May/01/2018
 //
 // ---------------------------------------------------------------
-declare function require(x: string): any;
-declare var process:any;
-
 var mysql = require('mysql')
 var text_manipulate= require ('/var/www/data_base/common/node_common/text_manipulate')
 var sql_manipulate= require ('/var/www/data_base/common/node_common/sql_manipulate')
@@ -37,7 +34,7 @@ var dict_aa = data_prepare_proc ()
 var connection = mysql.createConnection ({
 	host: 'localhost',
 	user: 'scott',
-	password: 'tiger'
+	password: 'tiger123'
 	})
 
 connection.query ('Use city')

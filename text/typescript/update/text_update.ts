@@ -1,12 +1,9 @@
 // ---------------------------------------------------------------
 //	text_update.ts
 //
-//					Sep/06/2016
+//					May/01/2020
 //
 // ---------------------------------------------------------------
-declare function require(x: string): any
-declare var process:any
-
 var text_manipulate=require ("/var/www/data_base/common/typescript_common/text_manipulate")
 
 // ---------------------------------------------------------------
@@ -15,7 +12,7 @@ console.error ("*** 開始 ***")
 
 var file_txt:string = process.argv[2]
 var key:string = process.argv[3]
-var population_in:number =process.argv[4]
+var population_in:number = parseInt(process.argv[4])
 
 console.log (file_txt)
 console.log (key + "\t" + population_in)

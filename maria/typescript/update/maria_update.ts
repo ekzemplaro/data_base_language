@@ -1,12 +1,9 @@
 // ---------------------------------------------------------------
 //	maria_update.ts
 //
-//					Feb/09/2016
+//					May/01/2020
 //
 // ---------------------------------------------------------------
-declare function require(x: string): any;
-declare var process:any;
-
 var mysql = require('mysql')
 var sql_manipulate= require ('/var/www/data_base/common/node_common/sql_manipulate')
 
@@ -14,14 +11,14 @@ var sql_manipulate= require ('/var/www/data_base/common/node_common/sql_manipula
 console.log ("*** 開始 ***")
 
 var id_in:string = process.argv[2]
-var population_in = process.argv[3]
+var population_in = parseInt(process.argv[3])
 
 console.log (id_in + "\t" + population_in)
 
 var connection = mysql.createConnection ({
 	host: 'localhost',
 	user: 'scott',
-	password: 'tiger'
+	password: 'tiger123'
 	})
 
 connection.query ('Use city')

@@ -1,12 +1,9 @@
 // ---------------------------------------------------------------
 //	text_read.ts
 //
-//					Sep/06/2016
+//					May/01/2020
 //
 // ---------------------------------------------------------------
-declare function require(x: string): any
-declare var process:any
-
 var text_manipulate=require ("/var/www/data_base/common/typescript_common/text_manipulate")
 
 // ---------------------------------------------------------------

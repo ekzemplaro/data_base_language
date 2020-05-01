@@ -80,7 +80,7 @@ C#<p />
 
 PDF のページを削除<p />
 <blockquote>
-	$ yaourt -Sb pdftk-bin<p />
+	$ pacman -S pdftk<p />
 	$ pdftk in01.pdf cat 1-2 output out01.pdf<p />
 </blockquote>
 

@@ -1,12 +1,9 @@
 // ---------------------------------------------------------------
 //	json_delete.ts
 //
-//					Sep/15/2015
+//					May/01/2020
 //
 // ---------------------------------------------------------------
-declare function require(x: string): any;
-declare var process:any;
-
 var fs = require("fs");
 
 console.log ("*** 開始 ***");
@@ -25,7 +22,14 @@ if (key_in in dict_aa)
 
 	var json_str_out:string = JSON.stringify(dict_aa);
 
-	fs.writeFile (filename,json_str_out);
+	fs.writeFile (filename,json_str_out, function (err)
+		{
+		if (err) {
+		console.log("Error on write: " + err)
+		} else {
+		console.log("File written.");
+		}
+		});
 	}
 
 console.log ("*** 終了 ***");

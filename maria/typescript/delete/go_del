@@ -1,4 +1,4 @@
 #
 export NODE_PATH=/home/uchida/node_modules
 #
-nodejs ./maria_delete.js t3326
+node ./maria_delete.js t3326

@@ -1,12 +1,9 @@
 // ---------------------------------------------------------------
 //	maria_read.ts
 //
-//					Feb/09/2016
+//					May/01/2016
 //
 // ---------------------------------------------------------------
-declare function require(x: string): any;
-declare var process:any;
-
 var text_manipulate=require ("/var/www/data_base/common/node_common/text_manipulate")
 
 // ---------------------------------------------------------------
@@ -17,7 +14,7 @@ var mysql = require('mysql')
 var connection = mysql.createConnection ({
 	host: 'localhost',
 	user: 'scott',
-	password: 'tiger'
+	password: 'tiger123'
 	})
 
 connection.query ('Use city')
@@ -38,10 +35,9 @@ connection.query("select * from cities", function (err, rows)
 
 	text_manipulate.dict_display_proc (dict_aa)
 
-console.log ("*** 終了 ***")
+	console.log ("*** 終了 ***")
 	})
 
 connection.end()
 
-console.log ("*** ppp ***")
 // ---------------------------------------------------------------

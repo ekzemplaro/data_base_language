@@ -1,1 +1,1 @@
-nodejs ./text_read.js /var/tmp/plain_text/cities.txt
+node ./text_read.js /var/tmp/plain_text/cities.txt
