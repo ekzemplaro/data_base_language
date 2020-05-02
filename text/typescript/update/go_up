@@ -1,1 +1,1 @@
-node ./text_update.js /var/tmp/plain_text/cities.txt t2387 86492500
+ts-node ./text_update.ts /var/tmp/plain_text/cities.txt t2387 86492500

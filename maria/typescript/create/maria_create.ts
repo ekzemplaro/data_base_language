@@ -1,11 +1,11 @@
 // ---------------------------------------------------------------
 //	maria_create.ts
 //
-//					May/01/2018
+//					May/02/2018
 //
 // ---------------------------------------------------------------
 var mysql = require('mysql')
-var text_manipulate= require ('/var/www/data_base/common/node_common/text_manipulate')
+var text_manipulate= require ('/var/www/data_base/common/typescript_common/text_manipulate')
 var sql_manipulate= require ('/var/www/data_base/common/node_common/sql_manipulate')
 
 // ---------------------------------------------------------------
@@ -13,9 +13,9 @@ function data_prepare_proc ()
 {
 	var dict_aa = new Object ()
 
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t3321','岡山',491763,'2012-9-12')
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t3322','倉敷',183257,'2012-3-15')
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t3323','津山',975241,'2012-10-2')
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t3321','岡山',451763,'2012-9-12')
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t3322','倉敷',193257,'2012-3-15')
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t3323','津山',675241,'2012-10-2')
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t3324','玉野',231864,'2012-6-22')
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t3325','笠岡',769358,'2012-8-14')
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t3326','井原',865792,'2012-9-12')

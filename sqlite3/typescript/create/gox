@@ -1,2 +1,2 @@
-export NODE_PATH=/home/uchida/node_modules
-nodejs ./sqlite3_create.js /var/tmp/sqlite3/cities.db
+#
+ts-node ./sqlite3_create.ts /var/tmp/sqlite3/cities.db

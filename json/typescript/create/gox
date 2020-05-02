@@ -1,2 +1,2 @@
 #
-node ./json_create.js /var/tmp/json/cities.json
+ts-node ./json_create.ts /var/tmp/json/cities.json

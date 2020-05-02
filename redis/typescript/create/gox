@@ -1,3 +1,3 @@
-export NODE_PATH=/home/uchida/node_modules
+# export NODE_PATH=/home/uchida/node_modules
 #
-nodejs ./redis_create.js
+ts-node ./redis_create.ts

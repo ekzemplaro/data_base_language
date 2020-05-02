@@ -2,11 +2,9 @@
 //
 //	sqlite3_create.ts
 //
-//					Feb/09/2016
+//					May/02/2020
 //
 // ------------------------------------------------------------
-declare function require(x: string): any;
-declare var process:any;
 var sqlite3 = require("sqlite3");
 var text_manipulate= require ('/var/www/data_base/common/node_common/text_manipulate');
 

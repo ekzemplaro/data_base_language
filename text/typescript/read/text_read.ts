@@ -1,7 +1,7 @@
 // ---------------------------------------------------------------
 //	text_read.ts
 //
-//					May/01/2020
+//					May/02/2020
 //
 // ---------------------------------------------------------------
 var text_manipulate=require ("/var/www/data_base/common/typescript_common/text_manipulate")

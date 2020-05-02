@@ -1,10 +1,10 @@
 // ---------------------------------------------------------------
 //	maria_read.ts
 //
-//					May/01/2016
+//					May/02/2016
 //
 // ---------------------------------------------------------------
-var text_manipulate=require ("/var/www/data_base/common/node_common/text_manipulate")
+var text_manipulate=require ("/var/www/data_base/common/typescript_common/text_manipulate")
 
 // ---------------------------------------------------------------
 console.log ("*** 開始 ***")

@@ -1,17 +1,14 @@
 // ---------------------------------------------------------------
 //	redis_read.ts
 //
-//					Feb/09/2016
+//					May/02/2020
 //
 // ---------------------------------------------------------------
-declare function require(x: string): any;
-declare var process:any;
-
 var redis = require ("redis")
 
 console.log ("*** 開始 ***")
 
-var client = redis.createClient(6379,'host_dbase')
+var client = redis.createClient(6379,'localhost')
 
 client.on ("error", function (err)
 {

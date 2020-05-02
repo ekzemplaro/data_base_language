@@ -1,1 +1,1 @@
-node ./json_read.js /var/tmp/json/cities.json
+ts-node ./json_read.ts /var/tmp/json/cities.json

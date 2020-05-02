@@ -1,4 +1,2 @@
 #
-export NODE_PATH=/home/uchida/node_modules
-#
-node ./maria_update.js t3325 15829300
+ts-node ./maria_update.ts t3327 16829300

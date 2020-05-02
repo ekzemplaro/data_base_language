@@ -1,11 +1,9 @@
 // ---------------------------------------------------------------
 //	text_manipulate.ts
 //
-//					May/01/2020
+//					May/02/2020
 //
 // ---------------------------------------------------------------
-// declare function require(x: string): any;
-
 var fs = require("fs");
 var text_manipulate=require ("./text_manipulate");
 // ---------------------------------------------------------------
@@ -196,7 +194,7 @@ exports.csv_write_proc = function (file_out,dict_aa)
 exports.get_current_date_proc = function ()
 {
 	var today = new Date ();
-	var ddx = (1900 + today.getYear ()) + "-" + (today.getMonth () +1)
+	var ddx = (1900 + today.getFullYear ()) + "-" + (today.getMonth () +1)
 	ddx += "-" + today.getDate ()
 
 	return ddx;

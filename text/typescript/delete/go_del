@@ -1,1 +1,1 @@
-node text_delete.js /var/tmp/plain_text/cities.txt t2384
+ts-node text_delete.ts /var/tmp/plain_text/cities.txt t2384

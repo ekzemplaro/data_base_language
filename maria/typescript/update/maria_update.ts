@@ -1,7 +1,7 @@
 // ---------------------------------------------------------------
 //	maria_update.ts
 //
-//					May/01/2020
+//					May/02/2020
 //
 // ---------------------------------------------------------------
 var mysql = require('mysql')
@@ -11,7 +11,7 @@ var sql_manipulate= require ('/var/www/data_base/common/node_common/sql_manipula
 console.log ("*** 開始 ***")
 
 var id_in:string = process.argv[2]
-var population_in = parseInt(process.argv[3])
+var population_in:number = parseInt(process.argv[3])
 
 console.log (id_in + "\t" + population_in)
 
@@ -33,5 +33,4 @@ connection.query(command, function (err, rows)
 
 connection.end()
 
-console.log ("*** ppp ***")
 // ---------------------------------------------------------------
