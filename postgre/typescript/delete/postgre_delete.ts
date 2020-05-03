@@ -1,41 +1,45 @@
 // ---------------------------------------------------------------
 //	postgre_delete.ts
 //
-//					Feb/09/2016
+//					May/03/2020
 //
 // ---------------------------------------------------------------
-declare function require(x: string): any;
-declare var process:any;
-
 var pg = require('pg');
 var sql_manipulate= require ('/var/www/data_base/common/node_common/sql_manipulate');
 
 // ---------------------------------------------------------------
-console.log ("*** 開始 ***");
-var id_in: string = process.argv[2];
+console.error ("*** 開始 ***");
+var id_in:string = process.argv[2];
 
-console.log (id_in);
+console.error (id_in);
 
-var str_connect: string = "tcp://scott:tiger@localhost:5432/city";
+const { Client } = require('pg')
 
-pg.connect (str_connect,function (error,client)
-	{
-	var command: string = sql_manipulate.delete_command_gen (id_in);
+require('dotenv').config()
 
-	console.log (command);
+const client = new Client({
+	user: process.env.user,
+	host: 'localhost',
+	database: process.env.data_base,
+	password: process.env.password,
+	port: 5432,
+})
 
-	var query = client.query(command);
+client.connect()
 
-/*
-	query.on('row',function (row) {
-		});
-*/
+const command:string = sql_manipulate.delete_command_gen (id_in);
 
-	query.on('end',function () {
-		client.end ();
-		});
+console.error (command);
 
-	console.log ("*** 終了 ***");
-	});
+const query = {
+	text: command,
+}
+
+client.query(query)
+	.then(res => {
+		client.end()
+		console.error ("*** 終了 ***")
+	})
+	.catch(e => console.error(e.stack))
 
 // ---------------------------------------------------------------

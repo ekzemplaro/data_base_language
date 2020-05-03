@@ -1,36 +1,44 @@
 // ---------------------------------------------------------------
 //	postgre_read.ts
 //
-//					Feb/09/2016
+//					May/03/2020
 //
 // ---------------------------------------------------------------
-declare function require(x: string): any;
-declare var process:any;
+console.error ("*** 開始 ***");
 
-var pg = require('pg');
+const { Client } = require('pg')
 
-console.log ("*** 開始 ***");
+require('dotenv').config()
 
-var str_connect: string = "tcp://scott:tiger@localhost:5432/city";
+const client = new Client({
+	user: process.env.user,
+	host: 'localhost',
+	database: process.env.data_base,
+	password: process.env.password,
+	port: 5432,
+})
 
-pg.connect (str_connect,function (error,client)
-	{
+client.connect()
 
-	var query = client.query("select * from cities;");
+const query = {
+	text: 'SELECT * FROM cities',
+}
 
-	query.on('row',function (row) {
-		var str_out = row.id + '\t';
-		str_out += row.name + '\t';
-		str_out += row.population + '\t';
-		str_out += row.date_mod;
-		console.log (str_out);
-		});
+client.query(query)
+    .then(res => {
+	for (var it in res.rows)
+		{
+		var row = res.rows[it]
 
-	query.on('end',function () {
-		client.end ();
-		console.log ("*** 終了 ***");
-		});
-
-	});
+		var str_out:string = row.id + '\t'
+		str_out += row.name + '\t'
+		str_out += row.population + '\t'
+		str_out += row.date_mod
+		console.log (str_out)
+		}
+	client.end()
+	console.error ("*** 終了 ***")
+	})
+	.catch(e => console.error(e.stack))
 
 // ---------------------------------------------------------------
