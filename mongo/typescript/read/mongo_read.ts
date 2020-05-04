@@ -3,8 +3,8 @@
 //
 //					Feb/18/2016
 // ----------------------------------------------------------------
-declare function require(x: string): any;
-declare var process:any;
+// declare function require(x: string): any;
+// declare var process:any;
 
 var MongoClient = require('mongodb').MongoClient
 

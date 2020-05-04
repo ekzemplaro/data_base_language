@@ -1,4 +1,4 @@
 #
-export NODE_PATH=/home/uchida/node_modules
+export NODE_PATH=/usr/lib/node_modules
 #
-./mongo_update.js t1167 42983100
+./mongo_update.js t1163 42983100

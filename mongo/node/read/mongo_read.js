@@ -2,29 +2,39 @@
 //
 //	mongo_read.js
 //
-//					Jun/30/2018
+//					May/03/2020
 // ----------------------------------------------------------------
-var MongoClient = require('mongodb').MongoClient
+const MongoClient = require('mongodb').MongoClient
+const assert = require('assert')
+require('dotenv').config()
 
 console.log ("*** 開始 ***")
 
-var host = 'scott:tiger123@localhost'
-var port = 27017
+const user = process.env.user
+const password = process.env.password
+const db_name = process.env.db
+const collection_name = process.env.collection
 
-var db_name = 'city'
+const host = user + ':' + password + '@localhost'
+const port = 27017
 
-var str_connect = "mongodb://" + host + ":" + port + "/" + db_name + "?w=1" 
+const url = 'mongodb://' + host + ':' + port
+
 console.log("Connecting to " + host + ":" + port)
 
-MongoClient.connect (str_connect, function(err, db)
+const client = new MongoClient(url,
+    {useNewUrlParser: true,useUnifiedTopology: true})
+
+client.connect (function(err)
 {
-	var collection = db.collection('saitama')
+	const db = client.db(db_name)
+
+	const collection = db.collection(collection_name)
 
 collection.find().each(function(err, item)
 	{
 	if(item != null)
 		{
-//		console.dir(item)
 		var str_out = item.key + "\t" + item.name
 		str_out += "\t" + item.population
 		str_out += "\t" + item.date_mod
@@ -32,10 +42,11 @@ collection.find().each(function(err, item)
 		}
 	else
 		{
-		db.close()
 		console.log ("*** 終了 ***")
 		}
 
+        client.close()
 	})
+
 })
 // ----------------------------------------------------------------

@@ -13,8 +13,8 @@ ii  mongodb   1:2.4.9-1ubuntu2   amd64   object/document-oriented database (meta
 </blockquote>
 Arch Linux<br />
 <blockquote>
-# pacman -S mongodb<br />
-# pacman -S mongodb-tools<br />
+yay mongodb-bin<br />
+yay mongodb-tools<br />
 </blockquote>
 <blockquote>
 <a href="http://www.mongodb.org/display/DOCS/Drivers">Drivers</a><br />
@@ -88,7 +88,7 @@ ii  python-pymongo   2.2-4   amd64    Python interface to the MongoDB document-o
 
 sudo apt install python3-pymongo<p />
 
-# pacman -S python-pymongo<p />
+yay python-pymongo<p />
 </blockquote>
 
 Perl<p />

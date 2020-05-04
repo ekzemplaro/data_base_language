@@ -1,10 +1,11 @@
-#! /usr/bin/nodejs
+#! /usr/bin/node
 //
 //	mongo_delete.js
 //
-//					Aug/07/2016
+//					May/03/2020
 // ----------------------------------------------------------------
 var MongoClient = require('mongodb').MongoClient
+require('dotenv').config()
 
 console.log ("*** 開始 ***")
 
@@ -12,23 +13,30 @@ var key=process.argv[2]
 
 console.log (key)
 
-var host = 'localhost'
-var port = 27017
+const user = process.env.user
+const password = process.env.password
+const db_name = process.env.db
+const collection_name = process.env.collection
 
-var db_name = 'city_db'
+const host = user + ':' + password + '@localhost'
+const port = 27017
 
-var str_connect = "mongodb://" + host + ":" + port + "/" + db_name + "?w=1" 
+const url = 'mongodb://' + host + ':' + port
+
 console.log("Connecting to " + host + ":" + port)
 
-MongoClient.connect (str_connect, function(err, db)
+const client = new MongoClient(url,
+    {useNewUrlParser: true,useUnifiedTopology: true})
+
+client.connect (function(err)
 {
-	var collection = db.collection('saitama')
+	const db = client.db(db_name)
+	const collection = db.collection(collection_name)
 
-	collection.remove({key: key}, {w:1}, function(err,nn_deleted)
+	collection.deleteOne({key: key}, function(err,result)
 		{
-		db.close()
+		client.close()
 
-//		console.log (nn_deleted)
 		console.log ("*** 終了 ***")
 		})
 })
