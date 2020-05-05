@@ -34,11 +34,15 @@ sys.stderr.write ("*** 開始 ***\n")
 #
 dict_aa = data_prepare_proc ()
 #
-client = pymongo.MongoClient(username='scott',password='tiger123')
-db = client['city']
-collection = 'saitama'
+try:
+	client = pymongo.MongoClient(username='scott',password='tiger123')
+	db = client['city']
+	collection = 'saitama'
 #
-dict_to_mongo_proc (db,collection,dict_aa)
+	dict_to_mongo_proc (db,collection,dict_aa)
+except Exception as ee:
+	sys.stderr.write("*** error *** in MongoClient ***\n")
+	sys.stderr.write(str(ee) + "\n")
 #
 sys.stderr.write ("*** 終了 ***\n")
 # -------------------------------------------------------------

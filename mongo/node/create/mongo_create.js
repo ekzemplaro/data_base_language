@@ -2,7 +2,7 @@
 //
 //	mongo_create.js
 //
-//					May/03/2020
+//					May/05/2020
 //
 // ----------------------------------------------------------------
 var text_manipulate=require ("/var/www/data_base/common/node_common/text_manipulate")
@@ -11,9 +11,9 @@ function data_prepare_proc ()
 {
 	var dict_aa = new Object ()
 
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1161','さいたま',93154,'1950-6-25')
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1162','所沢',28657,'1950-8-12')
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1163','越谷',97421,'1950-10-2')
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1161','さいたま',93457,'1950-10-25')
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1162','所沢',24657,'1950-8-12')
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1163','越谷',93421,'1950-10-2')
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1164','久喜',31864,'1950-6-18')
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1165','熊谷',49358,'1950-8-14')
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1166','秩父',65792,'1950-9-12')
@@ -25,8 +25,7 @@ function data_prepare_proc ()
 }
 
 // ----------------------------------------------------------------
-const insertDocuments = function(db,array_aa, callback) {
-	const collection = db.collection('saitama')
+const insertDocuments = function(collection,array_aa, callback) {
 	collection.insertMany(array_aa,
 		function(err, result) {
 		assert.equal(err, null)
@@ -36,7 +35,7 @@ const insertDocuments = function(db,array_aa, callback) {
 }
 
 // ----------------------------------------------------------------
-function loop_insert_proc (dict_aa,db)
+function loop_insert_proc (dict_aa,collection)
 {
 	var array_aa = []
 
@@ -45,7 +44,7 @@ function loop_insert_proc (dict_aa,db)
 		const name = dict_aa[key].name
 		const population = dict_aa[key].population
 		const date_mod = dict_aa[key].date_mod
-		unit_aa = {'key': key, 'name': name,
+		const unit_aa = {'key': key, 'name': name,
 			 'population': population,'date_mod': date_mod}
 		array_aa = array_aa.concat(unit_aa)
 		}
@@ -54,7 +53,7 @@ function loop_insert_proc (dict_aa,db)
 
 //	console.log(array_aa)
 
-insertDocuments(db,array_aa, function() {
+insertDocuments(collection,array_aa, function() {
 	console.log ("*** 終了 ***")
 	client.close()
 	})
@@ -93,7 +92,7 @@ client.connect (function(err)
 		const collection = db.collection(collection_name)
 		collection.deleteOne ({},function (err, result)
 			{
-			loop_insert_proc (dict_aa,db)
+			loop_insert_proc (dict_aa,collection)
 			})
 
 		})

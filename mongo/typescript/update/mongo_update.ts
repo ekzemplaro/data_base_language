@@ -1,61 +1,61 @@
 //
 //	mongo_update.ts
 //
-//					Feb/18/2016
+//					May/05/2020
 // ----------------------------------------------------------------
-declare function require(x: string): any;
-declare var process:any;
-
 var MongoClient = require('mongodb').MongoClient
 var text_manipulate=require ("/var/www/data_base/common/node_common/text_manipulate")
+require('dotenv').config()
+
 
 console.log ("*** 開始 ***")
 
-var key=process.argv[2]
-var population_in=process.argv[3]
+const key:string =process.argv[2]
+const population_in:number =parseInt(process.argv[3])
 
 console.log (key + "\t" + population_in)
 
-var host = 'localhost'
-var port = 27017
+const user:string = process.env.user
+const password:string = process.env.password
+const db_name:string = process.env.db
+const collection_name:string = process.env.collection
 
-var db_name = 'city_db'
+const host:string = user + ':' + password + '@localhost'
+const port:number = 27017
 
-var str_connect = "mongodb://" + host + ":" + port + "/" + db_name + "?w=1" 
+const url:string = 'mongodb://' + host + ':' + port
+
 console.log("Connecting to " + host + ":" + port)
 
-MongoClient.connect (str_connect, function(err, db)
-{
-	var collection = db.collection('saitama')
+const client = new MongoClient(url,
+    {useNewUrlParser: true,useUnifiedTopology: true})
 
-	var population = population_in
-	var date_mod = text_manipulate.get_current_date_proc ()
+client.connect (function(err)
+{
+	const db = client.db(db_name)
+	const collection = db.collection(collection_name)
+
+	const date_mod = text_manipulate.get_current_date_proc ()
 
 	collection.findOne ({key: key},function(err, item)
 		{
 		console.log ('err = ' + err)
-		console.log ('item = ' + item)
 		if (item == null)
 			{
-			db.close()
+			client.close()
 			console.log ('*** error *** ' + key + " doesn't exist.")
-			db.close()
 			console.log ("*** 終了 ***")
 			}
 		else
 			{
-		console.log (item.name)
+			console.log (item.name)
 
-		var name = item.name
-
-	var doc = {'key': key, 'name': name,
-			 'population': population,'date_mod': date_mod}
-
-	collection.update({key: key}, doc, {w:1}, function(err,nn_updated)
+	collection.updateOne({key: key},{ $set:  {'population': population_in,'date_mod': date_mod}},function(err,result)
 		{
-		db.close()
+		client.close()
 
-		console.log (nn_updated)
+		console.log (err)
+//		console.log (result)
 		console.log ("*** 終了 ***")
 		})
 			}

@@ -1,73 +1,99 @@
 //
 //	mongo_create.ts
 //
-//					Feb/18/2016
+//					May/05/2020
 //
 // ----------------------------------------------------------------
-declare function require(x: string): any;
-declare var process:any;
-
 var text_manipulate=require ("/var/www/data_base/common/node_common/text_manipulate")
 // ----------------------------------------------------------------
 function data_prepare_proc ()
 {
 	var dict_aa = new Object ()
 
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1161','さいたま',37154,'2012-7-23')
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1162','所沢',24657,'2012-5-15')
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1163','越谷',95421,'2012-10-2')
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1164','久喜',32864,'2012-6-18')
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1165','熊谷',47358,'2012-8-14')
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1166','秩父',65792,'2012-9-12')
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1167','川越',37251,'2012-3-25')
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1168','和光',52386,'2012-7-21')
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1169','新座',21893,'2012-2-14')
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1161','さいたま',93152,'2012-5-14')
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1162','所沢',21657,'2012-3-26')
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1163','越谷',98421,'2012-8-12')
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1164','久喜',37864,'2012-9-18')
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1165','熊谷',67358,'2012-7-14')
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1166','秩父',51792,'2012-2-12')
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1167','川越',38251,'2012-5-15')
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1168','和光',54386,'2012-4-20')
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t1169','新座',26893,'2012-6-24')
 	
 	return	dict_aa
 }
 
 // ----------------------------------------------------------------
-function loop_insert_proc (dict_aa,collection)
-{
-	for (var key in dict_aa)
-		{
-		var name = dict_aa[key].name
-		var population = dict_aa[key].population
-		var date_mod = dict_aa[key].date_mod
-		var document = {'key': key, 'name': name,
-			 'population': population,'date_mod': date_mod}
-		collection.insert(document, {w:0})
-		}
+const insertDocuments = function(collection,array_aa, callback) {
+	collection.insertMany(array_aa,
+		function(err, result) {
+		assert.equal(err, null)
+		console.log("*** Inserted to the collection ***")
+		callback(result)
+	})
 }
 
 // ----------------------------------------------------------------
-var MongoClient = require('mongodb').MongoClient
+function loop_insert_proc (dict_aa,collection)
+{
+	var array_aa = []
+
+	for (var key in dict_aa)
+		{
+		const name = dict_aa[key].name
+		const population = dict_aa[key].population
+		const date_mod = dict_aa[key].date_mod
+		const unit_aa = {'key': key, 'name': name,
+			 'population': population,'date_mod': date_mod}
+		array_aa = array_aa.concat(unit_aa)
+		}
+
+    console.log("*** check *** ppp ***")
+
+//	console.log(array_aa)
+
+insertDocuments(collection,array_aa, function() {
+	console.log ("*** 終了 ***")
+	client.close()
+	})
+}
+
+// ----------------------------------------------------------------
+const MongoClient = require('mongodb').MongoClient
+const assert = require('assert')
+require('dotenv').config()
 
 console.log ("*** 開始 ***")
 
-var dict_aa = data_prepare_proc ()
+const user:string = process.env.user
+const password:string = process.env.password
+const db_name:string = process.env.db
+const collection_name:string = process.env.collection
 
-var host = 'localhost'
-var port = 27017
+const host = user + ':' + password + '@localhost'
+const port = 27017
 
-var db_name = 'city_db'
+const dict_aa = data_prepare_proc ()
 
-var str_connect = "mongodb://" + host + ":" + port + "/" + db_name + "?w=1" 
+
+
+const url = 'mongodb://' + host + ':' + port
 console.log("Connecting to " + host + ":" + port)
 
-MongoClient.connect (str_connect, function(err, db)
+const client = new MongoClient(url,
+    {useNewUrlParser: true,useUnifiedTopology: true})
+
+client.connect (function(err)
 	{
+	const db = client.db(db_name)
 	db.dropDatabase(function(err, result)
 		{
-		var collection = db.collection('saitama')
-
-		collection.remove ({},function (err, result)
+		const collection = db.collection(collection_name)
+		collection.deleteOne ({},function (err, result)
 			{
 			loop_insert_proc (dict_aa,collection)
-
-			db.close()
-			console.log ("*** 終了 ***")
 			})
+
 		})
 	})
 

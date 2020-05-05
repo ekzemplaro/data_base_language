@@ -1,36 +1,41 @@
 //
 //	mongo_delete.ts
 //
-//					Feb/18/2016
+//					May/05/2020
 // ----------------------------------------------------------------
-declare function require(x: string): any;
-declare var process:any;
-
 var MongoClient = require('mongodb').MongoClient
+require('dotenv').config()
 
 console.log ("*** 開始 ***")
 
-var key=process.argv[2]
+var key:string =process.argv[2]
 
 console.log (key)
 
-var host = 'localhost'
-var port = 27017
+const user:string = process.env.user
+const password:string = process.env.password
+const db_name:string = process.env.db
+const collection_name:string = process.env.collection
 
-var db_name = 'city_db'
+const host:string = user + ':' + password + '@localhost'
+const port:number = 27017
 
-var str_connect = "mongodb://" + host + ":" + port + "/" + db_name + "?w=1" 
+const url:string = 'mongodb://' + host + ':' + port
+
 console.log("Connecting to " + host + ":" + port)
 
-MongoClient.connect (str_connect, function(err, db)
+const client = new MongoClient(url,
+    {useNewUrlParser: true,useUnifiedTopology: true})
+
+client.connect (function(err)
 {
-	var collection = db.collection('saitama')
+	const db = client.db(db_name)
+	const collection = db.collection(collection_name)
 
-	collection.remove({key: key}, {w:1}, function(err,nn_deleted)
+	collection.deleteOne({key: key}, function(err,result)
 		{
-		db.close()
+		client.close()
 
-		console.log (nn_deleted)
 		console.log ("*** 終了 ***")
 		})
 })
