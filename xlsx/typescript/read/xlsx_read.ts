@@ -2,16 +2,14 @@
 //
 //	xlsx_read.ts
 //
-//					Feb/24/2016
+//					May/05/2020
 //
 // ---------------------------------------------------------------
-declare function require(x: string): any;
-declare var process:any;
-
 var fs = require('fs')
 var node_common = '/var/www/data_base/common/node_common'
+var typescript_common = '/var/www/data_base/common/typescript_common'
 
-var text_manipulate=require (node_common + '/text_manipulate')
+var text_manipulate=require (typescript_common + '/text_manipulate')
 var xlsx_manipulate=require (node_common + '/xlsx_manipulate')
 // ---------------------------------------------------------------
 console.log ("*** 開始 ***")

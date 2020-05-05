@@ -1,7 +1,7 @@
 // ---------------------------------------------------------------
 //	json_create.ts
 //
-//					May/01/2020
+//					May/05/2020
 //
 // ---------------------------------------------------------------
 var fs = require("fs")
@@ -9,11 +9,11 @@ var text_manipulate = require('/var/www/data_base/common/typescript_common/text_
 // ---------------------------------------------------------------
 console.log ("*** 開始 ***")
 
-var filename:string =process.argv[2]
+const filename:string =process.argv[2]
 
-var dict_aa = data_prepare_proc ()
+const dict_aa:Object  = data_prepare_proc ()
 
-var json_str:string = JSON.stringify(dict_aa)
+const json_str:string = JSON.stringify(dict_aa)
 
 fs.writeFile (filename,json_str, function (err)
 	{
@@ -31,8 +31,8 @@ function data_prepare_proc ()
 {
 	var dict_aa = new Object ()
 
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t0921','宇都宮',67214,'2012-4-12')
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t0922','小山',21857,'2012-7-15')
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t0921','宇都宮',57214,'2012-4-12')
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t0922','小山',31857,'2012-7-15')
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t0923','佐野',68941,'2012-9-2')
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t0924','足利',31764,'2012-2-22')
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t0925','日光',49385,'2012-8-14')

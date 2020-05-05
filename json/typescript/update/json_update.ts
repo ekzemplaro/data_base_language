@@ -1,7 +1,7 @@
 // ---------------------------------------------------------------
 //	json_update.ts
 //
-//					May/01/2020
+//					May/05/2020
 //
 // ---------------------------------------------------------------
 var fs = require("fs")
@@ -16,12 +16,12 @@ var population_in:number = parseInt(process.argv[4])
 console.log (filename)
 console.log (id_in + "\t" + population_in)
 
-var json_str:string = fs.readFileSync(filename,'utf8')
-var dict_aa = JSON.parse (json_str)
+const json_str:string = fs.readFileSync(filename,'utf8')
+var dict_aa:Object = JSON.parse (json_str)
 
-var dict_bb = text_manipulate.dict_update_proc (dict_aa,id_in,population_in)
+const dict_bb = text_manipulate.dict_update_proc (dict_aa,id_in,population_in)
 
-var json_str_out:string = JSON.stringify(dict_bb)
+const json_str_out:string = JSON.stringify(dict_bb)
 
 fs.writeFile (filename,json_str_out, function (err)
 	{

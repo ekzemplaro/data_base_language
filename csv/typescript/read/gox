@@ -1,1 +1,1 @@
-nodejs ./csv_read.js /var/tmp/csv/cities.csv
+ts-node csv_read.ts /var/tmp/csv/cities.csv

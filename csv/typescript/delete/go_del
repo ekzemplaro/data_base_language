@@ -1,1 +1,1 @@
-node csv_delete.js /var/tmp/csv/cities.csv t1278
+ts-node csv_delete.ts /var/tmp/csv/cities.csv t1278

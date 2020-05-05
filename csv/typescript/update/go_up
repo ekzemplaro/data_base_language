@@ -1,1 +1,1 @@
-nodejs ./csv_update.js /var/tmp/csv/cities.csv t1276 43192500
+ts-node csv_update.ts /var/tmp/csv/cities.csv t1276 43192500

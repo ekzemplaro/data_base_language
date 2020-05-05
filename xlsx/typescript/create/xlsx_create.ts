@@ -2,15 +2,14 @@
 //
 //	xlsx_create.ts
 //
-//					Feb/24/2016
+//					May/05/2020
 //
 // ---------------------------------------------------------------
-declare function require(x: string): any;
-declare var process:any;
-
 var fs = require("fs")
 var node_common = '/var/www/data_base/common/node_common'
-var text_manipulate=require (node_common + '/text_manipulate')
+var typescript_common = '/var/www/data_base/common/typescript_common'
+
+var text_manipulate=require (typescript_common + '/text_manipulate')
 var xlsx_manipulate=require (node_common + '/xlsx_manipulate')
 
 var xlsx = require('node-xlsx')
@@ -20,7 +19,7 @@ function data_prepare_proc ()
 {
 	var dict_aa = new Object ()
 
-	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t2971','奈良',761425,'2012-2-28')
+	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t2971','奈良',561425,'2012-2-22')
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t2972','大和高田',835217,'2012-4-15')
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t2973','大和郡山',652841,'2012-10-2')
 	dict_aa = text_manipulate.dict_append_proc (dict_aa,'t2974','天理',531864,'2012-6-22')
@@ -36,9 +35,9 @@ function data_prepare_proc ()
 // ---------------------------------------------------------------
 console.log ("*** 開始 ***")
 
-var xlsx_file: string = process.argv[2]
+const xlsx_file: string = process.argv[2]
 
-var dict_aa = data_prepare_proc ()
+const dict_aa = data_prepare_proc ()
 
 xlsx_manipulate.xlsx_write_proc (xlsx_file,dict_aa)
 
