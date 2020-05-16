@@ -1,3 +1,4 @@
 #
 # ./add_lang.js sheet_bb.json elixir sheet_cc.json
-./add_lang.js sheet_bb.json nashorn sheet_cc.json
+#./add_lang.js sheet_bb.json nashorn sheet_cc.json
+./add_lang.js sheet_bb.json deno sheet_cc.json

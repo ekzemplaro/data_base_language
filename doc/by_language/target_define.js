@@ -234,6 +234,7 @@ function suffix_define_proc ()
 	suffix["vb"] = "vb";
 	suffix["elixir"] = "exs";
 	suffix["nashorn"] = "js";
+	suffix["deno"] = "ts";
 
 	return	suffix;
 }

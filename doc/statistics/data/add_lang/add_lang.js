@@ -1,4 +1,4 @@
-#! /usr/bin/nodejs
+#! /usr/bin/node
 // ---------------------------------------------------------------
 //	add_lang.js
 //
@@ -42,7 +42,16 @@ console.log (data_aa.dbase.Bash.year);
 
 var json_str = JSON.stringify(data_aa);
 
-fs.writeFile (file_new,json_str);
+fs.writeFile (file_new,json_str,function (err)
+	{
+	if (err) {
+		console.error ("Error on write: " + err)
+		}
+	else {
+		console.log("File written.")
+		console.error ("*** ppp ***")
+		}
+	})
 
 console.log ("*** 終了 ***");
 // ---------------------------------------------------------------

@@ -1,0 +1,1 @@
+deno run  --allow-read text_read.ts /var/tmp/plain_text/cities.txt

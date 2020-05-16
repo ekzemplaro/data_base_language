@@ -21,7 +21,7 @@ PHP<p />
 Python<p />
 <blockquote>
 	# pacman -S python-xmltodict<p />
-	$ yaourt -Sb python-dicttoxml<p />
+	$ yay python-dicttoxml<p />
 </blockquote>
 
 Perl<p />
@@ -90,4 +90,4 @@ xmllint --format aaa.xml<p />
 <blockquote>
 </blockquote>
 
-Feb/17/2018<br />
+May/05/2020<br />

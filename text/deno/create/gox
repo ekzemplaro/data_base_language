@@ -1,0 +1,1 @@
+deno run --allow-write text_create.ts /var/tmp/plain_text/cities.txt

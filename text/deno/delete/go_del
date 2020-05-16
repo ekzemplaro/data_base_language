@@ -1,0 +1,2 @@
+#
+deno run --allow-read --allow-write  text_delete.ts /var/tmp/plain_text/cities.txt t2384
