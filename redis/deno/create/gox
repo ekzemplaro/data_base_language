@@ -1,0 +1,2 @@
+#
+deno run --allow-net redis_create.ts

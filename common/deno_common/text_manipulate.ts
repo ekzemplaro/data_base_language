@@ -1,7 +1,7 @@
 // ---------------------------------------------------------------
 //	text_manipulate.ts
 //
-//					May/15/2020
+//					May/16/2020
 //
 // ---------------------------------------------------------------
 import { readFileStrSync } from "https://deno.land/std/fs/read_file_str.ts"
@@ -124,7 +124,7 @@ export function dict_update_proc (dict_in: {[key: string]: any},id_in:string,pop
 }
 
 // ---------------------------------------------------------------
-function get_current_date_proc ()
+export function get_current_date_proc ()
 {
 	var today = new Date ()
 	var ddx = (1900 + today.getFullYear ()) + "-" + (today.getMonth () +1)

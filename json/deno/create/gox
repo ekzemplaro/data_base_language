@@ -1,0 +1,2 @@
+#
+deno run --allow-write json_create.ts /var/tmp/json/cities.json

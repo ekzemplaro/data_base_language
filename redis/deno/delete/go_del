@@ -1,0 +1,2 @@
+#
+deno run --allow-net redis_delete.ts t1858

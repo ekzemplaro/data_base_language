@@ -1,0 +1,1 @@
+deno run --allow-read --allow-write json_delete.ts /var/tmp/json/cities.json t0927

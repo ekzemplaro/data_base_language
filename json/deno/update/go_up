@@ -1,0 +1,1 @@
+deno run --allow-read --allow-write json_update.ts /var/tmp/json/cities.json t0924 85167300

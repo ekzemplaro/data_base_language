@@ -1,0 +1,1 @@
+deno run --allow-read json_read.ts /var/tmp/json/cities.json
