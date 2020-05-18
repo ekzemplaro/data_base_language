@@ -1,7 +1,7 @@
 // ---------------------------------------------------------------
 //	redis_read.ts
 //
-//					May/16/2020
+//					May/18/2020
 //
 // ---------------------------------------------------------------
 import { connect } from "https://denopkg.com/keroxp/deno-redis/mod.ts"
@@ -22,13 +22,14 @@ console.log ("*** 開始 ***")
 
 const client = await connect({ hostname: "127.0.0.1", port: 6379 })
 
-const keys:string[]=["t1851","t1852","t1853",
-	"t1854","t1855","t1856",
-	"t1857","t1858","t1859"]
+const rvalue = await client.executor.exec("keys", "*")
+
+const json_str = JSON.stringify(rvalue[1])
+const keys:string[] = JSON.parse(json_str) 
 
 for (var it in keys)
 	{
-	const key:string = keys[it]
+	const key:string = keys[it].toString()
 	const reply = await client.get(key)
 	if (reply != null)
 		{
