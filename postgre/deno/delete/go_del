@@ -1,0 +1,2 @@
+#
+deno run --allow-net  postgre_delete.ts t3467

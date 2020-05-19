@@ -1,0 +1,2 @@
+#
+deno run --allow-net  postgre_update.ts t3466 23978100

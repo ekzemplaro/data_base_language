@@ -1,3 +1,2 @@
 #
-#
-deno run --allow-net maria_create.ts
+deno run --allow-read --allow-net maria_create.ts

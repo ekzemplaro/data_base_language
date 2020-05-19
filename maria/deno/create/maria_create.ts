@@ -1,11 +1,14 @@
 // ---------------------------------------------------------------
 //	maria_create.ts
 //
-//					May/18/2020
+//					May/19/2020
 //
 // ---------------------------------------------------------------
 import { Client } from "https://deno.land/x/mysql/mod.ts"
+import { config } from "https://deno.land/x/dotenv/mod.ts"
+
 import { dict_append_proc } from "./text_manipulate.ts"
+import { insert_command_gen } from "./sql_manipulate.ts"
 
 // ---------------------------------------------------------------
 function data_prepare_proc ()
@@ -20,7 +23,7 @@ function data_prepare_proc ()
 	dict_aa = dict_append_proc (dict_aa,'t3326','井原',865792,'2014-9-12')
 	dict_aa = dict_append_proc (dict_aa,'t3327','総社',438251,'2014-3-21')
 	dict_aa = dict_append_proc (dict_aa,'t3328','高梁',352486,'2014-6-26')
-	dict_aa = dict_append_proc (dict_aa,'t3329','新見',126957,'2014-11-2')
+	dict_aa = dict_append_proc (dict_aa,'t3329','新見',286957,'2014-11-2')
 	
 
 	return	dict_aa
@@ -28,13 +31,15 @@ function data_prepare_proc ()
 // ---------------------------------------------------------------
 console.log ("*** 開始 ***")
 
+const config_env:any = config()
+
 const dict_aa = data_prepare_proc ()
 
 const client = await new Client().connect({
   hostname: "127.0.0.1",
-  username: "scott",
-  password: "tiger123",
-  db: "city",
+  username: config_env.user,
+  password: config_env.password,
+  db: config_env.data_base,
 })
 
 
@@ -49,13 +54,8 @@ console.log(result)
 
 	for (var key  in dict_aa)
 		{
-		var sql_str: string  = "insert into cities (id,name,population,date_mod) values ("
-
-		var str_data: string = "'" + key + "','" + dict_aa[key].name + "',"
-		+ dict_aa[key].population + ",'" + dict_aa[key].date_mod + "')"
-
-		sql_str += str_data
-		result = await client.query(sql_str)
+		const sql_str: string  = insert_command_gen(key,dict_aa[key])
+		var result = await client.query(sql_str)
 		console.log(result)
 		}
 

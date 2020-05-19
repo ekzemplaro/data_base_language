@@ -1,2 +1,2 @@
 #
-deno run --allow-net maria_read.ts
+deno run --allow-read --allow-net maria_read.ts
