@@ -20,7 +20,7 @@ from text_manipulate import dict_append_proc
 def data_prepare_proc():
 	dict_aa = {}
 #
-	dict_aa = dict_append_proc(dict_aa,'t2261','静岡',48157,'2003-4-7')
+	dict_aa = dict_append_proc(dict_aa,'t2261','静岡',47153,'2003-5-7')
 	dict_aa = dict_append_proc(dict_aa,'t2262','浜松',32785,'2003-5-4')
 	dict_aa = dict_append_proc(dict_aa,'t2263','沼津',76954,'2003-8-21')
 	dict_aa = dict_append_proc(dict_aa,'t2264','三島',91368,'2003-9-15')

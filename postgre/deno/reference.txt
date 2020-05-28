@@ -1,2 +1,2 @@
-sql_manipulate.js
-text_manipulate.js
+sql_manipulate.ts
+text_manipulate.ts

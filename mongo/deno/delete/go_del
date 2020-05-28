@@ -1,0 +1,4 @@
+#
+#
+deno run --allow-net --allow-write --allow-read  --allow-plugin --unstable  mongo_delete.ts t1167
+#

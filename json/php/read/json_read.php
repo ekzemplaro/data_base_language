@@ -9,7 +9,7 @@
 $path="/var/www/data_base/common/php_common";
 set_include_path (get_include_path() . PATH_SEPARATOR . $path);
 //
-include "text_manipulate.php";
+include_once "text_manipulate.php";
 //
 // ------------------------------------------------------------------
 fputs (STDERR,"*** 開始 ***\n");

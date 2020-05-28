@@ -175,8 +175,8 @@ Arch Linux<p />
 
 root のパスワードの再設定<br />
 <blockquote>
-# systemctl stop mysqld<br />
-# mysqld_safe --skip-grant-tables<br />
+sudo systemctl stop mysqld<br />
+sudo mysqld_safe --skip-grant-tables --skip-networking &<br />
 <p />
 <pre>
 $ mysql -u root
@@ -188,9 +188,8 @@ Copyright (c) 2000, 2016, Oracle, MariaDB Corporation Ab and others.
 
 Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
-MariaDB [(none)]> UPDATE mysql.user SET Password=PASSWORD('newpassword') WHERE User='root';
-Query OK, 4 rows affected (0.04 sec)
-Rows matched: 4  Changed: 4  Warnings: 0
+MariaDB [(none)]> FLUSH PRIVILEGES;
+MariaDB [(none)]> ALTER USER 'root'@'localhost' IDENTIFIED BY 'tiger123';
 
 MariaDB [(none)]> FLUSH PRIVILEGES;
 Query OK, 0 rows affected (0.00 sec)

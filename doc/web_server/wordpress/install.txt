@@ -34,16 +34,16 @@ MySQL の設定<p />
 	<blockquote>
 	コンソールでの作成<p />
 	<blockquote>
-	MariaDB [(none)]> create user 'wordpress'@'localhost' identified by 'tiger';<p />
+	MariaDB [(none)]> create user 'wordpress'@'localhost' identified by 'tiger123';<p />
 	MariaDB [(none)]> create schema wordpress;<p />
-	MariaDB [(none)]> grant all on wordpress.* to wordpress;<p />
+	MariaDB [(none)]> grant all on wordpress.* to wordpress@localhost;<p />
 	</blockquote>
 	</blockquote>
 
 	<blockquote>
 	MySQL の設定の確認方法
 	<blockquote>
-		mysql -hlocalhost -uwordpress -ptiger<p />
+		mysql -hlocalhost -uwordpress -ptiger123<p />
 		<a href="./mysql.txt">実行結果</a><p />
 	</blockquote>
 	</blockquote>
@@ -60,7 +60,7 @@ MySQL の設定<p />
 		wp-config.php を編集します。<p />
 		define(‘DB_NAME’, ‘wordpress’);<br />
 		define(‘DB_USER’, ‘wordpress’);<br />
-		define('DB_PASSWORD', 'tiger');<br />
+		define('DB_PASSWORD', 'tiger123');<br />
 		</blockquote>
 	</ol>
 </blockquote>
