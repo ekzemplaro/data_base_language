@@ -1,4 +1,5 @@
 .env
+.deno_plugins
 *.jar
 *.dll
 *.pyc
