@@ -1,6 +1,7 @@
 #
 JAVA_COMMON=/var/www/data_base/common/java_common
 #export CLASSPATH=.:$JAVA_COMMON:/usr/share/java/mysql-connector-java.jar
-export CLASSPATH=.:$JAVA_COMMON:/usr/share/java/mariadb-jdbc/mariadb-java-client.jar
+#export CLASSPATH=.:$JAVA_COMMON:/usr/share/java/mariadb-jdbc/mariadb-java-client.jar
+export CLASSPATH=.:$JAVA_COMMON:/usr/share/java/mysql-connector-java-8.0.20.jar
 #
 java maria_delete t3326

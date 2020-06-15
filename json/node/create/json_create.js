@@ -2,9 +2,11 @@
 // ---------------------------------------------------------------
 //	json_create.js
 //
-//					Apr/15/2017
+//					Jun/08/2020
 //
 // ---------------------------------------------------------------
+'use strict'
+
 var fs = require("fs")
 var text_manipulate = require('/var/www/data_base/common/node_common/text_manipulate')
 // ---------------------------------------------------------------
@@ -22,7 +24,7 @@ fs.writeFile (file_json,json_str,function (err)
 		console.error ("Error on write: " + err)
 		}
 	else {
-		fs.chmodSync (file_json,0666)
+		fs.chmodSync (file_json,0o666)
 		console.log("File written.")
 		console.error ("*** 終了 ***")
 		}

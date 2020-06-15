@@ -85,6 +85,7 @@ Lambda<p />
 API Gateway<p />
 <blockquote>
 	$ aws apigateway get-rest-apis<p />
+	$ aws apigateway get-rest-api --rest-api-id 1234123412<p />
 	$ aws apigateway delete-rest-api --rest-api-id 1234123412<p />
 </blockquote>
 
@@ -152,7 +153,17 @@ credentials.csv をダウンロードしたら<p />
 	</blockquote>
 
 <hr />
+AWS CLI バージョン 2 のインストール<p />
+Arch Linux<p />
+	<blockquote>
+	yay aws-cli-v2<br />
+	cd /usr/share/aws-cli/v2/<br />
+	sudo rm current<br />
+	sudo ln -s /usr/share/aws-cli/v2/2.0.19 current<br />
+	</blockquote>
+
+<hr />
 <a href="../">Return</a><p />
-May/08/2018 AM 08:15<p />
+Jun/09/2020 AM 08:15<p />
 </body>
 </html>

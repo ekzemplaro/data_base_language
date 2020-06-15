@@ -1,10 +1,11 @@
-#! /usr/bin/nodejs
+#! /usr/bin/node
 // ---------------------------------------------------------------
 //	delete/text_delete.js
 //
-//					Dec/26/2016
+//					Jun/08/2020
 //
 // ---------------------------------------------------------------
+'use strict'
 var fs = require("fs")
 var text_manipulate=require ("/var/www/data_base/common/node_common/text_manipulate")
 

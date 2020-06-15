@@ -9,7 +9,7 @@
 <meta content="node.js,rhino" name="keyword">
 <meta content="JSON,redis,CouchDB" name="keyword">
 <meta content="Uchida Masatomo" name="author">
-<script src="/js/jquery-3.5.0.min.js"></script>
+<script src="/js/jquery-3.5.1.min.js"></script>
 <script>
 jQuery (function ()
 {

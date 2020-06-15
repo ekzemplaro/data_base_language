@@ -1,10 +1,12 @@
-#! /usr/bin/nodejs
+#! /usr/bin/node
 // ---------------------------------------------------------------
 //	text_create.js
 //
-//					Dec/26/2016
+//					Jun/08/2020
 //
 // ---------------------------------------------------------------
+'use strict'
+
 var fs = require("fs")
 var text_manipulate=require ("/var/www/data_base/common/node_common/text_manipulate")
 //
@@ -36,7 +38,7 @@ const dict_aa = data_prepare_proc ()
 
 text_manipulate.text_write_proc (file_out,dict_aa)
 
-fs.chmodSync (file_out,0666)
+fs.chmodSync (file_out,0o666)
 
 console.error ("*** 終了 ***")
 

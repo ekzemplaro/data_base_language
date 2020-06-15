@@ -2,9 +2,11 @@
 // ---------------------------------------------------------------
 //	maria_create.js
 //
-//					Apr/07/2015
+//					Jun/14/2020
 //
 // ---------------------------------------------------------------
+'use strict'
+
 var mysql = require('mysql')
 var text_manipulate= require ('/var/www/data_base/common/node_common/text_manipulate')
 
