@@ -2,7 +2,7 @@
 #
 #	maria_create.pl
 #
-#					Jun/18/2020
+#					Jun/21/2020
 #
 #
 # ----------------------------------------------------------------
@@ -17,7 +17,7 @@ use text_manipulate;
 use sql_manipulate;
 #
 # ----------------------------------------------------------------
-print	(encode ('utf-8',"*** 開始 ***\n"));
+print STDERR (encode ('utf-8',"*** 開始 ***\n"));
 #
 #
 my %dict_aa = data_prepare_proc ();
@@ -39,16 +39,16 @@ sql_manipulate::table_insert_proc ($dbi,%dict_aa);
 #
 $dbi->disconnect;
 #
-print	(encode ('utf-8',"*** 終了 ***\n"));
+print STDERR (encode ('utf-8',"*** 終了 ***\n"));
 #
 # ----------------------------------------------------------------
 sub data_prepare_proc
 {
 	my %dict_aa;
 	%dict_aa = text_manipulate::dict_append_proc
-		('t3321','岡山',915842,'2005-6-24',%dict_aa);
+		('t3321','岡山',315842,'2005-6-24',%dict_aa);
 	%dict_aa = text_manipulate::dict_append_proc
-		('t3322','倉敷',364278,'2005-8-8',%dict_aa);
+		('t3322','倉敷',964278,'2005-8-8',%dict_aa);
 	%dict_aa = text_manipulate::dict_append_proc
 		('t3323','津山',758641,'2005-9-17',%dict_aa);
 	%dict_aa = text_manipulate::dict_append_proc

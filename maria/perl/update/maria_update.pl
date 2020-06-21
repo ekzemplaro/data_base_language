@@ -2,7 +2,7 @@
 #
 #	maria_update.pl
 #
-#					Jun/18/2020
+#					Jun/21/2020
 #
 # -----------------------------------------------------------------------
 use	strict;
@@ -14,7 +14,7 @@ use lib '/var/www/data_base/common/perl_common';
 use sql_manipulate;
 use text_manipulate;
 # -----------------------------------------------------------------------
-print	(encode ('utf-8',"*** 開始 ***\n"));
+print STDERR (encode ('utf-8',"*** 開始 ***\n"));
 #
 my $id_in = $ARGV[0];
 my $population_in = $ARGV[1];
@@ -30,9 +30,8 @@ sql_manipulate::mysql_utf8_proc ($dbi);
 #
 sql_manipulate::dbi_update_proc ($id_in,$population_in,$dbi);
 #
-#
 sql_manipulate::sql_show_proc ($dbi);
 $dbi->disconnect;
 #
-print	(encode ('utf-8',"*** 終了 ***\n"));
+print STDERR (encode ('utf-8',"*** 終了 ***\n"));
 # -----------------------------------------------------------------------

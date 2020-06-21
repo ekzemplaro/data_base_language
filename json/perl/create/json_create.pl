@@ -2,7 +2,7 @@
 #
 #	json_create.pl
 #
-#					Sep/14/2011
+#					Jun/21/2020
 #
 #
 # ----------------------------------------------------------------
@@ -18,29 +18,26 @@ use text_manipulate;
 use file_io;
 #
 # ----------------------------------------------------------------
-print (encode ('utf-8',"*** 開始 ***\n"));
+print STDERR (encode ('utf-8',"*** 開始 ***\n"));
 #
-
 my $file_json = $ARGV[0];
 #
 
 my %dict_aa = data_prepare_proc ();
-#my %dict_aa = %{$dict_data};
 
-text_manipulate::dict_display_proc (%dict_aa);
 my $str_json = encode_json (\%dict_aa);
 
 #print ($str_json);
 #
 file_io::string_write_proc ($file_json,$str_json);
 #
-print (encode ('utf-8',"*** 終了 ***\n"));
+print STDERR (encode ('utf-8',"*** 終了 ***\n"));
 #
 # ----------------------------------------------------------------
 sub data_prepare_proc
 {
 	my %dict_aa = text_manipulate::dict_append_proc
-		('t0921','宇都宮',71842,'2005-9-12',%dict_aa);
+		('t0921','宇都宮',51842,'2005-6-12',%dict_aa);
 	%dict_aa = text_manipulate::dict_append_proc
 		('t0922','小山',14278,'2005-3-15',%dict_aa);
 	%dict_aa = text_manipulate::dict_append_proc

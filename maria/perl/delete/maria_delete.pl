@@ -2,7 +2,7 @@
 #
 #	maria_delete.pl
 #
-#					Jun/18/2020
+#					Jun/21/2020
 #
 # -----------------------------------------------------------------------
 use	strict;
@@ -15,7 +15,7 @@ use lib '/var/www/data_base/common/perl_common';
 use sql_manipulate;
 use text_manipulate;
 # -----------------------------------------------------------------------
-print	(encode ('utf-8',"*** 開始 ***\n"));
+print STDERR (encode ('utf-8',"*** 開始 ***\n"));
 #
 my $id_in = $ARGV[0];
 #
@@ -32,5 +32,5 @@ sql_manipulate::dbi_delete_proc ($id_in,$dbi);
 #
 $dbi->disconnect;
 #
-print	(encode ('utf-8',"*** 終了 ***\n"));
+print STDERR (encode ('utf-8',"*** 終了 ***\n"));
 # -----------------------------------------------------------------------
