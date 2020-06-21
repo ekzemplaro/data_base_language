@@ -2,7 +2,7 @@
 #
 #	maria_delete.pl
 #
-#					Dec/26/2013
+#					Jun/18/2020
 #
 # -----------------------------------------------------------------------
 use	strict;
@@ -23,14 +23,13 @@ print ("$id_in\n");
 #
 my $constr = 'DBI:mysql:city:localhost';
 my $user = 'scott';
-my $passwd = 'tiger';
+my $passwd = 'tiger123';
 my $dbi = DBI->connect($constr, $user, $passwd);
 #
 sql_manipulate::mysql_utf8_proc ($dbi);
 #
 sql_manipulate::dbi_delete_proc ($id_in,$dbi);
 #
-sql_manipulate::sql_show_proc ($dbi);
 $dbi->disconnect;
 #
 print	(encode ('utf-8',"*** 終了 ***\n"));

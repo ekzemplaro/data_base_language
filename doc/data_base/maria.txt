@@ -29,7 +29,7 @@ Query OK, 0 rows affected (0.00 sec)
 MariaDB [(none)]> create schema city;
 Query OK, 1 row affected (0.00 sec)
 
-MariaDB [(none)]> grant all on city.* to scott;
+MariaDB [(none)]> grant all on city.* to 'scott'@'localhost';
 Query OK, 0 rows affected (0.00 sec)
 
 MariaDB [(none)]> flush privileges;
@@ -110,6 +110,12 @@ Python<p />
 Ruby<p />
 <blockquote>
 	$ gem install ruby-mysql<p />
+</blockquote>
+
+Perl<p />
+<blockquote>
+	$ sudo apt install libdbi-perl<p />
+	$ sudo apt install libdbd-mysql-perl<p />
 </blockquote>
 
 Lua<p />

@@ -21,7 +21,7 @@ use file_io;
 print (encode ('utf-8',"*** 開始 ***\n"));
 #
 
-my $file_json= $ARGV[0];
+my $file_json = $ARGV[0];
 #
 
 my %dict_aa = data_prepare_proc ();

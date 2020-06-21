@@ -2,7 +2,7 @@
 #
 #	maria_read.pl
 #
-#					Jun/08/2015
+#					Jun/21/2020
 #
 # -----------------------------------------------------------------------
 use	strict;
@@ -20,10 +20,12 @@ print	(encode ('utf-8',"*** 開始 ***\n"));
 #
 my $constr='DBI:mysql:city:localhost';
 my $user = 'scott';
-my $passwd = 'tiger';
+my $passwd = 'tiger123';
 #
 my $dbi=DBI->connect($constr, $user, $passwd);
+# print $DBI::errstr;
 #
+sql_manipulate::mysql_utf8_proc ($dbi);
 my %dict_aa = sql_manipulate::sql_to_dict_proc ($dbi);
 #
 $dbi->disconnect;

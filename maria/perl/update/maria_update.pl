@@ -2,7 +2,7 @@
 #
 #	maria_update.pl
 #
-#					Dec/26/2013
+#					Jun/18/2020
 #
 # -----------------------------------------------------------------------
 use	strict;
@@ -23,7 +23,7 @@ print ("$id_in\t$population_in\n");
 #
 my $constr = 'DBI:mysql:city:localhost';
 my $user = 'scott';
-my $passwd = 'tiger';
+my $passwd = 'tiger123';
 my $dbi = DBI->connect($constr, $user, $passwd);
 #
 sql_manipulate::mysql_utf8_proc ($dbi);

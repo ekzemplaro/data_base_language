@@ -2,7 +2,7 @@
 #
 #	maria_create.pl
 #
-#					Dec/26/2013
+#					Jun/18/2020
 #
 #
 # ----------------------------------------------------------------
@@ -27,7 +27,7 @@ text_manipulate::dict_display_proc (%dict_aa);
 my $constr = 'DBI:mysql:city:localhost';
 
 my $user = 'scott';
-my $passwd = 'tiger';
+my $passwd = 'tiger123';
 
 my $dbi = DBI->connect($constr, $user, $passwd);
 #
@@ -46,10 +46,9 @@ sub data_prepare_proc
 {
 	my %dict_aa;
 	%dict_aa = text_manipulate::dict_append_proc
-		('t3321','岡山',975842,'2005-6-24',%dict_aa);
-#		('t3321,(encode ('utf-8','岡山',75842,'2005-9-12',%dict_aa);
+		('t3321','岡山',915842,'2005-6-24',%dict_aa);
 	%dict_aa = text_manipulate::dict_append_proc
-		('t3322','倉敷',314278,'2005-8-8',%dict_aa);
+		('t3322','倉敷',364278,'2005-8-8',%dict_aa);
 	%dict_aa = text_manipulate::dict_append_proc
 		('t3323','津山',758641,'2005-9-17',%dict_aa);
 	%dict_aa = text_manipulate::dict_append_proc
