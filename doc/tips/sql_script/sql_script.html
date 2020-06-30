@@ -43,7 +43,7 @@
 
 ユーザーが存在しない時にユーザーを作成<p />
 <blockquote>
-	create user if not exists scott@localhost identified by 'tiger';<p />
+	create user if not exists scott@localhost identified by 'tiger123';<p />
 </blockquote>
 
 カラムの追加<p />
@@ -73,6 +73,11 @@
 	set character_set_client='utf8';<p />
 </blockquote>
 
+文字コードの表示<p />
+<blockquote>
+	SHOW CHARACTER SET;<p />
+</blockquote>
+
 Insert ができない時は、Update<p />
 <blockquote>
 	insert into city_city set code='t3321',name='岡山aaa',population=691734,date_mod='2001-2-15' on DUPLICATE KEY UPDATE name='岡山bbb',population = 39111,date_mod='2018-4-25';<p />
@@ -86,6 +91,6 @@ Insert ができない時は、Update<p />
 
 <hr />
 <a href="../">Return</a><p />
-May/30/2020 AM 08:00<p />
+Jun/23/2020 AM 08:00<p />
 </body>
 </html>

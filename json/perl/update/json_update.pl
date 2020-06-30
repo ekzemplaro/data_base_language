@@ -2,7 +2,7 @@
 #
 #	json_update.pl
 #
-#					Jun/21/2020
+#					Jun/22/2020
 #
 #
 # ----------------------------------------------------------------
@@ -18,7 +18,7 @@ use text_manipulate;
 use file_io;
 #
 # ----------------------------------------------------------------
-print STDERR (encode ('utf-8',"*** 開始 ***\n"));
+print STDERR encode_utf8 ("*** 開始 ***\n");
 my $file_json= $ARGV[0];
 my $id_in = $ARGV[1];
 my $population_in = $ARGV[2];
@@ -39,6 +39,6 @@ my $json_str_new = encode_json (\%dict_aa);
 #
 file_io::string_write_proc ($file_json,$json_str_new);
 #
-print STDERR (encode ('utf-8',"*** 終了 ***\n"));
+print STDERR encode_utf8 ("*** 終了 ***\n");
 #
 # ----------------------------------------------------------------
