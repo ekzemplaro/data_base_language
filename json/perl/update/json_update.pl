@@ -2,7 +2,7 @@
 #
 #	json_update.pl
 #
-#					Jun/22/2020
+#					Jul/02/2020
 #
 #
 # ----------------------------------------------------------------
@@ -10,15 +10,16 @@ use	strict;
 use	warnings;
 use	utf8;
 #
-use Encode;
 use JSON;
+binmode STDOUT, ":encoding(UTF-8)";
+binmode STDERR, ":encoding(UTF-8)";
 #
 use lib '/var/www/data_base/common/perl_common';
 use text_manipulate;
 use file_io;
 #
 # ----------------------------------------------------------------
-print STDERR encode_utf8 ("*** 開始 ***\n");
+print STDERR "*** 開始 ***\n";
 my $file_json= $ARGV[0];
 my $id_in = $ARGV[1];
 my $population_in = $ARGV[2];
@@ -39,6 +40,6 @@ my $json_str_new = encode_json (\%dict_aa);
 #
 file_io::string_write_proc ($file_json,$json_str_new);
 #
-print STDERR encode_utf8 ("*** 終了 ***\n");
+print STDERR "*** 終了 ***\n";
 #
 # ----------------------------------------------------------------

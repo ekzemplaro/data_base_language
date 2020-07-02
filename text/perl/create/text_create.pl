@@ -2,20 +2,20 @@
 #
 #	text_create.pl
 #
-#					Dec/01/2011
+#					Jun/02/2020
 #
 #
 # ----------------------------------------------------------------
 use	strict;
 use	warnings;
 use	utf8;
-use	Encode;
+binmode STDOUT, ":encoding(UTF-8)";
 #
 use lib '/var/www/data_base/common/perl_common';
 use text_manipulate;
 #
 # ----------------------------------------------------------------
-print (encode ('utf-8',"*** 開始 ***\n"));
+print "*** 開始 ***\n";
 #
 my $file_text= $ARGV[0];
 #
@@ -24,14 +24,14 @@ my %dict_aa = data_prepare_proc ();
 #text_manipulate::dict_display_proc (%dict_aa);
 text_manipulate::text_write_proc ($file_text,%dict_aa);
 #
-print (encode ('utf-8',"*** 終了 ***\n"));
+print "*** 終了 ***\n";
 #
 # ----------------------------------------------------------------
 sub data_prepare_proc
 {
 	my %dict_aa;
 	%dict_aa = text_manipulate::dict_append_proc
-		('t2381','名古屋',75842,'2005-9-12',%dict_aa);
+		('t2381','名古屋',71842,'2005-9-12',%dict_aa);
 	%dict_aa = text_manipulate::dict_append_proc
 		('t2382','豊橋',14278,'2005-3-15',%dict_aa);
 	%dict_aa = text_manipulate::dict_append_proc

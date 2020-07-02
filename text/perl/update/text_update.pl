@@ -2,13 +2,13 @@
 #
 #	update/text_update.pl
 #
-#					Jan/24/2011
+#					Jul/02/2020
 #
 # ----------------------------------------------------------------
 use	strict;
 use	warnings;
 use	utf8;
-use	Encode;
+binmode STDOUT, ":encoding(UTF-8)";
 #
 use lib '/var/www/data_base/common/perl_common';
 use text_manipulate;
@@ -20,16 +20,14 @@ my $population_in = $ARGV[2];
 print	$id_in . "\t";
 print	$population_in . "\n";
 #
-print	(encode ('utf-8',"*** 開始 ***\n"));
+print	"*** 開始 ***\n";
 #
 my %hash = text_manipulate::text_read_proc ($file_text);
 
 %hash = text_manipulate::dict_update_proc ($id_in,$population_in,%hash);
-
-text_manipulate::dict_display_proc (%hash);
 #
 text_manipulate::text_write_proc ($file_text,%hash);
 #
-print	(encode ('utf-8',"*** 終了 ***\n"));
+print	"*** 終了 ***\n";
 #
 # ----------------------------------------------------------------------

@@ -2,7 +2,7 @@
 #
 #	json_create.pl
 #
-#					Jun/22/2020
+#					Jul/02/2020
 #
 #
 # ----------------------------------------------------------------
@@ -11,14 +11,15 @@ use	warnings;
 use	utf8;
 #
 use JSON;
-use Encode;
+binmode STDOUT, ":encoding(UTF-8)";
+binmode STDERR, ":encoding(UTF-8)";
 #
 use lib '/var/www/data_base/common/perl_common';
 use text_manipulate;
 use file_io;
 #
 # ----------------------------------------------------------------
-print STDERR encode_utf8 ("*** 開始 ***\n");
+print STDERR "*** 開始 ***\n";
 #
 my $file_json = $ARGV[0];
 #
@@ -27,11 +28,10 @@ my %dict_aa = data_prepare_proc ();
 
 my $str_json = encode_json (\%dict_aa);
 
-#print ($str_json);
 #
 file_io::string_write_proc ($file_json,$str_json);
 #
-print STDERR encode_utf8 ("*** 終了 ***\n");
+print STDERR "*** 終了 ***\n";
 #
 # ----------------------------------------------------------------
 sub data_prepare_proc

@@ -2,7 +2,7 @@
 #
 #	perl_common/text_manipulate.pm
 #
-#					Dec/01/2011
+#					Jun/02/2020
 #
 #
 package	text_manipulate;
@@ -65,8 +65,7 @@ sub	dict_display_proc
 		$out_str .=  ${$dict_aa{$key}}{"name"} . "\t";
 		$out_str .= ${$dict_aa{$key}}{"population"} . "\t";
 		$out_str .= ${$dict_aa{$key}}{"date_mod"} . "\n";
-		print (encode ('utf-8',$out_str));
-#		print $out_str;
+		print $out_str;
 			}
 	}
 }
