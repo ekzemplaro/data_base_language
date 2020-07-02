@@ -76,6 +76,7 @@ sub	text_write_proc_exec
 	my ($delimit,$file_out,%hash) = @_;
 
 	open (OUT,">$file_out");
+	binmode OUT, ":encoding(UTF-8)";
 
 	foreach my $key (sort keys %hash){
 		my $out_str = $key . $delimit;
@@ -83,8 +84,8 @@ sub	text_write_proc_exec
 		$out_str .= ${$hash{$key}}{"population"} . $delimit;
 		$out_str .= ${$hash{$key}}{"date_mod"} . "\n";
 
-		print OUT (encode ('utf-8',$out_str));
-#		print OUT ($out_str);
+#		print OUT (encode ('utf-8',$out_str));
+		print OUT $out_str;
 	}
 
 	close (OUT);
