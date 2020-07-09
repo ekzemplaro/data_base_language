@@ -2,12 +2,13 @@
 /*
 	text_read.rs
 
-						Mar/20/2015
+						Jul/09/2020
 */
 // --------------------------------------------------------------------
 use std::env;
-use std::old_io::File;
-use std::old_io::BufferedReader;
+use std::error;
+use std::fs::File;
+use std::io::{BufRead, BufReader};
 use std::collections::HashMap;
 // --------------------------------------------------------------------
 fn display_proc (map:HashMap<&str, HashMap <&str, &str>>) {
@@ -21,7 +22,7 @@ fn display_proc (map:HashMap<&str, HashMap <&str, &str>>) {
 }
 
 // --------------------------------------------------------------------
-fn main () {
+fn main () -> Result<(), Box<dyn error::Error>> {
 	println!("*** 開始 ***");
 
 	let args: Vec<_> = env::args().collect();
@@ -31,10 +32,7 @@ fn main () {
 	println! ("{}",fname_in);
 
 
-	let path = Path::new(fname_in);
-	let mut file = BufferedReader::new(File::open(&path));
-//	let mut dict_aa:HashMap<&str, HashMap <&str, &str>> = HashMap::new();
-	for line in file.lines() {
+	for line in BufReader::new(File::open(fname_in)?).lines() {
 		let str_line:String = line.unwrap();
 		let vvv: Vec<&str> = str_line.trim ().split_terminator('\t').collect();
 		let mut unit_aa:HashMap <&str,&str> = HashMap::new ();
@@ -42,14 +40,15 @@ fn main () {
 		unit_aa.insert("population", vvv[2]);
 		unit_aa.insert("date_mod", vvv[3]);
 
-	let mut dict_aa = HashMap::new();
+		let mut dict_aa = HashMap::new();
 		dict_aa.insert(vvv[0], unit_aa);
 		display_proc (dict_aa);
 	}
 
 
-
 	println!("*** 終了 ***");
+
+	Ok(())
 }
 
 // --------------------------------------------------------------------

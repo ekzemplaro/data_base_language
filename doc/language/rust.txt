@@ -1,7 +1,7 @@
 <meta content="Program Language Examples in racket" name="description">
 <meta content="Ada,クライアント,接続,言語,サンプル" name="keyword">
 <meta content="Uchida Masatomo" name="author">
-<title>rust Mar/20/2015</title>
+<title>rust Jul/09/2020</title>
 </head>
 <body>
 <h2><a href="http://www.rust-lang.org/">Rust</a></h2><p />
@@ -16,6 +16,11 @@ Arch Linux<br />
 <blockquote>
 # pacman -S rust<p />
 $ yaourt -Sb cargo-bin<p />
+</blockquote>
+
+Ubuntu<br />
+<blockquote>
+sudo apt install rustc<p />
 </blockquote>
 
 <a href="http://doc.crates.io/guide.html">Cargo Guide</a><br />

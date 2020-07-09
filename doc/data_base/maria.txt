@@ -251,7 +251,9 @@ GUI のツール<p />
 	mysql-workbench<p />
 </blockquote>
 
+データベースの初期化<p />
 <blockquote>
+	sudo mysql_install_db --datadir=/var/lib/mysql<p />
 </blockquote>
 
 <blockquote>
