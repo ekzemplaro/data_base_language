@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------
 /*
-	text_read.rs
+	text_delete.rs
 
 						Jul/11/2020
 */
@@ -10,17 +10,7 @@ use std::error;
 use std::fs::File;
 use std::io::{BufRead, BufReader};
 use std::collections::HashMap;
-// --------------------------------------------------------------------
-fn display_proc (map:HashMap<String, HashMap <String, String>>) {
-
-	for (key, val) in map.iter() {
-		print!("{}\t", key);
-		print!("{}\t", val["name"]);
-		print!("{}\t", val["population"]);
-		println!("{}", val["date_mod"]);
-	}
-}
-
+use std::io::{Write};
 // --------------------------------------------------------------------
 fn main () -> Result<(), Box<dyn error::Error>> {
 	println!("*** 開始 ***");
@@ -28,8 +18,10 @@ fn main () -> Result<(), Box<dyn error::Error>> {
 	let args: Vec<_> = env::args().collect();
 
 	let ref fname_in = args[1];
+	let key_in = &args[2];
 
 	println! ("{}",fname_in);
+	println! ("{}",key_in);
 
 	let mut dict_aa = HashMap::new();
 
@@ -44,7 +36,17 @@ fn main () -> Result<(), Box<dyn error::Error>> {
 		dict_aa.insert(vvv[0].to_string(), unit_aa);
 	}
 
-	display_proc (dict_aa);
+	dict_aa.remove(key_in);
+
+	let mut file = File::create(fname_in)?;
+
+for (key,value) in dict_aa.iter() {
+		let str_out = key.to_string () + "\t" + &value["name"]
+			+ "\t" + &value["population"]
+			+ "\t" + &value["date_mod"] + "\n";
+		print!("{}", str_out);
+		file.write_all (String::from(str_out).as_bytes())?;
+	}
 
 	println!("*** 終了 ***");
 

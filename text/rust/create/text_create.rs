@@ -2,7 +2,7 @@
 /*
 	text_create.rs
 
-						Jun/09/2020
+						Jul/11/2020
 */
 // --------------------------------------------------------------------
 use std::env;
@@ -11,24 +11,15 @@ use std::collections::HashMap;
 use std::io::{Write};
 // --------------------------------------------------------------------
 fn unit_prepare_proc (name:&'static str,population:&'static str,date_mod:&'static str)
-  -> HashMap<&'static str, &'static str>
+  -> HashMap<String, String>
 {
 
-	let mut unit_aa:HashMap<&str, &str> = HashMap::new();
-	unit_aa.insert("name",name);
-	unit_aa.insert("population",population);
-	unit_aa.insert("date_mod",date_mod);
+	let mut unit_aa:HashMap<String, String> = HashMap::new();
+	unit_aa.insert("name".to_string(),name.to_string());
+	unit_aa.insert("population".to_string(),population.to_string());
+	unit_aa.insert("date_mod".to_string(),date_mod.to_string());
 
 	return	unit_aa;
-}
-
-// --------------------------------------------------------------------
-fn unit_to_string_proc (key:&'static str,unit_aa:HashMap <&str, &str>)
-  ->  String {
-	let str_out = key.to_string () + "\t" + unit_aa["name"]
-	+ "\t" + unit_aa["population"] + "\t" + unit_aa["date_mod"] + "\n";
-
-	return	str_out;
 }
 
 // --------------------------------------------------------------------
@@ -41,27 +32,42 @@ fn main() -> std::io::Result<()>  {
 
 	let mut file = File::create(fname_out)?;
 
+	let mut dict_aa:HashMap<String,&HashMap<String,String>> = HashMap::new();
 
-	let mut unit_aa = unit_prepare_proc ("名古屋","39815","1956-3-25");
-	let mut str_out = unit_to_string_proc ("t2381",unit_aa);
-	file.write_all (String::from(str_out).as_bytes())?;
+	let unit_aa = unit_prepare_proc ("名古屋","37819","1956-10-21");
+	dict_aa.insert("t2381".to_string(),&unit_aa);
 
-	unit_aa = unit_prepare_proc ("豊橋","19268","1956-7-10");
-	str_out = unit_to_string_proc ("t2382",unit_aa);
-	file.write_all (String::from(str_out).as_bytes())?;
+	let unit_bb = unit_prepare_proc ("豊橋","19268","1956-7-10");
+	dict_aa.insert("t2382".to_string(),&unit_bb);
 
-	unit_aa = unit_prepare_proc ("岡崎","42853","1956-9-21");
-	str_out = unit_to_string_proc ("t2383",unit_aa);
-	file.write_all (String::from(str_out).as_bytes())?;
+	let unit_cc = unit_prepare_proc ("岡崎","42853","1956-9-21");
+	dict_aa.insert("t2383".to_string(),&unit_cc);
 
+	let unit_dd = unit_prepare_proc ("一宮","37621","1956-6-14");
+	dict_aa.insert("t2384".to_string(),&unit_dd);
 
-	file.write_all(String::from("t2384\t一宮\t31864\t1950-6-22\n").as_bytes())?;
-	file.write_all(String::from("t2385\t蒲郡\t49158\t1950-8-14\n").as_bytes())?;
+	let unit_ee = unit_prepare_proc ("蒲郡","69258","1956-3-7");
+	dict_aa.insert("t2385".to_string(),&unit_ee);
 
-	file.write_all(String::from("t2386\t常滑\t21789\t1956-8-7\n").as_bytes())?;
-	file.write_all(String::from("t2387\t大府\t42193\t1956-4-21\n").as_bytes())?;
-	file.write_all(String::from("t2388\t瀬戸\t54287\t1956-8-12\n").as_bytes())?;
-	file.write_all(String::from("t2389\t犬山\t79526\t1956-10-28\n").as_bytes())?;
+	let unit_ff = unit_prepare_proc ("常滑","27518","1956-11-4");
+	dict_aa.insert("t2386".to_string(),&unit_ff);
+
+	let unit_gg = unit_prepare_proc ("大府","42193","1956-4-22");
+	dict_aa.insert("t2387".to_string(),&unit_gg);
+
+	let unit_hh = unit_prepare_proc ("瀬戸","72985","1956-6-28");
+	dict_aa.insert("t2388".to_string(),&unit_hh);
+
+	let unit_ii = unit_prepare_proc ("犬山","25168","1956-5-7");
+	dict_aa.insert("t2389".to_string(),&unit_ii);
+
+	for (key,value) in &dict_aa {
+		let str_out = key.to_string () + "\t" + &value["name"]
+			+ "\t" + &value["population"]
+			+ "\t" + &value["date_mod"] + "\n";
+		print!("{}", str_out);
+		file.write_all (String::from(str_out).as_bytes())?;
+	}
 
 	println!("*** 終了 ***");
 

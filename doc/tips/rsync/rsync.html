@@ -5,33 +5,33 @@
 <meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
-<title>rsync Feb/25/2016</title>
+<title>rsync Jul/10/2020</title>
 </head>
 <body>
 <h2>rsync</h2><p />
 
 host_remote のフォルダーを同期する。<p />
 <blockquote>
-rsync -avz --delete uchida@host_remote:tmp/jul04_2014/ /home/uchida/tmp/jul04_2014<p />
+rsync -avzz --delete uchida@host_remote:tmp/jul04_2014/ /home/uchida/tmp/jul04_2014<p />
 </blockquote>
 
 host_remote のフォルダーへ同期する。<p />
 <blockquote>
-rsync -avz --delete /home/uchida/tmp/may25_2015/ uchida@host_remote:tmp/may25_2015<p />
+rsync -avzz --delete /home/uchida/tmp/may25_2015/ uchida@host_remote:tmp/may25_2015<p />
 </blockquote>
 
 ssh のポートが 2222 の時<p />
 <blockquote>
-rsync -avz --delete -e "ssh -p 2222"  uchida@host_remote:tmp/jul04_2014/ /home/uchida/tmp/jul04_2014<p />
+rsync -avzz --delete -e "ssh -p 2222"  uchida@host_remote:tmp/jul04_2014/ /home/uchida/tmp/jul04_2014<p />
 </blockquote>
 
 公開鍵を使う<p />
 <blockquote>
-rsync -avz --delete -e "ssh -i $HOME/.ssh/key_aaa"  uchida@host_remote:tmp/jul04_2014/ /home/uchida/tmp/jul04_2014<p />
+rsync -avzz --delete -e "ssh -i $HOME/.ssh/key_aaa"  uchida@host_remote:tmp/jul04_2014/ /home/uchida/tmp/jul04_2014<p />
 </blockquote>
 
 <hr />
-rsync -avz --delete folder_src folder_target<br />
+rsync -avzz --delete folder_src folder_target<br />
 <blockquote>
 rsync: failed to set permissions on<p />
 	<blockquote>
@@ -147,6 +147,6 @@ rsync: chgrp "/tmp/.AAA_Aug20_2014.zip.55BDKM" (in BBBB) failed: Permission deni
 
 <hr />
 <a href="/data_base/">Return</a><p />
-Feb/25/2016 AM 08:15<p />
+Jul/10/2020 AM 06:15<p />
 </body>
 </html>
