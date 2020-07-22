@@ -3,7 +3,7 @@
 /*
 	postgre_read.php
 
-					Feb/09/2015
+					Jul/22/2020
 
 */
 // --------------------------------------------------------------------
@@ -19,7 +19,7 @@ print "*** 開始 ***\n";
 $server = 'localhost';
 $dbname = 'city';
 $user = 'scott';
-$password = 'tiger';
+$password = 'tiger123';
 
 $dict_aa = pg_to_dict_proc ($server,$dbname,$user,$password);
 

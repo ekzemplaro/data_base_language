@@ -2,10 +2,10 @@
 #
 #	postgre_update.sh
 #
-#					Jan/19/2012
+#					Jul/22/2020
 #
 # ----------------------------------------------------------
-export PGPASSWORD='tiger'
+export PGPASSWORD='tiger123'
 #
 work_file="/tmp/tmp00946.txt"
 #

@@ -112,6 +112,8 @@ Python<p />
 <blockquote>
 	python-pygresql<p />
 	# pacman -S python-psycopg2<p />
+
+	sudo apt install python3-psycopg2<p />
 </blockquote>
 
 Perl<p />

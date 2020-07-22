@@ -2,10 +2,10 @@
 #
 #	postgre_read.sh
 #
-#					Jan/19/2012
+#					Jul/22/2020
 #
 # ----------------------------------------------------------
-export PGPASSWORD='tiger'
+export PGPASSWORD='tiger123'
 BASH_COMMON=/var/www/data_base/common/bash_common
 sql_files=$BASH_COMMON"/sql_files/postgre"
 #
