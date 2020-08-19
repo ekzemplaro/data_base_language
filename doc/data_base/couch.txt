@@ -3,9 +3,7 @@
 <body>
 <h1><a href="http://couchdb.apache.org/">CouchDB</a></h1>
 <blockquote>
-<pre>
-ii  couchdb   1.6.0-0ubuntu5    all    RESTful document oriented database - system-wide instance
-</pre>
+sudo snap install couchdb<p />
 </blockquote>
 Configuration<br />
 <blockquote>

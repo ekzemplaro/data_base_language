@@ -14,8 +14,8 @@
 
 Arch Linux<br />
 <blockquote>
-# pacman -S rust<p />
-$ yaourt -Sb cargo-bin<p />
+sudo pacman -S rust<p />
+sudo pacman -S cargo<p />
 </blockquote>
 
 Ubuntu<br />

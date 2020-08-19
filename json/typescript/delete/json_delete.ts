@@ -1,12 +1,12 @@
 // ---------------------------------------------------------------
 //	json_delete.ts
 //
-//					May/05/2020
+//					Jul/28/2020
 //
 // ---------------------------------------------------------------
 var fs = require("fs");
 
-console.log ("*** 開始 ***");
+console.error ("*** 開始 ***");
 const filename:string =process.argv[2];
 const key_in:string =process.argv[3];
 
@@ -32,6 +32,6 @@ if (key_in in dict_aa)
 		});
 	}
 
-console.log ("*** 終了 ***");
+console.error ("*** 終了 ***");
 
 // ---------------------------------------------------------------

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+</head>
+<title>Cookie get サンプル</title>
+<body>
+<div id="message"></div>
+ 
+<script type="text/javascript">
+jQuery(function() {
+	var str_out = ""
+	str_out += "message: " + jQuery.cookie('message') + "<br />"
+	str_out += "aa: " + jQuery.cookie('aa') + "<br />"
+	str_out += "bb: " + jQuery.cookie('bb') + "<br />"
+	str_out += "cc: " + jQuery.cookie('cc') + "<br />"
+
+    jQuery('#message').html(str_out)
+})
+
+</script>
+
+<hr />
+Aug/13/2020<p />
+</body>
+</html>

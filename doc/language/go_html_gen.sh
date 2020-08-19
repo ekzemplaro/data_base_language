@@ -83,3 +83,4 @@ cat $DOC/head_common.txt kotlin.txt $DOC/tail_common.txt > kotlin.html
 cat $DOC/head_common.txt vb.txt $DOC/tail_common.txt > vb.html
 cat $DOC/head_common.txt elixir.txt $DOC/tail_common.txt > elixir.html
 cat $DOC/head_common.txt nashorn.txt $DOC/tail_common.txt > nashorn.html
+cat $DOC/head_common.txt deno.txt $DOC/tail_common.txt > deno.html

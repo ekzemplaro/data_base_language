@@ -1,0 +1,20 @@
+<meta content="Program Language Examples in racket" name="description">
+<meta content="Ada,クライアント,接続,言語,サンプル" name="keyword">
+<meta content="Uchida Masatomo" name="author">
+<title>Deno Jul/28/2020</title>
+</head>
+<body>
+<h2><a href="https://deno.land/">Deno</a></h2><p />
+
+<blockquote>
+</blockquote>
+
+<blockquote>
+</blockquote>
+
+Arch Linux<br />
+<blockquote>
+yay snapd<p />
+sudo systemctl start snapd<p />
+sudo snap install deno<p />
+</blockquote>

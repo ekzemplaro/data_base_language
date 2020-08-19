@@ -1,13 +1,13 @@
 // ---------------------------------------------------------------
 //	json_create.ts
 //
-//					May/05/2020
+//					Jul/28/2020
 //
 // ---------------------------------------------------------------
 var fs = require("fs")
 var text_manipulate = require('/var/www/data_base/common/typescript_common/text_manipulate')
 // ---------------------------------------------------------------
-console.log ("*** 開始 ***")
+console.error ("*** 開始 ***")
 
 const filename:string =process.argv[2]
 
@@ -24,7 +24,7 @@ fs.writeFile (filename,json_str, function (err)
 		}
 	})
 
-console.log ("*** 終了 ***")
+console.error ("*** 終了 ***")
 
 // ---------------------------------------------------------------
 function data_prepare_proc ()
