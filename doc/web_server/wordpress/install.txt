@@ -1,6 +1,6 @@
 <blockquote>
-	sudo apt-get install mysql-server<p />
-	sudo apt-get install phpmyadmin<p />
+	sudo apt install mysql-server<p />
+	sudo apt install phpmyadmin<p />
 
 	Arch Linux<br />
 	<blockquote>
