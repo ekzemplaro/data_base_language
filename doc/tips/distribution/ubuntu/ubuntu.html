@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta http-equiv="Pragma" content="no-cache" />
-<meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
 <title>Ubuntu</title>
 </head>
 <body>
-<h2><a href="http://www.ubuntu.com/index_roadshow">ubuntu</a></h2><p />
+<h2><a href="http://www.ubuntu.com/index_roadshow">ubuntu</a></h2><p></p>
 カーネル<br/>
 <blockquote>
 $ uname -a<br />
@@ -35,54 +33,54 @@ UBUNTU_CODENAME=disco
 </blockquote>
 
 
-ファイルが含まれているパッケージを探す<p />
+ファイルが含まれているパッケージを探す<p></p>
 <blockquote>
-インストール<p />
+インストール<p></p>
 <blockquote>
-	# apt install apt-file<p />
-	# apt-file update<p />
+	# apt install apt-file<p></p>
+	# apt-file update<p></p>
 </blockquote>
-検索<p />
+検索<p></p>
 <blockquote>
-	$ apt-file search dmcs<p />
+	$ apt-file search dmcs<p></p>
 </blockquote>
 </blockquote>
-ファイル名から所属するパッケージを探す<p />
+ファイル名から所属するパッケージを探す<p></p>
 <blockquote>
-	dpkg -S name_file<p />
-</blockquote>
-
-<p />
-カタカナ表記のフォルダ名を英語表記にする<p />
-<blockquote>
-LANGUAGE=en xdg-user-dirs-update --force<p />
+	dpkg -S name_file<p></p>
 </blockquote>
 
-ssh server<p />
+<p></p>
+カタカナ表記のフォルダ名を英語表記にする<p></p>
 <blockquote>
-# apt install openssh-server<p />
-# service ssh start<p />
+LANGUAGE=en xdg-user-dirs-update --force<p></p>
+</blockquote>
+
+ssh server<p></p>
+<blockquote>
+# apt install openssh-server<p></p>
+# service ssh start<p></p>
 </blockquote>
 
 起動直後の処理<br />
 	<blockquote>
-	/etc/rc.local<p />
+	/etc/rc.local<p></p>
 	</blockquote>
 
 Version<br />
 	<blockquote>
-	$ cat /etc/lsb-release<p />
+	$ cat /etc/lsb-release<p></p>
 	</blockquote>
 <hr />
 パッケージのインストール<br />
 	<blockquote>
-	# apt install rsync<p />
-	# apt install make<p />
+	# apt install rsync<p></p>
+	# apt install make<p></p>
 	</blockquote>
 <hr />
-# apt update<p />
+# apt update<p></p>
 <blockquote>
-E: いくつかのインデックスファイルのダウンロードに失敗しました。これらは無視されるか、古いものが代わりに使われます。<p />
+E: いくつかのインデックスファイルのダウンロードに失敗しました。これらは無視されるか、古いものが代わりに使われます。<p></p>
 	<blockquote>
 	# rm -r /var/lib/apt/lists<br />
 	# mkdir /var/lib/apt/lists<br />
@@ -91,9 +89,9 @@ E: いくつかのインデックスファイルのダウンロードに失敗�
 </blockquote>
 Ubuntu 17.10 へのアップグレード<br />
 	<blockquote>
-	# update-manager<p />
+	# update-manager<p></p>
 	Or<br />
-	# do-release-upgrade<p />
+	# do-release-upgrade<p></p>
 	</blockquote>
 
 DHCP の設定<br />
@@ -121,99 +119,99 @@ DHCP の設定<br />
 		</blockquote>
 	</blockquote>
 
-resolv.conf の設定<p />
+resolv.conf の設定<p></p>
 	<blockquote>
-	/etc/resolvconf/resolv.conf/base<p />
+	/etc/resolvconf/resolv.conf/base<p></p>
 		<blockquote>
 		search example.com<br />
 		</blockquote>
-	# resolvconf -u<p />
+	# resolvconf -u<p></p>
 	</blockquote>
 
 <hr />
 <a href="environment/">environment for Ubuntu</a><br />
 <a href="environment/installed_target.txt">installed on Ubuntu</a><br />
 <hr />
-ロケールの設定<p />
+ロケールの設定<p></p>
 <blockquote>
-# apt install language-pack-ja<p />
-# update-locale LANG=ja_JP.UTF-8<p />
+# apt install language-pack-ja<p></p>
+# update-locale LANG=ja_JP.UTF-8<p></p>
 </blockquote>
 
 <hr />
-サーバー版に GUI を追加<p />
+サーバー版に GUI を追加<p></p>
 <blockquote>
-	# tasksel<p />
+	# tasksel<p></p>
 
-	または<p />
+	または<p></p>
 	<blockquote>
-		# apt install xinit<p />
-		# apt install gnome<p />
+		# apt install xinit<p></p>
+		# apt install gnome<p></p>
 	</blockquote>
 
 </blockquote>
 
 <hr />
-ブート時<p />
-A start job is running for dev-disk-by****.device<p />
+ブート時<p></p>
+A start job is running for dev-disk-by****.device<p></p>
 <blockquote>
-/etc/fstab の　ディスク UUID が間違っている。<p /> 
+/etc/fstab の　ディスク UUID が間違っている。<p></p> 
 </blockquote>
 <hr />
-# apt install traceroute<p />
-# apt install nmap<p />
+# apt install traceroute<p></p>
+# apt install nmap<p></p>
 <hr />
-ユーザーの作成<p />
+ユーザーの作成<p></p>
 <blockquote>
-# adduser --uid 1200 user_aa<p />
-# gpasswd -a user_aa sudo<p />
+# adduser --uid 1200 user_aa<p></p>
+# gpasswd -a user_aa sudo<p></p>
 </blockquote>
-ユーザーの削除<p />
+ユーザーの削除<p></p>
 <blockquote>
-# deluser user_aa --remove-home<p />
-</blockquote>
-
-rootアカウントでのログインを無効化<p />
-<blockquote>
-	sudo passwd -l root<p />
+# deluser user_aa --remove-home<p></p>
 </blockquote>
 
-rootアカウントでのログインを有効化<p />
+rootアカウントでのログインを無効化<p></p>
+<blockquote>
+	sudo passwd -l root<p></p>
+</blockquote>
+
+rootアカウントでのログインを有効化<p></p>
 <blockquote>
 	sudo passwd -u root
 </blockquote>
 
-サーバー版への追加インストール<p />
+サーバー版への追加インストール<p></p>
 <blockquote>
-# apt install traceroute<p />
+# apt install traceroute<p></p>
 </blockquote>
 <hr />
-hostname の変更<p />
+hostname の変更<p></p>
 <blockquote>
-/etc/hostname<p />
+/etc/hostname<p></p>
 </blockquote>
 <hr />
 <a href="https://launchpad.net/ubuntu/vivid/amd64?text=cifs-utils">
-deb ファイルの検索</a><p />
-from 15.04 to 15.10<p />
+deb ファイルの検索</a><p></p>
+from 15.04 to 15.10<p></p>
 <blockquote>
-# sed -i 's/vivid/wily/g' /etc/apt/sources.list<p />
-# apt update<p />
+# sed -i 's/vivid/wily/g' /etc/apt/sources.list<p></p>
+# apt update<p></p>
 </blockquote>
 
 <hr />
-時刻が９時間ずれていたら<p />
+時刻が９時間ずれていたら<p></p>
 <blockquote>
-/etc/default/rcS<p />
+/etc/default/rcS<p></p>
 	<blockquote>
-	UTC=no<p />
+	UTC=no<p></p>
 	</blockquote>
 </blockquote>
 
 
-インストールしたファイルの一覧<p />
+インストールしたファイルの一覧<p></p>
 <blockquote>
-	$ dpkg -L php7.0-fpm<p />
+	$ dpkg -L php7.0-fpm<p></p>
 </blockquote>
 
 <hr />
@@ -240,7 +238,7 @@ casper	EFI    isolinux  pics	     preseed  ubuntu
 	</blockquote>
 
 <hr />
-<a href="../">Return</a><p />
-Oct/3/2020 AM 08:15<p />
+<a href="../">Return</a><p></p>
+Oct/25/2020 AM 08:15<br />
 </body>
 </html>
