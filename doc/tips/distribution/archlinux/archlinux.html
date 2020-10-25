@@ -167,45 +167,45 @@ Java のインストール<p />
 
 ホストネームの設定<br />
 	<blockquote>
-	# hostnamectl set-hostname my-pretty-cow.domain.or.jp<p />
+	# hostnamectl set-hostname my-pretty-cow.domain.or.jp<br />
 	</blockquote>
 ロケールの生成と設定<br />
 	<blockquote>
-	/etc/locale.gen<p />
+	/etc/locale.gen<br />
 		<blockquote>
 		en_US.UTF-8 UTF-8<br />
 		ja_JP.UTF-8 UTF-8<br />
 		</blockquote>
-	# locale-gen<p />
-	# echo LANG=en_US.UTF-8 > /etc/locale.conf<p />
-	# export LANG=en_US.UTF-8<p />
+	# locale-gen<p></p>
+	# echo LANG=en_US.UTF-8 > /etc/locale.conf<p></p>
+	# export LANG=en_US.UTF-8<p></p>
 
 	</blockquote>
 
 タイムゾーンを変更<br />
 	<blockquote>
-	# timedatectl set-timezone Asia/Tokyo<p />
+	# timedatectl set-timezone Asia/Tokyo<p></p>
 	タイムゾーンの確認<br />
 		<blockquote>
-		$ timedatectl status<p />
+		$ timedatectl status<br />
 		</blockquote>
 	</blockquote>
 
 ユーザーの作成<br />
 	<blockquote>
-	# useradd -m -g wheel uchida<p />
-	# useradd -u 1200 -m -g wheel uchida<p />
-	# passwd uchida<p />
+	# useradd -m -g wheel uchida<p></p>
+	# useradd -u 1200 -m -g wheel uchida<p></p>
+	# passwd uchida<p></p>
 	</blockquote>
 
 グループの作成<br />
 	<blockquote>
-	# groupadd -g 1200 uchida<p />
+	# groupadd -g 1200 uchida<br />
 	</blockquote>
 
 ユーザーの削除<br />
 	<blockquote>
-	# userdel -r username<p />
+	# userdel -r username<br />
 	</blockquote>
 
 yay のインストール<br />
@@ -217,12 +217,12 @@ yay のインストール<br />
 
 yay を使ってインストール<br />
 	<blockquote>
-	$ yay -S google-chrome<p />
+	$ yay -S google-chrome<br />
 	</blockquote>
 
 パッケージキャッシュの削除<br />
 	<blockquote>
-	$ sudo pacman -Sc<p />
+	$ sudo pacman -Sc<br />
 	</blockquote>
 <hr />
 フォント<p />
@@ -231,13 +231,13 @@ yay を使ってインストール<br />
 # pacman -S xorg-fonts-75dpi<br />
 # pacman -S otf-ipafont<br />
 	</blockquote>
-日本語入力環境<p />
+日本語入力環境<br />
 	<blockquote>
 	<a href="http://pcok.jp/?p=753">ArchLinuxセットアップ 日本語化編</a><p />
 	# pacman -S ibus-anthy<br />
 	# ibus-setup<br />
 	</blockquote>
-ibus の再起動<p />
+ibus の再起動<br />
 	<blockquote>
 	$ ibus-daemon -drx<br />
 	</blockquote>
@@ -250,9 +250,9 @@ ibus の再起動<p />
 	# pacman -S npm<br />
 	</blockquote>
 
-base グループ以外の全てのパッケージを削除する<p />
+base グループ以外の全てのパッケージを削除する<p></p>
 	<blockquote>
-	# pacman -R $(comm -23 <(pacman -Qq|sort) <((for i in $(pacman -Qqg base); do pactree -ul $i; done)|sort -u|cut -d ' ' -f 1))<br />
+	# pacman -R $(comm -23 &lt;(pacman -Qq|sort) &lt;((for i in $(pacman -Qqg base); do pactree -ul $i; done)|sort -u|cut -d ' ' -f 1))<br />
 	<blockquote>
 		grub2, openssh も削除される。<br />
 	</blockquote>
@@ -285,7 +285,7 @@ Wifi の設定<br />
 </blockquote>
 
 
-<a href="../">Return</a><p><p />
+<a href="../">Return</a><p></p>
 Oct/25/2020 AM 08:15<br />
 </body>
 </html>
