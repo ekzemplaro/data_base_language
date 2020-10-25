@@ -6,11 +6,11 @@
 <title>ArchLinux</title>
 </head>
 <body>
-<h2>ArchLinux</h2><p />
+<h2>ArchLinux</h2><p></p>
 カーネル<p/>
 <blockquote>
 $ uname -a<br />
-Linux iwata 4.10.3-1-ARCH #1 SMP PREEMPT Wed Mar 15 09:17:17 CET 2017 x86_64 GNU/Linux<p />
+Linux iwata 4.10.3-1-ARCH #1 SMP PREEMPT Wed Mar 15 09:17:17 CET 2017 x86_64 GNU/Linux<p></p>
 </blockquote>
 
 バージョン確認方法<br />
@@ -27,48 +27,48 @@ BUG_REPORT_URL="https://bugs.archlinux.org/"
 </pre>
 </blockquote>
 
-<a href="install_mar19.txt">インストール</a><p />
+<a href="install_mar19.txt">インストール</a><p></p>
 <blockquote>
 	パーティションの作成<br />
 	<blockquote>
-	# fdisk /dev/sda<p />
+	# fdisk /dev/sda<p></p>
 	# mkfs -t ext4 /dev/sda1<br />
 	# mkfs -t ext4 /dev/sda2<br />
 	# mkswap /dev/sda3<br />
-	# swapon /dev/sda3<p />
+	# swapon /dev/sda3<p></p>
 	</blockquote>
 
 	日本のサーバーを上位にする<br />
 	<blockquote>
-	# vi /etc/pacman.d/mirrorlist<p />
+	# vi /etc/pacman.d/mirrorlist<p></p>
 	</blockquote>
 
 	インストール時にサーバーにアクセスするので、必要ならプロキシーの設定<br />
 	<blockquote>
-	# export http_proxy="http://user:passwd@host_proxy:80"<p />
+	# export http_proxy="http://user:passwd@host_proxy:80"<p></p>
 	</blockquote>
-	DHCP でアドレスが取得できない時は、手動で固定アドレスを設定<p />
+	DHCP でアドレスが取得できない時は、手動で固定アドレスを設定<p></p>
 	<blockquote>
-		# cd /etc/netctl<p />
-		# cp examples/ethernet-static profile<p />
-		# ifconfig ens32 down<p />
-		# netctl start profile<p />
+		# cd /etc/netctl<p></p>
+		# cp examples/ethernet-static profile<p></p>
+		# ifconfig ens32 down<p></p>
+		# netctl start profile<p></p>
 	</blockquote>
 
-	# mount /dev/sda1 /mnt<p />
-	# pacstrap /mnt base base-devel<p />
-	# genfstab -U -p /mnt >> /mnt/etc/fstab<p />
-	# arch-chroot /mnt<p />
+	# mount /dev/sda1 /mnt<p></p>
+	# pacstrap /mnt base base-devel<p></p>
+	# genfstab -U -p /mnt >> /mnt/etc/fstab<p></p>
+	# arch-chroot /mnt<p></p>
 Grub のインストール<br />
 <blockquote>
 	# pacman -S grub<br />
-	# pacman -S os-prober<p />
+	# pacman -S os-prober<p></p>
 
 	# grub-install --target=i386-pc --recheck --debug /dev/sda<br />
-	# grub-mkconfig -o /boot/grub/grub.cfg<p />
+	# grub-mkconfig -o /boot/grub/grub.cfg<p></p>
 </blockquote>
 
-wifi 接続<p />
+wifi 接続<p></p>
 <blockquote>
 	# pacman -S dialog<br />
 	# pacman -S wpa_supplicant<br />
@@ -76,8 +76,8 @@ wifi 接続<p />
 
 </blockquote>
 
-<h2>ArchLinux の設定</h2><p />
-追加のインストール<p />
+<h2>ArchLinux の設定</h2><p></p>
+追加のインストール<p></p>
 <blockquote>
 # pacman -S openssh<br />
 # pacman -S net-tools<br />
@@ -88,66 +88,66 @@ wifi 接続<p />
 # pacman -S nfs-utils<br />
 </blockquote>
 
-<a href="xwindow">X のインストール</a><p />
+<a href="xwindow">X のインストール</a><p></p>
 
-最新に保つ方法<p />
+最新に保つ方法<p></p>
 <blockquote>
 # pacman -Syu<br />
 </blockquote>
 
-sshd の設定<p />
+sshd の設定<p></p>
 <blockquote>
 	手動で起動<br />
-	# systemctl start sshd<p />
+	# systemctl start sshd<p></p>
 
 	ブート時に自動で起動<br />
-	# systemctl enable sshd<p />
+	# systemctl enable sshd<p></p>
 </blockquote>
 
-<a href="arch_fixed_address.html">固定アドレスの設定</a><p />
+<a href="arch_fixed_address.html">固定アドレスの設定</a><p></p>
 
-<a href="nginx/">nginx の設定</a><p />
+<a href="nginx/">nginx の設定</a><p></p>
 
-<a href="arch_mariadb.html">MariaDB のインストール</a><p />
+<a href="arch_mariadb.html">MariaDB のインストール</a><p></p>
 
-<a href="arch_ftp.html">ftp サーバーの設定</a><p />
+<a href="arch_ftp.html">ftp サーバーの設定</a><p></p>
 
-<a href="arch_nfs.html">nfs の設定</a><p />
+<a href="arch_nfs.html">nfs の設定</a><p></p>
 
-<a href="arch_samba.html">samba サーバーの設定</a><p />
+<a href="arch_samba.html">samba サーバーの設定</a><p></p>
 
-<a href="arch_couchdb.html">couchdb サーバーの設定</a><p />
+<a href="arch_couchdb.html">couchdb サーバーの設定</a><p></p>
 
 
-sudo の設定<p />
+sudo の設定<p></p>
 	<blockquote>
-	# visudo<p />
+	# visudo<p></p>
 	<blockquote>
 		%wheel ALL=(ALL) ALL<br />
 		%wheel ALL=(ALL) NOPASSWD: ALL<br />
 		%sudo   ALL=(ALL) ALL<br />
 	</blockquote>
 	</blockquote>
-Java のインストール<p />
+Java のインストール<p></p>
 	<blockquote>
 	# pacman -S jre10-openjdk jdk10-openjdk<br />
 	</blockquote>
 
-クローンの起動<p />
+クローンの起動<p></p>
 	<blockquote>
 	# pacman -S cronie<br />
 	# systemctl start cronie<br />
 	# systemctl enable cronie<br />
 	</blockquote>
 <hr />
-既にインストールしたパッケージの情報を得る<p />
+既にインストールしたパッケージの情報を得る<p></p>
 	<blockquote>
-	$ pacman -Qi パッケージ名<p />
-	$ pacman -Ql パッケージ名<p />
-	$ pacman -Q パッケージ名<p />
+	$ pacman -Qi パッケージ名<p></p>
+	$ pacman -Ql パッケージ名<p></p>
+	$ pacman -Q パッケージ名<p></p>
 	一覧<br />
 		<blockquote>
-		$ pacman -Qe<p />
+		$ pacman -Qe<p></p>
 		</blockquote>
 	crontab コマンドをインストールしたパッケージを調べる<br />
 		<blockquote>
@@ -225,7 +225,7 @@ yay を使ってインストール<br />
 	$ sudo pacman -Sc<br />
 	</blockquote>
 <hr />
-フォント<p />
+フォント<p></p>
 	<blockquote>
 # pacman -S xorg-fonts-100dpi<br />
 # pacman -S xorg-fonts-75dpi<br />
@@ -233,7 +233,7 @@ yay を使ってインストール<br />
 	</blockquote>
 日本語入力環境<br />
 	<blockquote>
-	<a href="http://pcok.jp/?p=753">ArchLinuxセットアップ 日本語化編</a><p />
+	<a href="http://pcok.jp/?p=753">ArchLinuxセットアップ 日本語化編</a><p></p>
 	# pacman -S ibus-anthy<br />
 	# ibus-setup<br />
 	</blockquote>
