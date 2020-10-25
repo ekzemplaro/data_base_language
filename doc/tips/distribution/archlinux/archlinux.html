@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta http-equiv="Pragma" content="no-cache" />
-<meta http-equiv="Cache-Control" content="no-cache" />
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
 <meta content="Uchida Masatomo" name="author">
 <title>ArchLinux</title>
@@ -241,41 +239,41 @@ yay を使ってインストール<br />
 	</blockquote>
 ibus の再起動<p />
 	<blockquote>
-	$ ibus-daemon -drx<p />
+	$ ibus-daemon -drx<br />
 	</blockquote>
 <hr />
-<a href="update_error.html"># pacman -Syu でエラー</a><p />
+<a href="update_error.html"># pacman -Syu でエラー</a><p></p>
 
 
-追加のインストール<p />
+追加のインストール<p></p>
 	<blockquote>
-	# pacman -S npm<p />
+	# pacman -S npm<br />
 	</blockquote>
 
 base グループ以外の全てのパッケージを削除する<p />
 	<blockquote>
-	# pacman -R $(comm -23 <(pacman -Qq|sort) <((for i in $(pacman -Qqg base); do pactree -ul $i; done)|sort -u|cut -d ' ' -f 1))<p />
+	# pacman -R $(comm -23 <(pacman -Qq|sort) <((for i in $(pacman -Qqg base); do pactree -ul $i; done)|sort -u|cut -d ' ' -f 1))<br />
 	<blockquote>
-		grub2, openssh も削除される。<p />
+		grub2, openssh も削除される。<br />
 	</blockquote>
 	</blockquote>
 
 <hr />
 多言語の表示<br />
 <blockquote>
-	# pacman -S adobe-source-han-sans-otc-fonts<p />
+	# pacman -S adobe-source-han-sans-otc-fonts<br />
 </blockquote>
 <hr />
 タッチパッドの On/Off<br />
 <blockquote>
-# pacman -S xorg-xinput<p />
+# pacman -S xorg-xinput<p></p>
 
 $ xinput --set-prop "SynPS/2 Synaptics TouchPad" "Device Enabled" 1<br />
 $ xinput --set-prop "SynPS/2 Synaptics TouchPad" "Device Enabled" 0<br />
 </blockquote>
 Wifi の設定<br />
 <blockquote>
-# wifi-menu<p />
+# wifi-menu<br />
 </blockquote>
 
 <blockquote>
@@ -283,11 +281,11 @@ Wifi の設定<br />
 
 サービスの一覧<br />
 <blockquote>
-	# systemctl list-unit-files --type=service<p />
+	# systemctl list-unit-files --type=service<br />
 </blockquote>
 
 
-<a href="../">Return</a><p />
-Feb/16/2019 AM 08:15<p />
+<a href="../">Return</a><p><p />
+Oct/25/2020 AM 08:15<br />
 </body>
 </html>
