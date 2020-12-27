@@ -34,9 +34,9 @@ keys.forEach(function(key,index)
 	if (keys.length === (index + 1))
 		{
 		client.quit()
+		console.error ("*** 終了 ***")
 		}
 	})
-		console.error ("*** 終了 ***")
 	}
 	})
 
