@@ -13,7 +13,7 @@ const redis = require('redis')
 process.on('unhandledRejection', console.dir)
 
 // ---------------------------------------------------------------
-async function proc01 ()
+async function main (options)
 {
 	const redisUrl = 'redis://127.0.0.1:6379'
 	const client = redis.createClient(redisUrl)
@@ -50,7 +50,7 @@ async function proc01 ()
 
 // ---------------------------------------------------------------
 console.error ("*** 開始 ***")
-proc01()
+main({ argv: process.argv })
 console.error ("*** 終了 ***")
 
 // ---------------------------------------------------------------

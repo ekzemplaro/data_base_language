@@ -2,27 +2,38 @@
 // ---------------------------------------------------------------
 //	redis_delete.js
 //
-//					Sep/14/2018
+//					Dec/30/2020
 //
 // ---------------------------------------------------------------
+'use strict'
+
+const util = require('util')
+const redis = require('redis')
+
+process.on('unhandledRejection', console.dir)
+// ---------------------------------------------------------------
+async function main (options)
+{
+	var argv = options.argv
+	const key_in=argv[2]
+	console.log (key_in)
+
+	const redisUrl = 'redis://127.0.0.1:6379'
+	const client = redis.createClient(redisUrl)
+
+	client.delAsync = util.promisify(client.del)
+	client.quitAsync = util.promisify(client.quit)
+
+	await client.delAsync(key_in)
+
+	await client.quitAsync()
+}
+
+// ---------------------------------------------------------------
 console.error ("*** 開始 ***")
-const key_in=process.argv[2]
 
-console.log (key_in)
+main({ argv: process.argv })
 
-//
-const redis = require ("redis")
-const client = redis.createClient (6379,'localhost')
-
-client.on("error", function (err)
-	{
-	console.log("Redis connection error to "
-		+ client.host + ":" + client.port + " - " + err)
-	})
-
-client.del(key_in)
-
-client.quit()
 console.error ("*** 終了 ***")
 
 // ---------------------------------------------------------------

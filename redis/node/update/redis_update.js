@@ -2,60 +2,70 @@
 // ---------------------------------------------------------------
 //	redis_update.js
 //
-//					Sep/14/2018
+//					Dec/30/2020
 //
 // ---------------------------------------------------------------
+'use strict'
+
+const util = require('util')
+const redis = require('redis')
+
+process.on('unhandledRejection', console.dir)
+
 var node_common = '/var/www/data_base/common/node_common'
 
 var text_manipulate=require (node_common + '/text_manipulate')
 
 // ---------------------------------------------------------------
-console.error ("*** 開始 ***")
-const key_in=process.argv[2]
-const population_in=process.argv[3]
-
-console.log (key_in + "\t" + population_in)
-
-//
-const redis = require ("redis")
-const client = redis.createClient (6379,'localhost')
-
-client.on("error", function (err)
-	{
-	console.log("Redis connection error to "
-		+ client.host + ":" + client.port + " - " + err)
-	})
-
-redis_update_proc (client,key_in,population_in)
-
-console.error ("*** 終了 ***")
-
-// ---------------------------------------------------------------
-function redis_update_proc (client,key_in,population_in)
+async function main(options)
 {
-client.get (key_in, function (err, reply)
-	{
-	if (err)
-		{
-		console.log("Get error: " + err)
-        	}
-	 else if (reply != null)
-		{
-		var json_str = reply
+	var argv = options.argv
+	const key_in=argv[2]
+	const population_in=argv[3]
 
-		var unit_aa = JSON.parse (json_str)
+	console.log (key_in + "\t" + population_in)
+
+	const redisUrl = 'redis://127.0.0.1:6379'
+	const client = redis.createClient(redisUrl)
+
+	client.getAsync = util.promisify(client.get)
+	client.setAsync = util.promisify(client.set)
+	client.quitAsync = util.promisify(client.quit)
+
+	const value = await client.getAsync(key_in)
+	console.log(value)
+
+	try
+		{
+		const unit_aa = JSON.parse(value)
+		var out_str = key_in + "\t"
+		out_str  += unit_aa.name + "\t"
+		out_str += unit_aa.population + "\t"
+		out_str += unit_aa.date_mod
+		console.log (out_str)
 
 		unit_aa.population = population_in
 		unit_aa.date_mod =  text_manipulate.get_current_date_proc ()
-		var json_out = JSON.stringify (unit_aa)
+		const json_out = JSON.stringify (unit_aa)
 
 		console.log (json_out)
-
-		client.set (key_in,json_out, redis.print)
-		client.quit()
+		await client.setAsync (key_in,json_out)
 		}
-	})
+		catch (error)
+		{
+		console.error ("*** error *** from JSON.parse ***")
+		console.error (error)
+		console.error (key_in)
+		}
 
+	await client.quitAsync()
 }
+
+// ---------------------------------------------------------------
+console.error ("*** 開始 ***")
+
+main({ argv: process.argv })
+
+console.error ("*** 終了 ***")
 
 // ---------------------------------------------------------------
