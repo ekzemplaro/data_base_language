@@ -1,68 +1,56 @@
 #! /usr/bin/node
 // ---------------------------------------------------------------
+//
 //	redis_read.js
 //
-//					Sep/14/2018
-//
+//					Dec/30/2020
 // ---------------------------------------------------------------
-console.error ("*** 開始 ***")
-//
-const redis = require("redis")
-const client = redis.createClient(6379,'localhost')
+'use strict'
 
-client.on ("error", function (err)
-{
-        console.log ("Redis connection error to "
-		+ client.host + ":" + client.port + " - " + err)
-})
+const util = require('util')
+const redis = require('redis')
 
-client.keys ('*',function (err, reply)
-	{
-	if (err)
-		{
-		console.log("Get error: " + err)
-        	}
-	 else if (reply != null)
-		{
-		const keys = reply
-	
-
-console.log("keys.length = " + keys.length)
-keys.forEach(function(key,index)
-	{
-	read_single_proc (client,key,index)
-	if (keys.length === (index + 1))
-		{
-		client.quit()
-		console.error ("*** 終了 ***")
-		}
-	})
-	}
-	})
+process.on('unhandledRejection', console.dir)
 
 // ---------------------------------------------------------------
-function read_single_proc (client,key,index)
+async function proc01 ()
 {
-	client.get (key, function (err, reply)
-	{
-	if (err)
-		{
-		console.log("Get error: " + err)
-        	}
-	 else if (reply != null)
-		{
-		const json_str = reply
-		const data = JSON.parse (json_str)
+	const redisUrl = 'redis://127.0.0.1:6379'
+	const client = redis.createClient(redisUrl)
 
+	client.getAsync = util.promisify(client.get)
+	client.keysAsync = util.promisify(client.keys)
+	client.quitAsync = util.promisify(client.quit)
+
+	const keys = await client.keysAsync('*')
+
+	keys.forEach(async function(key,index)
+		{
+		const value = await client.getAsync(key)
+
+		try
+		{
+		const data = JSON.parse(value)
 		var out_str = key + "\t"
 		out_str  += data.name + "\t"
 		out_str += data.population + "\t"
 		out_str += data.date_mod
 		console.log (out_str)
 		}
+		catch (error)
+		{
+		console.error ("*** error *** from JSON.parse ***")
+		console.error (error)
+		console.error (key)
+		}
+		})
 
-
-	})
+	await client.quitAsync()
 }
+
+// ---------------------------------------------------------------
+console.error ("*** 開始 ***")
+proc01()
+console.error ("*** 終了 ***")
 
 // ---------------------------------------------------------------
