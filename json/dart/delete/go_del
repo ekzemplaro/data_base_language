@@ -1,1 +1,1 @@
-./json_delete.dart /var/tmp/json/cities.json t0927
+dart json_delete.dart /var/tmp/json/cities.json t0927

@@ -1,8 +1,7 @@
-#! /usr/bin/dart
 /*
 	json_read.dart
 
-					Mar/17/2015
+					Jan/09/2021
 */
 // -------------------------------------------------------------
 import 'dart:async';
@@ -12,7 +11,7 @@ import 'dart:convert';
 import	'/var/www/data_base/common/dart_common/text_manipulate.dart';
 // -------------------------------------------------------------
 main (List<String> arguments) {
-	print ("*** 開始 ***");
+	stderr.writeln ("*** 開始 ***");
 
 	String file_name = '${arguments[0]}';
 
@@ -21,11 +20,11 @@ main (List<String> arguments) {
 
 	future.then((content)
 		{
-		Map dict_aa = JSON.decode(content);
+		Map dict_aa = jsonDecode(content);
 
 		dict_display_proc (dict_aa);
 
-		print ("*** 終了 ***");
+		stderr.writeln ("*** 終了 ***");
 		}); 
 }
 

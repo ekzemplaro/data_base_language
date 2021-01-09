@@ -1,8 +1,7 @@
-#! /usr/bin/dart
 /*
 	text_create.dart
 
-						Mar/16/2015
+						Jan/09/2021
 */
 // -------------------------------------------------------------
 import 'dart:io'; 
@@ -30,7 +29,7 @@ data_prepare_proc ()
 // -------------------------------------------------------------
 main (List<String> arguments)
 {
-	print ("*** 開始 ***");
+	stderr.writeln ("*** 開始 ***");
 
 	String file_out = '${arguments[0]}';
 
@@ -38,7 +37,7 @@ main (List<String> arguments)
 
 	dict_to_text_proc ('\t',dict_aa,file_out);
 
-	print ("*** 終了 ***");
+	stderr.writeln ("*** 終了 ***");
 
 }
 

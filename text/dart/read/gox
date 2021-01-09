@@ -1,1 +1,1 @@
-./text_read.dart /var/tmp/plain_text/cities.txt
+dart text_read.dart /var/tmp/plain_text/cities.txt

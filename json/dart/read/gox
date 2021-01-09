@@ -1,1 +1,1 @@
-./json_read.dart /var/tmp/json/cities.json
+dart json_read.dart /var/tmp/json/cities.json

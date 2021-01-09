@@ -1,8 +1,7 @@
-#! /usr/bin/dart
 /*
 	json_create.dart
 
-						Mar/17/2015
+						Jan/09/2021
 */
 // -------------------------------------------------------------
 import 'dart:io';
@@ -36,17 +35,17 @@ data_prepare_proc ()
 // -------------------------------------------------------------
 main (List<String> arguments)
 {
-	print ("*** 開始 ***");
+	stderr.writeln ("*** 開始 ***");
 
 	String file_out = '${arguments[0]}';
 
 	var dict_aa = data_prepare_proc ();
 
-	var str_out = JSON.encode(dict_aa);
+	var str_out = jsonEncode(dict_aa);
 
 	str_to_file_proc (str_out,file_out);
 
-	print ("*** 終了 ***");
+	stderr.writeln ("*** 終了 ***");
 
 }
 

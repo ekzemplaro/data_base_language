@@ -1,2 +1,2 @@
 #
-./text_create.dart /var/tmp/plain_text/cities.txt
+dart text_create.dart /var/tmp/plain_text/cities.txt

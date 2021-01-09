@@ -2,37 +2,41 @@
 // ---------------------------------------------------------------
 //	redis_list.js
 //
-//					Jan/17/2020
+//					Dec/30/2020
 //
 // ---------------------------------------------------------------
-console.error ("*** 開始 ***")
-//
-const redis = require("redis")
-const client = redis.createClient(6379,'localhost')
+'use strict'
 
-client.on ("error", function (err)
-	{
-        console.log ("Redis connection error to "
-		+ client.host + ":" + client.port + " - " + err)
-	})
+const util = require('util')
+const redis = require('redis')
 
-client.keys ('*',function (err, reply)
-	{
-	if (err)
-		{
-		console.log("Get error: " + err)
-        	}
-	 else if (reply != null)
-		{
-		const keys = reply
+process.on('unhandledRejection', console.dir)
 
-		console.log (keys)
+
+
+// ---------------------------------------------------------------
+async function main()
+{
+	
+	const redisUrl = 'redis://127.0.0.1:6379'
+	const client = redis.createClient(redisUrl)
+
+	client.getAsync = util.promisify(client.get)
+	client.keysAsync = util.promisify(client.keys)
+	client.quitAsync = util.promisify(client.quit)
+
+
+	const keys = await client.keysAsync('*')
+	console.log (keys)
 	console.log("keys.length = " + keys.length)
-		console.log (keys[0])
-		}
+	console.log ("keys[0] = " + keys[0])
 
-	client.quit()
-	console.error ("*** 終了 ***")
-	})
+    client.quit()
+}
+
+// ---------------------------------------------------------------
+console.error ("*** 開始 ***")
+main()
+console.error ("*** 終了 ***")
 
 // ---------------------------------------------------------------
