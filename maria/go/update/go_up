@@ -1,2 +1,2 @@
 #
-./maria_update t3322 892453100
+go run maria_update.go text_manipulate.go t3322 892453100

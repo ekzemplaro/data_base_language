@@ -1,1 +1,2 @@
-./maria_read
+export GOPATH=$HOME/go
+go run maria_read.go

@@ -1,8 +1,7 @@
-#! /usr/bin/dart
 /*
 	text_read.dart
 
-					Mar/17/2015
+					Jan/10/2021
 */
 // -------------------------------------------------------------
 import 'dart:convert';
@@ -15,7 +14,7 @@ fetch_unit_proc (url_json,key)
 
 	http.get(url_in).then((response)
 		{
-		var unit_aa = JSON.decode(response.body);
+		var unit_aa = jsonDecode(response.body);
 		var str_out = key + '\t' + unit_aa['name'];
 		str_out += '\t' + unit_aa['population'].toString ();
 		str_out += '\t' + unit_aa['date_mod'];
@@ -32,7 +31,7 @@ void main (List<String> arguments)
 
 	http.get(url_json + '_all_docs').then((response)
 		{
-		var dict_hh = JSON.decode(response.body);
+		var dict_hh = jsonDecode(response.body);
 
 		for (final pp in dict_hh['rows'])
 			{

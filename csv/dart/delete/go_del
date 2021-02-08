@@ -1,1 +1,1 @@
-./csv_delete.dart /var/tmp/csv/cities.csv t1276
+dart csv_delete.dart /var/tmp/csv/cities.csv t1276

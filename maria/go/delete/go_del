@@ -1,2 +1,2 @@
 #
-./maria_delete t3325
+go run maria_delete.go t3325

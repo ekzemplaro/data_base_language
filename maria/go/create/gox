@@ -1,2 +1,2 @@
 #
-./maria_create
+go run maria_create.go text_manipulate.go

@@ -1,17 +1,15 @@
-#! /usr/bin/dart
 /*
 	csv_read.dart
 
-					Mar/17/2015
+					Jan/10/2021
 */
 // -------------------------------------------------------------
-import 'dart:async';
 import 'dart:io'; 
 
 import	'/var/www/data_base/common/dart_common/text_manipulate.dart';
 // -------------------------------------------------------------
 main (List<String> arguments) {
-	print ("*** 開始 ***");
+	stderr.writeln ("*** 開始 ***");
 
 	String file_name = '${arguments[0]}';
 
@@ -24,7 +22,7 @@ main (List<String> arguments) {
 
 		dict_display_proc (dict_aa);
 
-		print ("*** 終了 ***");
+		stderr.writeln ("*** 終了 ***");
 		}); 
 }
 

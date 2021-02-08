@@ -1,7 +1,7 @@
 // ---------------------------------------------------------------
 //	node_common/text_manipulate.js
 //
-//					Aug/04/2017
+//					Feb/09/2021
 //
 // ---------------------------------------------------------------
 var fs = require("fs")
@@ -191,7 +191,7 @@ exports.csv_write_proc = function (file_out,dict_aa)
 exports.get_current_date_proc = function ()
 {
 	const today = new Date ()
-	var ddx = (1900 + today.getYear ()) + "-" + (today.getMonth () +1)
+	var ddx = (1900 + today.getFullYear ()) + "-" + (today.getMonth () +1)
 	ddx += "-" + today.getDate ()
 
 	return ddx

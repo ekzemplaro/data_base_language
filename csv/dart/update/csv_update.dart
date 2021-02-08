@@ -1,21 +1,19 @@
-#! /usr/bin/dart
 /*
 	csv_update.dart
 
-					Mar/17/2015
+					Jan/10/2021
 */
 // -------------------------------------------------------------
-import 'dart:async';
 import 'dart:io'; 
 
 import	'/var/www/data_base/common/dart_common/text_manipulate.dart';
 // -------------------------------------------------------------
 main (List<String> arguments) {
-	print ("*** 開始 ***");
+	stderr.writeln ("*** 開始 ***");
 
 	String file_name = '${arguments[0]}';
 	String key = '${arguments[1]}';
-	String population = int.parse ('${arguments[2]}');
+	int population = int.parse ('${arguments[2]}');
 
 	print (key + '\t' + population.toString ());
 
@@ -30,12 +28,10 @@ main (List<String> arguments) {
 			{
 			dict_aa = dict_update_proc (dict_aa,key,population);
 
-			dict_display_proc (dict_aa);
-
 			dict_to_text_proc (',',dict_aa,file_name);
 			}
 
-		print ("*** 終了 ***");
+		stderr.writeln ("*** 終了 ***");
 		}); 
 }
 

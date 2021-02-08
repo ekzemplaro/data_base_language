@@ -1,17 +1,15 @@
-#! /usr/bin/dart
 /*
 	csv_delete.dart
 
-					Mar/17/2015
+					Jan/10/2021
 */
 // -------------------------------------------------------------
-import 'dart:async';
 import 'dart:io'; 
 
 import	'/var/www/data_base/common/dart_common/text_manipulate.dart';
 // -------------------------------------------------------------
 main (List<String> arguments) {
-	print ("*** 開始 ***");
+	stderr.writeln ("*** 開始 ***");
 
 	String file_name = '${arguments[0]}';
 	String key = '${arguments[1]}';
@@ -29,12 +27,10 @@ main (List<String> arguments) {
 			{
 			dict_aa.remove (key);
 
-			dict_display_proc (dict_aa);
-
 			dict_to_text_proc (',',dict_aa,file_name);
 			}
 
-		print ("*** 終了 ***");
+		stderr.writeln ("*** 終了 ***");
 		}); 
 }
 

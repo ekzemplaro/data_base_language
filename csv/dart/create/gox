@@ -1,2 +1,2 @@
 #
-./csv_create.dart /var/tmp/csv/cities.csv
+dart csv_create.dart /var/tmp/csv/cities.csv

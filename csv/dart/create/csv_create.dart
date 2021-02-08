@@ -1,12 +1,10 @@
-#! /usr/bin/dart
 /*
 	csv_create.dart
 
-						Mar/17/2015
+						Jan/10/2021
 */
 // -------------------------------------------------------------
 import 'dart:io'; 
-
 
 import	'/var/www/data_base/common/dart_common/text_manipulate.dart';
 // -------------------------------------------------------------
@@ -30,7 +28,7 @@ data_prepare_proc ()
 // -------------------------------------------------------------
 main (List<String> arguments)
 {
-	print ("*** 開始 ***");
+	stderr.writeln ("*** 開始 ***");
 
 	String file_out = '${arguments[0]}';
 
@@ -38,8 +36,7 @@ main (List<String> arguments)
 
 	dict_to_text_proc (',',dict_aa,file_out);
 
-	print ("*** 終了 ***");
-
+	stderr.writeln ("*** 終了 ***");
 }
 
 // -------------------------------------------------------------

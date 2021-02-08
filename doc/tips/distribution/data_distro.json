@@ -2,7 +2,7 @@
 "amazon": 
 	{"name": "Amazon","kernel": "4.14.33-59.37.amzn2.x86_64","bash": "4.2.46"},
 "archlinux": 
-	{"name": "ArchLinux","kernel": "5.9.14-arch1-1","bash": "5.1.4"},
+	{"name": "ArchLinux","kernel": "5.10.14-arch1-1","bash": "5.1.4"},
 "boot2docker": 
 	{"name": "boot2docker","kernel": "4.0.7-boot2docker","bash": ""},
 "centos": 
@@ -22,7 +22,7 @@
 "tinycore": 
 	{"name": "Tiny Core Linux","kernel": "3.16.6-tinycore","bash": "4.3.39"},
 "ubuntu": 
-	{"name": "Ubuntu","kernel": "5.8.0-33-generic","bash": "5.0.17"},
+	{"name": "Ubuntu","kernel": "5.8.0-41-generic","bash": "5.0.17"},
 "vyos": 
 	{"name": "Vyos","kernel": "3.13.11-1-amd64-vyos","bash": "4.1.5"},
 "xenserver": 
